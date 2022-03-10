@@ -44,10 +44,12 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{mathpazo} % Use the Palatino font by default
 
 \usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+%\usepackage[sort, numbers]{natbib}
 
 \addbibresource{example.bib} % The filename of the bibliography
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
@@ -179,12 +181,114 @@ headsepline, % Uncomment to get a line under the header
 \chapter{Load profiling of home appliances using load classification}
 
 \section{Introduction}
+Climate change calls to shift to renewable energy and restructuring of electricity sector.
+Sources \cite{eurostat2020} show as of time of reading this paper, 44 \% of produced in Europe was from combustible sources such as gas, fuel and coal. Even 
+thorough that is significant decrease of 10 \% in last 10 years, it is a significant Co2 emitter.
+Same source \cite{eurostat2020} also states that, third of energy is consumed by residential sector. It is estimated, 
+that human population will reach 10 billion inhabitants in next 10 years, and ever-increasing ownership of electrical appliances such as smartphones, HVACs, and EVs will further increase energy consumption. (elevate this issue)
+Acknowledging that, Reducing consumption in that sector could leave a significant impact on human footprint. 
+
+%increased time spent indoors*
+
+The EU aims to be climate neutral by 2050, therefore it seeks to improve efficiency of every part of pollution contributors through The European Green Deal.
+Large part of these contributors is the Energy sector.
+Sub part of energy sector is residential sector, where many advancements could be made to help to reach the goal.  
+
+This could be achieved trough various applications and methods that use load profiling and load monitoring as their core technology.
+Authors in \cite{Chuan2014} proposed method to reduce peak loads by studying consumer
+appliance usage patterns. Paper \cite{Csoknyai2019} studied consumer usage patterns, and returned feedback that contributed to reducing consumption.
+Another notable way is a use of distributed energy resources and manage them in such a way to decrease net output of energy flow such as authors describe in
+\cite{MORENOJARAMILLO2021445}. All described methods would reduce and alleviate the load off the power grid.
+%can lead to improving their use behavior. 
+
+Load profiling and load monitoring and anomaly detection in building energy consumption are not a novelty and had been in research since 1980s. While aggregated load profiles of households, 
+are relatively predictable, recent data obtained using smart meter data showed large deviance from user to user due to different lifestyles,
+as author states in \cite{Review2021}. In recent years load profiles have changed due to renewable energy accelerated development of distributed energy resources such as residential photovoltaic
+power plants, home wind energy and using EVs and home batteries. Goal of these systems is to mitigate net energy flow to be as local as possible. Socioeconomic changes such as (work-from-home),
+also drastically reshaped the load profile curve. 
+
+
+% It has been proved that existing load profiles (universal) do a decent job at estimating daily usage of houses in general,
+% but fail to model a good per-house profile, due to large deviance in user consumption as author stated in \cite{Proedrou2021}. 
+% Shift towards self-generation, increasing possession of EVs and shifts in socioeconomic patterns (work-from home), do not help either.  
+
+Technology advancements in load monitoring and non-intrusive load monitoring and increased adoption of smart energy meters offer a new
+way of load profiling, that is NILM load profiling. Besides consumption reduction there are many applications of load profiling which I will later describe.
+
+\section{Structure}
+M.Sc. degree will be composed of the following parts. In the first part I will define what is load profiling, appliance level load profiling, 
+non-intrusive load monitoring, intrusive load monitoring and anomaly detection. Then I will review related research work done to date. Next, I will elaborate 
+on existing ideas where load profiling is being used to-date and what are its possible applications. Then, I will present used datasets and finally,
+I will present a working demo using appliance classification and simple load profiling.
+Demo will present possible use of one of previously mentioned applications. 
+
+\section{Definitions}
+
+Author \cite{Review2021} defines terms as following
+
+\begin{itemize}
+	\item Residential: private residences, with no commercial usage, occupied by one or more persons either full-time or part-time during a calendar year.
+	\item Load: the electricity that all the electricity-powered devices in the household consume in unit time.
+	\item Profile: a graph representing the significant features of the electricity load over time.
+	\item Model: "a formal system that represents the combined processes" \cite{KAVOUSIAN2013184} of electricity consumption by all the electricity powered devices in a private residence/number of residences.
+\end{itemize}
+
+Besides above pre-defined terms I have defined few of my own:
+\begin{itemize}
+	\item activation or use frequency profile or (AFP): frequency of use of certain appliance per given unit time
+	\item appliance level load (ALL) - the electricity that the electricity-powered devices in the household consume in unit time.
+\end{itemize}
+
+\section{Related work}
+
+Work relating to load profiling can be found in two research verticals or topics. First one is load profiling and load profile models, that in 
+most cases study the load profile curve of the building. There are few exceptions that study load profiles on appliance-level.
+Second vertical is anomaly detection in building energy consumption data. While first topic is closer, there are quite few connections with the latter. 
+If one wants to do anomaly detection, in some cases, one must first build some kind of "normal consumption profile" 
+
+\subsection{Load profiling}
+
+Load profiling has been researched since 1980. Load-profiling can be performed in two ways. Bottom-up and top-down. 
+
+With Bottom-up approach as \cite{SWAN20091819} state "calculates the individual dwelling energy or electricity consumption and extrapolate these results over a target area or region"
+Whereas with Top-down approach as \cite{SWAN20091819} state "uses the total energy or electricity consumption estimates to assign them to the characteristics of the building stock"
+In other words, Bottom-up sub-meter data, Top-down uses aggregated data. In our case we take a deeper dive into bottom-up approach, since it is more relatable.
+
+\cite{Review2021} did a comprehensive review on load profiling.
+Author first disclosed current state of load progress and issues with past work. They made a review of existing load profile models,
+and asses the-state-of-the art. Review was structured by different methods. Next, they pointed out at future research directions
+and applications of load profile models. finally, author exposes changes that researchers face and adresses possible soloutins with conclusions.
+
+\begin{figure}[h!]
+	\centering
+	\caption{"Distribution of publications on load profiling from 1985 to 2020. The graph was published by \protect\cite{Review2021}"}
+	\includegraphics[width=0.9\textwidth]{Figures/publications.png}
+	\label{fig:Distribution}
+\end{figure}
+
+\subsubsection{Early years}
+
+One of the first publications on load profiling were published by \cite{TRAIN19851103}.
+They used bottom-up approach using sub-meter data and other socioeconomic and demographic characteristics 
+to create a load profile or statistically adjusted engineering (SAE) as they call it. They are able to adjust the curve based on weather, dwelling size and income. 
+In same year \cite{WALKER1985} published paper where they used bottom-up approach with psychological factors to create probability models of when will individual use an appliance.
+
+Since then there were two more in 1995 and then another boom started in 2005 with 7 publications in 2013 as \ref{fig:Distribution} shows.
+
+
+\subsection{Anomaly detection in building energy consumption data}
+
+Another review was written by \cite{HIMEUR2021116601}. Where authors took a deep dive into detecting anomalies in energy consumption in buildings. 
+Author first makes and overview of existing anomaly detection schemes and applications. Second they perform a critical analysis and an in-depth discussion of the state-of-the-art.
+Next, they describe current trends such as NILM anomaly detection and finally they derive a set of future research directions. 
+
+Both reviews pointed out that NILM anomaly detection or load profiling is a possible future research directions. Only one paper was published on anomaly detection \cite{NILMAD2019} and none on load profiling. 
 
 
 
-\section{Workflow}
-Msc degree will be composed from two parts. In the first part I will define what is main load profiling, appliance level profiling, 
-non-intrusive load monitoring and intrusive load monitoring. Then I will review related research work done to date. Next, I will,
+\subsection{Possible use cases}
+
+\section{Possible additions}
 
 
 % %----------------------------------------------------------------------------------------
@@ -291,12 +395,12 @@ non-intrusive load monitoring and intrusive load monitoring. Then I will review 
 % %\include{Appendices/AppendixB}
 % %\include{Appendices/AppendixC}
 
-% %----------------------------------------------------------------------------------------
-% %	BIBLIOGRAPHY
-% %----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
 
-% \printbibliography[heading=bibintoc]
-
-% %----------------------------------------------------------------------------------------
+\printbibliography[heading=bibintoc]
+%#\bibliography{acm} 
+%----------------------------------------------------------------------------------------
 
 \end{document}  

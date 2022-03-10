@@ -16,5 +16,659 @@
   {}
 \endgroup
 
-\datalist[entry]{nyt/global//global/global}\enddatalist
+\datalist[entry]{nyt/global//global/global}
+  \entry{Chuan2014}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=CL}{%
+         family={Chuan},
+         familyi={C\bibinitperiod},
+         given={Luo},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=RDMKKV}{%
+         family={Rao},
+         familyi={R\bibinitperiod},
+         given={D.\bibnamedelima M. K. K.\bibnamedelima Venkateswara},
+         giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
+  K\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=UA}{%
+         family={Ukil},
+         familyi={U\bibinitperiod},
+         given={Abhisek},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CLRDMKKVUA1}
+    \strng{fullhash}{CLRDMKKVUA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{2014 IEEE PES Asia-Pacific Power and Energy Engineering
+  Conference (APPEEC)}
+    \verb{doi}
+    \verb 10.1109/APPEEC.2014.7065998
+    \endverb
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Load profiling of Singapore buildings for peak shaving}
+    \field{year}{2014}
+  \endentry
+
+  \entry{Csoknyai2019}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CT}{%
+         family={Csoknyai},
+         familyi={C\bibinitperiod},
+         given={Tamás},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Legardeur},
+         familyi={L\bibinitperiod},
+         given={Jeremy},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AAA}{%
+         family={Akle},
+         familyi={A\bibinitperiod},
+         given={Audrey\bibnamedelima Abi},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Horváth},
+         familyi={H\bibinitperiod},
+         given={Miklós},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \keyw{Serious game, Smart metering, Occupants’ behavior, Energy
+  consumption trends and profiles, Energy performance of residential buildings,
+  Demand side management}
+    \strng{namehash}{CT+1}
+    \strng{fullhash}{CTLJAAAHM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    The paper has a focus on energy consumption habits, trends and intervention
+  strategies in residential buildings, mainly through the serious game approach
+  with a combination of direct consumer feedback through smart metering. More
+  than 150 homes in France and Spain have been involved in the research
+  experiment and the consumption habits of approximately 50 homes were deeply
+  analyzed. The applied methods, processes, results and findings of the
+  monitoring data analysis are presented in the paper with two aims. First,
+  consumption profiles and trends were determined for apartment homes with
+  regard to heating, domestic hot water and electric consumption. Second, the
+  impact of a serious game experiment was assessed comparing energy
+  consumption, indoor air temperature and users’ habits (based on
+  questionnaires) before and after launching the experiment.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.enbuild.2019.05.009
+    \endverb
+    \field{issn}{0378-7788}
+    \field{pages}{1\bibrangedash 20}
+    \field{title}{Analysis of energy consumption profiles in residential
+  buildings and impact assessment of a serious game on occupants’ behavior}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0378778818334790
+    \endverb
+    \field{volume}{196}
+    \field{journaltitle}{Energy and Buildings}
+    \field{year}{2019}
+  \endentry
+
+  \entry{eurostat2020}{article}{}
+    \name{author}{1}{}{%
+      {{hash=E}{%
+         family={Eurostat},
+         familyi={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{E1}
+    \strng{fullhash}{E1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{abstract}{%
+    Dataset consumption%
+    }
+    \field{title}{Gross and net production of electricity and derived heat by
+  type of plant and operator}
+    \verb{url}
+    \verb https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_peh/default/ta
+    \verb ble?lang=en
+    \endverb
+    \field{volume}{62}
+    \field{year}{2022}
+  \endentry
+
+  \entry{HIMEUR2021116601}{article}{}
+    \name{author}{5}{}{%
+      {{hash=HY}{%
+         family={Himeur},
+         familyi={H\bibinitperiod},
+         given={Yassine},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=GK}{%
+         family={Ghanem},
+         familyi={G\bibinitperiod},
+         given={Khalida},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=AA}{%
+         family={Alsalemi},
+         familyi={A\bibinitperiod},
+         given={Abdullah},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BF}{%
+         family={Bensaali},
+         familyi={B\bibinitperiod},
+         given={Faycal},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=AA}{%
+         family={Amira},
+         familyi={A\bibinitperiod},
+         given={Abbes},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \keyw{Energy consumption in buildings, Anomaly detection, Machine learning,
+  Deep abnormality detection, Energy saving}
+    \strng{namehash}{HY+1}
+    \strng{fullhash}{HYGKAABFAA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    Enormous amounts of data are being produced everyday by sub-meters and
+  smart sensors installed in residential buildings. If leveraged properly, that
+  data could assist end-users, energy producers and utility companies in
+  detecting anomalous power consumption and understanding the causes of each
+  anomaly. Therefore, anomaly detection could stop a minor problem becoming
+  overwhelming. Moreover, it will aid in better decision-making to reduce
+  wasted energy and promote sustainable and energy efficient behavior. In this
+  regard, this paper is an in-depth review of existing anomaly detection
+  frameworks for building energy consumption based on artificial intelligence.
+  Specifically, an extensive survey is presented, in which a comprehensive
+  taxonomy is introduced to classify existing algorithms based on different
+  modules and parameters adopted, such as machine learning algorithms, feature
+  extraction approaches, anomaly detection levels, computing platforms and
+  application scenarios. To the best of the authors’ knowledge, this is the
+  first review article that discusses anomaly detection in building energy
+  consumption. Moving forward, important findings along with domain-specific
+  problems, difficulties and challenges that remain unresolved are thoroughly
+  discussed, including the absence of: (i) precise definitions of anomalous
+  power consumption, (ii) annotated datasets, (iii) unified metrics to assess
+  the performance of existing solutions, (iv) platforms for reproducibility and
+  (v) privacy-preservation. Following, insights about current research trends
+  are discussed to widen the applications and effectiveness of the anomaly
+  detection technology before deriving future directions attracting significant
+  attention. This article serves as a comprehensive reference to understand the
+  current technological progress in anomaly detection of energy consumption
+  based on artificial intelligence.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.apenergy.2021.116601
+    \endverb
+    \field{issn}{0306-2619}
+    \field{pages}{116601}
+    \field{title}{Artificial intelligence based anomaly detection of energy
+  consumption in buildings: A review, current trends and new perspectives}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0306261921001409
+    \endverb
+    \field{volume}{287}
+    \field{journaltitle}{Applied Energy}
+    \field{year}{2021}
+  \endentry
+
+  \entry{KAVOUSIAN2013184}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KA}{%
+         family={Kavousian},
+         familyi={K\bibinitperiod},
+         given={Amir},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Rajagopal},
+         familyi={R\bibinitperiod},
+         given={Ram},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Fischer},
+         familyi={F\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \keyw{Data-driven energy efficiency, Smart meter data analysis, Structural
+  determinants of energy consumption, Behavioral determinants of energy
+  consumption, Factor analysis, Stepwise regression}
+    \strng{namehash}{KARRFM1}
+    \strng{fullhash}{KARRFM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{abstract}{%
+    We propose a method to examine structural and behavioral determinants of
+  residential electricity consumption, by developing separate models for daily
+  maximum (peak) and minimum (idle) consumption. We apply our method on a data
+  set of 1628 households' electricity consumption. The results show that
+  weather, location and floor area are among the most important determinants of
+  residential electricity consumption. In addition to these variables, number
+  of refrigerators and entertainment devices (e.g., VCRs) are among the most
+  important determinants of daily minimum consumption, while number of
+  occupants and high-consumption appliances such as electric water heaters are
+  the most significant determinants of daily maximum consumption. Installing
+  double-pane windows and energy-efficient lights helped to reduce consumption,
+  as did the energy-conscious use of electric heater. Acknowledging climate
+  change as a motivation to save energy showed correlation with lower
+  electricity consumption. Households with individuals over 55 or between 19
+  and 35 years old recorded lower electricity consumption, while pet owners
+  showed higher consumption. Contrary to some previous studies, we observed no
+  significant correlation between electricity consumption and income level,
+  home ownership, or building age. Some otherwise energy-efficient features
+  such as energy-efficient appliances, programmable thermostats, and insulation
+  were correlated with slight increase in electricity consumption.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.energy.2013.03.086
+    \endverb
+    \field{issn}{0360-5442}
+    \field{pages}{184\bibrangedash 194}
+    \field{title}{Determinants of residential electricity consumption: Using
+  smart meter data to examine the effect of climate, building characteristics,
+  appliance stock, and occupants' behavior}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0360544213002831
+    \endverb
+    \field{volume}{55}
+    \field{journaltitle}{Energy}
+    \field{year}{2013}
+  \endentry
+
+  \entry{MORENOJARAMILLO2021445}{article}{}
+    \name{author}{5}{}{%
+      {{hash=MAF}{%
+         family={{Moreno Jaramillo}},
+         familyi={M\bibinitperiod},
+         given={Andres\bibnamedelima F.},
+         giveni={A\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=LDM}{%
+         family={Laverty},
+         familyi={L\bibinitperiod},
+         given={David\bibnamedelima M.},
+         giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=MDJ}{%
+         family={Morrow},
+         familyi={M\bibinitperiod},
+         given={D.\bibnamedelima John},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={{Martinez del Rincon}},
+         familyi={M\bibinitperiod},
+         given={Jesús},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=FAM}{%
+         family={Foley},
+         familyi={F\bibinitperiod},
+         given={Aoife\bibnamedelima M.},
+         giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \keyw{Distributed energy resources, Load modelling, Load identification,
+  Low voltage distribution network, Non-intrusive load monitoring, Smart grids}
+    \strng{namehash}{MAF+1}
+    \strng{fullhash}{MAFLDMMDJMJFAM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    In many countries distributed energy resources (DER) (e.g. photovoltaics,
+  batteries, wind turbines, electric vehicles, electric heat pumps,
+  air-conditioning units and smart domestic appliances) are part of the
+  ‘Green Deal’ to deliver a climate neutral society. Policy roadmaps,
+  despite providing a framework and penetration targets for DER, often lack the
+  network planning strategies needed to transition from passive to active
+  distribution networks. Currently, DER's dynamic performance parameters and
+  location identification techniques are not fully standardised. In fact, it
+  can be very ad hoc. Standardised distributed load modelling and non-intrusive
+  load monitoring (NILM) for equipment manufacturers, installers and network
+  operators is critical to low and medium voltage network management in order
+  to facilitate better balancing, flexibility and electricity trading across
+  and within the power system for mass DER deployment. The aim of this paper is
+  to fill this load modelling and NILM knowledge gap for DERto inform the
+  ‘Green Deal’ transition and support standardisation. In the paper,
+  existing load modelling techniques and NILM methodologies are critically
+  examined to inform and guide research activity, equipment development and
+  regulator thinking, as well as network operators. Seven key findings that
+  need urgent attention are identified to support a smooth power system
+  reconfiguration.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.renene.2021.07.056
+    \endverb
+    \field{issn}{0960-1481}
+    \field{pages}{445\bibrangedash 466}
+    \field{title}{Load modelling and non-intrusive load monitoring to integrate
+  distributed energy resources in low and medium voltage networks}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0960148121010612
+    \endverb
+    \field{volume}{179}
+    \field{journaltitle}{Renewable Energy}
+    \field{year}{2021}
+  \endentry
+
+  \entry{Review2021}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PE}{%
+         family={Proedrou},
+         familyi={P\bibinitperiod},
+         given={Elisavet},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PE1}
+    \strng{fullhash}{PE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{abstract}{%
+    A third of the final electricity in the EU is consumed by households. The
+  increased usage of multiple electrical devices, electromobility,
+  self-generation and consumption of electricity as well as work-from-home will
+  fundamentally change the residential electricity load profile, so a deep
+  understanding of the current state of residential electricity load profile
+  modelling is necessary. The objective of this paper is to perform a
+  literature review, evaluate the current state of the residential electricity
+  load profile modelling, categorise the models, propose future research
+  directions and applications, identify the challenges the researchers face
+  when building these models and offer possible solutions. Thirty two
+  residential electricity load profile models are identified and a new
+  definition of the residential electricity load profile model is proposed. A
+  new categorisation system based on the identification of the main features of
+  these thirty two studies is introduced. Future research directions and
+  applications are presented and the most important challenges that modellers
+  face when attempting to build such models are identified and discussed. The
+  most important challenge identified is the privacy concerns of the
+  participants or potential participants. These concerns are at least partially
+  responsible for the existence of the rest of the challenges. The creation and
+  implementation of an anonymisation algorithm, before any human has access to
+  any measured datasets, the implementation of a crowd sourcing approach which
+  addresses the privacy concerns of the citizens and increased funding for the
+  installation of privacy-proof smart-meters by the public and measurement
+  campaigns are identified as possible solutions to the challenges faced by
+  modellers.%
+    }
+    \verb{doi}
+    \verb 10.1109/ACCESS.2021.3050074
+    \endverb
+    \field{issn}{2169-3536}
+    \field{pages}{12114\bibrangedash 12133}
+    \field{title}{A Comprehensive Review of Residential Electricity Load
+  Profile Models}
+    \field{volume}{9}
+    \field{journaltitle}{IEEE Access}
+    \field{year}{2021}
+  \endentry
+
+  \entry{NILMAD2019}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=RH}{%
+         family={Rashid},
+         familyi={R\bibinitperiod},
+         given={Haroon},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=SV}{%
+         family={Stankovic},
+         familyi={S\bibinitperiod},
+         given={Vladimir},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Stankovic},
+         familyi={S\bibinitperiod},
+         given={Lina},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Singh},
+         familyi={S\bibinitperiod},
+         given={Pushpendra},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RH+1}
+    \strng{fullhash}{RHSVSLSP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{abstract}{%
+    Appliance fault in buildings resulting in abnormal energy consumption is
+  known as an anomaly. Traditionally, anomaly detection is performed either at
+  aggregate, i.e., meter-level, or at appliance level. Meter-level anomaly
+  detection does not identify the anomaly-causing appliance, while
+  appliance-level detection requires submetering each appliance in the
+  building. Non-Intrusive Load Monitoring (NILM) has been proposed as an
+  alternative to submetering to detect when appliances are running as well as
+  estimate the appliance energy consumption. So far, applications have revolved
+  around meaningful energy feedback. In this paper, we assess whether NILM can
+  indeed be used for anomaly detection, as an alternative to submetering. We
+  propose a supervised anomaly detection approach, AEM, and evaluate the
+  effectiveness of NILM for anomaly detection. The proposed approach first
+  learns an appliance's normal operation and then monitors its energy
+  consumption for anomaly detection. We resort to real data, aggregate and
+  subme-tered data from the two-year long REFIT dataset. We explain why anomaly
+  detection performs worse with NILM data as compared to submetered data,
+  highlighting the need for new, anomaly-aware NILM approaches.%
+    }
+    \field{booktitle}{ICASSP 2019 - 2019 IEEE International Conference on
+  Acoustics, Speech and Signal Processing (ICASSP)}
+    \verb{doi}
+    \verb 10.1109/ICASSP.2019.8683792
+    \endverb
+    \field{issn}{2379-190X}
+    \field{pages}{8325\bibrangedash 8329}
+    \field{title}{Evaluation of Non-intrusive Load Monitoring Algorithms for
+  Appliance-level Anomaly Detection}
+    \field{year}{2019}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{SWAN20091819}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SLG}{%
+         family={Swan},
+         familyi={S\bibinitperiod},
+         given={Lukas\bibnamedelima G.},
+         giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=UVI}{%
+         family={Ugursal},
+         familyi={U\bibinitperiod},
+         given={V.\bibnamedelima Ismet},
+         giveni={V\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \keyw{Residential energy model, Residential energy consumption, Housing
+  energy model, Energy model}
+    \strng{namehash}{SLGUVI1}
+    \strng{fullhash}{SLGUVI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    There is a growing interest in reducing energy consumption and the
+  associated greenhouse gas emissions in every sector of the economy. The
+  residential sector is a substantial consumer of energy in every country, and
+  therefore a focus for energy consumption efforts. Since the energy
+  consumption characteristics of the residential sector are complex and
+  inter-related, comprehensive models are needed to assess the technoeconomic
+  impacts of adopting energy efficiency and renewable energy technologies
+  suitable for residential applications. The aim of this paper is to provide an
+  up-to-date review of the various modeling techniques used for modeling
+  residential sector energy consumption. Two distinct approaches are
+  identified: top-down and bottom-up. The top-down approach treats the
+  residential sector as an energy sink and is not concerned with individual
+  end-uses. It utilizes historic aggregate energy values and regresses the
+  energy consumption of the housing stock as a function of top-level variables
+  such as macroeconomic indicators (e.g. gross domestic product, unemployment,
+  and inflation), energy price, and general climate. The bottom-up approach
+  extrapolates the estimated energy consumption of a representative set of
+  individual houses to regional and national levels, and consists of two
+  distinct methodologies: the statistical method and the engineering method.
+  Each technique relies on different levels of input information, different
+  calculation or simulation techniques, and provides results with different
+  applicability. A critical review of each technique, focusing on the
+  strengths, shortcomings and purposes, is provided along with a review of
+  models reported in the literature.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.rser.2008.09.033
+    \endverb
+    \field{issn}{1364-0321}
+    \field{number}{8}
+    \field{pages}{1819\bibrangedash 1835}
+    \field{title}{Modeling of end-use energy consumption in the residential
+  sector: A review of modeling techniques}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S1364032108001949
+    \endverb
+    \field{volume}{13}
+    \field{journaltitle}{Renewable and Sustainable Energy Reviews}
+    \field{year}{2009}
+  \endentry
+
+  \entry{TRAIN19851103}{article}{}
+    \name{author}{3}{}{%
+      {{hash=TK}{%
+         family={Train},
+         familyi={T\bibinitperiod},
+         given={Kenneth},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Herriges},
+         familyi={H\bibinitperiod},
+         given={Joseph},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={Windle},
+         familyi={W\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TKHJWR1}
+    \strng{fullhash}{TKHJWR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1985}
+    \field{labeldatesource}{}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{abstract}{%
+    We develop and demonstrate models that combine engineering and statistical
+  approaches to estimating customer-specific end-use load curves. Simulated
+  end-use loads from engineering methods enter as explanatory variables in
+  statistical models, and estimated parameters adjust the engineering loads on
+  the basis of customers' observed loads. The resulting end-use loads, called
+  statistically adjusted engineering (SAE) loads, depend on a variety of
+  conditioning variables, including weather and the size and type of the
+  customer's dwelling (which enter the engineering simulations) and the income
+  and other characteristics of the household (which enter the statistical
+  adjustment). Using data from a Los Angeles sample of households, several SAE
+  models are estimated that differ in the flexibility that they allow in the
+  adjustment of the engineering loads.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/0360-5442(85)90025-8
+    \endverb
+    \field{issn}{0360-5442}
+    \field{number}{10}
+    \field{pages}{1103\bibrangedash 1111}
+    \field{title}{Statistically adjusted engineering (SAE) models of end-use
+  load curves}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/0360544285900258
+    \endverb
+    \field{volume}{10}
+    \field{journaltitle}{Energy}
+    \field{year}{1985}
+  \endentry
+
+  \entry{WALKER1985}{article}{}
+    \name{author}{2}{}{%
+      {{hash=WC}{%
+         family={Walker},
+         familyi={W\bibinitperiod},
+         given={C.F.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pokoski},
+         familyi={P\bibinitperiod},
+         given={J.L.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WCPJ1}
+    \strng{fullhash}{WCPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1985}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.1109/TPAS.1985.319202
+    \endverb
+    \field{number}{7}
+    \field{pages}{1703\bibrangedash 1711}
+    \field{title}{Residential Load Shape Modelling Based on Customer Behavior}
+    \field{volume}{PAS-104}
+    \field{journaltitle}{IEEE Transactions on Power Apparatus and Systems}
+    \field{year}{1985}
+  \endentry
+\enddatalist
 \endinput
