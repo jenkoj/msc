@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.1)  10 MAR 2022 14:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.1)  11 MAR 2022 17:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -735,6 +735,11 @@ Package biblatex Info: ... file 'main.bbl' found.
  (/Users/jakob/Documents/mag/MSC/msc/latex/main.bbl
 
 Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'GERBEC2005':
+(biblatex)                - Invalid format of field 'month'.
+
+
+Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                with 'NILMAD2019':
 (biblatex)                - Invalid format of field 'month'.
 
@@ -804,59 +809,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--156
 ]
 1: section
 [5] [6]
-<Figures/publications.png, id=105, 1108.14pt x 608.2725pt>
+<Figures/publications.png, id=109, 1108.14pt x 608.2725pt>
 File: Figures/publications.png Graphic file (type png)
 <use Figures/publications.png>
-Package pdftex.def Info: Figures/publications.png  used on input line 265.
+Package pdftex.def Info: Figures/publications.png  used on input line 266.
 (pdftex.def)             Requested size: 363.6237pt x 199.5982pt.
- [7 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/publications.png>] [8]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 402.
+ [7 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/publications.png>]
+Overfull \hbox (4.88306pt too wide) in paragraph at lines 321--325
+\T1/ppl/m/n/10.95 of build-ing to build a load pro-file, au-thors []Issi and Ka-plan, [][]2018[][] fo-cused on appliance-
+ []
+
+[8]
+Overfull \hbox (1.22469pt too wide) in paragraph at lines 340--351
+\T1/ppl/m/n/10.95 func-tions on top of ex-ist-ing state-of-the-art NILM al-go-rithms Hid-den Markov model,
+ []
+
+[9] [10
+
+]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 470.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Overfull \hbox (5.4027pt too wide) in paragraph at lines 402--402
+Overfull \hbox (5.4027pt too wide) in paragraph at lines 470--470
 \T1/ppl/m/n/10.95 plant and op-er-a-tor^^Q. In: 62. \T1/ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / ec . europa . eu / eurostat / databrowser /
  []
 
-
-Overfull \hbox (1.31264pt too wide) in paragraph at lines 402--402
+1: section
+[11]
+Overfull \hbox (1.31264pt too wide) in paragraph at lines 470--470
 \T1/ppl/m/it/10.95 ter-na-tional Con-fer-ence on Acous-tics, Speech and Sig-nal Pro-cess-ing (ICASSP)\T1/ppl/m/n/10.95 , pp. 8325^^U
  []
 
 
-Overfull \hbox (13.62624pt too wide) in paragraph at lines 402--402
+Overfull \hbox (13.62624pt too wide) in paragraph at lines 470--470
 \T1/ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www . sciencedirect . com / science / article / pii / 0360544285900258$[][]\T1/ppl/m/n/10.95 . 
  []
 
-1: section
-[9
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 406.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 406.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 474.
+[12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 474.
  (/Users/jakob/Documents/mag/MSC/msc/latex/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 406.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 406.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 474.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 474.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7D2B0871C8C2F45F91CA86962590C788;1958.
+(rerunfilecheck)             Checksum: A4B2B54F3BCFE9AFA6644ACD30CABC08;2111.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26598 strings out of 480608
- 552351 string characters out of 5903631
- 1001370 words of memory out of 5000000
- 42142 multiletter control sequences out of 15000+600000
+ 26657 strings out of 480608
+ 553767 string characters out of 5903631
+ 1003985 words of memory out of 5000000
+ 42191 multiletter control sequences out of 15000+600000
  572880 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,19n,74p,850b,1797s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,19n,73p,850b,1801s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/jakob/Documents/mag/MSC/msc/latex/main.pdf (10 pages, 148664 bytes).
+Output written on /Users/jakob/Documents/mag/MSC/msc/latex/main.pdf (12 pages, 157753 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 246 PDF objects out of 1000 (max. 8388607)
+ 222 compressed objects within 3 object streams
+ 45 named destinations out of 1000 (max. 500000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 

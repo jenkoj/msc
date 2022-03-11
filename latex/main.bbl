@@ -17,6 +17,71 @@
 \endgroup
 
 \datalist[entry]{nyt/global//global/global}
+  \entry{Joana2012}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AJM}{%
+         family={Abreu},
+         familyi={A\bibinitperiod},
+         given={Joana\bibnamedelima M.},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=CF}{%
+         family={{Câmara Pereira}},
+         familyi={C\bibinitperiod},
+         given={Francisco},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=FP}{%
+         family={Ferrão},
+         familyi={F\bibinitperiod},
+         given={Paulo},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \keyw{Electricity patterns, Household, Baselines, Routines, Pattern
+  recognition}
+    \strng{namehash}{AJMCFFP1}
+    \strng{fullhash}{AJMCFFP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{abstract}{%
+    Recognizing habitual behavior and providing feedback in context are key to
+  empower individuals to take control over residential electricity consumption.
+  Yet, it is a challenge to change habitual behavior, embedded in everyday
+  routines. This paper intends to discover whether habitual behavior can be
+  identified by pattern recognition techniques. The data source is an
+  experiment similar to a utility led advanced metering infrastructure
+  implementation. The analysis discovers: (1) persistent daily routines and (2)
+  patterns of consumption or baselines typical of specific weather and daily
+  conditions. Approximately 80 \% of household electricity use can be explained
+  within these two patterns, with several applicable “profiles” for this
+  population, including: unoccupied baseline, hot working days, temperate
+  working days, cold working days, and cold weekend days. The proposed
+  methodology demonstrates that it is possible to use pattern recognition
+  methodologies to recognize habitual electricity consumption behavior given
+  the intrinsic characteristics of the family. This approach could be useful to
+  improve small scale forecast, and as a mechanism to enable the provision of
+  tailor-made information to the families.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.enbuild.2012.02.044
+    \endverb
+    \field{issn}{0378-7788}
+    \field{pages}{479\bibrangedash 487}
+    \field{title}{Using pattern recognition to identify habitual behavior in
+  residential electricity consumption}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0378778812001363
+    \endverb
+    \field{volume}{49}
+    \field{journaltitle}{Energy and Buildings}
+    \field{year}{2012}
+  \endentry
+
   \entry{Chuan2014}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=CL}{%
@@ -152,6 +217,136 @@
     \field{year}{2022}
   \endentry
 
+  \entry{Gao2018}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GB}{%
+         family={Gao},
+         familyi={G\bibinitperiod},
+         given={Bingtuan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=LX}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Xiaofeng},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=ZZ}{%
+         family={Zhu},
+         familyi={Z\bibinitperiod},
+         given={Zhenyu},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GBLXZZ1}
+    \strng{fullhash}{GBLXZZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    The forecasting of the load profile of the domestic sector is an area of
+  increased concern for the power grid as it appears in many applications, such
+  as grid operations, demand side management, energy trading, and so forth.
+  Accordingly, a bottom-up forecasting framework is presented in this paper
+  based upon bottom level data about the electricity consumption of household
+  appliances. In the proposed framework, a load profile for group households is
+  obtained with a similar day extraction module, household behavior analysis
+  module, and household behavior prediction module. Concretely, similar day
+  extraction module is the core of the prediction and is employed to extract
+  similar historical days by considering the external environmental and
+  household internal influence factors on energy consumption. The household
+  behavior analysis module is used to analyse and formulate the consumption
+  behavior probability of appliances according to the statistical
+  characteristics of appliances&rsquo; switch state in historical similar days.
+  Based on the former two modules, household behavior prediction module is
+  responsible for the load profile of group households. Finally, a case study
+  based on the measured data in a practical residential community is performed
+  to illustrate the feasibility and effectiveness of the proposed bottom-up
+  household load forecasting approach.%
+    }
+    \verb{doi}
+    \verb 10.3390/en11082112
+    \endverb
+    \field{issn}{1996-1073}
+    \field{number}{8}
+    \field{title}{A Bottom-Up Model for Household Load Profile Based on the
+  Consumption Behavior of Residents}
+    \verb{url}
+    \verb https://www.mdpi.com/1996-1073/11/8/2112
+    \endverb
+    \field{volume}{11}
+    \field{journaltitle}{Energies}
+    \field{year}{2018}
+  \endentry
+
+  \entry{GERBEC2005}{article}{}
+    \name{author}{4}{}{%
+      {{hash=GD}{%
+         family={Gerbec},
+         familyi={G\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Gasperic},
+         familyi={G\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SI}{%
+         family={Smon},
+         familyi={S\bibinitperiod},
+         given={I.},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=GF}{%
+         family={Gubina},
+         familyi={G\bibinitperiod},
+         given={F.},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GD+1}
+    \strng{fullhash}{GDGSSIGF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2005}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    The new emerged operating conditions in the power sector are forcing the
+  power-market participants to develop new tools. Among them, load profiles are
+  a key issue in retail power markets. For various types of small consumers
+  without quarter-hourly load measurements, determination of typical load
+  profiles (TLPs) could serve as a tool for determining of their load diagrams.
+  Their main function is in billing of consumers who have deviated from their
+  contracted schedules. Moreover, a simple and straightforward method for
+  assigning a TLP to a particular eligible consumer also needs to be
+  established. In this paper, a methodology for allocating consumers' load
+  profiles using probabilistic neural network (PNN) is presented. It is based
+  on the preprocessed measured load profiles (MLPs), using wavelet
+  multiresolution analysis, clustered with a FCM clustering algorithm with an
+  appropriate cluster-validity measure. The results demonstrate the efficiency
+  of the formation procedure for the proposed TLPs.%
+    }
+    \verb{doi}
+    \verb 10.1109/TPWRS.2005.846236
+    \endverb
+    \field{issn}{1558-0679}
+    \field{number}{2}
+    \field{pages}{548\bibrangedash 555}
+    \field{title}{Allocation of the load profiles to consumers using
+  probabilistic neural networks}
+    \field{volume}{20}
+    \field{journaltitle}{IEEE Transactions on Power Systems}
+    \field{year}{2005}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{HIMEUR2021116601}{article}{}
     \name{author}{5}{}{%
       {{hash=HY}{%
@@ -235,6 +430,132 @@
     \endverb
     \field{volume}{287}
     \field{journaltitle}{Applied Energy}
+    \field{year}{2021}
+  \endentry
+
+  \entry{Issi2018}{article}{}
+    \name{author}{2}{}{%
+      {{hash=IF}{%
+         family={Issi},
+         familyi={I\bibinitperiod},
+         given={Fatih},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=KO}{%
+         family={Kaplan},
+         familyi={K\bibinitperiod},
+         given={Orhan},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IFKO1}
+    \strng{fullhash}{IFKO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{abstract}{%
+    In recent years, the increment of distributed electricity generation based
+  on renewable energy sources and improvement of communication technologies
+  have caused the development of next-generation power grids known as smart
+  grids. The structures of smart grids have bidirectional communication
+  capability and enable the connection of energy generated from distributed
+  sources to any point on the grid. They also support consumers in energy
+  efficiency by creating opportunities for management of power consumption. The
+  information on power consumption and load profiles of home appliances is
+  essential to perform load management in the dwelling accurately. In this
+  study, the power consumption data for all the basic home appliances, utilized
+  in a two-person family in Çankırı, Turkey, was obtained with high
+  resolution in one-second intervals. The detailed power consumption analysis
+  and load profile were executed for each home appliance. The obtained data is
+  not only the average power consumption of each appliance but also
+  characterizes different operating modes or their cycles. In addition, the
+  impact of these devices on home energy management studies and their standby
+  power consumptions were also discussed. The acquired data is an important
+  source to determine the load profile of individual home appliances precisely
+  in home energy management studies. Although the results of this study do not
+  completely reflect the energy consumption behavior of the people who live in
+  this region, they can reveal the trends in load demands based on a real
+  sample and customer consumption behavior of a typical two-person family.%
+    }
+    \verb{doi}
+    \verb 10.3390/en11030607
+    \endverb
+    \field{issn}{1996-1073}
+    \field{number}{3}
+    \field{title}{The Determination of Load Profiles and Power Consumptions of
+  Home Appliances}
+    \verb{url}
+    \verb https://www.mdpi.com/1996-1073/11/3/607
+    \endverb
+    \field{volume}{11}
+    \field{journaltitle}{Energies}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Jeong2021}{article}{}
+    \name{author}{4}{}{%
+      {{hash=JHC}{%
+         family={Jeong},
+         familyi={J\bibinitperiod},
+         given={Hyun\bibnamedelima Cheol},
+         giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=JM}{%
+         family={Jang},
+         familyi={J\bibinitperiod},
+         given={Minseok},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Taegon},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=JSK}{%
+         family={Joo},
+         familyi={J\bibinitperiod},
+         given={Sung-Kwan},
+         giveni={S\bibinithyphendelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JHC+1}
+    \strng{fullhash}{JHCJMKTJSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{abstract}{%
+    In this paper, a systematic method is proposed to cluster the energy
+  consumption patterns of residential customers by utilizing extreme points and
+  demographic characteristics. The extreme points of the energy consumption
+  pattern enable effective clustering of residential customers. Additionally,
+  demographic characteristics can be used to determine an effective extreme
+  point for the clustering algorithm. The K-means-based features selection
+  method is used to classify energy consumption patterns of residential
+  customers into six types. Furthermore, the type of energy consumption pattern
+  can be identified depending on the characteristics of residential customers.
+  The analytical results of this paper show that the extreme points are
+  effective in clustering the energy consumption patterns of residential
+  customers.%
+    }
+    \verb{doi}
+    \verb 10.3390/electronics10030290
+    \endverb
+    \field{issn}{2079-9292}
+    \field{number}{3}
+    \field{title}{Clustering of Load Profiles of Residential Customers Using
+  Extreme Points and Demographic Characteristics}
+    \verb{url}
+    \verb https://www.mdpi.com/2079-9292/10/3/290
+    \endverb
+    \field{volume}{10}
+    \field{journaltitle}{Electronics}
     \field{year}{2021}
   \endentry
 
@@ -388,6 +709,56 @@
     \field{year}{2021}
   \endentry
 
+  \entry{Park2019}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PKJ}{%
+         family={Park},
+         familyi={P\bibinitperiod},
+         given={Keon-Jun},
+         giveni={K\bibinithyphendelim J\bibinitperiod},
+      }}%
+      {{hash=SSY}{%
+         family={Son},
+         familyi={S\bibinitperiod},
+         given={Sung-Yong},
+         giveni={S\bibinithyphendelim Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PKJSSY1}
+    \strng{fullhash}{PKJSSY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{abstract}{%
+    An in-depth understanding of consumer energy consumption patterns is
+  essential for accurate forecasting and efficient management. In this paper, a
+  novel load profile analysis methodology is proposed using an image processing
+  technology that simplifies the understanding and improvement of electricity
+  consumption patterns. The electricity consumption patterns over time are
+  represented as load image profiles in two dimensions. These profiles are
+  modified by image processing using filtering and thresholding techniques to
+  suppress excessive sensitivity. Subsequently, the clustering algorithms are
+  performed to classify the load image profiles, and representative class load
+  image profiles are obtained. The resulting clusters are compared to the
+  results of conventional load profile analysis. The proposed methodology shows
+  enhanced performance over the conventional approach from the viewpoint of
+  evaluation among the different load image profile classes.%
+    }
+    \verb{doi}
+    \verb 10.1109/ACCESS.2019.2914216
+    \endverb
+    \field{issn}{2169-3536}
+    \field{pages}{59048\bibrangedash 59058}
+    \field{title}{A Novel Load Image Profile-Based Electricity Load Clustering
+  Methodology}
+    \field{volume}{7}
+    \field{journaltitle}{IEEE Access}
+    \field{year}{2019}
+  \endentry
+
   \entry{Review2021}{article}{}
     \name{author}{1}{}{%
       {{hash=PE}{%
@@ -444,6 +815,82 @@
     \field{year}{2021}
   \endentry
 
+  \entry{NILMAD22019}{article}{}
+    \name{author}{4}{}{%
+      {{hash=RH}{%
+         family={Rashid},
+         familyi={R\bibinitperiod},
+         given={Haroon},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Singh},
+         familyi={S\bibinitperiod},
+         given={Pushpendra},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SV}{%
+         family={Stankovic},
+         familyi={S\bibinitperiod},
+         given={Vladimir},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Stankovic},
+         familyi={S\bibinitperiod},
+         given={Lina},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \keyw{Energy disaggregation, NILM, Anomaly detection, Anomalous appliance
+  identification, Smart meter}
+    \strng{namehash}{RH+1}
+    \strng{fullhash}{RHSPSVSL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{extradate}{1}
+    \field{labeldatesource}{}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{abstract}{%
+    Identification of faulty appliance behaviour in real time can signal energy
+  wastage and the need for appliance servicing or replacement leading to energy
+  savings. The problem of appliance fault or anomaly detection has been tackled
+  vastly in relation to submetering, which is not scalable since it requires
+  separate meters for each appliance. At the same time, for applications such
+  as energy feedback, Non-intrusive load monitoring (NILM) has been recognised
+  as a scalable and practical alternative to submetering. However, the
+  usability of NILM for anomaly detection has not yet been investigated. Since
+  the goal of NILM is to provide energy consumption estimate, it is unclear if
+  the signal fidelity of appliance signatures generated by state-of-the-art
+  NILM is sufficient to enable accurate appliance fault detection. In this
+  paper, we attempt to determine whether appliance signatures detected by NILM
+  can be used directly for anomaly detection. This is carried out by proposing
+  an anomaly detection algorithm which performs well for submetering data and
+  evaluate its ability to identify the same faulty behaviour of appliances but
+  with NILM-generated appliance power traces. Our results on a dataset of six
+  residential homes using four state-of-the-art NILM algorithms show that, on
+  average, NILM traces are not as robust to identification of faulty behaviour
+  as compared to using submetered data. We discuss in detail observations
+  pertaining to the reconstructed appliance signatures following NILM and their
+  fidelity with respect to noise-free submetered data.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.apenergy.2019.01.061
+    \endverb
+    \field{issn}{0306-2619}
+    \field{pages}{796\bibrangedash 805}
+    \field{title}{Can non-intrusive load monitoring be used for identifying an
+  appliances anomalous behaviour?}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0306261919300613
+    \endverb
+    \field{volume}{238}
+    \field{journaltitle}{Applied Energy}
+    \field{year}{2019}
+  \endentry
+
   \entry{NILMAD2019}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=RH}{%
@@ -476,6 +923,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2019}
+    \field{extradate}{2}
     \field{labeldatesource}{}
     \field{sortinit}{R}
     \field{sortinithash}{R}

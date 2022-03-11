@@ -254,10 +254,11 @@ With Bottom-up approach as \cite{SWAN20091819} state "calculates the individual 
 Whereas with Top-down approach as \cite{SWAN20091819} state "uses the total energy or electricity consumption estimates to assign them to the characteristics of the building stock"
 In other words, Bottom-up sub-meter data, Top-down uses aggregated data. In our case we take a deeper dive into bottom-up approach, since it is more relatable.
 
-\cite{Review2021} did a comprehensive review on load profiling.
-Author first disclosed current state of load progress and issues with past work. They made a review of existing load profile models,
+\cite{Review2021} did a comprehensive review on load profiling. Author defined various load-profile application
+subgroups such as demand side management, planing and control design of energy systems and residential load profiles. She also 
+grouped modeling technique as probabilistic models, Markov chains and Monte Carlo. Author first disclosed current state of load progress and issues with past work. They made a review of existing load profile models,
 and asses the-state-of-the art. Review was structured by different methods. Next, they pointed out at future research directions
-and applications of load profile models. finally, author exposes changes that researchers face and adresses possible soloutins with conclusions.
+and applications of load profile models. Finally, author exposes changes that researchers face and addresses possible solutions with conclusions.
 
 \begin{figure}[h!]
 	\centering
@@ -273,20 +274,92 @@ They used bottom-up approach using sub-meter data and other socioeconomic and de
 to create a load profile or statistically adjusted engineering (SAE) as they call it. They are able to adjust the curve based on weather, dwelling size and income. 
 In same year \cite{WALKER1985} published paper where they used bottom-up approach with psychological factors to create probability models of when will individual use an appliance.
 
-Since then there were two more in 1995 and then another boom started in 2005 with 7 publications in 2013 as \ref{fig:Distribution} shows.
+Since then there were two more in 1995. Research picked up the pace in 2005 with 7 publications in 2013 as figure \ref{fig:Distribution} shows.
+
+\subsection{Main load profiles}
+
+
+\cite{GERBEC2005} tried to assign typical load profiles to a particular group of consumers based on their activity. 
+To achieve that, they used probabilistic neural networks as a way of classification. Their methodology was tested in real use scenario. 
+
+\cite{Gao2018} makes use of bottom-up method to build a forecasting framework for household
+load profile considering consumption behavior of residents. Model falls into demand side management subgroup.
+They developed a "similar day extraction model",
+that is formulated to select similar days by comparing external environmental factors and household internal 
+influence factors on energy consumption in order to enhance prediction accuracy of residents consumption behavior.
+This method falls into probabilistic method subgroup. Results show that their method successfully modeled daily usage.
+
+\cite{Chuan2014} uses load profiling in order to optimize energy consumption distribution during the day.
+This reduces peaks usage and alleviates load off the grid. Author used bottom-up method, that is, using sum-meter data.
+Using this data, he made daily usage analysis on one hour basis. Using this information he optimized daily activation of appliances
+so that peaks usage were not as high. Results show that peak shedding was successful. 
+
+\cite{Csoknyai2019} analyze energy consumption habits, trends and intervention strategies in residential buildings.
+This is mainly done through the serious game approach, with a combination of direct consumer feedback through smart metering.
+Application or serious game as they call also offers advices, comparisons, savings, reductions goals and monitoring.
+They measure almost all dimensions of electricity usage as well as heating. Their results show that their serious game was
+not able to induce energy saving behavior.
+
+\cite{Jeong2021} used extreme points in appliance usage curve.
+Usually, the first usage peak is in morning, and the second one in the evening. 
+Besides that, they used demographic characteristics that are: region, area, age, salary, etc. 
+Using collected data to find usage profile clusters. They had discovered  6 different usage profiles, 
+where every cluster had a physical meaning such as energy saving, morning heavy, evening heavy, etc.
+
+Another clustering methodology was proposed by \cite{Park2019}, using load image profiles and image processing.
+They represented time series data as image. Image is a grid of squares where y-axis contains monthly data with resolution of one day,
+x-axis contains daily data with resolution of one hour. Grid if color filled with algorithm that authors developed,
+where red means more activity and blue less. Using digital image filters they transform type-1 image to type-2 and from there
+used a threshold to obtain type-3. Using that information they clustered data based on image similarly. They used three different 
+clustering methods: k-means, FCM and EM algorithm. Using Davies-Bouldin index, they were able to prove that image based clustering performs better than non-image.
+
+\cite{Joana2012} clustered different load profiles using electricity consumption data and surveys. They profiled residential homes. 
+They used PCA for k-means resulting 5 clusters. Similar to other load profiling papers. 
+
+Whereas most of above-mentioned papers focused on aggregated consumption of building to build a load profile, authors \cite{Issi2018}
+focused on appliance-level load profiling. Their main contribution is to create a realistic per appliance load profile.
+They developed wireless measurement system with smart-plugs that enabled them to obtain 
+power signatures for each appliance. They evaluated the data and based on observations they determined working cycles for each appliance.
+
+
+Maybe more usefull at use case 
+\cite{MORENOJARAMILLO2021445} present the first systematic review of load modeling and identification technique applied to
+distributed energy resources on distribution networks.
 
 
 \subsection{Anomaly detection in building energy consumption data}
 
-Another review was written by \cite{HIMEUR2021116601}. Where authors took a deep dive into detecting anomalies in energy consumption in buildings. 
-Author first makes and overview of existing anomaly detection schemes and applications. Second they perform a critical analysis and an in-depth discussion of the state-of-the-art.
-Next, they describe current trends such as NILM anomaly detection and finally they derive a set of future research directions. 
+Review on Anomaly detection in building energy consumption data was written by \cite{HIMEUR2021116601}.
+Here, authors took a deep dive into detecting anomalies in energy consumption in buildings. 
+Author first makes and overview of existing anomaly detection schemes and applications.
+Second they perform a critical analysis and an in-depth discussion of the state-of-the-art.
+Next, they describe current trends such as NILM anomaly detection, and finally they derive a set of future research directions. 
 
-Both reviews pointed out that NILM anomaly detection or load profiling is a possible future research directions. Only one paper was published on anomaly detection \cite{NILMAD2019} and none on load profiling. 
+Both reviews pointed out that NILM anomaly detection or NILM load profiling is a possible future research direction.
+Only one paper was published on NILM anomaly detection \cite{NILMAD2019}. Here, authors propose an algorithm
+that functions on top of existing state-of-the-art NILM algorithms Hidden Markov model, combinatorial optimization, Latent Bayesian Modeling and Graph-based Signal Processing.
+They focus on three appliances, fridge, freezer and heater. Their metric was a Number of cycles taken by appliance and energy used in those cycles. 
+They implemented sigma variables to represent standard deviation 
+and used rule based anomaly detection. So if energy or counts are significantly larger than mean then day is considered anomalous.
+Their rule had only one manual setting and that was a number of standard deviations before sample was considered anomalous.
+Their results show that sub meter anomaly detection works decently whereas NILM based anomaly does not work at all. 
+\cite{NILMAD22019} published another paper in the same year, where they took similar approach, except that they used 
+only compressor based appliances such as fridge and air conditioner. They also added additional rule to their anomaly 
+detection algorithm, but results still showed that NILM algorithms are not there yet. 
 
+Another anomaly detection paper was by \cite{NILMAD2021}... insert desription
+
+\cite{Castangia2021} used disaggregated sub meter data to detect anomalies in use consumption.
+They used private dataset of 20 homes from northern Italy with no synthetic anomalies. 
+Dataset included data from 2018 to 2020 meaning it included covid induced anomalies. 
+Authors first pre-processed the data by aggregating input load int Hourly energy consumption, 
+second derived additional features, which are Time of use and duration of the activation.
+They use that data to detect single-pint deviations for which they implemented Isolation Forest algorithm and
+anomalous trends for which to detect, they implemented Change Point Detection. 
 
 
 \subsection{Possible use cases}
+
 
 \section{Possible additions}
 
