@@ -366,119 +366,153 @@ Load profiling method has a lot of different use cases across different fields.
 
 As mentioned before many applications for load profiling could be used in order to reduce energy use 
 and increase energy efficiency. With emerging EV-market and ever-increasing installation of heat pumps,
-more and more energy is being used via electricity. Meaning, most of the current power grids would have to 
-be upgraded in order to keep up with demand. On the other side more and more photovoltaic systems
+more and more energy is being used in form of electricity. Meaning, most of the current power grids would have to 
+be upgraded in order to keep up with demand.
+
+On the other side more and more photovoltaic systems
 are being installed which is slowly shifting energy production towards end-users. Slowly energy grid
-is starting to shift towards so-called distributed energy resources or "DER". DER includes all kinds of 
+is starting to shift towards so-called distributed energy resources or "DER" \cite{MORENOJARAMILLO2021445}. DERs includes all kinds of 
 micro-energy sources such as PV, wind-power, water power and all kinds of energy accumulators that can store 
 and release energy when needed such as heat pumps with hot water storage, home batteries and EVs that can be 
-used as a battery. Devices mentioned above, with smart management could be used in a way that would
-reduce net flow on energy and alleviate the load on power grid. A way to achieve this is via load profiling,
-and load modeling. Besides that a control system would have to be put in place in order to control devices 
-that are using the most energy. An actual use case would be a user with EV that works from home on occasions. 
-In this case two profiles would be developed. Normal work day and work from home day. Information about
-which day is coming would be extracted from users work calendar, in case the system is not periodical. 
-In case of normal work day users profile would suggest that all PV energy can be sent into grid, whereas 
-in case of work-from home day his energy would be used to fill up his car during the peak production and not during the night.
-In case where users battery is full, and grid would additional power in evening hours his car could inject few percent
-of its power instantly. With ever-increasing power capacity and increasing range of EVs, more and more of battery capacity could 
-be used in order to load-balance the grid. If users usual commute is 100 km, and EVs range is 500 km, at least 250 km worth of capacity could
-be used to balance the grid. If users used a battery pack, the profiling job would be even easier. 
-One other use case could be using heat pump and heat storage, where besides users use profile system would also obtain weather forecast from the internet.
-Heat pumps are more efficient when temperature differences are smaller, using weather forecast info, heat pump could store energy when warm and release the energy when cold.
-One other case would be that energy distributors could use the user load profile in order to optimally control the use of electricity and heat. 
-By signing user would pay less for the heating of his house and user more of renewable sources. Minimal change if his habits would be achieved by using his load profile.
-Energy could be localy trasfered similar to how p2p netowrks operate, including load profile data and many peers, system could work without user even noticing.
+used as a battery.
 
-Many papers have been published, where authors exploed ways to reduce energy consumption of users by studying their user load profiles.
-Energy saving is done trogh instant feedback, recuction goals  and by comparing their use profile to the average user.
+These appliances above, with smart management could be used in a way that would
+reduce net flow off energy and alleviate the load on power grid.
+A way to achieve this is via load profiling and load modeling. 
+In order to manage the appliances, a control system would have to be put in place. 
+It would be enough to control the devices that using the most of the energy.
 
-\subsubsection{Grid managment}
+An actual use case would be EV owner with installed PV system and heat pump, who works from home on occasions. 
+In this case two profiles would be developed. Normal work day and work from home day.
+Additional information would be obtained from users calendar. 
+On normal work day, system would use PV energy to heat up the water and store it, based on user profile.
+On work from home day, system would start charging the car with the morning sun, using only the PV energy. 
+In the evening hours, when consumption rises and production falls, EV could inject the power back to the house, again using appliance load profiles 
+to mitigate net energy flow as close to zero as possible. 
+With ever-increasing power capacity and increasing range of EVs, more and more of battery capacity could 
+be used for mitigation. In case of grid batteries, similar steps could be taken.
 
-As mentioned earlier increasing percentage of DER appliances is causing troubles to energy distributors, 
-due to increased energy flow. I was talking about energy saving benefits in case of smart managed systems
-that would be used by users, independent of energy distributors. Joint actions between user and energy management company
-would benefit both end-user and the company. If user allowed the installation of energy meters and controllers 
-on few appliances that use most electricity and their use can be allocated (fridge cannot be allocated, whereas heat pump can be),
-grid management company could control the use of main appliances so that load on power grid is as uniform as possible,
-with as little peaks as possible. This would introduce a statistical multiplex, similar to what is done in internet traffic. 
-Benefit of user would be lower cost of charging and heating the building. This is already done trough so called small and high tariifs,
-More details user load profiles would enable energy distribution companies to introduce real time tariifs.
-User would have three options. To these appliances as free as he wants i.e turning them on at times he desireds to, this would lead
-to higher tariifs. Second option would be to use the appliances as regularly as possible, this would lead to lower tariifs.
-Third option would be to leave use of appliances such as washing machine, heat pump and EV to managmet company and use them
-charge them when real time market price is the lowest. This would lead to free or even being negative price of electricity since
-ditribution companies have to load the grid somw how in order to keep the frequency steady. Load shedding is already a commond practice that dcs use,
-in order to keep the frequenct at 50hz. Load shedding is when dc disconets the whole neighbourhood in order to keep the frequency from drifting. 
-Using user load profiles of users, dc cooul diconect loads in a way that would minimaly affect end-user, without the need to disconnect the whole neihgbourhood. 
+One other way to use user load profiles it to optimally distribute load by studying users usage patterns as \cite{Chuan2014} proposed in his paper. 
+This could be further extended to neighborhood connected into p2p energy distribution network.
+As mentioned earlier, way to save energy consumption is to distribute it as locally as possible. 
+Knowing usage patterns of all peers, system could optimally distribute the energy using DERs across all homes without dwellers even noticing.
 
+Another use case could be using heat pump and heat storage,
+where besides users use profile system would also obtain weather forecast from the internet.
+Heat pumps that extract heat from air are more efficient when temperature differences are smaller. 
+Heat pump could store energy when warm and release the energy when cold.
+Based on user usage profile, energy could be optimal distributed.
 
-\subsubsection{Eldery care}
+Many papers have been published, where authors explored ways to reduce energy consumption of users by studying their user load profiles.
+Energy saving is done trough instant feedback, reduction goals, rewards and by comparing their use profile to the average user.
 
-Demographic changes i.e. aging population is facing issues when staying at home alone for extended periods of time.
-Accidents, such as falls, or in-ability to do choirs due to health related issues or even dementia induced issues 
-such as leaving appliances on for long periods of time could all be detected using user load profiling. To detect falls 
-or other issues a normal daily appliance use profile could be developed. It would involve routine behavior of users
-such as turning on coffee machine and stove in the morning, turning on stove, oven and kitchen vent in the noon, tuning on microwave or a kettle in the evening.
-All these routines could be measured and tracked. Using mentioned data a profile would be developed and using probability and a threshold system could detect an issue
-or an anomaly. Such as coffee machine not turning on in the morning or stove and vent not being used at the noon. This could be detected if user is using less than usual,
-another anomaly could be detected if user is using the appliance too much. Stove or oven has been on for long period of time with high power consumption it could
-indicate that user forgot to turn it off, the same could be detected lights and fridge in case user left it open. In case of fridge, duty cycles would drastically 
-increase which could be detected. After an anomaly would be detected a caregiver would be notified to check on that person. (find source here)
+\subsubsection{Grid management}
+
+Increasing percentage of PV systems is causing troubles to energy distributors, 
+due to increased energy flow. In prior chapter it was mentioned how energy saving measures would benefit users and their peers.
+One other use case would be cooperation between end-user and energy distribution company
+Joint actions between them would benefit both.
+
+If electricity provider could control the use of main appliances so that load on power grid is as uniform as possible,
+with as little peaks as possible. For this to function, user would have to allow the installation of energy meters and controllers 
+on appliances that use most electricity and their use can be allocated, fridge cannot be allocated, whereas heat pump can be.
+This would introduce a statistical multiplex, similar to what is done with internet traffic, alleviating load off the grid. 
+
+Benefit of user would be lower cost of charging and heating the building.
+This is already done trough so-called small and high tariffs,
+More detailed user load profiles would enable electricity provider to introduce real-time tariffs.
+
+User would have three options. First one would be that user can use the appliances as freely as one desires, this would result a normal tariff.
+Second option would be to use the appliances as regularly as possible, this would lead to lower tariffs.
+Third option would be to leave the management of main electricity consumption appliances to electricity provider. Provider would combine the
+user appliance load-profile and real time market price of energy to optimize the cost. 
+This would lead to free or even negative price of electricity, since distribution companies have to keep the frequency of the grid as stable as possible.
+
+In order for them to stabilize the frequency, they sometimes have to resort to load shedding.
+Load shedding is a process where a load is disconnected from the grid in order to keep the grid in sync.
+Commonly whole neighborhoods are being disconnected, affecting their daily lives.
+Using user load profiles distribution companies could disconnect the load in a way that would minimaly affect end-user. 
+When they would need load the grid due to low of a demand, they could charge EVs for free of charge or even pay to do so. 
+This benefits the company as well, since they do not need to lower energy production, which can be expensive. 
+
+\subsubsection{Elderly care}
+
+Demographic changes i.e. aging population is an increasing socioeconomic issue.
+Elderly are facing many issues when staying at home alone for extended periods of time.
+Accidents such as falls or in-ability to do choirs due to health related issues or even dementia induced issues 
+such as leaving appliances on for long periods of time could all be detected using user load profiling.
+
+To detect falls or other issues a normal daily appliance use profile would be developed.
+It would involve routine behavior of users such as turning on coffee machine, turning on stove, oven and kitchen vent in the noon or using kettle and toaster in the evening.
+All these routines could be measured and tracked. Using this data, a profile would be developed.
+Probability of an anomaly and a threshold would enable system to detect an issue.
+
+Example would be: coffee machine not turning on in the morning or stove and kitchen vent not being used at the noon.
+Another issue could be detected if appliance would be used more frequently or for extended periods of time. 
+This could indicate that user forgot to turn off stove, oven or even a light. Same system could detect 
+that fridge or freezer was left open since duty cycles would be longer and more frequent. 
+As soon as issue would be detected it would notify caregiver to check on caretaker. (find source)
+
 
 \subsubsection{Anomaly detection}
 
-The use case of anomaly detection was already mentioned above. One more thing that could be detected using load profiling
-would be altered operation of appliances. In case of fridge system would detect that its duty cycles are too long
-and that there is an issue with these appliances. Increased duty cycle can be caused by cooling liquid leakage, fridge being open or compressor motor 
-malfunction. Heat pumps work on same principle as fridges and same anomalies could be detected here. 
-Same malfunction could be detected in heating element appliances such as toaster or boiler. 
-Since mentioned appliances are one of the largest consumers in a household,
-early enough detection could lead to large energy saving benefits. 
-
+One use case of anomaly detection was already mentioned in prior chapter.
+One more thing that could be detected, using load profiling, would be altered operation of appliances.
+In case of fridge, system would detect that duty cycles are too long.
+Increased duty cycle can be caused by cooling liquid leakage, fridge being open or compressor motor malfunction.
+Heat pumps work on same basis as fridges, meaning same anomalies could be detected. 
+Malfunction could also be detected in heating element appliances such as toaster or boiler. 
+Since mentioned appliances are one of the largest consumers in a household, early enough detection could lead to large energy saving benefits. (source)
 
 \subsubsection{Other}
 
-Load profiling could be also applied to p
+Load profiling could also be used as feedback to the manufacturer,
+of how a certain device is being used and if it is being used as designed. 
+This would enable the manufactures to improve their products according to 
+users needs, without unnecessary features.
 
-
+One other use case could be occupancy detection of buildings. Information about 
+occupancy could be used as part of elderly care monitoring or in case of building
+automation, to run certain tasks when user enters or leaves the room or a building.
 
 \section{Structure}
 
-- Abstract?
-- Introduction
-
-- Define load profiling
-- Anomaly detection (how it fits in) maybe?
-- Related work
-- Define contributions and goals
-
-- Present "Demo"
-- Methodology
-	- Datasets (used)
-	- Load classification
-		- Mention my work on images?
-		- Machine learning
-	- Load profiling method
-- Results
-
-- Use cases
-- Privacy
-	- Concerns
-	- Sharing and transparency
-	- Solutions
-- Datasets
-	- Issues 
-		- Load profiling
-		- Papers not sharing their datasets
-	- Solutions
-
-- Future research directions
-	- Map of current work
-	- Where does NILM load profiling lay on the Map
-	
-- Discussion
-- Conclusions
+\begin{itemize}
+\item - Abstract?
+\item - Introduction
+\item
+\item - Define load profiling
+\item - Anomaly detection (how it fits in) maybe?
+\item - Related work
+\item - Define contributions and goals
+\item
+\item - Present "Demo"
+\item - Methodology
+\item 	- Datasets (used)
+\item	- Load classification
+\item		- Mention my work on images?
+\item		- Machine learning
+\item	- Load profiling method
+\item - Results
+\item
+\item - Use cases
+\item - Privacy
+\item	- Concerns
+\item 	- Sharing and transparency
+\item	- Solutions
+\item - Datasets
+\item	- Issues 
+\item		- Load profiling
+\item		- Papers not sharing their datasets
+\item 	- Solutions
+\item
+\item - Future research directions
+\item	- Map of current work
+\item	- Where does NILM load profiling lay on the Map
+\item
+\item- Discussion
+\item- Conclusions
+\end{itemize}
 
 
 
