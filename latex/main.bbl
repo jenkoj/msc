@@ -82,6 +82,128 @@
     \field{year}{2012}
   \endentry
 
+  \entry{NILMAD2021}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AE}{%
+         family={Azizi},
+         familyi={A\bibinitperiod},
+         given={Elnaz},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=BMTH}{%
+         family={Beheshti},
+         familyi={B\bibinitperiod},
+         given={Mohammad T.\bibnamedelima H.},
+         giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim
+  H\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Bolouki},
+         familyi={B\bibinitperiod},
+         given={Sadegh},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AEBMTHBS1}
+    \strng{fullhash}{AEBMTHBS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{abstract}{%
+    In the majority of current supervised nonintrusive load monitoring (NILM)
+  techniques the characteristics of the training and test datasets are assumed
+  to be constant. However, in practice, a new appliance may be added to the set
+  of electrical appliances, an appliance may be replaced by a new one, the
+  efficiency of an appliance may change during the time, or a fault may occur.
+  All these issues of appliances cause abnormal consumption in total signal and
+  not detecting them reduces the NILM accuracy. In this sense, submetering is
+  widely used to address the above challenge. However, it leads to additional
+  costs for consumers as it requires additional meters, disturbs consumers’
+  comfort and privacy, and is not scalable. In this paper, the non-intrusive
+  load monitoring approach is utilized to detect the above anomalies based on
+  two main factors: 1) the power distribution and 2) the participation index of
+  appliances. Since the proposed method is nonintrusive it is cost-efficient
+  and accommodates the consumer’s privacy and comfort. Furthermore, detecting
+  all the above appliance anomalies not only increases the NILM accuracy but
+  also reduces energy waste and avoids appliance breakdown. The experimental
+  results prove that the proposed method yields outstanding performance in
+  detecting the aforementioned anomalies.%
+    }
+    \verb{doi}
+    \verb 10.1109/TCE.2021.3129356
+    \endverb
+    \field{issn}{1558-4127}
+    \field{number}{4}
+    \field{pages}{363\bibrangedash 371}
+    \field{title}{Appliance-Level Anomaly Detection in Nonintrusive Load
+  Monitoring via Power Consumption-Based Feature Analysis}
+    \field{volume}{67}
+    \field{journaltitle}{IEEE Transactions on Consumer Electronics}
+    \field{year}{2021}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Castangia2021}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=CM}{%
+         family={Castangia},
+         familyi={C\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Sappa},
+         familyi={S\bibinitperiod},
+         given={Riccardo},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=GAA}{%
+         family={Girmay},
+         familyi={G\bibinitperiod},
+         given={Awet\bibnamedelima Abraha},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=CC}{%
+         family={Camarda},
+         familyi={C\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=ME}{%
+         family={Macii},
+         familyi={M\bibinitperiod},
+         given={Enrico},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=PE}{%
+         family={Patti},
+         familyi={P\bibinitperiod},
+         given={Edoardo},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CM+1}
+    \strng{fullhash}{CMSRGAACCMEPE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{2021 International Conference on Smart Energy Systems and
+  Technologies (SEST)}
+    \verb{doi}
+    \verb 10.1109/SEST50973.2021.9543232
+    \endverb
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Detection of Anomalies in Household Appliances from
+  Disaggregated Load Consumption}
+    \field{year}{2021}
+  \endentry
+
   \entry{Chuan2014}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=CL}{%
