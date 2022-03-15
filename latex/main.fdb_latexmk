@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex main"] 1647349833 "main.aux" "main.bbl" "main" 1647349838
+["bibtex main"] 1647355128 "main.aux" "main.bbl" "main" 1647355496
   "/usr/local/texlive/2020/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1575845417 65050 5c39e6f144c843a658dad8c93d2a6f3c ""
   "example.bib" 1647017244 34599 831878e30ec20de5d838c0eee1197d63 ""
-  "main-blx.bib" 1647349835 340 7bdce33d370fce05909e24f547f8d889 "pdflatex"
-  "main.aux" 1647349836 9925 32d6d3acabbd91383efb096d96bd86eb "pdflatex"
+  "main-blx.bib" 1647355494 340 7bdce33d370fce05909e24f547f8d889 "pdflatex"
+  "main.aux" 1647355495 9928 d92c80a987b6141c034f47de82c4941b "pdflatex"
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1647349833 "/Users/jakob/Documents/mag/MSC/msc/latex/main.tex" "/Users/jakob/Documents/mag/MSC/msc/latex/main.pdf" "main" 1647349838
-  "/Users/jakob/Documents/mag/MSC/msc/latex/main.aux" 1647349836 9925 32d6d3acabbd91383efb096d96bd86eb ""
-  "/Users/jakob/Documents/mag/MSC/msc/latex/main.tex" 1647349822 38077 4ee77f663c51a21dd8ffc742bbfcc66a ""
+["pdflatex"] 1647355490 "/Users/jakob/Documents/mag/MSC/msc/latex/main.tex" "/Users/jakob/Documents/mag/MSC/msc/latex/main.pdf" "main" 1647355496
+  "/Users/jakob/Documents/mag/MSC/msc/latex/main.aux" 1647355495 9928 d92c80a987b6141c034f47de82c4941b ""
+  "/Users/jakob/Documents/mag/MSC/msc/latex/main.tex" 1647355488 38525 44c5e950475b0b5d47be0caa6619244c ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -158,17 +158,17 @@
   "Figures/clustered_profiles.png" 1647336042 126928 f04f7812026dad7ac72482194904ddbf ""
   "Figures/publications.png" 1646844523 59115 837bc80ea0eb0103e4619a1444d9393f ""
   "MastersDoctoralThesis.cls" 312771012 19353 5dfb55526b91b3ebeaabf87b20c2ff84 ""
-  "main.aux" 1647349836 9925 32d6d3acabbd91383efb096d96bd86eb "pdflatex"
-  "main.bbl" 1647349833 46196 b73bb66652a8d2cbd58ace93c3d89594 "bibtex main"
-  "main.out" 1647349836 1881 bce0b26cb193c09bb9e0322ccb70f4f1 "pdflatex"
-  "main.run.xml" 1647349836 2559 909c0cfb644a15a03fd756a5181d37b9 "pdflatex"
-  "main.tex" 1647349822 38077 4ee77f663c51a21dd8ffc742bbfcc66a ""
+  "main.aux" 1647355495 9928 d92c80a987b6141c034f47de82c4941b "pdflatex"
+  "main.bbl" 1647355129 46196 b73bb66652a8d2cbd58ace93c3d89594 "bibtex main"
+  "main.out" 1647355495 1881 bce0b26cb193c09bb9e0322ccb70f4f1 "pdflatex"
+  "main.run.xml" 1647355495 2559 909c0cfb644a15a03fd756a5181d37b9 "pdflatex"
+  "main.tex" 1647355488 38525 44c5e950475b0b5d47be0caa6619244c ""
   (generated)
-  "main.run.xml"
   "main-blx.bib"
-  "main.log"
-  "main.out"
   "/Users/jakob/Documents/mag/MSC/msc/latex/main.pdf"
-  "main.pdf"
   "/Users/jakob/Documents/mag/MSC/msc/latex/main.log"
   "main.aux"
+  "main.pdf"
+  "main.log"
+  "main.out"
+  "main.run.xml"
