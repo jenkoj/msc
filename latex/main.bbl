@@ -82,6 +82,55 @@
     \field{year}{2012}
   \endentry
 
+  \entry{cooperation2008}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AM}{%
+         family={Albadi},
+         familyi={A\bibinitperiod},
+         given={M.H.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=ESE}{%
+         family={El-Saadany},
+         familyi={E\bibinithyphendelim S\bibinitperiod},
+         given={E.F.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \keyw{Demand response, Price elasticity, Real time pricing, Electricity
+  markets}
+    \strng{namehash}{AMESE1}
+    \strng{fullhash}{AMESE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{abstract}{%
+    This paper presents a summary of Demand Response (DR) in deregulated
+  electricity markets. The definition and the classification of DR as well as
+  potential benefits and associated cost components are presented. In addition,
+  the most common indices used for DR measurement and evaluation are
+  highlighted, and some utilities’ experiences with different demand response
+  programs are discussed. Finally, the effect of demand response in electricity
+  prices is highlighted using a simulated case study.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.epsr.2008.04.002
+    \endverb
+    \field{issn}{0378-7796}
+    \field{number}{11}
+    \field{pages}{1989\bibrangedash 1996}
+    \field{title}{A summary of demand response in electricity markets}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0378779608001272
+    \endverb
+    \field{volume}{78}
+    \field{journaltitle}{Electric Power Systems Research}
+    \field{year}{2008}
+  \endentry
+
   \entry{Castangia2021}{inproceedings}{}
     \name{author}{6}{}{%
       {{hash=CM}{%
@@ -140,6 +189,154 @@
     \field{year}{2021}
   \endentry
 
+  \entry{energy_saving1}{article}{}
+    \name{author}{5}{}{%
+      {{hash=CM}{%
+         family={Cellura},
+         familyi={C\bibinitperiod},
+         given={Maurizio},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GF}{%
+         family={Guarino},
+         familyi={G\bibinitperiod},
+         given={Francesco},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Longo},
+         familyi={L\bibinitperiod},
+         given={Sonia},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Mistretta},
+         familyi={M\bibinitperiod},
+         given={Marina},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=OA}{%
+         family={Orioli},
+         familyi={O\bibinitperiod},
+         given={Aldo},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \keyw{Building, Input–Output analysis, Life cycle assessment, Rebound
+  effect, Energy saving}
+    \strng{namehash}{CM+2}
+    \strng{fullhash}{CMGFLSMMOA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    The paper presents one of the first Italian experiences assessing the
+  effectiveness of sustainable production and consumption strategies. The
+  authors developed an energy and environmental extended input–output model,
+  combined with the life cycle assessment, to analyse the role of the building
+  sector in the reduction of Italian energy consumption and CO2 emissions. In
+  detail, the model allows to assess the energy and environmental benefits
+  arising from the Italian tax deduction policy for energy retrofit actions of
+  buildings. Moreover, the authors defined an original model to assess the
+  indirect rebound effect caused by the energy retrofit actions. The outcomes
+  of the research point out that the assessment of the benefits arising from a
+  specific sustainable policy, strongly depends on:-the indirect energy
+  consumed by industry to produce goods and services needed for the policy
+  actuation;-the indirect energy saving, owing to the implemented policy, which
+  in the examined case study has the same order of magnitude as the direct
+  one;-the rebound effect, often neglected in the literature, which can
+  partially avoid the obtained benefits. The model shows wide ranges of
+  applicability to the European context, since it uses as input economic and
+  energy data usually available at local and/or national level for many states
+  in Europe. It may represent a useful tool to decision-makers in the selection
+  of policies oriented to the reduction of energy and environmental impacts
+  caused by final consumption.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.renene.2013.06.019
+    \endverb
+    \field{issn}{0960-1481}
+    \field{pages}{586\bibrangedash 597}
+    \field{title}{The role of the building sector for reducing energy
+  consumption and greenhouse gases: An Italian case study}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0960148113003121
+    \endverb
+    \field{volume}{60}
+    \field{journaltitle}{Renewable Energy}
+    \field{year}{2013}
+  \endentry
+
+  \entry{DemandResponse2018}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=CC}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Chen},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=LLA}{%
+         family={Lamont},
+         familyi={L\bibinitperiod},
+         given={Lisa\bibnamedelima Ann},
+         giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Sayigh},
+         familyi={S\bibinitperiod},
+         given={Ali},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Academic Press}%
+    }
+    \keyw{Demand response, Smart grid, Energy management controller, Direct
+  load control, Building}
+    \strng{namehash}{CC1}
+    \strng{fullhash}{CC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    Future electricity grids will enable greater and more sophisticated
+  demand-side participation, which refers to the inclusion of mechanisms that
+  enable dynamic modification of electricity demand into the operations of
+  power grids, known as demand response (DR). The underlying information-flow
+  infrastructures provided by the emerging smart grid enhance the interactions
+  between customers and the market, by which DR will improve electricity grids
+  in several aspects, for example, by reducing peak demand and reducing need
+  for expensive peaker plants, or by enabling demand to follow supply such as
+  those from volatile renewable resources. In this chapter, various DR programs
+  and implementations provided by utilities and Independent System
+  Operators/Regional Transmission Organizations in the United States will be
+  described. A distributed direct load control approach for large-scale
+  residential DR will be discussed as a case study, with numerical results to
+  demonstrate its effectiveness.%
+    }
+    \field{booktitle}{Application of Smart Grid Technologies}
+    \verb{doi}
+    \verb https://doi.org/10.1016/B978-0-12-803128-5.00004-0
+    \endverb
+    \field{isbn}{978-0-12-803128-5}
+    \field{pages}{143\bibrangedash 171}
+    \field{title}{4 - Demand response: An enabling technology to achieve energy
+  efficiency in a smart grid}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/B978012803128500004
+    \verb 0
+    \endverb
+    \field{year}{2018}
+  \endentry
+
   \entry{Chuan2014}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=CL}{%
@@ -178,6 +375,57 @@
     \field{pages}{1\bibrangedash 6}
     \field{title}{Load profiling of Singapore buildings for peak shaving}
     \field{year}{2014}
+  \endentry
+
+  \entry{eu2006}{article}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{4}{}{%
+      {{hash=ftCC}{%
+         prefix={from\bibnamedelima the},
+         prefixi={f\bibinitperiod\bibinitdelim t\bibinitperiod},
+         family={Commission},
+         familyi={C\bibinitperiod},
+         given={Communication},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=ftCC}{%
+         prefix={from\bibnamedelima the},
+         prefixi={f\bibinitperiod\bibinitdelim t\bibinitperiod},
+         family={Commission},
+         familyi={C\bibinitperiod},
+         given={Communication},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=ftCC}{%
+         prefix={from\bibnamedelima the},
+         prefixi={f\bibinitperiod\bibinitdelim t\bibinitperiod},
+         family={Commission},
+         familyi={C\bibinitperiod},
+         given={Communication},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=ftCC}{%
+         prefix={from\bibnamedelima the},
+         prefixi={f\bibinitperiod\bibinitdelim t\bibinitperiod},
+         family={Commission},
+         familyi={C\bibinitperiod},
+         given={Communication},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CCft+1}
+    \strng{fullhash}{CCftCCftCCftCCft+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Action Plan for energy efficiency: realising the potential}
+    \field{volume}{545}
+    \field{journaltitle}{COM (2006)}
+    \field{year}{2006}
   \endentry
 
   \entry{Csoknyai2019}{article}{}
@@ -405,6 +653,70 @@
     \warn{\item Invalid format of field 'month'}
   \endentry
 
+  \entry{optimiseCostShift2015}{article}{}
+    \name{author}{4}{}{%
+      {{hash=GG}{%
+         family={Graditi},
+         familyi={G\bibinitperiod},
+         given={Giorgio},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=DSML}{%
+         family={Di\bibnamedelima Silvestre},
+         familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={Maria\bibnamedelima Luisa},
+         giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=GR}{%
+         family={Gallea},
+         familyi={G\bibinitperiod},
+         given={Roberto},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RSE}{%
+         family={Riva\bibnamedelima Sanseverino},
+         familyi={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={Eleonora},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GG+1}
+    \strng{fullhash}{GGDSMLGRRSE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    In this paper, an optimal power dispatch problem on a 24-h basis for
+  distribution systems with distributed energy resources (DER) also including
+  directly controlled shiftable loads is presented. In the literature, the
+  optimal energy management problems in smart grids (SGs) where such types of
+  loads exist are formulated using integer or mixed integer variables. In this
+  paper, a new formulation of shiftable loads is employed. Such formulation
+  allows reduction in the number of optimization variables and the adoption of
+  real valued optimization methods such as the one proposed in this paper. The
+  method applied is a novel nature-inspired multiobjective optimization
+  algorithm based on an original extension of a glowworm swarm particles
+  optimization algorithm, with algorithmic enhancements to treat multiple
+  objective formulations. The performance of the algorithm is compared to the
+  NSGA-II on the considered power systems application.%
+    }
+    \verb{doi}
+    \verb 10.1109/TII.2014.2331000
+    \endverb
+    \field{issn}{1941-0050}
+    \field{number}{1}
+    \field{pages}{271\bibrangedash 280}
+    \field{title}{Heuristic-Based Shiftable Loads Optimal Management in Smart
+  Micro-Grids}
+    \field{volume}{11}
+    \field{journaltitle}{IEEE Transactions on Industrial Informatics}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{HIMEUR2021116601}{article}{}
     \name{author}{5}{}{%
       {{hash=HY}{%
@@ -488,6 +800,71 @@
     \endverb
     \field{volume}{287}
     \field{journaltitle}{Applied Energy}
+    \field{year}{2021}
+  \endentry
+
+  \entry{DirectLoadControll2021}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=HR}{%
+         family={Hledik},
+         familyi={H\bibinitperiod},
+         given={Ryan},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LT}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Tony},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=SF}{%
+         family={Sioshansi},
+         familyi={S\bibinitperiod},
+         given={Fereidoon},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Academic Press}%
+    }
+    \keyw{Demand response, Dynamic pricing, Load flexibility, Resource
+  planning, Smart meters, USA}
+    \strng{namehash}{HRLT1}
+    \strng{fullhash}{HRLT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    Historically, demand response provided value through peak demand reductions
+  during a limited number of hours per year. However, system needs are
+  evolving—renewables integration, electrification, and grid modernization
+  present new opportunities and challenges to the industry. To address these
+  challenges, load can be managed to provide additional high-value services,
+  such as geographically targeted demand reductions, load building during times
+  of renewables curtailment, and real-time system balancing. This “load
+  flexibility” has enormous potential, equating to 200GW of peak reduction
+  capability and more than $15 billion of annual avoided costs according to the
+  authors’ analysis. This chapter summarizes a new methodology for
+  quantifying load flexibility potential and presents an outlook for how load
+  flexibility may evolve in the coming decade.%
+    }
+    \field{booktitle}{Variable Generation, Flexible Demand}
+    \verb{doi}
+    \verb https://doi.org/10.1016/B978-0-12-823810-3.00001-7
+    \endverb
+    \field{isbn}{978-0-12-823810-3}
+    \field{pages}{195\bibrangedash 210}
+    \field{title}{Chapter 9 - Load flexibility: Market potential and
+  opportunities in the United States}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/B978012823810300001
+    \verb 7
+    \endverb
     \field{year}{2021}
   \endentry
 
@@ -687,6 +1064,226 @@
     \field{year}{2013}
   \endentry
 
+  \entry{occupancy2013}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=KW}{%
+         family={Kleiminger},
+         familyi={K\bibinitperiod},
+         given={Wilhelm},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=BC}{%
+         family={Beckel},
+         familyi={B\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Staake},
+         familyi={S\bibinitperiod},
+         given={Thorsten},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Santini},
+         familyi={S\bibinitperiod},
+         given={Silvia},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KW+1}
+    \strng{fullhash}{KWBCSTSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{doi}
+    \verb 10.1145/2528282.2528295
+    \endverb
+    \field{pages}{1\bibrangedash 8}
+    \field{title}{Occupancy Detection from Electricity Consumption Data}
+    \field{month}{11}
+    \field{year}{2013}
+  \endentry
+
+  \entry{shift2015}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=LC}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Congmiao},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Srinivasan},
+         familyi={S\bibinitperiod},
+         given={Dipti},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RT}{%
+         family={Reindl},
+         familyi={R\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LCSDRT1}
+    \strng{fullhash}{LCSDRT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{abstract}{%
+    Time-shiftable loads, also known as deferrable loads, such as charging of
+  electric vehicles, washing machines, dryers, are able to provide scheduling
+  flexibility for demand response. This can help to reduce the energy cost
+  under the condition of dynamic electricity pricing. It can also facilitate
+  deeper integration of renewable generation by absorbing variability.
+  According to the environmental conditions and real time market price of
+  electricity in Singapore, two real-time price-based scheduling algorithms are
+  proposed and studied in this paper. Simulations were conducted with different
+  percentages of deferrable loads and solar penetration levels, with about 1
+  million devices participating in the demand side management program. The
+  results show that the proposed algorithms schedule tasks resulting in a
+  significant reduction in electricity bill cost. The algorithm was further
+  modified to include demand and renewable generation forecasts to mitigate the
+  problem of variability, which resulted in deeper possible renewable
+  penetration and better system stability.%
+    }
+    \field{booktitle}{2015 IEEE Innovative Smart Grid Technologies - Asia (ISGT
+  ASIA)}
+    \verb{doi}
+    \verb 10.1109/ISGT-Asia.2015.7387165
+    \endverb
+    \field{issn}{2378-8542}
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Real-time scheduling of time-shiftable loads in smart grid
+  with dynamic pricing and photovoltaic power generation}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{loadShedding2006}{article}{}
+    \name{author}{3}{}{%
+      {{hash=LJ}{%
+         family={Lopes},
+         familyi={L\bibinitperiod},
+         given={J.A.P.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={Moreira},
+         familyi={M\bibinitperiod},
+         given={C.L.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Madureira},
+         familyi={M\bibinitperiod},
+         given={A.G.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LJMCMA1}
+    \strng{fullhash}{LJMCMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{labeldatesource}{}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{abstract}{%
+    This paper describes and evaluates the feasibility of control strategies to
+  be adopted for the operation of a microgrid when it becomes isolated.
+  Normally, the microgrid operates in interconnected mode with the medium
+  voltage network; however, scheduled or forced isolation can take place. In
+  such conditions, the microgrid must have the ability to operate stably and
+  autonomously. An evaluation of the need of storage devices and load shedding
+  strategies is included in this paper.%
+    }
+    \verb{doi}
+    \verb 10.1109/TPWRS.2006.873018
+    \endverb
+    \field{issn}{1558-0679}
+    \field{number}{2}
+    \field{pages}{916\bibrangedash 924}
+    \field{title}{Defining control strategies for MicroGrids islanded
+  operation}
+    \field{volume}{21}
+    \field{journaltitle}{IEEE Transactions on Power Systems}
+    \field{year}{2006}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{EV2020}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MH}{%
+         family={Mehrjerdi},
+         familyi={M\bibinitperiod},
+         given={Hasan},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Hemmati},
+         familyi={H\bibinitperiod},
+         given={Reza},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \keyw{Demand response program, Home energy management, Resiliency,
+  Stochastic mixed integer binary model, Vehicle to home, Wind turbine}
+    \strng{namehash}{MHHR1}
+    \strng{fullhash}{MHHR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    The home energy management is an efficient tool to manage energy in the
+  buildings that organizes different technologies and mathematical techniques
+  to minimize energy cost. Home energy management often utilizes renewable
+  energy resources to supply load demand in the building. Current home energy
+  management systems utilize one or several of the available hardware-software
+  capacity resources to deal with energy consumption in the buildings. However,
+  a comprehensive model including various hardware and software capacity
+  resources may increase the flexibility of the model. In this regard, this
+  paper studies an efficient paradigm for home energy management in the
+  building connected to electric grid. The proposed model forms an energy hub
+  including the hardware resources (i.e., vehicle-to-home, wind turbine, and
+  diesel generator) and software tools (i.e., demand response program). All the
+  capacity resources and grid power are optimally adjusted to minimize the
+  daily operational cost of the building as well as improvement of resiliency
+  and self-healing. Wind energy and load uncertainty are modeled through
+  stochastic programming. The seasonal pattern is considered for loads, prices,
+  and wind energy. Simulation results demonstrate that operating all capacity
+  resources minimizes the daily operational cost. When the wind energy, demand
+  response program, vehicle-to-home, and diesel generator are not utilized, the
+  cost is increased by 900, 230, 84, and 322, respectively. It is also
+  confirmed that the building not only can operate when one of the components
+  is not connected, but also it is able to supply the demand under off-grid
+  operation.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.renene.2019.07.004
+    \endverb
+    \field{issn}{0960-1481}
+    \field{pages}{568\bibrangedash 579}
+    \field{title}{Coordination of vehicle-to-home and renewable capacity
+  resources for energy management in resilience and self-healing building}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0960148119310249
+    \endverb
+    \field{volume}{146}
+    \field{journaltitle}{Renewable Energy}
+    \field{year}{2020}
+  \endentry
+
   \entry{MORENOJARAMILLO2021445}{article}{}
     \name{author}{5}{}{%
       {{hash=MAF}{%
@@ -767,6 +1364,116 @@
     \field{year}{2021}
   \endentry
 
+  \entry{cooperation2010}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MK}{%
+         family={Moslehi},
+         familyi={M\bibinitperiod},
+         given={Khosrow},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=KR}{%
+         family={Kumar},
+         familyi={K\bibinitperiod},
+         given={Ranjit},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MKKR1}
+    \strng{fullhash}{MKKR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    Increasing complexity of power grids, growing demand, and requirement for
+  greater reliability, security and efficiency as well as environmental and
+  energy sustainability concerns continue to highlight the need for a quantum
+  leap in harnessing communication and information technologies. This leap
+  toward a ¿smarter¿ grid is widely referred to as ¿smart grid.¿ A
+  framework for cohesive integration of these technologies facilitates
+  convergence of acutely needed standards, and implementation of necessary
+  analytical capabilities. This paper critically reviews the reliability
+  impacts of major smart grid resources such as renewables, demand response,
+  and storage. We observe that an ideal mix of these resources leads to a
+  flatter net demand that eventually accentuates reliability challenges
+  further. A gridwide IT architectural framework is presented to meet these
+  challenges while facilitating modern cybersecurity measures. This
+  architecture supports a multitude of geographically and temporally
+  coordinated hierarchical monitoring and control actions over time scales from
+  milliseconds and up.%
+    }
+    \verb{doi}
+    \verb 10.1109/TSG.2010.2046346
+    \endverb
+    \field{issn}{1949-3061}
+    \field{number}{1}
+    \field{pages}{57\bibrangedash 64}
+    \field{title}{A Reliability Perspective of the Smart Grid}
+    \field{volume}{1}
+    \field{journaltitle}{IEEE Transactions on Smart Grid}
+    \field{year}{2010}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Prosumer2016}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PY}{%
+         family={Parag},
+         familyi={P\bibinitperiod},
+         given={Yael},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=SBK}{%
+         family={Sovacool},
+         familyi={S\bibinitperiod},
+         given={Benjamin\bibnamedelima K.},
+         giveni={B\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PYSBK1}
+    \strng{fullhash}{PYSBK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{abstract}{%
+    Prosumers are agents that both consume and produce energy. With the growth
+  in small and medium-sized agents using solar photovoltaic panels, smart
+  meters, vehicle-to-grid electric automobiles, home batteries and other
+  `smart' devices, prosuming offers the potential for consumers and vehicle
+  owners to re-evaluate their energy practices. As the number of prosumers
+  increases, the electric utility sector of today is likely to undergo
+  significant changes over the coming decades, offering possibilities for
+  greening of the system, but also bringing many unknowns and risks that need
+  to be identified and managed. To develop strategies for the future,
+  policymakers and planners need knowledge of how prosumers could be integrated
+  effectively and efficiently into competitive electricity markets. Here we
+  identify and discuss three promising potential prosumer markets related to
+  prosumer grid integration, peer-to-peer models and prosumer community groups.
+  We also caution against optimism by laying out a series of caveats and
+  complexities.%
+    }
+    \verb{doi}
+    \verb 10.1038/nenergy.2016.32
+    \endverb
+    \field{issn}{2058-7546}
+    \field{number}{4}
+    \field{pages}{16032}
+    \field{title}{Electricity market design for the prosumer era}
+    \verb{url}
+    \verb https://doi.org/10.1038/nenergy.2016.32
+    \endverb
+    \field{volume}{1}
+    \field{journaltitle}{Nature Energy}
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{Park2019}{article}{}
     \name{author}{2}{}{%
       {{hash=PKJ}{%
@@ -815,6 +1522,86 @@
     \field{volume}{7}
     \field{journaltitle}{IEEE Access}
     \field{year}{2019}
+  \endentry
+
+  \entry{eu2021}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PTE}{%
+         family={Parliament},
+         familyi={P\bibinitperiod},
+         given={The\bibnamedelima European},
+         giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=tCotEU}{%
+         prefix={the Council of\bibnamedelima the},
+         prefixi={t\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
+  o\bibinitperiod\bibinitdelim t\bibinitperiod},
+         family={European\bibnamedelima Union},
+         familyi={E\bibinitperiod\bibinitdelim U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PTEEUtCot1}
+    \strng{fullhash}{PTEEUtCot1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{Directive 2010/31/EU of the European Parliament and of the
+  Council of 19 May 2010 on the energy performance of buildings (recast)}
+    \field{year}{2021}
+  \endentry
+
+  \entry{elder2}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=PL}{%
+         family={Patrono},
+         familyi={P\bibinitperiod},
+         given={Luigi},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=RP}{%
+         family={Rametta},
+         familyi={R\bibinitperiod},
+         given={Piercosimo},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Meis},
+         familyi={M\bibinitperiod},
+         given={Jochen},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PLRPMJ1}
+    \strng{fullhash}{PLRPMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{abstract}{%
+    Many elderly people spend a lot of time in their homes, doing simple or
+  complex activities that often involve the usage of electrical devices.
+  Therefore, detecting how elderly people use household appliances and digital
+  devices is indicative for early detecting the onset of Mild Cognitive
+  Impairments (MCI) and frailty conditions. This paper proposes a novel
+  approach for monitoring elderly behavior by detecting home appliance's usage.
+  It is based on an unobtrusive infrastructure composed of a smart meter that
+  constantly measures the global power consumption in the house, supported by
+  some smart-plugs for monitoring specific electrical devices. This
+  infrastructure has been implemented and validated within the H2020 City4Age
+  Project.%
+    }
+    \field{booktitle}{2018 3rd International Conference on Smart and
+  Sustainable Technologies (SpliTech)}
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Unobtrusive Detection of Home Appliance's Usage for Elderly
+  Monitoring}
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{Review2021}{article}{}
@@ -1017,6 +1804,193 @@
     \warn{\item Invalid format of field 'month'}
   \endentry
 
+  \entry{EV2018}{article}{}
+    \name{author}{4}{}{%
+      {{hash=RCB}{%
+         family={Robledo},
+         familyi={R\bibinitperiod},
+         given={Carla\bibnamedelima B.},
+         giveni={C\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=OV}{%
+         family={Oldenbroek},
+         familyi={O\bibinitperiod},
+         given={Vincent},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=AF}{%
+         family={Abbruzzese},
+         familyi={A\bibinitperiod},
+         given={Francesca},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=vAJ}{%
+         family={{van Wijk}},
+         familyi={v\bibinitperiod},
+         given={Ad\bibnamedelima J.M.},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \keyw{Zero-energy building, V2G, FCEV, Hydrogen}
+    \strng{namehash}{RCB+1}
+    \strng{fullhash}{RCBOVAFvAJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{abstract}{%
+    This paper presents the results of a demonstration project, including
+  building-integrated photovoltaic (BIPV) solar panels, a residential building
+  and a hydrogen fuel cell electric vehicle (FCEV) for combined mobility and
+  power generation, aiming to achieve a net zero-energy residential building
+  target. The experiment was conducted as part of the Car as Power Plant
+  project at The Green Village in the Netherlands. The main objective was to
+  assess the end-user’s potential of implementing FCEVs in vehicle-to-grid
+  operation (FCEV2G) to act as a local energy source. FCEV2G field test
+  performance with a Hyundai ix35 FCEV are presented. The car was adapted using
+  a power output socket capable of delivering up to 10 kW direct current (DC)
+  to the alternating current (AC) national grid when parked, via an off-board
+  (grid-tie) inverter. A Tank-To-AC-Grid efficiency (analogous to Tank-To-Wheel
+  efficiency when driving) of 44 (measured on a Higher Heating Value basis) was
+  obtained when the car was operating in vehicle-to-grid (V2G) mode at the
+  maximum power output. By collecting and analysing real data on the FCEV power
+  production in V2G mode, and on BIPV production and household consumption, two
+  different operating modes for the FCEV offering balanced services to a
+  residential microgrid were identified, namely fixed power output and load
+  following. Based on the data collected, one-year simulations of a microgrid
+  consisting of 10 all-electric dwellings and 5 cars with the different FCEV2G
+  modes of operation were performed. Simulation results were evaluated on the
+  factors of autonomy, self-consumption of locally produced energy and
+  net-energy consumption by implementing different energy indicators. The
+  results show that utilizing an FCEV working in V2G mode can reduce the annual
+  imported electricity from the grid by approximately 71 over one year, and
+  aiding the buildings in the microgrid to achieve a net zero-energy building
+  target. Furthermore, the simulation results show that utilizing the FCEV2G
+  setup in both modes analysed, could be economically beneficial for the
+  end-user if hydrogen prices at the pump fall below 8.24 €/kg.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.apenergy.2018.02.038
+    \endverb
+    \field{issn}{0306-2619}
+    \field{pages}{615\bibrangedash 629}
+    \field{title}{Integrating a hydrogen fuel cell electric vehicle with
+  vehicle-to-grid technology, photovoltaic power and a residential building}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0306261918301636
+    \endverb
+    \field{volume}{215}
+    \field{journaltitle}{Applied Energy}
+    \field{year}{2018}
+  \endentry
+
+  \entry{gridDirectControll2015}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SJ}{%
+         family={Shen},
+         familyi={S\bibinitperiod},
+         given={Jingshuang},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=JC}{%
+         family={Jiang},
+         familyi={J\bibinitperiod},
+         given={Chuanwen},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LB}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Bosong},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJJCLB1}
+    \strng{fullhash}{SJJCLB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    With rapid smart grid technology development, the customer can actively
+  participate in demand-side management (DSM) with the mutual information
+  communication between the distributor operation company and the smart devices
+  in real-time. Controllable load management not only has the advantage of peak
+  shaving, load balance, frequency regulation, and voltage stability, but is
+  also effective at providing fast balancing services to the renewable energy
+  grid in the distributed power system. The load management faces an enormous
+  challenge as the customer has a large number of both small residential loads
+  and dispersed renewable sources. In this paper, various controllable load
+  management approaches are discussed. The traditional controllable load
+  approaches such as the end users’ controllable appliances, storage battery,
+  Vehicle-to-Grid (V2G), and heat storage are reviewed. The “broad
+  controllable loads” management, such as the microgrid, Virtual Power Plant
+  (VPP), and the load aggregator are also presented. Furthermore, the load
+  characteristics, control strategies, and control effectiveness are analyzed.%
+    }
+    \verb{doi}
+    \verb 10.3390/en81011187
+    \endverb
+    \field{issn}{1996-1073}
+    \field{number}{10}
+    \field{pages}{11187\bibrangedash 11202}
+    \field{title}{Controllable Load Management Approaches in Smart Grids}
+    \verb{url}
+    \verb https://www.mdpi.com/1996-1073/8/10/11187
+    \endverb
+    \field{volume}{8}
+    \field{journaltitle}{Energies}
+    \field{year}{2015}
+  \endentry
+
+  \entry{energy_saving3}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SC}{%
+         family={Spataru},
+         familyi={S\bibinitperiod},
+         given={Catalina},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Gauthier},
+         familyi={G\bibinitperiod},
+         given={Stephanie},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor & Francis}%
+    }
+    \strng{namehash}{SCGS1}
+    \strng{fullhash}{SCGS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1080/17452007.2013.837248
+    \endverb
+    \verb{eprint}
+    \verb https://doi.org/10.1080/17452007.2013.837248
+    \endverb
+    \field{number}{1-2}
+    \field{pages}{60\bibrangedash 78}
+    \field{title}{How to monitor people ‘smartly’ to help reducing energy
+  consumption in buildings?}
+    \verb{url}
+    \verb https://doi.org/10.1080/17452007.2013.837248
+    \endverb
+    \field{volume}{10}
+    \field{journaltitle}{Architectural Engineering and Design Management}
+    \field{year}{2014}
+  \endentry
+
   \entry{SWAN20091819}{article}{}
     \name{author}{2}{}{%
       {{hash=SLG}{%
@@ -1143,6 +2117,134 @@
     \field{year}{1985}
   \endentry
 
+  \entry{energy_saving4}{article}{}
+    \name{author}{3}{}{%
+      {{hash=VGP}{%
+         family={Verbong},
+         familyi={V\bibinitperiod},
+         given={Geert\bibnamedelima P.J.},
+         giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Beemsterboer},
+         familyi={B\bibinitperiod},
+         given={Sjouke},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SF}{%
+         family={Sengers},
+         familyi={S\bibinitperiod},
+         given={Frans},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \keyw{Smart grids, Users, Strategic niche management}
+    \strng{namehash}{VGPBSSF1}
+    \strng{fullhash}{VGPBSSF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{abstract}{%
+    This article analyses practices and perceptions of stakeholders on
+  including users in smart grids experiments in the Netherlands. In-depth
+  interviews have been conducted and smart grid projects have been analysed,
+  using a Strategic Niche Management framework. The analysis shows that there
+  is a clear trend to pay more attention to users in new smart grid projects.
+  However, too much focus on technology and economic incentives can become a
+  barrier. Some institutional barriers have been identified. New innovative
+  business models should be developed to explore different options to involve
+  users. The many pilot and demonstration projects that are taking shape or are
+  being planned offer an excellent opportunity for such an exploration.
+  Learning on the social dimensions of smart grids, and the international
+  exchange of experiences can prevent a premature lock-in in a particular
+  pathway.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.enpol.2012.05.003
+    \endverb
+    \field{issn}{0301-4215}
+    \field{note}{Special Section: Transition Pathways to a Low Carbon Economy}
+    \field{pages}{117\bibrangedash 125}
+    \field{title}{Smart grids or smart users? Involving users in developing a
+  low carbon electricity economy}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0301421512004004
+    \endverb
+    \field{volume}{52}
+    \field{journaltitle}{Energy Policy}
+    \field{year}{2013}
+  \endentry
+
+  \entry{elder1}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=VP}{%
+         family={Visconti},
+         familyi={V\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CP}{%
+         family={Costantini},
+         familyi={C\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=dFR}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Fazio},
+         familyi={F\bibinitperiod},
+         given={Roberto},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LEA}{%
+         family={Lay-Ekuakille},
+         familyi={L\bibinithyphendelim E\bibinitperiod},
+         given={Aimè},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PL}{%
+         family={Patrono},
+         familyi={P\bibinitperiod},
+         given={Luigi},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VP+1}
+    \strng{fullhash}{VPCPFRdLEAPL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{abstract}{%
+    This paper proposes an innovative system for monitoring domestic energy
+  consumptions and for verifying the behavior of less-sufficient people during
+  their everyday home life, on the basis of their interaction with surrounding
+  environment and with household electrical appliances. It is composed by three
+  different acquisition sections, a remote server for data storage and
+  processing and an Android mobile application for remote data access. The
+  remote application allows the user to check in almost real time the power
+  absorptions of the monitored house, in addition to other environmental
+  parameters acquired through different sensing technologies.%
+    }
+    \field{booktitle}{2019 IEEE 8th International Workshop on Advances in
+  Sensors and Interfaces (IWASI)}
+    \verb{doi}
+    \verb 10.1109/IWASI.2019.8791399
+    \endverb
+    \field{pages}{264\bibrangedash 269}
+    \field{title}{A sensors-based monitoring system of electrical consumptions
+  and home parameters remotely managed by mobile app for elderly habits'
+  control}
+    \field{year}{2019}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{WALKER1985}{article}{}
     \name{author}{2}{}{%
       {{hash=WC}{%
@@ -1175,6 +2277,161 @@
     \field{volume}{PAS-104}
     \field{journaltitle}{IEEE Transactions on Power Apparatus and Systems}
     \field{year}{1985}
+  \endentry
+
+  \entry{energy_stealing_2018}{article}{}
+    \name{author}{5}{}{%
+      {{hash=YSC}{%
+         family={Yip},
+         familyi={Y\bibinitperiod},
+         given={Sook-Chin},
+         giveni={S\bibinithyphendelim C\bibinitperiod},
+      }}%
+      {{hash=TWN}{%
+         family={Tan},
+         familyi={T\bibinitperiod},
+         given={Wooi-Nee},
+         giveni={W\bibinithyphendelim N\bibinitperiod},
+      }}%
+      {{hash=TC}{%
+         family={Tan},
+         familyi={T\bibinitperiod},
+         given={ChiaKwang},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=GMT}{%
+         family={Gan},
+         familyi={G\bibinitperiod},
+         given={Ming-Tao},
+         giveni={M\bibinithyphendelim T\bibinitperiod},
+      }}%
+      {{hash=WK}{%
+         family={Wong},
+         familyi={W\bibinitperiod},
+         given={KokSheik},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \keyw{Anomaly detection, Non-technical losses, Technical losses, Smart
+  grids, AMI, Linear programming}
+    \strng{namehash}{YSC+1}
+    \strng{fullhash}{YSCTWNTCGMTWK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \field{abstract}{%
+    Smart meters are progressively deployed to replace its antiquated
+  predecessor to measure and monitor consumers’ consumption in smart grids.
+  Although smart meters are equipped with encrypted communication and
+  tamper-detection features, they are likely to be exposed to multiple cyber
+  attacks. These meters may be easily compromised to falsify meter readings,
+  which increases the chances and diversifies the types of energy theft. To
+  thwart energy fraud from smart meters, utility providers are identifying
+  anomalous consumption patterns reported to operation centers by leveraging on
+  consumers’ consumption data collected from advanced metering
+  infrastructure. In this paper, we put forward a new anomaly detection
+  framework to evaluate consumers’ energy utilization behavior for
+  identifying the localities of potential energy frauds and faulty meters.
+  Metrics known as the loss factor and error term are introduced to estimate
+  the amount of technical losses and capture the measurement noise,
+  respectively in the distribution lines and transformers. The anomaly
+  detection framework is then enhanced to detect consumers’ malfeasance and
+  faulty meters even when there are intermittent cheating and faulty equipment,
+  improving its robustness. Results from both simulations and test rig show
+  that the proposed framework can successfully locate fraudulent consumers and
+  discover faulty smart meters.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.ijepes.2018.03.025
+    \endverb
+    \field{issn}{0142-0615}
+    \field{pages}{189\bibrangedash 203}
+    \field{title}{An anomaly detection framework for identifying energy theft
+  and defective meters in smart grids}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0142061517318719
+    \endverb
+    \field{volume}{101}
+    \field{journaltitle}{International Journal of Electrical Power & Energy
+  Systems}
+    \field{year}{2018}
+  \endentry
+
+  \entry{controll2014}{article}{}
+    \name{author}{4}{}{%
+      {{hash=ZA}{%
+         family={Zakariazadeh},
+         familyi={Z\bibinitperiod},
+         given={Alireza},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HO}{%
+         family={Homaee},
+         familyi={H\bibinitperiod},
+         given={Omid},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=JS}{%
+         family={Jadid},
+         familyi={J\bibinitperiod},
+         given={Shahram},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Siano},
+         familyi={S\bibinitperiod},
+         given={Pierluigi},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \keyw{Voltage control, Distribution systems, Demand response, Remote
+  terminal unit, On load tap changer}
+    \strng{namehash}{ZA+1}
+    \strng{fullhash}{ZAHOJSSP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{abstract}{%
+    The main goal of Distribution Automation (DA) is the real-time operation,
+  usually without operator intervention, of distribution systems as a
+  consequence of load demand or power generation variations and failure
+  conditions in the distribution systems. As real time voltage control is known
+  as a legacy system that can be fully activated by DA equipments, in this
+  paper an analytical study is reported to demonstrate the effects of load
+  curtailments on voltages profile in distribution network. A new method for
+  real time voltage control, based on emergency demand response program, is
+  also proposed. The proposed method uses the real-time measured data collected
+  by RTUs and determines the tap changer condition and load curtailment
+  required in order to maintain the distribution voltage profile. Emergency
+  conditions include outages of generators and lines, and fluctuations due to
+  unpredictable load demand and renewable generation. A novel voltage
+  sensitivity matrix, based on performed voltage sensitivity analysis due to
+  load participation in demand response program, is also proposed. In order to
+  verify the effectiveness and robustness of the proposed control scheme, it is
+  tested on a typical automated distribution network. Simulation results show
+  that the proper selection of load curtailment can improve voltage profile and
+  that, in emergency conditions, demand response is an effective way to keep
+  the voltage in a permissible range.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.apenergy.2013.12.004
+    \endverb
+    \field{issn}{0306-2619}
+    \field{pages}{157\bibrangedash 166}
+    \field{title}{A new approach for real time voltage control using demand
+  response in an automated distribution system}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0306261913009884
+    \endverb
+    \field{volume}{117}
+    \field{journaltitle}{Applied Energy}
+    \field{year}{2014}
   \endentry
 \enddatalist
 \endinput
