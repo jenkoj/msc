@@ -2279,7 +2279,7 @@
     \field{year}{1985}
   \endentry
 
-  \entry{energy_stealing_2018}{article}{}
+  \entry{energyStealing2018}{article}{}
     \name{author}{5}{}{%
       {{hash=YSC}{%
          family={Yip},
@@ -2324,25 +2324,24 @@
     \field{sortinithash}{Y}
     \field{abstract}{%
     Smart meters are progressively deployed to replace its antiquated
-  predecessor to measure and monitor consumers’ consumption in smart grids.
+  predecessor to measure and monitor consumers consumption in smart grids.
   Although smart meters are equipped with encrypted communication and
   tamper-detection features, they are likely to be exposed to multiple cyber
   attacks. These meters may be easily compromised to falsify meter readings,
   which increases the chances and diversifies the types of energy theft. To
   thwart energy fraud from smart meters, utility providers are identifying
   anomalous consumption patterns reported to operation centers by leveraging on
-  consumers’ consumption data collected from advanced metering
-  infrastructure. In this paper, we put forward a new anomaly detection
-  framework to evaluate consumers’ energy utilization behavior for
-  identifying the localities of potential energy frauds and faulty meters.
-  Metrics known as the loss factor and error term are introduced to estimate
-  the amount of technical losses and capture the measurement noise,
-  respectively in the distribution lines and transformers. The anomaly
-  detection framework is then enhanced to detect consumers’ malfeasance and
-  faulty meters even when there are intermittent cheating and faulty equipment,
-  improving its robustness. Results from both simulations and test rig show
-  that the proposed framework can successfully locate fraudulent consumers and
-  discover faulty smart meters.%
+  consumers consumption data collected from advanced metering infrastructure.
+  In this paper, we put forward a new anomaly detection framework to evaluate
+  consumers energy utilization behavior for identifying the localities of
+  potential energy frauds and faulty meters. Metrics known as the loss factor
+  and error term are introduced to estimate the amount of technical losses and
+  capture the measurement noise, respectively in the distribution lines and
+  transformers. The anomaly detection framework is then enhanced to detect
+  consumers malfeasance and faulty meters even when there are intermittent
+  cheating and faulty equipment, improving its robustness. Results from both
+  simulations and test rig show that the proposed framework can successfully
+  locate fraudulent consumers and discover faulty smart meters.%
     }
     \verb{doi}
     \verb https://doi.org/10.1016/j.ijepes.2018.03.025
@@ -2355,7 +2354,7 @@
     \verb https://www.sciencedirect.com/science/article/pii/S0142061517318719
     \endverb
     \field{volume}{101}
-    \field{journaltitle}{International Journal of Electrical Power & Energy
+    \field{journaltitle}{International Journal of Electrical Power and Energy
   Systems}
     \field{year}{2018}
   \endentry
