@@ -305,7 +305,8 @@ power plants, home wind energy, and using EVs and home batteries. Socioeconomic 
 Technology advancements in non-intrusive load monitoring and increased adoption of smart energy meters offer a new
 way of load profiling, that is NILM load profiling.
 
-\section{Structure}
+
+\section{Structure and contributions}
 M.Sc. degree will be composed of the following parts. In the first part, I will define what is load profiling, appliance level load profiling, 
 non-intrusive load monitoring, intrusive load monitoring, and anomaly detection. Then I will review related research work done to date. Next, I will elaborate 
 on existing ideas on where load profiling is being used to date and what are its possible applications. Then, I will present used datasets, and finally,
@@ -344,7 +345,6 @@ The rough outline of chapters:
 	\1 Conclusions
 	
 	\end{outline}
-
 
 \chapter{Definitions}
 
@@ -420,7 +420,7 @@ Since then there were two more in 1995. Research picked up the pace in 2005 with
 To achieve that, they used probabilistic neural networks as a way of classification. Their methodology was tested in real use scenario. 
 
 \cite{Gao2018} makes use of the bottom-up method to build a forecasting framework for household
-load profiling, that takes into account consumption patterns of residents. 
+load profiling, which takes into account the consumption patterns of residents. 
 A model falls into the demand-side management subgroup.
 They have developed a "single-day extraction model", designed to select the same days by comparing environmental and household factors, which influence energy consumption.
 By using this approach, they have improved the accuracy of predicting behavioral patterns of dwellers. 
@@ -431,9 +431,9 @@ This reduces peaks usage and alleviates load off the grid. The author used the b
 Using this data, he made daily usage analyses on a one-hour basis. Using this information he optimized the daily activation of appliances
 so that peaks usage was not as high. Results show that peak shedding was successful. 
 
-\cite{Csoknyai2019} analyse energy consumption patterns and intervention strategies in residential buildings.
-Authors achieve this using "serious game approach" with combination of direct user feedback using smart meters. 
-Application also provides advice, comparisons, savings, reduction goals, and monitoring.
+\cite{Csoknyai2019} analyzes energy consumption patterns and intervention strategies in residential buildings.
+Authors achieve this using a "serious game approach" with a combination of direct user feedback using smart meters. 
+The application also provides advice, comparisons, savings, reduction goals, and monitoring.
 The approach takes into account almost all dimensions of residential energy usage. Their results show that their serious game was not
 able to induce energy-saving behavior.
 
@@ -444,10 +444,10 @@ Using collected data, they clustered profiles. They had discovered 6 different u
 where every cluster had a physical meaning such as energy-saving, morning heavy, evening heavy, etc.
 
 Another clustering methodology was proposed by \cite{Park2019}, using load image profiles and image processing.
-They represented time series data as an image. Image is a grid of squares where the y-axis contains monthly data with a resolution of one day,
+They represented time series data as an image. The image is a grid of squares where the y-axis contains monthly data with a resolution of one day,
 x-axis contains daily data with a resolution of one hour. Grid if color filled with an algorithm that authors developed,
 where red means more activity and blue less. Using digital image filters they transformed the type-1 image to type-2 and from there
-used a threshold to obtain type-3. Using that information they clustered data based on image similarly. They used three different 
+used a threshold to obtain type-3. Using that information they clustered data based on images similarly. They used three different 
 clustering methods: k-means, FCM, and EM algorithm. Using the Davies-Bouldin index, they were able to prove that image-based clustering performs better than non-image.
 
 \cite{Joana2012} clustered different load profiles using electricity consumption data and surveys. They profiled residential homes. 
@@ -458,6 +458,7 @@ authors \cite{Issi2018} focused on appliance-level load profiling.
 Their main contribution was to create a realistic per appliance load profile.
 They developed a wireless measurement system with smart plugs that enabled them to obtain 
 power signatures for each appliance. They evaluated the data and based on observations they determined working cycles for each appliance.
+Furthermore, they concluded that 15 \% of consumed power can be shifted, where they took tariffs into account. 
 
 \section{Anomaly detection in building energy consumption data}
 
@@ -504,7 +505,8 @@ As mentioned before many applications for load profiling could be used to reduce
 With the emerging EV-market and ever-increasing installation of heat pumps, more and more energy is being used in form of electricity. 
 This means, most of the current power grids would have to be upgraded to keep up with demand.
 
-On the other side, more and more photovoltaic systems are being installed, which is slowly shifting energy production towards end-users.
+On the other side, more and more photovoltaic systems are being installed,
+which is slowly shifting energy production towards end-users.
 Slowly energy grid is starting to shift towards so-called distributed energy resources or "DER" \cite{MORENOJARAMILLO2021445}.
 DERs includes all kinds of micro-energy sources such as PV, wind power, water power, and all kinds of energy accumulators that can store 
 and release energy when needed such as heat pumps with hot water storage, home batteries, and EVs that can be used as a battery.
@@ -515,7 +517,7 @@ To manage the appliances, a control system would have to be put in place \cite{D
 It would be enough to control a few appliances that consume most of the energy. 
 
 Since consumers take part in producing the energy, they are often called "prosumers" \cite{Prosumer2016}.
-They will be an essential part of European Union's plan to reach zero-energy buildings
+They will be an essential part of the European Union's plan to reach zero-energy buildings
 and near-zero-energy buildings \cite{eu2021}. The directive was accepted in 2010 and was recast in 2021.
 The plan is set to be realized in the next decade.
 
@@ -524,7 +526,7 @@ An actual use case would be an EV owner with an installed PV system and heat pum
 In this case, two profiles would be developed. Normal workday and work from home day.
 Additional information would be obtained from the users calendar. 
 On a normal workday, the system would use PV energy to heat the water and store it, based on the user profile.
-On work from home days, the system would start charging the car with the morning sun, using only the PV energy. 
+On work-from-home days, the system would start charging the car with the morning sun, using only the PV energy. 
 In the evening hours, when consumption rises and production falls, EV could inject the power back into the house. 
 Again using appliance load profiles to mitigate net energy flow as close to zero as possible (zero-energy building).
 With the ever-increasing power capacity and increasing range of EVs, more and more battery capacity could be used for mitigation. 
@@ -537,7 +539,7 @@ As mentioned earlier, the way to save energy consumption is to distribute it as 
 Knowing usage patterns of all peers, the system could optimally distribute the energy using DERs across all homes without dwellers even noticing.
 
 Another use case could be using a heat pump and heat storage,
-where besides users usage pattern system would also obtain weather forecasts from the internet.
+where besides users usage patterns system would also obtain weather forecasts from the internet.
 Heat pumps that extract heat from the air are more efficient when temperature differences are smaller. 
 The heat pump could store energy when warm and release the energy when cold.
 Based on the user usage profile, energy could be optimally distributed.
@@ -618,11 +620,44 @@ This would enable the manufacturers to improve their products according to
 users needs, without unnecessary features.
 
 \cite{energyStealing2018} uses anomaly detection algorithms and load profiling to detect energy lost due to non-technical losses.
-This occurs after the smart-meter is exposed to cyber or mechanical attack and its measurements are off. 
+This occurs after the smart-meter is exposed to cyber or mechanical attacks and its measurements are off. 
 
 One other use case could be occupancy detection of buildings such as the authors explore in \cite{occupancy2013}. Information about 
 occupancy could be used as part of elderly care monitoring or in the case of building
 automation, to run certain tasks when a user enters or leaves the room or a building.
+
+\chapter{Contributions and goals}
+
+The goal of this Masters thesis is to propose suitable consumption profiles for supporting residential building consumption optimization and elderly care management.
+To achieve this goal, we propose developing activity profiles as follows:. 
+
+The first step is to obtain a set of datasets. In our case this will be UK-DALE, REFIT, ECO, REDD and iAWE.
+All datasets measured electrical energy consumption for residential buildings. 
+They include main smart meter data, as well as sub-meter data for each appliance in a dwelling. 
+For easier handling datasets will be sliced to 1 hour intervals. 
+Slices will be put through classical learning classifier in order to demonstrate the ability to automatically identify and classify the appliances.
+Data will be then used to generate different daily per appliance usage profiles.
+
+\begin{figure}[h!]
+	\centering
+	\caption{"Universal normalized daily usage profile for weekend and weekday for a microwave. Superposition of data from 25 homes."}
+	\includegraphics[width=0.9\textwidth]{Figures/microwave_norm_n25.png}
+	\label{fig:UniNormMicrowave}
+\end{figure}
+
+One such example can be seen in figure 5. Histogram shows normalized daily 
+activation for microwave. It consists of data from 25 homes from 4 different
+datasets. 
+
+During the course of this thesis more profiles will be presented, using various histogram buckets, dimensions and parameters. 
+Each profile presents data from a different perspective, therefore each profile will have use-case of its own.
+Using existing and contributed profiles a map of profiles will be made. 
+
+To demonstrate the usage of developed profiles a demo will be presented. 
+
+\chapter{Map of profiles}
+
+
 
 
 % %----------------------------------------------------------------------------------------
