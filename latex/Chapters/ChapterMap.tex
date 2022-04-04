@@ -1,5 +1,3 @@
-% Chapter Template
-
 \chapter{Map of Profiles} % Main chapter title
 
 \label{Chapter6} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
@@ -79,7 +77,7 @@ can be presented in a multidimensional way such as heatmap in a way shown in fig
 
 Above shown profiles can be presented in combinations with each other, yielding a new way of presenting the data.
 Bellow a map with combinations of above-mentioned profiles is presented. Some combinations that had similar output were grouped,
-and some that were not logical were removed. 
+and some that were not logical were removed.  
 
 \begin{figure}[H]
 	\centering
@@ -88,16 +86,24 @@ and some that were not logical were removed.
 	\label{fig:map_fig}
 \end{figure}
 
-Table \ref{tab:contributions} shows current work done, with included refrences
+As can be seen from table \ref{tab:contributions}, most work (14 publications) has been done with standard daily load with
+hole house power usage such as figure \ref{fig:daily_power_profile}. 
+Quite a lot of work (6 publications) has been done with per appliance power profiles.
+A few publications were based on weekly and yearly load profiles,
+a few used two-dimensional time and power presentation and again others used diagregated data.
+Only one publication found used activation and time based histogram such as 
+shown on figure \ref{fig:daily_act_profile}. During the research I focused on publications
+from minority classes, meaning not all existing publications for SLP are included. 
+The purpose of table \ref{tab:contributions} is to present missing scientific contributions 
+and publications pattern.  
 
-testing ciytations \citeyear*{CAPASSO1994}
-\begin{table}[]
+\begin{table}[H]
 	\caption{Table presents previously mentioned load profiles}
 	\label{tab:contributions}
 
 	\begin{tabular}{|l|cccc|cccc|cccc|}
 	\hline
-	Desription                                                   & \multicolumn{4}{c|}{Per-house}                                                                                               & \multicolumn{4}{c|}{Per-appliance}                                                                                           & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}}                                                         \\
+	Description                                                   & \multicolumn{4}{c|}{Per-house}                                                                                               & \multicolumn{4}{c|}{Per-appliance}                                                                                           & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}}                                                         \\
 																 & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D \\ time LP\end{tabular}} & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D\\  time LP\end{tabular}} & \multicolumn{2}{c|}{LP}                               & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \cline{1-1}
 	\begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P}    & \multicolumn{1}{c|}{A}    & \multicolumn{1}{c|}{P}                               & A                               \\ \hline
 	Daily                                                        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Chuan2014} \\ \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{WALKER1985} \\ \citeyear*{GERBEC2005} \\ \citeyear*{Gao2018} \\ \citeyear*{Jeong2021} \\ \citeyear*{Joana2012} \\ \citeyear*{DER_heatmap_profile} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}}  \citeyear*{Park2019} \\ \citeyear*{DER_heatmap_profile} \end{tabular}}   &    & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{NILMAD2019} \\ \citeyear*{NILMAD22019} \\ \citeyear*{Issi2018} \\ \citeyear*{NILMAD2021} \\ \citeyear*{Castangia2021} \\ \citeyear*{occupancy2013}	\end{tabular}}  & \multicolumn{1}{c|}{\citeyear*{UKDALE}}  & \multicolumn{1}{c|}{}   &  \multicolumn{1}{c|}{}   & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{Chuan2014} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{Gao2018} 	\end{tabular}}   & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}      &    \\ \hline
@@ -106,13 +112,15 @@ testing ciytations \citeyear*{CAPASSO1994}
 	\end{tabular}
 \end{table}
 
+Table \ref{tab:use_cases} includes arranged publications from chapter \ref{Chapter5}. 
+Similar pattern emerged as in table \ref{tab:contributions}. 
 
-\begin{table}[]
+\begin{table}[H]
 	\caption{Table presents refrences mentioned in use cases chapter}
 	\label{tab:use_cases}
 	\begin{tabular}{|l|cccc|cccc|cccc|}
 	\hline
-	Desription &
+	Description &
 	  \multicolumn{4}{c|}{Per-house} &
 	  \multicolumn{4}{c|}{Per-appliance} &
 	  \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}} \\
@@ -178,10 +186,12 @@ testing ciytations \citeyear*{CAPASSO1994}
 	\end{tabular}
 \end{table}
 
+Table \ref{tab:groups} presents same publications as \ref{tab:use_cases},
+but only group names are shown. Table clearly indicates how groups are arranged.
+Where anomaly detection and eldery care are domanating in per appliance starnard load profile,
+energy saving and grid management are dimainatin in per-house sub group. 
 
-
-
-	\begin{table}[]
+\begin{table}[H]
 		\caption{Use case groups}
 		\label{tab:groups}
 		\begin{adjustbox}{width=1\textwidth}
@@ -252,5 +262,12 @@ testing ciytations \citeyear*{CAPASSO1994}
 		   \\ \hline
 	\end{tabular}
 	\end{adjustbox}
+
+Figures listed above cleary depict the void not filled by publications. 
+While it is true that some combinations are not feasable and others are un-usefull,
+We will try to find use cases for now empy squares and eliminate unfeasable options. 
+
+
+
 
 \end{table}
