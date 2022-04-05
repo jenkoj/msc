@@ -2,9 +2,74 @@
 
 \label{Chapter6} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-Load profiles can be grouped and sorted into various ways and forms.
-Main attributes in order for profiles to be mapped are: 
+While in related work I combed through load profiling in general, this
+chapter focuses on how load profiles present the data.  
+Load profiles can be portrayed in various shapes and forms,
+using all kinds of attributes and features to do so. 
+First main load profiling features will be defined,
+Second, using this features a general load profile table will be constructed.
+Third, refrences from related work and use cases will be mapped to the table.
+Using this information main features will be selected.
+Fourth, using reduced feature set a reduced table will be formed.
+Again, table will be populated using same refrences as before.
+finally, using this infomation a research direction will be formed.
 
+\section{Feature Set}
+
+Using related work and use case refrences,
+we can extract most commonly used features to portray load profiles.
+
+\begin{outline}
+    \1 power
+    \1 time
+    \1 operating time (how long appliance or appliances is turned on)
+    \1 appliances (a set)
+    \1 Number of activations (How many times appliance or appliances were turned on)
+\end{outline}
+
+
+\section{General map}
+Using these features we can form a table with all possible combinations. 
+
+\begin{table}[H]
+    \caption{General map of load profiles}
+    \label{tab:general_map}
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+     &
+      frequency &
+      appliances &
+      \begin{tabular}[c]{@{}l@{}}number of\\ activations\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}power\\ (avg)\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}operating\\ time\end{tabular} \\ \hline
+    appliances                                                      &   & X & X & X & X \\ \hline
+    \begin{tabular}[c]{@{}l@{}}number of\\ activations\end{tabular} & X &   & X & X & X \\ \hline
+    \begin{tabular}[c]{@{}l@{}}power \\ (avg)\end{tabular}          & X &   &   & X & X \\ \hline
+    \begin{tabular}[c]{@{}l@{}}power \\ (array)\end{tabular}        & 1 & X & X & X & X \\ \hline
+    \begin{tabular}[c]{@{}l@{}}power \\ (histogram)\end{tabular}    &   &   & X & X & X \\ \hline
+    \begin{tabular}[c]{@{}l@{}}operating\\ time\end{tabular}        & X & 1 &   &   & X \\ \hline
+    time array &
+      X &
+      X &
+      1 &
+      \begin{tabular}[c]{@{}l@{}}1\\ 2\\ 3\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}1\\ (3)\end{tabular} \\ \hline
+    \end{tabular}
+\end{table}
+
+Based on table above, it is possible to extract main features.
+These are appliances, power, time, and number of activations.
+Next I will try to build a map consisting of most of these features.
+The Idea is to create as most combinations as possible.
+
+\section{Reduced map}
+
+\subsection{sub-feauters}
+
+We already decribed main features, but using reduced set, it 
+is possible to further split them.
+
+Sub-features are 
 \begin{outline}
 
 \1 Way of metering or presenting a profile
@@ -597,7 +662,22 @@ aggregated standard load profile and side by side appliance load profile.
 
 
 
+\section{Histogram based load profiles with no time axis}
 
+If we take a closer look at tables from previous section, 
+we see that there is a "no time" dimension missing from it. 
+Reason for not being there is the clarity of presentation,
+and it is better presented on its own.
 
+\subsection{Possible histogram based profiles}
 
+As said thesis is focusing on histogram based presentation of load profiles,
+therefore we can define possible features that such presentations use. 
+
+\begin{outline}
+\1 activation frequency - Number of times appliace was activated in given period
+\1 Power - Number of times appliance was operating with giver power 
+\1 Operating time - Number of times applaince was opearing given amount of time
+\
+\end{outline}
 
