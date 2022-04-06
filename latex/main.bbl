@@ -131,6 +131,170 @@
     \field{year}{2008}
   \endentry
 
+  \entry{NILMAD2021}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AE}{%
+         family={Azizi},
+         familyi={A\bibinitperiod},
+         given={Elnaz},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=BMTH}{%
+         family={Beheshti},
+         familyi={B\bibinitperiod},
+         given={Mohammad T.\bibnamedelima H.},
+         giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim
+  H\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Bolouki},
+         familyi={B\bibinitperiod},
+         given={Sadegh},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AEBMTHBS1}
+    \strng{fullhash}{AEBMTHBS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{abstract}{%
+    In the majority of current supervised nonintrusive load monitoring (NILM)
+  techniques the characteristics of the training and test datasets are assumed
+  to be constant. However, in practice, a new appliance may be added to the set
+  of electrical appliances, an appliance may be replaced by a new one, the
+  efficiency of an appliance may change during the time, or a fault may occur.
+  All these issues of appliances cause abnormal consumption in total signal and
+  not detecting them reduces the NILM accuracy. In this sense, submetering is
+  widely used to address the above challenge. However, it leads to additional
+  costs for consumers as it requires additional meters, disturbs consumers’
+  comfort and privacy, and is not scalable. In this paper, the non-intrusive
+  load monitoring approach is utilized to detect the above anomalies based on
+  two main factors: 1) the power distribution and 2) the participation index of
+  appliances. Since the proposed method is nonintrusive it is cost-efficient
+  and accommodates the consumer’s privacy and comfort. Furthermore, detecting
+  all the above appliance anomalies not only increases the NILM accuracy but
+  also reduces energy waste and avoids appliance breakdown. The experimental
+  results prove that the proposed method yields outstanding performance in
+  detecting the aforementioned anomalies.%
+    }
+    \verb{doi}
+    \verb 10.1109/TCE.2021.3129356
+    \endverb
+    \field{issn}{1558-4127}
+    \field{number}{4}
+    \field{pages}{363\bibrangedash 371}
+    \field{title}{Appliance-Level Anomaly Detection in Nonintrusive Load
+  Monitoring via Power Consumption-Based Feature Analysis}
+    \field{volume}{67}
+    \field{journaltitle}{IEEE Transactions on Consumer Electronics}
+    \field{year}{2021}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{weekly_per_appliance_LP}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=BT}{%
+         family={Boßmann},
+         familyi={B\bibinitperiod},
+         given={Tobias},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Schleich},
+         familyi={S\bibinitperiod},
+         given={Joachim},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Schurk},
+         familyi={S\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BTSJSR1}
+    \strng{fullhash}{BTSJSR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Unravelling load patterns of residential end-uses from smart
+  meter data}
+    \field{month}{06}
+    \field{year}{2015}
+  \endentry
+
+  \entry{CAPASSO1994}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CA}{%
+         family={Capasso},
+         familyi={C\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GW}{%
+         family={Grattieri},
+         familyi={G\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=LR}{%
+         family={Lamedica},
+         familyi={L\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Prudenzi},
+         familyi={P\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CA+1}
+    \strng{fullhash}{CAGWLRPA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1994}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    A model of electric residential end-use is proposed for establishing the
+  load diagram of an area by a process of synthesis. The model follows a
+  "bottom-up" approach, allowing construction of the relative load shape of the
+  area, starting from knowledge of its most relevant socioeconomic and
+  demographic characteristics, unitary energy consumption and the load profiles
+  of individual household appliances. Several probability functions have been
+  introduced in order to cover the close relationship existing between the
+  demand of residential customers and the psychological and behavioral factors
+  typical of the household; the model makes frequent use of the latter through
+  a Monte Carlo extraction process. The model has been applied for the
+  simulation of a residential area where field measurements of power demand had
+  been made at 15-minute intervals and a combined mail survey had been
+  conducted to investigate household energy usage. The paper reports the
+  results of a comparison between recorded and predicted load
+  profiles.&lt;<ETX>&gt;</ETX>%
+    }
+    \verb{doi}
+    \verb 10.1109/59.317650
+    \endverb
+    \field{issn}{1558-0679}
+    \field{number}{2}
+    \field{pages}{957\bibrangedash 964}
+    \field{title}{A bottom-up approach to residential load modeling}
+    \field{volume}{9}
+    \field{journaltitle}{IEEE Transactions on Power Systems}
+    \field{year}{1994}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{Castangia2021}{inproceedings}{}
     \name{author}{6}{}{%
       {{hash=CM}{%
@@ -1064,6 +1228,99 @@
     \field{year}{2013}
   \endentry
 
+  \entry{UKDALE}{article}{}
+    \name{author}{2}{}{%
+      {{hash=KJ}{%
+         family={Kelly},
+         familyi={K\bibinitperiod},
+         given={Jack},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KW}{%
+         family={Knottenbelt},
+         familyi={K\bibinitperiod},
+         given={William},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KJKW1}
+    \strng{fullhash}{KJKW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{abstract}{%
+    Many countries are rolling out smart electricity meters. These measure a
+  home's total power demand. However, research into consumer behaviour suggests
+  that consumers are best able to improve their energy efficiency when provided
+  with itemised, appliance-by-appliance consumption information. Energy
+  disaggregation is a computational technique for estimating
+  appliance-by-appliance energy consumption from a whole-house meter signal. To
+  conduct research on disaggregation algorithms, researchers require data
+  describing not just the aggregate demand per building but also the `ground
+  truth' demand of individual appliances. In this context, we present UK-DALE:
+  an open-access dataset from the UK recording Domestic Appliance-Level
+  Electricity at a sample rate of 16{\thinspace}kHz for the whole-house and at
+  1/6{\thinspace}Hz for individual appliances. This is the first open access UK
+  dataset at this temporal resolution. We recorded from five houses, one of
+  which was recorded for 655 days, the longest duration we are aware of for any
+  energy dataset at this sample rate. We also describe the low-cost,
+  open-source, wireless system we built for collecting our dataset.%
+    }
+    \verb{doi}
+    \verb 10.1038/sdata.2015.7
+    \endverb
+    \field{issn}{2052-4463}
+    \field{number}{1}
+    \field{pages}{150007}
+    \field{title}{The UK-DALE dataset, domestic appliance-level electricity
+  demand and whole-house demand from five UK homes}
+    \verb{url}
+    \verb https://doi.org/10.1038/sdata.2015.7
+    \endverb
+    \field{volume}{2}
+    \field{journaltitle}{Scientific Data}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{DER_heatmap_profile}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=KE}{%
+         family={Klaassen},
+         familyi={K\bibinitperiod},
+         given={Elke},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=FJ}{%
+         family={Frunt},
+         familyi={F\bibinitperiod},
+         given={Jasper},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SH}{%
+         family={Slootweg},
+         familyi={S\bibinitperiod},
+         given={Han},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KEFJSH1}
+    \strng{fullhash}{KEFJSH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{Assessing the impact of distributed energy resources on LV
+  grids using practical measurements}
+    \field{month}{06}
+    \field{year}{2015}
+  \endentry
+
   \entry{occupancy2013}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=KW}{%
@@ -1945,6 +2202,51 @@
     \field{volume}{8}
     \field{journaltitle}{Energies}
     \field{year}{2015}
+  \endentry
+
+  \entry{2D_year_day_LP}{article}{}
+    \name{author}{4}{}{%
+      {{hash=SY}{%
+         family={Sidqi},
+         familyi={S\bibinitperiod},
+         given={Yousra},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=FP}{%
+         family={Ferrez},
+         familyi={F\bibinitperiod},
+         given={Pierre},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Gabioud},
+         familyi={G\bibinitperiod},
+         given={Dominique},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RP}{%
+         family={Roduit},
+         familyi={R\bibinitperiod},
+         given={Pierre},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SY+1}
+    \strng{fullhash}{SYFPGDRP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1186/s42162-020-00126-4
+    \endverb
+    \field{title}{Flexibility quantification in households: a swiss case study}
+    \field{volume}{3}
+    \field{journaltitle}{Energy Informatics}
+    \field{month}{10}
+    \field{year}{2020}
   \endentry
 
   \entry{energy_saving3}{article}{}
