@@ -195,6 +195,37 @@
     \warn{\item Invalid format of field 'month'}
   \endentry
 
+  \entry{H0}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=BR}{%
+         family={Bitterer},
+         familyi={B\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=hBSPD}{%
+         prefix={habil.},
+         prefixi={h\bibinitperiod},
+         family={B.\bibnamedelima Schieferdecker},
+         familyi={B\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={Prof.\bibnamedelima Dr.},
+         giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BRBSPDh1}
+    \strng{fullhash}{BRBSPDh1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1999}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{howpublished}{VDEW}
+    \field{title}{Repräsentative VDEW-Lastprofile Aktionsplan Wettbewerb, M-32
+  99}
+    \field{year}{1999}
+  \endentry
+
   \entry{weekly_per_appliance_LP}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=BT}{%
@@ -293,6 +324,49 @@
     \field{journaltitle}{IEEE Transactions on Power Systems}
     \field{year}{1994}
     \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{per_appliance_per_building}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CC}{%
+         family={Carpino},
+         familyi={C\bibinitperiod},
+         given={Cristina},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Loukou},
+         familyi={L\bibinitperiod},
+         given={E},
+         giveni={E},
+      }}%
+      {{hash=HP}{%
+         family={Heiselberg},
+         familyi={H\bibinitperiod},
+         given={Per},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=AN}{%
+         family={Arcuri},
+         familyi={A\bibinitperiod},
+         given={Natale},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CC+1}
+    \strng{fullhash}{CCLEHPAN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Energy performance gap of a nearly Zero Energy Building in
+  Denmark the influence of occupancy modelling}
+    \field{volume}{48}
+    \field{journaltitle}{Building Research Information}
+    \field{month}{01}
+    \field{year}{2020}
   \endentry
 
   \entry{Castangia2021}{inproceedings}{}
@@ -685,6 +759,71 @@
     \endverb
     \field{volume}{62}
     \field{year}{2022}
+  \endentry
+
+  \entry{OperatingTime_timeofday}{article}{}
+    \name{author}{3}{}{%
+      {{hash=FD}{%
+         family={Fischer},
+         familyi={F\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={Härtl},
+         familyi={H\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=WHB}{%
+         family={Wille-Haussmann},
+         familyi={W\bibinithyphendelim H\bibinitperiod},
+         given={Bernhard},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \keyw{Load modelling, Demand side management, Stochastic model, Bottom-up
+  model, Load profiles, Domestic electricity demand}
+    \strng{namehash}{FDHAWHB1}
+    \strng{fullhash}{FDHAWHB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{abstract}{%
+    Approximately 27 of the European energy consumption is caused by the
+  domestic sector, where 19 of the end use energy demand is caused by electric
+  devices. To investigate the factors at play, a stochastic bottom-up model for
+  the generation of electric load profiles is introduced in this paper. The
+  model is designed for investigating the effects of occupant behaviour,
+  appliance stock and efficiency on the electric load profile of an individual
+  household. For each activity of a person in the household, an electric
+  appliance is used, and its electricity consumption is linked to measured
+  electric load traces with a time resolution of 10s. Probability distributions
+  are incorporated for when and how often an appliance is operated. Duration of
+  operation is given as probability density conditional on the start time.
+  Shared use of an appliance by multiple persons is included in the model.
+  Seasonal effects are considered by using changing probability sets during the
+  course of the year. For validation, seven subgroups, which reflect typical
+  household configurations, were formed and tested against measured field data
+  from 430 households in 9 different cities across Germany. The results showed
+  an accuracy of 91 and a correlation of up to 0.98.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.enbuild.2015.01.058
+    \endverb
+    \field{issn}{0378-7788}
+    \field{pages}{170\bibrangedash 179}
+    \field{title}{Model for electric load profiles with high time resolution
+  for German households}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0378778815000845
+    \endverb
+    \field{volume}{92}
+    \field{journaltitle}{Energy and Buildings}
+    \field{year}{2015}
   \endentry
 
   \entry{Gao2018}{article}{}
@@ -1094,6 +1233,31 @@
     \field{year}{2018}
   \endentry
 
+  \entry{appliance_avgpower}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=siM}{%
+         prefix={shuma},
+         prefixi={s\bibinitperiod},
+         family={iwisi},
+         familyi={i\bibinitperiod},
+         given={Mercy},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{iMs1}
+    \strng{fullhash}{iMs1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{Domestic appliances standby power losses: The case of eleven
+  suburbs in the greater Johannesburg,}
+    \field{month}{06}
+    \field{year}{2009}
+  \endentry
+
   \entry{Jeong2021}{article}{}
     \name{author}{4}{}{%
       {{hash=JHC}{%
@@ -1156,6 +1320,49 @@
     \field{volume}{10}
     \field{journaltitle}{Electronics}
     \field{year}{2021}
+  \endentry
+
+  \entry{operating_time}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KE}{%
+         family={Kattan},
+         familyi={K\bibinitperiod},
+         given={Emily},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Halasah},
+         familyi={H\bibinitperiod},
+         given={Suleiman},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=ahT}{%
+         prefix={a},
+         prefixi={a},
+         family={hamed},
+         familyi={h\bibinitperiod},
+         given={Tareq},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KEHShTa1}
+    \strng{fullhash}{KEHShTa1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{doi}
+    \verb 10.4172/20904541.1000258
+    \endverb
+    \field{title}{Practical Challenges of Photovoltaic Systems in the Rural
+  Bedouin Villages in the Negev}
+    \field{volume}{8}
+    \field{journaltitle}{Journal of Fundamentals of Renewable Energy and
+  Applications}
+    \field{month}{05}
+    \field{year}{2018}
   \endentry
 
   \entry{KAVOUSIAN2013184}{article}{}
