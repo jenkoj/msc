@@ -161,38 +161,10 @@ Table \ref{tab:general_map} is then populated with references from previous chap
     \begin{tabular}[c]{@{}c@{}}power \\ (array)\end{tabular}        & \citeyear{UKDALE} & X & X & X  & X    \\ \hline
     \begin{tabular}[c]{@{}c@{}}power \\ (histogram)\end{tabular}    &   &   & X & X  & X    \\ \hline
     \begin{tabular}[c]{@{}c@{}}operating\\ time\end{tabular}        & X & \citeyear*{operating_time} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{NILMAD2019} \\ \citeyear*{NILMAD22019} \\ \citeyear*{NILMAD2021} \end{tabular}} &  \citeyear*{NILMAD2021} & X    \\ \hline
-    time array                                                      & X & X &  \citeyear*{per_appliance_per_building} &  \ref{stab:time_power} & \citeyear*{OperatingTime_timeofday} \\ \hline
+    time array                                                      & X & X &  \citeyear*{per_appliance_per_building} &  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Chuan2014} \\ \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \\ \citeyear*{WALKER1985} \\ 	\citeyear*{GERBEC2005} \\ 	\citeyear*{Gao2018} \\ 	\citeyear*{Jeong2021}\\  	\citeyear*{Joana2012} \\ 	\citeyear*{DER_heatmap_profile}\\ 	\citeyear*{NILMAD2019}\\	\citeyear*{NILMAD22019} \\	\citeyear*{Issi2018} \\	\citeyear*{NILMAD2021}\\	\citeyear*{Castangia2021} \\	\citeyear*{occupancy2013} \\	\citeyear*{Chuan2014} \\ 	\citeyear*{CAPASSO1994} \\ 	\citeyear*{Park2019} \\	\citeyear*{UKDALE} \\	\citeyear*{Gao2018} \end{tabular}}    & \citeyear*{OperatingTime_timeofday} \\ \hline
     \end{tabular}
 \end{table}
 
-\begin{table}[H]
-	\caption{Sub-table for cleaner refremcing}
-	\label{stab:time_power}
-	\begin{tabular}{|l|}
-	\hline
-	\citeyear*{Chuan2014} \\  
-	\citeyear*{Csoknyai2019}  \\  
-	\citeyear*{H0} \\  
-	\citeyear*{KAVOUSIAN2013184} \\
-	\citeyear*{WALKER1985} \\ 
-	\citeyear*{GERBEC2005} \\ 
-	\citeyear*{Gao2018} \\ 
-	\citeyear*{Jeong2021}\\  
-	\citeyear*{Joana2012} \\ 
-	\citeyear*{DER_heatmap_profile}\\ 
-	\citeyear*{NILMAD2019}\\
-	\citeyear*{NILMAD22019} \\
-	\citeyear*{Issi2018} \\
-	\citeyear*{NILMAD2021}\\
-	\citeyear*{Castangia2021} \\
-	\citeyear*{occupancy2013} \\
-	\citeyear*{Chuan2014} \\ 
-	\citeyear*{CAPASSO1994} \\ 
-	\citeyear*{Park2019} \\
-	\citeyear*{UKDALE} \\
-	\citeyear*{Gao2018} \\    \hline
-	\end{tabular}
-\end{table}
 
 Based on table \ref{tab:general_map} it is possible to see that the most commonly
 published feature combination is time and power. This combination will be used 
@@ -330,11 +302,10 @@ To find useful load profiles, references from related work must be mapped.
 \begin{table}[H]
 	\caption{Table presents previously mentioned load profiles}
 	\label{tab:contributions}
-
 	\begin{tabular}{|l|cccc|cccc|cccc|}
 	\hline
-	Description                                                   & \multicolumn{4}{c|}{Per-house}                                                                                               & \multicolumn{4}{c|}{Per-appliance}                                                                                           & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}}                                                         \\
-																 & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D \\ time LP\end{tabular}} & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D\\  time LP\end{tabular}} & \multicolumn{2}{c|}{LP}                               & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \cline{1-1}
+	Description                                                   & \multicolumn{4}{c|}{Per-house}                                                                                               & \multicolumn{4}{c|}{Per-appliance}                                                                                           & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}}                                                         \\ \hline
+																 & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} + daily time \\ dimension \end{tabular}} & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} + daily time \\ dimension \end{tabular}} & \multicolumn{2}{c|}{LP}                               & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
 	\begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P}    & \multicolumn{1}{c|}{A}    & \multicolumn{1}{c|}{P}                               & A                               \\ \hline
 	Daily                                                        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Chuan2014} \\ \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{WALKER1985} \\ \citeyear*{GERBEC2005} \\ \citeyear*{Gao2018} \\ \citeyear*{Jeong2021} \\ \citeyear*{Joana2012} \\ \citeyear*{DER_heatmap_profile} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{2D_year_day_LP} \\ \citeyear*{Park2019} \\ \citeyear*{DER_heatmap_profile} \end{tabular}}   &    & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{NILMAD2019} \\ \citeyear*{NILMAD22019} \\ \citeyear*{Issi2018} \\ \citeyear*{NILMAD2021} \\ \citeyear*{Castangia2021} \\ \citeyear*{occupancy2013}	\end{tabular}}  & \multicolumn{1}{c|}{\citeyear*{UKDALE}}  & \multicolumn{1}{c|}{}   &  \multicolumn{1}{c|}{}   & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{Chuan2014} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{Gao2018} 	\end{tabular}}   & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}      &    \\ \hline
 	\begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular}    & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}                          &                           & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}                          &                           & \multicolumn{1}{c|}{\citeyear*{weekly_per_appliance_LP}}    & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}                                &                                 \\ \hline
@@ -352,6 +323,9 @@ shown in figure \ref{fig:daily_act_profile}. During the research I focused on pu
 from minority classes, meaning not all existing publications for standard load profiles are included. 
 The purpose of table \ref{tab:contributions} is to present missing scientific contributions and patterns of publications.  
 
+\newcommand{\tabVar}{+ daily time \\ dimension  }
+%\testIt
+
 \subsection{Mapping use-cases to the table of combinations}
 
 Table \ref{tab:use_cases} includes arranged publications from chapter \ref{Chapter5}. 
@@ -365,14 +339,14 @@ Similar pattern emerged as in table \ref{tab:contributions}.
 	Description &
 	  \multicolumn{4}{c|}{Per-house} &
 	  \multicolumn{4}{c|}{Per-appliance} &
-	  \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}} \\
-	 &
+	  \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}} \\  \hline
+	  &
 	  \multicolumn{2}{c|}{LP} &
-	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D \\ time LP\end{tabular}} &
+	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
 	  \multicolumn{2}{c|}{LP} &
-	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D\\  time LP\end{tabular}} &
+	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
 	  \multicolumn{2}{c|}{LP} &
-	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \cline{1-1}
+	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
 	\begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
 	  \multicolumn{1}{c|}{P} &
 	  \multicolumn{1}{c|}{A} &
@@ -450,7 +424,7 @@ energy-saving and grid management are dominating in a per-house part of the tabl
               \multicolumn{2}{c|}{LP} &
               \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D \\ time LP\end{tabular}} &
               \multicolumn{2}{c|}{LP} &
-              \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D\\  time LP\end{tabular}} &
+              \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
               \multicolumn{2}{c|}{LP} &
               \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
             \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
@@ -528,7 +502,7 @@ with possible use cases for given load profiles.
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D \\ time LP\end{tabular}} &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D\\  time LP\end{tabular}} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
     \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
@@ -622,7 +596,7 @@ The table has four possible classes.
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D \\ time LP\end{tabular}} &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D\\  time LP\end{tabular}} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
     \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
@@ -701,7 +675,7 @@ the profile should be at least in the second class of potential defined in subse
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D \\ time LP\end{tabular}} &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D\\  time LP\end{tabular}} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
     \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
@@ -777,7 +751,7 @@ the end result is table \ref{tab:our_rd}
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D \\ time LP\end{tabular}} &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}2D\\  time LP\end{tabular}} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
     \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &

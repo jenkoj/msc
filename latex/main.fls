@@ -124,8 +124,6 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-dm.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-dm.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-compat.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-compat.def
-INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-bibtex.def
-INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-bibtex.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-natbib.def
@@ -244,7 +242,7 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-OUTPUT /Users/jakob/Documents/mag/MSC/msc/latex/main-blx.bib
+OUTPUT /Users/jakob/Documents/mag/MSC/msc/latex/main.bcf
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/main.bbl
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/main.bbl
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/main.bbl
@@ -373,11 +371,11 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/palatino/pplb8t.tfm
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide1.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide1.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide1.png
+INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide5.png
+INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide5.png
+INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide5.png
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/vf/adobe/palatino/pplb8t.vf
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
-INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide5.png
-INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide5.png
-INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide5.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide8.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide8.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide8.png

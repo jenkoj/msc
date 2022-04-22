@@ -43,7 +43,27 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage{mathpazo} % Use the Palatino font by default
 \usepackage{outlines}
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+%\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage[style=authoryear, labelnumber, backend=biber,natbib=true]{biblatex}
+
+\DeclareNameAlias{sortname}{family-given}
+
+\DeclareFieldFormat{labelnumberwidth}{#1.}
+\defbibenvironment{bibliography}
+  {\list
+    {\printtext[labelnumberwidth]{%
+        \printfield{labelprefix}%
+        \printfield{labelnumber}}}
+    {\setlength{\labelwidth}{\labelnumberwidth}%
+      \setlength{\leftmargin}{\labelwidth}%
+      \setlength{\labelsep}{\biblabelsep}%
+      \addtolength{\leftmargin}{\labelsep}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{\hss##1}}
+  {\endlist}
+  {\item}
+
 %\usepackage[sort, numbers]{natbib}
 \usepackage{float}
 \addbibresource{example.bib} % The filename of the bibliography
@@ -79,7 +99,7 @@ headsepline, % Uncomment to get a line under the header
   {\ifciteindex
      {\indexfield{indextitle}}
      {}%
-    \printtext[bibhyperref]{\printfield[citefield]{labelyear}}}%like \citetile, 
+    \printtext[bibhyperref]{[\printfield[citefield]{labelnumber}]}}%like \citetile, 
     %only added \printtext[bibhyperref]{...} in this line
   {\multicitedelim}
   {\usebibmacro{postnote}}
