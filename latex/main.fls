@@ -178,6 +178,8 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/varwidth/varwidth.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/varwidth/varwidth.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
@@ -403,6 +405,8 @@ INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/microwave_norm
 OUTPUT /Users/jakob/Documents/mag/MSC/msc/latex/Chapters/Chapter6.aux
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Chapters/Chapter6.tex
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Chapters/Chapter6.tex
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/palatino/pplr8t.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/palatino/pplrc8t.tfm
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/SLPdaily2.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/SLPdaily2.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/SLPdaily2.png
@@ -412,12 +416,16 @@ INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/SLPyearly2
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/SLPHMyearly2.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/SLPHMyearly2.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/SLPHMyearly2.png
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/vf/adobe/palatino/pplrc8t.vf
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/vf/adobe/palatino/pplr8t.vf
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/WM_daily.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/WM_daily.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/WM_daily.png
-INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/4 hours.png
-INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/4 hours.png
-INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/4 hours.png
+INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/3 hours.png
+INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/3 hours.png
+INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/3 hours.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/WM_ww_daily.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/WM_ww_daily.png
 INPUT /Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/WM_ww_daily.png
