@@ -7,7 +7,7 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-The chapter will first address the issue being solved, then the methodolgy will be presented and finaly the results will be presented.
+The chapter will first address the issue being solved, then the methodology will be presented and finally the results will be presented.
 Elderly care has been addressed by many EU funded research projects since aging population is one of the issues the union is facing. 
 There are many solutions for this problem, from invasive such as wearables, sound sensors, IR occupancy detector, etc. 
 Few papers tried to solve this issue using non-invasive using previously mentioned NILM algorithms. 
@@ -28,20 +28,134 @@ This means that the algorithm will be able to detect the anomaly within 1 hour o
 
 \section{Methodology}
 
-\subsection{Steps to build a load profile}
+\subsection{Building anomaly detection algorithm}
+
+Next section will present steps taken wile designing this algorithm.
+
 \subsubsection{Step one}
 To detect the anomalies one first needs to build a daily activation profile for each appliance, such as the one previously mentioned \ref{fig:PHPA}.
 In this specific case we will be using 2h buckets, yielding total of 12 buckets. 
 
 \subsubsection{Step two}
-Find and ignore appliances that are always on by calculating the standard deviation of activations for each bucket.
-During this, the fridge should get ignored since its normal distribution is quite narrow compared to other more dynamic appliances.
+Second step is to ignore appliances that are always on by calculating the standard deviation of activations for each bucket. 
+The activations are normalised between 0 and 1. 
+This step is important so that appliances that are always on, such as fridge or freezer get ignored. 
+These appliances are detected based on width of their activations normal distribution. 
+Where periodic (hourly basis) appliances should have narrow distributions, the more dynamic should have wider distributions.
+This can be seen on examples from building 2.
 
-\subsection{}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,0);
+        \foreach \num in {866, 842, 810, 772, 868, 854, 859, 854, 864, 887, 889, 883}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Daily activations for fridge $\sigma$ = 0.036}
+    \label{arr:fridge_acts}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,0);
+        \foreach \num in {86, 77, 75, 74, 100, 118, 113, 127, 168, 202, 171, 121}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Daily activations for audio system $\sigma$ = 0.2}
+    \label{arr:as_acts}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,0);
+        \foreach \num in {9, 4, 4, 3, 212, 122, 85, 80, 102, 260, 134, 48}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Daily activations for microwave $\sigma$ = 0.3}
+    \label{arr:microwave_acts}
+\end{figure}
+
+Based results from all appliances a threshold of $\sigma$ = 0.1 was set.
+This method will also get rid of appliances that are always on due to their specific nature such as server computer, 
+or are rarely used. 
+
+\subsubsection{Third step}
+
+Next, appliances that trigger together must be grouped. 
+This means we must find part of the day that they are operating in.
+Due to filter in previous step, we are left with appliaces whos usage variates trough the day. 
+Some appliances are on even when user is not necesariliy using them, this can be seen on figure \ref{arr:as_acts}.
+One out of many ways to do this is to normalize the activations, this yields a metric that tells us the probability of that appliance being turned on compared to the rest of the day. 
+If we do this for same appliances as above the result is following: 
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,0);
+        \foreach \num in {0.43, 0.38, 0.37, 0.37, 0.5 , 0.58, 0.56, 0.63, 0.83, 1. , 0.85,
+        0.6}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Daily activations for audio system $\sigma$ = 0.2}
+    \label{arr:as_acts_norm}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,0);
+        \foreach \num in {0.03, 0.02, 0.02, 0.01, 0.82, 0.47, 0.33, 0.31, 0.39, 1.  , 0.52,
+        0.18}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Daily activations for microwave $\sigma$ = 0.3}
+    \label{arr:microwave_acts_norm}
+\end{figure}
+
+The treshold of .5 was selected, which yields the folowing vectors:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,0);
+        \foreach \num in {0, 0, 0, 0, 0 , 1, 1, 1, 1, 1 , 1, 1}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Daily activations for audio system $\sigma$ = 0.2}
+    \label{arr:as_acts_vec}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,0);
+        \foreach \num in {0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Daily activations for microwave $\sigma$ = 0.3}
+    \label{arr:microwave_acts_vec}
+\end{figure}
+
+The vectors show us that microwave has two usage peaks, where audio system can be used anytime through the day.
+
+It is possible to do this over all appliances, which results a 2D matrix. 
+Using this matrix we can build rules witch which appliances are being used together
 
 
-%-----------------------------------
-%	SUBSECTION 1
-%-----------------------------------
-\subsection{Subsection 1}
-
+\subsubsection{Step four}
