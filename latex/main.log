@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.1)  22 APR 2022 18:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.1)  4 MAY 2022 15:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -938,56 +938,71 @@ Overfull \hbox (2.10155pt too wide) in paragraph at lines 76--82
  []
 
 [7] [8] [9]
-<Figures/profile_sketches/Slide1.png, id=311, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide1.png, id=314, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide1.png Graphic file (type png)
 <use Figures/profile_sketches/Slide1.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide1.png  used on input line 215.
+Package pdftex.def Info: Figures/profile_sketches/Slide1.png  used on input line 214.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
-<Figures/profile_sketches/Slide5.png, id=313, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide5.png, id=316, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide5.png Graphic file (type png)
 <use Figures/profile_sketches/Slide5.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide5.png  used on input line 224.
+Package pdftex.def Info: Figures/profile_sketches/Slide5.png  used on input line 223.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
  [10 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide1.png>]
-<Figures/profile_sketches/Slide8.png, id=322, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide8.png, id=325, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide8.png Graphic file (type png)
 <use Figures/profile_sketches/Slide8.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide8.png  used on input line 235.
+Package pdftex.def Info: Figures/profile_sketches/Slide8.png  used on input line 234.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
-<Figures/profile_sketches/Slide2.png, id=323, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide2.png, id=326, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide2.png Graphic file (type png)
 <use Figures/profile_sketches/Slide2.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide2.png  used on input line 241.
+Package pdftex.def Info: Figures/profile_sketches/Slide2.png  used on input line 240.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
  [11 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide5.png> </Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide8.png>]
-<Figures/profile_sketches/Slide10.png, id=333, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide10.png, id=336, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide10.png Graphic file (type png)
 <use Figures/profile_sketches/Slide10.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide10.png  used on input line 251.
+Package pdftex.def Info: Figures/profile_sketches/Slide10.png  used on input line 250.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
-<Figures/profile_sketches/Slide12.png, id=334, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide12.png, id=337, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide12.png Graphic file (type png)
 <use Figures/profile_sketches/Slide12.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide12.png  used on input line 257.
+Package pdftex.def Info: Figures/profile_sketches/Slide12.png  used on input line 256.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
  [12 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide2.png> </Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide10.png>]
-<Figures/profile_sketches/Slide14.png, id=342, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide14.png, id=345, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide14.png Graphic file (type png)
 <use Figures/profile_sketches/Slide14.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide14.png  used on input line 271.
+Package pdftex.def Info: Figures/profile_sketches/Slide14.png  used on input line 270.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
  [13 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide12.png> </Users/jakob/Documents/mag/MSC/msc/latex/Figures/profile_sketches/Slide14.png>]
-Overfull \hbox (51.60472pt too wide) in paragraph at lines 305--314
+Overfull \hbox (61.32832pt too wide) in paragraph at lines 304--313
 [][] 
  []
 
 [14]
-Overfull \hbox (41.8811pt too wide) in paragraph at lines 337--403
+Overfull \hbox (41.8811pt too wide) in paragraph at lines 336--404
 [][] 
  []
 
-[15] [16]
-Overfull \hbox (16.74101pt too wide) in paragraph at lines 813--821
+[15]
+Overfull \hbox (6.99445pt too wide) in paragraph at lines 592--658
+[][] 
+ []
+
+[16]
+Overfull \hbox (6.99445pt too wide) in paragraph at lines 671--739
+[][] 
+ []
+
+
+Overfull \hbox (6.99445pt too wide) in paragraph at lines 749--817
+[][] 
+ []
+
+
+Overfull \hbox (16.74101pt too wide) in paragraph at lines 820--828
 \T1/ppl/m/n/10.95 per-house daily-monthly pro-file, per-house weekly-yearly pro-file, per-appliance weekly
  []
 
@@ -1021,7 +1036,7 @@ Overfull \hbox (3.87524pt too wide) in paragraph at lines 56--60
 
  (/Users/jakob/Documents/mag/MSC/msc/latex/Chapters/Chapter5.tex
 Chapter 5.
-<Figures/../Figures/microwave_norm_n25.png, id=508, 489.83pt x 336.25626pt>
+<Figures/../Figures/microwave_norm_n25.png, id=515, 489.83pt x 336.25626pt>
 File: Figures/../Figures/microwave_norm_n25.png Graphic file (type png)
 <use Figures/../Figures/microwave_norm_n25.png>
 Package pdftex.def Info: Figures/../Figures/microwave_norm_n25.png  used on input line 24.
@@ -1048,12 +1063,12 @@ Chapter 6.
 
 
 ]
-<Figures/../Figures/LPS/SLPdaily2.png, id=529, 493.845pt x 350.30875pt>
+<Figures/../Figures/LPS/SLPdaily2.png, id=536, 493.845pt x 350.30875pt>
 File: Figures/../Figures/LPS/SLPdaily2.png Graphic file (type png)
 <use Figures/../Figures/LPS/SLPdaily2.png>
 Package pdftex.def Info: Figures/../Figures/LPS/SLPdaily2.png  used on input line 48.
 (pdftex.def)             Requested size: 202.01454pt x 143.2961pt.
-<Figures/../Figures/LPS/SLPyearly2.png, id=530, 487.8225pt x 350.30875pt>
+<Figures/../Figures/LPS/SLPyearly2.png, id=537, 487.8225pt x 350.30875pt>
 File: Figures/../Figures/LPS/SLPyearly2.png Graphic file (type png)
 <use Figures/../Figures/LPS/SLPyearly2.png>
 Package pdftex.def Info: Figures/../Figures/LPS/SLPyearly2.png  used on input line 55.
@@ -1063,83 +1078,83 @@ Overfull \hbox (4.16101pt too wide) in paragraph at lines 45--59
 []$[]$  $[]$[] 
  []
 
-<Figures/../Figures/LPS/SLPHMyearly2.png, id=533, 361.35pt x 282.05376pt>
+<Figures/../Figures/LPS/SLPHMyearly2.png, id=540, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/SLPHMyearly2.png Graphic file (type png)
 <use Figures/../Figures/LPS/SLPHMyearly2.png>
 Package pdftex.def Info: Figures/../Figures/LPS/SLPHMyearly2.png  used on input line 70.
 (pdftex.def)             Requested size: 282.81912pt x 220.7585pt.
 [26 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/SLPdaily2.png> </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/SLPyearly2.png> </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/SLPHMyearly2.png>]
-<Figures/../Figures/LPS/WM_daily.png, id=543, 481.8pt x 350.30875pt>
+<Figures/../Figures/LPS/WM_daily.png, id=550, 481.8pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_daily.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_daily.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_daily.png  used on input line 92.
 (pdftex.def)             Requested size: 282.81912pt x 205.63803pt.
-<Figures/../Figures/LPS/3 hours.png, id=545, 487.8225pt x 399.4925pt>
+<Figures/../Figures/LPS/3 hours.png, id=552, 487.8225pt x 399.4925pt>
 File: Figures/../Figures/LPS/3 hours.png Graphic file (type png)
 <use Figures/../Figures/LPS/3 hours.png>
 Package pdftex.def Info: Figures/../Figures/LPS/3 hours.png  used on input line 106.
 (pdftex.def)             Requested size: 282.81912pt x 231.60828pt.
  [27 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/WM_daily.png>]
-<Figures/../Figures/LPS/WM_ww_daily.png, id=555, 484.81125pt x 350.30875pt>
+<Figures/../Figures/LPS/WM_ww_daily.png, id=563, 484.81125pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_ww_daily.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_ww_daily.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_ww_daily.png  used on input line 124.
 (pdftex.def)             Requested size: 282.81912pt x 204.36586pt.
  [28 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/3 hours.png> </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/WM_ww_daily.png>]
-<Figures/../Figures/LPS/WM_weekly.png, id=564, 487.8225pt x 350.30875pt>
+<Figures/../Figures/LPS/WM_weekly.png, id=572, 487.8225pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_weekly.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_weekly.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_weekly.png  used on input line 138.
 (pdftex.def)             Requested size: 282.81912pt x 203.09369pt.
-<Figures/../Figures/LPS/WM_yearly.png, id=565, 481.8pt x 350.30875pt>
+<Figures/../Figures/LPS/WM_yearly.png, id=573, 481.8pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_yearly.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_yearly.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_yearly.png  used on input line 150.
 (pdftex.def)             Requested size: 323.22449pt x 235.01567pt.
-<Figures/../Figures/LPS/wm_hm_weekly.png, id=569, 361.35pt x 282.05376pt>
+<Figures/../Figures/LPS/wm_hm_weekly.png, id=577, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/wm_hm_weekly.png Graphic file (type png)
 <use Figures/../Figures/LPS/wm_hm_weekly.png>
 Package pdftex.def Info: Figures/../Figures/LPS/wm_hm_weekly.png  used on input line 162.
 (pdftex.def)             Requested size: 282.81912pt x 220.7585pt.
  [29 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/WM_weekly.png> </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/WM_yearly.png>]
-<Figures/../Figures/LPS/HM_Ywh_comp.png, id=580, 361.35pt x 282.05376pt>
+<Figures/../Figures/LPS/HM_Ywh_comp.png, id=587, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/HM_Ywh_comp.png Graphic file (type png)
 <use Figures/../Figures/LPS/HM_Ywh_comp.png>
 Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_comp.png  used on input line 196.
 (pdftex.def)             Requested size: 116.36223pt x 90.82713pt.
-<Figures/../Figures/LPS/HM_Ywh_tv.png, id=581, 361.35pt x 282.05376pt>
+<Figures/../Figures/LPS/HM_Ywh_tv.png, id=588, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/HM_Ywh_tv.png Graphic file (type png)
 <use Figures/../Figures/LPS/HM_Ywh_tv.png>
 Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_tv.png  used on input line 202.
 (pdftex.def)             Requested size: 116.36223pt x 90.82713pt.
-<Figures/../Figures/LPS/HM_Ywh_wm.png, id=582, 355.3275pt x 282.05376pt>
+<Figures/../Figures/LPS/HM_Ywh_wm.png, id=589, 355.3275pt x 282.05376pt>
 File: Figures/../Figures/LPS/HM_Ywh_wm.png Graphic file (type png)
 <use Figures/../Figures/LPS/HM_Ywh_wm.png>
 Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_wm.png  used on input line 208.
 (pdftex.def)             Requested size: 116.36223pt x 92.36789pt.
  [30 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/wm_hm_weekly.png>]
-<Figures/../Figures/LPS/solar termal pumping station.png, id=589, 409.53pt x 282.05376pt>
+<Figures/../Figures/LPS/solar termal pumping station.png, id=596, 409.53pt x 282.05376pt>
 File: Figures/../Figures/LPS/solar termal pumping station.png Graphic file (type png)
 <use Figures/../Figures/LPS/solar termal pumping station.png>
 Package pdftex.def Info: Figures/../Figures/LPS/solar termal pumping station.png  used on input line 221.
 (pdftex.def)             Requested size: 181.81184pt x 125.2187pt.
-<Figures/../Figures/LPS/light.png, id=590, 367.3725pt x 282.05376pt>
+<Figures/../Figures/LPS/light.png, id=597, 367.3725pt x 282.05376pt>
 File: Figures/../Figures/LPS/light.png Graphic file (type png)
 <use Figures/../Figures/LPS/light.png>
 Package pdftex.def Info: Figures/../Figures/LPS/light.png  used on input line 227.
 (pdftex.def)             Requested size: 181.81184pt x 139.58905pt.
-<Figures/../Figures/LPS/PHPA.png, id=594, 529.0164pt x 386.8854pt>
+<Figures/../Figures/LPS/PHPA.png, id=601, 529.0164pt x 386.8854pt>
 File: Figures/../Figures/LPS/PHPA.png Graphic file (type png)
 <use Figures/../Figures/LPS/PHPA.png>
 Package pdftex.def Info: Figures/../Figures/LPS/PHPA.png  used on input line 258.
 (pdftex.def)             Requested size: 282.81912pt x 206.837pt.
  [31 </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/HM_Ywh_comp.png> </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/HM_Ywh_tv.png> </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/HM_Ywh_wm.png> </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/solar termal pumping station.png> </Users/jakob/Documents/mag/MSC/msc/latex/Figures/../Figures/LPS/light.png>]
-<Figures/../Figures/LPS/stack.png, id=609, 508.90125pt x 375.4025pt>
+<Figures/../Figures/LPS/stack.png, id=616, 508.90125pt x 375.4025pt>
 File: Figures/../Figures/LPS/stack.png Graphic file (type png)
 <use Figures/../Figures/LPS/stack.png>
 Package pdftex.def Info: Figures/../Figures/LPS/stack.png  used on input line 269.
 (pdftex.def)             Requested size: 282.81912pt x 208.63725pt.
-<Figures/../Figures/LPS/BOA.png, id=610, 593.5776pt x 386.8854pt>
+<Figures/../Figures/LPS/BOA.png, id=617, 593.5776pt x 386.8854pt>
 File: Figures/../Figures/LPS/BOA.png Graphic file (type png)
 <use Figures/../Figures/LPS/BOA.png>
 Package pdftex.def Info: Figures/../Figures/LPS/BOA.png  used on input line 283.
@@ -1188,16 +1203,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  29230 strings out of 480608
  600617 string characters out of 5903631
- 1288505 words of memory out of 5000000
+ 1274505 words of memory out of 5000000
  44510 multiletter control sequences out of 15000+600000
  581053 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,20n,86p,2296b,3036s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/jakob/Documents/mag/MSC/msc/latex/main.pdf (43 pages, 752026 bytes).
+Output written on /Users/jakob/Documents/mag/MSC/msc/latex/main.pdf (43 pages, 776617 bytes).
 PDF statistics:
- 822 PDF objects out of 1000 (max. 8388607)
- 715 compressed objects within 8 object streams
+ 829 PDF objects out of 1000 (max. 8388607)
+ 722 compressed objects within 8 object streams
  160 named destinations out of 1000 (max. 500000)
  408 words of extra memory for PDF output out of 10000 (max. 10000000)
 
