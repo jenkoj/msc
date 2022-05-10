@@ -1,0 +1,47 @@
+% Chapter Template
+
+\chapter{Elderly care demo} % Main chapter title
+
+\label{Chapter7} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+The chapter will first address the issue being solved, then the methodolgy will be presented and finaly the results will be presented.
+Elderly care has been addressed by many EU funded research projects since aging population is one of the issues the union is facing. 
+There are many solutions for this problem, from invasive such as wearables, sound sensors, IR occupancy detector, etc. 
+Few papers tried to solve this issue using non-invasive using previously mentioned NILM algorithms. 
+In this case no additional meters need to be installed, since per-appliance usage can be disagreed from main meter time-series data. 
+While this is practical from new equipment side, it is a bit less from accuracy side for larger buildings. 
+There is a middle way between invasive and non-invasive ways. 
+It is possible to set up sub-meters behind each appliance, and indirectly observe the usage pattern for this elder person. 
+This is better since the elder does not need to wear the device, but it is a bit slower in detecting the accident. 
+
+\section{Goal}
+
+The chapter will focus on building the elderly care system that will use users periodic usage pattern to detect an anomaly.
+The anomaly could be anything from a fall, stroke or altered usage pattern due to dementia. 
+Algorithm will be designed based on load profile from previous chapter \ref{fig:PHPA}.
+Figure shows, that first thing in the morning used are kettle and toaster, and with delay of one hour, microwave and TV. 
+If none of these appliances are used within that hour, then that hour is considered anomalous.
+This means that the algorithm will be able to detect the anomaly within 1 hour of accident.
+
+\section{Methodology}
+
+\subsection{Steps to build a load profile}
+\subsubsection{Step one}
+To detect the anomalies one first needs to build a daily activation profile for each appliance, such as the one previously mentioned \ref{fig:PHPA}.
+In this specific case we will be using 2h buckets, yielding total of 12 buckets. 
+
+\subsubsection{Step two}
+Find and ignore appliances that are always on by calculating the standard deviation of activations for each bucket.
+During this, the fridge should get ignored since its normal distribution is quite narrow compared to other more dynamic appliances.
+
+\subsection{}
+
+
+%-----------------------------------
+%	SUBSECTION 1
+%-----------------------------------
+\subsection{Subsection 1}
+
