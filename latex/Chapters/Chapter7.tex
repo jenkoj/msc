@@ -124,6 +124,7 @@ If we do this for same appliances as above the result is following:
     \label{arr:microwave_acts_norm}
 \end{figure}
 
+Finnaly a suitable threshold must be selected.
 The treshold of .5 was selected, which yields the folowing vectors:
 
 \begin{figure}[H]
@@ -135,7 +136,7 @@ The treshold of .5 was selected, which yields the folowing vectors:
         \coordinate (s) at ($(s) + (1,0)$);
         }
     \end{tikzpicture}
-    \caption{Daily activations for audio system $\sigma$ = 0.2}
+    \caption{Daily activations for audio system}
     \label{arr:as_acts_vec}
 \end{figure}
 
@@ -148,14 +149,185 @@ The treshold of .5 was selected, which yields the folowing vectors:
         \coordinate (s) at ($(s) + (1,0)$);
         }
     \end{tikzpicture}
-    \caption{Daily activations for microwave $\sigma$ = 0.3}
+    \caption{Daily activations for microwave with one usage peak in the morning and the other in the evening}
     \label{arr:microwave_acts_vec}
 \end{figure}
 
 The vectors show us that microwave has two usage peaks, where audio system can be used anytime through the day.
-
 It is possible to do this over all appliances, which results a 2D matrix. 
 Using this matrix we can build rules witch which appliances are being used together
+The figure \ref{arr:act_mat} uses rows for appliances and columns for buckets.  
+If we use terminology from image processing the matrix \ref{arr:act_mat} is essentially highly saturated load profile \ref{fig:PHPA},
+that can be easily processed by computer algorithms due to binary encoding. 
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,6);
+        \foreach \num in {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+        \coordinate (s) at (0,5);
+        \foreach \num in {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+        \coordinate (s) at (0,4);
+        \foreach \num in {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+        \coordinate (s) at (0,3);
+        \foreach \num in {0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+        \coordinate (s) at (0,2);
+        \foreach \num in {0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+        \coordinate (s) at (0,1);
+        \foreach \num in {0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+        \coordinate (s) at (0,0);
+        \foreach \num in {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Activation matrix}
+    \label{arr:act_mat}
+\end{figure}
 
 
 \subsubsection{Step four}
+
+Using the matrix \ref{arr:act_mat} we can write an algorithm that will use current activations 
+and compare it the matrix. For an example if we have the live data for the fifth bucket, that is 
+data from 8 to 10 o clock. 
+What needs to be done is to use the fifth column and muliply to the current activations.
+Then anomaliy is detected based on a rule, if sum of multiplied array equals to zero the 
+bucket is considered anomalous. The higher the sum, the more sure the algorithm is that the
+bucket is normal. 
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,5);
+        \foreach \num in {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+        
+        \node at (5.5,4) {X};
+        \coordinate (s) at (0,3);
+        \foreach \num in {1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+        \node at (5.5,2){=};
+        \coordinate (s) at (0,1);
+        \foreach \num in {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+        \node at (5.5,0){SUM = 2 - > not an anomaly };
+    \end{tikzpicture}
+    \caption{The evaluation of new bucket compared to matrix. Example is for fifth bucket or fifth row from the matrix}
+    %\label{arr:microwave_acts_vec}
+\end{figure}
+
+This process is done for all samples, where we count normal and anomolus samples for each bucket
+Important thing to note here is that we are evaluating on the samples that the profile was built on.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,0);
+        \foreach \num in {472, 469, 468, 466, 57, 153, 288, 187, 123, 84, 75, 281}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Agregated anomalies for each bucket}
+    \label{arr:agg_anom}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,0);
+        \foreach \num in {0, 0, 0, 0, 409, 312, 181, 280, 342, 384, 394, 188}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Agregated normal samples for each bucket}
+    \label{arr:agg_norm}
+\end{figure}
+
+Next step is to combine these two arrays, so that we calcuate the percentae of anomalous samples 
+for each bucket with an equation
+
+\begin{equation}
+    a / (a + n) 
+\end{equation}
+
+Where a is a number of anomolus samples and n is a number of normal samples.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,0);
+        \foreach \num in {1.0, 1.0, 1.0, 1.0, 0.12, 0.3, 0.61, 0.4, 0.26, 0.18, 0.16, 0.6}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Agregated anomalies for each bucket}
+    \label{arr:anom_ratio}
+\end{figure}
+
+In other words the \ref{arr:anom_ratio} tells us how strong is the users routine in each bucket or
+part of the day. The lower the ratio the higher the routine. Since routine is detected based on usage
+of appliances it cannot be picked up during the night. It is possible to see that routine is quite high 
+during morning and evening hours. The anomaly detection algorithm will work best when ratio above is low.
+Good trait of elder is that their routine is quite high even during the day, which means that
+the anomaly detection will function better and throughout the day.
+
+One more thing to do is to ignore the parts of the day when user has no routine, by using
+the array \ref{arr:anom_ratio} and setting a threshold of 0.3. A threshold of 0.5 would mean
+that every other day could be a false positive anomaly. Setting the rate at 0.3 reduces that 
+to every third day. But here compromises must be made, the lower the threshold the more accurate
+the algorithm will be, but it also means that it will be less sensitive. 
+In our case there is not much harm in false positives detections, since the caregiver can call
+the elder to check if it is okay.  
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (s) at (0,0);
+        \foreach \num in {0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0}{
+        %\foreach \num in {1.0, 1.0, 1.0, 1.0, 0.12, 0.3, 0.61, 0.4, 0.26, 0.18, 0.16, 0.6}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+    \end{tikzpicture}
+    \caption{Using above mentioned trehold a new mask is made, to check only buckets whith high routine}
+    \label{arr:anom_ratio_mask}
+\end{figure}
+
+\subsubsection{Step five}
+
+The last step is to repeat step 4 and 5 with actual data, that the profile did not see prior to this. 
+
+\section{Results}
+
+While, due to lack of ground truth data of actual accidents, it is hard to determine the 
+exact accuracy of this algorithm. While every anomaly detected it is no necesariliy an 
+actual fall, it could be that user decided to lie in bed a bit longer, or decided to not watch 
+the TV in the evening. 
