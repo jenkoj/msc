@@ -292,7 +292,7 @@ Where a is a number of anomolus samples and n is a number of normal samples.
     \label{arr:anom_ratio}
 \end{figure}
 
-In other words the \ref{arr:anom_ratio} tells us how strong is the users routine in each bucket or
+In other words the \ref{arr:anom_ratio} tells us how persistent is the users routine in each bucket or
 part of the day. The lower the ratio the higher the routine. Since routine is detected based on usage
 of appliances it cannot be picked up during the night. It is possible to see that routine is quite high 
 during morning and evening hours. The anomaly detection algorithm will work best when ratio above is low.
@@ -317,7 +317,7 @@ the elder to check if it is okay.
         \coordinate (s) at ($(s) + (1,0)$);
         }
     \end{tikzpicture}
-    \caption{Using above mentioned trehold a new mask is made, to check only buckets whith high routine}
+    \caption{Using above-mentioned threshold a new mask is made, to check only buckets with high routine}
     \label{arr:anom_ratio_mask}
 \end{figure}
 
@@ -325,9 +325,120 @@ the elder to check if it is okay.
 
 The last step is to repeat step 4 and 5 with actual data, that the profile did not see prior to this. 
 
+\subsection{evaluation}
+
+The data was split into train an test set, where 80 \% of the data was for training and 20 \% percent of the data was used for testing.
+
+
 \section{Results}
 
-While, due to lack of ground truth data of actual accidents, it is hard to determine the 
-exact accuracy of this algorithm. While every anomaly detected it is no necesariliy an 
-actual fall, it could be that user decided to lie in bed a bit longer, or decided to not watch 
-the TV in the evening. 
+\subsection{The ratio}
+
+Due to lack of ground truth data of actual accidents, it is hard to determine the 
+exact accuracy of this algorithm. Every anomaly detected it is no necessarily an 
+actual accident, it could be that user decided to lie in bed a bit longer, or decided to not watch 
+the TV in the evening.
+One metric that we can use to determine how well the algorithm functions is the anomaliy ratio \ref{arr:anom_ratio}.
+The reason behind that is, if the routine rate is high it means that it will be easier to detect.
+
+\begin{itemize}
+	\item ratio of 1 would mean that for that bucket household has no routine at all.
+    \item ratio of .5 would mean that the routine is being "practiced" every second day
+    \item ratio of .2 would mean that routine is broken on average every 5 day
+    \item ratio of 0 would mean that this household has a routine that is never broken. 
+\end{itemize}
+
+When true anomaly occurs such as fall, the dweller, all through he had the same routine for the past year (ratio is 0), would not be able to practice the routine, and the algorithm will be quite sure that tis is actual anoamly.
+Therefore, the higher the ratio the less sure we are that an actual anomaly such as fall occurred.
+This is a good alternative measurement, that tells us how well this algorithm will perform. 
+
+\subsubsection{Ratio during the week}
+
+As the behavior of the dwellers changes, so does the accuracy of the algorithm. 
+One observation that was made, was that the routine was higher during the week, than during the weekends,
+as can be seen on figures bellow. There is also a 
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{"Building 2"}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b2week.png}
+		\label{fig:ec_b2week}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{"Building 19"}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b19week.png}
+		\label{fig:ec_b5week}
+	\end{subfigure}%
+    \bigskip
+
+    \begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{"Building 18"}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b18week.png}
+		\label{fig:ec_b18week}
+	\end{subfigure}%
+    ~ 
+    \begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{"Building 5"}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b5weekd.png}
+		\label{fig:ec_b5week}
+	\end{subfigure}%
+	\label{fig:ec_week}
+	\caption{"Weekly anomaly percenage"}
+\end{figure}
+
+Since we are dealing with elderly, they have higher routine and their routine does not change that much during the weekends. 
+Usualy, asisted living systems are put in place since elders are alone in the dwelling.
+Taking all of this into account, we could make an asumption that the routine of elderly is the same trough the week, and simply ignore the weekends. 
+This should yield "real/accurate" results. 
+
+\subsection{Ratio in a year}
+
+The ratio also changes over the course of a year. While on average the ratio is lower during the winter, spring and summer, it is higher during the summer due to vacationing. 
+This can be seen on figures bellow. 
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{"Building 2"}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b2year.png}
+		\label{fig:ec_b2year}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{"Building 19"}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b19year.png}
+		\label{fig:ec_b5year}
+	\end{subfigure}%
+    \bigskip
+
+    \begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{"Building 18"}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b18year.png}
+		\label{fig:ec_b18year}
+	\end{subfigure}%
+    ~ 
+    \begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{"Building 5"}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b5year.png}
+		\label{fig:ec_b5year}
+	\end{subfigure}%
+	\label{fig:ec_year}
+	\caption{"Yearly anomaly percentage"}
+\end{figure}
+
+
+\subsection{Test data evaluation}
+
+The examples above were a demonstration and look into data and metric. 
+The examples shown were trained and evaluated on same data. 
+In order to show true performance, we will used test data to determine the actual perfomance. 
+
+\subsubsubsection{Per-building results}
