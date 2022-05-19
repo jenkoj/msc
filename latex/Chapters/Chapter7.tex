@@ -325,10 +325,52 @@ the elder to check if it is okay.
 
 The last step is to repeat step 4 and 5 with actual data, that the profile did not see prior to this. 
 
-\subsection{evaluation}
+\subsection{Datasets and evaluation} \label{ssec:ds_eval}
 
 The data was split into train an test set, where 80 \% of the data was for training and 20 \% percent of the data was used for testing.
 
+
+\subsubsection{REFIT}
+Refit dataset included data for more than 15 buildings, as it can be seen on figure below.
+Dataset in general is of the highest quality, since it was cleaned. 
+Dataset also the longest, therefore it should give the most accurate results.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Timeline for REFIT "}
+	\includegraphics[width=1\textwidth]{Figures/EC/refit_timeline.png}
+	\label{fig:refit_timeline}
+\end{figure}
+fd
+\subsubsection{UK-DALE} 
+
+All trough the uk-dale dataset is of similar size, the most of the data is from building 1.
+It general it includes 5 years of data, but only for some appliances, with addition there 
+are many appliances that are rarely used.
+When taking all of this into account, there is to many issues with it and it was simply ignored.
+Another issue that can be seen on \ref{fig:ukdale_timeline} is that there is not enough data for 
+building 3. Test includes only a week of data, which is not enough for repesentative results, therefore it was ignored.
+The rest of the buildings seem healthy.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Timeline for UK-DALE "}
+	\includegraphics[width=1\textwidth]{Figures/EC/ukdale_timeline.png}
+	\label{fig:ukdale_timeline}
+\end{figure}
+
+\subsubsection{ECO}
+ECO dataset is has decent lengt of data, similar to uk-dale. 
+Only issue is building 1, where there is a lot of missing data.
+This is a good example how data is split, it is split based on number of samples,
+meaning that there is 80 \% in the train bar, due to missing data the second bar is longer. 
+
+\begin{figure}[H]
+	\centering
+	\caption{"Timeline for ECO"}
+	\includegraphics[width=1\textwidth]{Figures/EC/eco_timeline.png}
+	\label{fig:eco_timeline}
+\end{figure}
 
 \section{Results}
 
@@ -352,7 +394,7 @@ When true anomaly occurs such as fall, the dweller, all through he had the same 
 Therefore, the higher the ratio the less sure we are that an actual anomaly such as fall occurred.
 This is a good alternative measurement, that tells us how well this algorithm will perform. 
 
-\subsubsection{Ratio during the week}
+\subsubsection{Ratio during the week} \label{sssec:ratio_week}
 
 As the behavior of the dwellers changes, so does the accuracy of the algorithm. 
 One observation that was made, was that the routine was higher during the week, than during the weekends,
@@ -435,10 +477,135 @@ This can be seen on figures bellow.
 \end{figure}
 
 
-\subsection{Test data evaluation}
-
 The examples above were a demonstration and look into data and metric. 
 The examples shown were trained and evaluated on same data. 
 In order to show true performance, we will used test data to determine the actual perfomance. 
 
-\subsubsubsection{Per-building results}
+Results were obtained for 3 datasets. 
+REDD and iAWE datasets were not used, since the dataset was to short, they contained less than a month of data. 
+
+
+\subsection{REFIT}
+
+\subsubsection{Results including weekend data}
+results show, that the method in on average 23.6 \% efficient. 
+on figure \ref{fig:refit_res} it is possible to see that house 6 yeilds lower results, and house 19 much higher than the rest. 
+This could be due to various dataset errors that occured during sampling.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Results for REFIT "}
+	\includegraphics[width=1\textwidth]{Figures/EC/refit_res.png}
+	\label{fig:refit_res}
+\end{figure}
+
+For more relavant results we can ignore the outliers by removing one max and one min building, such as can be seen on figure \ref{fig:refit_res_2}
+This yields result 22.92 \%.
+If we were to repeat this proces the result would be 21.33 \%.
+Since all outliers are removed, the result converges towards 21 \%, which is the relavant value. 
+
+\begin{figure}[H]
+	\centering
+	\caption{"Results for REFIT with removed outliers "}
+	\includegraphics[width=1\textwidth]{Figures/EC/refit_res2.png}
+	\label{fig:refit_res2}
+\end{figure}
+
+\subsubsection{Results omiting weekend data}
+
+As mentioned in sub-subsection \ref{sssec:ratio_week}, the average routine is different during the week and weekends.
+The asumption was that the rutine of elderly people does not change significantly over the week, therefore results should be more relavant if we ignore the weekends.
+The results on figure \ref{fig:refit_res_nw_1"} show that result did improve for 1.2 \% to 22.48 \%.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Results for REFIT weekday only"}
+	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_1.png}
+	\label{fig:refit_res_nw_1"}
+\end{figure}
+
+By ignoring the minimal and maximal outliers the results drops to 21.33 \%.
+By repeating the process one more time the result drops to 19.91 \%, since all outliers were removed, the result converges towards this value. 
+
+By removing the weekend data, the results decreased for 1.2 \%. 
+
+\begin{figure}[H]
+	\centering
+	\caption{"Results for REFIT weekday only and removed outliers"}
+	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_2.png}
+	\label{fig:refit_res_nw_2"}
+\end{figure}
+
+\subsection{UK-DALE}
+
+As mentioned in subsection \ref{ssec:ds_eval}, the ukdale not as long, large and cleaned as the previous dataset, so results could be less relavant.
+The results on figure \ref{fig:ukdale_res}, show that the average result is 25.35 \%. Due to low number of buildings, it is not possible to ignore and find outliers. 
+\begin{figure}[H]
+	\centering
+	\caption{"Results for UK-DALE"}
+	\includegraphics[width=1\textwidth]{Figures/EC/ukdale_res.png}
+	\label{fig:ukdale_res}
+\end{figure}
+
+The same as for REFIT, the weekend data can be ignored,
+In this case, this does not improve the result. 
+
+\begin{figure}[H]
+	\centering
+	\caption{"Results for UK-DALE omitinng weekends  "}
+	\includegraphics[width=1\textwidth]{Figures/EC/ukdale_nw_res.png}
+	\label{fig:ukdale_res_nw}
+\end{figure}
+
+\subsection{ECO}
+
+ECO is of the similar quality as UK-DALE as can be seen in \ref{ssec:ds_eval}, regarding the number of buildings and the length of data.
+The results \ref{fig:eco_res}, show that this dataset performed the best, with results of 16.32 \%.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Results for ECO "}
+	\includegraphics[width=.8\textwidth]{Figures/EC/eco_res_nw_1.png}
+	\label{fig:eco_res}
+\end{figure}
+
+The same as before we can omit weekend data, which as can be seen on \ref{fig:eco_res_nw} brings the result down to 15.91 \%. 
+
+\begin{figure}[H]
+	\centering
+	\caption{"Results for ECO omiting weekends "}
+	\includegraphics[width=1\textwidth]{Figures/EC/eco_res.png}
+	\label{fig:eco_res_nw}
+\end{figure}
+
+\subsection{Combined}
+
+After combining results from all 24 buildings, the following table \ref{tab:ec_res} can be populated.
+The most relavant results can be seen in the last row.
+\begin{table}[H]
+    \centering
+    \caption{Combined percentage of anomolous samples [\%]}
+    \begin{tabular}{|l|ll|ll|}
+    \hline
+    N = 24 &
+      \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Including \\ weekend data\end{tabular}} &
+      \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Excluting \\ weekend data\end{tabular}} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Removed \\ min/max\\ outliers\end{tabular} &
+      \multicolumn{1}{l|}{train } &
+      test &
+      \multicolumn{1}{l|}{train} &
+      test \\ \hline
+    0 & \multicolumn{1}{l|}{15.92} & 23.71 & \multicolumn{1}{l|}{14.39} & 22.78 \\ \hline
+    1 & \multicolumn{1}{l|}{16.05} & 23.19 & \multicolumn{1}{l|}{14.45} & 22.11 \\ \hline
+    2 & \multicolumn{1}{l|}{16.02} & 22.62 & \multicolumn{1}{l|}{14.43} & 21.64 \\ \hline
+    \end{tabular}
+    \label{tab:ec_res}
+\end{table}
+
+Results show that the algorithm on average 22 \% of samples will be a false positive, meaning
+every 5. sample could be a false positive. In other words the algoritm will be 78 \% efficient at 
+detecting true anomalies. 
+
+When analysing these reslts it is good to keep in mind, that this are the results from
+various buildings, usualy with more than one user. Elderly are usualy single, or 
+a couple, with a higher routines than the rest of population. 
