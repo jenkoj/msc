@@ -7,42 +7,45 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-The chapter will first address the issue being solved, then the methodology will be presented and finally the results will be presented.
-Elderly care has been addressed by many EU funded research projects since aging population is one of the issues the union is facing. 
-There are many solutions for this problem, from invasive such as wearables, sound sensors, IR occupancy detector, etc. 
+The chapter will first address the issue being solved,
+then the methodology will be presented, and finally,
+the results will be disclosed.
+
+Elderly care has been addressed by many EU-funded research projects since the aging population is one of the issues the union is facing. 
+There are many solutions for this problem, from invasive such as wearables, sound sensors, IR occupancy detectors, etc. 
 Few papers tried to solve this issue using non-invasive using previously mentioned NILM algorithms. 
-In this case no additional meters need to be installed, since per-appliance usage can be disagreed from main meter time-series data. 
-While this is practical from new equipment side, it is a bit less from accuracy side for larger buildings. 
+In this case, no additional meters need to be installed, since per-appliance usage can disagree with the main meter time-series data. 
+While this is practical from the new equipment side, it is a bit less from the accuracy side for larger buildings. 
 There is a middle way between invasive and non-invasive ways. 
 It is possible to set up sub-meters behind each appliance, and indirectly observe the usage pattern for this elder person. 
 This is better since the elder does not need to wear the device, but it is a bit slower in detecting the accident. 
 
 \section{Goal}
 
-The chapter will focus on building the elderly care system that will use users periodic usage pattern to detect an anomaly.
+The chapter will focus on building the elderly care system that will use users' periodic usage patterns to detect an anomaly.
 The anomaly could be anything from a fall, stroke or altered usage pattern due to dementia. 
-Algorithm will be designed based on load profile from previous chapter \ref{fig:PHPA}.
-Figure shows, that first thing in the morning used are kettle and toaster, and with delay of one hour, microwave and TV. 
+The algorithm will be designed based on the load profile from the previous chapter \ref{fig:PHPA}.
+Figure shows, that first thing in the morning used are kettle and toaster, and with a delay of one hour, microwave and TV. 
 If none of these appliances are used within that hour, then that hour is considered anomalous.
-This means that the algorithm will be able to detect the anomaly within 1 hour of accident.
+This means that the algorithm will be able to detect the anomaly within 1 hour of the accident.
 
 \section{Methodology}
 
 \subsection{Building anomaly detection algorithm}
 
-Next section will present steps taken wile designing this algorithm.
+The next section will present the steps taken while designing this algorithm.
 
 \subsubsection{Step one}
 To detect the anomalies one first needs to build a daily activation profile for each appliance, such as the one previously mentioned \ref{fig:PHPA}.
-In this specific case we will be using 2h buckets, yielding total of 12 buckets. 
+In this specific case, we will be using 2h buckets, yielding a total of 12 buckets. 
 
 \subsubsection{Step two}
-Second step is to ignore appliances that are always on by calculating the standard deviation of activations for each bucket. 
-The activations are normalised between 0 and 1. 
+The second step is to ignore appliances that are always on by calculating the standard deviation of activations for each bucket. 
+The activations are normalized between 0 and 1. 
 This step is important so that appliances that are always on, such as fridge or freezer get ignored. 
-These appliances are detected based on width of their activations normal distribution. 
+These appliances are detected based on the width of their activation normal distribution. 
 Where periodic (hourly basis) appliances should have narrow distributions, the more dynamic should have wider distributions.
-This can be seen on examples from building 2.
+This can be seen in examples from building 2.
 
 \begin{figure}[H]
     \centering
@@ -83,16 +86,16 @@ This can be seen on examples from building 2.
     \label{arr:microwave_acts}
 \end{figure}
 
-Based results from all appliances a threshold of $\sigma$ = 0.1 was set.
-This method will also get rid of appliances that are always on due to their specific nature such as server computer, 
+Based on results from all appliances a threshold of $\sigma$ = 0.1 was set.
+This method will also get rid of appliances that are always on due to their specific nature such as server computers, 
 or are rarely used. 
 
 \subsubsection{Third step}
 
 Next, appliances that trigger together must be grouped. 
-This means we must find part of the day that they are operating in.
-Due to filter in previous step, we are left with appliaces whos usage variates trough the day. 
-Some appliances are on even when user is not necesariliy using them, this can be seen on figure \ref{arr:as_acts}.
+This means we must find part of the day that they are operating.
+Due to the filter in the previous step, we are left with appliances whose usage variates trough the day. 
+Some appliances are on even when the user is not necessarily using them, this can be seen in figure \ref{arr:as_acts}.
 One out of many ways to do this is to normalize the activations, this yields a metric that tells us the probability of that appliance being turned on compared to the rest of the day. 
 If we do this for same appliances as above the result is following: 
 
@@ -124,8 +127,8 @@ If we do this for same appliances as above the result is following:
     \label{arr:microwave_acts_norm}
 \end{figure}
 
-Finnaly a suitable threshold must be selected.
-The treshold of .5 was selected, which yields the folowing vectors:
+Finally, a suitable threshold must be selected.
+The threshold of 0.5 was selected, which yields the following vectors:
 
 \begin{figure}[H]
     \centering
@@ -153,12 +156,12 @@ The treshold of .5 was selected, which yields the folowing vectors:
     \label{arr:microwave_acts_vec}
 \end{figure}
 
-The vectors show us that microwave has two usage peaks, where audio system can be used anytime through the day.
-It is possible to do this over all appliances, which results a 2D matrix. 
+The vectors show us that microwave has two usage peaks, where the audio system can be used anytime through the day.
+It is possible to do this for all appliances, which results in a 2D matrix. 
 Using this matrix we can build rules witch which appliances are being used together
 The figure \ref{arr:act_mat} uses rows for appliances and columns for buckets.  
-If we use terminology from image processing the matrix \ref{arr:act_mat} is essentially highly saturated load profile \ref{fig:PHPA},
-that can be easily processed by computer algorithms due to binary encoding. 
+If we use terminology from image processing the matrix \ref{arr:act_mat} is essentially a highly saturated load profile \ref{fig:PHPA},
+which can be easily processed by computer algorithms due to binary encoding. 
 
 \begin{figure}[H]
     \centering
@@ -207,12 +210,11 @@ that can be easily processed by computer algorithms due to binary encoding.
 \subsubsection{Step four}
 
 Using the matrix \ref{arr:act_mat} we can write an algorithm that will use current activations 
-and compare it the matrix. For an example if we have the live data for the fifth bucket, that is 
+and compare it to the matrix. For example, if we have the live data for the fifth bucket, that is 
 data from 8 to 10 o clock. 
-What needs to be done is to use the fifth column and muliply to the current activations.
-Then anomaliy is detected based on a rule, if sum of multiplied array equals to zero the 
-bucket is considered anomalous. The higher the sum, the more sure the algorithm is that the
-bucket is normal. 
+What needs to be done is to use the fifth column and multiply the current activations.
+Then anomaly is detected based on a rule. That at least two appliances must be activated, for the bucket to be labeled as normal,
+or else the bucket is labeled as anomalous. In this case, we sum the elements of an array and check if it is larger or equal to 2. 
 
 \begin{figure}[H]
     \centering
@@ -241,8 +243,8 @@ bucket is normal.
     %\label{arr:microwave_acts_vec}
 \end{figure}
 
-This process is done for all samples, where we count normal and anomolus samples for each bucket
-Important thing to note here is that we are evaluating on the samples that the profile was built on.
+This process is done for all samples, where we count normal and anomalous samples for each bucket
+The important thing to note here is that we are evaluating the samples from which the profile was built.
 
 \begin{figure}[H]
     \centering
@@ -270,14 +272,14 @@ Important thing to note here is that we are evaluating on the samples that the p
     \label{arr:agg_norm}
 \end{figure}
 
-Next step is to combine these two arrays, so that we calcuate the percentae of anomalous samples 
+The next step is to combine these two arrays so that we calculate the percentage of anomalous samples 
 for each bucket with an equation
 
 \begin{equation}
     a / (a + n) 
 \end{equation}
 
-Where a is a number of anomolus samples and n is a number of normal samples.
+Where "a" is a number of anomalous samples and "n" is a number of normal samples.
 
 \begin{figure}[H]
     \centering
@@ -292,19 +294,19 @@ Where a is a number of anomolus samples and n is a number of normal samples.
     \label{arr:anom_ratio}
 \end{figure}
 
-In other words the \ref{arr:anom_ratio} tells us how persistent is the users routine in each bucket or
-part of the day. The lower the ratio the higher the routine. Since routine is detected based on usage
-of appliances it cannot be picked up during the night. It is possible to see that routine is quite high 
-during morning and evening hours. The anomaly detection algorithm will work best when ratio above is low.
-Good trait of elder is that their routine is quite high even during the day, which means that
-the anomaly detection will function better and throughout the day.
+In other words, the \ref{arr:anom_ratio} tells us how persistent is the user's routine in each bucket or
+part of the day. The lower the ratio the higher the routine. Since routine is detected based on the usage
+of appliances it cannot be picked up during the night. It is possible to see that the routine is quite high 
+during the morning and evening hours. The anomaly detection algorithm will work best when the ratio above is low.
+A good trait of elders is that their routine is quite high even during the day, which means that
+the anomaly detection will function better throughout the day.
 
-One more thing to do is to ignore the parts of the day when user has no routine, by using
+One more thing to do is to ignore the parts of the day when the user has no routine, by using
 the array \ref{arr:anom_ratio} and setting a threshold of 0.3. A threshold of 0.5 would mean
 that every other day could be a false positive anomaly. Setting the rate at 0.3 reduces that 
 to every third day. But here compromises must be made, the lower the threshold the more accurate
 the algorithm will be, but it also means that it will be less sensitive. 
-In our case there is not much harm in false positives detections, since the caregiver can call
+In our case, there is not much harm in false positives detections, since the caregiver can call
 the elder to check if it is okay.  
 
 \begin{figure}[H]
@@ -323,18 +325,15 @@ the elder to check if it is okay.
 
 \subsubsection{Step five}
 
-The last step is to repeat step 4 and 5 with actual data, that the profile did not see prior to this. 
+The last step is to repeat steps 4 and 5 with data, that is not included in the built profile.
 
 \subsection{Datasets and evaluation} \label{ssec:ds_eval}
 
-The data was split into train an test set, where 80 \% of the data was for training and 20 \% percent of the data was used for testing.
-
-
+The data was split into train and test sets, where 80 \% of the data was for training and 20 \% percent of the data was used for testing.
+The data was split based on the number of samples, so in some cases where there is a lot of missing data, the time window of test data might be longer, although it contains only 20 \% of the samples.
 \subsubsection{REFIT}
-Refit dataset included data for more than 15 buildings, as it can be seen on figure below.
-Dataset in general is of the highest quality, since it was cleaned. 
-Dataset also the longest, therefore it should give the most accurate results.
-
+The REFIT dataset included data for more than 15 buildings, as can be seen on the figure below.
+The dataset in general is of the highest quality since it is the longest. This means this dataset should give the most relevant results.
 \begin{figure}[H]
 	\centering
 	\caption{"Timeline for REFIT "}
@@ -344,12 +343,11 @@ Dataset also the longest, therefore it should give the most accurate results.
 fd
 \subsubsection{UK-DALE} 
 
-All trough the uk-dale dataset is of similar size, the most of the data is from building 1.
-It general it includes 5 years of data, but only for some appliances, with addition there 
-are many appliances that are rarely used.
-When taking all of this into account, there is to many issues with it and it was simply ignored.
+All through the UK-DALE dataset is of similar size, the most of the data is from building 1.
+In general, it includes 5 years of data, but only for some appliances, with addition, many appliances are rarely used.
+When taking all of this into account, there are too many issues with it, and it was simply ignored.
 Another issue that can be seen on \ref{fig:ukdale_timeline} is that there is not enough data for 
-building 3. Test includes only a week of data, which is not enough for repesentative results, therefore it was ignored.
+building 3. The test includes only a week of data, which is not enough for representative results, therefore it was ignored.
 The rest of the buildings seem healthy.
 
 \begin{figure}[H]
@@ -360,9 +358,9 @@ The rest of the buildings seem healthy.
 \end{figure}
 
 \subsubsection{ECO}
-ECO dataset is has decent lengt of data, similar to uk-dale. 
-Only issue is building 1, where there is a lot of missing data.
-This is a good example how data is split, it is split based on number of samples,
+ECO dataset has a length of data, similar to UK-DALE. 
+The only issue is building 1, where there is a lot of missing data.
+This is a good example of how data is split, it is split based on several samples,
 meaning that there is 80 \% in the train bar, due to missing data the second bar is longer. 
 
 \begin{figure}[H]
@@ -376,12 +374,11 @@ meaning that there is 80 \% in the train bar, due to missing data the second bar
 
 \subsection{The ratio}
 
-Due to lack of ground truth data of actual accidents, it is hard to determine the 
-exact accuracy of this algorithm. Every anomaly detected it is no necessarily an 
-actual accident, it could be that user decided to lie in bed a bit longer, or decided to not watch 
-the TV in the evening.
-One metric that we can use to determine how well the algorithm functions is the anomaliy ratio \ref{arr:anom_ratio}.
-The reason behind that is, if the routine rate is high it means that it will be easier to detect.
+Due to the lack of ground truth data of actual accidents, it is hard to determine the 
+exact accuracy of this algorithm. Every anomaly detected is not necessarily an 
+actual accident, it could be that the user decided to lie in bed a bit longer, or decided to go to bed early in the evening.
+One metric that we can use to determine how well the algorithm functions is the anomaly ratio \ref{arr:anom_ratio}.
+The reason behind that is, that if the routine rate is high it means that it will be easier to detect.
 
 \begin{itemize}
 	\item ratio of 1 would mean that for that bucket household has no routine at all.
@@ -390,15 +387,15 @@ The reason behind that is, if the routine rate is high it means that it will be 
     \item ratio of 0 would mean that this household has a routine that is never broken. 
 \end{itemize}
 
-When true anomaly occurs such as fall, the dweller, all through he had the same routine for the past year (ratio is 0), would not be able to practice the routine, and the algorithm will be quite sure that tis is actual anoamly.
-Therefore, the higher the ratio the less sure we are that an actual anomaly such as fall occurred.
+When a true anomaly occurs such as a fall, the dweller, all through he had the same routine for the past year (the ratio would be close to 0), would not be able to practice the routine, and the algorithm will be quite sure that this is actual anomaly.
+Therefore, the higher the ratio the less sure we are that an actual anomaly such as a fall occurred.
 This is a good alternative measurement, that tells us how well this algorithm will perform. 
 
 \subsubsection{Ratio during the week} \label{sssec:ratio_week}
 
 As the behavior of the dwellers changes, so does the accuracy of the algorithm. 
-One observation that was made, was that the routine was higher during the week, than during the weekends,
-as can be seen on figures bellow. There is also a 
+One observation that was made, was that the routine was higher during the week than during the weekends,
+as can be seen in the figures below. There is also a 
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -433,15 +430,15 @@ as can be seen on figures bellow. There is also a
 	\caption{"Weekly anomaly percenage"}
 \end{figure}
 
-Since we are dealing with elderly, they have higher routine and their routine does not change that much during the weekends. 
-Usualy, asisted living systems are put in place since elders are alone in the dwelling.
-Taking all of this into account, we could make an asumption that the routine of elderly is the same trough the week, and simply ignore the weekends. 
-This should yield "real/accurate" results. 
+Since we are dealing with the elderly, they have a higher routine, and it does not change that much during the weekends. 
+Usually, assisted living systems are put in place since elders are alone in the dwelling.
+Taking all of this into account, we could assume that the routine of the elderly is the same trough the week and simply ignore the weekends. 
+This should yield more relevant results. 
 
 \subsection{Ratio in a year}
 
-The ratio also changes over the course of a year. While on average the ratio is lower during the winter, spring and summer, it is higher during the summer due to vacationing. 
-This can be seen on figures bellow. 
+The ratio also changes over a year. While on average the ratio is lower during the winter, spring and summer, it is higher during the summer due to vacation. 
+This can be seen in the figures below. 
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -477,20 +474,20 @@ This can be seen on figures bellow.
 \end{figure}
 
 
-The examples above were a demonstration and look into data and metric. 
-The examples shown were trained and evaluated on same data. 
-In order to show true performance, we will used test data to determine the actual perfomance. 
+The examples above were a demonstration and a look into data and metrics. 
+The examples shown were trained and evaluated on the same data. 
+To show true performance, we will use test data to determine the actual performance. 
 
 Results were obtained for 3 datasets. 
-REDD and iAWE datasets were not used, since the dataset was to short, they contained less than a month of data. 
+REDD and iAWE datasets were not used, since the dataset was too short, they contained less than a month of data. 
 
 
 \subsection{REFIT}
 
 \subsubsection{Results including weekend data}
-results show, that the method in on average 23.6 \% efficient. 
-on figure \ref{fig:refit_res} it is possible to see that house 6 yeilds lower results, and house 19 much higher than the rest. 
-This could be due to various dataset errors that occured during sampling.
+Results show, that the method is on average 23.6 \% efficient. 
+In figure \ref{fig:refit_res} it is possible to see that house 6 yields lower results and house 19 is much higher than the rest. 
+This could be due to various dataset errors that occurred during sampling.
 
 \begin{figure}[H]
 	\centering
@@ -499,10 +496,10 @@ This could be due to various dataset errors that occured during sampling.
 	\label{fig:refit_res}
 \end{figure}
 
-For more relavant results we can ignore the outliers by removing one max and one min building, such as can be seen on figure \ref{fig:refit_res_2}
-This yields result 22.92 \%.
-If we were to repeat this proces the result would be 21.33 \%.
-Since all outliers are removed, the result converges towards 21 \%, which is the relavant value. 
+For more relevant results we can ignore the outliers by removing one maximum and minimum value, such as can be seen in figure \ref{fig:refit_res_2}
+This yields a result of 22.92 \%.
+If we were to repeat this process the result would be 21.33 \%.
+Since all outliers are removed, the result converges towards 21 \%, which is the relevant value. 
 
 \begin{figure}[H]
 	\centering
@@ -511,10 +508,10 @@ Since all outliers are removed, the result converges towards 21 \%, which is the
 	\label{fig:refit_res2}
 \end{figure}
 
-\subsubsection{Results omiting weekend data}
+\subsubsection{Omiting weekend data}
 
-As mentioned in sub-subsection \ref{sssec:ratio_week}, the average routine is different during the week and weekends.
-The asumption was that the rutine of elderly people does not change significantly over the week, therefore results should be more relavant if we ignore the weekends.
+As mentioned in the sub-sub section \ref{sssec:ratio_week}, the average routine is different during the week and weekends.
+The assumption was that the routine of elderly people does not change significantly over the week, therefore results should be more relevant if we ignore the weekends.
 The results on figure \ref{fig:refit_res_nw_1"} show that result did improve for 1.2 \% to 22.48 \%.
 
 \begin{figure}[H]
@@ -524,10 +521,10 @@ The results on figure \ref{fig:refit_res_nw_1"} show that result did improve for
 	\label{fig:refit_res_nw_1"}
 \end{figure}
 
-By ignoring the minimal and maximal outliers the results drops to 21.33 \%.
+By ignoring the minimal and maximal outliers the results drop to 21.33 \%.
 By repeating the process one more time the result drops to 19.91 \%, since all outliers were removed, the result converges towards this value. 
 
-By removing the weekend data, the results decreased for 1.2 \%. 
+By removing the weekend data, the results decreased by 1.2 \%. 
 
 \begin{figure}[H]
 	\centering
@@ -538,8 +535,9 @@ By removing the weekend data, the results decreased for 1.2 \%.
 
 \subsection{UK-DALE}
 
-As mentioned in subsection \ref{ssec:ds_eval}, the ukdale not as long, large and cleaned as the previous dataset, so results could be less relavant.
-The results on figure \ref{fig:ukdale_res}, show that the average result is 25.35 \%. Due to low number of buildings, it is not possible to ignore and find outliers. 
+As mentioned in subsection \ref{ssec:ds_eval}, the UK-DALE is not as long, large and cleaned as the previous dataset, so results could be less relevant.
+The results on figure \ref{fig:ukdale_res}, show that the average result is 25.35 \%. Due to low number of buildings, it is not possible to ignore and find outliers.
+
 \begin{figure}[H]
 	\centering
 	\caption{"Results for UK-DALE"}
@@ -559,7 +557,7 @@ In this case, this does not improve the result.
 
 \subsection{ECO}
 
-ECO is of the similar quality as UK-DALE as can be seen in \ref{ssec:ds_eval}, regarding the number of buildings and the length of data.
+ECO is of a similar quality as UK-DALE as can be seen in \ref{ssec:ds_eval}, regarding the number of buildings and the length of data.
 The results \ref{fig:eco_res}, show that this dataset performed the best, with results of 16.32 \%.
 
 \begin{figure}[H]
@@ -569,7 +567,7 @@ The results \ref{fig:eco_res}, show that this dataset performed the best, with r
 	\label{fig:eco_res}
 \end{figure}
 
-The same as before we can omit weekend data, which as can be seen on \ref{fig:eco_res_nw} brings the result down to 15.91 \%. 
+The same as before we can omit weekend data, which can be seen on \ref{fig:eco_res_nw}. This brings the result down to 15.91 \%. 
 
 \begin{figure}[H]
 	\centering
@@ -581,7 +579,7 @@ The same as before we can omit weekend data, which as can be seen on \ref{fig:ec
 \subsection{Combined}
 
 After combining results from all 24 buildings, the following table \ref{tab:ec_res} can be populated.
-The most relavant results can be seen in the last row.
+The most relevant results can be seen in the last row.
 \begin{table}[H]
     \centering
     \caption{Combined percentage of anomolous samples [\%]}
@@ -603,9 +601,9 @@ The most relavant results can be seen in the last row.
 \end{table}
 
 Results show that the algorithm on average 22 \% of samples will be a false positive, meaning
-every 5. sample could be a false positive. In other words the algoritm will be 78 \% efficient at 
+every fifth sample could be a false positive. In other words, the algorithm will be 78 \% efficient at 
 detecting true anomalies. 
 
-When analysing these reslts it is good to keep in mind, that this are the results from
-various buildings, usualy with more than one user. Elderly are usualy single, or 
-a couple, with a higher routines than the rest of population. 
+When analyzing these results it is good to keep in mind, that these are the results from
+various buildings, usually with more than one user. The elderly are usually single, or 
+a couple, with a higher routine than the rest of the population. 
