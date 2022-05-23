@@ -11,14 +11,18 @@ The chapter will first address the issue being solved,
 then the methodology will be presented, and finally,
 the results will be disclosed.
 
-Elderly care has been addressed by many EU-funded research projects since the aging population is one of the issues the union is facing. 
-There are many solutions for this problem, from invasive such as wearables, sound sensors, IR occupancy detectors, etc. 
-Few papers tried to solve this issue using non-invasive using previously mentioned NILM algorithms. 
-In this case, no additional meters need to be installed, since per-appliance usage can disagree with the main meter time-series data. 
-While this is practical from the new equipment side, it is a bit less from the accuracy side for larger buildings. 
-There is a middle way between invasive and non-invasive ways. 
-It is possible to set up sub-meters behind each appliance, and indirectly observe the usage pattern for this elder person. 
-This is better since the elder does not need to wear the device, but it is a bit slower in detecting the accident. 
+Elderly care has been addressed by many EU-funded research projects since the aging population is one of the main issues the union is facing. 
+
+There are many solutions to this problem.
+One approach is invasive such as wearables, sound sensors, IR occupancy detectors, etc. 
+Few authors tried to solve this issue using non-invasive using previously mentioned NILM algorithms. 
+In this case, no additional meters need to be installed, since per-appliance usage can be disaggregated.
+While this is practical from the new equipment side, it is a bit less practical from the efficiency and accuracy side, especially for larger buildings. 
+
+There is a middle way between invasive and non-invasive approaches. 
+It is possible to use sub-meters for each appliance and indirectly observe the usage pattern. 
+The upside of this approach is that the elder does not need to wear the device.
+The downside is, that this approach will be slower at detecting the accident.
 
 \section{Goal}
 
@@ -206,41 +210,70 @@ which can be easily processed by computer algorithms due to binary encoding.
     \label{arr:act_mat}
 \end{figure}
 
+It is possible to display the matrix \ref{arr:act_mat} as an image.
+The figure below shows how the load profile is transformed.
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{"Input data"}
+		\includegraphics[width=1\linewidth]{../Figures/LPS/PHPA.png}
+		\label{fig:ec_PHPA}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{"figure \protect\ref{arr:act_mat} as an image"}
+		\includegraphics[width=1\linewidth]{../Figures/LPS/PHPA_EC.png}
+		\label{fig:ec_PHPA_bw}
+	\end{subfigure}%
+
+	\caption{"Trasformation of source load profile to black and white"}
+\end{figure}
 
 \subsubsection{Step four}
 
 Using the matrix \ref{arr:act_mat} we can write an algorithm that will use current activations 
-and compare it to the matrix. For example, if we have the live data for the fifth bucket, that is 
+and compare it to the matrix. For example, if we have the test sample for the fifth bucket, that is 
 data from 8 to 10 o clock. 
 What needs to be done is to use the fifth column and multiply the current activations.
 Then anomaly is detected based on a rule. That at least two appliances must be activated, for the bucket to be labeled as normal,
 or else the bucket is labeled as anomalous. In this case, we sum the elements of an array and check if it is larger or equal to 2. 
 
+% \begin{figure}[H]
+%     \centering
+%     \begin{tikzpicture}
+%         \coordinate (s) at (0,5);
+%         \foreach \num in {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0}{
+%         \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+%         \coordinate (s) at ($(s) + (1,0)$);
+%         }
+        
+%         \node at (5.5,4) {X};
+%         \coordinate (s) at (0,3);
+%         \foreach \num in {1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0}{
+%         \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+%         \coordinate (s) at ($(s) + (1,0)$);
+%         }
+%         \node at (5.5,2){=};
+%         \coordinate (s) at (0,1);
+%         \foreach \num in {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0}{
+%         \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+%         \coordinate (s) at ($(s) + (1,0)$);
+%         }
+%         \node at (5.5,0){SUM = 2 - > not an anomaly };
+%     \end{tikzpicture}
+%     \caption{The evaluation of new bucket compared to matrix. Example is for fifth bucket or fifth row from the matrix}
+%     %\label{arr:microwave_acts_vec}
+% \end{figure}
+
 \begin{figure}[H]
     \centering
-    \begin{tikzpicture}
-        \coordinate (s) at (0,5);
-        \foreach \num in {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0}{
-        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
-        \coordinate (s) at ($(s) + (1,0)$);
-        }
-        
-        \node at (5.5,4) {X};
-        \coordinate (s) at (0,3);
-        \foreach \num in {1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0}{
-        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
-        \coordinate (s) at ($(s) + (1,0)$);
-        }
-        \node at (5.5,2){=};
-        \coordinate (s) at (0,1);
-        \foreach \num in {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0}{
-        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
-        \coordinate (s) at ($(s) + (1,0)$);
-        }
-        \node at (5.5,0){SUM = 2 - > not an anomaly };
-    \end{tikzpicture}
+    \caption{"Process of evaluating an anomaly"}
+    \includegraphics[width=1\linewidth]{../Figures/EC/EC_anom_dect.png}
+    \label{fig:anom_detct}
     \caption{The evaluation of new bucket compared to matrix. Example is for fifth bucket or fifth row from the matrix}
-    %\label{arr:microwave_acts_vec}
+    
 \end{figure}
 
 This process is done for all samples, where we count normal and anomalous samples for each bucket
@@ -370,7 +403,6 @@ meaning that there is 80 \% in the train bar, due to missing data the second bar
 	\label{fig:eco_timeline}
 \end{figure}
 
-\section{Results}
 
 \subsection{The ratio}
 
@@ -382,18 +414,18 @@ The reason behind that is, that if the routine rate is high it means that it wil
 
 \begin{itemize}
 	\item ratio of 1 would mean that for that bucket household has no routine at all.
-    \item ratio of .5 would mean that the routine is being "practiced" every second day
-    \item ratio of .2 would mean that routine is broken on average every 5 day
+    \item ratio of 0.5 would mean that the routine is being "practiced" every second day
+    \item ratio of 0.2 would mean that routine is broken on average every 5 day
     \item ratio of 0 would mean that this household has a routine that is never broken. 
 \end{itemize}
 
-When a true anomaly occurs such as a fall, the dweller, all through he had the same routine for the past year (the ratio would be close to 0), would not be able to practice the routine, and the algorithm will be quite sure that this is actual anomaly.
+When a true anomaly occurs such as a fall, the dweller, all through he had the same routine for the past year (the ratio would be close to 0), would not be able to practice the routine, and the algorithm will be quite sure that this is an actual anomaly.
 Therefore, the higher the ratio the less sure we are that an actual anomaly such as a fall occurred.
 This is a good alternative measurement, that tells us how well this algorithm will perform. 
 
 \subsubsection{Ratio during the week} \label{sssec:ratio_week}
 
-As the behavior of the dwellers changes, so does the accuracy of the algorithm. 
+As the behavior of the dweller's changes, so does the accuracy of the algorithm. 
 One observation that was made, was that the routine was higher during the week than during the weekends,
 as can be seen in the figures below. There is also a 
 
@@ -474,6 +506,8 @@ This can be seen in the figures below.
 \end{figure}
 
 
+\section{Results}
+
 The examples above were a demonstration and a look into data and metrics. 
 The examples shown were trained and evaluated on the same data. 
 To show true performance, we will use test data to determine the actual performance. 
@@ -492,11 +526,11 @@ This could be due to various dataset errors that occurred during sampling.
 \begin{figure}[H]
 	\centering
 	\caption{"Results for REFIT "}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_res.png}
+	\includegraphics[width=.8\textwidth]{Figures/EC/refit_res.png}
 	\label{fig:refit_res}
 \end{figure}
 
-For more relevant results we can ignore the outliers by removing one maximum and minimum value, such as can be seen in figure \ref{fig:refit_res_2}
+For more relevant results we can ignore the outliers by removing one maximum and minimum value, such as can be seen in figure \ref{fig:refit_res2}
 This yields a result of 22.92 \%.
 If we were to repeat this process the result would be 21.33 \%.
 Since all outliers are removed, the result converges towards 21 \%, which is the relevant value. 
@@ -504,7 +538,7 @@ Since all outliers are removed, the result converges towards 21 \%, which is the
 \begin{figure}[H]
 	\centering
 	\caption{"Results for REFIT with removed outliers "}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_res2.png}
+	\includegraphics[width=.8\textwidth]{Figures/EC/refit_res2.png}
 	\label{fig:refit_res2}
 \end{figure}
 
@@ -512,12 +546,12 @@ Since all outliers are removed, the result converges towards 21 \%, which is the
 
 As mentioned in the sub-sub section \ref{sssec:ratio_week}, the average routine is different during the week and weekends.
 The assumption was that the routine of elderly people does not change significantly over the week, therefore results should be more relevant if we ignore the weekends.
-The results on figure \ref{fig:refit_res_nw_1"} show that result did improve for 1.2 \% to 22.48 \%.
+The results on figure \ref{fig:refit_res_nw_1"} show that result dropped to 22.48 \%.
 
 \begin{figure}[H]
 	\centering
 	\caption{"Results for REFIT weekday only"}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_1.png}
+	\includegraphics[width=.8\textwidth]{Figures/EC/refit_res_nw_1.png}
 	\label{fig:refit_res_nw_1"}
 \end{figure}
 
@@ -529,19 +563,19 @@ By removing the weekend data, the results decreased by 1.2 \%.
 \begin{figure}[H]
 	\centering
 	\caption{"Results for REFIT weekday only and removed outliers"}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_2.png}
+	\includegraphics[width=.8\textwidth]{Figures/EC/refit_res_nw_2.png}
 	\label{fig:refit_res_nw_2"}
 \end{figure}
 
 \subsection{UK-DALE}
 
 As mentioned in subsection \ref{ssec:ds_eval}, the UK-DALE is not as long, large and cleaned as the previous dataset, so results could be less relevant.
-The results on figure \ref{fig:ukdale_res}, show that the average result is 25.35 \%. Due to low number of buildings, it is not possible to ignore and find outliers.
+The results on figure \ref{fig:ukdale_res}, show that the average result is 25.35 \%. Due to the low number of buildings, it is not possible to detect and ignore outliers.
 
 \begin{figure}[H]
 	\centering
 	\caption{"Results for UK-DALE"}
-	\includegraphics[width=1\textwidth]{Figures/EC/ukdale_res.png}
+	\includegraphics[width=.7\textwidth]{Figures/EC/ukdale_res.png}
 	\label{fig:ukdale_res}
 \end{figure}
 
@@ -551,7 +585,7 @@ In this case, this does not improve the result.
 \begin{figure}[H]
 	\centering
 	\caption{"Results for UK-DALE omitinng weekends  "}
-	\includegraphics[width=1\textwidth]{Figures/EC/ukdale_nw_res.png}
+	\includegraphics[width=.7\textwidth]{Figures/EC/ukdale_nw_res.png}
 	\label{fig:ukdale_res_nw}
 \end{figure}
 
@@ -563,7 +597,7 @@ The results \ref{fig:eco_res}, show that this dataset performed the best, with r
 \begin{figure}[H]
 	\centering
 	\caption{"Results for ECO "}
-	\includegraphics[width=.8\textwidth]{Figures/EC/eco_res_nw_1.png}
+	\includegraphics[width=.7\textwidth]{Figures/EC/eco_res_nw_1.png}
 	\label{fig:eco_res}
 \end{figure}
 
@@ -572,11 +606,11 @@ The same as before we can omit weekend data, which can be seen on \ref{fig:eco_r
 \begin{figure}[H]
 	\centering
 	\caption{"Results for ECO omiting weekends "}
-	\includegraphics[width=1\textwidth]{Figures/EC/eco_res.png}
+	\includegraphics[width=.7\textwidth]{Figures/EC/eco_res.png}
 	\label{fig:eco_res_nw}
 \end{figure}
 
-\subsection{Combined}
+\subsection{Combined results}
 
 After combining results from all 24 buildings, the following table \ref{tab:ec_res} can be populated.
 The most relevant results can be seen in the last row.
@@ -604,6 +638,39 @@ Results show that the algorithm on average 22 \% of samples will be a false posi
 every fifth sample could be a false positive. In other words, the algorithm will be 78 \% efficient at 
 detecting true anomalies. 
 
-When analyzing these results it is good to keep in mind, that these are the results from
-various buildings, usually with more than one user. The elderly are usually single, or 
-a couple, with a higher routine than the rest of the population. 
+
+\section{Discussion}
+
+When analyzing these results one important metric is socio-economic status,
+such as age, income and number of dwellers in the building. 
+Since the datasets did not provide any of this information,
+it is hard to make any other conclusions other than the algorithm
+works well on an average building.
+
+We know that the reason for installing such a system is that the user is left alone.
+We can assume that on average there is more than one dweller in buildings tested.
+Since this system would usually be in use by a single dweller,
+this would be in favor of our algorithm since it would be 
+easier to extract the routine.
+
+One other thing that would be in our favor is that the average person has a lower routine that an elderly person. 
+If we take a look at the results, it is possible to see that,
+the average home has a high routine in the morning and evenings, 
+This is because the average person is not at home during noon.
+Since the elderly are home at that time, this would 
+increase the time windows where we can detect 
+the accident.
+
+We could also assume that the older the dweller, the higher the routine. 
+The nature of the elderly is that they are more conservative when it comes to changes,
+and prefer to stick to their routine.
+Since the algorithm, works better when usage is periodic and routine, this would also be in our favor. 
+
+Taking all of these assumptions into account, 
+there is a possibility that this algorithm would work 
+better on the elderly due to their nature.
+
+Since the results on the average building are promising
+a test study should be performed. 
+This would also prove our assumptions and that this algorithm works 
+better on the elderly.
