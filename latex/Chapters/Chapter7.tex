@@ -91,7 +91,7 @@ This can be seen in examples from building 2.
 \end{figure}
 
 Based on results from all appliances a threshold of $\sigma$ = 0.1 was set.
-This method will also get rid of appliances that are always on due to their specific nature such as server computers, 
+This method will also get rid of appliances that are always on due to their specific nature such as server computers 
 or are rarely used. 
 
 \subsubsection{Third step}
@@ -505,6 +505,49 @@ This can be seen in the figures below.
 	\caption{"Yearly anomaly percentage"}
 \end{figure}
 
+\subsection{Effectivness of anomaly detection}
+
+One more thing to keep in mind is that this algorithm will be able to detect anomalies only when
+the routine will be high, and more than two appliances will be used in that buckets.
+
+add example here
+
+Figure \ref{fig:ignored_buckets_22} shows which buckets were most commonly used for the detection of an anomaly.
+The graph includes averaged values from all buildings and datasets. 
+In other words, the graph presents how strong is average routine through the day.
+
+This means that the higher the percentage, the higher the chance that this bucket will be usable.
+During the night, it is possible to see that the average routine rate is quite high,
+this is because most users are routinely sleeping during that period. 
+As said this high percentage enables us to detect possible accidents while sleeping.
+Should the elder wake up due to a problem, it could be detected.
+In case if elder wakes up during the night, it would be hard to detect it, since the algorithm would think it is part of the routine.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Percentage of buildings that used bucket for anomaly detection"}
+	\includegraphics[width=.8\textwidth]{Figures/EC/ignored_buckets_dist.png}
+	\label{fig:ignored_buckets_22}
+\end{figure}
+
+To find the most usable buckets for our operating mode, an additional filter must be applied.
+The rule is that at least two appliances must be commonly used in that bucket. 
+After applying this rule the following figure emerges \ref{fig:ignored_buckets_act}
+
+\begin{figure}[H]
+	\centering
+	\caption{"Percentage of buildings that used effetive buckets for anomaly detection "}
+	\includegraphics[width=.8\textwidth]{Figures/EC/all_ignored_buckets_dist_incl_act.png}
+	\label{fig:ignored_buckets_act}
+\end{figure}
+
+The figure \ref{fig:ignored_buckets_act} shows that there are two peaks.
+One in the morning and the other, a wider one in the evening.
+
+This means that on an average home the algorithm would perform best in the morning and evening.
+This is because the average person is at school or work during noon. 
+This can be confirmed on figure \ref{fig:ignored_buckets_act}.
+The elderly, are usually at home at noon, which could extend the effective detection window.
 
 \section{Results}
 
@@ -634,7 +677,7 @@ The most relevant results can be seen in the last row.
     \label{tab:ec_res}
 \end{table}
 
-Results show that the algorithm on average 22 \% of samples will be a false positive, meaning
+Results show that the algorithm would, on average, label 22 \%of samples as false positive, meaning
 every fifth sample could be a false positive. In other words, the algorithm will be 78 \% efficient at 
 detecting true anomalies. 
 
@@ -655,16 +698,15 @@ easier to extract the routine.
 
 One other thing that would be in our favor is that the average person has a lower routine that an elderly person. 
 If we take a look at the results, it is possible to see that,
-the average home has a high routine in the morning and evenings, 
+the average home has a low routine during the noon. 
 This is because the average person is not at home during noon.
-Since the elderly are home at that time, this would 
-increase the time windows where we can detect 
-the accident.
+This can be seen on figure \ref{fig:ignored_buckets_22}.
+Since the elderly are usually home at that time, this would 
+increase the time windows where we can detect the accident.
 
 We could also assume that the older the dweller, the higher the routine. 
-The nature of the elderly is that they are more conservative when it comes to changes,
-and prefer to stick to their routine.
-Since the algorithm, works better when usage is periodic and routine, this would also be in our favor. 
+The nature of the elderly is that they are more conservative when it comes to changes, and prefer to stick to their routine.
+Since the algorithm, works better when usage is periodic, this would also be in our favor. 
 
 Taking all of these assumptions into account, 
 there is a possibility that this algorithm would work 
@@ -674,3 +716,13 @@ Since the results on the average building are promising
 a test study should be performed. 
 This would also prove our assumptions and that this algorithm works 
 better on the elderly.
+
+
+\section{Conclusion}
+
+The question that we tried to answer was:
+is this method good enough to be able to efficiently detect anomalies? 
+The question that should be asked is,
+is the behavior of the users periodic enough, to 
+be able to efficiently detect the anomaly?
+The answer is: yes, it is.
