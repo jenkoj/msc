@@ -373,7 +373,7 @@ The dataset in general is of the highest quality since it is the longest. This m
 	\includegraphics[width=1\textwidth]{Figures/EC/refit_timeline.png}
 	\label{fig:refit_timeline}
 \end{figure}
-fd
+
 \subsubsection{UK-DALE} 
 
 All through the UK-DALE dataset is of similar size, the most of the data is from building 1.
@@ -717,6 +717,99 @@ a test study should be performed.
 This would also prove our assumptions and that this algorithm works 
 better on the elderly.
 
+\section{Iterative learning system}
+
+In case of practical use of this algorithm, it is 
+important that after installation, the system works as fast as possible,
+and that it improves over time. 
+This can be achieved with the implementation of dynamic learning.
+The system will build a load profile based on the first month of data.
+Over the second month, the system can be put online.
+At the end of the month, it can use this data to improve the load profile.
+This can then be repeated indefinitely. 
+
+\subsection{Results}
+
+For this evaluation, only REFIT data was used. 
+As it can be seen on figure \ref{fig:refit_timeline},
+Refit buildings have long and relatively similar timelines,
+compared to other datasets.
+
+On figure \ref{fig:dyn_data_1} it is possible to see,
+how the amount of train and testing changes over 16 months.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Data for building 1 over 16 months"}
+	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/tst_tr_b1.png}
+	\label{fig:dyn_data_1}
+\end{figure}
+
+We can also plot how the amount of data changes for all buildings 
+
+\begin{figure}[H]
+	\centering
+	\caption{"Data used for training"}
+	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/data_used_for_training_all.png}
+	\label{fig:data_used_for_training}
+\end{figure}
+
+To analyze the results, at least 1 year of usable data should be available. 
+
+\begin{figure}[H]
+	\centering
+	\caption{"Data used for training, with removed buildings"}
+	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/data_used_for_training_removed_short.png}
+	\label{fig:data_used_for_training_removed}
+\end{figure}
+
+Similarly, we can check how test data changes over the months. In this case,
+data is not being aggregated, but only one month of it is used at a time.
+Figure \ref{fig:data_used_for_testing} shows, that after one year
+the amount of data used for training starts to decline. 
+To get more accurate results we will only observe the performance in one year of data. 
+
+\begin{figure}[H]
+	\centering
+	\caption{"Data used for training, with removed buildings"}
+	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/data_used_for_testing.png}
+	\label{fig:data_used_for_testing}
+\end{figure}
+
+Now all buildings contain at least 1 year of data. 
+To show the effect of training data on the metric, the following figure is presented
+The figure \ref{fig:efect_of_data_on_metric} contains 12 months of 
+data for each house, since some have 17 months of data,
+they never reach the 100 \% mark.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Effect of new data on metric"}
+	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/efect_of_data_on_metric.png}
+	\label{fig:efect_of_data_on_metric}
+\end{figure}
+
+Figure \ref{fig:efect_of_data_on_metric} shows, that in most cases, results converge
+towards 20 \%. While in some cases, the results are good from the first month,
+they always peak, since the building changes. With more data, these peaks become smaller
+and become less frequent. If the behavior in the household radically changes, it can
+still lead to peaks.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Metric over 12 months"}
+	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/1_year_of_iterative_learning_avg.png}
+	\label{fig:1_year_of_iterative_learning_avg}
+\end{figure}
+
+Same data can also be presented so that it shows how the metric changes 
+over a year. While the average remains vary around 20 \%. 
+
+To conclude, by increasing the amount of data, the algorithm becomes more stable.
+In some cases, where users' behavior does not change, the algorithm could work
+from the first month. In other cases, where behavior is more dynamic, 
+the algorithm could need a month or two to stabilize. 
+
 
 \section{Conclusion}
 
@@ -726,3 +819,5 @@ The question that should be asked is,
 is the behavior of the users periodic enough, to 
 be able to efficiently detect the anomaly?
 The answer is: yes, it is.
+
+
