@@ -40,40 +40,33 @@ this would be a Monday from midnight to one o'clock.
 The lower-right corner presents the last hour of a week.
 Since there are roughly 4 weeks in each month, each pixel will present 4 samples. 
 
-% \subsubsection{Per-building Per-appliance}
-% This load profile is useful when comparing how usage is similar across buildings, and when
 
-% \subsubsection{Bag-of-appliances}
-% This load profile is a combination of the load profiles above,
-% except it offers a larger detail when observing groups of appliances.
-% Since we are using one dimension for appliances, we will use only the daily dimension.
-% Insert example here
 
 \subsection{Datasets}
 This section will be described in larger detail in the following chapter.
 
 \subsection{t-SNE}
-test
-% t-SNE \cite{tsne2} or t-distribution stochastic neighboring embedding is a method for portraying high dimensional 
-% data in low dimensional space. This process is also known as dimensionality reduction.
 
-% One of the well-known algorithms is PCA.
-% The key difference between the two is that one is linear, and the other is non-linear.
-% PCA, linear, projects data on new space and finds the one with the least variance.
-% SNE \cite{sne1}, non-linear, is composed of two main parts. The first one is 
-% converting the high-dimensional Euclidean distances between data points into conditional probabilities that represent similarities. \cite{sne1}
-% The pairs with high similarity have a high probability, and pairs with lower a low probability.
-% Second, it uses Kullback-Leibler divergence to minimize it with respect to a location on a map.
-% To achieve this it uses gradient descent to minimize the cost function.
-% Over many iterations, similar data points should be close together and far away from dissimilar objects.
-% Similar data points usually form clusters. 
+t-SNE \cite{tsne2} or t-distribution stochastic neighboring embedding is a method for portraying high dimensional 
+data in low dimensional space. This process is also known as dimensionality reduction.
 
-% t-SNE uses SNE as a basis, except that it uses t-student distribution instead of normal in order to calculate the similarity.
+One of the well-known algorithms is PCA.
+The key difference between the two is that one is linear, and the other is non-linear.
+PCA, linear, projects data on new space and finds the one with the least variance.
+SNE \cite{sne1}, non-linear, is composed of two main parts. The first one is 
+converting the high-dimensional Euclidean distances between data points into conditional probabilities that represent similarities. \cite{sne1}
+The pairs with high similarity have a high probability, and pairs with lower a low probability.
+Second, it uses Kullback-Leibler divergence to minimize it with respect to a location on a map.
+To achieve this it uses gradient descent to minimize the cost function.
+Over many iterations, similar data points should be close together and far away from dissimilar objects.
+Similar data points usually form clusters. 
 
-% In our case, two dimensions will be used. Since this is non-linear dimensionality reduction,
-% the axis usually presents dimensions that are hard to comprehend by the human eye. 
-% Since the algorithm uses similarity at the base of the algorithm, it is possible to 
-% see which samples are more similar to each other.
+t-SNE uses SNE as a basis, except that it uses t-student distribution instead of normal in order to calculate the similarity.
+
+In our case, two dimensions will be used. Since this is non-linear dimensionality reduction,
+the axis usually presents dimensions that are hard to comprehend by the human eye. 
+Since the algorithm uses similarity at the base of the algorithm, it is possible to 
+see which samples are more similar to each other.
 \section{Results}
 
 The results will be presented in three subsections, these are
@@ -368,8 +361,8 @@ except it is easier to use color to see the appliance they present
 One issue that causes the t-SNE algorithm an issue is low entropy data or 
 in other words, images that are almost completely dark or white, due to various faults in appliances or measurements.
 
-If we calculate entropy for each image and set some low threshold, it is possible to filter out these samples. 
-Setting an entropy threshold of 0.5, we filter out around 5 \% of all samples. 
+If we calculate entropy for each image and set a threshold, it is possible to filter out these samples. 
+By setting an entropy threshold of 0.5, we filter out around 5 \% of all samples. 
 
 \begin{figure}[H]
 	\centering
@@ -396,7 +389,7 @@ individual buildings, and how each appliance is used.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Per appliance per building data for all buildings"}
+	\caption{"Projection of per-appliance load profiles in a single building"}
 	\includegraphics[width=.8\textwidth]{Figures/TSNE/TSNE_results/refit/scatter_refit_8.png}
 	\label{fig:tsne_papb_scatter_ent_refit8}
 \end{figure}
@@ -407,35 +400,83 @@ televisions lie somewhere in between.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Per appliance data for refit buildings images"}
+	\caption{"Projection of per-appliance load profiles in a single building with actual samples"}
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png}
 	\label{fig:tsne_papb_img_scatter_ent_refit8}
 \end{figure}
 
 \subsection{Per-appliance per-building}
 To study the usage by comparing all appliances between buildings,
-we have to use a proposed type of profile.
+we have to use one of the proposed load profiles.
 
 \subsubsection{Bag off appliances}
 This load profile is a combination of the load profiles above,
 except it offers a larger detail when observing groups of appliances.
 Since we are using one dimension for appliances, we will use only the daily dimension.
 
+To construct such a profile we need a universal way of constructing it.
+This is done by measuring how many times each appliance occurs in the datasets,
+then this list is sorted from most common to least common, and finally, it is cut at 30 Appliances.
+
+the results are applainces in the following order:
+
+\begin{itemize}
+	\item fridge freezer
+	\item freezer
+	\item fridge
+	\item computer
+	\item television
+	\item light
+	\item kettle
+	\item boiler
+	\item broadband router
+	\item microwave
+	\item washing machine
+	\item dish washer
+	\item HTPC
+	\item toaster
+	\item solar thermal pumping station
+	\item audio amplifier
+	\item laptop computer
+	\item active subwoofer
+	\item unknown
+	\item washer dryer
+	\item computer monitor
+	\item audio system
+	\item tumble dryer
+	\item pond pump
+	\item desktop computer
+	\item ethernet switch
+	\item appliance
+	\item modem
+	\item server computer
+	\item electric space heater
+\end{itemize}
+
+The problem with such a comparison is, that it is best 
+if all buildings would use the same appliance.
+Since that is not the case, missing appliances are portrayed as always off. 
+
+This is the main reason why we can see in figure \ref{fig:tsne_boa_scatter_refit8} the clusters are nicely formed
+but are separated quite a lot. We can still see that some clusters are closer than others,
+meaning they are more similar.
+
 \begin{figure}[H]
 	\centering
-	\caption{"Per appliance per building data for all buildings"}
+	\caption{"Projection of bag of appliances load profiles for various buildings"}
 	\includegraphics[width=.8\textwidth]{Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png}
 	\label{fig:tsne_boa_scatter_refit8}
 \end{figure}
 
-As we can see on figure \ref{fig:tsne_boa_scatter_refit8} the clusters are nicely formed
-but are separated quite a lot. The problem with such comparison is, that it is best 
-if all boulings would have the same appliance. Since this is never the case,
-it adds the reason why they are seperated. 
+Figure \ref{fig:tsne_boa_img_scatter_refit8} shows that load profiles are split 
+between two poles. By observing the figure it is possible to see that the bottom Clusters
+all have more than one active white good with a compressor (fridges and freezers), while
+the top ones have only one. In general, the bottom buildings have more appliances,
+with more activity than the top ones. 
 
 \begin{figure}[H]
 	\centering
-	\caption{"Per appliance data for refit buildings images"}
+	\caption{"Projection of bag of appliances load profiles for various buildings with actual samples"}
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png}
 	\label{fig:tsne_boa_img_scatter_refit8}
 \end{figure}
