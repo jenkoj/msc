@@ -327,6 +327,7 @@ user has in each bucket.
     \label{eq:routine}
 \end{equation}
 
+Using the equation \ref{eq:routine} we can populate the array \ref{arr:anom_ratio}.
 
 \begin{figure}[H]
     \centering
@@ -341,17 +342,20 @@ user has in each bucket.
     \label{arr:anom_ratio}
 \end{figure}
 
-In other words, the \ref{arr:anom_ratio} tells us how persistent is the user's routine in each bucket or
-part of the day. The higher the metric the higher the routine. Since routine is detected based on the usage
-of appliances it cannot be picked up during the night. It is possible to see that the routine is quite high 
-during the morning and evening hours. The anomaly detection algorithm will work best when the metric above is low.
-A good trait of elders is that their routine is quite high even during the day, which means that
-the anomaly detection will function better throughout the day.
+In other words, the array \ref{arr:anom_ratio} tells us how persistent is the user's routine in each bucket or part of the day. 
+The higher the metric the higher the routine. 
+Since routine is detected based on the usage of appliances it cannot be picked up during the night.
+
+It is possible to see that the routine is quite high during the morning and evening hours.
+The anomaly detection algorithm will work best when the metric above is high.
+A good trait of elders is that their routine is quite high even during the day,
+which means that the anomaly detection will function better throughout the day.
 
 One more thing to do is to ignore the parts of the day when the user has no routine, by using
-the array \ref{arr:anom_ratio} and setting a threshold of 0.3. A threshold of 0.5 would mean
-that every other day could be a false positive anomaly. Setting the rate at 0.3 reduces that 
-to every third day. But here compromises must be made, the lower the threshold the more accurate
+the array \ref{arr:anom_ratio} and setting a threshold of 0.7. A threshold of 0.5 would mean
+that every other day could be a false positive anomaly. Setting the rate at 0.7 reduces that 
+to every third day. 
+But here compromises must be made, the lower the threshold the more accurate
 the algorithm will be, but it also means that it will be less sensitive. 
 In our case, there is not much harm in false positives detections, since the caregiver can call
 the elder to check if it is okay.  
@@ -378,6 +382,7 @@ The last step is to repeat steps 4 and 5 with data, that is not included in the 
 
 The data was split into train and test sets, where 80 \% of the data was for training and 20 \% percent of the data was used for testing.
 The data was split based on the number of samples, so in some cases where there is a lot of missing data, the time window of test data might be longer, although it contains only 20 \% of the samples.
+
 \subsubsection{REFIT}
 The REFIT dataset included data for more than 15 buildings, as can be seen on the figure below.
 The dataset in general is of the highest quality since it is the longest. This means this dataset should give the most relevant results.
@@ -434,14 +439,14 @@ The reason behind that is, that if the routine rate is high it means that it wil
 \end{itemize}
 
 When a true anomaly occurs such as a fall, the dweller, all through he had the same routine for the past year (the routine rate would be close to 1), would not be able to practice the routine, and the algorithm will be quite sure that this is an actual anomaly.
-Therefore, the higher the ratio the less sure we are that an actual anomaly such as a fall occurred.
+Therefore, the lower the routine rate the less sure we are that an actual anomaly such as a fall occurred.
 This is a good alternative measurement, that tells us how well this algorithm will perform. 
 
-\subsubsection{Ratio during the week} \label{sssec:ratio_week}
+\subsubsection{The routine rate through the week} \label{sssec:ratio_week}
 
-As the behavior of the dweller's changes, so does the accuracy of the algorithm. 
+As the behavior of the dwellers changes, so does the accuracy of the algorithm. 
 One observation that was made, was that the routine was higher during the week than during the weekends,
-as can be seen in the figures below. There is also a 
+as can be seen in the figures below. 
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -473,7 +478,7 @@ as can be seen in the figures below. There is also a
 		\label{fig:ec_b5week}
 	\end{subfigure}%
 	\label{fig:ec_week}
-	\caption{"Weekly anomaly percenage"}
+	\caption{"Routine rate through the week (train data)"}
 \end{figure}
 
 Since we are dealing with the elderly, they have a higher routine, and it does not change that much during the weekends. 
@@ -517,23 +522,27 @@ This can be seen in the figures below.
 		\label{fig:ec_b5year}
 	\end{subfigure}%
 	\label{fig:ec_year}
-	\caption{"Yearly anomaly percentage"}
+	\caption{"Routine through the year (train data)"}
 \end{figure}
+
+Since we are observing how routine changes, and not the actual performance, training data was used.
+This is because there train we have more than a year of train data.
 
 \subsection{Effectiveness of anomaly detection through the day}
 
 One more thing to keep in mind is that this algorithm will be able to detect anomalies only when
-the routine will be high, and more than two appliances will be used in that buckets.
+the routine will be high, and more than two appliances will be used in given buckets.
 
 Figure \ref{fig:ignored_buckets_22} shows which buckets were most commonly used for the detection of an anomaly.
 The graph includes averaged values from all buildings and datasets. 
 In other words, the graph presents how strong is average routine through the day.
 
-This means that the higher the routine, the higher the chance that this bucket will be usable for anomaly detection.
+This means that the higher the routine, the higher the chance that this bucket will be used for anomaly detection.
 During the night, it is possible to see that the average routine rate is quite high.
 This can be seen in figure \ref{fig:ignored_buckets_22}
 this is because most users are routinely sleeping during that period.
-But as we can see on figure \ref{fig:ignored_buckets_22}, the high routine rate does not necessarily mean the buckets are useful.
+But as we can see in figure \ref{fig:ignored_buckets_22},
+the high routine rate does not necessarily mean the buckets are useful.
 
 \begin{figure}[H]
 	\centering
@@ -542,7 +551,7 @@ But as we can see on figure \ref{fig:ignored_buckets_22}, the high routine rate 
 	\label{fig:ignored_buckets_22}
 \end{figure}
 
-To find the most usable buckets for our operating mode, an additional filter must be applied.
+To find the usable buckets, an additional filter must be applied.
 The rule is that at least two appliances must be commonly used in that bucket. 
 After applying this rule the following figure emerges \ref{fig:ignored_buckets_act}
 
@@ -564,12 +573,12 @@ The elderly, are usually at home at noon, which could extend the effective detec
 
 \subsubsection{The anomaly detection during the night}
 
-We have seen, that anomaly can be detected throughout the day,
-but is hard to detect through the night, since appliances are off.
+We have seen that anomalies can be detected throughout the day,
+but are hard to detect through the night, since appliances are off.
 
 This is because, in our current state, an anomaly occurs when something that should operate, does not.
 When the user is sleeping, an anomaly occurs when something that shouldn't operate, does. 
-To implement this, we would have to build two models.
+To implement this additional rule, we would have to build two models.
 One would be online during the day, and the other when the user is sleeping.
 
 The main issue here is not the detection itself, but efficiently detecting
@@ -581,14 +590,14 @@ The examples shown were trained and evaluated on the same data.
 To show true performance, we will use test data to determine the actual performance. 
 
 Results were obtained for 3 datasets. 
-REDD and iAWE datasets were not used, since the dataset was too short, they contained less than a month of data. 
-
+REDD and iAWE datasets were not used, since the dataset was too short. 
+They contained less than a month of data. 
 
 \subsection{REFIT}
 
 \subsubsection{Results including weekend data}
-Results show, that the method is on average 23.6 \% efficient. 
-In figure \ref{fig:refit_res} it is possible to see that house 6 yields lower results and house 19 is much higher than the rest. 
+Results show, that the method is on average 76.4 \% efficient for REFIT.  
+In figure \ref{fig:refit_res} it is possible to see that house 6 yields much better results and house 13 much worse than the rest. 
 This could be due to various dataset errors that occurred during sampling.
 
 \begin{figure}[H]
@@ -599,9 +608,9 @@ This could be due to various dataset errors that occurred during sampling.
 \end{figure}
 
 For more relevant results we can ignore the outliers by removing one maximum and minimum value, such as can be seen in figure \ref{fig:refit_res2}
-This yields a result of 22.92 \%.
-If we were to repeat this process the result would be 21.33 \%.
-Since all outliers are removed, the result converges towards 21 \%, which is the relevant value. 
+This yields a result of 77.08 \%.
+If we were to repeat this process the result would be 79.77 \%.
+Since all outliers are removed, the result converges towards 79 \%, which is the relevant value. 
 
 \begin{figure}[H]
 	\centering
@@ -614,7 +623,7 @@ Since all outliers are removed, the result converges towards 21 \%, which is the
 
 As mentioned in the sub-sub section \ref{sssec:ratio_week}, the average routine is different during the week and weekends.
 The assumption was that the routine of elderly people does not change significantly over the week, therefore results should be more relevant if we ignore the weekends.
-The results on figure \ref{fig:refit_res_nw_1"} show that result dropped to 22.48 \%.
+The results on figure \ref{fig:refit_res_nw_1"} show that result improved to 77.08 \%.
 
 \begin{figure}[H]
 	\centering
@@ -623,10 +632,10 @@ The results on figure \ref{fig:refit_res_nw_1"} show that result dropped to 22.4
 	\label{fig:refit_res_nw_1"}
 \end{figure}
 
-By ignoring the minimal and maximal outliers the results drop to 21.33 \%.
-By repeating the process one more time the result drops to 19.91 \%, since all outliers were removed, the result converges towards this value. 
+By ignoring the minimal and maximal outliers the results increase to 78.21 \%.
+By repeating the process one more time the result increases to 80.20 \%, since all outliers were removed, the result converges towards this value. 
 
-By removing the weekend data, the results decreased by 1.2 \%. 
+By removing the weekend data, the results improved by 1.2 \%. 
 
 \begin{figure}[H]
 	\centering
@@ -637,8 +646,9 @@ By removing the weekend data, the results decreased by 1.2 \%.
 
 \subsection{UK-DALE}
 
-As mentioned in subsection \ref{ssec:ds_eval}, the UK-DALE is not as long, large and cleaned as the previous dataset, so results could be less relevant.
-The results on figure \ref{fig:ukdale_res}, show that the average result is 25.35 \%. Due to the low number of buildings, it is not possible to detect and ignore outliers.
+As mentioned in subsection \ref{ssec:ds_eval}, the UK-DALE is not as big and cleaned as the previous dataset, so the results could be less relevant.
+The results on figure \ref{fig:ukdale_res}, show that the average result is 74.48 \%. 
+Due to the low number of buildings, it is not possible to detect and ignore outliers.
 
 \begin{figure}[H]
 	\centering
@@ -659,8 +669,9 @@ In this case, this does not improve the result.
 
 \subsection{ECO}
 
-ECO is of a similar quality as UK-DALE as can be seen in \ref{ssec:ds_eval}, regarding the number of buildings and the length of data.
-The results \ref{fig:eco_res}, show that this dataset performed the best, with results of 16.32 \%.
+ECO is of a similar quality as UK-DALE regarding the number of buildings and the length of data.
+This can be seen in \ref{ssec:ds_eval}
+The results \ref{fig:eco_res}, show that this dataset performed the best, with results of 84.09 \%.
 
 \begin{figure}[H]
 	\centering
@@ -669,7 +680,7 @@ The results \ref{fig:eco_res}, show that this dataset performed the best, with r
 	\label{fig:eco_res}
 \end{figure}
 
-The same as before we can omit weekend data, which can be seen on \ref{fig:eco_res_nw}. This brings the result down to 15.91 \%. 
+The same as before we can omit weekend data, which can be seen on \ref{fig:eco_res_nw}. This brings the result down to 83.80 \%. 
 
 \begin{figure}[H]
 	\centering
@@ -680,7 +691,7 @@ The same as before we can omit weekend data, which can be seen on \ref{fig:eco_r
 
 \subsection{Combined results}
 
-After combining results from all 25 buildings, the following table \ref{tab:ec_res} can be populated.
+After combining results from all 25 buildings, the table \ref{tab:ec_res} can be populated.
 The most relevant results can be seen in the last row.
 \begin{table}[H]
     \centering
@@ -695,32 +706,34 @@ The most relevant results can be seen in the last row.
       test &
       \multicolumn{1}{l|}{train} &
       test \\ \hline
-    0 & \multicolumn{1}{l|}{84.73} & 77.35 & \multicolumn{1}{l|}{86.2} & 78.07 \\ \hline
+    0 & \multicolumn{1}{l|}{84.73} & 77.35 & \multicolumn{1}{l|}{86.20} & 78.07 \\ \hline
     1 & \multicolumn{1}{l|}{84.63} & 77.91 & \multicolumn{1}{l|}{86.16} & 78.75 \\ \hline
     2 & \multicolumn{1}{l|}{86.53} & 78.53 & \multicolumn{1}{l|}{86.13} & 79.23 \\ \hline
     \end{tabular}
     \label{tab:ec_res}
 \end{table}
 
-Results show that the algorithm would, on average, label 78 \% of samples as false positive, meaning
-every fifth sample could be a false positive. In other words, the algorithm will be 78 \% efficient at 
-detecting true anomalies. 
+Results show that the algorithm is 78 \% efficient at detecting true anomalies. 
+On average, the algorithm would label 22 \% of samples as false positive, 
+in other words, every fifth sample could be a false positive. 
 
 \section{Discussion}
 
-When analyzing these results one important metric is socio-economic status,
-such as age, income and number of dwellers in the building. 
-Since the datasets did not provide any of this information,
+When analyzing these results one important to keep in mind 
+that we do not have metadata available to know what kind of
+socio-economic status do dwellers have.
+Socio-economic status is are attributes such as age, income, geolocation, number of dwellers in the builngs, etc.
+Since datasets did not provide them,
 it is hard to make any other conclusions other than the algorithm
 works well on an average building.
 
 We know that the reason for installing such a system is that the user is left alone.
-We can assume that on average there is more than one dweller in buildings tested.
+We can assume that on average there is more than one dweller living in the buildings we tested on.
 Since this system would usually be in use by a single dweller,
 this would be in favor of our algorithm since it would be 
 easier to extract the routine.
 
-One other thing that would be in our favor is that the average person has a lower routine that an elderly person. 
+One other thing that would be in our favor is that the average person spends less time at home than an elderly person. 
 If we take a look at the results, it is possible to see that,
 the average home has a low routine during the noon. 
 This is because the average person is not at home during noon.
@@ -743,10 +756,9 @@ better on the elderly.
 
 \section{Iterative learning system}
 
-In case of practical use of this algorithm, it is 
-important that after installation, the system works as fast as possible,
-and that it improves over time. 
-This can be achieved with the implementation of dynamic learning.
+In the case of practical use of this algorithm, it is 
+important that after installation, the system is put online as fast as possible and that it improves over time. 
+This can be achieved with the implementation of iterative learning.
 The system will build a load profile based on the first month of data.
 Over the second month, the system can be put online.
 At the end of the month, it can use this data to improve the load profile.
@@ -769,7 +781,8 @@ how the amount of train and testing changes over 16 months.
 	\label{fig:dyn_data_1}
 \end{figure}
 
-We can also plot how the amount of data changes for all buildings 
+We can also plot how the amount of data changes for all buildings.
+This can be seen on figure \ref{fig:data_used_for_training}.
 
 \begin{figure}[H]
 	\centering
@@ -779,7 +792,7 @@ We can also plot how the amount of data changes for all buildings
 \end{figure}
 
 To analyze the results, at least 1 year of usable data should be available. 
-
+Figure \ref{fig:data_used_for_training_removed} shows only buildings contain at leas one year of data.
 \begin{figure}[H]
 	\centering
 	\caption{"Data used for training, with removed buildings"}
@@ -787,11 +800,11 @@ To analyze the results, at least 1 year of usable data should be available.
 	\label{fig:data_used_for_training_removed}
 \end{figure}
 
-Similarly, we can check how test data changes over the months. In this case,
-data is not being aggregated, but only one month of it is used at a time.
+Similarly, we can check how test data changes over the months. 
+In this case, data is not being aggregated, but only one month of it is used at a time.
 Figure \ref{fig:data_used_for_testing} shows, that after one year
 the amount of data used for training starts to decline. 
-To get more accurate results we will only observe the performance in one year of data. 
+To get more accurate results we will only observe the performance using one year of data. 
 
 \begin{figure}[H]
 	\centering
@@ -800,8 +813,7 @@ To get more accurate results we will only observe the performance in one year of
 	\label{fig:data_used_for_testing}
 \end{figure}
 
-Now all buildings contain at least 1 year of data. 
-To show the effect of training data on the metric, the following figure is presented
+To show the effect of training data on the metric, the figure \ref{fig:efect_of_data_on_metric} is presented.
 The figure \ref{fig:efect_of_data_on_metric} contains 12 months of 
 data for each house, since some have 17 months of data,
 they never reach the 100 \% mark.
@@ -813,11 +825,10 @@ they never reach the 100 \% mark.
 	\label{fig:efect_of_data_on_metric}
 \end{figure}
 
-Figure \ref{fig:efect_of_data_on_metric} shows, that in most cases, results converge
-towards 20 \%. While in some cases, the results are good from the first month,
-they always peak, since the building changes. With more data, these peaks become smaller
-and become less frequent. If the behavior in the household radically changes, it can
-still lead to peaks.
+Figure \ref{fig:efect_of_data_on_metric} shows, that in most cases, results converge towards 80 \%. 
+In some cases, the results are good from the first month forward, but sooner or later the routine rate will dip. 
+With more data, these dips become smaller and less frequent. 
+If the behavior in the household radically changes, it can still lead to a dip.
 
 \begin{figure}[H]
 	\centering
@@ -826,16 +837,19 @@ still lead to peaks.
 	\label{fig:1_year_of_iterative_learning_avg}
 \end{figure}
 
-Same data can also be presented so that it shows how the metric changes 
-over a year. While the average remains vary around 20 \%. 
+Figure \ref{fig:1_year_of_iterative_learning_avg} shows how the same data can also be presented so that it shows how the metric changes over a year.
 
-To conclude, by increasing the amount of data, the algorithm becomes more stable.
+\subsection{Discussion}
+
+By increasing the amount of data, the algorithm becomes more stable.
 In some cases, where users' behavior does not change, the algorithm could work
 from the first month. In other cases, where behavior is more dynamic, 
 the algorithm could need a month or two to stabilize. 
 
+An important thing to keep in mind is that the routine of the users does not increase with more data,
+our perceived however does. 
 
-\section{Conclusion}
+\subsection{Conclusion}
 
 The question that we tried to answer was:
 is this method good enough to be able to efficiently detect anomalies? 
