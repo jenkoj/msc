@@ -15,25 +15,31 @@ Elderly care has been addressed by many EU-funded research projects since the ag
 
 There are many solutions to this problem.
 One approach is invasive such as wearables, sound sensors, IR occupancy detectors, etc. 
-Few authors tried to solve this issue using non-invasive using previously mentioned NILM algorithms. 
-In this case, no additional meters need to be installed, since per-appliance usage can be disaggregated.
-While this is practical from the new equipment side, it is a bit less practical from the efficiency and accuracy side, especially for larger buildings. 
+Few authors tried to solve this issue using a non-invasive approach with NILM algorithms. 
+In the case of a non-invasive approach, no additional meters need to be installed, since per-appliance usage can be disaggregated.
+While this is practical from the "no additional equipment needed" side, it is a bit less practical from the efficiency and accuracy side, especially for larger buildings. 
 
-There is a middle way between invasive and non-invasive approaches. 
+There is a middle way between invasive and non-invasive approaches, such as authors explored in \cite{elder1} and \cite{elder2}. 
 It is possible to use sub-meters for each appliance and indirectly observe the usage pattern. 
 The upside of this approach is that the elder does not need to wear the device.
-The downside is, that this approach will be slower at detecting the accident.
+The downside is, that new meters need to be installed for most commonly used appliances.
 
 \section{Goal}
 
 The chapter will focus on building the elderly care system that will use users' periodic usage patterns to detect an anomaly.
 The anomaly could be anything from a fall, stroke or altered usage pattern due to dementia. 
-The algorithm will be designed based on the load profile from the previous chapter \ref{fig:PHPA}.
+The algorithm will be designed based on the load profile \ref{fig:PHPA} from the previous chapter \ref{chapter6}.
 Figure shows, that first thing in the morning used are kettle and toaster, and with a delay of one hour, microwave and TV. 
 If none of these appliances are used within that hour, then that hour is considered anomalous.
 This means that the algorithm will be able to detect the anomaly within 1 hour of the accident.
 
 \section{Methodology}
+
+\subsection{Defining an anomaly}
+
+Since the elderly care system is based on anomaly detection, we have to define it first.
+In our case, the anomaly occurs when something that should operate, does not. 
+Based on this definition we will build an anomaly detection. 
 
 \subsection{Building anomaly detection algorithm}
 
@@ -98,7 +104,7 @@ or are rarely used.
 
 Next, appliances that trigger together must be grouped. 
 This means we must find part of the day that they are operating.
-Due to the filter in the previous step, we are left with appliances whose usage variates trough the day. 
+Due to the filter in the previous step, we are left with appliances whose usage variate throughout the day. 
 Some appliances are on even when the user is not necessarily using them, this can be seen in figure \ref{arr:as_acts}.
 One out of many ways to do this is to normalize the activations, this yields a metric that tells us the probability of that appliance being turned on compared to the rest of the day. 
 If we do this for same appliances as above the result is following: 
@@ -162,7 +168,7 @@ The threshold of 0.5 was selected, which yields the following vectors:
 
 The vectors show us that microwave has two usage peaks, where the audio system can be used anytime through the day.
 It is possible to do this for all appliances, which results in a 2D matrix. 
-Using this matrix we can build rules witch which appliances are being used together
+Using this matrix we can build rules for which appliances are being used together.
 The figure \ref{arr:act_mat} uses rows for appliances and columns for buckets.  
 If we use terminology from image processing the matrix \ref{arr:act_mat} is essentially a highly saturated load profile \ref{fig:PHPA},
 which can be easily processed by computer algorithms due to binary encoding. 
@@ -237,7 +243,7 @@ Using the matrix \ref{arr:act_mat} we can write an algorithm that will use curre
 and compare it to the matrix. For example, if we have the test sample for the fifth bucket, that is 
 data from 8 to 10 o clock. 
 What needs to be done is to use the fifth column and multiply the current activations.
-Then anomaly is detected based on a rule. That at least two appliances must be activated, for the bucket to be labeled as normal,
+Then anomaly is detected based on a rule: that at least two appliances must be activated, for the bucket to be labeled as normal,
 or else the bucket is labeled as anomalous. In this case, we sum the elements of an array and check if it is larger or equal to 2. 
 
 % \begin{figure}[H]
@@ -348,15 +354,16 @@ Since routine is detected based on the usage of appliances it cannot be picked u
 
 It is possible to see that the routine is quite high during the morning and evening hours.
 The anomaly detection algorithm will work best when the metric above is high.
-A good trait of elders is that their routine is quite high even during the day,
+A good trait of the elderly is that their routine is quite high even during the day,
 which means that the anomaly detection will function better throughout the day.
 
 One more thing to do is to ignore the parts of the day when the user has no routine, by using
-the array \ref{arr:anom_ratio} and setting a threshold of 0.7. A threshold of 0.5 would mean
-that every other day could be a false positive anomaly. Setting the rate at 0.7 reduces that 
-to every third day. 
-But here compromises must be made, the lower the threshold the more accurate
-the algorithm will be, but it also means that it will be less sensitive. 
+the array \ref{arr:anom_ratio} and setting a threshold of 0.7. 
+
+A threshold of 0.5 would mean that every other day could be a false positive anomaly. Setting the rate at 0.7 reduces that 
+to every third day.
+Here, compromises must be made, the lower the threshold the more accurate
+the algorithm will be. This also means that it will be less sensitive. 
 In our case, there is not much harm in false positives detections, since the caregiver can call
 the elder to check if it is okay.  
 
@@ -384,8 +391,9 @@ The data was split into train and test sets, where 80 \% of the data was for tra
 The data was split based on the number of samples, so in some cases where there is a lot of missing data, the time window of test data might be longer, although it contains only 20 \% of the samples.
 
 \subsubsection{REFIT}
-The REFIT dataset included data for more than 15 buildings, as can be seen on the figure below.
-The dataset in general is of the highest quality since it is the longest. This means this dataset should give the most relevant results.
+The REFIT \cite{REFIT} dataset included data for more than 15 buildings, as can be seen on the figure below.
+The dataset in general is of the highest quality since it is the longest with the least missing data.
+This means this dataset should give the most relevant results.
 \begin{figure}[H]
 	\centering
 	\caption{"Timeline for REFIT "}
@@ -395,9 +403,9 @@ The dataset in general is of the highest quality since it is the longest. This m
 
 \subsubsection{UK-DALE} 
 
-All through the UK-DALE dataset is of similar size, the most of the data is from building 1.
-In general, it includes 5 years of data, but only for some appliances, with addition, many appliances are rarely used.
-When taking all of this into account, there are too many issues with it, and it was simply ignored.
+All through the UK-DALE \cite{UKDALE} dataset is of similar size, the most of the data is from building 1.
+In general, it includes 5 years of data, but only for some appliances, where many appliances are rarely used.
+When taking all of this into account, there were too many issues with building 1, and it was simply ignored.
 Another issue that can be seen on \ref{fig:ukdale_timeline} is that there is not enough data for 
 building 3. The test includes only a week of data, which is not enough for representative results, therefore it was ignored.
 The rest of the buildings seem healthy.
@@ -410,7 +418,7 @@ The rest of the buildings seem healthy.
 \end{figure}
 
 \subsubsection{ECO}
-ECO dataset has a length of data, similar to UK-DALE. 
+ECO \cite{ECO} dataset has a length of data, similar to UK-DALE. 
 The only issue is building 1, where there is a lot of missing data.
 This is a good example of how data is split, it is split based on several samples,
 meaning that there is 80 \% in the train bar, due to missing data the second bar is longer. 
@@ -428,7 +436,7 @@ meaning that there is 80 \% in the train bar, due to missing data the second bar
 Due to the lack of ground truth data of actual accidents, it is hard to determine the 
 exact accuracy of this algorithm. Every anomaly detected is not necessarily an 
 actual accident, it could be that the user decided to lie in bed a bit longer, or decided to go to bed early in the evening.
-One metric that we can use to determine how well the algorithm functions is the routine rate metric\ref{arr:anom_ratio}.
+One metric that we can use to determine how well the algorithm functions is the routine rate metric \ref{arr:anom_ratio}.
 The reason behind that is, that if the routine rate is high it means that it will be easier to detect the actual anomaly.
 
 \begin{itemize}
@@ -438,9 +446,18 @@ The reason behind that is, that if the routine rate is high it means that it wil
     \item routine rate of 1 would mean that this household has a routine that is never broken. 
 \end{itemize}
 
-When a true anomaly occurs such as a fall, the dweller, all through he had the same routine for the past year (the routine rate would be close to 1), would not be able to practice the routine, and the algorithm will be quite sure that this is an actual anomaly.
+When a true anomaly occurs such as a fall, the dweller, all through he had the same strong routine for the past year (the routine rate would be close to 1), would not be able to practice the routine, and the algorithm will be quite sure that this is an actual anomaly.
 Therefore, the lower the routine rate the less sure we are that an actual anomaly such as a fall occurred.
 This is a good alternative measurement, that tells us how well this algorithm will perform. 
+
+\section{Results} 
+
+\subsection{The routine rate over a period of time}
+
+In the following sections, we will present how the metric changes over given periods of time.
+This will enable us to see that there are patterns that this metric helps emerge. 
+To present these patterns, training data will be used. 
+This enables us to see how routine changes over the year. 
 
 \subsubsection{The routine rate through the week} \label{sssec:ratio_week}
 
@@ -480,6 +497,7 @@ as can be seen in the figures below.
 	\label{fig:ec_week}
 	\caption{"Routine rate through the week (train data)"}
 \end{figure}
+
 
 Since we are dealing with the elderly, they have a higher routine, and it does not change that much during the weekends. 
 Usually, assisted living systems are put in place since elders are alone in the dwelling.
@@ -581,9 +599,8 @@ When the user is sleeping, an anomaly occurs when something that shouldn't opera
 To implement this additional rule, we would have to build two models.
 One would be online during the day, and the other when the user is sleeping.
 
-The main issue here is not the detection itself, but efficiently detecting
+The main issue here is not the detection itself but efficiently detecting
 when the user is sleeping. 
-\section{Results}
 
 The examples above were a demonstration and a look into data and metrics. 
 The examples shown were trained and evaluated on the same data. 
@@ -593,9 +610,9 @@ Results were obtained for 3 datasets.
 REDD and iAWE datasets were not used, since the dataset was too short. 
 They contained less than a month of data. 
 
-\subsection{REFIT}
+\subsection{Per-building results}
+\subsubsection{REFIT}
 
-\subsubsection{Results including weekend data}
 Results show, that the method is on average 76.4 \% efficient for REFIT.  
 In figure \ref{fig:refit_res} it is possible to see that house 6 yields much better results and house 13 much worse than the rest. 
 This could be due to various dataset errors that occurred during sampling.
@@ -619,7 +636,6 @@ Since all outliers are removed, the result converges towards 79 \%, which is the
 	\label{fig:refit_res2}
 \end{figure}
 
-\subsubsection{Omiting weekend data}
 
 As mentioned in the sub-sub section \ref{sssec:ratio_week}, the average routine is different during the week and weekends.
 The assumption was that the routine of elderly people does not change significantly over the week, therefore results should be more relevant if we ignore the weekends.
@@ -644,7 +660,7 @@ By removing the weekend data, the results improved by 1.2 \%.
 	\label{fig:refit_res_nw_2"}
 \end{figure}
 
-\subsection{UK-DALE}
+\subsubsection{UK-DALE}
 
 As mentioned in subsection \ref{ssec:ds_eval}, the UK-DALE is not as big and cleaned as the previous dataset, so the results could be less relevant.
 The results on figure \ref{fig:ukdale_res}, show that the average result is 74.48 \%. 
@@ -667,7 +683,7 @@ In this case, this does not improve the result.
 	\label{fig:ukdale_res_nw}
 \end{figure}
 
-\subsection{ECO}
+\subsubsection{ECO}
 
 ECO is of a similar quality as UK-DALE regarding the number of buildings and the length of data.
 This can be seen in \ref{ssec:ds_eval}
@@ -719,13 +735,12 @@ in other words, every fifth sample could be a false positive.
 
 \section{Discussion}
 
-When analyzing these results one important to keep in mind 
+When analyzing these results one important to keep in mind is,
 that we do not have metadata available to know what kind of
 socio-economic status do dwellers have.
-Socio-economic status is are attributes such as age, income, geolocation, number of dwellers in the builngs, etc.
-Since datasets did not provide them,
-it is hard to make any other conclusions other than the algorithm
-works well on an average building.
+Socio-economic status encompasses attributes such as age, income, geo-location, age of the building, type of insulation, number of dwellers in the buildings, etc.
+Since datasets do provide them,
+it is hard to make any other conclusions other than the algorithm works well on an average building.
 
 We know that the reason for installing such a system is that the user is left alone.
 We can assume that on average there is more than one dweller living in the buildings we tested on.
@@ -751,28 +766,28 @@ better on the elderly due to their nature.
 
 Since the results on the average building are promising
 a test study should be performed. 
-This would also prove our assumptions and that this algorithm works 
+This would also prove our assumption that this algorithm works 
 better on the elderly.
 
 \section{Iterative learning system}
 
 In the case of practical use of this algorithm, it is 
-important that after installation, the system is put online as fast as possible and that it improves over time. 
+important the system is put online as fast as possible and that it improves over time. 
 This can be achieved with the implementation of iterative learning.
 The system will build a load profile based on the first month of data.
-Over the second month, the system can be put online.
+Using this load profile, the system can be put online.
 At the end of the month, it can use this data to improve the load profile.
 This can then be repeated indefinitely. 
 
 \subsection{Results}
 
-For this evaluation, only REFIT data was used. 
+For this evaluation, only REFIT \cite{REFIT} data was used. 
 As it can be seen on figure \ref{fig:refit_timeline},
 Refit buildings have long and relatively similar timelines,
 compared to other datasets.
 
 On figure \ref{fig:dyn_data_1} it is possible to see,
-how the amount of train and testing changes over 16 months.
+how the amount of training and testing data changes over 16 months.
 
 \begin{figure}[H]
 	\centering
@@ -826,7 +841,7 @@ they never reach the 100 \% mark.
 \end{figure}
 
 Figure \ref{fig:efect_of_data_on_metric} shows, that in most cases, results converge towards 80 \%. 
-In some cases, the results are good from the first month forward, but sooner or later the routine rate will dip. 
+In some cases, the results are good from the beginning, but sooner or later the routine rate will dip. 
 With more data, these dips become smaller and less frequent. 
 If the behavior in the household radically changes, it can still lead to a dip.
 
@@ -843,11 +858,11 @@ Figure \ref{fig:1_year_of_iterative_learning_avg} shows how the same data can al
 
 By increasing the amount of data, the algorithm becomes more stable.
 In some cases, where users' behavior does not change, the algorithm could work
-from the first month. In other cases, where behavior is more dynamic, 
+from the first month forward. In other cases, where behavior is more dynamic, 
 the algorithm could need a month or two to stabilize. 
 
 An important thing to keep in mind is that the routine of the users does not increase with more data,
-our perceived however does. 
+our perceived one does. 
 
 \subsection{Conclusion}
 
