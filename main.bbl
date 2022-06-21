@@ -165,6 +165,104 @@
       \verb 10.1109/TCE.2021.3129356
       \endverb
     \endentry
+    \entry{iAWE}{inbook}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=7178606a557a64ea7b385c2257eb66cb}{%
+           family={Batra},
+           familyi={B\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=43bf649617ca9f4391682ad4d69d40d2}{%
+           family={Gulati},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9843b981a347092faf6faad9f1b9bcdd}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4aee6d748b4058ecb82cba0a6bc8b60c}{%
+           family={Srivastava},
+           familyi={S\bibinitperiod},
+           given={M.B.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7250c18e3a2f0b44ccef5074588aba58}
+      \strng{fullhash}{9f929c71e67da3c27696967ddc79e064}
+      \strng{bibnamehash}{7250c18e3a2f0b44ccef5074588aba58}
+      \strng{authorbibnamehash}{7250c18e3a2f0b44ccef5074588aba58}
+      \strng{authornamehash}{7250c18e3a2f0b44ccef5074588aba58}
+      \strng{authorfullhash}{9f929c71e67da3c27696967ddc79e064}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 5th ACM Workshop on Embedded Systems For Energy-Efficient Buildings}
+      \field{title}{It's Different: Insights into home energy consumption in India}
+      \field{year}{2013}
+      \field{pages}{1 to 8}
+      \range{pages}{-1}
+    \endentry
+    \entry{ECO}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=9c3a697b0e2db811d071623a793154bc}{%
+           family={Beckel},
+           familyi={B\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4aa19c16badb6dd01c920aeb9392a4bf}{%
+           family={Kleiminger},
+           familyi={K\bibinitperiod},
+           given={Wilhelm},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6569bf2ea0cb7f0a58479d0b09f70e87}{%
+           family={Cicchetti},
+           familyi={C\bibinitperiod},
+           given={Romano},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8789c96b902a5fe32ac0cafa301409da}{%
+           family={Staake},
+           familyi={S\bibinitperiod},
+           given={Thorsten},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=61860d747c29da9cbf6286442b81a895}{%
+           family={Santini},
+           familyi={S\bibinitperiod},
+           given={Silvia},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e304239fb5a7de6e9058f4feaccfd8ae}
+      \strng{fullhash}{8fbde304cf587f4263752a6f13c2bc78}
+      \strng{bibnamehash}{e304239fb5a7de6e9058f4feaccfd8ae}
+      \strng{authorbibnamehash}{e304239fb5a7de6e9058f4feaccfd8ae}
+      \strng{authornamehash}{e304239fb5a7de6e9058f4feaccfd8ae}
+      \strng{authorfullhash}{8fbde304cf587f4263752a6f13c2bc78}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{BuildSys 2014 - Proceedings of the 1st ACM Conference on Embedded Systems for Energy-Efficient Buildings}
+      \field{month}{11}
+      \field{title}{The ECO Data Set and the Performance of Non-Intrusive Load Monitoring Algorithms}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1145/2674061.2674064
+      \endverb
+    \endentry
     \entry{H0}{misc}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=039fca17eb431a6d3ec9995fc60670d3}{%
@@ -1414,6 +1512,37 @@
       \verb 10.1145/2528282.2528295
       \endverb
     \endentry
+    \entry{REDD}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0288715a83a3349e44f9292c5c2149f7}{%
+           family={Kolter},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi Zico},
+           giveni={J\bibinitperiod\bibinitdelim Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0ca5cc1992c89ca9d82473694402bd60}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Matthew\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3036af4828583e2b4e90c7d1a842eb02}
+      \strng{fullhash}{3036af4828583e2b4e90c7d1a842eb02}
+      \strng{bibnamehash}{3036af4828583e2b4e90c7d1a842eb02}
+      \strng{authorbibnamehash}{3036af4828583e2b4e90c7d1a842eb02}
+      \strng{authornamehash}{3036af4828583e2b4e90c7d1a842eb02}
+      \strng{authorfullhash}{3036af4828583e2b4e90c7d1a842eb02}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IN SUSTKDD}
+      \field{title}{REDD: A Public Data Set for Energy Disaggregation Research}
+      \field{year}{2011}
+    \endentry
     \entry{shift2015}{inproceedings}{}
       \name{author}{3}{}{%
         {{un=1,uniquepart=given,hash=c8956c23be7355b61cb880c24c62459b}{%
@@ -1880,6 +2009,43 @@
       \verb{doi}
       \verb 10.1109/ACCESS.2021.3050074
       \endverb
+    \endentry
+    \entry{REFIT}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=876dcfc9835da9ef2208ab2f5ce59839}{%
+           family={Rashid},
+           familyi={R\bibinitperiod},
+           given={Haroon},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {University of Strathclyde}%
+      }
+      \strng{namehash}{876dcfc9835da9ef2208ab2f5ce59839}
+      \strng{fullhash}{876dcfc9835da9ef2208ab2f5ce59839}
+      \strng{bibnamehash}{876dcfc9835da9ef2208ab2f5ce59839}
+      \strng{authorbibnamehash}{876dcfc9835da9ef2208ab2f5ce59839}
+      \strng{authornamehash}{876dcfc9835da9ef2208ab2f5ce59839}
+      \strng{authorfullhash}{876dcfc9835da9ef2208ab2f5ce59839}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Annotated load anomalies from the REFIT Dataset}
+      \field{year}{2019}
+      \verb{doi}
+      \verb 10.15129/9729A2A0-11CE-4CCE-B0D0-144C483FCB33
+      \endverb
+      \verb{urlraw}
+      \verb https://pureportal.strath.ac.uk/en/datasets/9729a2a0-11ce-4cce-b0d0-144c483fcb33
+      \endverb
+      \verb{url}
+      \verb https://pureportal.strath.ac.uk/en/datasets/9729a2a0-11ce-4cce-b0d0-144c483fcb33
+      \endverb
+      \keyw{NILM,energy disaggregation,anomaly detection}
     \endentry
     \entry{NILMAD22019}{article}{}
       \name{author}{4}{ul=2}{%

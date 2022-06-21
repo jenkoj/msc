@@ -2327,9 +2327,20 @@
     <bcf:citekey order="140">NILMAD2019</bcf:citekey>
     <bcf:citekey order="141">energyStealing2018</bcf:citekey>
     <bcf:citekey order="142">occupancy2013</bcf:citekey>
-    <bcf:citekey order="143">tsne2</bcf:citekey>
-    <bcf:citekey order="144">sne1</bcf:citekey>
-    <bcf:citekey order="145">sne1</bcf:citekey>
+    <bcf:citekey order="143">UKDALE</bcf:citekey>
+    <bcf:citekey order="144">REFIT</bcf:citekey>
+    <bcf:citekey order="145">ECO</bcf:citekey>
+    <bcf:citekey order="146">REDD</bcf:citekey>
+    <bcf:citekey order="147">iAWE</bcf:citekey>
+    <bcf:citekey order="148">tsne2</bcf:citekey>
+    <bcf:citekey order="149">sne1</bcf:citekey>
+    <bcf:citekey order="150">sne1</bcf:citekey>
+    <bcf:citekey order="151">elder1</bcf:citekey>
+    <bcf:citekey order="152">elder2</bcf:citekey>
+    <bcf:citekey order="153">REFIT</bcf:citekey>
+    <bcf:citekey order="154">UKDALE</bcf:citekey>
+    <bcf:citekey order="155">ECO</bcf:citekey>
+    <bcf:citekey order="156">REFIT</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
