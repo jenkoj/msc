@@ -11,12 +11,11 @@
 The goal of the master's thesis is to propose suitable consumption profiles for supporting residential building consumption optimization and elderly care management.
 To achieve this goal, we propose the following steps.
 
-The first step is to obtain a set of datasets. In our case, this will be UK-DALE, REFIT, ECO, REDD, and iAWE.
+The first step is to obtain a set of datasets. In our case, this will be UK-DALE \cite{UKDALE}, REFIT \cite{REFIT}, ECO \cite{ECO}, REDD \cite{REDD}, and iAWE \cite{iAWE}.
 All datasets measured electrical energy consumption for residential buildings. 
 They include main smart meter data, as well as sub-meter data for each appliance in a dwelling. 
 For easier handling datasets will be sliced into 1-hour intervals. 
-Slices will be put through a classical learning classifier to demonstrate the ability to automatically identify and classify the appliances.
-Data will be then used to generate different daily per appliance usage profiles.
+Data will be then used to generate different daily per-appliance usage profiles.
 
 \begin{figure}[h!]
 	\centering
@@ -25,16 +24,15 @@ Data will be then used to generate different daily per appliance usage profiles.
 	\label{fig:UniNormMicrowave}
 \end{figure}
 
-One such example can be seen in figure 5. The histogram shows normalized daily 
+One such example can be seen in figure \ref{fig:UniNormMicrowave}. The histogram shows normalized daily 
 activation for microwaves. It consists of data from 25 homes from 4 different
 datasets. 
 
-During this thesis, more profiles will be presented, using various histogram buckets, dimensions and parameters. 
-Each profile presents data from a different perspective, therefore each profile will have a use case of its own.
+The thesis is constructed from three parts, and each answers our following questions accordingly:
+\begin{itemize}
+	\item How do we efficiently present big data to humans and machines?
+	\item How is this presented data connected in a higher dimension?
+	\item Can we use one of the profiles to build something useful? 
+\end{itemize}
 
-A table of existing load profiles will be made. It will enable us to place proposed profiles on a map, and possibly 
-discover new ways to portray load profiles.
-
-Finally, to demonstrate the usage of developed profiles a demo will be presented. 
-
-
+The proposed goal will be achieved by answering these three questions. 

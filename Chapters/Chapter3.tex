@@ -10,8 +10,8 @@ If one wants to do anomaly detection, in some cases, one must first build some k
 
 Load profiling has been researched since 1980. Load-profiling can be performed in two ways: bottom-up and top-down. 
 
-A bottom-up approach as \cite{SWAN20091819} state "calculates the individual dwelling energy or electricity consumption and extrapolate these results over a target area or region"
-Whereas with Top-down approach as \cite{SWAN20091819} state "uses the total energy or electricity consumption estimates to assign them to the characteristics of the building stock"
+A bottom-up approach as \cite{SWAN20091819} states "calculates the individual dwelling energy or electricity consumption and extrapolate these results over a target area or region"
+Whereas with Top-down approach as \cite{SWAN20091819} states "uses the total energy or electricity consumption estimates to assign them to the characteristics of the building stock"
 In other words, Bottom-up sub-meter data, Top-down uses aggregated data. In our case, we take a deeper dive into the bottom-up approach, since it is more relatable.
 
 \cite{Review2021} did a comprehensive review on load profiling. The author defined various load-profile application
@@ -47,9 +47,9 @@ By using this approach, they have improved the accuracy of predicting behavioral
 This method falls into the probabilistic method subgroup. Results show that their method successfully modeled daily usage.
 
 \cite{Chuan2014} uses load profiling to optimize energy consumption distribution during the day.
-This reduces peaks usage and alleviates load off the grid. The author used the bottom-up method, that is, using sum-meter data.
+This reduces peak usage and alleviates load off the grid. The author used the bottom-up method, that is, using sum-meter data.
 Using this data, he made daily usage analyses on a one-hour basis. Using this information he optimized the daily activation of appliances
-so that peaks usage was not as high. Results show that peak shedding was successful. 
+so that peak usage was not as high. Results show that peak shedding was successful. 
 
 \cite{Csoknyai2019} analyzes energy consumption patterns and intervention strategies in residential buildings.
 Authors achieve this using a "serious game approach" with a combination of direct user feedback using smart meters. 
@@ -96,7 +96,7 @@ They focus on three appliances, a fridge, freezer, and heater. Their metric was 
 They implemented sigma variables to represent standard deviation and used rule-based anomaly detection.
 So if energy or counts are significantly larger than the mean then the day is considered anomalous.
 Their rule had only one manual setting and that was a number of standard deviations before the sample was considered anomalous.
-Their results show that sub-meter anomaly detection works decently whereas NILM based anomaly does not work at all. 
+Their results show that sub-meter anomaly detection works decently whereas NILM-based anomaly does not work at all. 
 
 \cite{NILMAD22019} published another paper in the same year, where they took a similar approach, except that they used 
 only compressor-based appliances such as fridges and air conditioners. They also added a rule to their existing rule-based anomaly 
@@ -104,7 +104,7 @@ detection algorithm, but the results still showed that NILM algorithms are not t
 
 \cite{Castangia2021} used disaggregated sub-meter data to detect anomalies in use consumption.
 They used a private dataset of 20 homes from northern Italy with no synthetic anomalies. 
-Dataset included data from 2018 to 2020 meaning it included covid induced anomalies. 
+Dataset included data from 2018 to 2020 meaning it included covid-induced anomalies. 
 The authors first pre-processed the data by aggregating input load in hourly energy consumption, 
 the second derived additional features, which are the time of use and duration of the activation.
 They use that data to detect single-pint deviations for which they implemented isolation Forest algorithm and
@@ -316,7 +316,7 @@ As can be seen from table \ref{tab:contributions}, most of the work (14 publicat
 per-house power usage such as figure \ref{fig:daily_power_profile}. 
 Quite a lot of work (6 publications) has been done with per appliance daily power profiles.
 A few publications were based on weekly and yearly load profiles,
-a few used two-dimensional time and power presentation.
+and a few used two-dimensional time and power presentations.
 Only one publication found used activation and time-based histogram such as 
 shown in figure \ref{fig:daily_act_profile}. During the research I focused on publications
 from minority classes, meaning not all existing publications for standard load profiles are included. 
@@ -405,7 +405,7 @@ Similar pattern emerged as in table \ref{tab:contributions}.
 
 \subsection{Table of use case groups}
 
-Table \ref{tab:groups} presents same publications as \ref{tab:use_cases},
+The table \ref{tab:groups} presents same publications as \ref{tab:use_cases},
 but only group names are shown.
 The table indicates how groups are arranged.
 Where anomaly detection and elderly care are dominating in the per-appliance part of the table,
@@ -741,7 +741,7 @@ the profile should be at least in the second class of potential defined in subse
 Table \ref{tab:future_rd} presents load profiles that we will pursue in 
 this paper. We will focus on profiles from the first class and activation
 frequency type of usage. When the aforementioned parameters are applied, 
-the end result is table \ref{tab:our_rd}
+the result is table \ref{tab:our_rd}
 
 \begin{table}[H]
     \caption{Load profiles to be pursued }
