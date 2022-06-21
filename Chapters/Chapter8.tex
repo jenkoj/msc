@@ -10,21 +10,22 @@
 
 \section{Introduction}
 
-The load profiles can present data in a new, previously unseen way, that can enable users or algorithms to extract patterns.
+The load profiles can present data in a new, previously unseen way, that can enable users or algorithms to extract activation patterns.
+The one thing they do not offer is a comparison between activation patterns.
 One such example would be when checking how similar are certain usage patterns.
-This could be usage patterns within a household, where we are grouping appliances that are used similarly,
-or when multiple buildings and how their consumption differs. 
+This could be usage patterns within a household, where we are looking for appliances that are used similarly,
+or when observing multiple buildings how their consumption differs. 
 
-Although the use-cases were presented in-depth in a separate chapter, it is worth mentioning one specific use case and this is energy poverty detection. 
+To measure the similarity of activation profiles, the t-SNE algorithm will be used.
+
+Although the use-cases were presented in-depth in a separate chapter, it is worth mentioning one specific use case.
 The increasing price of energy resources, could lead to over-saving and living in cool homes.
-Using similarity metrics between profiles across different buildings, it would be possible to detect outliers when it comes to heating the room. 
-Using this technique it would be possible to detect users, that are living in below-average cool homes, and offer them cheaper plans. 
-
-To measure the similarity of activation profiles, the t-SNE algorithm will be implemented.
+Using similarity metrics between profiles across different buildings, it would be possible to detect outliers when it comes to heating. 
+Using this approach it would be possible to detect users, that are living in below-average cool homes, and offer them cheaper plans. 
 
 \section{Goals}
 
-The chapter will demonstrate the usefulness of previously unused load profiles,
+The chapter will demonstrate the application of previously unused load profiles,
 and show the practical use case using a t-SNE neighboring algorithm.
 
 \section{Methodology}
@@ -40,19 +41,20 @@ this would be a Monday from midnight to one o'clock.
 The lower-right corner presents the last hour of a week.
 Since there are roughly 4 weeks in each month, each pixel will present 4 samples. 
 
-
-
 \subsection{Datasets}
-This section will be described in larger detail in the following chapter.
 
+To present the results REFIT, UK-DALE, ECO, REDD and iAWE datasets will be used.
+Combined datasets include data for over 25 homes, where some have up to 5 years of data. 
+
+The structure of datasets will be analyzed in larger depth in the next chapter. 
 \subsection{t-SNE}
 
 t-SNE \cite{tsne2} or t-distribution stochastic neighboring embedding is a method for portraying high dimensional 
 data in low dimensional space. This process is also known as dimensionality reduction.
 
-One of the well-known algorithms is PCA.
+One of the well-known dimensionality reduction algorithms is PCA.
 The key difference between the two is that one is linear, and the other is non-linear.
-PCA, linear, projects data on new space and finds the one with the least variance.
+PCA, linear, projects data on new space and finds the one with the least variance between data points.
 SNE \cite{sne1}, non-linear, is composed of two main parts. The first one is 
 converting the high-dimensional Euclidean distances between data points into conditional probabilities that represent similarities. \cite{sne1}
 The pairs with high similarity have a high probability, and pairs with lower a low probability.
@@ -67,6 +69,14 @@ In our case, two dimensions will be used. Since this is non-linear dimensionalit
 the axis usually presents dimensions that are hard to comprehend by the human eye. 
 Since the algorithm uses similarity at the base of the algorithm, it is possible to 
 see which samples are more similar to each other.
+
+\subsection{Tools used}
+
+To process the data and to obtain results Google Colab was used.
+For handling the data python libraries such as h5py, pandas and NumPy were used.
+To present the data Seaborn and Matplotlib libraries were used.
+To implement the t-SNE a SciPy library was used.
+
 \section{Results}
 
 The results will be presented in three subsections, these are
@@ -137,9 +147,9 @@ Same cluster can be seen on far left on figure \ref{fig:tsne_pb_img_scatter_alla
 
 On figure \ref{fig:tsne_pb_img_norm_scatter_allall} it is possible to find all kinds of 
 usage patterns. But the general one is that there is less activation during the night,
-Then there is one peak during the morning and again one in the evening.
+Then there is one peak during the morning and again once in the evening.
 Some buildings are more active during the week and again others during the weekend.
-Most of the data is for building 1 from uk dale (pink box). It is possible to see that the building
+Most of the data is from UK-DALE building 1 (pink box). It is possible to see that the building
 has one big cluster where activations are generally similar, then there are some outliers,
 where the pattern completely changed. Albeit less obvious, the same happens overall buildings.
 This happens due to events such as vacations, holidays or weather-induced behavioral changes.
@@ -296,20 +306,20 @@ Applying this filter yields figure \ref{fig:tsne_papb_scatter_all_reduced}.
 \end{figure}
 
 The figure \ref{fig:tsne_papb_scatter_all_reduced} shows how these 10 appliances ares connected in high dimensional space.
-Kettle, microwave and toaster are quite similar when it comes to usage patters.
+Kettle, microwave and toaster are quite similar when it comes to usage patterns.
 They are operated for a short amount of time and are usually used in users' routines in the morning or evening.
 These appliances are located in the upper left part of the plot.
 
-The second group of appliances that are quite near each other are white
+The second group of appliances that are quite near each other is white
 goods (without fridges) such as washing machines, dishwashers, dryers etc.
 Let's say that they are white goods with a program. 
 This group of appliances is located in the upper right part of the plot.
 
-The third group of appliances are white goods with a compressor.
+The third group of appliances is white goods with a compressor.
 They are usually not affected by human interaction and are therefore harder to cluster.
 They are located in the lower part of the plot.
 
-The final group of appliances are televisions and computers. They lie 
+The final group of appliances is televisions and computers. They lie 
 on a bridge between the fridges and other groups. 
 
 \begin{figure}[H]
@@ -358,6 +368,15 @@ except it is easier to use color to see the appliance they present
 	\label{fig:tsne_papb_img_scatter_all_groups}
 \end{figure}
 
+The figure \ref{fig:t-sne_zoomed} shows the four main types of profiles for readers that do not have the ability to zoom in.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Projection of grouped per-appliance load profiles with actual samples"}
+	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_results/all/t-sne_zoomed.png}
+	\label{fig:t-sne_zoomed}
+\end{figure}
+
 One issue that causes the t-SNE algorithm an issue is low entropy data or 
 in other words, images that are almost completely dark or white, due to various faults in appliances or measurements.
 
@@ -371,8 +390,7 @@ By setting an entropy threshold of 0.5, we filter out around 5 \% of all samples
 	\label{fig:tsne_papb_scatter_ent_all_groups}
 \end{figure}
 
-Again, we can apply appliance grouping and get nicely formed clusters, such as can be seen on figure \ref{fig:tsne_papb_img_scatter_ent_all_groups}.
-
+Again, we can apply appliance grouping and get nicely formed clusters, such as can be seen in figure \ref{fig:tsne_papb_img_scatter_ent_all_groups}.
 
 \begin{figure}[H]
 	\centering
@@ -418,7 +436,7 @@ To construct such a profile we need a universal way of constructing it.
 This is done by measuring how many times each appliance occurs in the datasets,
 then this list is sorted from most common to least common, and finally, it is cut at 30 Appliances.
 
-the results are applainces in the following order:
+The results are appliances in the following order:
 
 \begin{itemize}
 	\item fridge freezer
