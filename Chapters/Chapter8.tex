@@ -1,32 +1,29 @@
-% Chapter Template
+\chapter{t-SNE} 
 
-\chapter{t-SNE} % Main chapter title
-
-\label{Chapter8} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
-
-%----------------------------------------------------------------------------------------
-%	SECTION 1
-%----------------------------------------------------------------------------------------
+\label{Chapter8} 
 
 \section{Introduction}
 
-The load profiles can present data in a new, previously unseen way, that can enable users or algorithms to extract activation patterns.
+The load profiles can present big data in a way, that can enable users or algorithms to extract activation patterns.
 The one thing they do not offer is a comparison between activation patterns.
 One such example would be when checking how similar are certain usage patterns.
 This could be usage patterns within a household, where we are looking for appliances that are used similarly,
 or when observing multiple buildings how their consumption differs. 
-
 To measure the similarity of activation profiles, the t-SNE algorithm will be used.
 
-Although the use-cases were presented in-depth in a separate chapter, it is worth mentioning one specific use case.
+Although the use-cases were presented in-depth in chapter \ref{chapter4}, it is worth mentioning one specific use case.
 The increasing price of energy resources, could lead to over-saving and living in cool homes.
-Using similarity metrics between profiles across different buildings, it would be possible to detect outliers when it comes to heating. 
-Using this approach it would be possible to detect users, that are living in below-average cool homes, and offer them cheaper plans. 
+By using similarity metrics between profiles across different buildings, it would be possible to detect outliers when it comes to heating. 
+With this approach, it would be possible to detect users, that are living in below-average cool homes and offer them cheaper plans. 
 
 \section{Goals}
 
 The chapter will demonstrate the application of previously unused load profiles,
 and show the practical use case using a t-SNE neighboring algorithm.
+
+Using this algorithm we will show how user data is related in high dimensional space.
+For this, we will use per-building, per-appliance load profiles with many combinations, where
+each one enables us a different view of load profiles. 
 
 \section{Methodology}
 
@@ -43,39 +40,39 @@ Since there are roughly 4 weeks in each month, each pixel will present 4 samples
 
 \subsection{Datasets}
 
-To present the results REFIT, UK-DALE, ECO, REDD and iAWE datasets will be used.
+To present the results REFIT \cite{REFIT}, UK-DALE \cite{UKDALE}, ECO \cite{ECO}, REDD \cite{REDD} and iAWE \cite{iAWE} datasets will be used.
 Combined datasets include data for over 25 homes, where some have up to 5 years of data. 
+The structure of datasets will be analyzed in larger depth in the next chapter \ref{Chapter7}. 
 
-The structure of datasets will be analyzed in larger depth in the next chapter. 
-\subsection{t-SNE}
+\subsection{t-SNE algorithm}
 
-t-SNE \cite{tsne2} or t-distribution stochastic neighboring embedding is a method for portraying high dimensional 
+The t-SNE \cite{tsne2} or t-distribution stochastic neighboring embedding is a method for portraying high dimensional 
 data in low dimensional space. This process is also known as dimensionality reduction.
 
 One of the well-known dimensionality reduction algorithms is PCA.
 The key difference between the two is that one is linear, and the other is non-linear.
-PCA, linear, projects data on new space and finds the one with the least variance between data points.
+PCA, linear, projects data in new space and finds the one with the least variance between data points.
 SNE \cite{sne1}, non-linear, is composed of two main parts. The first one is 
 converting the high-dimensional Euclidean distances between data points into conditional probabilities that represent similarities. \cite{sne1}
 The pairs with high similarity have a high probability, and pairs with lower a low probability.
 Second, it uses Kullback-Leibler divergence to minimize it with respect to a location on a map.
 To achieve this it uses gradient descent to minimize the cost function.
 Over many iterations, similar data points should be close together and far away from dissimilar objects.
-Similar data points usually form clusters. 
+Similar data points usually form clusters.
 
-t-SNE uses SNE as a basis, except that it uses t-student distribution instead of normal in order to calculate the similarity.
+t-SNE uses SNE as a basis, except that it uses t-student distribution instead of normal to calculate the similarity.
 
 In our case, two dimensions will be used. Since this is non-linear dimensionality reduction,
-the axis usually presents dimensions that are hard to comprehend by the human eye. 
+the axis usually presents dimensions that are hard to comprehend by the brain. 
 Since the algorithm uses similarity at the base of the algorithm, it is possible to 
 see which samples are more similar to each other.
 
 \subsection{Tools used}
 
-To process the data and to obtain results Google Colab was used.
+To process the data and to obtain the results Google Colab was used.
 For handling the data python libraries such as h5py, pandas and NumPy were used.
-To present the data Seaborn and Matplotlib libraries were used.
-To implement the t-SNE a SciPy library was used.
+To present the data we used Seaborn and Matplotlib.
+For the implementation of the t-SNE, a SciPy library was used.
 
 \section{Results}
 
@@ -90,14 +87,16 @@ The results will be presented in three subsections, these are
 Most of the focus will be done on the per-appliance load profile since it is the most universal.
 
 \subsection{Results for per-building load profiles}
-
+\label{ssec:res_pb_lp}
 This load profile is useful when it comes to comparing how 
 activation patterns change over buildings and datasets.
+Per-building data uses combined activations of all appliances to present 
+the aggregated usage pattern. 
 
 Figure \ref{fig:tsne_scatter_non_norm_all} is using non-normalized data, meaning
 the number of appliances in a building will affect the end load profile.
-The algorithm could pick up on how much a certain appliance is used.
-In some cases this information is useful, 
+The algorithm could pick up on how many appliances are being used.
+In some cases, such as energy poverty detection, this information is useful, 
 again in others we would like to find a more complex usage pattern.
 
 \begin{figure}[H]
@@ -113,6 +112,10 @@ and on the left, we see samples with more activity.
 Since the two plotted components are of a higher dimension, it is hard to guess what they present.
 As said t-SNE gives us the intuition of how load profiles are connected in higher-dimensional space.
 
+The following figures are best viewed in color and a digital format. 
+Readers reading the digital version should have the ability to zoom into each cluster, and see the actual samples. 
+Readers reading a paper version can still explore the high-resolution figures online via the provided link at the end of the document.
+
 \begin{figure}[H]
 	\centering
 	\caption{"Projection of per-building load profiles with actual samples"}
@@ -122,10 +125,17 @@ As said t-SNE gives us the intuition of how load profiles are connected in highe
 
 \subsubsection{Normalized load profiles}
 
-To solve the issue mentioned we have to normalize the data between 0 and 1.
+To solve the issue mentioned in subsection \ref{ssec:res_pb_lp} have to normalize the data between 0 and 1.
 The figure \ref{fig:tsne_pb_scatter_all_all} shows how normalizing samples affect the algorithm.
-The samples are much closer to each other, while it is still possible to see the individual clusters.
-This could imply that the usage pattern of users is more similar than the amount of it they use.
+
+When comparing figures \ref{fig:tsne_scatter_non_norm_all} and \ref{fig:tsne_pb_img_scatter_allall},
+it is possible to see that the samples on the latter are much closer to each other,
+while it is still possible to see the individual clusters.
+This could imply that the normalized usage pattern of users is more similar to the activation pattern of users.
+A normalized activation pattern tells us at what part of the day the appliances will most likely be used,
+and the activation pattern tells us how much will the appliance be used in each part of the day.
+Based on that, we can conclude the time when the appliance is used is more consistent than how much it will be used. 
+
 
 \begin{figure}[H]
 	\centering
@@ -134,9 +144,9 @@ This could imply that the usage pattern of users is more similar than the amount
 	\label{fig:tsne_pb_scatter_all_all}
 \end{figure}
 
-The figure \ref{fig:tsne_pb_img_norm_scatter_allall} presents only the main cluster of samples,
-since the smaller cluster presents mostly low entropy data. 
-Same cluster can be seen on far left on figure \ref{fig:tsne_pb_img_scatter_allall}.
+The figure \ref{fig:tsne_pb_img_norm_scatter_allall} presents only the main cluster of samples.
+Since the smaller cluster presents mostly low entropy data, it was cut out. 
+If the reader wants to see the samples in the cluster, the very same cluster can be found on the far left in figure \ref{fig:tsne_pb_img_scatter_allall}.
 
 \begin{figure}[H]
 	\centering
@@ -145,13 +155,13 @@ Same cluster can be seen on far left on figure \ref{fig:tsne_pb_img_scatter_alla
 	\label{fig:tsne_pb_img_norm_scatter_allall}
 \end{figure}
 
-On figure \ref{fig:tsne_pb_img_norm_scatter_allall} it is possible to find all kinds of 
-usage patterns. But the general one is that there is less activation during the night,
-Then there is one peak during the morning and again once in the evening.
-Some buildings are more active during the week and again others during the weekend.
-Most of the data is from UK-DALE building 1 (pink box). It is possible to see that the building
-has one big cluster where activations are generally similar, then there are some outliers,
-where the pattern completely changed. Albeit less obvious, the same happens overall buildings.
+On figure \ref{fig:tsne_pb_img_norm_scatter_allall} it is possible to find various usage patterns. 
+But the general pattern is that there is less activation during the night, then there is one peak during the morning and again once in the evening.
+Some buildings are more active during the week and again others more during the weekend.
+A lot of the data is from UK-DALE building 1 (pink box). 
+It is possible to see that the building has one big cluster where activations are generally similar, then there are some outliers,
+where the pattern completely changed. 
+Albeit less obvious, the same happens overall buildings.
 This happens due to events such as vacations, holidays or weather-induced behavioral changes.
 
 \subsection{Per-appliance}
@@ -160,13 +170,16 @@ We can use per appliance load profiles to examine how different appliances
 are used in a single building, how a single appliance is being used across other buildings
 or how many appliances are being used in many buildings.
 
+Per appliance load profiles are built using sub-meter data,
+meaning each load profile should present each appliance.
+
 \subsubsection{Single appliance over many buildings}
 
-Using only one appliance and using the building as a label,
+Using one appliance and the building as a label,
 allows us to examine how the same type of appliance is being used across different buildings.
 
-Fridges are generally a bad indicator when it comes to user behavior since the user does not affect 
-its operation, apart from opening the door and turning on the light inside. 
+Fridges are generally a bad indicator when it comes to user behavior since the user does not affect its operation. 
+The only case when the user interacts with it is when opening the door and turning on the light inside. 
 Usually, this event is dwarfed by the number of activations of a compressor. 
 This also means that the usage pattern should be the same across all buildings. 
 This can be seen on figure \ref{fig:tsne_pa_scatter_all_fridge}, 
@@ -182,8 +195,8 @@ where apart from REFIT building 1 and 11, there are no clusters.
 Figure \ref{fig:tsne_pa_img_scatter_all_fridge} Shows mostly bright images, apart from few outliers.
 Load profiles scattered in a circle are generally less dynamic than the ones at the bottom.
 The figure \ref{fig:tsne_pa_img_scatter_all_fridge} is a good example how even little to none human
-interaction, load profiles can look a lot different. This could be due to different makes of the 
-appliances, malfunctions of the appliance or the meter measuring it.
+interaction, load profiles can look a lot different. 
+This could be due to different makes of the appliances, malfunctions of the appliance or the meter measuring it.
 
 \begin{figure}[H]
 	\centering
@@ -195,7 +208,7 @@ appliances, malfunctions of the appliance or the meter measuring it.
 Figure \ref{fig:tsne_pa_scatter_all_kettle} shows how,
 compared to fridges, kettles have much more clear clusters that are spaced out between each other. 
 This could mean that every household uses a kettle a bit differently.
-This cluster is a good example where we can see how strong is a routine of a user,
+This cluster is a good example where we can see how strong is a routine of a user.
 The closer together the clusters, the higher the routine since samples have to be 
 close to each other.
 
@@ -207,8 +220,18 @@ close to each other.
 \end{figure}
 
 The figure \ref{fig:tsne_pa_img_scatter_all_kettle} shows us that images on the lower part 
-of the plot contain less activity than the others. It is also possible to observe that
-load profiles that are closer together have more similar activation patterns.
+of the plot contain less activity than the others. 
+Load profiles that are closer together have more similar activation patterns.
+Similar activations patterns are caused by similar behavior, which is essentially a routine.
+This means that this projection could be used to calculate how much a behavior variate in time for each building.
+This could be calculated by measuring the scattering of samples (variance) for each building.
+
+If we find samples that always activate in the same morning buckets, we would see that they form a straight line on the y-axis.
+This is the daily routine. One such example can be seen in figure \ref{fig:tsne_pa_scatter_all_kettle} in cluster refit 5 and refit 9, where we can see the lines and the pattern throughout the day. 
+Since the routine is present the samples look more similar and are therefore closer together. 
+This does not necessarily mean that closer the samples higher the routine.
+They could also be together in case of the "ordered chaos" such as can be seen in the figure \ref{fig:tsne_pa_scatter_all_kettle} for building refit 16 and refit 8 where there is no pattern through the day.
+So the scattering is not a precise metric when it comes to the routine, but it gives us a rough idea of its presence.
 The strength of a routine is an important feature that will be used
 in the next chapter to build an elderly care anomaly system.
 
@@ -221,8 +244,8 @@ in the next chapter to build an elderly care anomaly system.
 
 The figure \ref{fig:tsne_pa_scatter_all_microwave} shows that microwaves are again a bit different from the kettle.
 They are more clustered than the fridges, and less than the kettles, even though they are used similarly.
-This could be due to additional electronics such as a clock that are built into,
-the appliance, this could lead to some samples being required as turned on due to 
+This could be due to additional electronics such as a clock that are built into
+the appliance. This could lead to some samples being registered as turned on due to 
 "dark" current. One other difference between the two is that microwave has more than one mode of operation.
 
 \begin{figure}[H]
@@ -232,9 +255,9 @@ the appliance, this could lead to some samples being required as turned on due t
 	\label{fig:tsne_pa_scatter_all_microwave}
 \end{figure}
 
-The faulty samples could be the ones in the upper left part of the plot since they are too bright.
-They do present a pattern, but it is questionable what it presents since it seems like it's turned on 
-during the nighttime. Images at the other end show less lot less activity, which could indicate that
+Figure \ref{fig:tsne_pa_img_scatter_all_microwave} shows the faulty samples could be the ones in the upper left part of the plot since they are too bright.
+They do present a pattern, but it is questionable what it presents since it seems like it's turned on during the nighttime. 
+Images at the other end show less lot less activity, which could indicate that
 the household does not use microwaves as much. The most interesting load profiles are in the middle of the 
 plot, where it is possible to observe clear activation patterns. 
 
@@ -245,8 +268,8 @@ plot, where it is possible to observe clear activation patterns.
 	\label{fig:tsne_pa_img_scatter_all_microwave}
 \end{figure}
 
-The last per-appliance example is television presented on figure\ref{fig:tsne_pa_scatter_all_tv}. 
-Television was chosen since they were common across all datasets.
+The last per-appliance example is television presented on figure \ref{fig:tsne_pa_scatter_all_tv}. 
+Television was chosen since it is the most commonly occurring appliance.
 Interestingly enough, televisions form nice clusters with a few outliers.
 Clusters are separated but close together, this could mean that usage patterns are unique
 but not that different from one another. 
@@ -260,8 +283,17 @@ a higher routine.
 	\label{fig:tsne_pa_scatter_all_tv}
 \end{figure}
 
-The images on the figure behind clusters on proving the fact that outliers' consumption is a lot different.
+The images on the figure \ref{fig:tsne_pa_img_scatter_all_tv} prove the fact that outliers' consumption is a lot different.
 Again the bright images could be the results of faulty appliances, faulty meters or simply odd behavior.
+The Figure \ref{fig:tsne_pa_img_scatter_all_tv} also enables us to see that TVs are primarily used 
+in the evening hours. Outliers from the main cluster show slightly different behavior. One such 
+example is the cyan blue cluster where appliances are mostly used in the morning hours. 
+One other interesting observation can be made when looking at the purple cluster (the far low cluster).
+Here TV is being consistently used in the early morning every day and this is portrayed as a straight line.
+There could be two possible explanations for this.
+First is simply a high routine of a user, who turns on the TV every morning to listen to the news or something similar.
+The other is that TV updates itself every morning. This is probably not the case since updates do not occur on regular basis.
+What is also interesting, is that the very same pattern can be observed on the sample from the other building (blue sample).
 
 \begin{figure}[H]
 	\centering
@@ -274,7 +306,8 @@ Again the bright images could be the results of faulty appliances, faulty meters
 
 The figure \label{fig:tsne_papb_scatter_all} presents
 the general picture of where each appliance lays in comparison to each other.
-One obvious issue here is that there are to many appliances, and it is impossible to comprehend the plot.
+One obvious issue here is that there are too many appliances, and it is impossible to comprehend the plot.
+
 \begin{figure}[H]
 	\centering
 	\caption{"Projection of per-appliance load profiles"}
@@ -282,9 +315,9 @@ One obvious issue here is that there are to many appliances, and it is impossibl
 	\label{fig:tsne_papb_scatter_all}
 \end{figure}
 
-The same goes for image presentation. 
-We can see, that most active appliances are in the bottom left,
-by moving to the upper right part of the corer, we can see less and less activity.
+The same goes for image presentation on figure \ref{fig:tsne_papb_img_scatter_all}. 
+We can see, that most active appliances are the ones in the bottom left,
+by moving to the upper right part of the corer, we can see less activity.
 Less activity does not necessarily mean that load profiles contain less information about user behavior.
 
 \begin{figure}[H]
@@ -358,7 +391,7 @@ they can be grouped in a high-dimensional space.
 	\label{fig:tsne_papb_scatter_all_groups}
 \end{figure}
 
-The image below is the same as the first one in the subsection,
+The figure \ref{fig:tsne_papb_img_scatter_all_groups} below is the same as the first figure \ref{fig:tsne_papb_img_scatter_all} in the subsection,
 except it is easier to use color to see the appliance they present
 
 \begin{figure}[H]
@@ -404,6 +437,7 @@ Again, we can apply appliance grouping and get nicely formed clusters, such as c
 
 It is also possible to use per-appliance data to study
 individual buildings, and how each appliance is used.
+In this case, we have used building 8 from REFIT as an example.
 
 \begin{figure}[H]
 	\centering
@@ -412,9 +446,9 @@ individual buildings, and how each appliance is used.
 	\label{fig:tsne_papb_scatter_ent_refit8}
 \end{figure}
 
-In general, the scattering is similar to before
-fridge and freezers are placed opposite of white goods and kitchen appliances and 
-televisions lie somewhere in between. 
+In general, the scattering is similar to before.
+Fridge and freezers are located opposite of white goods and kitchen appliances and 
+the television lies somewhere in between. 
 
 \begin{figure}[H]
 	\centering
@@ -423,19 +457,33 @@ televisions lie somewhere in between.
 	\label{fig:tsne_papb_img_scatter_ent_refit8}
 \end{figure}
 
-\subsection{Per-appliance per-building}
-To study the usage by comparing all appliances between buildings,
-we have to use one of the proposed load profiles.
+Similar as before figure \label{fig:tsne_papb_img_scatter_ent_refit8} shows fridge cluster as the most active,
+with the least interesting information. In the middle, we can again observe the TV that is mostly being used
+in the evening hours. The samples also point to the possibility of a high user routine in the early morning hours.
+The high routine is portrayed as a straight line on the figures. 
 
-\subsubsection{Bag off appliances}
+In this case, when observing white goods in ping and purple boxes, it is possible to see that this user primarily uses them during the night hours.
+This could point out that the user is making use of cheaper tariffs.
+
+One other interesting observation that can be made here is comparing kettles and microwaves and toasters.
+Usually, these appliances are used similarly and in similar parts of the day. 
+Here the toaster and microwave are being used periodically, but the kettle is being used throughout the day with no general pattern.
+It is self-obvious that some users have higher routines than others, but this observation
+would add that some users can have a higher routine for some appliances and lower for others. 
+
+\subsection{Per-appliance per-building}
+
+To study the usage by comparing all appliances between buildings,
+we have to use one of the proposed load profiles and in this case, this is a Bag of appliances.
+
+\subsubsection{Bag of appliances}
 This load profile is a combination of the load profiles above,
 except it offers a larger detail when observing groups of appliances.
 Since we are using one dimension for appliances, we will use only the daily dimension.
 
 To construct such a profile we need a universal way of constructing it.
 This is done by measuring how many times each appliance occurs in the datasets,
-then this list is sorted from most common to least common, and finally, it is cut at 30 Appliances.
-
+then this list is sorted from most common to least common, and finally, the top 30 are selected.
 The results are appliances in the following order:
 
 \begin{itemize}
