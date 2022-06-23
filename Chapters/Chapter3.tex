@@ -275,7 +275,7 @@ Figure above \ref{fig:map_fig}, uses sub-features from previous subsection \ref{
 In general, the table is formatted in a way that features from columns are
 used in the x-axis of a plot, and rows are used in the y or z-axis of a plot. 
 
-The column of the table presents the time domain. \"Daily\" means that the load profile presents
+The column of the table presents the time domain. "Daily" means that the load profile presents
 average usage for one day, weekly means it presents usage for a week.
 To be clear, for one to construct a decent daily profile, one needs a few
 weeks of data. The same goes for yearly profiles, in that case, one needs many years' worth of data. 
@@ -318,7 +318,7 @@ Quite a lot of work (6 publications) has been done with per appliance daily powe
 A few publications were based on weekly and yearly load profiles,
 and a few used two-dimensional time and power presentations.
 Only one publication found used activation and time-based histogram such as 
-shown in figure \ref{fig:daily_act_profile}. During the research I focused on publications
+shown in figure \ref{fig:daily_act_profile}. During the research we focused on publications
 from minority classes, meaning not all existing publications for standard load profiles are included. 
 The purpose of table \ref{tab:contributions} is to present missing scientific contributions and patterns of publications.  
 
@@ -580,9 +580,9 @@ Using these two assumptions, we propose the following table.
 The table has four possible classes. 
 
 \begin{outline} 
-\1 1 - The load profile satisfies both assumptions and has a high utility rate and high research potential. 
-\1 2 - The load profile does not satisfy one of the above-mentioned assumptions and has mid-research potential.
-\1 3 - The load profile does not suffice any of the above-mentioned assumptions and has low research potential
+\1 1 - The load profile satisfies both assumptions and has a high utility rate and was already researched (high research potential). 
+\1 2 - The load profile satisfies only one of the above-mentioned assumptions (mid-research potential).
+\1 3 - The load profile does not suffice any of the above-mentioned assumptions and was not yet researched or practically used (low research potential).
 \1 X - The load profile is inexplicable.
 \end{outline}
 
@@ -617,53 +617,76 @@ The table has four possible classes.
       A \\ \hline
     Daily &
       \multicolumn{1}{c|}{1} &
+      \multicolumn{1}{c|}{3} &
+      \multicolumn{1}{c|}{X} &
+      X &
+      \multicolumn{1}{c|}{1} &
       \multicolumn{1}{c|}{2} &
       \multicolumn{1}{c|}{X} &
       X &
       \multicolumn{1}{c|}{1} &
-      \multicolumn{1}{c|}{1} &
-      \multicolumn{1}{c|}{X} &
-      X &
-      \multicolumn{1}{c|}{1} &
-      \multicolumn{1}{c|}{1} &
-      \multicolumn{1}{c|}{1} &
-      1 \\ \hline
+      \multicolumn{1}{c|}{2} &
+      \multicolumn{1}{c|}{3} &
+      3 \\ \hline
     \begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular} &
       \multicolumn{1}{c|}{1} &
+      \multicolumn{1}{c|}{3} &
       \multicolumn{1}{c|}{2} &
-      \multicolumn{1}{c|}{1} &
-      1 &
-      \multicolumn{1}{c|}{1} &
-      \multicolumn{1}{c|}{1} &
-      \multicolumn{1}{c|}{1} &
-      1 &
+      3 &
+      \multicolumn{1}{c|}{3} &
+      \multicolumn{1}{c|}{2} &
+      \multicolumn{1}{c|}{3} &
+      3 &
       \multicolumn{1}{c|}{2} &
       \multicolumn{1}{c|}{2} &
-      \multicolumn{1}{c|}{2} &
-      2 \\ \hline
+      \multicolumn{1}{c|}{3} &
+      3 \\ \hline
     Yearly &
       \multicolumn{1}{c|}{1} &
       \multicolumn{1}{c|}{3} &
       \multicolumn{1}{c|}{3} &
       3 &
-      \multicolumn{1}{c|}{2} &
-      \multicolumn{1}{c|}{2} &
+      \multicolumn{1}{c|}{3} &
+      \multicolumn{1}{c|}{3} &
       \multicolumn{1}{c|}{3} &
       3 &
       \multicolumn{1}{c|}{3} &
       \multicolumn{1}{c|}{3} &
-      \multicolumn{1}{c|}{2} &
-      2 \\ \hline
+      \multicolumn{1}{c|}{3} &
+      3 \\ \hline
     \end{tabular}
 \end{table}
 
 \subsection{Table of possible future research directions}
-Using all the above-mentioned tables we can use superposition to generate a universal table,
-that will present possible research directions. 
-The load profile has to satisfy the following rules. 
-The first is that the load profile should have no publications
-or yet discovered use cases. The second one is that 
-the profile should be at least in the second class of potential defined in subsection \ref{subsec:potential}.
+
+The table \ref{tab:classified_profiles} shows which profiles were researched and which were not yet.
+To find future research directions we must look into profiles that were least researched.
+These profiles are marked with the number 3 on table \ref{tab:classified_profiles}.
+Some profiles were not researched because they may not present data as well,
+and some were simply overlooked. 
+
+This is why we have built the following table \ref{tab:future_rd}.
+The table was marked as follows:
+
+\begin{outline} 
+\1 (1) - The load profile has high potential. 
+\1 (2) - The load profile has mid-potential.
+\1 Empty - The load profile has low potential or was already researched.
+\1 X - load profile is inexplicable
+\end{outline}
+
+The process of evaluation was a bit complicated, but it can be summed down to the following rules.
+If the load profile was used as a power profile, can it be used as an activation profile?
+
+Here we must use some common sense since per-building power load profiles were commonly used and based on that activation load profiles should be useful as well.
+That is not the case since to build per-building activation load profiles we need per-appliance (sub-meter) data anyway. That is why we have assigned them to the second class.
+
+Another rule that was followed was useful for combined load profiles, such as 2D time profiles. 
+If one dimension of load profiles was used, with what other dimension could it be combined?
+In the case where one dimension was commonly used, it is probably worth investigating it with a combination of additional dimensions. 
+
+Following these rules, the table  \ref{tab:future_rd} was constructed.
+
 
 \begin{table}[H]
     \caption{Possible future research contributions}
@@ -696,7 +719,7 @@ the profile should be at least in the second class of potential defined in subse
       A \\ \hline
     Daily &
       \multicolumn{1}{c|}{} &
-      \multicolumn{1}{c|}{2} &
+      \multicolumn{1}{c|}{(2)} &
       \multicolumn{1}{c|}{X} &
       X
        &
@@ -707,34 +730,34 @@ the profile should be at least in the second class of potential defined in subse
        &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
-      \multicolumn{1}{c|}{1} &
-      1 \\ \hline
+      \multicolumn{1}{c|}{(1)} &
+      (1) \\ \hline
     \begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular} &
       \multicolumn{1}{c|}{} &
-      \multicolumn{1}{c|}{2} &
+      \multicolumn{1}{c|}{(2)} &
       \multicolumn{1}{c|}{} &
-      1 &
-      \multicolumn{1}{c|}{1} &
+      (1) &
+      \multicolumn{1}{c|}{(1)} &
       \multicolumn{1}{c|}{} &
-      \multicolumn{1}{c|}{1} &
-      1 &
+      \multicolumn{1}{c|}{(1)} &
+      (1) &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
-      \multicolumn{1}{c|}{2} &
-      2 \\ \hline
+      \multicolumn{1}{c|}{(2)} &
+      (2) \\ \hline
     Yearly &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
        &
-      \multicolumn{1}{c|}{2} &
-      \multicolumn{1}{c|}{2} &
+      \multicolumn{1}{c|}{(2)} &
+      \multicolumn{1}{c|}{(2)} &
       \multicolumn{1}{c|}{} &
        &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
-      \multicolumn{1}{c|}{2} &
-      2 \\ \hline
+      \multicolumn{1}{c|}{(2)} &
+      (2) \\ \hline
     \end{tabular}
 \end{table}
 
@@ -817,14 +840,18 @@ the result is table \ref{tab:our_rd}
     \end{table}
 
 
-Based on the table \ref{tab:our_rd} we propose the following profiles for activation frequency:
-per-house daily-monthly profile,
-per-house weekly-yearly profile,
-per-appliance weekly profile,
-per-appliance daily-monthly,
-per-appliance weekly-yearly,
-per-house and per-appliance daily profile (stacked),
-per-house and per-appliance daily profile (appliance side by side)
+Based on the table \ref{tab:our_rd} we will use the following profiles in the following chapters.
 
+In chapter 7 we will use 
+\begin{itemize}
+  \item Per-house daily-weekly load profile
+  \item Per-appliance daily-weekly load profile
+\end{itemize}
+with a t-SNE neighboring algorithm to find how they are related in high dimensional space.
 
+In chapter 8 we will use
+\begin{itemize}
+  \item Per-house Per-appliance daily load profiles with appliances side by side
+\end{itemize}
+To build assisted living system for the elderly.
 
