@@ -296,12 +296,26 @@ can be presented in a multidimensional way such as heatmap in a way shown in fig
 	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/Slide10.png}
 	\label{fig:heatmap_2dtime}
 \end{figure}
+
+Figure \ref{fig:heatmap_2dtime} presents a sketch, so the heatmap does not present the actual data. 
+Even though, we can still see that the plot presents one month of data, where we can see the consumption throughout each day.
+The brightness presents the activity of the household or even an appliance. 
+The brighter the plot, the more activity for that hour of that day of the month.
+
+One other thing to keep in mind when reading such a profile is that the origin is placed in the upper left corner.
+This originates from image processing standards, where the origin of an image is in this location.
+The main reason behind this practice is that arrays and matrices are written in such a way, and it just works better when wiring this as an image.
+
 \begin{figure}[H]
 	\centering
 	\caption{"Number of activations / power consumption for each appliance in one month period"}
 	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/Slide12.png}
 	\label{fig:heatmap_all_appl}
 \end{figure}
+
+Instead of having two-time axes, we could use one axis for different appliances in a household. 
+Such example is figure \ref{fig:heatmap_all_appl}.
+In this case, we plot the consumption throughout the day on an x-axis, and a y-axis is used to display this for each appliance.
 
 \subsection{Table of combinations or detailed table}
 
