@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.1)  21 JUN 2022 11:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.1)  26 JUN 2022 15:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -856,7 +856,7 @@ Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
-(scrhack)             need that hack, on input line 151.
+(scrhack)             need that hack, on input line 152.
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
@@ -874,22 +874,25 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip85
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 151.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 151.
-Package hyperref Info: Option `colorlinks' set `true' on input line 151.
-Package hyperref Info: Option `unicode' set `true' on input line 151.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 152.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 152.
+Package hyperref Info: Option `colorlinks' set `true' on input line 152.
+Package hyperref Info: Option `unicode' set `true' on input line 152.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 151.
+Package hyperref Info: Option `breaklinks' set `true' on input line 152.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
  (/Users/jakob/Documents/mag/MSC/msc/main.aux
 (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter1.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter2.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter3.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter4.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter5.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter6.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter8.aux
 
 LaTeX Warning: Label `fig:tsne_papb_scatter_all' multiply defined.
+
+
+LaTeX Warning: Label `fig:tsne_papb_img_scatter_ent_refit8' multiply defined.
 
 ) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter7.aux
 
@@ -907,25 +910,25 @@ LaTeX Warning: Label `sub@fig:ec_b5year' multiply defined.
 ) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter9.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 151.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 152.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
@@ -992,13 +995,13 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
-(scrlayer)             \begin{document} on input line 151.
-Package scrbase Info: activating english \abbrevname on input line 151.
-Package scrbase Info: activating english \byname on input line 151.
-Package scrbase Info: activating english \acknowledgementname on input line 151.
-Package scrbase Info: activating english \authorshipname on input line 151.
-Package scrbase Info: activating english \constantsname on input line 151.
-Package scrbase Info: activating english \symbolsname on input line 151.
+(scrlayer)             \begin{document} on input line 152.
+Package scrbase Info: activating english \abbrevname on input line 152.
+Package scrbase Info: activating english \byname on input line 152.
+Package scrbase Info: activating english \acknowledgementname on input line 152.
+Package scrbase Info: activating english \authorshipname on input line 152.
+Package scrbase Info: activating english \constantsname on input line 152.
+Package scrbase Info: activating english \symbolsname on input line 152.
 \big@size=\dimen314
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
@@ -1013,11 +1016,11 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (/Users/jakob/Documents/mag/MSC/msc/main.bbl)
-Package biblatex Info: Reference section=0 on input line 151.
-Package biblatex Info: Reference segment=0 on input line 151.
+Package biblatex Info: Reference section=0 on input line 152.
+Package biblatex Info: Reference segment=0 on input line 152.
  ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box76
-Package hyperref Info: Link coloring ON on input line 151.
+Package hyperref Info: Link coloring ON on input line 152.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1027,45 +1030,45 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count456
 )
-LaTeX Info: Redefining \ref on input line 151.
-LaTeX Info: Redefining \pageref on input line 151.
-LaTeX Info: Redefining \nameref on input line 151.
+LaTeX Info: Redefining \ref on input line 152.
+LaTeX Info: Redefining \pageref on input line 152.
+LaTeX Info: Redefining \nameref on input line 152.
  (/Users/jakob/Documents/mag/MSC/msc/main.out) (/Users/jakob/Documents/mag/MSC/msc/main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 151.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 152.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 151.
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 152.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 151.
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 152.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 151.
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 152.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 151.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 152.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 151.
+(Font)              scaled to size 11.40997pt on input line 152.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 151.
+(Font)              scaled to size 8.33606pt on input line 152.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 151.
+(Font)              scaled to size 6.25204pt on input line 152.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 151.
+(Font)              scaled to size 11.40997pt on input line 152.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 151.
+(Font)              scaled to size 8.33606pt on input line 152.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 151.
+(Font)              scaled to size 6.25204pt on input line 152.
 
 1: section
 [1
@@ -1078,11 +1081,11 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 --------------------
  Declaration of Authorship
 --------------------
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 209.
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 210.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 214--215
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
@@ -1109,10 +1112,10 @@ Chapter 1.
 
 ]
 Chapter 2.
-<Figures/clustered_profiles.png, id=389, 603.25375pt x 678.535pt>
+<Figures/clustered_profiles.png, id=394, 603.25375pt x 678.535pt>
 File: Figures/clustered_profiles.png Graphic file (type png)
 <use Figures/clustered_profiles.png>
-Package pdftex.def Info: Figures/clustered_profiles.png  used on input line 21.
+Package pdftex.def Info: Figures/clustered_profiles.png  used on input line 20.
 (pdftex.def)             Requested size: 363.6237pt x 408.99814pt.
 1: section
 [3]) [4 </Users/jakob/Documents/mag/MSC/msc/Figures/clustered_profiles.png>]
@@ -1120,94 +1123,86 @@ Package pdftex.def Info: Figures/clustered_profiles.png  used on input line 21.
 
  (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter3.tex
 Chapter 3.
-<Figures/publications.png, id=414, 1108.14pt x 608.2725pt>
+<Figures/publications.png, id=421, 1108.14pt x 608.2725pt>
 File: Figures/publications.png Graphic file (type png)
 <use Figures/publications.png>
-Package pdftex.def Info: Figures/publications.png  used on input line 27.
+Package pdftex.def Info: Figures/publications.png  used on input line 36.
 (pdftex.def)             Requested size: 363.6237pt x 199.5982pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 1: section
 [5
 
 
 
 ] [6 </Users/jakob/Documents/mag/MSC/msc/Figures/publications.png>]
-Overfull \hbox (2.10155pt too wide) in paragraph at lines 76--82
+Overfull \hbox (2.10155pt too wide) in paragraph at lines 77--83
 \T1/ppl/m/n/10.95 ap-pli-ance. Fur-ther-more, they con-cluded that 15 % of con-sumed power can be shifted,
  []
 
 [7] [8] [9]
-<Figures/profile_sketches/Slide1.png, id=514, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide1.png, id=518, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide1.png Graphic file (type png)
 <use Figures/profile_sketches/Slide1.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide1.png  used on input line 214.
+Package pdftex.def Info: Figures/profile_sketches/Slide1.png  used on input line 215.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
-<Figures/profile_sketches/Slide5.png, id=516, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide5.png, id=520, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide5.png Graphic file (type png)
 <use Figures/profile_sketches/Slide5.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide5.png  used on input line 223.
+Package pdftex.def Info: Figures/profile_sketches/Slide5.png  used on input line 224.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
  [10 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide1.png>]
-<Figures/profile_sketches/Slide8.png, id=525, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide8.png, id=529, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide8.png Graphic file (type png)
 <use Figures/profile_sketches/Slide8.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide8.png  used on input line 234.
+Package pdftex.def Info: Figures/profile_sketches/Slide8.png  used on input line 235.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
-<Figures/profile_sketches/Slide2.png, id=526, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide2.png, id=530, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide2.png Graphic file (type png)
 <use Figures/profile_sketches/Slide2.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide2.png  used on input line 240.
+Package pdftex.def Info: Figures/profile_sketches/Slide2.png  used on input line 241.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
  [11 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide5.png> </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide8.png>]
-<Figures/profile_sketches/Slide10.png, id=536, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide10.png, id=540, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide10.png Graphic file (type png)
 <use Figures/profile_sketches/Slide10.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide10.png  used on input line 250.
+Package pdftex.def Info: Figures/profile_sketches/Slide10.png  used on input line 251.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
-<Figures/profile_sketches/Slide12.png, id=537, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide12.png, id=541, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide12.png Graphic file (type png)
 <use Figures/profile_sketches/Slide12.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide12.png  used on input line 256.
+Package pdftex.def Info: Figures/profile_sketches/Slide12.png  used on input line 257.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
  [12 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide10.png>]
-<Figures/profile_sketches/Slide14.png, id=545, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide14.png, id=549, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide14.png Graphic file (type png)
 <use Figures/profile_sketches/Slide14.png>
-Package pdftex.def Info: Figures/profile_sketches/Slide14.png  used on input line 270.
+Package pdftex.def Info: Figures/profile_sketches/Slide14.png  used on input line 271.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
  [13 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide12.png> </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide14.png>]
-Overfull \hbox (61.32832pt too wide) in paragraph at lines 304--313
+Overfull \hbox (61.32832pt too wide) in paragraph at lines 305--314
 [][] 
  []
 
 [14]
-Overfull \hbox (41.8811pt too wide) in paragraph at lines 336--404
+Overfull \hbox (41.8811pt too wide) in paragraph at lines 337--405
 [][] 
  []
 
 [15]
-Overfull \hbox (6.99445pt too wide) in paragraph at lines 592--658
+Overfull \hbox (6.99445pt too wide) in paragraph at lines 593--659
 [][] 
  []
 
 [16]
-Overfull \hbox (6.99445pt too wide) in paragraph at lines 671--739
+Overfull \hbox (21.64555pt too wide) in paragraph at lines 695--763
 [][] 
  []
 
-
-Overfull \hbox (6.99445pt too wide) in paragraph at lines 749--817
+[17]
+Overfull \hbox (6.99445pt too wide) in paragraph at lines 773--841
 [][] 
  []
 
-
-Overfull \hbox (16.74101pt too wide) in paragraph at lines 820--828
-\T1/ppl/m/n/10.95 per-house daily-monthly pro-file, per-house weekly-yearly pro-file, per-appliance weekly
- []
-
-[17]) [18]
+) [18]
 \openout2 = `Chapters/Chapter4.aux'.
 
  (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter4.tex
@@ -1237,7 +1232,7 @@ Overfull \hbox (3.87524pt too wide) in paragraph at lines 56--60
 
  (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter5.tex
 Chapter 5.
-<Figures/../Figures/microwave_norm_n25.png, id=720, 489.83pt x 336.25626pt>
+<Figures/../Figures/microwave_norm_n25.png, id=727, 489.83pt x 336.25626pt>
 File: Figures/../Figures/microwave_norm_n25.png Graphic file (type png)
 <use Figures/../Figures/microwave_norm_n25.png>
 Package pdftex.def Info: Figures/../Figures/microwave_norm_n25.png  used on input line 23.
@@ -1258,12 +1253,12 @@ Chapter 6.
 
 
 ]
-<Figures/../Figures/LPS/SLPdaily2.png, id=746, 493.845pt x 350.30875pt>
+<Figures/../Figures/LPS/SLPdaily2.png, id=753, 493.845pt x 350.30875pt>
 File: Figures/../Figures/LPS/SLPdaily2.png Graphic file (type png)
 <use Figures/../Figures/LPS/SLPdaily2.png>
 Package pdftex.def Info: Figures/../Figures/LPS/SLPdaily2.png  used on input line 50.
 (pdftex.def)             Requested size: 202.01454pt x 143.2961pt.
-<Figures/../Figures/LPS/SLPyearly2.png, id=747, 487.8225pt x 350.30875pt>
+<Figures/../Figures/LPS/SLPyearly2.png, id=754, 487.8225pt x 350.30875pt>
 File: Figures/../Figures/LPS/SLPyearly2.png Graphic file (type png)
 <use Figures/../Figures/LPS/SLPyearly2.png>
 Package pdftex.def Info: Figures/../Figures/LPS/SLPyearly2.png  used on input line 57.
@@ -1273,283 +1268,291 @@ Overfull \hbox (4.16101pt too wide) in paragraph at lines 47--61
 []$[]$  $[]$[] 
  []
 
-<Figures/../Figures/LPS/SLPHMyearly2.png, id=750, 361.35pt x 282.05376pt>
+<Figures/../Figures/LPS/SLPHMyearly2.png, id=757, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/SLPHMyearly2.png Graphic file (type png)
 <use Figures/../Figures/LPS/SLPHMyearly2.png>
 Package pdftex.def Info: Figures/../Figures/LPS/SLPHMyearly2.png  used on input line 72.
 (pdftex.def)             Requested size: 282.81912pt x 220.7585pt.
 [26 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/SLPdaily2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/SLPyearly2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/SLPHMyearly2.png>]
-<Figures/../Figures/LPS/WM_daily.png, id=760, 481.8pt x 350.30875pt>
+<Figures/../Figures/LPS/WM_daily.png, id=768, 481.8pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_daily.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_daily.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_daily.png  used on input line 94.
 (pdftex.def)             Requested size: 282.81912pt x 205.63803pt.
-<Figures/../Figures/LPS/3 hours.png, id=762, 487.8225pt x 399.4925pt>
+<Figures/../Figures/LPS/3 hours.png, id=770, 487.8225pt x 399.4925pt>
 File: Figures/../Figures/LPS/3 hours.png Graphic file (type png)
 <use Figures/../Figures/LPS/3 hours.png>
 Package pdftex.def Info: Figures/../Figures/LPS/3 hours.png  used on input line 108.
 (pdftex.def)             Requested size: 282.81912pt x 231.60828pt.
  [27 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_daily.png>]
-<Figures/../Figures/LPS/WM_ww_daily.png, id=773, 484.81125pt x 350.30875pt>
+<Figures/../Figures/LPS/WM_ww_daily.png, id=780, 484.81125pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_ww_daily.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_ww_daily.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_ww_daily.png  used on input line 126.
 (pdftex.def)             Requested size: 282.81912pt x 204.36586pt.
  [28 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/3 hours.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_ww_daily.png>]
-<Figures/../Figures/LPS/WM_weekly.png, id=782, 487.8225pt x 350.30875pt>
+<Figures/../Figures/LPS/WM_weekly.png, id=789, 487.8225pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_weekly.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_weekly.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_weekly.png  used on input line 140.
 (pdftex.def)             Requested size: 282.81912pt x 203.09369pt.
-<Figures/../Figures/LPS/WM_yearly.png, id=783, 481.8pt x 350.30875pt>
+<Figures/../Figures/LPS/WM_yearly.png, id=790, 481.8pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_yearly.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_yearly.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_yearly.png  used on input line 152.
 (pdftex.def)             Requested size: 323.22449pt x 235.01567pt.
-<Figures/../Figures/LPS/wm_hm_weekly.png, id=787, 361.35pt x 282.05376pt>
+<Figures/../Figures/LPS/wm_hm_weekly.png, id=794, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/wm_hm_weekly.png Graphic file (type png)
 <use Figures/../Figures/LPS/wm_hm_weekly.png>
 Package pdftex.def Info: Figures/../Figures/LPS/wm_hm_weekly.png  used on input line 164.
 (pdftex.def)             Requested size: 282.81912pt x 220.7585pt.
- [29 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_weekly.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_yearly.png>]
-<Figures/../Figures/LPS/HM_Ywh_comp.png, id=797, 361.35pt x 282.05376pt>
+ [29 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_weekly.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_yearly.png>] [30 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/wm_hm_weekly.png>]
+
+LaTeX Warning: Reference `fig:var_2d_lps' on page 31 undefined on input line 211.
+
+<Figures/../Figures/LPS/HM_Ywh_comp.png, id=814, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/HM_Ywh_comp.png Graphic file (type png)
 <use Figures/../Figures/LPS/HM_Ywh_comp.png>
-Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_comp.png  used on input line 198.
+Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_comp.png  used on input line 223.
 (pdftex.def)             Requested size: 116.36223pt x 90.82713pt.
-<Figures/../Figures/LPS/HM_Ywh_tv.png, id=798, 361.35pt x 282.05376pt>
+<Figures/../Figures/LPS/HM_Ywh_tv.png, id=815, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/HM_Ywh_tv.png Graphic file (type png)
 <use Figures/../Figures/LPS/HM_Ywh_tv.png>
-Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_tv.png  used on input line 204.
+Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_tv.png  used on input line 229.
 (pdftex.def)             Requested size: 116.36223pt x 90.82713pt.
-<Figures/../Figures/LPS/HM_Ywh_wm.png, id=799, 355.3275pt x 282.05376pt>
+<Figures/../Figures/LPS/HM_Ywh_wm.png, id=816, 355.3275pt x 282.05376pt>
 File: Figures/../Figures/LPS/HM_Ywh_wm.png Graphic file (type png)
 <use Figures/../Figures/LPS/HM_Ywh_wm.png>
-Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_wm.png  used on input line 210.
+Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_wm.png  used on input line 235.
 (pdftex.def)             Requested size: 116.36223pt x 92.36789pt.
- [30 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/wm_hm_weekly.png>]
-<Figures/../Figures/LPS/solar termal pumping station.png, id=806, 409.53pt x 282.05376pt>
+<Figures/../Figures/LPS/solar termal pumping station.png, id=817, 409.53pt x 282.05376pt>
 File: Figures/../Figures/LPS/solar termal pumping station.png Graphic file (type png)
 <use Figures/../Figures/LPS/solar termal pumping station.png>
-Package pdftex.def Info: Figures/../Figures/LPS/solar termal pumping station.png  used on input line 223.
+Package pdftex.def Info: Figures/../Figures/LPS/solar termal pumping station.png  used on input line 249.
 (pdftex.def)             Requested size: 181.81184pt x 125.2187pt.
-<Figures/../Figures/LPS/light.png, id=807, 367.3725pt x 282.05376pt>
+<Figures/../Figures/LPS/light.png, id=818, 367.3725pt x 282.05376pt>
 File: Figures/../Figures/LPS/light.png Graphic file (type png)
 <use Figures/../Figures/LPS/light.png>
-Package pdftex.def Info: Figures/../Figures/LPS/light.png  used on input line 229.
+Package pdftex.def Info: Figures/../Figures/LPS/light.png  used on input line 255.
 (pdftex.def)             Requested size: 181.81184pt x 139.58905pt.
-<Figures/../Figures/LPS/PHPA.png, id=811, 529.0164pt x 386.8854pt>
+[31 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_comp.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_tv.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_wm.png>]
+<Figures/../Figures/LPS/PHPA.png, id=832, 529.0164pt x 386.8854pt>
 File: Figures/../Figures/LPS/PHPA.png Graphic file (type png)
 <use Figures/../Figures/LPS/PHPA.png>
-Package pdftex.def Info: Figures/../Figures/LPS/PHPA.png  used on input line 259.
+Package pdftex.def Info: Figures/../Figures/LPS/PHPA.png  used on input line 292.
 (pdftex.def)             Requested size: 282.81912pt x 206.837pt.
- [31 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_comp.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_tv.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_wm.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/solar termal pumping station.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/light.png>]
-<Figures/../Figures/LPS/stack.png, id=826, 508.90125pt x 375.4025pt>
+ [32 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/solar termal pumping station.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/light.png>]
+<Figures/../Figures/LPS/stack.png, id=843, 508.90125pt x 375.4025pt>
 File: Figures/../Figures/LPS/stack.png Graphic file (type png)
 <use Figures/../Figures/LPS/stack.png>
-Package pdftex.def Info: Figures/../Figures/LPS/stack.png  used on input line 270.
+Package pdftex.def Info: Figures/../Figures/LPS/stack.png  used on input line 303.
 (pdftex.def)             Requested size: 282.81912pt x 208.63725pt.
-<Figures/../Figures/LPS/BOA.png, id=827, 593.5776pt x 386.8854pt>
+<Figures/../Figures/LPS/BOA.png, id=845, 593.5776pt x 386.8854pt>
 File: Figures/../Figures/LPS/BOA.png Graphic file (type png)
 <use Figures/../Figures/LPS/BOA.png>
-Package pdftex.def Info: Figures/../Figures/LPS/BOA.png  used on input line 284.
+Package pdftex.def Info: Figures/../Figures/LPS/BOA.png  used on input line 317.
 (pdftex.def)             Requested size: 404.02908pt x 263.34424pt.
- [32 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/PHPA.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/stack.png>]) [33 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/BOA.png>]
+ [33 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/PHPA.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/stack.png>]
+
+LaTeX Warning: Reference `ig:PHPA' on page 34 undefined on input line 332.
+
+
+LaTeX Warning: Reference `fig:var_2d_lps' on page 34 undefined on input line 338.
+
+) [34 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/BOA.png>]
 \openout2 = `Chapters/Chapter8.aux'.
 
- (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter8.tex [34
-
-
-
-]
+ (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter8.tex
 Chapter 7.
 1: section
-[35]
-<Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png, id=854, 827.80122pt x 643.40948pt>
+[35
+
+
+
+] [36]
+<Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png, id=904, 827.80122pt x 643.40948pt>
 File: Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png  used on input line 106.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png  used on input line 123.
 (pdftex.def)             Requested size: 484.83366pt x 376.83974pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 106--108
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 123--125
  [][] 
  []
 
-[36]
-<Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png, id=863, 2900.8375pt x 3171.85pt>
+[37 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png>]
+<Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png, id=913, 2900.8375pt x 3171.85pt>
 File: Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png  used on input line 119.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png  used on input line 140.
 (pdftex.def)             Requested size: 363.6237pt x 397.59344pt.
- [37 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png>]
-<Figures/TSNE/TSNE_per_building/all/scatter_all_all.png, id=871, 817.27046pt x 643.40948pt>
+<Figures/TSNE/TSNE_per_building/all/scatter_all_all.png, id=918, 817.27046pt x 643.40948pt>
 File: Figures/TSNE/TSNE_per_building/all/scatter_all_all.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_building/all/scatter_all_all.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_building/all/scatter_all_all.png  used on input line 133.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_building/all/scatter_all_all.png  used on input line 161.
 (pdftex.def)             Requested size: 484.83366pt x 381.69946pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 133--135
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 161--163
  [][] 
  []
 
 [38 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png>]
-<Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png, id=880, 1919.17pt x 1870.99pt>
+<Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png, id=927, 1919.17pt x 1870.99pt>
 File: Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png  used on input line 144.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png  used on input line 172.
 (pdftex.def)             Requested size: 363.6237pt x 354.49258pt.
  [39 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/all/scatter_all_all.png>] [40 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png>]
-<Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png, id=895, 598.6365pt x 569.60805pt>
+<Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png, id=942, 598.6365pt x 569.60805pt>
 File: Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png  used on input line 178.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png  used on input line 210.
 (pdftex.def)             Requested size: 484.83366pt x 461.32785pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 178--180
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 210--212
  [][] 
  []
 
-<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png, id=898, 3814.25pt x 3920.6475pt>
+<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png, id=945, 3814.25pt x 3920.6475pt>
 File: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png  used on input line 191.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png  used on input line 223.
 (pdftex.def)             Requested size: 363.6237pt x 373.7217pt.
 [41 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png>]
-<Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png, id=908, 598.6365pt x 419.04555pt>
+<Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png, id=954, 598.6365pt x 419.04555pt>
 File: Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png  used on input line 205.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png  used on input line 237.
 (pdftex.def)             Requested size: 484.83366pt x 339.38666pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 205--207
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 237--239
  [][] 
  []
 
 [42 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png>]
-<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png, id=916, 4154.52126pt x 4162.55125pt>
+<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png, id=964, 4154.52126pt x 4162.55125pt>
 File: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png  used on input line 218.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png  used on input line 260.
 (pdftex.def)             Requested size: 363.6237pt x 364.32397pt.
  [43 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png>]
-<Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png, id=924, 598.6365pt x 435.7881pt>
+<Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png, id=972, 598.6365pt x 435.7881pt>
 File: Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png  used on input line 231.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png  used on input line 273.
 (pdftex.def)             Requested size: 484.83366pt x 352.94652pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 231--233
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 273--275
  [][] 
  []
 
 [44 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png>]
-<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png, id=931, 4273.9675pt x 4125.4125pt>
+<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png, id=980, 4273.9675pt x 4125.4125pt>
 File: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png  used on input line 244.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png  used on input line 286.
 (pdftex.def)             Requested size: 363.6237pt x 350.93869pt.
  [45 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png>]
-<Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png, id=939, 598.6365pt x 402.303pt>
+<Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png, id=989, 598.6365pt x 402.303pt>
 File: Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png  used on input line 259.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png  used on input line 301.
 (pdftex.def)             Requested size: 484.83366pt x 325.8268pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 259--261
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 301--303
  [][] 
  []
 
 [46 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png>]
-<Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png, id=947, 4112.36375pt x 4142.47626pt>
+<Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png, id=998, 4112.36375pt x 4142.47626pt>
 File: Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png  used on input line 269.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png  used on input line 320.
 (pdftex.def)             Requested size: 363.6237pt x 366.23305pt.
  [47 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png>]
-<Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png, id=953, 932.48375pt x 1075.01625pt>
+<Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png, id=1005, 932.48375pt x 1075.01625pt>
 File: Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png  used on input line 281.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png  used on input line 333.
 (pdftex.def)             Requested size: 484.83366pt x 558.94606pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 281--283
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 333--335
  [][] 
  []
 
 [48 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png>]
-<Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png, id=960, 5140.20375pt x 5145.2225pt>
+<Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png, id=1012, 5140.20375pt x 5145.2225pt>
 File: Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png  used on input line 293.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png  used on input line 345.
 (pdftex.def)             Requested size: 363.6237pt x 363.97084pt.
  [49 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png>]
-<Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png, id=968, 860.32272pt x 517.04022pt>
+<Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png, id=1021, 860.32272pt x 517.04022pt>
 File: Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png  used on input line 304.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png  used on input line 356.
 (pdftex.def)             Requested size: 444.43445pt x 267.09523pt.
 
-Overfull \hbox (40.40536pt too wide) in paragraph at lines 304--306
+Overfull \hbox (40.40536pt too wide) in paragraph at lines 356--358
  [][] 
  []
 
 [50 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png>]
-<Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png, id=977, 5154.25626pt x 5145.2225pt>
+<Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png, id=1029, 5154.25626pt x 5145.2225pt>
 File: Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png  used on input line 328.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png  used on input line 380.
 (pdftex.def)             Requested size: 363.6237pt x 362.95021pt.
  [51 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png>]
-<Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png, id=987, 874.36375pt x 517.04022pt>
+<Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png, id=1039, 874.36375pt x 517.04022pt>
 File: Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png  used on input line 357.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png  used on input line 409.
 (pdftex.def)             Requested size: 323.22449pt x 191.1362pt.
  [52 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png>]
-<Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png, id=994, 5249.6125pt x 5234.55624pt>
+<Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png, id=1048, 5249.6125pt x 5234.55624pt>
 File: Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png  used on input line 367.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png  used on input line 419.
 (pdftex.def)             Requested size: 363.6237pt x 362.54262pt.
  [53 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png>]
-<Figures/TSNE/TSNE_results/all/t-sne_zoomed.png, id=1002, 963.6pt x 542.025pt>
+<Figures/TSNE/TSNE_results/all/t-sne_zoomed.png, id=1058, 963.6pt x 542.025pt>
 File: Figures/TSNE/TSNE_results/all/t-sne_zoomed.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/t-sne_zoomed.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/t-sne_zoomed.png  used on input line 376.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/t-sne_zoomed.png  used on input line 428.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
  [54 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png> </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/t-sne_zoomed.png>]
-<Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png, id=1010, 931.14732pt x 1100.05264pt>
+<Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png, id=1065, 931.14732pt x 1100.05264pt>
 File: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png  used on input line 389.
+Package pdftex.def Info: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png  used on input line 441.
 (pdftex.def)             Requested size: 323.22449pt x 381.85175pt.
-<Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png, id=1012, 874.36375pt x 517.04022pt>
+<Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png, id=1067, 874.36375pt x 517.04022pt>
 File: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png  used on input line 398.
+Package pdftex.def Info: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png  used on input line 450.
 (pdftex.def)             Requested size: 323.22449pt x 191.1362pt.
  [55 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png>]
-<Figures/TSNE/TSNE_results/refit/scatter_refit_8.png, id=1020, 643.40375pt x 367.3725pt>
+<Figures/TSNE/TSNE_results/refit/scatter_refit_8.png, id=1075, 643.40375pt x 367.3725pt>
 File: Figures/TSNE/TSNE_results/refit/scatter_refit_8.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/refit/scatter_refit_8.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/refit/scatter_refit_8.png  used on input line 411.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/refit/scatter_refit_8.png  used on input line 464.
 (pdftex.def)             Requested size: 323.22449pt x 184.56026pt.
-<Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png, id=1021, 5018.75pt x 5018.75pt>
+<Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png, id=1076, 2630.82875pt x 2598.70876pt>
 File: Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png  used on input line 422.
-(pdftex.def)             Requested size: 363.6237pt x 363.60118pt.
- [56 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png> </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/refit/scatter_refit_8.png>] [57 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png (PNG copy)>]
-<Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png, id=1036, 807.015pt x 517.935pt>
+Package pdftex.def Info: Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png  used on input line 475.
+(pdftex.def)             Requested size: 363.6237pt x 359.17734pt.
+ [56 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png> </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/refit/scatter_refit_8.png>] [57 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png>] [58]
+<Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png, id=1096, 807.015pt x 517.935pt>
 File: Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png Graphic file (type png)
 <use Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png  used on input line 485.
+Package pdftex.def Info: Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png  used on input line 552.
 (pdftex.def)             Requested size: 323.22449pt x 207.43903pt.
- [58]
-<Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png, id=1043, 3206.98125pt x 3218.0225pt>
+<Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png, id=1098, 3206.98125pt x 3218.0225pt>
 File: Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png Graphic file (type png)
 <use Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png  used on input line 498.
+Package pdftex.def Info: Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png  used on input line 565.
 (pdftex.def)             Requested size: 363.6237pt x 364.83534pt.
 ) [59 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png>] [60 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png>]
 \openout2 = `Chapters/Chapter7.aux'.
@@ -1575,7 +1578,7 @@ File: Figures/../Figures/LPS/PHPA.png Graphic file (type png)
 <use Figures/../Figures/LPS/PHPA.png>
 Package pdftex.def Info: Figures/../Figures/LPS/PHPA.png  used on input line 226.
 (pdftex.def)             Requested size: 202.01454pt x 147.73819pt.
-<Figures/../Figures/LPS/PHPA_EC.png, id=1082, 428.5611pt x 252.945pt>
+<Figures/../Figures/LPS/PHPA_EC.png, id=1137, 428.5611pt x 252.945pt>
 File: Figures/../Figures/LPS/PHPA_EC.png Graphic file (type png)
 <use Figures/../Figures/LPS/PHPA_EC.png>
 Package pdftex.def Info: Figures/../Figures/LPS/PHPA_EC.png  used on input line 233.
@@ -1586,35 +1589,35 @@ Overfull \hbox (4.16101pt too wide) in paragraph at lines 223--236
  []
 
 [63]
-<Figures/../Figures/EC/EC_anom_dect.png, id=1092, 1120.185pt x 392.46625pt>
+<Figures/../Figures/EC/EC_anom_dect.png, id=1147, 1120.185pt x 392.46625pt>
 File: Figures/../Figures/EC/EC_anom_dect.png Graphic file (type png)
 <use Figures/../Figures/EC/EC_anom_dect.png>
 Package pdftex.def Info: Figures/../Figures/EC/EC_anom_dect.png  used on input line 279.
 (pdftex.def)             Requested size: 404.02908pt x 141.55722pt.
  [64 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/PHPA_EC.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/EC_anom_dect.png>] [65]
-<Figures/EC/refit_timeline.png, id=1119, 1043.9pt x 768.8725pt>
+<Figures/EC/refit_timeline.png, id=1174, 1043.9pt x 768.8725pt>
 File: Figures/EC/refit_timeline.png Graphic file (type png)
 <use Figures/EC/refit_timeline.png>
 Package pdftex.def Info: Figures/EC/refit_timeline.png  used on input line 400.
 (pdftex.def)             Requested size: 404.02908pt x 297.58305pt.
-<Figures/EC/ukdale_timeline.png, id=1122, 1416.29124pt x 372.39125pt>
+<Figures/EC/ukdale_timeline.png, id=1177, 1416.29124pt x 372.39125pt>
 File: Figures/EC/ukdale_timeline.png Graphic file (type png)
 <use Figures/EC/ukdale_timeline.png>
 Package pdftex.def Info: Figures/EC/ukdale_timeline.png  used on input line 416.
 (pdftex.def)             Requested size: 404.02908pt x 106.2292pt.
  [66 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_timeline.png>]
-<Figures/EC/eco_timeline.png, id=1131, 1417.295pt x 338.26375pt>
+<Figures/EC/eco_timeline.png, id=1187, 1417.295pt x 338.26375pt>
 File: Figures/EC/eco_timeline.png Graphic file (type png)
 <use Figures/EC/eco_timeline.png>
 Package pdftex.def Info: Figures/EC/eco_timeline.png  used on input line 429.
 (pdftex.def)             Requested size: 404.02908pt x 96.4268pt.
  [67 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ukdale_timeline.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/eco_timeline.png>]
-<Figures/../Figures/EC/b2week.png, id=1140, 481.3182pt x 348.8232pt>
+<Figures/../Figures/EC/b2week.png, id=1196, 481.3182pt x 348.8232pt>
 File: Figures/../Figures/EC/b2week.png Graphic file (type png)
 <use Figures/../Figures/EC/b2week.png>
 Package pdftex.def Info: Figures/../Figures/EC/b2week.png  used on input line 472.
 (pdftex.def)             Requested size: 202.01454pt x 146.40361pt.
-<Figures/../Figures/EC/b19week.png, id=1141, 481.3182pt x 348.8232pt>
+<Figures/../Figures/EC/b19week.png, id=1197, 481.3182pt x 348.8232pt>
 File: Figures/../Figures/EC/b19week.png Graphic file (type png)
 <use Figures/../Figures/EC/b19week.png>
 Package pdftex.def Info: Figures/../Figures/EC/b19week.png  used on input line 479.
@@ -1624,12 +1627,12 @@ Overfull \hbox (4.16101pt too wide) in paragraph at lines 469--483
 []$[]$  $[]$ 
  []
 
-<Figures/../Figures/EC/b18week.png, id=1142, 481.3182pt x 348.8232pt>
+<Figures/../Figures/EC/b18week.png, id=1198, 481.3182pt x 348.8232pt>
 File: Figures/../Figures/EC/b18week.png Graphic file (type png)
 <use Figures/../Figures/EC/b18week.png>
 Package pdftex.def Info: Figures/../Figures/EC/b18week.png  used on input line 487.
 (pdftex.def)             Requested size: 202.01454pt x 146.40361pt.
-<Figures/../Figures/EC/b5weekd.png, id=1143, 481.3182pt x 348.8232pt>
+<Figures/../Figures/EC/b5weekd.png, id=1199, 481.3182pt x 348.8232pt>
 File: Figures/../Figures/EC/b5weekd.png Graphic file (type png)
 <use Figures/../Figures/EC/b5weekd.png>
 Package pdftex.def Info: Figures/../Figures/EC/b5weekd.png  used on input line 494.
@@ -1640,12 +1643,12 @@ Overfull \hbox (4.16101pt too wide) in paragraph at lines 484--498
  []
 
 [68 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b2week.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b19week.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b18week.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b5weekd.png>]
-<Figures/../Figures/EC/b2year.png, id=1153, 487.5816pt x 348.8232pt>
+<Figures/../Figures/EC/b2year.png, id=1209, 487.5816pt x 348.8232pt>
 File: Figures/../Figures/EC/b2year.png Graphic file (type png)
 <use Figures/../Figures/EC/b2year.png>
 Package pdftex.def Info: Figures/../Figures/EC/b2year.png  used on input line 517.
 (pdftex.def)             Requested size: 202.01454pt x 144.52473pt.
-<Figures/../Figures/EC/b19year.png, id=1154, 487.5816pt x 348.8232pt>
+<Figures/../Figures/EC/b19year.png, id=1210, 487.5816pt x 348.8232pt>
 File: Figures/../Figures/EC/b19year.png Graphic file (type png)
 <use Figures/../Figures/EC/b19year.png>
 Package pdftex.def Info: Figures/../Figures/EC/b19year.png  used on input line 524.
@@ -1655,12 +1658,12 @@ Overfull \hbox (4.16101pt too wide) in paragraph at lines 514--528
 []$[]$  $[]$ 
  []
 
-<Figures/../Figures/EC/b18year.png, id=1155, 487.5816pt x 348.8232pt>
+<Figures/../Figures/EC/b18year.png, id=1211, 487.5816pt x 348.8232pt>
 File: Figures/../Figures/EC/b18year.png Graphic file (type png)
 <use Figures/../Figures/EC/b18year.png>
 Package pdftex.def Info: Figures/../Figures/EC/b18year.png  used on input line 532.
 (pdftex.def)             Requested size: 202.01454pt x 144.52473pt.
-<Figures/../Figures/EC/b5year.png, id=1156, 487.5816pt x 348.8232pt>
+<Figures/../Figures/EC/b5year.png, id=1212, 487.5816pt x 348.8232pt>
 File: Figures/../Figures/EC/b5year.png Graphic file (type png)
 <use Figures/../Figures/EC/b5year.png>
 Package pdftex.def Info: Figures/../Figures/EC/b5year.png  used on input line 539.
@@ -1671,89 +1674,89 @@ Overfull \hbox (4.16101pt too wide) in paragraph at lines 529--543
  []
 
 [69 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b2year.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b19year.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b18year.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b5year.png>]
-<Figures/EC/ignored_buckets_dist.png, id=1171, 383.7537pt x 277.9986pt>
+<Figures/EC/ignored_buckets_dist.png, id=1227, 383.7537pt x 277.9986pt>
 File: Figures/EC/ignored_buckets_dist.png Graphic file (type png)
 <use Figures/EC/ignored_buckets_dist.png>
 Package pdftex.def Info: Figures/EC/ignored_buckets_dist.png  used on input line 568.
 (pdftex.def)             Requested size: 323.22449pt x 234.14926pt.
-<Figures/EC/all_ignored_buckets_dist_incl_act.png, id=1173, 406.6392pt x 277.9986pt>
+<Figures/EC/all_ignored_buckets_dist_incl_act.png, id=1229, 406.6392pt x 277.9986pt>
 File: Figures/EC/all_ignored_buckets_dist_incl_act.png Graphic file (type png)
 <use Figures/EC/all_ignored_buckets_dist_incl_act.png>
 Package pdftex.def Info: Figures/EC/all_ignored_buckets_dist_incl_act.png  used on input line 579.
 (pdftex.def)             Requested size: 323.22449pt x 220.97813pt.
  [70 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ignored_buckets_dist.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/all_ignored_buckets_dist_incl_act.png>]
-<Figures/EC/refit_res.png, id=1184, 487.5816pt x 348.8232pt>
+<Figures/EC/refit_res.png, id=1240, 487.5816pt x 348.8232pt>
 File: Figures/EC/refit_res.png Graphic file (type png)
 <use Figures/EC/refit_res.png>
 Package pdftex.def Info: Figures/EC/refit_res.png  used on input line 623.
 (pdftex.def)             Requested size: 323.22449pt x 231.24596pt.
  [71 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res.png>]
-<Figures/EC/refit_res2.png, id=1193, 487.5816pt x 348.8232pt>
+<Figures/EC/refit_res2.png, id=1248, 487.5816pt x 348.8232pt>
 File: Figures/EC/refit_res2.png Graphic file (type png)
 <use Figures/EC/refit_res2.png>
 Package pdftex.def Info: Figures/EC/refit_res2.png  used on input line 635.
 (pdftex.def)             Requested size: 323.22449pt x 231.24596pt.
-<Figures/EC/refit_res_nw_1.png, id=1196, 487.5816pt x 348.8232pt>
+<Figures/EC/refit_res_nw_1.png, id=1251, 487.5816pt x 348.8232pt>
 File: Figures/EC/refit_res_nw_1.png Graphic file (type png)
 <use Figures/EC/refit_res_nw_1.png>
 Package pdftex.def Info: Figures/EC/refit_res_nw_1.png  used on input line 647.
 (pdftex.def)             Requested size: 323.22449pt x 231.24596pt.
  [72 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res_nw_1.png>]
-<Figures/EC/refit_res_nw_2.png, id=1205, 487.5816pt x 348.8232pt>
+<Figures/EC/refit_res_nw_2.png, id=1260, 487.5816pt x 348.8232pt>
 File: Figures/EC/refit_res_nw_2.png Graphic file (type png)
 <use Figures/EC/refit_res_nw_2.png>
 Package pdftex.def Info: Figures/EC/refit_res_nw_2.png  used on input line 659.
 (pdftex.def)             Requested size: 323.22449pt x 231.24596pt.
-<Figures/EC/ukdale_res.png, id=1208, 487.5816pt x 348.8232pt>
+<Figures/EC/ukdale_res.png, id=1263, 487.5816pt x 348.8232pt>
 File: Figures/EC/ukdale_res.png Graphic file (type png)
 <use Figures/EC/ukdale_res.png>
 Package pdftex.def Info: Figures/EC/ukdale_res.png  used on input line 672.
 (pdftex.def)             Requested size: 282.81912pt x 202.33888pt.
-<Figures/EC/ukdale_nw_res.png, id=1209, 487.5816pt x 348.8232pt>
+<Figures/EC/ukdale_nw_res.png, id=1264, 487.5816pt x 348.8232pt>
 File: Figures/EC/ukdale_nw_res.png Graphic file (type png)
 <use Figures/EC/ukdale_nw_res.png>
 Package pdftex.def Info: Figures/EC/ukdale_nw_res.png  used on input line 682.
 (pdftex.def)             Requested size: 282.81912pt x 202.33888pt.
  [73 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res_nw_2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ukdale_res.png>]
-<Figures/EC/eco_res_nw_1.png, id=1220, 487.5816pt x 348.8232pt>
+<Figures/EC/eco_res_nw_1.png, id=1275, 487.5816pt x 348.8232pt>
 File: Figures/EC/eco_res_nw_1.png Graphic file (type png)
 <use Figures/EC/eco_res_nw_1.png>
 Package pdftex.def Info: Figures/EC/eco_res_nw_1.png  used on input line 695.
 (pdftex.def)             Requested size: 282.81912pt x 202.33888pt.
-<Figures/EC/eco_res.png, id=1222, 487.5816pt x 348.8232pt>
+<Figures/EC/eco_res.png, id=1277, 487.5816pt x 348.8232pt>
 File: Figures/EC/eco_res.png Graphic file (type png)
 <use Figures/EC/eco_res.png>
 Package pdftex.def Info: Figures/EC/eco_res.png  used on input line 704.
 (pdftex.def)             Requested size: 282.81912pt x 202.33888pt.
  [74 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ukdale_nw_res.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/eco_res_nw_1.png>] [75 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/eco_res.png>]
-<Figures/EC/DYN/tst_tr_b1.png, id=1244, 390.258pt x 254.3904pt>
+<Figures/EC/DYN/tst_tr_b1.png, id=1299, 390.258pt x 254.3904pt>
 File: Figures/EC/DYN/tst_tr_b1.png Graphic file (type png)
 <use Figures/EC/DYN/tst_tr_b1.png>
 Package pdftex.def Info: Figures/EC/DYN/tst_tr_b1.png  used on input line 795.
 (pdftex.def)             Requested size: 282.81912pt x 184.35649pt.
-<Figures/EC/DYN/data_used_for_training_all.png, id=1246, 444.2196pt x 287.1528pt>
+<Figures/EC/DYN/data_used_for_training_all.png, id=1301, 444.2196pt x 287.1528pt>
 File: Figures/EC/DYN/data_used_for_training_all.png Graphic file (type png)
 <use Figures/EC/DYN/data_used_for_training_all.png>
 Package pdftex.def Info: Figures/EC/DYN/data_used_for_training_all.png  used on input line 805.
 (pdftex.def)             Requested size: 282.81912pt x 182.83073pt.
  [76 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/tst_tr_b1.png>]
-<Figures/EC/DYN/data_used_for_training_removed_short.png, id=1255, 444.2196pt x 277.9986pt>
+<Figures/EC/DYN/data_used_for_training_removed_short.png, id=1310, 444.2196pt x 277.9986pt>
 File: Figures/EC/DYN/data_used_for_training_removed_short.png Graphic file (type png)
 <use Figures/EC/DYN/data_used_for_training_removed_short.png>
 Package pdftex.def Info: Figures/EC/DYN/data_used_for_training_removed_short.png  used on input line 814.
 (pdftex.def)             Requested size: 282.81912pt x 177.00223pt.
-<Figures/EC/DYN/data_used_for_testing.png, id=1257, 431.211pt x 277.9986pt>
+<Figures/EC/DYN/data_used_for_testing.png, id=1312, 431.211pt x 277.9986pt>
 File: Figures/EC/DYN/data_used_for_testing.png Graphic file (type png)
 <use Figures/EC/DYN/data_used_for_testing.png>
 Package pdftex.def Info: Figures/EC/DYN/data_used_for_testing.png  used on input line 827.
 (pdftex.def)             Requested size: 282.81912pt x 182.33856pt.
  [77 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/data_used_for_training_all.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/data_used_for_training_removed_short.png>]
-<Figures/EC/DYN/efect_of_data_on_metric.png, id=1268, 444.2196pt x 277.9986pt>
+<Figures/EC/DYN/efect_of_data_on_metric.png, id=1323, 444.2196pt x 277.9986pt>
 File: Figures/EC/DYN/efect_of_data_on_metric.png Graphic file (type png)
 <use Figures/EC/DYN/efect_of_data_on_metric.png>
 Package pdftex.def Info: Figures/EC/DYN/efect_of_data_on_metric.png  used on input line 839.
 (pdftex.def)             Requested size: 282.81912pt x 177.00223pt.
-<Figures/EC/DYN/1_year_of_iterative_learning_avg.png, id=1270, 449.5194pt x 277.9986pt>
+<Figures/EC/DYN/1_year_of_iterative_learning_avg.png, id=1325, 449.5194pt x 277.9986pt>
 File: Figures/EC/DYN/1_year_of_iterative_learning_avg.png Graphic file (type png)
 <use Figures/EC/DYN/1_year_of_iterative_learning_avg.png>
 Package pdftex.def Info: Figures/EC/DYN/1_year_of_iterative_learning_avg.png  used on input line 851.
@@ -1769,42 +1772,50 @@ Package pdftex.def Info: Figures/EC/DYN/1_year_of_iterative_learning_avg.png  us
 Chapter 9.
 )
 1: section
-[81] [82
-
-
-]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 355.
+[81] [82]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 358.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Overfull \hbox (2.45674pt too wide) in paragraph at lines 355--355
+Overfull \hbox (2.45674pt too wide) in paragraph at lines 358--358
 [][]$\T1/cmtt/m/n/10.95 https : / / www . sciencedirect . com / science / article / pii / S0378779608001272$[][]\T1/ppl/m/n/10.95 . 
  []
 
 1: section
-[83]
-Overfull \hbox (6.37303pt too wide) in paragraph at lines 355--355
+[83
+
+
+]
+Overfull \hbox (6.37303pt too wide) in paragraph at lines 358--358
 \T1/cmtt/m/n/10.95 doi . org / 10 . 1016 / j . enbuild . 2019 . 05 . 009$[][]\T1/ppl/m/n/10.95 . \T1/ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www . sciencedirect .
  []
 
 
-Overfull \hbox (1.48178pt too wide) in paragraph at lines 355--355
+Overfull \hbox (1.48178pt too wide) in paragraph at lines 358--358
 [][]\T1/ppl/m/n/10.95 Fischer, David, Härtl, An-dreas, and Wille-Haussmann, Bern-hard (2015). ^^P  Model
  []
 
-[84] [85]
-Overfull \hbox (19.85939pt too wide) in paragraph at lines 355--355
+[84]
+Overfull \hbox (8.96361pt too wide) in paragraph at lines 358--358
+[][]\T1/ppl/m/n/10.95 McKinney, Wes et al. (2010). ^^P  Data struc-tures for sta-tis-ti-cal com-put-ing in python^^Q.
+ []
+
+[85]
+Overfull \hbox (19.85939pt too wide) in paragraph at lines 358--358
 [][]\T1/ppl/m/n/10.95 Spataru, Catalina and Gau-thier, Stephanie (2014). ^^P  How to mon-i-tor peo-ple `smartly'
  []
 
 [86] [87]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 359.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 359.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 362.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 362.
  (/Users/jakob/Documents/mag/MSC/msc/main.aux (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter1.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter2.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter3.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter4.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter5.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter6.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter8.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter7.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter9.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 359.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 359.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 362.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 362.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D2955BD474903E9A27333B64A2CFE8D1;12957.
+(rerunfilecheck)             Checksum: B3F23C9CF84EE78AF20DFC9362B9B256;13110.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1814,18 +1825,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39908 strings out of 480608
- 839963 string characters out of 5903631
- 1482123 words of memory out of 5000000
- 54715 multiletter control sequences out of 15000+600000
+ 39970 strings out of 480608
+ 841359 string characters out of 5903631
+ 1483002 words of memory out of 5000000
+ 54767 multiletter control sequences out of 15000+600000
  589621 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,21n,86p,2290b,3029s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,21n,86p,2290b,3038s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/jakob/Documents/mag/MSC/msc/main.pdf (91 pages, 25834120 bytes).
+Output written on /Users/jakob/Documents/mag/MSC/msc/main.pdf (91 pages, 25461077 bytes).
 PDF statistics:
- 1544 PDF objects out of 1728 (max. 8388607)
- 1275 compressed objects within 13 object streams
- 326 named destinations out of 1000 (max. 500000)
- 1082 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1613 PDF objects out of 1728 (max. 8388607)
+ 1342 compressed objects within 14 object streams
+ 336 named destinations out of 1000 (max. 500000)
+ 1090 words of extra memory for PDF output out of 10000 (max. 10000000)
 

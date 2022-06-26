@@ -187,9 +187,34 @@ If that energy is optimally distributed, less energy would be lost due to conver
 
 \subsubsection{Other two-dimensional presentations}
 
-The figures below show how some appliances have a constant usage pattern 
+% The figures \ref{fig:var_2d_lps} show how some appliances have a constant usage pattern 
 over a year, whereas again others change it. Examples below are randomly picked appliances
 from UK-DALE and REFIT. 
+
+The sub-figure \ref{fig:HM_Ywh_comp} shows how computer usage changes over the year.
+In the first quarter, the computer was used from 10:00 a.m to 8:00 p.m.
+In week 18 it is possible to observe that computer is less and less used throughout the day. 
+Starting week 40 it is again possible to see that computer is getting more and more use in the morning hours. 
+This is a good example of how can a usage pattern slowly change through the year. 
+Since the pattern seems to bounce back, it could be seasonally correlated. 
+
+The second example is sub-figure \ref{fig:HM_Ywh_tv}. It shows how TV usage changes over the year.
+Compared to the computer, it is possible to see that the pattern looks a lot more persistent with slight changes.
+Interestingly enough, when a close-up observation is made, it is possible to see that at the time when the computer was at its peak
+the TV was at its low. And when the usage of computers decreased, the usage of TV increased. 
+Due to the lack of metadata, it is hard to know the exact reason behind it. 
+
+The good thing about this change is, that it takes a few weeks before it changes. 
+This will be important later in chapter \ref{Chapter7}, when we will be designing an elderly care system, that will be based on periodically user behavior.
+This slow change gives the system time to adapt. 
+
+One observation of quick behavior change can be made in weeks 8-11 and weeks 38-37, where we can see a black row on all three sub-figures in figure \ref{fig:var_2d_lps}.
+The instant decrease in activity is probably a vacation.
+
+The last figure is \ref{fig:HM_Ywh_wm} where the load profile portrays the yearly use of the washing machine.
+In this case, the seasonal pattern is much clearer. 
+It seems like the appliance was used in the early morning hours of the winter and early spring.
+This practice suddenly stops at week 13, until it appeared back in week 36.
 
 \begin{figure}[H]
 	\begin{subfigure}{.32\textwidth}
@@ -210,6 +235,7 @@ from UK-DALE and REFIT.
 		\includegraphics[width=0.9\textwidth]{../Figures/LPS/HM_Ywh_wm.png}
 		\label{fig:HM_Ywh_wm}
 	\end{subfigure}%
+	% \label{fig:var_2d_lps}
 	\caption{Various yearly two-dimensional load profile}
 \end{figure}
 
@@ -229,28 +255,35 @@ Roughly 5 years of data mean that it is possible to build a decent profile.
 		\includegraphics[width=0.9\textwidth]{../Figures/LPS/light.png}
 		\label{fig:light}
 	\end{subfigure}%
+	% \label{fig:effect_of_season}
 	\caption{"Effect of seasonal changes on load profiles"}
 \end{figure}
 
-Figures \ref{fig:solar thermal pumping station} and \ref{fig:light} 
-show how weather and season affect the usage pattern of appliances.
+Appliance on figure \ref{fig:solar thermal pumping station} activates when water in solar collectors heats up to a certain threshold.
+Since water heats up based on the strength of solar radiation, we can observe the change of solar radiation through the year for the UK. 
 
+Appliance on figure \ref{fig:light} on the other hand works quite the opposite.
+We usually turn on the light when the solar radiation falls below a certain threshold, and turn it off when we sleep.
+The figure is one of the best examples, where we can observe the combined effect of user behavior, in this case sleeping, and the seasonal effect of changing solar radiation on users' behavior. 
+
+Combining the figures \ref{fig:solar thermal pumping station} and \ref{fig:light} enables differentiate between the two. 
 
 \section{Per-house per-appliance}
 
 The last group of profiles is a combination of per-house and per-appliance load profiles.
 Observing the usage pattern of many appliances offers a better look into users' usage patterns.
+
 In the case of elderly care, the goal is to observe a group of appliances.
 Activation of a group of appliances would yield a contextual event.
 If stove and kettle are commonly used together each morning this use could translate to an event such as breakfast. 
-In order to achieve this, one needs to observe all appliances at once such as shown on figure \ref{fig:PHPA}.
+To achieve this, one needs to observe all appliances at once such as shown in figure \ref{fig:PHPA}.
 
-The figure is also a good example of elderly care system, that would detect an anomaly such as fall, or person unable to get up from the bed in the morning.
-This profile shows that first thing in the morning used are kettle and toaster, and with delay of one hour, microwave and TV. 
+The figure is also a good example of the elderly care system, that would detect an anomaly such as a fall, or a person unable to get up from the bed in the morning.
+This profile shows that first thing in the morning used are kettle and toaster, and with a delay of one hour, microwave and TV. 
 This enables us to construct time thresholds in which appliances should be used.
 If none of these appliances are activated between set thresholds, morning would be considered anomalous.
-Although less likely, issues could also occur during the use of appliance. 
-In case elder falls during cooking, toasting bread or opening fridge the duty cycle would increase, which would also be considered an anomaly.
+Although less likely, issues could also occur during the use of appliances. 
+In case an elder falls during cooking, toasting bread or opening the fridge the duty cycle would increase, which would also be considered an anomaly.
 In case any of these anomalies are detected, the caregiver would be notified to check on the elder. 
 
 \begin{figure}[H]
@@ -272,10 +305,10 @@ the contribution of each appliance.
 \end{figure}
 
 These load profiles are useful when it comes to analyzing the usage pattern in one building.
-In order to be able to process the load-profiles a cross many buildings a new profile must be introduced.
+To be able to process the load profiles across many buildings a new profile, seen in figure \ref{fig:BOA}, must be introduced.
 The idea is derived from the bag-of-words method used in text processing, where a list of most commonly used words is formed, and then used to process the text. 
 Here, It is possible to use the activation data from all five datasets.
-A list of appliances is sorted by number of activations and then only top 30 appliances are selected.
+A list of appliances is sorted by a number of activations and then only the top 30 appliances are selected.
 Using this list it is possible to present the usage of each building universally.
 
 \begin{figure}[H]
@@ -285,3 +318,23 @@ Using this list it is possible to present the usage of each building universally
 	\label{fig:BOA}
 \end{figure}
 
+While analyzing figure \ref{fig:BOA} we can see that the fridge freezer is most commonly activated.
+Since there is no pattern, and it is activated randomly, the pattern is presented as a white line.
+For the graph to be balanced, we have normalized the activations.
+If we had not done, we could observe only the fridge freezer, due to its activation dominance. 
+
+Other, more dynamic appliances have a much clearer presentation of their activity. 
+One other thing that we can notice is that there are a lot of empty load profiles for certain appliances.
+This is because we have no data for these appliances for this household.
+Probably, this is one of the biggest weak points of this load profile.
+
+The Bag of appliances was not shown on the table of profiles \ref{tab:our_rd},
+since it is a special case of the per-house per-appliance profile shown in figure \ref{ig:PHPA}.
+
+\section{Conclusion}
+
+This chapter showed how some activation profiles from table \ref{tab:contributions} present real-world data.
+It was possible to see how each load profile presents its unique user activation pattern. 
+The figures offered us a unique look into how users behave on daily basis, in figure \ref{fig:SLPdaily2} and how this behavior changes over a year in figure \ref{fig:var_2d_lps}.
+% The figure \ref{fig:effect_of_season} showed how this change could be related to the season.
+Finally, we have shown how more detailed profiles \ref{fig:PHPA} could be used for practical applications such as elderly care. 

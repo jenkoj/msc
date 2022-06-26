@@ -11,10 +11,23 @@ This could be usage patterns within a household, where we are looking for applia
 or when observing multiple buildings how their consumption differs. 
 To measure the similarity of activation profiles, the t-SNE algorithm will be used.
 
-Although the use-cases were presented in-depth in chapter \ref{chapter4}, it is worth mentioning one specific use case.
+% The clustering of load profiles was used many times before like it was already described in related work chapter \ref{Chapter3}.
+% We will be working with dimensionality reduction, where clusters are usually formed due to similar data, the following clustering publications are still worth mentioning.
+% We have seen that authors \cite{GERBEC2005}, \cite{Jeong2021} and \cite{Joana2012} have clustered regular one-dimensional load profiles, as well as with 2D image-based load profiling in publications published by \cite{Park2019}. 
+
+% The publication by \cite{sne_energ} compared various dimensionality reduction techniques for clustering and visualisation of load profiles.
+% Their goal was to compare Principal Component Analysis, Isometric Feature Mapping, Sammon Mapping, Locally Linear Embedding and Stochastic Neighbor Embedding.
+% They used power daily load profiles from residential and industrial areas.
+% This publication was of the closest resemblance to our goals, that we were able to find. 
+
+% In all cases, work has been done with the power load profile, whereas in this case, we will try to find similarities between activation profiles using t-SNE algorithm.
+% Most of the publications used one time dimensions, whereas we will use two time dimensions.
+
+% Although the use-cases were presented in-depth in chapter \ref{Chapter4}, it is worth mentioning one specific use case.
 The increasing price of energy resources, could lead to over-saving and living in cool homes.
 By using similarity metrics between profiles across different buildings, it would be possible to detect outliers when it comes to heating. 
 With this approach, it would be possible to detect users, that are living in below-average cool homes and offer them cheaper plans. 
+
 
 \section{Goals}
 
@@ -40,7 +53,7 @@ Since there are roughly 4 weeks in each month, each pixel will present 4 samples
 
 \subsection{Datasets}
 
-To present the results REFIT \cite{REFIT}, UK-DALE \cite{UKDALE}, ECO \cite{ECO}, REDD \cite{REDD} and iAWE \cite{iAWE} datasets will be used.
+To present the results REFIT (\cite{REFIT}), UK-DALE  (\cite{UKDALE}), ECO  (\cite{ECO}), REDD  (\cite{REDD}) and iAWE  (\cite{iAWE}) datasets will be used.
 Combined datasets include data for over 25 homes, where some have up to 5 years of data. 
 The structure of datasets will be analyzed in larger depth in the next chapter \ref{Chapter7}. 
 
@@ -69,10 +82,15 @@ see which samples are more similar to each other.
 
 \subsection{Tools used}
 
-To process the data and to obtain the results Google Colab was used.
-For handling the data python libraries such as h5py, pandas and NumPy were used.
-To present the data we used Seaborn and Matplotlib.
-For the implementation of the t-SNE, a SciPy library was used.
+To process the data and to obtain the results the environment and virtual machines from Google Colab \cite{colab} were used.
+They offer access to Google GPU accelerated compute machines with 12 GB of RAM via browser. 
+
+Within the environment, various python libraries were used.
+To store and read the datasets in hdf5 format we used h5py  (\cite{hdf5}) and Pickle  (\cite{pickle}).
+To load datasets into ram and then handle it pandas  (\cite{pandas}) library was used.
+For handing the large matrices and calculating we used NumPy  (\cite{numpy}).
+To present the data with graphs we have used Matplotlib  (\cite{matplotlib}) and to present data with heatmap Seaborn  (\cite{seaborn}).
+For the easier implementation, such as of the t-SNE, a Scikit  (\cite{scikit}) and SciPy  (\cite{scipy}) libraries were used.
 
 \section{Results}
 
@@ -180,10 +198,11 @@ allows us to examine how the same type of appliance is being used across differe
 
 Fridges are generally a bad indicator when it comes to user behavior since the user does not affect its operation. 
 The only case when the user interacts with it is when opening the door and turning on the light inside. 
-Usually, this event is dwarfed by the number of activations of a compressor. 
+Usually, this event is dwarfed by the activations of a compressor. 
 This also means that the usage pattern should be the same across all buildings. 
 This can be seen on figure \ref{fig:tsne_pa_scatter_all_fridge}, 
 where apart from REFIT building 1 and 11, there are no clusters.
+
 
 \begin{figure}[H]
 	\centering
