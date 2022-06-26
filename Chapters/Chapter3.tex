@@ -8,26 +8,6 @@ If one wants to do anomaly detection, in some cases, one must first build some k
 
 \section{Load profiling}
 
-Load profiling has been researched since 1980. Load-profiling can be performed in two ways: bottom-up and top-down. 
-
-A bottom-up approach as \cite{SWAN20091819} states "calculates the individual dwelling energy or electricity consumption and extrapolate these results over a target area or region"
-Whereas with Top-down approach as \cite{SWAN20091819} states "uses the total energy or electricity consumption estimates to assign them to the characteristics of the building stock"
-In other words, Bottom-up sub-meter data, Top-down uses aggregated data. In our case, we take a deeper dive into the bottom-up approach, since it is more relatable.
-
-\cite{Review2021} did a comprehensive review on load profiling. The author defined various load-profile application
-subgroups such as demand-side management, planning and control design of energy systems, and residential load profiles. The author also 
-grouped modeling techniques as probabilistic models, Markov chains, and Monte Carlo. The author first disclosed the current state of load profiling and issues with past work.
-They made a review of existing load profiling models
-and asses the-state-of-the art. The review was structured by different methods. Next, they pointed out future research directions
-and applications of load profiling models. Finally, the author exposes issues that researchers face and addresses possible solutions with conclusions.
-
-\begin{figure}[h!]
-	\centering
-	\caption{"Distribution of publications on load profiling from 1985 to 2020. The graph was published by \protect\cite{Review2021}"}
-	\includegraphics[width=0.9\textwidth]{Figures/publications.png}
-	\label{fig:Distribution}
-\end{figure}
-
 One of the first publications on load profiling was published by \cite{TRAIN19851103}.
 They used a bottom-up approach using sub-meter data and other socioeconomic and demographic characteristics 
 to create a load profile or statistically adjusted engineering (SAE) as they call it.
@@ -35,6 +15,27 @@ They can adjust the curve based on weather, dwelling size, and income.
 In the same year, \cite{WALKER1985} published a paper where they used a bottom-up approach with psychological factors to create probability models of when will an individual use an appliance.
 
 Since then there were two more in 1995. Research picked up the pace in 2005 with 7 publications in 2013 as figure \ref{fig:Distribution} shows.
+
+Load-profiling can be performed in two ways: bottom-up and top-down. 
+
+A bottom-up approach as \cite{SWAN20091819} states "calculates the individual dwelling energy or electricity consumption and extrapolate these results over a target area or region"
+Whereas with Top-down approach as \cite{SWAN20091819} states "uses the total energy or electricity consumption estimates to assign them to the characteristics of the building stock"
+In other more general words, Bottom-up uses sub-meter data, Top-down uses aggregated data. In our case, we take a deeper dive into the bottom-up approach, since it is more relatable.
+
+\cite{Review2021} did a comprehensive review on load profiling. The author defined various load-profile application
+subgroups such as demand-side management, planning and control design of energy systems, and residential load profiles. The author also 
+grouped modeling techniques as probabilistic models, Markov chains, and Monte Carlo. The author first disclosed the current state of load profiling and issues with past work.
+They made a review of existing load profiling models
+and asses the-state-of-the art. 
+Next, they pointed out future research directions
+and applications of load profiling models. Finally, the author exposes issues that researchers face and addresses possible solutions with conclusions.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Distribution of publications on load profiling from 1985 to 2020. The graph was published by \protect\cite{Review2021}"}
+	\includegraphics[width=0.9\textwidth]{Figures/publications.png}
+	\label{fig:Distribution}
+\end{figure}
 
 \cite{GERBEC2005} tried to assign typical load profiles to a particular group of consumers based on their activity. 
 To achieve that, they used probabilistic neural networks as a way of classification. Their methodology was tested in real use scenario. 
@@ -47,8 +48,8 @@ By using this approach, they have improved the accuracy of predicting behavioral
 This method falls into the probabilistic method subgroup. Results show that their method successfully modeled daily usage.
 
 \cite{Chuan2014} uses load profiling to optimize energy consumption distribution during the day.
-This reduces peak usage and alleviates load off the grid. The author used the bottom-up method, that is, using sum-meter data.
-Using this data, he made daily usage analyses on a one-hour basis. Using this information he optimized the daily activation of appliances
+This reduces peak usage and alleviates load off the grid. The author used the bottom-up method, that is, using sub-meter data.
+Using this data, they made daily usage analyses on a one-hour basis. Using this information they optimized the daily activation of appliances
 so that peak usage was not as high. Results show that peak shedding was successful. 
 
 \cite{Csoknyai2019} analyzes energy consumption patterns and intervention strategies in residential buildings.
@@ -65,7 +66,7 @@ where every cluster had a physical meaning such as energy-saving, morning heavy,
 
 Another clustering methodology was proposed by \cite{Park2019}, using load image profiles and image processing.
 They represented time series data as an image. The image is a grid of squares where the y-axis contains monthly data with a resolution of one day,
-x-axis contains daily data with a resolution of one hour. Grid if color filled with an algorithm that authors developed,
+x-axis contains daily data with a resolution of one hour. Grid is color filled with an algorithm that authors developed,
 where red means more activity and blue less. Using digital image filters they transformed the type-1 image to type-2 and from there
 used a threshold to obtain type-3. Using that information they clustered data based on images similarly. They used three different 
 clustering methods: k-means, FCM, and EM algorithm. Using the Davies-Bouldin index, they were able to prove that image-based clustering performs better than non-image.
@@ -107,7 +108,7 @@ They used a private dataset of 20 homes from northern Italy with no synthetic an
 Dataset included data from 2018 to 2020 meaning it included covid-induced anomalies. 
 The authors first pre-processed the data by aggregating input load in hourly energy consumption, 
 the second derived additional features, which are the time of use and duration of the activation.
-They use that data to detect single-pint deviations for which they implemented isolation Forest algorithm and
+They use that data to detect single-point deviations for which they implemented the isolation Forest algorithm and
 anomalous trends for which to detect, they implemented Change Point Detection. 
 
 
@@ -127,7 +128,7 @@ Finally, using this information a research direction will be formed.
 
 \subsection{Feature set} \label{sec:feature_set}
 
-Using related work and use case references,
+Using related work from this chapter and use-case references from chapter \ref{chapter4},
 we can extract the most commonly used features to portray load profiles.
 
 \begin{outline}
@@ -141,8 +142,14 @@ we can extract the most commonly used features to portray load profiles.
 \subsection{General table}
 Using these features we can form a table with all possible combinations.
 Some combinations do not make logical sense and the others repeat themselves.
-Combinations marked with X are such examples.
+Such examples are marked with the letter X.
 Table \ref{tab:general_map} is then populated with references from previous chapters.
+
+To understand the table clearer, let's imagine that each feature is used as an axis label when plotting. 
+That is for example why we did not use only the power consumption feature, but three variations of it. 
+The first one is average power usage. It is an integer, and it could be an average of hourly, daily or yearly consumption. 
+The next possibility is an array where we use a set of integers in any combination.
+Finally, we have a histogram that is obtained from the power time array. 
 
 \begin{table}[H]
     \caption{General table of load profiles}
@@ -165,6 +172,45 @@ Table \ref{tab:general_map} is then populated with references from previous chap
     \end{tabular}
 \end{table}
 
+The first profile is the one in the first row and the first column.
+It is a combination of frequency and appliances. 
+This would mean that we would have appliances on the x-axis and the number of occurrences o the y-axis.
+The only useful application for this profile is when presenting how many appliances of one type are in one dataset. 
+Other than that it has no use-cases and that is probably the reason why it is rarely used.
+
+The next possible combination is between a number of activations and appliances. 
+Here the explanation is relatively straightforward. The combination shows us how many times each appliance activities.
+
+The second presentation of data is a combination of power and number of activations. 
+In this case, we would construct a histogram of power values. 
+On the x-axis we would have power values on the y-Axis we would have a number of times this power value occurred, where we would have buckets of a certain size.
+Here we should not mix it up with the previous combination, since here we include the whole consumption and not only when turned on. 
+
+The combination in the second column and second row is between average power, an integer, and appliances. Again explanation is simple. We present the average consumption for each appliance in a household.
+
+The combination in the third column and second row, between average power and numbers of activations, is again less straightforward.
+It presents how many times it activated with a certain power.
+
+Here one feature is an output of the previous combination, a histogram of power. 
+It is possible to have a histogram of the histogram, but it is not practical. 
+This means we are looking at looking how many times did the occurrence occur. 
+Not all combinations, even though they are possible, are useful. 
+
+The combination in the second column and fifth row is again straightforward. 
+Plotting histograms for each appliance and then plotting them side by side.
+In this case, we present histograms in color, since we are working with 3 dimensions.
+
+In the case of combining the second column and sixth row, between appliances and operating time, we present how long each appliance operates.
+Here it could be either a number or even a time range presentation.
+When doing a combination between operating time and the number of activations we are plotting how many times did an appliance turn on for a certain amount of time
+
+In the case of a combination between operating time and power, we show how long did appliance operate with a certain power.
+
+Next case, in the third row and last column, a combination between time array and several activations we present when did appliance turn on certain amount of times. 
+
+We are coming to an end, and here we have the most commonly used case where we use time array and average power to present the data.
+
+In the final case, the combination shows us at which time do appliance operate for a certain amount of time 
 
 Based on table \ref{tab:general_map} it is possible to see that the most commonly
 published feature combination is time and power. This combination will be used 
@@ -676,8 +722,8 @@ The table was marked as follows:
 \end{outline}
 
 The process of evaluation was a bit complicated, but it can be summed down to the following rules.
-If the load profile was used as a power profile, can it be used as an activation profile?
 
+If the load profile was used as a power profile, can it be used as an activation profile?
 Here we must use some common sense since per-building power load profiles were commonly used and based on that activation load profiles should be useful as well.
 That is not the case since to build per-building activation load profiles we need per-appliance (sub-meter) data anyway. That is why we have assigned them to the second class.
 
@@ -809,16 +855,16 @@ the result is table \ref{tab:our_rd}
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
-      1 \\ \hline
+      (1) \\ \hline
     \begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular} &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
-      1 &
+      (1) &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
-      1 &
+      (1) &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
       \multicolumn{1}{c|}{} &
