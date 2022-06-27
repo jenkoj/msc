@@ -235,9 +235,9 @@ These are reshaped and grouped as follows:
 \begin{outline}
 
 \1 Way of presenting a profile
-\2 Per-house load profile
+\2 Per-building load profile
 \2 Per-appliance load profiles
-\2 Per-house and per appliance load profile
+\2 Per-building and per appliance load profile
 
 \1 By time range of profile 
 \2 Daily
@@ -341,7 +341,7 @@ To be clear, for one to construct a decent daily profile, one needs a few
 weeks of data. The same goes for yearly profiles, in that case, one needs many years' worth of data. 
 
 The top row of the table is composed of 3 main groups. 
-The first group focuses on per-house energy consumption.
+The first group focuses on Per-building energy consumption.
 The second group examines the energy consumption of each appliance in a house separately.
 Third group analyses all appliances in a building.
 
@@ -350,7 +350,7 @@ which presents the given usage unit on the y-axis and time on the x-axis.
 Next is a profile with a time group. 
 In this case, we present the given usage unit on the z-axis and then time on the x and y-axis.
 Here, the second-time dimension can be anything from a week to a year.
-In the case of the per-house subgroup includes appliances instead of time. 
+In the case of the Per-building subgroup includes appliances instead of time. 
 Example for this is figure \ref{fig:heatmap_all_appl}.
 The last columns present the usage unit, that is power (P) or a number of activations (A).
 
@@ -363,7 +363,7 @@ To find useful load profiles, references from related work must be mapped.
 	\label{tab:contributions}
 	\begin{tabular}{|l|cccc|cccc|cccc|}
 	\hline
-	Description                                                   & \multicolumn{4}{c|}{Per-house}                                                                                               & \multicolumn{4}{c|}{Per-appliance}                                                                                           & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}}                                                         \\ \hline
+	Description                                                   & \multicolumn{4}{c|}{Per-building}                                                                                               & \multicolumn{4}{c|}{Per-appliance}                                                                                           & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}}                                                         \\ \hline
 																 & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} + daily time \\ dimension \end{tabular}} & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} + daily time \\ dimension \end{tabular}} & \multicolumn{2}{c|}{LP}                               & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
 	\begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P}    & \multicolumn{1}{c|}{A}    & \multicolumn{1}{c|}{P}                               & A                               \\ \hline
 	Daily                                                        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{UKDALE} \\ \citeyear*{Chuan2014} \\ \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{WALKER1985} \\ \citeyear*{GERBEC2005} \\ \citeyear*{Gao2018} \\ \citeyear*{Jeong2021} \\ \citeyear*{Joana2012} \\ \citeyear*{DER_heatmap_profile} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{X}  &  X  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{NILMAD2019} \\ \citeyear*{NILMAD22019} \\ \citeyear*{Issi2018} \\ \citeyear*{NILMAD2021} \\ \citeyear*{Castangia2021} \\ \citeyear*{occupancy2013}	\end{tabular}}  & \multicolumn{1}{c|}{\citeyear*{UKDALE}}  & \multicolumn{1}{c|}{X}   &  \multicolumn{1}{c|}{X}   & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{Chuan2014} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{Gao2018} 	\end{tabular}}   & \multicolumn{1}{c|}{\citeyear*{UKDALE}}     & \multicolumn{1}{c|}{}      &    \\ \hline
@@ -373,7 +373,7 @@ To find useful load profiles, references from related work must be mapped.
 \end{table}
 
 As can be seen from table \ref{tab:contributions}, most of the work (14 publications) has been done with standard daily load profiles with
-per-house power usage such as figure \ref{fig:daily_power_profile}. 
+Per-building power usage such as figure \ref{fig:daily_power_profile}. 
 Quite a lot of work (6 publications) has been done with per appliance daily power profiles.
 A few publications were based on weekly and yearly load profiles,
 and a few used two-dimensional time and power presentations.
@@ -396,9 +396,9 @@ Similar pattern emerged as in table \ref{tab:contributions}.
 	\begin{tabular}{|l|cccc|cccc|cccc|}
 	\hline
 	Description &
-	  \multicolumn{4}{c|}{Per-house} &
+	  \multicolumn{4}{c|}{Per-building} &
 	  \multicolumn{4}{c|}{Per-appliance} &
-	  \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}} \\  \hline
+	  \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\  \hline
 	  &
 	  \multicolumn{2}{c|}{LP} &
 	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
@@ -469,7 +469,7 @@ The table \ref{tab:groups} presents same publications as \ref{tab:use_cases},
 but only group names are shown.
 The table indicates how groups are arranged.
 Where anomaly detection and elderly care are dominating in the per-appliance part of the table,
-energy-saving and grid management are dominating in a per-house part of the table. 
+zero energy buildings and demand response are dominating in a per-building part of the table. 
 
 \begin{table}[H]
     \caption{Table presents references mentioned in use cases chapter}
@@ -477,10 +477,10 @@ energy-saving and grid management are dominating in a per-house part of the tabl
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth} 
         \begin{tabular}{|l|cccc|cccc|cccc|}
             \hline
-            \begin{tabular}[c]{@{}l@{}}ES - energy saving\\ GM - grid management\\ AD - anomaly detection\\ EC - elderly care\\ X - unfeasible\end{tabular} &
-              \multicolumn{4}{c|}{Per-house} &
+            \begin{tabular}[c]{@{}l@{}}ZEB - zero energy buldings\\ DR - demand response\\ AD - anomaly detection\\ EC - elderly care\\ X - unfeasible\end{tabular} &
+              \multicolumn{4}{c|}{Per-building} &
               \multicolumn{4}{c|}{Per-appliance} &
-              \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}} \\ \cline{2-13} 
+              \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
              &
               \multicolumn{2}{c|}{LP} &
               \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
@@ -502,22 +502,22 @@ energy-saving and grid management are dominating in a per-house part of the tabl
               \multicolumn{1}{c|}{P} &
               A \\ \hline
             Daily &
-              \multicolumn{1}{c|}{ES, GM} &
+              \multicolumn{1}{c|}{ZEB, DR} &
               \multicolumn{1}{c|}{} &
               \multicolumn{1}{c|}{X} &
               X
                &
-              \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ES\end{tabular}} &
+              \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB\end{tabular}} &
               \multicolumn{1}{c|}{} &
               \multicolumn{1}{c|}{X} &
               X
                &
-              \multicolumn{1}{c|}{GM} &
+              \multicolumn{1}{c|}{DR} &
               \multicolumn{1}{c|}{} &
               \multicolumn{1}{c|}{} &
                \\ \hline
             \begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular} &
-              \multicolumn{1}{c|}{ES} &
+              \multicolumn{1}{c|}{ZEB} &
               \multicolumn{1}{c|}{} &
               \multicolumn{1}{c|}{} &
                &
@@ -530,7 +530,7 @@ energy-saving and grid management are dominating in a per-house part of the tabl
               \multicolumn{1}{c|}{} &
                \\ \hline
             Yearly &
-              \multicolumn{1}{c|}{ES} &
+              \multicolumn{1}{c|}{ZEB} &
               \multicolumn{1}{c|}{} &
               \multicolumn{1}{c|}{} &
                &
@@ -557,10 +557,10 @@ with possible use cases for given load profiles.
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth} 
     \begin{tabular}{|l|cccc|cccc|cccc|}
     \hline
-    \begin{tabular}[c]{@{}l@{}}ES - energy saving\\ GM - grid management\\ AD - anomaly detection\\ EC - elderly care\\ X - unfeasible\end{tabular} &
-      \multicolumn{4}{c|}{Per-house} &
+    \begin{tabular}[c]{@{}l@{}}ZEB - zero energy buildings\\ DR - demand response\\ AD - anomaly detection\\ EC - elderly care\\ X - unfeasible\end{tabular} &
+      \multicolumn{4}{c|}{Per-building} &
       \multicolumn{4}{c|}{Per-appliance} &
-      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}} \\ \cline{2-13} 
+      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
      &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
@@ -582,44 +582,44 @@ with possible use cases for given load profiles.
       \multicolumn{1}{c|}{P} &
       A \\ \hline
     Daily &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM,\end{tabular}} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM,\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR,\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR,\end{tabular}} &
       \multicolumn{1}{c|}{X} &
       X &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ES, GM\end{tabular}} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ES, GM\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular}} &
       \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} X \end{tabular}} &
       \begin{tabular}[c]{@{}c@{}} X \end{tabular} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ES, GM\end{tabular}} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ES, GM\end{tabular}} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ES, GM\end{tabular}} &
-      \begin{tabular}[c]{@{}c@{}}AD, EC,\\ ES, GM\end{tabular} \\ \hline
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular}} &
+      \begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular}} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM,\end{tabular}} &
-      \multicolumn{1}{c|}{ES, GM} &
-      ES, GM &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular}} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular}} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular}} &
-      \begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular}} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular}} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular}} &
-      \begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular} \\ \hline
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR,\end{tabular}} &
+      \multicolumn{1}{c|}{ZEB, DR} &
+      ZEB, DR &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular} \\ \hline
     Yearly &
-      \multicolumn{1}{c|}{ES, GM} &
-      \multicolumn{1}{c|}{ES, GM} &
-      \multicolumn{1}{c|}{ES, GM} &
-      ES, GM &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular}} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular}} &
-      \multicolumn{1}{c|}{ ES, GM } &
-      ES, GM &
-      \multicolumn{1}{c|}{ES,GM}  &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular}} &
-      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular}} &
-      \begin{tabular}[c]{@{}c@{}}AD,\\ ES, GM\end{tabular} \\ \hline
+      \multicolumn{1}{c|}{ZEB, DR} &
+      \multicolumn{1}{c|}{ZEB, DR} &
+      \multicolumn{1}{c|}{ZEB, DR} &
+      ZEB, DR &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{ ZEB, DR } &
+      ZEB, DR &
+      \multicolumn{1}{c|}{ZEB,DR}  &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular} \\ \hline
     \end{tabular}
     \end{adjustbox}
 \end{table}
@@ -652,9 +652,9 @@ The table has four possible classes.
     \begin{tabular}{|l|cccc|cccc|cccc|}
     \hline
      &
-      \multicolumn{4}{c|}{Per-house} &
+      \multicolumn{4}{c|}{Per-building} &
       \multicolumn{4}{c|}{Per-appliance} &
-      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}} \\ \cline{2-13} 
+      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
      &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
@@ -754,9 +754,9 @@ Following these rules, the table  \ref{tab:future_rd} was constructed.
     \begin{tabular}{|l|cccc|cccc|cccc|}
     \hline
      &
-      \multicolumn{4}{c|}{Per-house} &
+      \multicolumn{4}{c|}{Per-building} &
       \multicolumn{4}{c|}{Per-appliance} &
-      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}} \\ \cline{2-13} 
+      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
      &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
@@ -832,9 +832,9 @@ the result is table \ref{tab:our_rd}
     \begin{tabular}{|l|cccc|cccc|cccc|}
     \hline
      &
-      \multicolumn{4}{c|}{Per-house} &
+      \multicolumn{4}{c|}{Per-building} &
       \multicolumn{4}{c|}{Per-appliance} &
-      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-house\\ per-appliance\end{tabular}} \\ \cline{2-13} 
+      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
      &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
@@ -904,14 +904,14 @@ Based on the table \ref{tab:our_rd} we will use the following profiles in the fo
 
 In chapter 7 we will use 
 \begin{itemize}
-  \item Per-house daily-weekly load profile
+  \item Per-building daily-weekly load profile
   \item Per-appliance daily-weekly load profile
 \end{itemize}
 with a t-SNE neighboring algorithm to find how they are related in high dimensional space.
 
 In chapter 8 we will use
 \begin{itemize}
-  \item Per-house Per-appliance daily load profiles with appliances side by side
+  \item Per-building Per-appliance daily load profiles with appliances side by side
 \end{itemize}
 To build assisted living system for the elderly.
 
