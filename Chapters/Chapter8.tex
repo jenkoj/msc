@@ -51,6 +51,11 @@ this would be a Monday from midnight to one o'clock.
 The lower-right corner presents the last hour of a week.
 Since there are roughly 4 weeks in each month, each pixel will present 4 samples. 
 
+# exampleshere
+
+We have on average roughly one year of data per building. 
+In some cases few weeks and some up to 5 years for some appliances.
+By slicing this data to 1 month intervals and convering this data to load pofile samples, we were able to obtain 5218 samples.
 \subsection{Datasets}
 
 To present the results REFIT (\cite{REFIT}), UK-DALE  (\cite{UKDALE}), ECO  (\cite{ECO}), REDD  (\cite{REDD}) and iAWE  (\cite{iAWE}) datasets will be used.
@@ -265,7 +270,7 @@ The figure \ref{fig:tsne_pa_scatter_all_microwave} shows that microwaves are aga
 They are more clustered than the fridges, and less than the kettles, even though they are used similarly.
 This could be due to additional electronics such as a clock that are built into
 the appliance. This could lead to some samples being registered as turned on due to 
-"dark" current. One other difference between the two is that microwave has more than one mode of operation.
+a "dark" current. One other difference between the two is that microwave has more than one mode of operation.
 
 \begin{figure}[H]
 	\centering
@@ -565,3 +570,20 @@ with more activity than the top ones.
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png}
 	\label{fig:tsne_boa_img_scatter_refit8}
 \end{figure}
+
+\section{Conclusion}
+
+The goal of the chapter was to show how data is related in high-dimensional space.
+For this to be achieved, three different types of load profiles were utilized. 
+
+Per-building load profiles offered a look into how activations patterns differ across different buildings and datasets.
+Per-building per-appliance bag of appliance load profiles offered the same thing, but in greater detail.
+Per-appliance load profiles were the most versatile and were utilized in the most various ways.
+First, we have shown how the same type of appliance is being used across various buildings.
+Next, we have compared appliances between each other. 
+Since the plot was incomplete, we have defined appliance groups.
+These new groups formed clusters, which revealed the connection between types of profiles. 
+Finally, we compared how appliances in a single building. 
+
+The comprehensive analysis of the plots pointed out that we can roughly estimate the strength of a routine based on the scattering of load profiles.
+This information will be useful in the next chapter where we will utilize it to build the elderly care system.
