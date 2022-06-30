@@ -2,22 +2,30 @@
 \chapter{Possible use cases}
 
 The load profiling method has a lot of different use cases across different fields.
-For an example it can be used to save energy by studying users usage patterns and returning feedback.
-Electrical energy providers could use that same data to optimize the management of their grid, with minimal impact on users daily lives.
-The load profiles could also be used to help the elderly in case of an accident and help prevent one. 
-They could be used to detect all kinds of early malfunctions in the operation of appliances and help save energy.
-Occupancy detection, research, and development are all areas where profiling could be used. 
+In our case, we will split use cases into three classes.
 
-\section{Energy saving}
+The first class is grid management.
+For example, it can be used to save energy by studying users' usage patterns and returning feedback.
+Electrical energy providers could use that same data to optimize the management of their grid, with minimal impact on users' daily lives.
+
+The second class is anomaly detection.
+The load profiles could be used to help the elderly in case of an accident and help prevent one. 
+They could be used to detect all kinds of early malfunctions in the operation of appliances and help save energy.
+
+The last class is miscellaneous or other where occupancy detection, research, and development are all areas where profiling could be used. 
+
+\section{Grid management}
+
+\subsection{Zero energy buildings and energy saving}
 
 As mentioned before many applications for load profiling could be used to reduce energy use and increase energy efficiency. 
 With the emerging EV-market and ever-increasing installation of heat pumps, more and more energy is being used in form of electricity. 
-This means, most of the current power grids would have to be upgraded to keep up with demand.
+This means, that most of the current power grids would have to be upgraded to keep up with demand.
 
 On the other side, more and more photovoltaic systems are being installed,
 which is slowly shifting energy production towards end-users.
 Slowly energy grid is starting to shift towards so-called distributed energy resources or "DER" \cite{MORENOJARAMILLO2021445}.
-DERs includes all kinds of micro-energy sources such as PV, wind power, water power, and all kinds of energy accumulators that can store 
+DERs include all kinds of micro-energy sources such as PV, wind power, water power, and all kinds of energy accumulators that can store 
 and release energy when needed such as heat pumps with hot water storage, home batteries, and EVs that can be used as a battery.
 
 With smart management, these appliances could be used in a way that would reduce the net flow of energy and alleviate the load off the power grid.
@@ -29,7 +37,6 @@ Since consumers take part in producing the energy, they are often called "prosum
 They will be an essential part of the European Union's plan to reach zero-energy buildings
 and near-zero-energy buildings \cite{eu2021}. The directive was accepted in 2010 and was recast in 2021.
 The plan is set to be realized in the next decade.
-
 
 An actual use case would be an EV owner with an installed PV system and heat pump, who works from home on occasions.
 In this case, two profiles would be developed. Normal workday and work from home day.
@@ -58,7 +65,7 @@ such as \cite{energy_saving3}, \cite{energy_saving1}, \cite{energy_saving4} and 
 Energy saving is done through instant feedback, reduction goals, rewards, and by comparing their user profile to the average user as the authors did in \cite{Csoknyai2019}.
 Source \cite{eu2006} states that as much as 20 \% of energy could be saved by managing the consumption.
 
-\section{Grid management}
+\subsection{Demand response}
 
 An increasing percentage of renewable resources is troubling energy distributors, due to the nature of renewable resources.
 In the prior chapter, it was mentioned how energy-saving measures would benefit users and their peers.
@@ -91,7 +98,18 @@ Using user load profiles, distribution companies could disconnect the load in a 
 When they would need to load the grid due to low demand, they could charge EVs free of charge or even pay to do so. 
 This benefits the company as well since they do not need to lower energy production, which can be expensive. 
 
-\section{Elderly care}
+\section{Anomaly detection}
+
+One use case of anomaly detection was already mentioned in the Elderly care chapter.
+One more thing that could be detected, using load profiling, would be the altered operation of appliances.
+In the case of a fridge, the system would detect that duty cycles are too long.
+The increased duty cycle can be caused by cooling liquid leakage, fridge being open or compressor motor malfunction.
+Heat pumps work on the same basis as fridges, meaning the same anomalies could be detected. 
+The malfunction could also be detected in heating element appliances such as toasters or boilers. 
+Since mentioned appliances are one of the largest consumers in a household,
+early enough detection could lead to large energy-saving benefits \cite{NILMAD2019}.
+
+\subsection{Elderly care}
 
 Demographic changes i.e. aging population is an increasing socioeconomic issue.
 The elderly are facing many issues when staying at home alone for extended periods.
@@ -110,20 +128,9 @@ This could indicate that the user forgot to turn off the stove, oven, or even a 
 that a fridge or a freezer was left open since the duty cycles would be longer and more frequent. 
 As soon as the issue would be detected it would notify the caregiver to check on the patient.
 
-\section{Anomaly detection}
-
-One use case of anomaly detection was already mentioned in the Elderly care chapter.
-One more thing that could be detected, using load profiling, would be the altered operation of appliances.
-In the case of a fridge, the system would detect that duty cycles are too long.
-The increased duty cycle can be caused by cooling liquid leakage, fridge being open or compressor motor malfunction.
-Heat pumps work on the same basis as fridges, meaning the same anomalies could be detected. 
-The malfunction could also be detected in heating element appliances such as toasters or boilers. 
-Since mentioned appliances are one of the largest consumers in a household,
-early enough detection could lead to large energy-saving benefits \cite{NILMAD2019}.
-
 \section{Other}
 
-Load profiling could also be used as feedback to the engineers and designers,
+Load profiling could also be used as feedback for the engineers and designers,
 of how a certain device is being used and if it is being used as designed. 
 This would enable the manufacturers to improve their products according to 
 user's needs, without unnecessary features.

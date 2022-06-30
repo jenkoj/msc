@@ -11,19 +11,20 @@ This could be usage patterns within a household, where we are looking for applia
 or when observing multiple buildings how their consumption differs. 
 To measure the similarity of activation profiles, the t-SNE algorithm will be used.
 
-% The clustering of load profiles was used many times before like it was already described in related work chapter \ref{Chapter3}.
-% We will be working with dimensionality reduction, where clusters are usually formed due to similar data, the following clustering publications are still worth mentioning.
-% We have seen that authors \cite{GERBEC2005}, \cite{Jeong2021} and \cite{Joana2012} have clustered regular one-dimensional load profiles, as well as with 2D image-based load profiling in publications published by \cite{Park2019}. 
+The clustering of load profiles was used many times before like it was already described in related work chapter \ref{Chapter3}.
+We will be working with dimensionality reduction, where clusters are usually formed due to similar data, the following clustering publications are still worth mentioning.
+We have seen that authors \cite{GERBEC2005}, \cite{Jeong2021} and \cite{Joana2012} have clustered regular one-dimensional load profiles, as well as with 2D image-based load profiling in publications published by \cite{Park2019}. 
 
-% The publication by \cite{sne_energ} compared various dimensionality reduction techniques for clustering and visualisation of load profiles.
-% Their goal was to compare Principal Component Analysis, Isometric Feature Mapping, Sammon Mapping, Locally Linear Embedding and Stochastic Neighbor Embedding.
-% They used power daily load profiles from residential and industrial areas.
-% This publication was of the closest resemblance to our goals, that we were able to find. 
+The publication by \cite{sne_energ} compared various dimensionality reduction techniques for clustering and visualization of load profiles.
+Their goal was to compare Principal Component Analysis, Isometric Feature Mapping, Sammon Mapping, Locally Linear Embedding and Stochastic Neighbor Embedding.
+They used power daily load profiles from residential and industrial areas.
+This publication was of the closest resemblance to our goals, that we were able to find. 
 
-% In all cases, work has been done with the power load profile, whereas in this case, we will try to find similarities between activation profiles using t-SNE algorithm.
-% Most of the publications used one time dimensions, whereas we will use two time dimensions.
+In all cases, work has been done with the power load profile, whereas in this case, we will try to find similarities between activation profiles using a t-SNE algorithm.
+Most of the publications used single-time dimensions, whereas we will use two-time dimensions.
 
-% Although the use-cases were presented in-depth in chapter \ref{Chapter4}, it is worth mentioning one specific use case.
+Although the use-cases were presented in-depth in chapter \ref{Chapter4}, it is worth mentioning one specific use case.
+
 The increasing price of energy resources, could lead to over-saving and living in cool homes.
 By using similarity metrics between profiles across different buildings, it would be possible to detect outliers when it comes to heating. 
 With this approach, it would be possible to detect users, that are living in below-average cool homes and offer them cheaper plans. 
@@ -42,6 +43,8 @@ each one enables us a different view of load profiles.
 
 \subsection{Load profiles}
 
+\subsubsection{Weekly-daily load profile}
+
 During testing, a weekly-daily load profile constructed from a month of data will be used.
 Y-axis will present the days in a week and X-axis presents the hours in a day.
 Days are labeled from 0 to 6, and hours from 0 to 23.
@@ -51,11 +54,43 @@ this would be a Monday from midnight to one o'clock.
 The lower-right corner presents the last hour of a week.
 Since there are roughly 4 weeks in each month, each pixel will present 4 samples. 
 
-# exampleshere
+\begin{figure}[H]
+	\centering
+	\caption{"Weekly per-appliance load profile"}
+	\includegraphics[width=0.7\textwidth]{../Figures/LPS/WM_weekly.png}
+	\label{fig:WM_weekly_2}
+\end{figure}
+
+One such example of profiles that we will use, was already presented in chapter \ref{chapter6} with figure \ref{fig:WM_weekly}.
+For practical reasons, we are presenting it again here with figure \ref{fig:WM_weekly_2}.
+
+\subsubsection{Bag of appliances load profile}
+
+Another load profile that will be used at the end of the results section will be the bag-of-appliances load profile.
+The profile was presented and analyzed in depth in chapter \ref{chapter6} and was presented in figure \ref{fig:BOA}.
+But again, for ease-of-use purposes, we will summarize the profile here.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Universal presentation of per-building per-appliance load profile"}
+	\includegraphics[width=1\textwidth]{../Figures/LPS/BOA.png}
+	\label{fig:BOA2}
+\end{figure}
+
+To build the profile seen in figure \ref{fig:BOA2}, we used the data from all 5 datasets and made a list of the most commonly used appliances.
+Only the top 30 appliances were selected.
+This enables us to have the same load profile for all buildings, and thus enables us to see how the usage differs across them.
+One problem that arises here is the missing appliances.
+These appliances present themselves as a black line.
+A lot of missing appliances may cause the image to be primarily black,
+which could cause troubles for the algorithm processing this as an image.
+
+\subsubsection{Samples}
 
 We have on average roughly one year of data per building. 
 In some cases few weeks and some up to 5 years for some appliances.
-By slicing this data to 1 month intervals and convering this data to load pofile samples, we were able to obtain 5218 samples.
+By slicing this data into 1-month long intervals and converting them to load profiles we were able to obtain 5218 samples.
+
 \subsection{Datasets}
 
 To present the results REFIT (\cite{REFIT}), UK-DALE  (\cite{UKDALE}), ECO  (\cite{ECO}), REDD  (\cite{REDD}) and iAWE  (\cite{iAWE}) datasets will be used.
@@ -510,39 +545,6 @@ This is done by measuring how many times each appliance occurs in the datasets,
 then this list is sorted from most common to least common, and finally, the top 30 are selected.
 The results are appliances in the following order:
 
-\begin{itemize}
-	\item fridge freezer
-	\item freezer
-	\item fridge
-	\item computer
-	\item television
-	\item light
-	\item kettle
-	\item boiler
-	\item broadband router
-	\item microwave
-	\item washing machine
-	\item dish washer
-	\item HTPC
-	\item toaster
-	\item solar thermal pumping station
-	\item audio amplifier
-	\item laptop computer
-	\item active subwoofer
-	\item unknown
-	\item washer dryer
-	\item computer monitor
-	\item audio system
-	\item tumble dryer
-	\item pond pump
-	\item desktop computer
-	\item ethernet switch
-	\item appliance
-	\item modem
-	\item server computer
-	\item electric space heater
-\end{itemize}
-
 The problem with such a comparison is, that it is best 
 if all buildings would use the same appliance.
 Since that is not the case, missing appliances are portrayed as always off. 
@@ -571,9 +573,9 @@ with more activity than the top ones.
 	\label{fig:tsne_boa_img_scatter_refit8}
 \end{figure}
 
-\section{Conclusion}
+\section{Discussion}
 
-The goal of the chapter was to show how data is related in high-dimensional space.
+The main goal of the chapter was to show how data is related in high-dimensional space.
 For this to be achieved, three different types of load profiles were utilized. 
 
 Per-building load profiles offered a look into how activations patterns differ across different buildings and datasets.
@@ -585,5 +587,15 @@ Since the plot was incomplete, we have defined appliance groups.
 These new groups formed clusters, which revealed the connection between types of profiles. 
 Finally, we compared how appliances in a single building. 
 
+\section{Conclusion}
+
+We have seen how samples and samples are connected and related in higher dimensions, this should enable us to be more efficient when using these load profiles in the next chapter. 
 The comprehensive analysis of the plots pointed out that we can roughly estimate the strength of a routine based on the scattering of load profiles.
 This information will be useful in the next chapter where we will utilize it to build the elderly care system.
+
+While there are no empirical results to present, the effect of seeing the actual samples placed on a map was stronger.
+We could go into greater detail and use other dimensionality-reduction algorithms for comparison, but that was not the goal.
+The side goal, besides the main one, was to show and present the patterns in the data and other features such as a routine strength.
+While doing that we also proved that the load profiles that we proposed can be efficiently used to do that.
+
+Knowing this we can conclude the chapter by stating that we have successfully utilized previously unused load profiles, and thus made a scientific contribution.

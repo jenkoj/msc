@@ -21,8 +21,8 @@ While this is practical from the "no additional equipment needed" side, it is a 
 
 There is a middle way between invasive and non-invasive approaches, such as the authors explored in \cite{elder1} and \cite{elder2}. 
 It is possible to use sub-meters for each appliance and indirectly observe the usage pattern. 
-The upside of this approach is that the elder does not need to wear the device.
-The downside is, that new meters need to be installed for most commonly used appliances.
+The advantage of this approach is that the elder does not need to wear the device.
+The disadvantage is, that new meters need to be installed for most commonly used appliances.
 
 \section{Goal}
 
@@ -344,7 +344,7 @@ Using the equation \ref{eq:routine} we can populate the array \ref{arr:anom_rati
         \coordinate (s) at ($(s) + (1,0)$);
         }
     \end{tikzpicture}
-    \caption{Agregated anomalies for each bucket}
+    \caption{Aggregated anomalies for each bucket}
     \label{arr:anom_ratio}
 \end{figure}
 
@@ -384,6 +384,21 @@ the elder to check if it is okay.
 \subsubsection{Step five}
 
 The last step is to repeat steps 4 and 5 with data, that is not included in the built profile.
+
+\subsection{Tools used}
+
+We have used the same tools as were used in chapter \ref{Chapter8},
+but due to consistency, we have also included the text here.
+
+To process the data and to obtain the results the environment and virtual machines from Google Colab \cite{colab} were used.
+They offer access to Google GPU accelerated compute machines with 12 GB of RAM via browser. 
+
+Within the environment, various python libraries were used.
+To store and read the datasets in hdf5 format we used h5py  (\cite{hdf5}) and Pickle  (\cite{pickle}).
+To load datasets into ram and then handle it pandas  (\cite{pandas}) library was used.
+For handing the large matrices and calculating we used NumPy  (\cite{numpy}).
+To present the data with graphs we have used Matplotlib  (\cite{matplotlib}) and to present data with heatmap Seaborn  (\cite{seaborn}).
+For the easier implementation, such as of the t-SNE, a Scikit  (\cite{scikit}) and SciPy  (\cite{scipy}) libraries were used.
 
 \subsection{Datasets and evaluation} \label{ssec:ds_eval}
 
@@ -449,21 +464,29 @@ The reason behind that is, that if the routine rate is high it means that it wil
 When a true anomaly occurs such as a fall, the dweller, all through he had the same strong routine for the past year (the routine rate would be close to 1), would not be able to practice the routine, and the algorithm will be quite sure that this is an actual anomaly.
 Therefore, the lower the routine rate the less sure we are that an actual anomaly such as a fall occurred.
 This is a good alternative measurement, that tells us how well this algorithm will perform. 
-
+Since sometimes it is easier to read when results are presented with percentages, we will sometimes use this way of writing it.
+ 
 \section{Results} 
+
+Results were obtained for 3 datasets. 
+REDD and iAWE datasets were not used, since the dataset was too short. 
+They contained less than a month of data. 
 
 \subsection{The routine rate over a period of time}
 
 In the following sections, we will present how the metric changes over given periods of time.
-This will enable us to see that there are patterns that this metric helps emerge. 
-To present these patterns, training data will be used. 
+This will enable us to see that there are patterns that this metric helps reveal. 
+Since we have more than a year of training data, this will enable us to see how the metric changes over years time.
 This enables us to see how routine changes over the year. 
+We cannot use testing data in this case, since there is not enough of it.
 
 \subsubsection{The routine rate through the week} \label{sssec:ratio_week}
 
-As the behavior of the dwellers changes, so does the accuracy of the algorithm. 
+As the behavior of the dwellers' changes, so does the accuracy of the algorithm. 
 One observation that was made, was that the routine was higher during the week than during the weekends,
-as can be seen in the figures below. 
+as can be seen in the figure \ref{fig:ec_week} below. 
+The figures also show that for different houses, the change in routine also differs.
+The only exception is building 5, which shows that the observation does not hold for all houses. 
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -508,7 +531,11 @@ This should yield more relevant results.
 
 The rate at which the routine is being practiced also changes over a year. 
 While on average the routine rate is higher during the winter, spring and summer, it is lower during the summer due to vacation. 
-This can be seen in the figures below. 
+This can be seen in the figure \ref{fig:ec_year} below. 
+It is possible to observe dips in routine. 
+In some cases, these dips occur in summer and others in springtime. 
+Without metadata, we cannot know for sure, what was the event behind these dips. 
+There is a high chance most of them are vacations or other events where one or more dwellers are away from home for extended periods of time. 
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -543,12 +570,11 @@ This can be seen in the figures below.
 	\caption{"Routine through the year (train data)"}
 \end{figure}
 
-Since we are observing how routine changes, and not the actual performance, training data was used.
-This is because there train we have more than a year of train data.
-
 \subsection{Effectiveness of anomaly detection through the day}
 
-One more thing to keep in mind is that this algorithm will be able to detect anomalies only when
+The following subsection will show how the effectiveness of anomaly detection changes throughout the day.
+
+One thing to keep in mind is that this algorithm will be able to detect anomalies only when
 the routine will be high, and more than two appliances will be used in given buckets.
 
 Figure \ref{fig:ignored_buckets_22} shows which buckets were most commonly used for the detection of an anomaly.
@@ -599,6 +625,12 @@ When the user is sleeping, an anomaly occurs when something that shouldn't opera
 To implement this additional rule, we would have to build two models.
 One would be online during the day, and the other when the user is sleeping.
 
+To obtain the information about users sleep schedule, we could either have a schedule obtained from the user or we could extract it based on the usage pattern of appliances.
+You can easily detect when most of the appliances are inactive, and build a sleep profile based on this information.
+
+Using the sleep schedule, we cloud easily switch between the two operating modes. 
+This new implementation would further extend the windows within which we can detect the anomalies and thus further improves users' safety.
+
 The main issue here is not the detection itself but efficiently detecting
 when the user is sleeping. 
 
@@ -606,9 +638,6 @@ The examples above were a demonstration and a look into data and metrics.
 The examples shown were trained and evaluated on the same data. 
 To show true performance, we will use test data to determine the actual performance. 
 
-Results were obtained for 3 datasets. 
-REDD and iAWE datasets were not used, since the dataset was too short. 
-They contained less than a month of data. 
 
 \subsection{Per-building results}
 \subsubsection{REFIT}
@@ -733,12 +762,16 @@ Results show that the algorithm is 78 \% efficient at detecting true anomalies.
 On average, the algorithm would label 22 \% of samples as false positives, 
 in other words, every fifth sample could be a false positive. 
 
+The nature of this system is that there is more harm done if we do not detect an anomaly than if we detect a few false positives. 
+Therefore, in short, we can claim that the performance of this algorithm is adequate to be used in the real world. 
+
 \section{Discussion}
 
 When analyzing these results one important to keep in mind is,
 that we do not have metadata available to know what kind of
 socio-economic status do dwellers have.
-Socio-economic status encompasses attributes such as age, income, geo-location, age of the building, type of insulation, number of dwellers in the buildings, etc.
+Socio-economic status and other features encompass attributes such as age, income, number of children and geolocation.
+They may also encompass the age of the building, type of insulation, number of dwellers in the buildings, etc.
 Since datasets do provide them,
 it is hard to make any other conclusions other than the algorithm works well on an average building.
 
@@ -773,15 +806,19 @@ better on the elderly.
 
 In the case of practical use of this algorithm, it is 
 important the system is put online as fast as possible and that it improves over time. 
+
 This can be achieved with the implementation of iterative learning.
 The system will build a load profile based on the first month of data.
 Using this load profile, the system can be put online.
 At the end of the month, it can use this data to improve the load profile.
 This can then be repeated indefinitely. 
 
-\subsection{Results}
+\subsection{Methodology}
+The tools, metric and other methodology is the same as in a normal learning system.
+The only change was made on the data preparation side.
 
-For this evaluation, only REFIT \cite{REFIT} data was used. 
+\subsubsection{Data preparation}
+For this evaluation, only REFIT (\cite{REFIT}) data was used. 
 As it can be seen on figure \ref{fig:refit_timeline},
 Refit buildings have long and relatively similar timelines,
 compared to other datasets.
@@ -828,6 +865,8 @@ To get more accurate results we will only observe the performance using one year
 	\label{fig:data_used_for_testing}
 \end{figure}
 
+\subsection{Results}
+
 To show the effect of training data on the metric, the figure \ref{fig:efect_of_data_on_metric} is presented.
 The figure \ref{fig:efect_of_data_on_metric} contains 12 months of 
 data for each house, since some have 17 months of data,
@@ -853,8 +892,22 @@ If the behavior in the household radically changes, it can still lead to a dip.
 \end{figure}
 
 Figure \ref{fig:1_year_of_iterative_learning_avg} shows how the same data can also be presented so that it shows how the metric changes over a year.
+The same as in the previous figure we can observe the dips getting less frequent and smaller. 
+Here we can also observe the average line. 
+Interestingly enough, due to a large number of buildings, it seems to be sticking at around 80 \%.
+Even though the average is oscillating, it is increasing and approaching the 85 \% mark.
+
 
 \subsection{Discussion}
+
+It is hard to compare these results to the ones from normal learning.
+Even though the same data was used, different sections were used.
+
+Let's take the last point on the graph where the average is at 85 \% mark for an example.
+Here, the amount of training data is different, since we limited it to one year. 
+The train set is also different since only last month was used, and not 20 \%. 
+There are many differences in train and test sets, therefore we can not compare them.
+The results do prove that the method works and that the true performance is at around the expected 80 \%.
 
 By increasing the amount of data, the algorithm becomes more stable.
 In some cases, where users' behavior does not change, the algorithm could work

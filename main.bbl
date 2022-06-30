@@ -118,6 +118,54 @@
       \endverb
       \keyw{Demand response,Price elasticity,Real time pricing,Electricity markets}
     \endentry
+    \entry{sne_energ}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=76f3a96877c95f455c8d07a63abfa003}{%
+           family={Aréchiga},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=df1d997102b59e76d54dda8d29c96ab1}{%
+           family={Barocio},
+           familyi={B\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9ec8b1fd2864085428fa3b30e7b29928}{%
+           family={Ayon},
+           familyi={A\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a9f18bbf072e3a4666e8319d61d97e49}{%
+           family={Garcia\bibnamedelima Baleon},
+           familyi={G\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={H.\bibnamedelimi A.},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{45abdbacd6f27eeb5c55d7b5aa618710}
+      \strng{fullhash}{f263615a8ecb947840621510bf6a64a6}
+      \strng{bibnamehash}{45abdbacd6f27eeb5c55d7b5aa618710}
+      \strng{authorbibnamehash}{45abdbacd6f27eeb5c55d7b5aa618710}
+      \strng{authornamehash}{45abdbacd6f27eeb5c55d7b5aa618710}
+      \strng{authorfullhash}{f263615a8ecb947840621510bf6a64a6}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE PES Transmission and Distribution Conference and Exposition Latin America}
+      \field{title}{Comparison of Dimensionality Reduction Techniques for Clustering and Visualization of Load Profiles}
+      \field{year}{2016}
+      \field{pages}{1 to 6}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/TDC-LA.2016.7805661
+      \endverb
+    \endentry
     \entry{NILMAD2021}{article}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=1d1474484f5d1455012a0546b9e58d0f}{%
