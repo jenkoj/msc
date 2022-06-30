@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.1)  29 JUN 2022 22:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.1)  30 JUN 2022 11:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -886,28 +886,7 @@ Now handling font encoding PU ...
 Package hyperref Info: Option `breaklinks' set `true' on input line 152.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
- (/Users/jakob/Documents/mag/MSC/msc/main.aux
-(/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter1.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter2.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter3.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter4.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter5.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter6.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter8.aux
-
-LaTeX Warning: Label `fig:tsne_papb_scatter_all' multiply defined.
-
-
-LaTeX Warning: Label `fig:tsne_papb_img_scatter_ent_refit8' multiply defined.
-
-) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter7.aux
-
-LaTeX Warning: Label `fig:ec_b5week' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:ec_b5week' multiply defined.
-
-
-LaTeX Warning: Label `fig:ec_b5year' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:ec_b5year' multiply defined.
-
-) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter9.aux))
+ (/Users/jakob/Documents/mag/MSC/msc/main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 152.
@@ -929,7 +908,8 @@ LaTeX Font Info:    ... okay on input line 152.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 152.
 LaTeX Font Info:    ... okay on input line 152.
 LaTeX Font Info:    Trying to load font information for T1+ppl on input line 152.
- (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1ppl.fd
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1014,11 +994,12 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (/Users/jakob/Documents/mag/MSC/msc/main.bbl)
+Package biblatex Info: ... file 'main.bbl' not found.
+
+No file main.bbl.
 Package biblatex Info: Reference section=0 on input line 152.
 Package biblatex Info: Reference segment=0 on input line 152.
- ABD: EveryShipout initializing macros
+ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box76
 Package hyperref Info: Link coloring ON on input line 152.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1033,7 +1014,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 152.
 LaTeX Info: Redefining \pageref on input line 152.
 LaTeX Info: Redefining \nameref on input line 152.
- (/Users/jakob/Documents/mag/MSC/msc/main.out) (/Users/jakob/Documents/mag/MSC/msc/main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -1071,13 +1051,25 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 6.25204pt on input line 152.
 
 1: section
+
+/Users/jakob/Documents/mag/MSC/msc/main.tex:195: LaTeX Error: File `Logo' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.195 \includegraphics{Logo}
+                             % University/department logo - uncomment to pla...
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [1
 
 
 
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
-
-]
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 --------------------
  Declaration of Authorship
 --------------------
@@ -1090,7 +1082,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--216
  []
 
 1: section
-[3] [4
+[3
+
+] [4
+
+] [5] [6
+
+]
+--------------------
+ Abstract
+--------------------
+1: section
+[7] [8
+
+]
+--------------------
+ Acknowledgements
+--------------------
+1: section
+[9] [10
+
+]
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+
+1: section
+[11] [12
+
+]
+\tf@lof=\write7
+\openout7 = `main.lof'.
+
+
+1: section
+[13] [14
+
+]
+\tf@lot=\write8
+\openout8 = `main.lot'.
+
+
+1: section
+[15] [16
+
+]
+1: section
+[17] [18
+
+]
+1: section
+[19] [20
+
+]
+1: section
+[21] [22
+
+]
+--------------------
+ Dedicatory
+--------------------
+1: section
+[23] [24
 
 ]
 1: section
@@ -1098,6 +1151,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
 (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter1.tex
 Chapter 1.
+
+LaTeX Warning: Citation 'eurostat2020' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: Citation 'eurostat2020' on page 1 undefined on input line 7.
+
+
+LaTeX Warning: Citation 'Chuan2014' on page 1 undefined on input line 18.
+
+
+LaTeX Warning: Citation 'Csoknyai2019' on page 1 undefined on input line 19.
+
+
+LaTeX Warning: Citation 'MORENOJARAMILLO2021445' on page 1 undefined on input line 21.
+
+
+Overfull \hbox (9.69073pt too wide) in paragraph at lines 17--22
+\T1/ppl/m/n/10.95 out-put of en-ergy flow such as the au-thors de-scribe in [].
+ []
+
+
+LaTeX Warning: Citation 'Review2021' on page 1 undefined on input line 26.
+
 )
 1: section
 [1
@@ -1112,18 +1188,71 @@ Chapter 1.
 
 ]
 Chapter 2.
-<Figures/clustered_profiles.png, id=430, 603.25375pt x 678.535pt>
+
+LaTeX Warning: Citation 'Review2021' on page 3 undefined on input line 4.
+
+
+LaTeX Warning: Citation 'KAVOUSIAN2013184' on page 3 undefined on input line 10.
+
+
+Overfull \hbox (43.69022pt too wide) in paragraph at lines 10--11
+[]\T1/ppl/m/n/10.95 Model: "a for-mal sys-tem that rep-re-sents the com-bined pro-cesses" []
+ []
+
+
+LaTeX Warning: Citation 'GERBEC2005' on page 3 undefined on input line 19.
+
+
+LaTeX Warning: Citation 'GERBEC2005' on page 3 undefined on input line 19.
+
+<Figures/clustered_profiles.png, id=147, 603.25375pt x 678.535pt>
 File: Figures/clustered_profiles.png Graphic file (type png)
 <use Figures/clustered_profiles.png>
 Package pdftex.def Info: Figures/clustered_profiles.png  used on input line 20.
 (pdftex.def)             Requested size: 363.6237pt x 408.99814pt.
 1: section
-[3]) [4 </Users/jakob/Documents/mag/MSC/msc/Figures/clustered_profiles.png>]
+[3]
+
+LaTeX Warning: Reference `fig:profiles' on page 4 undefined on input line 24.
+
+
+LaTeX Warning: Citation 'Park2019' on page 4 undefined on input line 25.
+
+) [4 </Users/jakob/Documents/mag/MSC/msc/Figures/clustered_profiles.png>]
 \openout2 = `Chapters/Chapter3.aux'.
 
  (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter3.tex
 Chapter 3.
-<Figures/publications.png, id=457, 1108.14pt x 608.2725pt>
+
+LaTeX Warning: Citation 'TRAIN19851103' on page 5 undefined on input line 11.
+
+
+LaTeX Warning: Citation 'WALKER1985' on page 5 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:Distribution' on page 5 undefined on input line 17.
+
+
+LaTeX Warning: Citation 'SWAN20091819' on page 5 undefined on input line 21.
+
+
+LaTeX Warning: Citation 'SWAN20091819' on page 5 undefined on input line 22.
+
+
+Overfull \hbox (12.88167pt too wide) in paragraph at lines 21--24
+[]\T1/ppl/m/n/10.95 A bottom-up ap-proach as [] states "cal-cu-lates the in-di-vid-ual dwelling
+ []
+
+
+LaTeX Warning: Citation 'Review2021' on page 5 undefined on input line 25.
+
+
+LaTeX Warning: Citation 'Review2021' on page 5 undefined on input line 35.
+
+
+LaTeX Warning: Citation 'Review2021' on page 5 undefined on input line 35.
+
+<Figures/publications.png, id=160, 1108.14pt x 608.2725pt>
 File: Figures/publications.png Graphic file (type png)
 <use Figures/publications.png>
 Package pdftex.def Info: Figures/publications.png  used on input line 36.
@@ -1133,69 +1262,456 @@ Package pdftex.def Info: Figures/publications.png  used on input line 36.
 
 
 
-] [6 </Users/jakob/Documents/mag/MSC/msc/Figures/publications.png>]
-Overfull \hbox (2.10155pt too wide) in paragraph at lines 77--83
-\T1/ppl/m/n/10.95 ap-pli-ance. Fur-ther-more, they con-cluded that 15 % of con-sumed power can be shifted,
+]
+
+LaTeX Warning: Citation 'GERBEC2005' on page 6 undefined on input line 40.
+
+
+LaTeX Warning: Citation 'Gao2018' on page 6 undefined on input line 43.
+
+
+LaTeX Warning: Citation 'Chuan2014' on page 6 undefined on input line 50.
+
+
+LaTeX Warning: Citation 'Csoknyai2019' on page 6 undefined on input line 55.
+
+
+LaTeX Warning: Citation 'Jeong2021' on page 6 undefined on input line 61.
+
+
+LaTeX Warning: Citation 'Park2019' on page 6 undefined on input line 67.
+
+[6 </Users/jakob/Documents/mag/MSC/msc/Figures/publications.png>]
+
+LaTeX Warning: Citation 'Joana2012' on page 7 undefined on input line 74.
+
+
+LaTeX Warning: Citation 'Issi2018' on page 7 undefined on input line 78.
+
+
+LaTeX Warning: Citation 'HIMEUR2021116601' on page 7 undefined on input line 86.
+
+
+LaTeX Warning: Citation 'NILMAD2019' on page 7 undefined on input line 93.
+
+
+LaTeX Warning: Citation 'NILMAD22019' on page 7 undefined on input line 102.
+
+
+LaTeX Warning: Citation 'Castangia2021' on page 7 undefined on input line 106.
+
+[7]
+
+LaTeX Warning: Reference `chapter4' on page 8 undefined on input line 131.
+
+
+LaTeX Warning: Reference `tab:general_map' on page 8 undefined on input line 146.
+
+
+LaTeX Warning: Citation 'per_appliance_per_building' on page 8 undefined on input line 166.
+
+
+LaTeX Warning: Citation 'UKDALE' on page 8 undefined on input line 166.
+
+
+LaTeX Warning: Citation 'appliance_avgpower' on page 8 undefined on input line 167.
+
+
+LaTeX Warning: Citation 'UKDALE' on page 8 undefined on input line 168.
+
+
+LaTeX Warning: Citation 'operating_time' on page 8 undefined on input line 170.
+
+
+LaTeX Warning: Citation 'NILMAD2019' on page 8 undefined on input line 170.
+
+
+LaTeX Warning: Citation 'NILMAD22019' on page 8 undefined on input line 170.
+
+
+LaTeX Warning: Citation 'NILMAD2021' on page 8 undefined on input line 170.
+
+
+LaTeX Warning: Citation 'NILMAD2021' on page 8 undefined on input line 170.
+
+
+LaTeX Warning: Citation 'per_appliance_per_building' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'UKDALE' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'Chuan2014' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'Csoknyai2019' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'H0' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'KAVOUSIAN2013184' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'WALKER1985' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'GERBEC2005' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'Gao2018' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'Jeong2021' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'Joana2012' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'DER_heatmap_profile' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'NILMAD2019' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'NILMAD22019' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'Issi2018' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'NILMAD2021' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'Castangia2021' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'occupancy2013' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'Chuan2014' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'CAPASSO1994' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'Park2019' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'UKDALE' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'Gao2018' on page 8 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'OperatingTime_timeofday' on page 8 undefined on input line 171.
+
+
+Overfull \hbox (303.052pt too wide) in paragraph at lines 157--173
+[][] 
  []
 
-[7] [8] [9]
+[8] [9]
 Overfull \hbox (3.67332pt too wide) in paragraph at lines 189--190
 []\T1/ppl/m/n/10.95 The com-bi-na-tion in the sec-ond col-umn and sec-ond row is be-tween av-er-age power,
  []
 
+
+LaTeX Warning: Reference `tab:general_map' on page 10 undefined on input line 215.
+
+
+LaTeX Warning: Reference `tab:general_map' on page 10 undefined on input line 220.
+
+
+LaTeX Warning: Reference `tab:general_map' on page 10 undefined on input line 226.
+
+
+LaTeX Warning: Reference `sec:feature_set' on page 10 undefined on input line 232.
+
 [10]
-<Figures/profile_sketches/Slide1.png, id=561, 963.6pt x 542.025pt>
+
+LaTeX Warning: Reference `fig:daily_power_profile' on page 11 undefined on input line 254.
+
+<Figures/profile_sketches/Slide1.png, id=197, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide1.png Graphic file (type png)
 <use Figures/profile_sketches/Slide1.png>
 Package pdftex.def Info: Figures/profile_sketches/Slide1.png  used on input line 260.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
-<Figures/profile_sketches/Slide5.png, id=563, 963.6pt x 542.025pt>
+
+LaTeX Warning: Reference `fig:daily_act_profile' on page 11 undefined on input line 264.
+
+<Figures/profile_sketches/Slide5.png, id=198, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide5.png Graphic file (type png)
 <use Figures/profile_sketches/Slide5.png>
 Package pdftex.def Info: Figures/profile_sketches/Slide5.png  used on input line 269.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
- [11 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide1.png>]
-<Figures/profile_sketches/Slide8.png, id=572, 963.6pt x 542.025pt>
+[11 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide1.png>]
+
+LaTeX Warning: Reference `fig:daily_act_m_profile' on page 12 undefined on input line 275.
+
+
+LaTeX Warning: Reference `fig:daily_power_m_profile' on page 12 undefined on input line 275.
+
+<Figures/profile_sketches/Slide8.png, id=205, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide8.png Graphic file (type png)
 <use Figures/profile_sketches/Slide8.png>
 Package pdftex.def Info: Figures/profile_sketches/Slide8.png  used on input line 280.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
-<Figures/profile_sketches/Slide2.png, id=573, 963.6pt x 542.025pt>
+<Figures/profile_sketches/Slide2.png, id=206, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide2.png Graphic file (type png)
 <use Figures/profile_sketches/Slide2.png>
 Package pdftex.def Info: Figures/profile_sketches/Slide2.png  used on input line 286.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
- [12 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide5.png> </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide8.png>]
-<Figures/profile_sketches/Slide10.png, id=582, 963.6pt x 542.025pt>
+[12 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide5.png> </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide8.png>]
+
+LaTeX Warning: Reference `fig:heatmap_2dtime' on page 13 undefined on input line 291.
+
+
+LaTeX Warning: Reference `fig:heatmap_all_appl' on page 13 undefined on input line 291.
+
+<Figures/profile_sketches/Slide10.png, id=213, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide10.png Graphic file (type png)
 <use Figures/profile_sketches/Slide10.png>
 Package pdftex.def Info: Figures/profile_sketches/Slide10.png  used on input line 296.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
-<Figures/profile_sketches/Slide12.png, id=584, 963.6pt x 542.025pt>
+
+LaTeX Warning: Reference `fig:heatmap_2dtime' on page 13 undefined on input line 300.
+
+<Figures/profile_sketches/Slide12.png, id=214, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide12.png Graphic file (type png)
 <use Figures/profile_sketches/Slide12.png>
 Package pdftex.def Info: Figures/profile_sketches/Slide12.png  used on input line 312.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
- [13 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide10.png>]
-<Figures/profile_sketches/Slide14.png, id=593, 963.6pt x 542.025pt>
+[13 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide10.png>]
+
+LaTeX Warning: Reference `fig:heatmap_all_appl' on page 14 undefined on input line 317.
+
+
+LaTeX Warning: Reference `fig:map_fig' on page 14 undefined on input line 324.
+
+<Figures/profile_sketches/Slide14.png, id=222, 963.6pt x 542.025pt>
 File: Figures/profile_sketches/Slide14.png Graphic file (type png)
 <use Figures/profile_sketches/Slide14.png>
 Package pdftex.def Info: Figures/profile_sketches/Slide14.png  used on input line 330.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
- [14 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide12.png> </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide14.png>]
-Overfull \hbox (61.32832pt too wide) in paragraph at lines 364--373
+
+LaTeX Warning: Reference `fig:map_fig' on page 14 undefined on input line 334.
+
+
+LaTeX Warning: Reference `sec:subfeatures' on page 14 undefined on input line 334.
+
+[14 </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide12.png> </Users/jakob/Documents/mag/MSC/msc/Figures/profile_sketches/Slide14.png>]
+
+LaTeX Warning: Reference `fig:heatmap_all_appl' on page 15 undefined on input line 354.
+
+
+LaTeX Warning: Citation 'UKDALE' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'Chuan2014' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'Csoknyai2019' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'H0' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'KAVOUSIAN2013184' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'CAPASSO1994' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'WALKER1985' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'GERBEC2005' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'Gao2018' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'Jeong2021' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'Joana2012' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'DER_heatmap_profile' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'NILMAD2019' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'NILMAD22019' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'Issi2018' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'NILMAD2021' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'Castangia2021' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'occupancy2013' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'UKDALE' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'Chuan2014' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'CAPASSO1994' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'Gao2018' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'UKDALE' on page 15 undefined on input line 369.
+
+
+LaTeX Warning: Citation 'Csoknyai2019' on page 15 undefined on input line 370.
+
+
+LaTeX Warning: Citation 'H0' on page 15 undefined on input line 370.
+
+
+LaTeX Warning: Citation 'KAVOUSIAN2013184' on page 15 undefined on input line 370.
+
+
+LaTeX Warning: Citation '2D_year_day_LP' on page 15 undefined on input line 370.
+
+
+LaTeX Warning: Citation 'Park2019' on page 15 undefined on input line 370.
+
+
+LaTeX Warning: Citation 'DER_heatmap_profile' on page 15 undefined on input line 370.
+
+
+LaTeX Warning: Citation 'per_appliance_per_building' on page 15 undefined on input line 370.
+
+
+LaTeX Warning: Citation 'weekly_per_appliance_LP' on page 15 undefined on input line 370.
+
+
+LaTeX Warning: Citation 'per_appliance_per_building' on page 15 undefined on input line 370.
+
+
+LaTeX Warning: Citation 'Csoknyai2019' on page 15 undefined on input line 371.
+
+
+LaTeX Warning: Citation 'H0' on page 15 undefined on input line 371.
+
+
+LaTeX Warning: Citation 'KAVOUSIAN2013184' on page 15 undefined on input line 371.
+
+
+Overfull \hbox (644.87741pt too wide) in paragraph at lines 364--373
 [][] 
  []
+
+
+LaTeX Warning: Reference `tab:contributions' on page 15 undefined on input line 375.
+
+
+LaTeX Warning: Reference `fig:daily_power_profile' on page 15 undefined on input line 376.
+
+
+LaTeX Warning: Reference `fig:daily_act_profile' on page 15 undefined on input line 381.
+
+
+LaTeX Warning: Reference `tab:contributions' on page 15 undefined on input line 383.
 
 [15]
-Overfull \hbox (41.8811pt too wide) in paragraph at lines 396--464
+
+LaTeX Warning: Reference `tab:use_cases' on page 16 undefined on input line 390.
+
+
+LaTeX Warning: Reference `Chapter5' on page 16 undefined on input line 390.
+
+
+LaTeX Warning: Reference `tab:contributions' on page 16 undefined on input line 391.
+
+
+LaTeX Warning: Citation 'energy_saving1' on page 16 undefined on input line 423.
+
+
+LaTeX Warning: Citation 'energy_saving3' on page 16 undefined on input line 423.
+
+
+LaTeX Warning: Citation 'EV2020' on page 16 undefined on input line 423.
+
+
+LaTeX Warning: Citation 'energyStealing2018' on page 16 undefined on input line 423.
+
+
+LaTeX Warning: Citation 'shift2015' on page 16 undefined on input line 423.
+
+
+LaTeX Warning: Citation 'optimiseCostShift2015' on page 16 undefined on input line 423.
+
+
+LaTeX Warning: Citation 'controll2014' on page 16 undefined on input line 423.
+
+
+LaTeX Warning: Citation 'EV2020' on page 16 undefined on input line 428.
+
+
+LaTeX Warning: Citation 'elder1' on page 16 undefined on input line 428.
+
+
+LaTeX Warning: Citation 'elder2' on page 16 undefined on input line 428.
+
+
+LaTeX Warning: Citation 'occupancy2013' on page 16 undefined on input line 428.
+
+
+LaTeX Warning: Citation 'Chuan2014' on page 16 undefined on input line 433.
+
+
+LaTeX Warning: Citation 'energy_saving3' on page 16 undefined on input line 438.
+
+
+LaTeX Warning: Citation 'KAVOUSIAN2013184' on page 16 undefined on input line 438.
+
+
+LaTeX Warning: Citation 'energy_saving3' on page 16 undefined on input line 451.
+
+
+Overfull \hbox (229.83656pt too wide) in paragraph at lines 396--464
 [][] 
  []
 
-[16] [17]
+
+LaTeX Warning: Reference `tab:groups' on page 16 undefined on input line 468.
+
+
+LaTeX Warning: Reference `tab:use_cases' on page 16 undefined on input line 468.
+
+[16]
+
+LaTeX Warning: Reference `tab:groups_proposed' on page 17 undefined on input line 551.
+
+[17]
 Overfull \hbox (6.99445pt too wide) in paragraph at lines 652--718
 [][] 
  []
+
+
+LaTeX Warning: Reference `tab:classified_profiles' on page 18 undefined on input line 722.
+
+
+LaTeX Warning: Reference `tab:classified_profiles' on page 18 undefined on input line 724.
+
+
+LaTeX Warning: Reference `tab:future_rd' on page 18 undefined on input line 728.
+
+
+LaTeX Warning: Reference `tab:future_rd' on page 18 undefined on input line 748.
 
 
 Overfull \hbox (21.64555pt too wide) in paragraph at lines 754--822
@@ -1203,9 +1719,19 @@ Overfull \hbox (21.64555pt too wide) in paragraph at lines 754--822
  []
 
 [18]
+
+LaTeX Warning: Reference `tab:future_rd' on page 19 undefined on input line 824.
+
+
+LaTeX Warning: Reference `tab:our_rd' on page 19 undefined on input line 827.
+
+
 Overfull \hbox (6.99445pt too wide) in paragraph at lines 832--900
 [][] 
  []
+
+
+LaTeX Warning: Reference `tab:our_rd' on page 19 undefined on input line 903.
 
 ) [19]
 \openout2 = `Chapters/Chapter4.aux'.
@@ -1217,53 +1743,247 @@ Overfull \hbox (6.99445pt too wide) in paragraph at lines 832--900
 ]
 Chapter 4.
 
+LaTeX Warning: Citation 'MORENOJARAMILLO2021445' on page 21 undefined on input line 27.
+
+
 Overfull \hbox (0.37733pt too wide) in paragraph at lines 25--30
 []\T1/ppl/m/n/10.95 On the other side, more and more pho-to-voltaic sys-tems are be-ing in-stalled, which
  []
 
 
-Overfull \hbox (3.5033pt too wide) in paragraph at lines 25--30
-\T1/ppl/m/n/10.95 ing to shift to-wards so-called dis-tributed en-ergy re-sources or "DER" []Moreno Jaramillo
+Overfull \hbox (80.12048pt too wide) in paragraph at lines 25--30
+\T1/ppl/m/n/10.95 ing to shift to-wards so-called dis-tributed en-ergy re-sources or "DER" [].
  []
+
+
+LaTeX Warning: Citation 'DirectLoadControll2021' on page 21 undefined on input line 33.
+
+
+LaTeX Warning: Citation 'Prosumer2016' on page 21 undefined on input line 36.
+
+
+LaTeX Warning: Citation 'eu2021' on page 21 undefined on input line 38.
+
+
+LaTeX Warning: Citation 'EV2018' on page 21 undefined on input line 50.
+
+
+LaTeX Warning: Citation 'EV2020' on page 21 undefined on input line 50.
 
 1: section
 [21]
-Overfull \hbox (3.87524pt too wide) in paragraph at lines 63--67
-\T1/ppl/m/n/10.95 en-ergy con-sump-tion of users by study-ing user con-sump-tion pat-terns, such as []Spataru
+
+LaTeX Warning: Citation 'Chuan2014' on page 22 undefined on input line 52.
+
+
+LaTeX Warning: Citation 'shift2015' on page 22 undefined on input line 52.
+
+
+LaTeX Warning: Citation 'energy_saving3' on page 22 undefined on input line 64.
+
+
+LaTeX Warning: Citation 'energy_saving1' on page 22 undefined on input line 64.
+
+
+LaTeX Warning: Citation 'energy_saving4' on page 22 undefined on input line 64.
+
+
+LaTeX Warning: Citation 'energy_saving3' on page 22 undefined on input line 64.
+
+
+LaTeX Warning: Citation 'Csoknyai2019' on page 22 undefined on input line 65.
+
+
+LaTeX Warning: Citation 'eu2006' on page 22 undefined on input line 66.
+
+
+Overfull \hbox (46.79901pt too wide) in paragraph at lines 63--67
+\T1/ppl/m/n/10.95 en-ergy con-sump-tion of users by study-ing user con-sump-tion pat-terns, such as [],
  []
 
-[22] [23]) [24]
+
+Overfull \hbox (9.27496pt too wide) in paragraph at lines 63--67
+[]\T1/ppl/m/n/10.95 , [] and []. En-ergy sav-ing is done through
+ []
+
+
+LaTeX Warning: Citation 'cooperation2008' on page 22 undefined on input line 73.
+
+
+LaTeX Warning: Citation 'cooperation2010' on page 22 undefined on input line 73.
+
+
+LaTeX Warning: Citation 'gridDirectControll2015' on page 22 undefined on input line 77.
+
+
+LaTeX Warning: Citation 'controll2014' on page 22 undefined on input line 77.
+
+
+LaTeX Warning: Citation 'shift2015' on page 22 undefined on input line 78.
+
+
+LaTeX Warning: Citation 'DirectLoadControll2021' on page 22 undefined on input line 79.
+
+
+LaTeX Warning: Citation 'DemandResponse2018' on page 22 undefined on input line 79.
+
+
+LaTeX Warning: Citation 'DemandResponse2018' on page 22 undefined on input line 82.
+
+
+Overfull \hbox (60.9137pt too wide) in paragraph at lines 81--83
+\T1/ppl/m/n/10.95 ods of high power prices, or when the re-li-a-bil-ity of the grid is threat-ened." [] 
+ []
+
+[22]
+
+LaTeX Warning: Citation 'optimiseCostShift2015' on page 23 undefined on input line 91.
+
+
+LaTeX Warning: Citation 'loadShedding2006' on page 23 undefined on input line 95.
+
+
+LaTeX Warning: Citation 'NILMAD2019' on page 23 undefined on input line 110.
+
+
+LaTeX Warning: Citation 'elder1' on page 23 undefined on input line 117.
+
+
+LaTeX Warning: Citation 'elder2' on page 23 undefined on input line 117.
+
+[23]
+
+LaTeX Warning: Citation 'energyStealing2018' on page 24 undefined on input line 138.
+
+
+LaTeX Warning: Citation 'occupancy2013' on page 24 undefined on input line 141.
+
+) [24]
 \openout2 = `Chapters/Chapter5.aux'.
 
  (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter5.tex
 Chapter 5.
-<Figures/../Figures/microwave_norm_n25.png, id=774, 489.83pt x 336.25626pt>
-File: Figures/../Figures/microwave_norm_n25.png Graphic file (type png)
-<use Figures/../Figures/microwave_norm_n25.png>
-Package pdftex.def Info: Figures/../Figures/microwave_norm_n25.png  used on input line 23.
-(pdftex.def)             Requested size: 363.6237pt x 249.62614pt.
+
+LaTeX Warning: Reference `chapter3' on page 25 undefined on input line 13.
+
+
+LaTeX Warning: Reference `chapter4' on page 25 undefined on input line 13.
+
+
+LaTeX Warning: Reference `Chapter8' on page 25 undefined on input line 30.
+
+
+LaTeX Warning: Reference `Chapter7' on page 25 undefined on input line 35.
+
+)
 1: section
 [25
 
 
 
- </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/microwave_norm_n25.png>]) [26]
-\openout2 = `Chapters/Chapter6.aux'.
+]
+\openout2 = `Chapters/Chapter10.aux'.
 
- (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter6.tex
-Chapter 6.
-1: section
-[27
+ (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter10.tex [26
 
 
 
 ]
-<Figures/../Figures/LPS/SLPdaily2.png, id=802, 493.845pt x 350.30875pt>
+Chapter 6.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 10.
+
+
+LaTeX Warning: Citation 'UKDALE' on page 27 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'REFIT' on page 27 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'ECO' on page 27 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'REDD' on page 27 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'iAWE' on page 27 undefined on input line 13.
+
+<Figures/../Figures/microwave_norm_n25.png, id=301, 489.83pt x 336.25626pt>
+File: Figures/../Figures/microwave_norm_n25.png Graphic file (type png)
+<use Figures/../Figures/microwave_norm_n25.png>
+Package pdftex.def Info: Figures/../Figures/microwave_norm_n25.png  used on input line 22.
+(pdftex.def)             Requested size: 363.6237pt x 249.62614pt.
+
+LaTeX Warning: Reference `fig:UniNormMicrowave' on page 27 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'colab' on page 27 undefined on input line 32.
+
+1: section
+[27 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/microwave_norm_n25.png>]
+
+LaTeX Warning: Citation 'jupyter' on page 28 undefined on input line 38.
+
+
+LaTeX Warning: Citation 'hdf5' on page 28 undefined on input line 39.
+
+
+LaTeX Warning: Citation 'pickle' on page 28 undefined on input line 39.
+
+
+LaTeX Warning: Citation 'pandas' on page 28 undefined on input line 40.
+
+
+LaTeX Warning: Citation 'numpy' on page 28 undefined on input line 41.
+
+
+LaTeX Warning: Citation 'matplotlib' on page 28 undefined on input line 42.
+
+
+LaTeX Warning: Citation 'seaborn' on page 28 undefined on input line 42.
+
+
+LaTeX Warning: Citation 'scikit' on page 28 undefined on input line 43.
+
+
+LaTeX Warning: Citation 'scipy' on page 28 undefined on input line 43.
+
+) [28]
+\openout2 = `Chapters/Chapter6.aux'.
+
+ (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter6.tex
+Chapter 7.
+
+LaTeX Warning: Reference `tab:use_cases' on page 29 undefined on input line 5.
+
+
+LaTeX Warning: Reference `tab:contributions' on page 29 undefined on input line 13.
+
+
+LaTeX Warning: Reference `tab:use_cases' on page 29 undefined on input line 13.
+
+1: section
+[29
+
+
+
+]
+
+LaTeX Warning: Reference `tab:contributions' on page 30 undefined on input line 42.
+
+
+LaTeX Warning: Reference `fig:SLPdaily2' on page 30 undefined on input line 43.
+
+
+LaTeX Warning: Reference `fig:SLPyearly2' on page 30 undefined on input line 43.
+
+<Figures/../Figures/LPS/SLPdaily2.png, id=322, 493.845pt x 350.30875pt>
 File: Figures/../Figures/LPS/SLPdaily2.png Graphic file (type png)
 <use Figures/../Figures/LPS/SLPdaily2.png>
 Package pdftex.def Info: Figures/../Figures/LPS/SLPdaily2.png  used on input line 51.
 (pdftex.def)             Requested size: 202.01454pt x 143.2961pt.
-<Figures/../Figures/LPS/SLPyearly2.png, id=803, 487.8225pt x 350.30875pt>
+<Figures/../Figures/LPS/SLPyearly2.png, id=323, 487.8225pt x 350.30875pt>
 File: Figures/../Figures/LPS/SLPyearly2.png Graphic file (type png)
 <use Figures/../Figures/LPS/SLPyearly2.png>
 Package pdftex.def Info: Figures/../Figures/LPS/SLPyearly2.png  used on input line 58.
@@ -1273,323 +1993,624 @@ Overfull \hbox (4.16101pt too wide) in paragraph at lines 48--62
 []$[]$  $[]$[] 
  []
 
-<Figures/../Figures/LPS/SLPHMyearly2.png, id=809, 361.35pt x 282.05376pt>
+
+LaTeX Warning: Reference `fig:SLPdaily2' on page 30 undefined on input line 65.
+
+
+LaTeX Warning: Reference `fig:SLPyearly2' on page 30 undefined on input line 74.
+
+
+LaTeX Warning: Reference `fig:SLPdaily2' on page 30 undefined on input line 82.
+
+
+LaTeX Warning: Reference `fig:SLPyearly2' on page 30 undefined on input line 82.
+
+
+LaTeX Warning: Reference `fig:SLPHMyearly2' on page 30 undefined on input line 83.
+
+<Figures/../Figures/LPS/SLPHMyearly2.png, id=324, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/SLPHMyearly2.png Graphic file (type png)
 <use Figures/../Figures/LPS/SLPHMyearly2.png>
 Package pdftex.def Info: Figures/../Figures/LPS/SLPHMyearly2.png  used on input line 88.
 (pdftex.def)             Requested size: 282.81912pt x 220.7585pt.
-[28 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/SLPdaily2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/SLPyearly2.png>]
-<Figures/../Figures/LPS/WM_daily.png, id=822, 481.8pt x 350.30875pt>
+[30 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/SLPdaily2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/SLPyearly2.png>]
+
+LaTeX Warning: Reference `fig:SLPyearly2' on page 31 undefined on input line 95.
+
+
+LaTeX Warning: Reference `fig:SLPHMyearly2' on page 31 undefined on input line 95.
+
+
+LaTeX Warning: Reference `fig:SLPHMyearly2' on page 31 undefined on input line 96.
+
+
+LaTeX Warning: Reference `fig:SLPdaily2' on page 31 undefined on input line 96.
+
+<Figures/../Figures/LPS/WM_daily.png, id=333, 481.8pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_daily.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_daily.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_daily.png  used on input line 121.
 (pdftex.def)             Requested size: 282.81912pt x 205.63803pt.
- [29 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/SLPHMyearly2.png>]
-<Figures/../Figures/LPS/3 hours.png, id=830, 487.8225pt x 399.4925pt>
+[31 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/SLPHMyearly2.png>]
+
+LaTeX Warning: Reference `fig:WM_daily' on page 32 undefined on input line 125.
+
+
+LaTeX Warning: Reference `fig:4hours' on page 32 undefined on input line 132.
+
+<Figures/../Figures/LPS/3 hours.png, id=342, 487.8225pt x 399.4925pt>
 File: Figures/../Figures/LPS/3 hours.png Graphic file (type png)
 <use Figures/../Figures/LPS/3 hours.png>
 Package pdftex.def Info: Figures/../Figures/LPS/3 hours.png  used on input line 139.
 (pdftex.def)             Requested size: 282.81912pt x 231.60828pt.
- [30 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_daily.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/3 hours.png>]
-<Figures/../Figures/LPS/WM_ww_daily.png, id=841, 484.81125pt x 350.30875pt>
+
+LaTeX Warning: Reference `fig:4hours' on page 32 undefined on input line 143.
+
+[32 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_daily.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/3 hours.png>]
+
+LaTeX Warning: Reference `fig:WM_ww_daily' on page 33 undefined on input line 153.
+
+<Figures/../Figures/LPS/WM_ww_daily.png, id=351, 484.81125pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_ww_daily.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_ww_daily.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_ww_daily.png  used on input line 160.
 (pdftex.def)             Requested size: 282.81912pt x 204.36586pt.
-<Figures/../Figures/LPS/WM_weekly.png, id=845, 487.8225pt x 350.30875pt>
+
+LaTeX Warning: Reference `fig:WM_ww_daily' on page 33 undefined on input line 164.
+
+
+LaTeX Warning: Reference `fig:WM_daily' on page 33 undefined on input line 164.
+
+
+LaTeX Warning: Reference `fig:WM_weekly' on page 33 undefined on input line 171.
+
+<Figures/../Figures/LPS/WM_weekly.png, id=352, 487.8225pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_weekly.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_weekly.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_weekly.png  used on input line 181.
 (pdftex.def)             Requested size: 282.81912pt x 203.09369pt.
- [31 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_ww_daily.png>]
-<Figures/../Figures/LPS/WM_yearly.png, id=854, 481.8pt x 350.30875pt>
+[33 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_ww_daily.png>]
+
+LaTeX Warning: Reference `fig:WM_yearly' on page 34 undefined on input line 186.
+
+<Figures/../Figures/LPS/WM_yearly.png, id=359, 481.8pt x 350.30875pt>
 File: Figures/../Figures/LPS/WM_yearly.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_yearly.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_yearly.png  used on input line 193.
 (pdftex.def)             Requested size: 323.22449pt x 235.01567pt.
-<Figures/../Figures/LPS/wm_hm_weekly.png, id=861, 361.35pt x 282.05376pt>
+
+LaTeX Warning: Reference `fig:WM_yearly' on page 34 undefined on input line 197.
+
+
+LaTeX Warning: Reference `fig:SLPyearly2' on page 34 undefined on input line 197.
+
+
+LaTeX Warning: Reference `fig:SLPyearly2' on page 34 undefined on input line 200.
+
+
+LaTeX Warning: Reference `fig:WM_daily' on page 34 undefined on input line 205.
+
+
+LaTeX Warning: Reference `fig:WM_weekly' on page 34 undefined on input line 205.
+
+
+LaTeX Warning: Reference `fig:wm_hm_weekly' on page 34 undefined on input line 206.
+
+<Figures/../Figures/LPS/wm_hm_weekly.png, id=360, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/wm_hm_weekly.png Graphic file (type png)
 <use Figures/../Figures/LPS/wm_hm_weekly.png>
 Package pdftex.def Info: Figures/../Figures/LPS/wm_hm_weekly.png  used on input line 211.
 (pdftex.def)             Requested size: 282.81912pt x 220.7585pt.
- [32 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_weekly.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_yearly.png>] [33 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/wm_hm_weekly.png>]
+[34 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_weekly.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/WM_yearly.png>]
 
-Package caption Warning: \label without proper reference on input line 285.
-See the caption package documentation for explanation.
+LaTeX Warning: Reference `fig:wm_hm_weekly' on page 35 undefined on input line 225.
 
 
-LaTeX Warning: Reference `fig:var_2d_lps' on page 34 undefined on input line 258.
+LaTeX Warning: Reference `fig:HM_Ywh_comp' on page 35 undefined on input line 241.
 
-<Figures/../Figures/LPS/HM_Ywh_comp.png, id=882, 361.35pt x 282.05376pt>
+[35 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/wm_hm_weekly.png>]
+
+LaTeX Warning: Reference `fig:HM_Ywh_tv' on page 36 undefined on input line 248.
+
+
+LaTeX Warning: Reference `Chapter7' on page 36 undefined on input line 255.
+
+
+LaTeX Warning: Reference `fig:var_2d_lps' on page 36 undefined on input line 258.
+
+
+LaTeX Warning: Reference `fig:HM_Ywh_wm' on page 36 undefined on input line 261.
+
+<Figures/../Figures/LPS/HM_Ywh_comp.png, id=377, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/HM_Ywh_comp.png Graphic file (type png)
 <use Figures/../Figures/LPS/HM_Ywh_comp.png>
 Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_comp.png  used on input line 270.
 (pdftex.def)             Requested size: 116.36223pt x 90.82713pt.
-<Figures/../Figures/LPS/HM_Ywh_tv.png, id=883, 361.35pt x 282.05376pt>
+<Figures/../Figures/LPS/HM_Ywh_tv.png, id=378, 361.35pt x 282.05376pt>
 File: Figures/../Figures/LPS/HM_Ywh_tv.png Graphic file (type png)
 <use Figures/../Figures/LPS/HM_Ywh_tv.png>
 Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_tv.png  used on input line 276.
 (pdftex.def)             Requested size: 116.36223pt x 90.82713pt.
-<Figures/../Figures/LPS/HM_Ywh_wm.png, id=884, 355.3275pt x 282.05376pt>
+<Figures/../Figures/LPS/HM_Ywh_wm.png, id=379, 355.3275pt x 282.05376pt>
 File: Figures/../Figures/LPS/HM_Ywh_wm.png Graphic file (type png)
 <use Figures/../Figures/LPS/HM_Ywh_wm.png>
 Package pdftex.def Info: Figures/../Figures/LPS/HM_Ywh_wm.png  used on input line 282.
 (pdftex.def)             Requested size: 116.36223pt x 92.36789pt.
-<Figures/../Figures/LPS/solar termal pumping station.png, id=885, 409.53pt x 282.05376pt>
+<Figures/../Figures/LPS/solar termal pumping station.png, id=380, 409.53pt x 282.05376pt>
 File: Figures/../Figures/LPS/solar termal pumping station.png Graphic file (type png)
 <use Figures/../Figures/LPS/solar termal pumping station.png>
 Package pdftex.def Info: Figures/../Figures/LPS/solar termal pumping station.png  used on input line 296.
 (pdftex.def)             Requested size: 181.81184pt x 125.2187pt.
-<Figures/../Figures/LPS/light.png, id=886, 367.3725pt x 282.05376pt>
+<Figures/../Figures/LPS/light.png, id=381, 367.3725pt x 282.05376pt>
 File: Figures/../Figures/LPS/light.png Graphic file (type png)
 <use Figures/../Figures/LPS/light.png>
 Package pdftex.def Info: Figures/../Figures/LPS/light.png  used on input line 302.
 (pdftex.def)             Requested size: 181.81184pt x 139.58905pt.
-[34 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_comp.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_tv.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_wm.png>]
-<Figures/../Figures/LPS/PHPA.png, id=900, 529.0164pt x 386.8854pt>
+[36 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_comp.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_tv.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/HM_Ywh_wm.png>]
+
+LaTeX Warning: Reference `fig:solar thermal pumping station' on page 37 undefined on input line 309.
+
+
+LaTeX Warning: Reference `fig:light' on page 37 undefined on input line 312.
+
+
+LaTeX Warning: Reference `fig:solar thermal pumping station' on page 37 undefined on input line 316.
+
+
+LaTeX Warning: Reference `fig:light' on page 37 undefined on input line 316.
+
+
+LaTeX Warning: Reference `fig:PHPA' on page 37 undefined on input line 326.
+
+<Figures/../Figures/LPS/PHPA.png, id=390, 529.0164pt x 386.8854pt>
 File: Figures/../Figures/LPS/PHPA.png Graphic file (type png)
 <use Figures/../Figures/LPS/PHPA.png>
 Package pdftex.def Info: Figures/../Figures/LPS/PHPA.png  used on input line 339.
 (pdftex.def)             Requested size: 282.81912pt x 206.837pt.
- [35 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/solar termal pumping station.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/light.png>]
-<Figures/../Figures/LPS/stack.png, id=911, 508.90125pt x 375.4025pt>
+[37 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/solar termal pumping station.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/light.png>]
+
+LaTeX Warning: Reference `fig:stack' on page 38 undefined on input line 343.
+
+
+LaTeX Warning: Reference `fig:SLPdaily2' on page 38 undefined on input line 344.
+
+<Figures/../Figures/LPS/stack.png, id=400, 508.90125pt x 375.4025pt>
 File: Figures/../Figures/LPS/stack.png Graphic file (type png)
 <use Figures/../Figures/LPS/stack.png>
 Package pdftex.def Info: Figures/../Figures/LPS/stack.png  used on input line 350.
 (pdftex.def)             Requested size: 282.81912pt x 208.63725pt.
-<Figures/../Figures/LPS/BOA.png, id=913, 593.5776pt x 386.8854pt>
+
+LaTeX Warning: Reference `fig:BOA' on page 38 undefined on input line 355.
+
+<Figures/../Figures/LPS/BOA.png, id=401, 593.5776pt x 386.8854pt>
 File: Figures/../Figures/LPS/BOA.png Graphic file (type png)
 <use Figures/../Figures/LPS/BOA.png>
 Package pdftex.def Info: Figures/../Figures/LPS/BOA.png  used on input line 365.
 (pdftex.def)             Requested size: 404.02908pt x 263.34424pt.
- [36 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/PHPA.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/stack.png>]
+[38 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/PHPA.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/stack.png>]
 
-LaTeX Warning: Reference `ig:PHPA' on page 37 undefined on input line 380.
-
-
-Package caption Warning: \label without proper reference on input line 305.
-See the caption package documentation for explanation.
+LaTeX Warning: Reference `fig:BOA' on page 39 undefined on input line 369.
 
 
-LaTeX Warning: Reference `fig:effect_of_season' on page 37 undefined on input line 390.
+LaTeX Warning: Reference `tab:our_rd' on page 39 undefined on input line 379.
 
-) [37 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/BOA.png>]
+
+LaTeX Warning: Reference `ig:PHPA' on page 39 undefined on input line 380.
+
+
+LaTeX Warning: Reference `tab:contributions' on page 39 undefined on input line 384.
+
+
+LaTeX Warning: Reference `fig:SLPdaily2' on page 39 undefined on input line 387.
+
+
+LaTeX Warning: Reference `fig:SLPyearly2' on page 39 undefined on input line 387.
+
+
+LaTeX Warning: Reference `fig:SLPHMyearly2' on page 39 undefined on input line 388.
+
+
+LaTeX Warning: Reference `fig:effect_of_season' on page 39 undefined on input line 390.
+
+
+LaTeX Warning: Reference `fig:PHPA' on page 39 undefined on input line 391.
+
+) [39 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/BOA.png>]
 \openout2 = `Chapters/Chapter8.aux'.
 
- (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter8.tex [38
+ (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter8.tex [40
 
 
 
 ]
-Chapter 7.
+Chapter 8.
 
-LaTeX Warning: Reference `Chapter3' on page 39 undefined on input line 14.
+LaTeX Warning: Reference `Chapter3' on page 41 undefined on input line 14.
 
 
-LaTeX Warning: Reference `Chapter4' on page 39 undefined on input line 26.
+LaTeX Warning: Citation 'GERBEC2005' on page 41 undefined on input line 16.
+
+
+LaTeX Warning: Citation 'Jeong2021' on page 41 undefined on input line 16.
+
+
+LaTeX Warning: Citation 'Joana2012' on page 41 undefined on input line 16.
+
+
+LaTeX Warning: Citation 'Park2019' on page 41 undefined on input line 16.
+
+
+LaTeX Warning: Citation 'sne_energ' on page 41 undefined on input line 18.
+
+
+LaTeX Warning: Reference `Chapter4' on page 41 undefined on input line 26.
 
 1: section
-[39]
+[41]
 File: Figures/../Figures/LPS/WM_weekly.png Graphic file (type png)
 <use Figures/../Figures/LPS/WM_weekly.png>
 Package pdftex.def Info: Figures/../Figures/LPS/WM_weekly.png  used on input line 60.
 (pdftex.def)             Requested size: 282.81912pt x 203.09369pt.
+
+
+LaTeX Warning: Reference `chapter6' on page 42 undefined on input line 64.
+
+
+LaTeX Warning: Reference `fig:WM_weekly' on page 42 undefined on input line 64.
+
+
+LaTeX Warning: Reference `fig:WM_weekly_2' on page 42 undefined on input line 65.
+
+
+LaTeX Warning: Reference `chapter6' on page 42 undefined on input line 70.
+
+
+LaTeX Warning: Reference `fig:BOA' on page 42 undefined on input line 70.
+
 File: Figures/../Figures/LPS/BOA.png Graphic file (type png)
 <use Figures/../Figures/LPS/BOA.png>
 Package pdftex.def Info: Figures/../Figures/LPS/BOA.png  used on input line 76.
 (pdftex.def)             Requested size: 404.02908pt x 263.34424pt.
- [40] [41] [42]
-<Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png, id=1001, 827.80122pt x 643.40948pt>
+[42]
+
+LaTeX Warning: Reference `fig:BOA2' on page 43 undefined on input line 80.
+
+
+LaTeX Warning: Citation 'REFIT' on page 43 undefined on input line 96.
+
+
+LaTeX Warning: Citation 'UKDALE' on page 43 undefined on input line 96.
+
+
+LaTeX Warning: Citation 'ECO' on page 43 undefined on input line 96.
+
+
+LaTeX Warning: Citation 'REDD' on page 43 undefined on input line 96.
+
+
+LaTeX Warning: Citation 'iAWE' on page 43 undefined on input line 96.
+
+
+LaTeX Warning: Reference `Chapter7' on page 43 undefined on input line 98.
+
+
+LaTeX Warning: Citation 'tsne2' on page 43 undefined on input line 102.
+
+
+LaTeX Warning: Citation 'sne1' on page 43 undefined on input line 108.
+
+
+LaTeX Warning: Citation 'sne1' on page 43 undefined on input line 109.
+
+[43]
+
+LaTeX Warning: Reference `fig:tsne_scatter_non_norm_all' on page 44 undefined on input line 143.
+
+<Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png, id=447, 827.80122pt x 643.40948pt>
 File: Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png  used on input line 163.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png  used on input line 152.
 (pdftex.def)             Requested size: 484.83366pt x 376.83974pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 163--165
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 152--154
  [][] 
  []
 
-<Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png, id=1003, 2900.8375pt x 3171.85pt>
+[44]
+
+LaTeX Warning: Reference `fig:tsne_pb_img_scatter_allall' on page 45 undefined on input line 156.
+
+<Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png, id=454, 2900.8375pt x 3171.85pt>
 File: Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png  used on input line 180.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png  used on input line 169.
 (pdftex.def)             Requested size: 363.6237pt x 397.59344pt.
-[43 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png>]
-<Figures/TSNE/TSNE_per_building/all/scatter_all_all.png, id=1015, 817.27046pt x 643.40948pt>
+[45 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png>]
+
+LaTeX Warning: Reference `ssec:res_pb_lp' on page 46 undefined on input line 175.
+
+
+LaTeX Warning: Reference `fig:tsne_pb_scatter_all_all' on page 46 undefined on input line 176.
+
+
+LaTeX Warning: Reference `fig:tsne_scatter_non_norm_all' on page 46 undefined on input line 178.
+
+
+LaTeX Warning: Reference `fig:tsne_pb_img_scatter_allall' on page 46 undefined on input line 178.
+
+<Figures/TSNE/TSNE_per_building/all/scatter_all_all.png, id=461, 817.27046pt x 643.40948pt>
 File: Figures/TSNE/TSNE_per_building/all/scatter_all_all.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_building/all/scatter_all_all.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_building/all/scatter_all_all.png  used on input line 201.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_building/all/scatter_all_all.png  used on input line 190.
 (pdftex.def)             Requested size: 484.83366pt x 381.69946pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 201--203
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 190--192
  [][] 
  []
 
-[44 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png>]
-<Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png, id=1024, 1919.17pt x 1870.99pt>
+[46 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png>]
+
+LaTeX Warning: Reference `fig:tsne_pb_img_norm_scatter_allall' on page 47 undefined on input line 194.
+
+
+LaTeX Warning: Reference `fig:tsne_pb_img_scatter_allall' on page 47 undefined on input line 196.
+
+<Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png, id=469, 1919.17pt x 1870.99pt>
 File: Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png  used on input line 212.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png  used on input line 201.
 (pdftex.def)             Requested size: 363.6237pt x 354.49258pt.
- [45 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/all/scatter_all_all.png>] [46 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png>]
-<Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png, id=1040, 598.6365pt x 569.60805pt>
+[47 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/all/scatter_all_all.png>]
+
+LaTeX Warning: Reference `fig:tsne_pb_img_norm_scatter_allall' on page 48 undefined on input line 205.
+
+
+LaTeX Warning: Reference `fig:tsne_pa_scatter_all_fridge' on page 48 undefined on input line 232.
+
+[48 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png>]
+<Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png, id=484, 598.6365pt x 569.60805pt>
 File: Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png  used on input line 250.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png  used on input line 239.
 (pdftex.def)             Requested size: 484.83366pt x 461.32785pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 250--252
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 239--241
  [][] 
  []
 
-<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png, id=1043, 3814.25pt x 3920.6475pt>
+
+LaTeX Warning: Reference `fig:tsne_pa_img_scatter_all_fridge' on page 49 undefined on input line 243.
+
+
+LaTeX Warning: Reference `fig:tsne_pa_img_scatter_all_fridge' on page 49 undefined on input line 245.
+
+<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png, id=485, 3814.25pt x 3920.6475pt>
 File: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png  used on input line 263.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png  used on input line 252.
 (pdftex.def)             Requested size: 363.6237pt x 373.7217pt.
-[47 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png>]
-<Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png, id=1052, 598.6365pt x 419.04555pt>
+[49 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png>]
+
+LaTeX Warning: Reference `fig:tsne_pa_scatter_all_kettle' on page 50 undefined on input line 256.
+
+<Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png, id=493, 598.6365pt x 419.04555pt>
 File: Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png  used on input line 277.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png  used on input line 266.
 (pdftex.def)             Requested size: 484.83366pt x 339.38666pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 277--279
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 266--268
  [][] 
  []
 
-[48 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png>]
-<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png, id=1062, 4154.52126pt x 4162.55125pt>
+[50 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png>]
+
+LaTeX Warning: Reference `fig:tsne_pa_img_scatter_all_kettle' on page 51 undefined on input line 270.
+
+
+LaTeX Warning: Reference `fig:tsne_pa_scatter_all_kettle' on page 51 undefined on input line 278.
+
+
+LaTeX Warning: Reference `fig:tsne_pa_scatter_all_kettle' on page 51 undefined on input line 281.
+
+<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png, id=500, 4154.52126pt x 4162.55125pt>
 File: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png  used on input line 300.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png  used on input line 289.
 (pdftex.def)             Requested size: 363.6237pt x 364.32397pt.
- [49 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png>]
-<Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png, id=1070, 598.6365pt x 435.7881pt>
+[51 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png>]
+
+LaTeX Warning: Reference `fig:tsne_pa_scatter_all_microwave' on page 52 undefined on input line 293.
+
+<Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png, id=507, 598.6365pt x 435.7881pt>
 File: Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png  used on input line 313.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png  used on input line 302.
 (pdftex.def)             Requested size: 484.83366pt x 352.94652pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 313--315
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 302--304
  [][] 
  []
 
-[50 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png>]
-<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png, id=1078, 4273.9675pt x 4125.4125pt>
+[52 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png>]
+
+LaTeX Warning: Reference `fig:tsne_pa_img_scatter_all_microwave' on page 53 undefined on input line 306.
+
+<Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png, id=514, 4273.9675pt x 4125.4125pt>
 File: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png  used on input line 326.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png  used on input line 315.
 (pdftex.def)             Requested size: 363.6237pt x 350.93869pt.
- [51 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png>]
-<Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png, id=1087, 598.6365pt x 402.303pt>
+[53 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png>]
+
+LaTeX Warning: Reference `fig:tsne_pa_scatter_all_tv' on page 54 undefined on input line 319.
+
+<Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png, id=521, 598.6365pt x 402.303pt>
 File: Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png  used on input line 341.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png  used on input line 330.
 (pdftex.def)             Requested size: 484.83366pt x 325.8268pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 341--343
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 330--332
  [][] 
  []
 
-[52 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png>]
-<Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png, id=1096, 4112.36375pt x 4142.47626pt>
+[54 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png>]
+
+LaTeX Warning: Reference `fig:tsne_pa_img_scatter_all_tv' on page 55 undefined on input line 334.
+
+
+LaTeX Warning: Reference `fig:tsne_pa_img_scatter_all_tv' on page 55 undefined on input line 336.
+
+<Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png, id=528, 4112.36375pt x 4142.47626pt>
 File: Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png Graphic file (type png)
 <use Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png  used on input line 360.
+Package pdftex.def Info: Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png  used on input line 349.
 (pdftex.def)             Requested size: 363.6237pt x 366.23305pt.
- [53 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png>]
-<Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png, id=1103, 932.48375pt x 1075.01625pt>
+[55 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png>]
+<Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png, id=536, 932.48375pt x 1075.01625pt>
 File: Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png  used on input line 373.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png  used on input line 362.
 (pdftex.def)             Requested size: 484.83366pt x 558.94606pt.
 
-Overfull \hbox (80.80458pt too wide) in paragraph at lines 373--375
+Overfull \hbox (80.80458pt too wide) in paragraph at lines 362--364
  [][] 
  []
 
-[54 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png>]
-<Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png, id=1110, 5140.20375pt x 5145.2225pt>
+[56 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png>]
+
+LaTeX Warning: Reference `fig:tsne_papb_img_scatter_all' on page 57 undefined on input line 366.
+
+<Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png, id=544, 5140.20375pt x 5145.2225pt>
 File: Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png  used on input line 385.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png  used on input line 374.
 (pdftex.def)             Requested size: 363.6237pt x 363.97084pt.
- [55 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png>]
-<Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png, id=1119, 860.32272pt x 517.04022pt>
+[57 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png>]
+
+LaTeX Warning: Reference `fig:tsne_papb_scatter_all_reduced' on page 58 undefined on input line 380.
+
+<Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png, id=551, 860.32272pt x 517.04022pt>
 File: Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png  used on input line 396.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png  used on input line 385.
 (pdftex.def)             Requested size: 444.43445pt x 267.09523pt.
 
-Overfull \hbox (40.40536pt too wide) in paragraph at lines 396--398
+Overfull \hbox (40.40536pt too wide) in paragraph at lines 385--387
  [][] 
  []
 
-[56 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png>]
-<Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png, id=1127, 5154.25626pt x 5145.2225pt>
+[58 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png>]
+
+LaTeX Warning: Reference `fig:tsne_papb_scatter_all_reduced' on page 59 undefined on input line 389.
+
+<Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png, id=558, 5154.25626pt x 5145.2225pt>
 File: Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png  used on input line 420.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png  used on input line 409.
 (pdftex.def)             Requested size: 363.6237pt x 362.95021pt.
- [57 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png>]
-<Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png, id=1137, 874.36375pt x 517.04022pt>
+[59 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png>]
+
+LaTeX Warning: Reference `fig:tsne_papb_img_scatter_all_reduced' on page 60 undefined on input line 414.
+
+
+LaTeX Warning: Reference `fig:tsne_papb_scatter_all_reduced' on page 60 undefined on input line 415.
+
+
+LaTeX Warning: Reference `fig:tsne_papb_scatter_all_groups' on page 60 undefined on input line 430.
+
+<Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png, id=565, 874.36375pt x 517.04022pt>
 File: Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png  used on input line 449.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png  used on input line 438.
 (pdftex.def)             Requested size: 323.22449pt x 191.1362pt.
- [58 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png>]
-<Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png, id=1146, 5249.6125pt x 5234.55624pt>
+[60 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png>]
+
+LaTeX Warning: Reference `fig:tsne_papb_img_scatter_all_groups' on page 61 undefined on input line 442.
+
+
+LaTeX Warning: Reference `fig:tsne_papb_img_scatter_all' on page 61 undefined on input line 442.
+
+<Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png, id=572, 5249.6125pt x 5234.55624pt>
 File: Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png  used on input line 459.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png  used on input line 448.
 (pdftex.def)             Requested size: 363.6237pt x 362.54262pt.
- [59 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png>]
-<Figures/TSNE/TSNE_results/all/t-sne_zoomed.png, id=1155, 963.6pt x 542.025pt>
+[61 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png>]
+
+LaTeX Warning: Reference `fig:t-sne_zoomed' on page 62 undefined on input line 452.
+
+<Figures/TSNE/TSNE_results/all/t-sne_zoomed.png, id=580, 963.6pt x 542.025pt>
 File: Figures/TSNE/TSNE_results/all/t-sne_zoomed.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/all/t-sne_zoomed.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/all/t-sne_zoomed.png  used on input line 468.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/all/t-sne_zoomed.png  used on input line 457.
 (pdftex.def)             Requested size: 363.6237pt x 204.53255pt.
- [60 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png> </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/t-sne_zoomed.png>]
-<Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png, id=1162, 931.14732pt x 1100.05264pt>
+[62 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png> </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/all/t-sne_zoomed.png>]
+<Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png, id=588, 931.14732pt x 1100.05264pt>
 File: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png  used on input line 481.
+Package pdftex.def Info: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png  used on input line 470.
 (pdftex.def)             Requested size: 323.22449pt x 381.85175pt.
-<Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png, id=1164, 874.36375pt x 517.04022pt>
+
+
+LaTeX Warning: Reference `fig:tsne_papb_img_scatter_ent_all_groups' on page 63 undefined on input line 474.
+
+<Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png, id=589, 874.36375pt x 517.04022pt>
 File: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png  used on input line 490.
+Package pdftex.def Info: Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png  used on input line 479.
 (pdftex.def)             Requested size: 323.22449pt x 191.1362pt.
- [61 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png>]
-<Figures/TSNE/TSNE_results/refit/scatter_refit_8.png, id=1172, 643.40375pt x 367.3725pt>
+[63 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png>]
+<Figures/TSNE/TSNE_results/refit/scatter_refit_8.png, id=596, 643.40375pt x 367.3725pt>
 File: Figures/TSNE/TSNE_results/refit/scatter_refit_8.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/refit/scatter_refit_8.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/refit/scatter_refit_8.png  used on input line 504.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/refit/scatter_refit_8.png  used on input line 493.
 (pdftex.def)             Requested size: 323.22449pt x 184.56026pt.
-<Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png, id=1173, 2630.82875pt x 2598.70876pt>
+<Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png, id=597, 2630.82875pt x 2598.70876pt>
 File: Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png Graphic file (type png)
 <use Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png  used on input line 515.
+Package pdftex.def Info: Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png  used on input line 504.
 (pdftex.def)             Requested size: 363.6237pt x 359.17734pt.
- [62 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png> </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/refit/scatter_refit_8.png>] [63 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png>]
-<Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png, id=1189, 807.015pt x 517.935pt>
+ [64 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png> </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/refit/scatter_refit_8.png>] [65 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png>]
+
+LaTeX Warning: Reference `fig:tsne_boa_scatter_refit8' on page 66 undefined on input line 541.
+
+<Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png, id=615, 807.015pt x 517.935pt>
 File: Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png Graphic file (type png)
 <use Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png  used on input line 559.
+Package pdftex.def Info: Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png  used on input line 548.
 (pdftex.def)             Requested size: 323.22449pt x 207.43903pt.
-<Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png, id=1191, 3206.98125pt x 3218.0225pt>
+
+LaTeX Warning: Reference `fig:tsne_boa_img_scatter_refit8' on page 66 undefined on input line 552.
+
+<Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png, id=616, 3206.98125pt x 3218.0225pt>
 File: Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png Graphic file (type png)
 <use Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png>
-Package pdftex.def Info: Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png  used on input line 572.
+Package pdftex.def Info: Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png  used on input line 561.
 (pdftex.def)             Requested size: 363.6237pt x 364.83534pt.
- [64 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png>] [65 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png>]) [66]
+[66 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png>] [67 </Users/jakob/Documents/mag/MSC/msc/Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png>]) [68]
 \openout2 = `Chapters/Chapter7.aux'.
 
  (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter7.tex
-Chapter 8.
+Chapter 9.
+
+LaTeX Warning: Citation 'elder1' on page 69 undefined on input line 22.
+
+
+LaTeX Warning: Citation 'elder2' on page 69 undefined on input line 22.
+
+
+LaTeX Warning: Reference `fig:PHPA' on page 69 undefined on input line 31.
+
+
+LaTeX Warning: Reference `chapter6' on page 69 undefined on input line 31.
+
+
+LaTeX Warning: Reference `fig:PHPA' on page 69 undefined on input line 49.
+
 1: section
-[67
+[69
 
 
 
@@ -1602,12 +2623,34 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 10.42007pt on input line 69.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.91925pt on input line 69.
- [68]
+
+
+LaTeX Warning: Reference `arr:as_acts' on page 70 undefined on input line 108.
+
+[70]
+
+LaTeX Warning: Reference `arr:act_mat' on page 71 undefined on input line 172.
+
+
+LaTeX Warning: Reference `arr:act_mat' on page 71 undefined on input line 173.
+
+
+LaTeX Warning: Reference `fig:PHPA' on page 71 undefined on input line 173.
+
+
+LaTeX Warning: Reference `arr:act_mat' on page 71 undefined on input line 219.
+
 File: Figures/../Figures/LPS/PHPA.png Graphic file (type png)
 <use Figures/../Figures/LPS/PHPA.png>
 Package pdftex.def Info: Figures/../Figures/LPS/PHPA.png  used on input line 226.
 (pdftex.def)             Requested size: 202.01454pt x 147.73819pt.
-<Figures/../Figures/LPS/PHPA_EC.png, id=1235, 428.5611pt x 252.945pt>
+
+LaTeX Warning: Reference `arr:act_mat' on page 71 undefined on input line 232.
+
+
+LaTeX Warning: Reference `arr:act_mat' on page 71 undefined on input line 232.
+
+<Figures/../Figures/LPS/PHPA_EC.png, id=658, 428.5611pt x 252.945pt>
 File: Figures/../Figures/LPS/PHPA_EC.png Graphic file (type png)
 <use Figures/../Figures/LPS/PHPA_EC.png>
 Package pdftex.def Info: Figures/../Figures/LPS/PHPA_EC.png  used on input line 233.
@@ -1617,281 +2660,380 @@ Overfull \hbox (4.16101pt too wide) in paragraph at lines 223--236
 []$[]$  $[]$ 
  []
 
-[69]
-<Figures/../Figures/EC/EC_anom_dect.png, id=1245, 1120.185pt x 392.46625pt>
+[71]
+
+LaTeX Warning: Reference `arr:act_mat' on page 72 undefined on input line 242.
+
+<Figures/../Figures/EC/EC_anom_dect.png, id=666, 1120.185pt x 392.46625pt>
 File: Figures/../Figures/EC/EC_anom_dect.png Graphic file (type png)
 <use Figures/../Figures/EC/EC_anom_dect.png>
 Package pdftex.def Info: Figures/../Figures/EC/EC_anom_dect.png  used on input line 279.
 (pdftex.def)             Requested size: 404.02908pt x 141.55722pt.
- [70 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/PHPA_EC.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/EC_anom_dect.png>] [71]
-<Figures/EC/refit_timeline.png, id=1282, 1043.9pt x 768.8725pt>
+[72 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/LPS/PHPA_EC.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/EC_anom_dect.png>]
+
+LaTeX Warning: Reference `eq:ratio' on page 73 undefined on input line 325.
+
+
+LaTeX Warning: Reference `eq:routine' on page 73 undefined on input line 327.
+
+
+LaTeX Warning: Reference `eq:routine' on page 73 undefined on input line 336.
+
+
+LaTeX Warning: Reference `arr:anom_ratio' on page 73 undefined on input line 336.
+
+
+LaTeX Warning: Reference `arr:anom_ratio' on page 73 undefined on input line 351.
+
+
+LaTeX Warning: Reference `arr:anom_ratio' on page 73 undefined on input line 361.
+
+[73]
+
+LaTeX Warning: Citation 'REFIT' on page 74 undefined on input line 395.
+
+<Figures/EC/refit_timeline.png, id=688, 1043.9pt x 768.8725pt>
 File: Figures/EC/refit_timeline.png Graphic file (type png)
 <use Figures/EC/refit_timeline.png>
-Package pdftex.def Info: Figures/EC/refit_timeline.png  used on input line 415.
+Package pdftex.def Info: Figures/EC/refit_timeline.png  used on input line 401.
 (pdftex.def)             Requested size: 404.02908pt x 297.58305pt.
- [72]
-<Figures/EC/ukdale_timeline.png, id=1289, 1416.29124pt x 372.39125pt>
+
+LaTeX Warning: Citation 'UKDALE' on page 74 undefined on input line 407.
+
+
+LaTeX Warning: Reference `fig:ukdale_timeline' on page 74 undefined on input line 410.
+
+<Figures/EC/ukdale_timeline.png, id=689, 1416.29124pt x 372.39125pt>
 File: Figures/EC/ukdale_timeline.png Graphic file (type png)
 <use Figures/EC/ukdale_timeline.png>
-Package pdftex.def Info: Figures/EC/ukdale_timeline.png  used on input line 431.
+Package pdftex.def Info: Figures/EC/ukdale_timeline.png  used on input line 417.
 (pdftex.def)             Requested size: 404.02908pt x 106.2292pt.
- [73 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_timeline.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ukdale_timeline.png>]
-<Figures/EC/eco_timeline.png, id=1300, 1417.295pt x 338.26375pt>
+[74 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_timeline.png>]
+
+LaTeX Warning: Citation 'ECO' on page 75 undefined on input line 422.
+
+<Figures/EC/eco_timeline.png, id=699, 1417.295pt x 338.26375pt>
 File: Figures/EC/eco_timeline.png Graphic file (type png)
 <use Figures/EC/eco_timeline.png>
-Package pdftex.def Info: Figures/EC/eco_timeline.png  used on input line 444.
+Package pdftex.def Info: Figures/EC/eco_timeline.png  used on input line 430.
 (pdftex.def)             Requested size: 404.02908pt x 96.4268pt.
- [74 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/eco_timeline.png>]
 
-Package caption Warning: \label without proper reference on input line 520.
-See the caption package documentation for explanation.
+LaTeX Warning: Reference `arr:anom_ratio' on page 75 undefined on input line 440.
 
+[75 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ukdale_timeline.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/eco_timeline.png>]
 
-LaTeX Warning: Reference `fig:ec_week' on page 75 undefined on input line 487.
+LaTeX Warning: Reference `fig:ec_week' on page 76 undefined on input line 473.
 
-<Figures/../Figures/EC/b2week.png, id=1309, 481.3182pt x 348.8232pt>
+<Figures/../Figures/EC/b2week.png, id=710, 481.3182pt x 348.8232pt>
 File: Figures/../Figures/EC/b2week.png Graphic file (type png)
 <use Figures/../Figures/EC/b2week.png>
-Package pdftex.def Info: Figures/../Figures/EC/b2week.png  used on input line 495.
+Package pdftex.def Info: Figures/../Figures/EC/b2week.png  used on input line 481.
 (pdftex.def)             Requested size: 202.01454pt x 146.40361pt.
-<Figures/../Figures/EC/b19week.png, id=1310, 481.3182pt x 348.8232pt>
+<Figures/../Figures/EC/b19week.png, id=711, 481.3182pt x 348.8232pt>
 File: Figures/../Figures/EC/b19week.png Graphic file (type png)
 <use Figures/../Figures/EC/b19week.png>
-Package pdftex.def Info: Figures/../Figures/EC/b19week.png  used on input line 502.
+Package pdftex.def Info: Figures/../Figures/EC/b19week.png  used on input line 488.
 (pdftex.def)             Requested size: 202.01454pt x 146.40361pt.
 
-Overfull \hbox (4.16101pt too wide) in paragraph at lines 492--506
+Overfull \hbox (4.16101pt too wide) in paragraph at lines 478--492
 []$[]$  $[]$ 
  []
 
-<Figures/../Figures/EC/b18week.png, id=1311, 481.3182pt x 348.8232pt>
+<Figures/../Figures/EC/b18week.png, id=712, 481.3182pt x 348.8232pt>
 File: Figures/../Figures/EC/b18week.png Graphic file (type png)
 <use Figures/../Figures/EC/b18week.png>
-Package pdftex.def Info: Figures/../Figures/EC/b18week.png  used on input line 510.
+Package pdftex.def Info: Figures/../Figures/EC/b18week.png  used on input line 496.
 (pdftex.def)             Requested size: 202.01454pt x 146.40361pt.
-<Figures/../Figures/EC/b5weekd.png, id=1312, 481.3182pt x 348.8232pt>
+<Figures/../Figures/EC/b5weekd.png, id=713, 481.3182pt x 348.8232pt>
 File: Figures/../Figures/EC/b5weekd.png Graphic file (type png)
 <use Figures/../Figures/EC/b5weekd.png>
-Package pdftex.def Info: Figures/../Figures/EC/b5weekd.png  used on input line 517.
+Package pdftex.def Info: Figures/../Figures/EC/b5weekd.png  used on input line 503.
 (pdftex.def)             Requested size: 202.01454pt x 146.40361pt.
 
-Overfull \hbox (4.16101pt too wide) in paragraph at lines 507--521
+Overfull \hbox (4.16101pt too wide) in paragraph at lines 493--507
 []$[]$  $[]$[] 
  []
 
+[76]
 
-Package caption Warning: \label without proper reference on input line 569.
-See the caption package documentation for explanation.
+LaTeX Warning: Reference `fig:ec_year' on page 77 undefined on input line 520.
 
-
-LaTeX Warning: Reference `fig:ec_year' on page 75 undefined on input line 534.
-
-[75 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b2week.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b19week.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b18week.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b5weekd.png>]
-<Figures/../Figures/EC/b2year.png, id=1324, 487.5816pt x 348.8232pt>
+<Figures/../Figures/EC/b2year.png, id=721, 487.5816pt x 348.8232pt>
 File: Figures/../Figures/EC/b2year.png Graphic file (type png)
 <use Figures/../Figures/EC/b2year.png>
-Package pdftex.def Info: Figures/../Figures/EC/b2year.png  used on input line 544.
+Package pdftex.def Info: Figures/../Figures/EC/b2year.png  used on input line 530.
 (pdftex.def)             Requested size: 202.01454pt x 144.52473pt.
-<Figures/../Figures/EC/b19year.png, id=1325, 487.5816pt x 348.8232pt>
+<Figures/../Figures/EC/b19year.png, id=722, 487.5816pt x 348.8232pt>
 File: Figures/../Figures/EC/b19year.png Graphic file (type png)
 <use Figures/../Figures/EC/b19year.png>
-Package pdftex.def Info: Figures/../Figures/EC/b19year.png  used on input line 551.
+Package pdftex.def Info: Figures/../Figures/EC/b19year.png  used on input line 537.
 (pdftex.def)             Requested size: 202.01454pt x 144.52473pt.
 
-Overfull \hbox (4.16101pt too wide) in paragraph at lines 541--555
+Overfull \hbox (4.16101pt too wide) in paragraph at lines 527--541
 []$[]$  $[]$ 
  []
 
-<Figures/../Figures/EC/b18year.png, id=1326, 487.5816pt x 348.8232pt>
+<Figures/../Figures/EC/b18year.png, id=723, 487.5816pt x 348.8232pt>
 File: Figures/../Figures/EC/b18year.png Graphic file (type png)
 <use Figures/../Figures/EC/b18year.png>
-Package pdftex.def Info: Figures/../Figures/EC/b18year.png  used on input line 559.
+Package pdftex.def Info: Figures/../Figures/EC/b18year.png  used on input line 545.
 (pdftex.def)             Requested size: 202.01454pt x 144.52473pt.
-<Figures/../Figures/EC/b5year.png, id=1327, 487.5816pt x 348.8232pt>
+<Figures/../Figures/EC/b5year.png, id=724, 487.5816pt x 348.8232pt>
 File: Figures/../Figures/EC/b5year.png Graphic file (type png)
 <use Figures/../Figures/EC/b5year.png>
-Package pdftex.def Info: Figures/../Figures/EC/b5year.png  used on input line 566.
+Package pdftex.def Info: Figures/../Figures/EC/b5year.png  used on input line 552.
 (pdftex.def)             Requested size: 202.01454pt x 144.52473pt.
 
-Overfull \hbox (4.16101pt too wide) in paragraph at lines 556--570
+Overfull \hbox (4.16101pt too wide) in paragraph at lines 542--556
 []$[]$  $[]$[] 
  []
 
-
-Overfull \hbox (13.77371pt too wide) in paragraph at lines 575--576
+[77 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b2week.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b19week.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b18week.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b5weekd.png>]
+Overfull \hbox (13.77371pt too wide) in paragraph at lines 561--562
 \T1/ppl/m/n/10.95 The fol-low-ing sub-sec-tion will show how the ef-fec-tive-ness of anomaly de-tec-tion changes
  []
 
-<Figures/EC/ignored_buckets_dist.png, id=1331, 383.7537pt x 277.9986pt>
+
+LaTeX Warning: Reference `fig:ignored_buckets_22' on page 78 undefined on input line 566.
+
+
+LaTeX Warning: Reference `fig:ignored_buckets_22' on page 78 undefined on input line 572.
+
+
+LaTeX Warning: Reference `fig:ignored_buckets_22' on page 78 undefined on input line 574.
+
+<Figures/EC/ignored_buckets_dist.png, id=735, 383.7537pt x 277.9986pt>
 File: Figures/EC/ignored_buckets_dist.png Graphic file (type png)
 <use Figures/EC/ignored_buckets_dist.png>
-Package pdftex.def Info: Figures/EC/ignored_buckets_dist.png  used on input line 594.
+Package pdftex.def Info: Figures/EC/ignored_buckets_dist.png  used on input line 580.
 (pdftex.def)             Requested size: 323.22449pt x 234.14926pt.
-[76 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b2year.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b19year.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b18year.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b5year.png>]
-<Figures/EC/all_ignored_buckets_dist_incl_act.png, id=1343, 406.6392pt x 277.9986pt>
+[78 </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b2year.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b19year.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b18year.png> </Users/jakob/Documents/mag/MSC/msc/Figures/../Figures/EC/b5year.png>]
+
+LaTeX Warning: Reference `fig:ignored_buckets_act' on page 79 undefined on input line 586.
+
+<Figures/EC/all_ignored_buckets_dist_incl_act.png, id=746, 406.6392pt x 277.9986pt>
 File: Figures/EC/all_ignored_buckets_dist_incl_act.png Graphic file (type png)
 <use Figures/EC/all_ignored_buckets_dist_incl_act.png>
-Package pdftex.def Info: Figures/EC/all_ignored_buckets_dist_incl_act.png  used on input line 605.
+Package pdftex.def Info: Figures/EC/all_ignored_buckets_dist_incl_act.png  used on input line 591.
 (pdftex.def)             Requested size: 323.22449pt x 220.97813pt.
- [77 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ignored_buckets_dist.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/all_ignored_buckets_dist_incl_act.png>]
-<Figures/EC/refit_res.png, id=1354, 487.5816pt x 348.8232pt>
+
+LaTeX Warning: Reference `fig:ignored_buckets_act' on page 79 undefined on input line 595.
+
+
+LaTeX Warning: Reference `fig:ignored_buckets_act' on page 79 undefined on input line 600.
+
+[79 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ignored_buckets_dist.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/all_ignored_buckets_dist_incl_act.png>]
+
+LaTeX Warning: Reference `fig:refit_res' on page 80 undefined on input line 632.
+
+<Figures/EC/refit_res.png, id=756, 487.5816pt x 348.8232pt>
 File: Figures/EC/refit_res.png Graphic file (type png)
 <use Figures/EC/refit_res.png>
-Package pdftex.def Info: Figures/EC/refit_res.png  used on input line 652.
+Package pdftex.def Info: Figures/EC/refit_res.png  used on input line 638.
 (pdftex.def)             Requested size: 323.22449pt x 231.24596pt.
- [78 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res.png>]
-<Figures/EC/refit_res2.png, id=1362, 487.5816pt x 348.8232pt>
+
+LaTeX Warning: Reference `fig:refit_res2' on page 80 undefined on input line 642.
+
+[80 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res.png>]
+<Figures/EC/refit_res2.png, id=766, 487.5816pt x 348.8232pt>
 File: Figures/EC/refit_res2.png Graphic file (type png)
 <use Figures/EC/refit_res2.png>
-Package pdftex.def Info: Figures/EC/refit_res2.png  used on input line 664.
+Package pdftex.def Info: Figures/EC/refit_res2.png  used on input line 650.
 (pdftex.def)             Requested size: 323.22449pt x 231.24596pt.
-<Figures/EC/refit_res_nw_1.png, id=1365, 487.5816pt x 348.8232pt>
+
+
+LaTeX Warning: Reference `sssec:ratio_week' on page 81 undefined on input line 655.
+
+
+LaTeX Warning: Reference `fig:refit_res_nw_1"' on page 81 undefined on input line 657.
+
+<Figures/EC/refit_res_nw_1.png, id=767, 487.5816pt x 348.8232pt>
 File: Figures/EC/refit_res_nw_1.png Graphic file (type png)
 <use Figures/EC/refit_res_nw_1.png>
-Package pdftex.def Info: Figures/EC/refit_res_nw_1.png  used on input line 676.
+Package pdftex.def Info: Figures/EC/refit_res_nw_1.png  used on input line 662.
 (pdftex.def)             Requested size: 323.22449pt x 231.24596pt.
- [79 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res_nw_1.png>]
-<Figures/EC/refit_res_nw_2.png, id=1374, 487.5816pt x 348.8232pt>
+[81 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res_nw_1.png>]
+<Figures/EC/refit_res_nw_2.png, id=777, 487.5816pt x 348.8232pt>
 File: Figures/EC/refit_res_nw_2.png Graphic file (type png)
 <use Figures/EC/refit_res_nw_2.png>
-Package pdftex.def Info: Figures/EC/refit_res_nw_2.png  used on input line 688.
+Package pdftex.def Info: Figures/EC/refit_res_nw_2.png  used on input line 674.
 (pdftex.def)             Requested size: 323.22449pt x 231.24596pt.
-<Figures/EC/ukdale_res.png, id=1377, 487.5816pt x 348.8232pt>
+
+
+LaTeX Warning: Reference `ssec:ds_eval' on page 82 undefined on input line 680.
+
+
+LaTeX Warning: Reference `fig:ukdale_res' on page 82 undefined on input line 681.
+
+<Figures/EC/ukdale_res.png, id=778, 487.5816pt x 348.8232pt>
 File: Figures/EC/ukdale_res.png Graphic file (type png)
 <use Figures/EC/ukdale_res.png>
-Package pdftex.def Info: Figures/EC/ukdale_res.png  used on input line 701.
+Package pdftex.def Info: Figures/EC/ukdale_res.png  used on input line 687.
 (pdftex.def)             Requested size: 282.81912pt x 202.33888pt.
-<Figures/EC/ukdale_nw_res.png, id=1378, 487.5816pt x 348.8232pt>
+<Figures/EC/ukdale_nw_res.png, id=779, 487.5816pt x 348.8232pt>
 File: Figures/EC/ukdale_nw_res.png Graphic file (type png)
 <use Figures/EC/ukdale_nw_res.png>
-Package pdftex.def Info: Figures/EC/ukdale_nw_res.png  used on input line 711.
+Package pdftex.def Info: Figures/EC/ukdale_nw_res.png  used on input line 697.
 (pdftex.def)             Requested size: 282.81912pt x 202.33888pt.
- [80 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res_nw_2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ukdale_res.png>]
-<Figures/EC/eco_res_nw_1.png, id=1389, 487.5816pt x 348.8232pt>
+[82 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/refit_res_nw_2.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ukdale_res.png>]
+
+LaTeX Warning: Reference `ssec:ds_eval' on page 83 undefined on input line 704.
+
+
+LaTeX Warning: Reference `fig:eco_res' on page 83 undefined on input line 705.
+
+<Figures/EC/eco_res_nw_1.png, id=789, 487.5816pt x 348.8232pt>
 File: Figures/EC/eco_res_nw_1.png Graphic file (type png)
 <use Figures/EC/eco_res_nw_1.png>
-Package pdftex.def Info: Figures/EC/eco_res_nw_1.png  used on input line 724.
+Package pdftex.def Info: Figures/EC/eco_res_nw_1.png  used on input line 710.
 (pdftex.def)             Requested size: 282.81912pt x 202.33888pt.
-<Figures/EC/eco_res.png, id=1391, 487.5816pt x 348.8232pt>
+
+LaTeX Warning: Reference `fig:eco_res_nw' on page 83 undefined on input line 714.
+
+<Figures/EC/eco_res.png, id=790, 487.5816pt x 348.8232pt>
 File: Figures/EC/eco_res.png Graphic file (type png)
 <use Figures/EC/eco_res.png>
-Package pdftex.def Info: Figures/EC/eco_res.png  used on input line 733.
+Package pdftex.def Info: Figures/EC/eco_res.png  used on input line 719.
 (pdftex.def)             Requested size: 282.81912pt x 202.33888pt.
- [81 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ukdale_nw_res.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/eco_res_nw_1.png>] [82 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/eco_res.png>]
-<Figures/EC/DYN/tst_tr_b1.png, id=1413, 390.258pt x 254.3904pt>
+[83 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/ukdale_nw_res.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/eco_res_nw_1.png>]
+
+LaTeX Warning: Reference `tab:ec_res' on page 84 undefined on input line 725.
+
+[84 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/eco_res.png>]
+
+LaTeX Warning: Reference `fig:ignored_buckets_22' on page 85 undefined on input line 774.
+
+
+LaTeX Warning: Citation 'REFIT' on page 85 undefined on input line 807.
+
+
+LaTeX Warning: Reference `fig:refit_timeline' on page 85 undefined on input line 808.
+
+
+LaTeX Warning: Reference `fig:dyn_data_1' on page 85 undefined on input line 812.
+
+<Figures/EC/DYN/tst_tr_b1.png, id=809, 390.258pt x 254.3904pt>
 File: Figures/EC/DYN/tst_tr_b1.png Graphic file (type png)
 <use Figures/EC/DYN/tst_tr_b1.png>
-Package pdftex.def Info: Figures/EC/DYN/tst_tr_b1.png  used on input line 832.
+Package pdftex.def Info: Figures/EC/DYN/tst_tr_b1.png  used on input line 818.
 (pdftex.def)             Requested size: 282.81912pt x 184.35649pt.
- [83]
-<Figures/EC/DYN/data_used_for_training_all.png, id=1420, 444.2196pt x 287.1528pt>
+[85]
+
+LaTeX Warning: Reference `fig:data_used_for_training' on page 86 undefined on input line 823.
+
+<Figures/EC/DYN/data_used_for_training_all.png, id=818, 444.2196pt x 287.1528pt>
 File: Figures/EC/DYN/data_used_for_training_all.png Graphic file (type png)
 <use Figures/EC/DYN/data_used_for_training_all.png>
-Package pdftex.def Info: Figures/EC/DYN/data_used_for_training_all.png  used on input line 842.
+Package pdftex.def Info: Figures/EC/DYN/data_used_for_training_all.png  used on input line 828.
 (pdftex.def)             Requested size: 282.81912pt x 182.83073pt.
-<Figures/EC/DYN/data_used_for_training_removed_short.png, id=1422, 444.2196pt x 277.9986pt>
+
+LaTeX Warning: Reference `fig:data_used_for_training_removed' on page 86 undefined on input line 833.
+
+<Figures/EC/DYN/data_used_for_training_removed_short.png, id=819, 444.2196pt x 277.9986pt>
 File: Figures/EC/DYN/data_used_for_training_removed_short.png Graphic file (type png)
 <use Figures/EC/DYN/data_used_for_training_removed_short.png>
-Package pdftex.def Info: Figures/EC/DYN/data_used_for_training_removed_short.png  used on input line 851.
+Package pdftex.def Info: Figures/EC/DYN/data_used_for_training_removed_short.png  used on input line 837.
 (pdftex.def)             Requested size: 282.81912pt x 177.00223pt.
- [84 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/tst_tr_b1.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/data_used_for_training_all.png>]
-<Figures/EC/DYN/data_used_for_testing.png, id=1432, 431.211pt x 277.9986pt>
+[86 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/tst_tr_b1.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/data_used_for_training_all.png>]
+
+LaTeX Warning: Reference `fig:data_used_for_testing' on page 87 undefined on input line 843.
+
+<Figures/EC/DYN/data_used_for_testing.png, id=828, 431.211pt x 277.9986pt>
 File: Figures/EC/DYN/data_used_for_testing.png Graphic file (type png)
 <use Figures/EC/DYN/data_used_for_testing.png>
-Package pdftex.def Info: Figures/EC/DYN/data_used_for_testing.png  used on input line 864.
+Package pdftex.def Info: Figures/EC/DYN/data_used_for_testing.png  used on input line 850.
 (pdftex.def)             Requested size: 282.81912pt x 182.33856pt.
-<Figures/EC/DYN/efect_of_data_on_metric.png, id=1435, 444.2196pt x 277.9986pt>
+
+LaTeX Warning: Reference `fig:efect_of_data_on_metric' on page 87 undefined on input line 856.
+
+
+LaTeX Warning: Reference `fig:efect_of_data_on_metric' on page 87 undefined on input line 857.
+
+<Figures/EC/DYN/efect_of_data_on_metric.png, id=829, 444.2196pt x 277.9986pt>
 File: Figures/EC/DYN/efect_of_data_on_metric.png Graphic file (type png)
 <use Figures/EC/DYN/efect_of_data_on_metric.png>
-Package pdftex.def Info: Figures/EC/DYN/efect_of_data_on_metric.png  used on input line 878.
+Package pdftex.def Info: Figures/EC/DYN/efect_of_data_on_metric.png  used on input line 864.
 (pdftex.def)             Requested size: 282.81912pt x 177.00223pt.
- [85 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/data_used_for_training_removed_short.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/data_used_for_testing.png>]
-<Figures/EC/DYN/1_year_of_iterative_learning_avg.png, id=1446, 449.5194pt x 277.9986pt>
+[87 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/data_used_for_training_removed_short.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/data_used_for_testing.png>]
+
+LaTeX Warning: Reference `fig:efect_of_data_on_metric' on page 88 undefined on input line 868.
+
+<Figures/EC/DYN/1_year_of_iterative_learning_avg.png, id=839, 449.5194pt x 277.9986pt>
 File: Figures/EC/DYN/1_year_of_iterative_learning_avg.png Graphic file (type png)
 <use Figures/EC/DYN/1_year_of_iterative_learning_avg.png>
-Package pdftex.def Info: Figures/EC/DYN/1_year_of_iterative_learning_avg.png  used on input line 890.
+Package pdftex.def Info: Figures/EC/DYN/1_year_of_iterative_learning_avg.png  used on input line 876.
 (pdftex.def)             Requested size: 282.81912pt x 174.91096pt.
- [86 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/efect_of_data_on_metric.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/1_year_of_iterative_learning_avg.png>]) [87]
+
+LaTeX Warning: Reference `fig:1_year_of_iterative_learning_avg' on page 88 undefined on input line 880.
+
+[88 </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/efect_of_data_on_metric.png> </Users/jakob/Documents/mag/MSC/msc/Figures/EC/DYN/1_year_of_iterative_learning_avg.png>]) [89]
 \openout2 = `Chapters/Chapter9.aux'.
 
- (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter9.tex [88
+ (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter9.tex [90
 
 
 
 ]
-Chapter 9.
-)
-1: section
-[89] [90]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 358.
- (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-Overfull \hbox (2.45674pt too wide) in paragraph at lines 358--358
-[][]$\T1/cmtt/m/n/10.95 https : / / www . sciencedirect . com / science / article / pii / S0378779608001272$[][]\T1/ppl/m/n/10.95 . 
- []
+Chapter 10.
+
+LaTeX Warning: Reference `Chapter5' on page 91 undefined on input line 5.
 
 
-Overfull \hbox (3.44635pt too wide) in paragraph at lines 358--358
-[][]\T1/ppl/m/n/10.95 Aréchiga, A. et al. (2016). ^^P  Com-par-i-son of Di-men-sion-al-ity Re-duc-tion Tech-niques
- []
+LaTeX Warning: Reference `chapter6' on page 91 undefined on input line 14.
+
+
+LaTeX Warning: Reference `Chapter8' on page 91 undefined on input line 22.
+
+
+LaTeX Warning: Reference `Chapter7' on page 91 undefined on input line 28.
 
 1: section
-[91
+[91]) [92]
+
+LaTeX Warning: Empty bibliography on input line 359.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 363.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 363.
+(/Users/jakob/Documents/mag/MSC/msc/main.aux (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter1.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter2.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter3.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter4.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter5.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter10.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter6.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter8.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter7.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter9.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 363.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 363.
 
 
-]
-Overfull \hbox (6.37303pt too wide) in paragraph at lines 358--358
-\T1/cmtt/m/n/10.95 doi . org / 10 . 1016 / j . enbuild . 2019 . 05 . 009$[][]\T1/ppl/m/n/10.95 . \T1/ppl/m/sc/10.95 url\T1/ppl/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www . sciencedirect .
- []
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-
-Overfull \hbox (1.48178pt too wide) in paragraph at lines 358--358
-[][]\T1/ppl/m/n/10.95 Fischer, David, Härtl, An-dreas, and Wille-Haussmann, Bern-hard (2015). ^^P  Model
- []
-
-[92]
-Overfull \hbox (8.96361pt too wide) in paragraph at lines 358--358
-[][]\T1/ppl/m/n/10.95 McKinney, Wes et al. (2010). ^^P  Data struc-tures for sta-tis-ti-cal com-put-ing in python^^Q.
- []
-
-[93] [94]
-Overfull \hbox (19.85939pt too wide) in paragraph at lines 358--358
-[][]\T1/ppl/m/n/10.95 Spataru, Catalina and Gau-thier, Stephanie (2014). ^^P  How to mon-i-tor peo-ple `smartly'
- []
-
-[95] [96]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 362.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 362.
- (/Users/jakob/Documents/mag/MSC/msc/main.aux (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter1.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter2.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter3.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter4.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter5.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter6.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter8.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter7.aux) (/Users/jakob/Documents/mag/MSC/msc/Chapters/Chapter9.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 362.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 362.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9A36DE4EC6F2A12CEF8398B48FCBA60E;14528.
-
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  360E52224F3323D9FDFE69B712839D8E;14723.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40022 strings out of 480608
- 842057 string characters out of 5903631
- 1483532 words of memory out of 5000000
- 54798 multiletter control sequences out of 15000+600000
- 589621 words of font info for 125 fonts, out of 8000000 for 9000
+ 39498 strings out of 480608
+ 827810 string characters out of 5903631
+ 1446050 words of memory out of 5000000
+ 54314 multiletter control sequences out of 15000+600000
+ 600818 words of font info for 146 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,21n,86p,2290b,3037s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/jakob/Documents/mag/MSC/msc/main.pdf (100 pages, 25480975 bytes).
+ 64i,21n,82p,1184b,2150s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on /Users/jakob/Documents/mag/MSC/msc/main.pdf (116 pages, 25410334 bytes).
 PDF statistics:
- 1741 PDF objects out of 2073 (max. 8388607)
- 1460 compressed objects within 15 object streams
- 357 named destinations out of 1000 (max. 500000)
- 1162 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 964 PDF objects out of 1000 (max. 8388607)
+ 678 compressed objects within 7 object streams
+ 318 named destinations out of 1000 (max. 500000)
+ 418 words of extra memory for PDF output out of 10000 (max. 10000000)
 

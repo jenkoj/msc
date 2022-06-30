@@ -1,38 +1,42 @@
 % Chapter Template
 
 \chapter{Contributions} % Main chapter title
-
 \label{Chapter5} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-The goal of the master's thesis is to propose suitable consumption profiles for supporting residential building consumption optimization and elderly care management.
+The main goal of the master's thesis is to propose suitable consumption profiles for supporting residential building consumption optimization and elderly care management.
 To achieve this goal, we propose the following steps.
 
-The first step is to obtain a set of datasets. In our case, this will be UK-DALE \cite{UKDALE}, REFIT \cite{REFIT}, ECO \cite{ECO}, REDD \cite{REDD}, and iAWE \cite{iAWE}.
-All datasets measured electrical energy consumption for residential buildings. 
-They include main smart meter data, as well as sub-meter data for each appliance in a dwelling. 
-For easier handling datasets will be sliced into 1-hour intervals. 
-Data will be then used to generate different daily per-appliance usage profiles.
-
-\begin{figure}[H]
-	\centering
-	\caption{"Universal normalized daily usage profile for weekend and weekday for a microwave. Superposition of data from 25 homes."}
-	\includegraphics[width=0.9\textwidth]{../Figures/microwave_norm_n25.png}
-	\label{fig:UniNormMicrowave}
-\end{figure}
-
-One such example can be seen in figure \ref{fig:UniNormMicrowave}. The histogram shows normalized daily 
-activation for microwaves. It consists of data from 25 homes from 4 different
-datasets. 
-
+This was in a way done in chapter \ref{chapter3} and chapter \ref{chapter4} where we have taken a look at existing research and use cases and then combined them to make a map of load profiles.
+This map allowed us to propose new, previously unused profiles. 
+But how do we prove that these previously unused profiles are even useful in real-world use cases such as elderly care management? 
+It could as well be, that the reason no one used them is that they cannot be efficiently utilized for an actual use case. 
+In the next few chapters, we will present and prove that these profiles can be efficiently utilized.
 The thesis is constructed from three parts, and each answers our following questions accordingly:
+
 \begin{itemize}
 	\item How do we efficiently present big data to humans and machines?
 	\item How is this presented data connected in a higher dimension?
 	\item Can we use one of the profiles to build something useful? 
 \end{itemize}
 
-The proposed goal will be achieved by answering these three questions. 
+The first question is the origin from where the main goal of the thesis was derived. 
+As said it was already answered in a way, but it needs additional proof.
+For we need to answer the other two questions. 
+
+The second question will be answered in chapter \ref{Chapter8}.
+Here, we will use t-SNE dimensionality reduction algorithm to show how samples are related.
+By doing that we will obtain an understanding of the content that the datasets hold.
+
+This newly found knowledge should hopefully help us to answer the last question.
+This question will be answered in chapter \ref{Chapter7}.
+Here, we will design and construct elderly care assisted living system by utilizing one of the proposed profiles.
+The system will be able to detect anomalies in the daily routine of the elder.
+The system should be simple, efficient and ready for real-world use.
+With that, we should be able to prove that the load profile can be efficiently utilized,
+thus achieving the main goal of this thesis.
+
+
