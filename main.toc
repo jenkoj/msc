@@ -3,95 +3,100 @@
 \contentsline {chapter}{Declaration of Authorship}{iii}{section*.1}%
 \contentsline {chapter}{Abstract}{vii}{section*.2}%
 \contentsline {chapter}{Acknowledgements}{ix}{section*.3}%
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.14}%
-\contentsline {chapter}{\numberline {2}Definitions}{3}{chapter.15}%
-\contentsline {chapter}{\numberline {3}Related work}{5}{chapter.17}%
-\contentsline {section}{\numberline {3.1}Load profiling}{5}{section.18}%
-\contentsline {section}{\numberline {3.2}Anomaly detection in building energy consumption data}{7}{section.20}%
-\contentsline {section}{\numberline {3.3}Table of profiles}{8}{section.21}%
-\contentsline {subsection}{\numberline {3.3.1}Feature set}{8}{subsection.22}%
-\contentsline {subsection}{\numberline {3.3.2}General table}{8}{subsection.23}%
-\contentsline {subsection}{\numberline {3.3.3}Detailed table}{10}{subsection.25}%
-\contentsline {subsubsection}{Sub-features}{10}{section*.26}%
-\contentsline {subsubsection}{Sketches of load profiles}{11}{section*.27}%
-\contentsline {subsection}{\numberline {3.3.4}Table of combinations or detailed table}{14}{subsection.34}%
-\contentsline {subsection}{\numberline {3.3.5}Mapping references to the table of profiles}{15}{subsection.36}%
-\contentsline {subsection}{\numberline {3.3.6}Mapping use-cases to the table of combinations}{16}{subsection.38}%
-\contentsline {subsection}{\numberline {3.3.7}Table of use case groups}{16}{subsection.40}%
-\contentsline {subsection}{\numberline {3.3.8}Table of load profile potentials}{17}{subsection.43}%
-\contentsline {subsection}{\numberline {3.3.9}Table of possible future research directions}{18}{subsection.45}%
-\contentsline {chapter}{\numberline {4}Possible use cases}{21}{chapter.48}%
-\contentsline {section}{\numberline {4.1}Grid management}{21}{section.49}%
-\contentsline {subsection}{\numberline {4.1.1}Zero energy buildings and energy saving}{21}{subsection.50}%
-\contentsline {subsection}{\numberline {4.1.2}Demand response}{22}{subsection.51}%
-\contentsline {section}{\numberline {4.2}Anomaly detection}{23}{section.52}%
-\contentsline {subsection}{\numberline {4.2.1}Elderly care}{23}{subsection.53}%
-\contentsline {section}{\numberline {4.3}Other}{24}{section.54}%
-\contentsline {chapter}{\numberline {5}Contributions}{25}{chapter.55}%
-\contentsline {chapter}{\numberline {6}Methodology}{27}{chapter.56}%
-\contentsline {subsection}{\numberline {6.0.1}Data}{27}{subsection.57}%
-\contentsline {subsection}{\numberline {6.0.2}Tools used}{28}{subsection.59}%
-\contentsline {chapter}{\numberline {7}Presenting proposed profiles}{29}{chapter.60}%
-\contentsline {section}{\numberline {7.1}Time ranges}{29}{section.61}%
-\contentsline {section}{\numberline {7.2}Per-building}{29}{section.62}%
-\contentsline {subsection}{\numberline {7.2.1}Per-building two-dimensional time}{30}{subsection.64}%
-\contentsline {section}{\numberline {7.3}Per-appliance}{31}{section.66}%
-\contentsline {subsection}{\numberline {7.3.1}Two-dimensional time per-appliance load profiles}{35}{subsection.72}%
-\contentsline {subsubsection}{Other two-dimensional presentations}{35}{section*.74}%
-\contentsline {section}{\numberline {7.4}Per-building per-appliance}{37}{section.77}%
-\contentsline {section}{\numberline {7.5}Conclusion}{39}{section.81}%
-\contentsline {chapter}{\numberline {8}t-SNE}{41}{chapter.82}%
-\contentsline {section}{\numberline {8.1}Introduction}{41}{section.83}%
-\contentsline {section}{\numberline {8.2}Goals}{41}{section.84}%
-\contentsline {section}{\numberline {8.3}Methodology}{42}{section.85}%
-\contentsline {subsection}{\numberline {8.3.1}Load profiles}{42}{subsection.86}%
-\contentsline {subsubsection}{Weekly-daily load profile}{42}{section*.87}%
-\contentsline {subsubsection}{Bag of appliances load profile}{42}{section*.89}%
-\contentsline {subsubsection}{Samples}{43}{section*.91}%
-\contentsline {subsection}{\numberline {8.3.2}Datasets}{43}{subsection.92}%
-\contentsline {subsection}{\numberline {8.3.3}t-SNE algorithm}{43}{subsection.93}%
-\contentsline {section}{\numberline {8.4}Results}{44}{section.94}%
-\contentsline {subsection}{\numberline {8.4.1}Results for per-building load profiles}{44}{subsection.95}%
-\contentsline {subsubsection}{Normalized load profiles}{46}{section*.98}%
-\contentsline {subsection}{\numberline {8.4.2}Per-appliance}{48}{subsection.101}%
-\contentsline {subsubsection}{Single appliance over many buildings}{48}{section*.102}%
-\contentsline {subsubsection}{Per-appliance load profiles - comparing appliances}{56}{section*.111}%
-\contentsline {subsubsection}{Comparing appliances in a building}{64}{section*.121}%
-\contentsline {subsection}{\numberline {8.4.3}Per-appliance per-building}{65}{subsection.124}%
-\contentsline {subsubsection}{Bag of appliances}{66}{section*.125}%
-\contentsline {section}{\numberline {8.5}Discussion}{67}{section.128}%
-\contentsline {section}{\numberline {8.6}Conclusion}{67}{section.129}%
-\contentsline {chapter}{\numberline {9}Elderly care demo}{69}{chapter.130}%
-\contentsline {section}{\numberline {9.1}Goal}{69}{section.131}%
-\contentsline {section}{\numberline {9.2}Methodology}{69}{section.132}%
-\contentsline {subsection}{\numberline {9.2.1}Defining an anomaly}{69}{subsection.133}%
-\contentsline {subsection}{\numberline {9.2.2}Building anomaly detection algorithm}{69}{subsection.134}%
-\contentsline {subsubsection}{Step one}{70}{section*.135}%
-\contentsline {subsubsection}{Step two}{70}{section*.136}%
-\contentsline {subsubsection}{Third step}{70}{section*.140}%
-\contentsline {subsubsection}{Step four}{72}{section*.147}%
-\contentsline {subsubsection}{Step five}{73}{section*.155}%
-\contentsline {subsection}{\numberline {9.2.3}Datasets and evaluation}{74}{subsection.156}%
-\contentsline {subsubsection}{REFIT}{74}{section*.157}%
-\contentsline {subsubsection}{UK-DALE}{74}{section*.159}%
-\contentsline {subsubsection}{ECO}{75}{section*.161}%
-\contentsline {subsection}{\numberline {9.2.4}The metric - routine rate}{75}{subsection.163}%
-\contentsline {section}{\numberline {9.3}Results}{76}{section.164}%
-\contentsline {subsection}{\numberline {9.3.1}The routine rate over a period of time}{76}{subsection.165}%
-\contentsline {subsubsection}{The routine rate through the week}{76}{section*.166}%
-\contentsline {subsection}{\numberline {9.3.2}Routine rate through a year}{77}{subsection.168}%
-\contentsline {subsection}{\numberline {9.3.3}Effectiveness of anomaly detection through the day}{78}{subsection.170}%
-\contentsline {subsubsection}{The anomaly detection during the night}{80}{section*.173}%
-\contentsline {subsection}{\numberline {9.3.4}Per-building results}{80}{subsection.174}%
-\contentsline {subsubsection}{REFIT}{80}{section*.175}%
-\contentsline {subsubsection}{UK-DALE}{82}{section*.180}%
-\contentsline {subsubsection}{ECO}{83}{section*.183}%
-\contentsline {subsection}{\numberline {9.3.5}Combined results}{84}{subsection.186}%
-\contentsline {section}{\numberline {9.4}Discussion}{84}{section.188}%
-\contentsline {section}{\numberline {9.5}Iterative learning system}{85}{section.189}%
-\contentsline {subsection}{\numberline {9.5.1}Methodology}{85}{subsection.190}%
-\contentsline {subsubsection}{Data preparation}{85}{section*.191}%
-\contentsline {subsection}{\numberline {9.5.2}Results}{87}{subsection.196}%
-\contentsline {subsection}{\numberline {9.5.3}Discussion}{88}{subsection.199}%
-\contentsline {subsection}{\numberline {9.5.4}Conclusion}{89}{subsection.200}%
-\contentsline {chapter}{\numberline {10}Conclusion}{91}{chapter.201}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.9}%
+\contentsline {chapter}{\numberline {2}Definitions}{3}{chapter.10}%
+\contentsline {chapter}{\numberline {3}Related work}{5}{chapter.12}%
+\contentsline {section}{\numberline {3.1}Load profiling}{5}{section.13}%
+\contentsline {section}{\numberline {3.2}Anomaly detection in building energy consumption data}{7}{section.15}%
+\contentsline {section}{\numberline {3.3}Table of profiles}{8}{section.16}%
+\contentsline {subsection}{\numberline {3.3.1}Feature set}{8}{subsection.17}%
+\contentsline {subsection}{\numberline {3.3.2}General table}{8}{subsection.18}%
+\contentsline {subsection}{\numberline {3.3.3}Detailed table}{10}{subsection.20}%
+\contentsline {subsubsection}{Sub-features}{10}{section*.21}%
+\contentsline {subsubsection}{Sketches of load profiles}{11}{section*.22}%
+\contentsline {subsection}{\numberline {3.3.4}Table of combinations or detailed table}{14}{subsection.29}%
+\contentsline {subsection}{\numberline {3.3.5}Mapping references to the table of profiles}{15}{subsection.31}%
+\contentsline {subsection}{\numberline {3.3.6}Mapping use-cases to the table of combinations}{16}{subsection.33}%
+\contentsline {subsection}{\numberline {3.3.7}Table of use case groups}{16}{subsection.35}%
+\contentsline {subsection}{\numberline {3.3.8}Table of load profile potentials}{17}{subsection.38}%
+\contentsline {subsection}{\numberline {3.3.9}Table of possible future research directions}{18}{subsection.40}%
+\contentsline {chapter}{\numberline {4}Possible use cases}{21}{chapter.43}%
+\contentsline {section}{\numberline {4.1}Grid management}{21}{section.44}%
+\contentsline {subsection}{\numberline {4.1.1}Zero energy buildings and energy saving}{21}{subsection.45}%
+\contentsline {subsection}{\numberline {4.1.2}Demand response}{22}{subsection.46}%
+\contentsline {section}{\numberline {4.2}Anomaly detection}{23}{section.47}%
+\contentsline {subsection}{\numberline {4.2.1}Elderly care}{23}{subsection.48}%
+\contentsline {section}{\numberline {4.3}Other}{24}{section.49}%
+\contentsline {chapter}{\numberline {5}Contributions}{25}{chapter.50}%
+\contentsline {chapter}{\numberline {6}Methodology}{27}{chapter.51}%
+\contentsline {subsection}{\numberline {6.0.1}Data}{27}{subsection.52}%
+\contentsline {subsection}{\numberline {6.0.2}Tools used}{28}{subsection.54}%
+\contentsline {chapter}{\numberline {7}Presenting proposed profiles}{29}{chapter.55}%
+\contentsline {section}{\numberline {7.1}Time ranges}{29}{section.56}%
+\contentsline {section}{\numberline {7.2}Per-building}{29}{section.57}%
+\contentsline {subsection}{\numberline {7.2.1}Per-building two-dimensional time}{30}{subsection.59}%
+\contentsline {section}{\numberline {7.3}Per-appliance}{31}{section.61}%
+\contentsline {subsection}{\numberline {7.3.1}Two-dimensional time per-appliance load profiles}{35}{subsection.67}%
+\contentsline {subsubsection}{Other two-dimensional presentations}{35}{section*.69}%
+\contentsline {section}{\numberline {7.4}Per-building per-appliance}{37}{section.72}%
+\contentsline {section}{\numberline {7.5}Conclusion}{39}{section.76}%
+\contentsline {chapter}{\numberline {8}t-SNE}{41}{chapter.77}%
+\contentsline {section}{\numberline {8.1}Introduction}{41}{section.78}%
+\contentsline {section}{\numberline {8.2}Goals}{41}{section.79}%
+\contentsline {section}{\numberline {8.3}Methodology}{42}{section.80}%
+\contentsline {subsection}{\numberline {8.3.1}Load profiles}{42}{subsection.81}%
+\contentsline {subsubsection}{Weekly-daily load profile}{42}{section*.82}%
+\contentsline {subsubsection}{Bag of appliances load profile}{42}{section*.84}%
+\contentsline {subsubsection}{Samples}{43}{section*.86}%
+\contentsline {subsection}{\numberline {8.3.2}Datasets}{43}{subsection.87}%
+\contentsline {subsection}{\numberline {8.3.3}t-SNE algorithm}{43}{subsection.88}%
+\contentsline {section}{\numberline {8.4}Results}{44}{section.89}%
+\contentsline {subsection}{\numberline {8.4.1}Results for per-building load profiles}{44}{subsection.90}%
+\contentsline {subsubsection}{Normalized load profiles}{46}{section*.93}%
+\contentsline {subsection}{\numberline {8.4.2}Per-appliance}{48}{subsection.96}%
+\contentsline {subsubsection}{Single appliance over many buildings}{48}{section*.97}%
+\contentsline {subsubsection}{Per-appliance load profiles - comparing appliances}{56}{section*.106}%
+\contentsline {subsubsection}{Comparing appliances in a building}{64}{section*.116}%
+\contentsline {subsection}{\numberline {8.4.3}Per-appliance per-building}{65}{subsection.119}%
+\contentsline {subsubsection}{Bag of appliances}{66}{section*.120}%
+\contentsline {section}{\numberline {8.5}Discussion}{67}{section.123}%
+\contentsline {section}{\numberline {8.6}Conclusion}{67}{section.124}%
+\contentsline {chapter}{\numberline {9}Elderly care demo}{69}{chapter.125}%
+\contentsline {section}{\numberline {9.1}Goal}{69}{section.126}%
+\contentsline {section}{\numberline {9.2}Methodology}{69}{section.127}%
+\contentsline {subsection}{\numberline {9.2.1}Defining an anomaly}{69}{subsection.128}%
+\contentsline {subsection}{\numberline {9.2.2}Building anomaly detection algorithm}{69}{subsection.129}%
+\contentsline {subsubsection}{Step one}{70}{section*.130}%
+\contentsline {subsubsection}{Step two}{70}{section*.131}%
+\contentsline {subsubsection}{Third step}{70}{section*.135}%
+\contentsline {subsubsection}{Step four}{72}{section*.142}%
+\contentsline {subsubsection}{Step five}{73}{section*.150}%
+\contentsline {subsection}{\numberline {9.2.3}Datasets and evaluation}{74}{subsection.151}%
+\contentsline {subsubsection}{REFIT}{74}{section*.152}%
+\contentsline {subsubsection}{UK-DALE}{74}{section*.154}%
+\contentsline {subsubsection}{ECO}{75}{section*.156}%
+\contentsline {subsection}{\numberline {9.2.4}The metric - routine rate}{75}{subsection.158}%
+\contentsline {section}{\numberline {9.3}Results}{76}{section.159}%
+\contentsline {subsection}{\numberline {9.3.1}The routine rate over a period of time}{76}{subsection.160}%
+\contentsline {subsubsection}{The routine rate through the week}{76}{section*.161}%
+\contentsline {subsection}{\numberline {9.3.2}Routine rate through a year}{77}{subsection.163}%
+\contentsline {subsection}{\numberline {9.3.3}Effectiveness of anomaly detection through the day}{78}{subsection.165}%
+\contentsline {subsubsection}{The anomaly detection during the night}{80}{section*.168}%
+\contentsline {subsection}{\numberline {9.3.4}Per-building results}{80}{subsection.169}%
+\contentsline {subsubsection}{REFIT}{80}{section*.170}%
+\contentsline {subsubsection}{UK-DALE}{82}{section*.175}%
+\contentsline {subsubsection}{ECO}{83}{section*.178}%
+\contentsline {subsection}{\numberline {9.3.5}Combined results}{84}{subsection.181}%
+\contentsline {section}{\numberline {9.4}Discussion}{84}{section.183}%
+\contentsline {section}{\numberline {9.5}Iterative learning system}{85}{section.184}%
+\contentsline {subsection}{\numberline {9.5.1}Methodology}{85}{subsection.185}%
+\contentsline {subsubsection}{Data preparation}{85}{section*.186}%
+\contentsline {subsection}{\numberline {9.5.2}Results}{87}{subsection.191}%
+\contentsline {subsection}{\numberline {9.5.3}Discussion}{88}{subsection.194}%
+\contentsline {subsection}{\numberline {9.5.4}Conclusion}{89}{subsection.195}%
+\contentsline {chapter}{\numberline {10}Conclusion}{91}{chapter.196}%
+\contentsline {chapter}{\numberline {A}The source code, high-resolution figures and datasets}{93}{appendix.197}%
+\contentsline {section}{\numberline {A.1}The source code}{93}{section.198}%
+\contentsline {section}{\numberline {A.2}High resolution figures}{93}{section.199}%
+\contentsline {section}{\numberline {A.3}Data and datasets}{94}{section.200}%
+\contentsline {chapter}{Bibliography}{95}{appendix*.201}%
