@@ -129,8 +129,8 @@ headsepline, % Uncomment to get a line under the header
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Load Profiling of Home Appliances Using Load Classification} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
-\supervisor{Dr. Marko \textsc{Meža} and Dr. Carolina \textsc{Fortuna}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\thesistitle{Load profiling of Home Appliances} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Dr. Carolina \textsc{Fortuna} and Dr. Marko \textsc{Meža} and } % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
 \examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
 \degree{Masters of electrical engineering} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
 \author{Jakob \textsc{Jenko}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
@@ -192,7 +192,7 @@ headsepline, % Uncomment to get a line under the header
 \vfill
 
 {\large \today}\\[4cm] % Date
-\includegraphics{Logo} % University/department logo - uncomment to place it
+% \includegraphics{Logo} % University/department logo - uncomment to place it
  
 \vfill
 \end{center}
@@ -232,9 +232,9 @@ headsepline, % Uncomment to get a line under the header
 
 \vspace*{0.2\textheight}
 
-\noindent\enquote{\itshape Quote here!.}\bigbreak
+\noindent\enquote{\itshape In science, great oaks grow from little acorns.}\bigbreak
 
-\hfill Marx 
+\hfill D. Everett 
 
 % %----------------------------------------------------------------------------------------
 % %	DISPOSITION PAGE 
@@ -247,7 +247,29 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+An increasing amount of energy data is useless if we do not find an efficient way to extract the information that it contains.
+The efficient presentation of energy data to humans and machines through load profiles is the constant narrative throughout the thesis. 
+
+Besides the amount of data, the consumption of the electricity itself is increasing. 
+A third of electrical energy in the EU is consumed in residential areas.
+This means that optimizing the consumption using the data, would leave a significant impact on reducing the human footprint.
+
+Another problem that the EU is facing is an aging population. Using the energy data, it would be possible to design an anomaly detection system
+that will detect accidents such as falls, strokes or dementia-induced altered behavior.
+
+Solving big issues using big data, is a good starting point that led us to perform a comprehensive review of existing publications and use-cases.
+It was found that some publications have already tried to solve the issues mentioned above using energy data.
+Using the related work publications, we have made a table of possible ways to present the data.
+This left us with a lot of gaps. These gaps present load profiles that were not yet researched or used. 
+The question we tried to answer next was, are these profiles really useful?
+It could be, that they are impractical, which could be the reason they were not used before.
+
+During the thesis, we utilized these previously unused load profiles and proved that they can be efficiently implemented.
+This was done first by looking at how data and load profiles are related in high dimensional space using t-SNE.
+Newly obtained knowledge aided us when designing and constructing the elderly care system.
+The successful implementation of newly proposed load profiles proved that the profiles are useful.
+While we have filed a few gaps in the table of profiles, there are still many left. 
+
 \end{abstract}
 
 % %----------------------------------------------------------------------------------------
@@ -256,7 +278,13 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 
 \begin{acknowledgements}
 \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
-The acknowledgments and the people to thank go here, don't forget to include your project advisor\ldots
+I would like to thank the following people without which this thesis would not be possible.
+Dr. Carolina Fortuna and Dr. Marko Meža who helped me with the research, by providing continuous feedback and support.
+The scientific and open-source community that provided the data and the tools used throughout the thesis.
+Friends and colleagues, who through discussion helped induce the ideas that were put forward through the thesis. 
+My family, who inspired, supported and encouraged me to pursue my studies in the first place.
+And my partner Nika, who supported me through all my years of studying in all aspects possible.
+
 \end{acknowledgements}
 
 % %----------------------------------------------------------------------------------------
@@ -275,8 +303,22 @@ The acknowledgments and the people to thank go here, don't forget to include you
 
 \begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
 
-\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere\\
-\textbf{WSF} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or\\
+\textbf{LP} & \textbf{L}oad \textbf{P}rofile \\
+\textbf{P} & \textbf{P}ower (profile) \\
+\textbf{A} & \textbf{A}ctivation (profile) \\
+\textbf{ZEB} & \textbf{Z}ero \textbf{E}nergy \textbf{B}uilding \\
+\textbf{DR} & \textbf{D}emand \textbf{R}esponse \\
+\textbf{AD} & \textbf{A}nomaly \textbf{D}etection \\
+\textbf{EC} & \textbf{E}lderly \textbf{C}are \\
+\textbf{DER} & \textbf{D}istributed \textbf{E}nergy \textbf{R}esources \\
+\textbf{HVAC} & \textbf{H}eating, \textbf{V}entilation and \textbf{A}ir \textbf{C}onditioning\\
+\textbf{EV} & \textbf{E}lectric \textbf{V}ehiecle \\
+\textbf{PV} & \textbf{P}hoto \textbf{V}oltaics \\
+\textbf{EU} & \textbf{E}uropean \textbf{U}nion \\
+\textbf{NILM} & \textbf{N}on \textbf{I}ntrusive \textbf{L}oad \textbf{M}onitoring\\
+\textbf{t-SNE} & \textbf{t}-distributed \textbf{s}tochastic \textbf{n}eighbor \textbf{e}mbedding\\
+\textbf{PCA} & \textbf{P}rincipal \textbf{C}omponent \textbf{A}nalysis \\
+
 
 \end{abbreviations}
 
@@ -284,36 +326,36 @@ The acknowledgments and the people to thank go here, don't forget to include you
 % %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
 % %----------------------------------------------------------------------------------------
 
-\begin{constants}{lr@{${}={}$}l} % The list of physical constants is a three column table
+% \begin{constants}{lr@{${}={}$}l} % The list of physical constants is a three column table
 
 % The \SI{}{} command is provided by the siunitx package, see its documentation for instructions on how to use it
 
-Speed of Light & $c_{0}$ & \SI{2.99792458e8}{\meter\per\second} (exact)\\
+% Speed of Light & $c_{0}$ & \SI{2.99792458e8}{\meter\per\second} (exact)\\
 %Constant Name & $Symbol$ & $Constant Value$ with units\\
 
-\end{constants}
+%\end{constants}
 
 % %----------------------------------------------------------------------------------------
 % %	SYMBOLS
 % %----------------------------------------------------------------------------------------
 
-\begin{symbols}{lll} % Include a list of Symbols (a three column table)
+% \begin{symbols}{lll} % Include a list of Symbols (a three column table)
 
-$a$ & distance & \si{\meter} \\
-$P$ & power & \si{\watt} (\si{\joule\per\second}) \\
-Symbol & Name & Unit \\
+% $a$ & distance & \si{\meter} \\
+% $P$ & power & \si{\watt} (\si{\joule\per\second}) \\
+% Symbol & Name & Unit \\
 
-\addlinespace % Gap to separate the Roman symbols from the Greek
+% \addlinespace % Gap to separate the Roman symbols from the Greek
 
-$\omega$ & angular frequency & \si{\radian} \\
+% $\omega$ & angular frequency & \si{\radian} \\
 
-\end{symbols}
+% \end{symbols}
 
 % %----------------------------------------------------------------------------------------
 % %	DEDICATION
 % %----------------------------------------------------------------------------------------
 
-\dedicatory{For/Dedicated to/To my\ldots} 
+% \dedicatory{Dedicated to the scientific community\ldots} 
 
 % %----------------------------------------------------------------------------------------
 % %	THESIS CONTENT - CHAPTERS
@@ -344,12 +386,12 @@ $\omega$ & angular frequency & \si{\radian} \\
 % %	THESIS CONTENT - APPENDICES
 % %----------------------------------------------------------------------------------------
 
-% \appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
 
 % % Include the appendices of the thesis as separate files from the Appendices folder
 % % Uncomment the lines as you write the Appendices
 
-% \include{Appendices/AppendixA}
+\include{Appendices/AppendixA}
 % %\include{Appendices/AppendixB}
 % %\include{Appendices/AppendixC}
 
