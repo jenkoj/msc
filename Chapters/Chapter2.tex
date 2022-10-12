@@ -1,26 +1,40 @@
-\chapter{Related work}
+\chapter{Related work and Table of profiles}
 \label{chapter2}
 
-Work relating to load profiling can be found in two research verticals or topics. The first one is load profiling and load profile models, which in 
-most cases study the load profile curve of the building. Few exceptions study load profiles on appliance-level.
-The second vertical is anomaly detection in building energy consumption data. While the first topic is closer, there are quite a few connections with the latter. 
-If one wants to do anomaly detection, in some cases, one must first build some kind of "normal consumption profile" 
+In the first part of the chapter, we will review the existing work done and show possible use-cases for the load profiles.  
+In the second part of the chapter most commonly used LP features will be presented. 
+Using them, a Table of profiles will be built. 
+The Table will be populated using the publications from the first part of the chapter.
+This will enable us an overview of existing work, and expose possible missing gaps in scientific research.
 
-\section{Load profiling}
+\section{Related work}
+\label{sec:related_work}
+Work related to load profiling can be found in two research verticals. 
+The first one is load profiling and load profile models, in most cases study the load profile curve of a building or appliance.
+The second vertical is anomaly detection in energy consumption data. There are quite a few connections between the two. 
+For example, if one wants to do anomaly detection, one must first build some kind of "normal consumption profile", which is other words a load profile.
+
+\subsection{Load profiling}
 
 One of the first publications on load profiling was published by \cite{TRAIN19851103}.
 They used a bottom-up approach using sub-meter data and other socioeconomic and demographic characteristics 
 to create a load profile or statistically adjusted engineering (SAE) as they call it.
 They can adjust the curve based on weather, dwelling size, and income. 
 In the same year, \cite{WALKER1985} published a paper where they used a bottom-up approach with psychological factors to create probability models of when will an individual use an appliance.
+Since then there were two more in 1995. Research picked up the pace in 2005 with 7 publications in 2013 as Figure \ref{fig:Distribution} shows.
 
-Since then there were two more in 1995. Research picked up the pace in 2005 with 7 publications in 2013 as figure \ref{fig:Distribution} shows.
+\begin{figure}[H]
+	\centering
+	\caption{"Distribution of publications on load profiling from 1985 to 2020. The graph was published by \protect\cite{Review2021}"}
+	\includegraphics[width=0.9\textwidth]{Figures/publications.png}
+	\label{fig:Distribution}
+\end{figure}
 
 Load-profiling can be performed in two ways: bottom-up and top-down. 
-
-A bottom-up approach as \cite{SWAN20091819} states "calculates the individual dwelling energy or electricity consumption and extrapolate these results over a target area or region"
+A bottom-up approach as \cite{SWAN20091819} states "calculates the individual dwelling energy or electricity consumption and extrapolates these results over a target area or region"
 Whereas with Top-down approach as \cite{SWAN20091819} states "uses the total energy or electricity consumption estimates to assign them to the characteristics of the building stock"
-In other more general words, Bottom-up uses sub-meter data, Top-down uses aggregated data. In our case, we take a deeper dive into the bottom-up approach, since it is more relatable.
+In other more general words, Bottom-up uses sub-meter data, Top-down uses aggregated data. 
+In our case, we take a deeper dive into the bottom-up approach.
 
 \cite{Review2021} did a comprehensive review on load profiling. The author defined various load-profile application
 subgroups such as demand-side management, planning and control design of energy systems, and residential load profiles. The author also 
@@ -29,13 +43,6 @@ They made a review of existing load profiling models
 and asses the-state-of-the art. 
 Next, they pointed out future research directions
 and applications of load profiling models. Finally, the author exposes issues that researchers face and addresses possible solutions with conclusions.
-
-\begin{figure}[H]
-	\centering
-	\caption{"Distribution of publications on load profiling from 1985 to 2020. The graph was published by \protect\cite{Review2021}"}
-	\includegraphics[width=0.9\textwidth]{Figures/publications.png}
-	\label{fig:Distribution}
-\end{figure}
 
 \cite{GERBEC2005} tried to assign typical load profiles to a particular group of consumers based on their activity. 
 To achieve that, they used probabilistic neural networks as a way of classification. Their methodology was tested in real use scenario. 
@@ -81,9 +88,9 @@ They developed a wireless measurement system with smart plugs that enabled them 
 power signatures for each appliance. They evaluated the data and based on observations they determined working cycles for each appliance.
 Furthermore, they concluded that 15 \% of consumed power can be shifted, where they took tariffs into account. 
 
-\section{Anomaly detection in building energy consumption data}
+\subsection{Anomaly detection in building energy consumption data}
 
-A review on Anomaly detection in building energy consumption data was written by \cite{HIMEUR2021116601}.
+A review on anomaly detection in building energy consumption data was written by \cite{HIMEUR2021116601}.
 Here, the authors took a deep dive into detecting anomalies in energy consumption in buildings. 
 The author first makes an overview of existing anomaly detection schemes and applications.
 Second, they perform a critical analysis and an in-depth discussion of the state-of-the-art.
@@ -111,21 +118,12 @@ the second derived additional features, which are the time of use and duration o
 They use that data to detect single-point deviations for which they implemented the isolation Forest algorithm and
 anomalous trends for which to detect, they implemented Change Point Detection. 
 
-\section{Example use-cases}
+\section{Use-cases}
 \label{sec:use-cases}
 
-The load profiling method has a lot of different use cases across different fields.
-In our case, we will split use cases into three classes.
-
-The first class is grid management.
-For example, it can be used to save energy by studying users' usage patterns and returning feedback.
-Electrical energy providers could use that same data to optimize the management of their grid, with minimal impact on users' daily lives.
-
-The second class is anomaly detection.
-The load profiles could be used to help the elderly in case of an accident and help prevent one. 
-They could be used to detect all kinds of early malfunctions in the operation of appliances and help save energy.
-
-The last class is miscellaneous or other where occupancy detection, research, and development are all areas where profiling could be used. 
+The general classification of use-cases was done in section \ref{sec:use_cases_tree}. 
+Here, we will focus on presenting these use-cases in great detail.
+This will be achieved by analyzing the use-case publications and in some cases providing additional solutions.
 
 \subsection{Grid management}
 
@@ -151,12 +149,12 @@ They will be an essential part of the European Union's plan to reach zero-energy
 and near-zero-energy buildings \cite{eu2021}. The directive was accepted in 2010 and was recast in 2021.
 The plan is set to be realized in the next decade.
 
-An actual use case would be an EV owner with an installed PV system and heat pump, who works from home on occasions.
-In this case, two profiles would be developed. Normal workday and work from home day.
+An actual use-case would be an EV owner with an installed PV system and heat pump, who works from home on occasions.
+In this case, two profiles would be developed. Normal workday and work-from-home day.
 Additional information would be obtained from the users calendar. 
 On a normal workday, the system would use PV energy to heat the water and store it, based on the user profile.
 On work-from-home days, the system would start charging the car with the morning sun, using only the PV energy. 
-In the evening hours, when consumption rises and production falls, EV could inject the power back into the house. 
+In the evening hours, when consumption rises and production falls, EVs could inject the power back into the house. 
 Again using appliance load profiles to mitigate net energy flow as close to zero as possible (zero-energy building).
 With the ever-increasing power capacity and increasing range of EVs, more and more battery capacity could be used for mitigation. 
 In the case of grid batteries, similar steps could be taken.
@@ -167,7 +165,7 @@ This could be further extended to neighborhoods connected into peer 2 peer energ
 As mentioned earlier, the way to save energy consumption is to distribute it as locally as possible. 
 Knowing usage patterns of all peers, the system could optimally distribute the energy using DERs across all homes without dwellers even noticing.
 
-Another use case could be using a heat pump and heat storage,
+Another use-case could be using a heat pump and heat storage,
 where besides users usage patterns system would also obtain weather forecasts from the internet.
 Heat pumps that extract heat from the air are more efficient when temperature differences are smaller. 
 The heat pump could store energy when warm and release the energy when cold.
@@ -182,7 +180,7 @@ Source \cite{eu2006} states that as much as 20 \% of energy could be saved by ma
 
 An increasing percentage of renewable resources is troubling energy distributors, due to the nature of renewable resources.
 In the prior chapter, it was mentioned how energy-saving measures would benefit users and their peers.
-One other use case would be cooperation between end-user and energy distribution companies.
+One other use-case would be cooperation between end-user and energy distribution companies.
 Joint actions between them would benefit both as authors show in \cite{cooperation2008} and \cite{cooperation2010}
 
 The electricity provider could control the main appliances so that load on the power grid is uniform,
@@ -194,13 +192,13 @@ This process is called direct load control \cite{DirectLoadControll2021}, and it
 "DR program is a voluntary PJM program that compensates end-use (retail) customers for reducing their electricity use (load)
 when requested by PJM during periods of high power prices, or when the reliability of the grid is threatened." \cite{DemandResponse2018}
 
-The benefit to the user would be lower the cost of charging EVs and heating the building.
+The benefit to the user would be the lower cost of charging EVs and heating the building.
 This is already done through so-called small and high tariffs.
-More detailed user load profiles would enable the electricity provider to introduce real-time tariffs to the user.
+More detailed user load profiles would enable the electricity provider to introduce real-time tariffs.
 
 The user would have three options. The first one would be that users can use the appliances as freely as they desire, this would result in a normal tariff.
 The second option would be to use the appliances as regularly as possible, this would lead to lower tariffs.
-The third option would be to leave the management of main appliances to the electricity provider.
+The third option would be to leave the management of main appliances to the electricity provider via direct load control.
 The provider would combine the user appliance load profile and the real-time market price of energy to optimize the cost \cite{optimiseCostShift2015}.
 This would lead to free or even negative prices of electricity since distribution companies have to keep the frequency of the grid as stable as possible.
 
@@ -213,7 +211,7 @@ This benefits the company as well since they do not need to lower energy product
 
 \subsection{Anomaly detection}
 
-One use case of anomaly detection was already mentioned in the Elderly care chapter.
+One use-case of anomaly detection was already mentioned in the Elderly care chapter.
 One more thing that could be detected, using load profiling, would be the altered operation of appliances.
 In the case of a fridge, the system would detect that duty cycles are too long.
 The increased duty cycle can be caused by cooling liquid leakage, fridge being open or compressor motor malfunction.
@@ -251,7 +249,783 @@ user's needs, without unnecessary features.
 \cite{energyStealing2018} uses anomaly detection algorithms and load profiling to detect energy lost due to non-technical losses.
 This occurs after the smart-meter is exposed to cyber or mechanical attacks and its measurements are off. 
 
-One other use case could be occupancy detection of buildings such as the authors explore in \cite{occupancy2013}. Information about 
+One other use-case could be occupancy detection of buildings such as the authors explore in \cite{occupancy2013}. Information about 
 occupancy could be used as part of elderly care monitoring or in the case of building
 automation, to run certain tasks when a user enters or leaves the room or a building.
+
+\section{Table of profiles}
+
+While in related work we examined load profiling in general,
+this section focuses on how data in load profiles is presented.  
+It can be portrayed in various shapes and forms,
+using all kinds of attributes and features to do so. 
+First, main load profiling features will be defined.
+Second, using these features a general load profile Table will be constructed.
+Third, references from related work and use-cases will be mapped to the table.
+Using this information main features will be selected.
+Fourth, using a reduced feature set a more detailed Table will be formed.
+Again, the Table will be populated using the same references as before.
+Finally, using this information a research direction will be formed.
+
+\subsection{Feature set} \label{sec:feature_set}
+
+If we want to find the base features, we have to look at how consumption measurements are 
+done in most buildings. 
+Knowing the following three features, we are able to know the amount of energy consumed by the user.
+
+\begin{figure}[H]
+  \Tree[.base\ features [.power ]
+          [.timestamp ]
+          [.name ]
+                ]
+\end{figure}
+
+If we translate these features to the time domain and observe them over 
+a specified amount of time new features emerge. 
+The most notable example is the observation of electrical power over one hour.
+The result is energy (Wh) and it is one of the most common ways used to bill a customer for his power consumption.
+
+% Time domain
+\begin{figure}[H]
+  \Tree[.time\ domain\ features [.energy $E$ ]
+          [.number\ of\ activations $N_{act}$  ]
+          [.operating\ time $t_{oper}$  ]
+                ]
+\end{figure}
+
+
+We can also extract features such as a number of activations or time of operation for each activation.
+This can be done using sensors to detect activity or even deduct this from power consumption data.
+In cases where we are observing individual appliances, this can be done using simple signal processing
+techniques. In cases where we are observing buildings, this could be achieved using more complex disaggregation algorithms also known as NILM algorithms.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Simple signal processing of power consumption for a single appliance"}
+	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/singal_processing.png}
+	\label{fig:sig_proc_fig}
+\end{figure}
+
+As we can see in Figure \ref{fig:sig_proc_fig} all three time domain features can be extracted from the graph. 
+Energy $E$ is equal to the area under the graph or in other words integral of power over time. 
+$N_{act}$ can be measured based on the number of times the power value exceeded some pre-defined threshold. 
+The $t_{oper}$ is the time between on and off events, where we use the same threshold as with $N_{act}$.
+While there are other features, such as time between activations, or total operational time that could be
+extracted, these were not commonly used in related work.
+
+\begin{figure}[H]
+\Tree[.frequency\ domain\ features [.Operation\ Modes ]]
+\end{figure}
+The same as we can present power in the time domain, the same can be done in the frequency domain. 
+One actual example can be seen in Figure \ref{fig:freq}.
+Here, it is hard to extract more features, but one possibility could be
+detecting the number of operation modes based on the number of peaks, using signal processing algorithms.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Frequency of Power values for the toaster (actual data from REFIT dataset)"}
+	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/freq.png}
+	\label{fig:freq}
+\end{figure}
+
+In the case of Figure \ref{fig:freq} we are observing a toaster over one year.
+Toasters are usually simple appliances using a heating element and a thermostat, meaning that the power consumption should be constant and set by the resistance of the heating element.
+The Figure shows \ref{fig:freq} a nice normal distribution of power values around 3 kW, 
+which we can assume is the heating element.
+We can notice two other peaks one at roughly 1 kW and the other at 0.7 kW.
+Since toasters usually do not have operation modes, we could assume that there 
+are other appliances plugged into the metering device, 
+meaning this could be a use-case for this kind of load profile.
+
+% Combining these features with  related work from section \ref{sec:related_work} and use-case references from section \ref{sec:use-cases},
+% we can extract the most commonly used features to portray the load profiles.
+
+% \begin{outline}
+%     \1 power
+%     \1 time
+%     \1 appliances (a set)
+%     \1 operating time (how long appliance or appliances is turned on)
+%     \1 number of activations (How many times appliance or appliances were turned on)
+% \end{outline}
+
+\subsection{General table}
+Using these features we can form a Table with all possible combinations.
+Table \ref{tab:general_map} is then populated with references from previous chapters.
+To understand the Table more clearly, let's imagine that each feature is used as an axis label when plotting. 
+
+\begin{table}[H]
+    \centering
+    \caption{General Table of load profiles}
+    \label{tab:general_map}
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+        &
+        \begin{tabular}[c]{@{}l@{}}power \end{tabular} &
+        \begin{tabular}[c]{@{}l@{}}number of\\ activations \end{tabular} \\ \hline
+        \begin{tabular}[c]{@{}c@{}}time\end{tabular}        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Chuan2014} \\ \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \\ \citeyear*{WALKER1985} \\ 	\citeyear*{GERBEC2005} \\ 	\citeyear*{Gao2018} \\ 	\citeyear*{Jeong2021}\\  	\citeyear*{Joana2012} \\ 	\citeyear*{DER_heatmap_profile}\\ 	\citeyear*{NILMAD2019}\\	\citeyear*{NILMAD22019} \\	\citeyear*{Issi2018} \\	\citeyear*{NILMAD2021}\\	\citeyear*{Castangia2021} \\	\citeyear*{occupancy2013} \\	\citeyear*{Chuan2014} \\ 	\citeyear*{CAPASSO1994} \\ 	\citeyear*{Park2019} \\	\citeyear*{UKDALE} \\	\citeyear*{Gao2018}    \end{tabular}} &  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{per_appliance_per_building} \\ \citeyear*{UKDALE} \end{tabular}}  \\ \hline
+        \begin{tabular}[c]{@{}c@{}}operation\\ time \end{tabular}                                          & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}  \citeyear*{NILMAD2021}  \end{tabular}} &  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{NILMAD2019} \\ \citeyear*{NILMAD22019} \\ \citeyear*{NILMAD2021} \end{tabular}}  \\ \hline
+    \end{tabular}
+\end{table}
+
+Table \ref{tab:general_map} shows a combination of base features of power and time with 21 publications. 
+One example of such profile can be seen on Figure \ref{fig:sig_proc_fig} or \ref{fig:daily_power_profile} and is also known as standard load profile (SLP).
+
+As we have seen in the previous section, the two other features, operation time and a number of activations are a derivation of the base features.
+A combination of the two has been used in three other papers.
+It shows how many times the appliance was activated for a certain amount of time. 
+This load profile is commonly used for anomaly detection.
+
+Derived features can be used in a combination with the base features.
+The combination between power and operation time LP shows us how long did an appliance operate for a certain amount of time.
+Only one publication used this set of features.
+Combining the time and number of activations LP could for example present at what time of the day appliance is being used the most.
+We have sourced only two publications that used this set of features.
+
+Based on Table \ref{tab:general_map} it is possible to see that the most commonly
+published feature combination is time and power. This combination will be used 
+as a baseline when making a more detailed table. Although the operating time feature was 
+explored in a few publications, we are focusing on activation-based histogram representation.
+Based on Table \ref{tab:general_map} it is possible to see that not much attention was given to it. 
+
+There are many more ways to present the data. An extended Table can be found in Appendix \ref{AppendixB}.
+
+\subsection{Detailed table}
+
+This section will focus on exploring possible load profiles using activation-based histogram representation,
+while using the power feature as a baseload. 
+Features from \ref{tab:general_map} will be explored in higher detail. 
+They will be split and arranged in a way that all 21 publications using power-based presentations and 3 using activation-based presentations will be divided into as many groups as possible. 
+This should expose possible activation-based profiles as well as unpublished power-based profiles.
+
+\subsubsection{Sub-features} \label{sec:subfeatures}
+
+General features were already described in section \ref{sec:feature_set}.
+It is possible to further divide them into smaller so-called sub-features.
+These are reshaped and grouped as follows:
+\begin{outline}
+
+\1 Way of presenting a profile
+\2 Per-building 
+\2 Per-appliance 
+\2 Per-building and per appliance
+
+\1 By time range of profile 
+\2 Daily
+\2 Weekly
+\2 Monthly
+\2 Yearly
+
+\1 Way of measuring usage
+\2 Average power use 
+\2 Number of activations
+\end{outline}
+
+
+\subsection{Table of combinations or detailed table}
+
+The above-shown profiles can be combined, yielding a new way of displaying the data.
+Bellow, a map with combinations of the above-mentioned profiles is presented. 
+The purpose of Table \ref{fig:map_fig} to generate and show possible combinations.
+Some combinations that had similar output were grouped, and some that could not be sketched were discarded. 
+
+The profiles and Figure graphics used in the Table \ref{fig:map_fig} were sourced from the Chapter \ref{chapter1} Section \ref{sec:LP_types}.
+
+\begin{figure}[H]
+	\centering
+	\caption{"Table of combinations"}
+	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/Slide14.png}
+	\label{fig:map_fig}
+\end{figure}
+
+Figure above \ref{fig:map_fig}, uses features from previous subsection \ref{sec:subfeatures}. 
+In general, the Table is formatted in a way that features from columns (time range) are
+used in the x-axis of a plot, and rows (consumption data) are used in the y or z-axis of a plot. 
+
+The column of the Table presents the time domain. "Daily" means that the load profile presents
+average usage for one day, weekly means it presents usage for a week.
+To be clear, for one to construct a decent daily profile, one needs a few
+weeks of data. The same goes for yearly profiles, in that case, one needs many years' worth of data. 
+
+The top row of the Table is composed of 3 main groups. 
+The first group focuses on per-building energy consumption.
+The second group examines the energy consumption of each appliance in a house separately.
+Third group analyses all appliances in a building.
+
+The next row of the Table is further divided into two groups. 
+First is the LP group which presents the given usage unit on the y-axis and time on the x-axis. 
+Next is an LP with an additional time axis. 
+In this case, we present the given usage unit on the z-axis and then time on the x and y-axis.
+Here, the second-time dimension can be anything from a week to a year.
+In the case of the per-building, the subgroup includes appliances instead of time. 
+Example for this is Figure \ref{fig:heatmap_all_appl}.
+
+The last row presents the usage unit, that is power (P) or a number of activations (A).
+
+In cases where feature combination does not make sense it is marked with an X.
+
+\subsection{Mapping references to the Table of profiles}
+
+To find useful load profiles, references from related work ( section \ref{sec:related_work}) must be mapped.
+
+\begin{table}[H]
+	\caption{Table presents previously mentioned load profiles}
+	\label{tab:contributions}
+	\begin{tabular}{|l|cccc|cccc|cccc|}
+	\hline
+	Description                                                   & \multicolumn{4}{c|}{Per-building}                                                                                               & \multicolumn{4}{c|}{Per-appliance}                                                                                           & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}}                                                         \\ \hline
+																 & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} + daily time \\ dimension \end{tabular}} & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} + daily time \\ dimension \end{tabular}} & \multicolumn{2}{c|}{LP}                               & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P}    & \multicolumn{1}{c|}{A}    & \multicolumn{1}{c|}{P}                               & A                               \\ \hline
+	Daily                                                        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{UKDALE} \\ \citeyear*{Chuan2014} \\ \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{WALKER1985} \\ \citeyear*{GERBEC2005} \\ \citeyear*{Gao2018} \\ \citeyear*{Jeong2021} \\ \citeyear*{Joana2012} \\ \citeyear*{DER_heatmap_profile} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{X}  &  X  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{NILMAD2019} \\ \citeyear*{NILMAD22019} \\ \citeyear*{Issi2018} \\ \citeyear*{NILMAD2021} \\ \citeyear*{Castangia2021} \\ \citeyear*{occupancy2013}	\end{tabular}}  & \multicolumn{1}{c|}{\citeyear*{UKDALE}}  & \multicolumn{1}{c|}{X}   &  \multicolumn{1}{c|}{X}   & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{Chuan2014} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{Gao2018} 	\end{tabular}}   & \multicolumn{1}{c|}{\citeyear*{UKDALE}}     & \multicolumn{1}{c|}{}      &    \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular}    & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{2D_year_day_LP} \\ \citeyear*{Park2019} \\ \citeyear*{DER_heatmap_profile} \end{tabular}}                            &                           & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{\citeyear*{per_appliance_per_building}}  & \multicolumn{1}{c|}{}                          &                           & \multicolumn{1}{c|}{\citeyear*{weekly_per_appliance_LP}}    & \multicolumn{1}{c|}{\citeyear*{per_appliance_per_building}}     & \multicolumn{1}{c|}{}                                &                                 \\ \hline
+	Yearly                                                       & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}                          &                           & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}                          &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}                                &                                 \\ \hline
+	\end{tabular}
+\end{table}
+
+As can be seen from Table \ref{tab:contributions}, most of the work (14 publications) has been done with standard daily load profiles with
+per-building power usage such as Figure \ref{fig:daily_power_profile}. 
+Quite a lot of work (6 publications) has been done with per-appliance daily power profiles.
+A few publications were based on weekly and yearly load profiles,
+and a few used two-dimensional time and power presentations.
+Only one publication found used activation and time-based histogram such as 
+shown in Figure \ref{fig:daily_act_profile}. During the research we focused on publications
+from minority classes, meaning not all existing publications for standard load profiles are included. 
+The purpose of Table \ref{tab:contributions} is to present missing scientific contributions and patterns of publications.  
+
+\newcommand{\tabVar}{+ daily time \\ dimension  }
+
+\subsection{Mapping use-cases to the Table of combinations}
+
+Table \ref{tab:use_cases} includes arranged publications from the use-cases Section \ref{sec:use-cases}. 
+Similar pattern emerged as in Table \ref{tab:contributions}. 
+
+\begin{table}[H]
+	\caption{Table presents references mentioned in use-cases chapter}
+	\label{tab:use_cases}
+	\begin{tabular}{|l|cccc|cccc|cccc|}
+	\hline
+	Description &
+	  \multicolumn{4}{c|}{Per-building} &
+	  \multicolumn{4}{c|}{Per-appliance} &
+	  \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\  \hline
+	  &
+	  \multicolumn{2}{c|}{LP} &
+	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
+	  \multicolumn{2}{c|}{LP} &
+	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
+	  \multicolumn{2}{c|}{LP} &
+	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+	  \multicolumn{1}{c|}{P} &
+	  \multicolumn{1}{c|}{A} &
+	  \multicolumn{1}{c|}{P} &
+	  A &
+	  \multicolumn{1}{c|}{P} &
+	  \multicolumn{1}{c|}{A} &
+	  \multicolumn{1}{c|}{P} &
+	  A &
+	  \multicolumn{1}{c|}{P} &
+	  \multicolumn{1}{c|}{A} &
+	  \multicolumn{1}{c|}{P} &
+	  A \\ \hline
+	Daily &
+	  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{energy_saving1} \\ \citeyear*{energy_saving3} \\ \citeyear*{EV2020} \\ \citeyear*{energyStealing2018} \\ \citeyear*{shift2015} \\ \citeyear*{optimiseCostShift2015} \\ \citeyear*{controll2014} \end{tabular}} &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{X} &
+    X
+	   &
+	  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{EV2020} \\ \citeyear*{elder1} \\ \citeyear*{elder2} \\   \citeyear*{occupancy2013}	  \end{tabular}} &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{X} &
+    X
+	   &
+	  \multicolumn{1}{c|}{\citeyear*{Chuan2014}	 } &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{} &
+	   \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular} &
+	  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{energy_saving3} \\ \citeyear*{KAVOUSIAN2013184}  \end{tabular}} &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{} &
+	   &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{} &
+	   &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{} &
+	   \\ \hline
+	Yearly &
+	  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\citeyear*{energy_saving3}\end{tabular}} &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{} &
+	   &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{} &
+	   &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{} &
+	  \multicolumn{1}{c|}{} &
+	   \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{Table of use-case groups}
+
+The Table \ref{tab:groups} presents same publications as Table \ref{tab:use_cases},
+but only group names are shown.
+The Table indicates how groups are arranged.
+Where anomaly detection and elderly care are dominating in the per-appliance part of the table,
+zero energy buildings and demand response are dominating in a per-building part of the table. 
+
+\begin{table}[H]
+    \caption{Table presents references mentioned in use-cases chapter}
+	\label{tab:groups}
+    \begin{adjustbox}{width=1.2\textwidth,center=\textwidth} 
+        \begin{tabular}{|l|cccc|cccc|cccc|}
+            \hline
+            \begin{tabular}[c]{@{}l@{}}ZEB - zero energy buldings\\ DR - demand response\\ AD - anomaly detection\\ EC - elderly care\\ X - unfeasible\end{tabular} &
+              \multicolumn{4}{c|}{Per-building} &
+              \multicolumn{4}{c|}{Per-appliance} &
+              \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
+             &
+              \multicolumn{2}{c|}{LP} &
+              \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
+              \multicolumn{2}{c|}{LP} &
+              \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
+              \multicolumn{2}{c|}{LP} &
+              \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
+            \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+              \multicolumn{1}{c|}{P} &
+              \multicolumn{1}{c|}{A} &
+              \multicolumn{1}{c|}{P} &
+              A &
+              \multicolumn{1}{c|}{P} &
+              \multicolumn{1}{c|}{A} &
+              \multicolumn{1}{c|}{P} &
+              A &
+              \multicolumn{1}{c|}{P} &
+              \multicolumn{1}{c|}{A} &
+              \multicolumn{1}{c|}{P} &
+              A \\ \hline
+            Daily &
+              \multicolumn{1}{c|}{ZEB, DR} &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{X} &
+              X
+               &
+              \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB\end{tabular}} &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{X} &
+              X
+               &
+              \multicolumn{1}{c|}{DR} &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{} &
+               \\ \hline
+            \begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular} &
+              \multicolumn{1}{c|}{ZEB} &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{} &
+               &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{} &
+               &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{} &
+               \\ \hline
+            Yearly &
+              \multicolumn{1}{c|}{ZEB} &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{} &
+               &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{} &
+               &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{} &
+              \multicolumn{1}{c|}{} &
+               \\ \hline
+            \end{tabular}
+    \end{adjustbox} 
+    \end{table}
+
+The figures listed above clearly depict the void not filled by publications. 
+Although they may not be published, they still have a possible use case. 
+In Table \ref{tab:groups_proposed} empty spaces are filled 
+with possible use-cases for given load profiles. 
+
+\begin{table}[H]
+    \caption{"Proposed use-cases for profiles"}
+    \label{tab:groups_proposed}
+    \begin{adjustbox}{width=1.2\textwidth,center=\textwidth} 
+    \begin{tabular}{|l|cccc|cccc|cccc|}
+    \hline
+    \begin{tabular}[c]{@{}l@{}}ZEB - zero energy buildings\\ DR - demand response\\ AD - anomaly detection\\ EC - elderly care\\ X - unfeasible\end{tabular} &
+      \multicolumn{4}{c|}{Per-building} &
+      \multicolumn{4}{c|}{Per-appliance} &
+      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
+     &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A \\ \hline
+    Daily &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR,\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR,\end{tabular}} &
+      \multicolumn{1}{c|}{X} &
+      X &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} X \end{tabular}} &
+      \begin{tabular}[c]{@{}c@{}} X \end{tabular} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular}} &
+      \begin{tabular}[c]{@{}c@{}}AD, EC,\\ ZEB, DR\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR,\end{tabular}} &
+      \multicolumn{1}{c|}{ZEB, DR} &
+      ZEB, DR &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular} \\ \hline
+    Yearly &
+      \multicolumn{1}{c|}{ZEB, DR} &
+      \multicolumn{1}{c|}{ZEB, DR} &
+      \multicolumn{1}{c|}{ZEB, DR} &
+      ZEB, DR &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{ ZEB, DR } &
+      ZEB, DR &
+      \multicolumn{1}{c|}{ZEB,DR}  &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular}} &
+      \begin{tabular}[c]{@{}c@{}}AD,\\ ZEB, DR\end{tabular} \\ \hline
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
+
+\subsection{Table of load profile potentials} \label{subsec:potential}
+
+Some combinations are indeed illogical and again others are less useful in a practical sense.
+The next Table will try to rate the scientific potential of the profiles based on two characteristics. 
+First is how well data is presented to the user,
+meaning that the load profile is clear at what it is presenting.
+The second is the effectiveness when being used in an algorithm, or in other words, how well data is presented to a machine. 
+These characteristics can not be easily measured,
+but it is possible to extract them based on the pattern of publications.
+To do that, we have to make two assumptions.
+The first one would be, that the larger the number of publications, the larger is the effectiveness of presenting the data to a human.
+The second would be, that the larger the number of use cases, the better the effectiveness of presenting the data to a machine.
+Using these two assumptions, we propose the following table. 
+The Table has four possible classes. 
+
+\begin{outline} 
+\1 1 - The load profile satisfies both assumptions and has a high utility rate and was already researched (very useful, but with low research potential). 
+\1 2 - The load profile satisfies only one of the above-mentioned assumptions (has mid-research potential).
+\1 3 - The load profile does not suffice any of the above-mentioned assumptions and was not yet researched or practically used (high research potential, could be hard to utilize).
+\1 X - The load profile is inexplicable (does not make any sense).
+\end{outline}
+
+\begin{table}[H]
+    \caption{Proposed classification of profiles}
+    \label{tab:classified_profiles}
+    \begin{tabular}{|l|cccc|cccc|cccc|}
+    \hline
+     &
+      \multicolumn{4}{c|}{Per-building} &
+      \multicolumn{4}{c|}{Per-appliance} &
+      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
+     &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A \\ \hline
+    Daily &
+      \multicolumn{1}{c|}{1} &
+      \multicolumn{1}{c|}{3} &
+      \multicolumn{1}{c|}{X} &
+      X &
+      \multicolumn{1}{c|}{1} &
+      \multicolumn{1}{c|}{2} &
+      \multicolumn{1}{c|}{X} &
+      X &
+      \multicolumn{1}{c|}{1} &
+      \multicolumn{1}{c|}{2} &
+      \multicolumn{1}{c|}{3} &
+      3 \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular} &
+      \multicolumn{1}{c|}{1} &
+      \multicolumn{1}{c|}{3} &
+      \multicolumn{1}{c|}{2} &
+      3 &
+      \multicolumn{1}{c|}{3} &
+      \multicolumn{1}{c|}{2} &
+      \multicolumn{1}{c|}{3} &
+      3 &
+      \multicolumn{1}{c|}{2} &
+      \multicolumn{1}{c|}{2} &
+      \multicolumn{1}{c|}{3} &
+      3 \\ \hline
+    Yearly &
+      \multicolumn{1}{c|}{1} &
+      \multicolumn{1}{c|}{3} &
+      \multicolumn{1}{c|}{3} &
+      3 &
+      \multicolumn{1}{c|}{3} &
+      \multicolumn{1}{c|}{3} &
+      \multicolumn{1}{c|}{3} &
+      3 &
+      \multicolumn{1}{c|}{3} &
+      \multicolumn{1}{c|}{3} &
+      \multicolumn{1}{c|}{3} &
+      3 \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Table of possible future research directions}
+
+The Table \ref{tab:classified_profiles} shows which profiles were researched and which were not.
+To find future research directions we must look into profiles that were least researched.
+These profiles are marked with the number 3 on Table \ref{tab:classified_profiles}.
+Some profiles were not researched because they may not present data as well,
+and some were simply overlooked. 
+
+This is why we have built the following Table \ref{tab:future_rd}.
+The Table was marked as follows:
+
+\begin{outline} 
+\1 (1) - The load profile has high potential. 
+\1 (2) - The load profile has mid-potential.
+\1 Empty - The load profile has low potential or was already researched.
+\1 X - load profile is inexplicable
+\end{outline}
+
+The process of evaluation was a bit complicated, but it can be summed down to the following rules.
+
+If the load profile was used as a power profile, can it be used as an activation profile?
+Here, we must use common sense.
+For an example. If we follow this rule for per-building power load profiles, it 
+turns out that activation load profiles are not as useful since they are based on per-appliance load profile.
+In other words, to build per-building activation load profiles we need per-appliance (sub-meter) data anyway.
+That is why we have assigned them to the second class.
+
+The second rule was applicable for 3D profiles.
+In the case where one dimension was commonly used, it is probably worth investigating it with a combination of additional dimensions. 
+
+Following these rules, the Table  \ref{tab:future_rd} was constructed.
+
+
+\begin{table}[H]
+    \caption{Possible future research contributions}
+    \label{tab:future_rd}
+    \begin{tabular}{|l|cccc|cccc|cccc|}
+    \hline
+     &
+      \multicolumn{4}{c|}{Per-building} &
+      \multicolumn{4}{c|}{Per-appliance} &
+      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
+     &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A \\ \hline
+    Daily &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{(2)} &
+      \multicolumn{1}{c|}{X} &
+      X
+       &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{X} &
+      X
+       &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{(1)} &
+      (1) \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{(2)} &
+      \multicolumn{1}{c|}{} &
+      (1) &
+      \multicolumn{1}{c|}{(1)} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{(1)} &
+      (1) &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{(2)} &
+      (2) \\ \hline
+    Yearly &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+       &
+      \multicolumn{1}{c|}{(2)} &
+      \multicolumn{1}{c|}{(2)} &
+      \multicolumn{1}{c|}{} &
+       &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{(2)} &
+      (2) \\ \hline
+    \end{tabular}
+\end{table}
+
+Table \ref{tab:future_rd} presents the possible future research directions. 
+While some LPs have mid-research potential according to our rules, they are still worth investigating. 
+In science, it often happens that use-cases change over time and research that seemed inapplicable suddenly finds its place.
+
+We will focus on profiles with high research potential and use the number of activation as a unit of measure.
+When the aforementioned parameters are applied, 
+the result is Table \ref{tab:our_rd}
+
+\begin{table}[H]
+    \caption{Load profiles to be pursued }
+    \label{tab:our_rd}
+    \begin{tabular}{|l|cccc|cccc|cccc|}
+    \hline
+     &
+      \multicolumn{4}{c|}{Per-building} &
+      \multicolumn{4}{c|}{Per-appliance} &
+      \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
+     &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
+      \multicolumn{2}{c|}{LP} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A &
+      \multicolumn{1}{c|}{P} &
+      \multicolumn{1}{c|}{A} &
+      \multicolumn{1}{c|}{P} &
+      A \\ \hline
+    Daily &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{X} &
+      X
+      &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{X} &
+      X
+      &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      (1) \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      (1) &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      (1) &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+       \\ \hline
+    Yearly &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+       &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+       &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{} &
+       \\ \hline
+    \end{tabular}
+    \end{table}
+
+
+Based on the Table \ref{tab:our_rd} we will use the following profiles in the following chapters.
+
+In chapter \ref{Chapter5} we will use 
+\begin{itemize}
+  \item Per-building daily-weekly load profile
+  \item Per-appliance daily-weekly load profile
+\end{itemize}
+
+with a t-SNE neighboring algorithm to find how they are related in high dimensional space.
+
+In chapter \ref{Chapter6} we will use
+\begin{itemize}
+  \item Per-building Per-appliance daily load profiles with appliances side by side
+\end{itemize}
+To build assisted living system for the elderly.
 
