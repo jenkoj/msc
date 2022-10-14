@@ -54,12 +54,12 @@ The two profiles, therefore present different contextual cases.
 	~ 
 	\begin{subfigure}{.5\textwidth}
 		% \centering
-		\caption{"Yearly"}
+		\caption{Yearly}
 		\includegraphics[width=1\linewidth]{../Figures/LPS/SLPyearly2.png}
 		\label{fig:SLPyearly2}
 	\end{subfigure}%
 	\label{fig:SLP}
-	\caption{per-building load profiles}
+	\caption{Per-building load profiles}
 \end{figure}
 
 The first Figure \ref{fig:SLPdaily2} shows how activations change throughout the day.
@@ -85,7 +85,7 @@ The result is a Figure \ref{fig:SLPHMyearly2} showing more complex activation pa
 
 \begin{figure}[H]
 	\centering
-	\caption{"Two-dimensional time per-building load profile"}
+	\caption{Two-time-dimensional per-building load profile}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/SLPHMyearly2.png}
 	\label{fig:SLPHMyearly2}
 \end{figure}
@@ -93,8 +93,8 @@ The result is a Figure \ref{fig:SLPHMyearly2} showing more complex activation pa
 By combining the Figures and presenting them with a heat map, additional features are revealed.
 For example, the black lines are the ones that probably present the vacation or other events where dwellers are away from home.
 
-When analyzing Figure \ref{fig:SLPyearly2} it seems like dips in activity are for a similar reason, but the Figure  \ref{fig:SLPHMyearly2} shows these two dips from a different perspective.
-The peak activity in Figure \ref{fig:SLPHMyearly2} shows a routine or a pattern similar to what was seen in  \ref{fig:SLPdaily2}, one peak in the morning and one in the evening. 
+When analyzing Figure \ref{fig:SLPyearly2} it seems like dips in activity are for a similar reason, but Figure \ref{fig:SLPHMyearly2} shows these two dips from a different perspective.
+The peak activity in Figure \ref{fig:SLPHMyearly2} shows a routine or a pattern similar to what was seen in \ref{fig:SLPdaily2}, one peak in the morning and one in the evening. 
 The same pattern can be observed in winter dip, even though the pattern is less clear it is present.
 The same cannot be said for the summer dip in the middle of the plot, Here, while the morning peak is visible, the evening one can barely be detected.
 
@@ -115,18 +115,18 @@ Additionally, it is possible to analyze the usage of a single appliance in great
 
 \begin{figure}[H]
 	\centering
-	\caption{"Daily per-appliance load profile"}
+	\caption{Daily per-appliance load profile}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/WM_daily.png}
 	\label{fig:WM_daily}
 \end{figure}
 
 Looking at Figure \ref{fig:WM_daily}, we can detect a similar pattern as in per-building Section \ref{sec:per_building}. 
 While the peaks are closer together, the pattern remains.
-One thing to notice here is that the washing machine is used only throughout the day, this means that the household does not use the cheaper tariffs during the night time.
+One thing to notice here is that the washing machine is used only throughout the day, this means that the household does not use the cheaper tariffs during the nighttime.
 
 Another parameter that was not explicitly mentioned before, is the resolution of load profiles. 
 Histograms can be presented using various resolutions or numbers of buckets.
-An optimal number of buckets is a number that clearly presents the usage pattern. 
+An optimal number of buckets is a number that presents the usage pattern clearly. 
 3-hour bucket size in Figure \ref{fig:4hours} does a good job at presenting the appliance usage at the main parts of the day.
 This offers a better contextual presentation that is easier to process using algorithms.
 As we can see in Figure \ref{fig:4hours}, by increasing the extent of buckets, the two peaks join together into one larger peak.
@@ -134,7 +134,7 @@ This coincides with the point of the presentation, where we want to present a mo
 
 \begin{figure}[H]
 	\centering
-	\caption{"Daily per-appliance load profile with larger buckets sizes"}
+	\caption{Daily per-appliance load profile with larger buckets sizes}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/3_hours.png}
 	\label{fig:4hours}
 \end{figure}
@@ -143,7 +143,7 @@ While the low resolution is useful for contextual presentation,
 high resolution is needed for time-sensitive applications such as elderly care,
 where we have to detect an accident as soon as possible.
 The hourly resolution would mean that in case of an accident system would need at least an hour to detect it.
-While this is sufficient for demonstrating the capabilities, real implementation would need to use lower resolution data.
+While this is sufficient for demonstrating the capabilities, real implementation would need to use lower-resolution data.
 
 In the case where dwellers have different usage patterns during the weekends, two profiles would have to be developed.
 It is possible to present them both at once such as in Figure \ref{fig:WM_ww_daily}. 
@@ -159,7 +159,7 @@ drastic one, at least in this case.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Normalized daily per-appliance with weekday and weekend load profiles"}
+	\caption{Normalized daily per-appliance with weekday and weekend load profiles.}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/WM_ww_daily.png}
 	\label{fig:WM_ww_daily}
 \end{figure}
@@ -174,7 +174,7 @@ This kind of presentation could also be used to detect daily anomalies.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Weekly per-appliance load profile"}
+	\caption{Weekly per-appliance load profile}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/WM_weekly.png}
 	\label{fig:WM_weekly}
 \end{figure}
@@ -185,7 +185,7 @@ This is useful for grid management and energy saving, where one could detect sea
 
 \begin{figure}[H]
 	\centering
-	\caption{"Yearly per-appliance load profile"}
+	\caption{Yearly per-appliance load profile}
 	\includegraphics[width=0.8\textwidth]{../Figures/LPS/WM_yearly.png}
 	\label{fig:WM_yearly}
 \end{figure}
@@ -203,7 +203,7 @@ it is possible to generate Figure \ref{fig:wm_hm_weekly}.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Two-dimensional time per-appliance load profile"}
+	\caption{Two-dimensional time per-appliance load profile}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/wm_hm_weekly.png}
 	\label{fig:wm_hm_weekly}
 \end{figure}
@@ -216,7 +216,7 @@ The first one is to decrease production, which can be slow and expensive.
 The second option is to load the grid, which can be done in many ways.
 One of the ways is to turn on appliances using a direct load control system or notify users to turn on appliances that they have commonly used at that time in the past. 
 Due to the increasing percentage of renewable energy sources, more and more energy peaks will be weather dependent.
-By combining weekly wind forecasts, weekly cloud coverage, and users consumption profiles energy providers could notify users to turn on their appliances at peak usage times.
+By combining weekly wind forecasts, weekly cloud coverage, and user consumption profiles energy providers could notify users to turn on their appliances at peak usage times.
 
 
 By analyzing Figure \ref{fig:wm_hm_weekly} it is possible to see that the user uses a washing machine,
@@ -244,7 +244,7 @@ Since the pattern seems to bounce back, it could be seasonally correlated.
 The second example is Sub-figure \ref{fig:HM_Ywh_tv}. It shows how TV usage changes over the year.
 Compared to the computer, it is possible to see that the pattern looks a lot more persistent with slight changes.
 Interestingly enough, when a close-up observation is made, it is possible to see that at the time when the computer was at its peak
-the TV was at its low. And when the usage of computers decreased, the usage of TV increased. 
+the TV was at it's low. And when the usage of computers decreased, the usage of TV increased. 
 Due to the lack of metadata, it is hard to know the exact reason behind it. 
 
 The good thing about this change is, that it takes a few weeks before it changes. 
@@ -262,24 +262,24 @@ This practice suddenly stops at week 13, until it appeared back in week 36.
 \begin{figure}[H]
 	\begin{subfigure}{.32\textwidth}
 		\centering
-		\caption{"Computer"}
+		\caption{Computer}
 		\includegraphics[width=0.9\textwidth]{../Figures/LPS/HM_Ywh_comp.png}
 		\label{fig:HM_Ywh_comp}
 	\end{subfigure}%
 	\begin{subfigure}{.32\textwidth}
 		\centering
-		\caption{"TV"}
+		\caption{TV}
 		\includegraphics[width=0.9\textwidth]{../Figures/LPS/HM_Ywh_tv.png}
 		\label{fig:HM_Ywh_tv}
 	\end{subfigure}%
 	\begin{subfigure}{.32\textwidth}
 		\centering
-		\caption{"Washing machine"}
+		\caption{Washing machine}
 		\includegraphics[width=0.9\textwidth]{../Figures/LPS/HM_Ywh_wm.png}
 		\label{fig:HM_Ywh_wm}
 	\end{subfigure}%
 	
-	\caption{Various yearly two-dimensional load profiles for building 4 from REFIT}
+	\caption{Various yearly two-dimensional load profiles for building 4 from REFIT.}
 	\label{fig:var_2d_lpss}
 \end{figure}
 
@@ -289,29 +289,29 @@ Roughly 5 years of data mean that it is possible to build a decent profile.
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\caption{"solar thermal pumping station"}
+		\caption{Solar thermal pumping station}
 		\includegraphics[width=0.9\textwidth]{../Figures/LPS/solar_thermal_pumping_station.png}
-		\label{fig:solar thermal pumping station}
+		\label{fig:solar_thermal_pumping_station}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\caption{"light"}
+		\caption{Light}
 		\includegraphics[width=0.9\textwidth]{../Figures/LPS/light.png}
 		\label{fig:light}
 	\end{subfigure}%
-	\caption{"Effect of seasonal changes on load profiles"}
+	\caption{Effect of seasonal changes on load profiles}
 	\label{fig:effect_of_season}
 
 \end{figure}
 
-Appliance on Figure \ref{fig:solar thermal pumping station} activates when water in solar collectors heats up to a certain threshold.
+Appliance on Figure \ref{fig:solar_thermal_pumping_station} activates when water in solar collectors heats up to a certain threshold.
 Since water heats up based on the strength of solar radiation, we can observe the change in solar radiation throughout the year for the UK. 
 
 Appliance on Figure \ref{fig:light} on the other hand works quite the opposite.
 We usually turn on the light when the solar radiation falls below a certain threshold, and turn it off when we sleep.
 The Figure is one of the best examples, where we can observe the combined effect of user behavior, in this case sleeping, and the seasonal effect of changing solar radiation on users' behavior. 
 
-Combining the Figures \ref{fig:solar thermal pumping station} and \ref{fig:light} enables us to differentiate between the two. 
+Combining the Figures \ref{fig:solar_thermal_pumping_station} and \ref{fig:light} enables us to differentiate between the two. 
 
 \section{Per-building per-appliance}
 
@@ -333,7 +333,7 @@ In case any of these anomalies are detected, the caregiver would be notified to 
 
 \begin{figure}[H]
 	\centering
-	\caption{"Daily per-appliance per-building building load profile"}
+	\caption{Daily per-appliance per-building building load profile}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/PHPA.png}
 	\label{fig:PHPA}
 \end{figure}
@@ -344,7 +344,7 @@ the contribution of each appliance.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Stacked daily per-appliance per-building building load profile"}
+	\caption{Stacked daily per-appliance per-building building load profile}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/stack.png}
 	\label{fig:stack}
 \end{figure}
@@ -353,13 +353,13 @@ These load profiles are useful when it comes to analyzing the usage pattern in o
 To be able to process the load profiles across many buildings a new profile, seen in Figure \ref{fig:BOA}, must be introduced.
 The idea is derived from the bag-of-words method used in text processing, where a list of the most commonly used words is formed, and then used to process the text. 
 Here, It is possible to use the activation data from all five datasets.
-A list of appliances is sorted by a number of activations and then only the top 30 appliances are selected.
+A list of appliances is sorted by the number of activations and then only the top 30 appliances are selected.
 Using this list it is possible to present the usage of each building universally. This solves the issue of different appliances in different buildings.
 
 
 \begin{figure}[H]
 	\centering
-	\caption{"Universal presentation of per-building per-appliance load profile"}
+	\caption{Universal presentation of per-building per-appliance load profile}
 	\includegraphics[width=1\textwidth]{../Figures/LPS/BOA.png}
 	\label{fig:BOA}
 \end{figure}

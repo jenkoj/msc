@@ -17,7 +17,7 @@ There are many solutions to this problem.
 One approach is invasive such as wearables, sound sensors, IR occupancy detectors, etc. 
 This approach has been addressed by thousands of publications, such as reviews \cite{elderReview1}, \cite{elderReview2} and \cite{elderReview3} show and address.
 
-Authors \cite{elderNILM} and \cite{elderNILMDementia} tried to solve this issue using a non-invasive approach with NILM algorithms . 
+Authors \cite{elderNILM} and \cite{elderNILMDementia} tried to solve this issue using a non-invasive approach with NILM algorithms. 
 In the case of a non-invasive approach, no additional meters need to be installed, since per-appliance usage can be disaggregated.
 While this is practical from the "no additional equipment needed" side, it is a bit less practical from the efficiency and accuracy side, especially for larger buildings. 
 
@@ -54,7 +54,7 @@ In this specific case, we will be using 2h buckets, yielding a total of 12 bucke
 \subsubsection{Step two}
 The second step is to ignore appliances that are always on by calculating the standard deviation of activations for each bucket. 
 The activations are normalized between 0 and 1. 
-This step is important so that appliances that are always on, such as fridge or freezer get ignored. 
+This step is important so that appliances that are always on, such as fridges or freezers get ignored. 
 These appliances are detected based on the width of their activation normal distribution. 
 Where periodic (hourly basis) appliances should have narrow distributions, the more dynamic should have wider distributions.
 This can be seen in examples from building 2.
@@ -271,18 +271,18 @@ or else the bucket is labeled as anomalous. In this case, we sum the elements of
         }
         \node at (5.5,0){if SUM >= 2 = not an anomaly };
     \end{tikzpicture}
-    \caption{The evaluation of new bucket compared to matrix. An example is for fifth bucket or fifth row from the matrix}
+    \caption{The evaluation of new bucket compared to matrix. An example is for a fifth bucket or fifth row from the matrix.}
     %\label{arr:microwave_acts_vec}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \caption{"Process of evaluating an anomaly"}
-    \includegraphics[width=1\linewidth]{../Figures/EC/EC_anom_dect.png}
-    \label{fig:anom_detct}
-    \caption{The evaluation of new bucket compared to matrix. An example is for fifth bucket or fifth row from the matrix}
+% \begin{figure}[H]
+%     \centering
+%     \caption{Process of evaluating an anomaly}
+%     \includegraphics[width=1\linewidth]{../Figures/EC/EC_anom_dect.png}
+%     \label{fig:anom_detct}
+%     \caption{The evaluation of new bucket compared to matrix. An example is for a fifth bucket or fifth row from the matrix.}
     
-\end{figure}
+% \end{figure}
 
 This process is done for all samples, where we count normal and anomalous samples for each bucket
 The important thing to note here is that we are evaluating the samples from which the profile was built.
@@ -296,7 +296,7 @@ The important thing to note here is that we are evaluating the samples from whic
         \coordinate (s) at ($(s) + (1,0)$);
         }
     \end{tikzpicture}
-    \caption{Agregated anomalies for each bucket}
+    \caption{Aggregated anomalies for each bucket}
     \label{arr:agg_anom}
 \end{figure}
 
@@ -379,7 +379,7 @@ the elder to check if it is okay.
         \coordinate (s) at ($(s) + (1,0)$);
         }
     \end{tikzpicture}
-    \caption{Using above-mentioned threshold a new mask is made, to check only buckets with high routine}
+    \caption{Using the above-mentioned threshold a new mask is made, to check only buckets with high routine.}
     \label{arr:anom_ratio_mask}
 \end{figure}
 
@@ -394,28 +394,28 @@ The data was split into train and test sets, where 80 \% of the data was used fo
 The data was split based on the number of samples, so in some cases where there is a lot of missing data, the time window of test data might be longer, although it contains only 20 \% of the samples.
 
 \subsubsection{REFIT}
-The REFIT \cite{REFIT} dataset included data for more than 15 buildings, as can be seen on the Figure below.
+The REFIT \cite{REFIT} dataset included data for more than 15 buildings, as can be seen in the Figure below.
 The dataset in general is of the highest quality since it is the longest with the least missing data.
 This means this dataset should give the most relevant results.
 \begin{figure}[H]
 	\centering
-	\caption{"Timeline for REFIT "}
+	\caption{Timeline for REFIT}
 	\includegraphics[width=1\textwidth]{Figures/EC/refit_timeline.png}
 	\label{fig:refit_timeline}
 \end{figure}
 
 \subsubsection{UK-DALE} 
 
-All through the UK-DALE \cite{UKDALE} dataset is of similar size, the most of the data is from building 1.
+Through the UK-DALE \cite{UKDALE} dataset is of similar size, most of the data is from building 1.
 In general, it includes 5 years of data, but only for some appliances, where many appliances are rarely used.
 When taking all of this into account, there were too many issues with building 1, and it was simply ignored.
-Another issue that can be seen on \ref{fig:ukdale_timeline} is that there is not enough data for 
+Another issue that can be seen in Figure \ref{fig:ukdale_timeline} is that there is not enough data for 
 building 3. The test includes only a week of data, which is not enough for representative results, therefore it was ignored.
 The rest of the buildings seem healthy.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Timeline for UK-DALE "}
+	\caption{Timeline for UK-DALE}
 	\includegraphics[width=1\textwidth]{Figures/EC/ukdale_timeline.png}
 	\label{fig:ukdale_timeline}
 \end{figure}
@@ -428,7 +428,7 @@ meaning that there is 80 \% in the train bar, due to missing data the second bar
 
 \begin{figure}[H]
 	\centering
-	\caption{"Timeline for ECO"}
+	\caption{Timeline for ECO}
 	\includegraphics[width=1\textwidth]{Figures/EC/eco_timeline.png}
 	\label{fig:eco_timeline}
 \end{figure}
@@ -464,13 +464,13 @@ They contained less than a month of data.
 
 In the following sections, we will present how the metric changes over given periods of time.
 This will enable us to see that there are patterns that this metric helps reveal. 
-Since we have more than a year of training data, this will enable us to see how the metric changes over years time.
+Since we have more than a year of training data, this will enable us to see how the metric changes over years.
 This enables us to see how routine changes over the year. 
 We cannot use testing data in this case, since there is not enough of it.
 
 \subsubsection{The routine rate through the week} \label{sssec:ratio_week}
 
-As the behavior of the dwellers changes, so does the accuracy of the algorithm. 
+As the behavior of the dweller changes, so does the accuracy of the algorithm. 
 One observation that was made, was that the routine was higher during the week than during the weekends,
 as can be seen in the Figure \ref{fig:ec_week} below. 
 The only exception is Figure \ref{fig:ec_b5week}, which shows that the observation does not hold for all houses. 
@@ -578,7 +578,7 @@ the high routine rate does not necessarily mean the buckets are useful.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Effectivity of anomaly detection through the day"}
+	\caption{Effectivity of anomaly detection through the day}
 	\includegraphics[width=.8\textwidth]{Figures/EC/ignored_buckets_dist.png}
 	\label{fig:ignored_buckets_22}
 \end{figure}
@@ -589,7 +589,7 @@ After applying this rule the following Figure emerges \ref{fig:ignored_buckets_a
 
 \begin{figure}[H]
 	\centering
-	\caption{"Actual effectiveness of anomaly detection through the day"}
+	\caption{Actual effectiveness of anomaly detection through the day}
 	\includegraphics[width=.8\textwidth]{Figures/EC/all_ignored_buckets_dist_incl_act.png}
 	\label{fig:ignored_buckets_act}
 \end{figure}
@@ -657,7 +657,7 @@ Since all outliers are removed, the result converges towards 79 \%, which is the
 \end{figure}
 
 
-As mentioned in the sub-sub section \ref{sssec:ratio_week}, the average routine is different during the week and weekends.
+As mentioned in the sub-sub section \ref{sssec:ratio_week}, the average routine is different during the week and on weekends.
 The assumption was that the routine of elderly people does not change significantly over the week, therefore results should be more relevant if we ignore the weekends.
 The results in Figure \ref{fig:refit_res_nw_1"} show that result improved to 77.08 \%.
 
@@ -669,7 +669,7 @@ The results in Figure \ref{fig:refit_res_nw_1"} show that result improved to 77.
 \end{figure}
 
 By ignoring the minimal and maximal outliers the results increase to 78.21 \%.
-By repeating the process one more time the result increases to 80.20 \%, since all outliers were removed, the result converges towards this value. 
+By repeating the process one more time the result increases to 80.20 \%, since all outliers were removed, the result converges toward this value. 
 
 By removing the weekend data, the results improved by 1.2 \%. 
 
@@ -682,7 +682,7 @@ By removing the weekend data, the results improved by 1.2 \%.
 
 \subsubsection{UK-DALE}
 
-As mentioned in subsection \ref{ssec:ds_eval}, the UK-DALE is not as big and cleaned as the previous dataset, so the results could be less relevant.
+As mentioned in subsection \ref{ssec:ds_eval}, the UK-DALE is not as big and clean of errors as the previous dataset, so the results could be less relevant.
 The results in Figure \ref{fig:ukdale_res}, show that the average result is 74.48 \%. 
 Due to the low number of buildings, it is not possible to detect and ignore outliers.
 
@@ -767,7 +767,7 @@ it is hard to make any other conclusions other than the algorithm works well on 
 
 We know that the reason for installing such a system is that the user is left alone.
 We can assume that on average there is more than one dweller living in the buildings we tested on.
-Since this system would usually be in used by a single dweller,
+Since this system would usually be in use by a single dweller,
 this would be in favor of our algorithm since it would be 
 easier to extract the routine.
 
@@ -818,7 +818,7 @@ how the amount of training and testing data changes over 16 months.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Data for building 1 over 16 months"}
+	\caption{Data for building 1 over 16 months}
 	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/tst_tr_b1.png}
 	\label{fig:dyn_data_1}
 \end{figure}
@@ -828,7 +828,7 @@ This can be seen in Figure \ref{fig:data_used_for_training}.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Data used for training"}
+	\caption{Data used for training}
 	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/data_used_for_training_all.png}
 	\label{fig:data_used_for_training}
 \end{figure}
@@ -837,7 +837,7 @@ To analyze the results, at least 1 year of usable data should be available.
 Figure \ref{fig:data_used_for_training_removed} shows only buildings containing at least one year of data.
 \begin{figure}[H]
 	\centering
-	\caption{"Data used for training, with removed buildings"}
+	\caption{Data used for training, with removed buildings}
 	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/data_used_for_training_removed_short.png}
 	\label{fig:data_used_for_training_removed}
 \end{figure}
@@ -850,7 +850,7 @@ To get more accurate results we will only observe the performance using one year
 
 \begin{figure}[H]
 	\centering
-	\caption{"Data used for training, with removed buildings"}
+	\caption{Data used for training, with removed buildings}
 	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/data_used_for_testing.png}
 	\label{fig:data_used_for_testing}
 \end{figure}
@@ -863,7 +863,7 @@ data for each house.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Effect of new data on metric"}
+	\caption{Effect of new data on metric}
 	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/efect_of_data_on_metric.png}
 	\label{fig:efect_of_data_on_metric}
 \end{figure}
@@ -875,7 +875,7 @@ If the behavior in the household radically changes, it can still lead to a dip.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Metric over 12 months"}
+	\caption{Metric over 12 months}
 	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/1_year_of_iterative_learning_avg.png}
 	\label{fig:1_year_of_iterative_learning_avg}
 \end{figure}
@@ -890,7 +890,7 @@ The average value seems to be on average at around 80 - 85 \%,
 It is hard to compare these results to the ones from normal learning.
 Even though the same data was used, different sections of it were used.
 
-Let's take the last point on the graph where the average is at 85 \% mark for an example.
+Let's take the last point on the graph where the average is at the 85 \% mark for an example.
 Here, the amount of training data is different, since we limited it to one year. 
 The train set is also different since only last month was used, and not 20 \%. 
 There are many differences between train and test sets, therefore we can not compare them.

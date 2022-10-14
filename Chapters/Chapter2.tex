@@ -1,4 +1,4 @@
-\chapter{Related work and Table of profiles}
+\chapter{Related work and table of profiles}
 \label{chapter2}
 
 In the first part of the chapter, we will review the existing work done and show possible use-cases for the load profiles.  
@@ -12,7 +12,7 @@ This will enable us an overview of existing work, and expose possible missing ga
 Work related to load profiling can be found in two research verticals. 
 The first one is load profiling and load profile models, in most cases study the load profile curve of a building or appliance.
 The second vertical is anomaly detection in energy consumption data. There are quite a few connections between the two. 
-For example, if one wants to do anomaly detection, one must first build some kind of "normal consumption profile", which is other words a load profile.
+For example, if one wants to do anomaly detection, one must first build some kind of "normal consumption profile", in other words, a load profile.
 
 \subsection{Load profiling}
 
@@ -25,12 +25,12 @@ Since then there were two more in 1995. Research picked up the pace in 2005 with
 
 \begin{figure}[H]
 	\centering
-	\caption{"Distribution of publications on load profiling from 1985 to 2020. The graph was published by \protect\cite{Review2021}"}
+	\caption{Distribution of publications on load profiling from 1985 to 2020. The graph was published by \protect\cite{Review2021}.}
 	\includegraphics[width=0.9\textwidth]{Figures/publications.png}
 	\label{fig:Distribution}
 \end{figure}
 
-Load-profiling can be performed in two ways: bottom-up and top-down. 
+Load profiling can be performed in two ways: bottom-up and top-down. 
 A bottom-up approach as \cite{SWAN20091819} states "calculates the individual dwelling energy or electricity consumption and extrapolates these results over a target area or region"
 Whereas with Top-down approach as \cite{SWAN20091819} states "uses the total energy or electricity consumption estimates to assign them to the characteristics of the building stock"
 In other more general words, Bottom-up uses sub-meter data, Top-down uses aggregated data. 
@@ -45,13 +45,13 @@ Next, they pointed out future research directions
 and applications of load profiling models. Finally, the author exposes issues that researchers face and addresses possible solutions with conclusions.
 
 \cite{GERBEC2005} tried to assign typical load profiles to a particular group of consumers based on their activity. 
-To achieve that, they used probabilistic neural networks as a way of classification. Their methodology was tested in real use scenario. 
+To achieve that, they used probabilistic neural networks as a way of classification. Their methodology was tested in real-use scenarios. 
 
 \cite{Gao2018} makes use of the bottom-up method to build a forecasting framework for household
 load profiling, which takes into account the consumption patterns of residents. 
 A model falls into the demand-side management subgroup.
 They have developed a "single-day extraction model", designed to select the same days by comparing environmental and household factors, which influence energy consumption.
-By using this approach, they have improved the accuracy of predicting behavioral patterns of dwellers. 
+By using this approach, they have improved the accuracy of predicting the behavioral patterns of dwellers. 
 This method falls into the probabilistic method subgroup. Results show that their method successfully modeled daily usage.
 
 \cite{Chuan2014} uses load profiling to optimize energy consumption distribution during the day.
@@ -68,7 +68,7 @@ able to induce energy-saving behavior.
 \cite{Jeong2021} used extreme points in the appliance usage curve to cluster usage profiles.
 Usually, the first usage peak is in the morning, and the second one is in the evening. 
 Additionally, they used demographic characteristics that are: region, area, age, salary, etc. to improve the results.
-Using collected data, they clustered profiles. They had discovered 6 different usage profiles, 
+Using collected data, they clustered profiles. They discovered 6 different usage profiles, 
 where every cluster had a physical meaning such as energy-saving, morning heavy, evening heavy, etc.
 
 Another clustering methodology was proposed by \cite{Park2019}, using load image profiles and image processing.
@@ -83,7 +83,7 @@ They used PCA and k-means resulting in 5 clusters. Similar to other load profili
 
 Whereas most of the above-mentioned papers focused on aggregated consumption of building to build a load profile,
 authors \cite{Issi2018} focused on appliance-level load profiling.
-Their main contribution was to create a realistic per appliance load profile.
+Their main contribution was to create a realistic per-appliance load profile.
 They developed a wireless measurement system with smart plugs that enabled them to obtain 
 power signatures for each appliance. They evaluated the data and based on observations they determined working cycles for each appliance.
 Furthermore, they concluded that 15 \% of consumed power can be shifted, where they took tariffs into account. 
@@ -149,9 +149,9 @@ They will be an essential part of the European Union's plan to reach zero-energy
 and near-zero-energy buildings \cite{eu2021}. The directive was accepted in 2010 and was recast in 2021.
 The plan is set to be realized in the next decade.
 
-An actual use-case would be an EV owner with an installed PV system and heat pump, who works from home on occasions.
+An actual use-case would be an EV owner with an installed PV system and heat pump, who works from home on occasion.
 In this case, two profiles would be developed. Normal workday and work-from-home day.
-Additional information would be obtained from the users calendar. 
+Additional information would be obtained from the user's calendar. 
 On a normal workday, the system would use PV energy to heat the water and store it, based on the user profile.
 On work-from-home days, the system would start charging the car with the morning sun, using only the PV energy. 
 In the evening hours, when consumption rises and production falls, EVs could inject the power back into the house. 
@@ -160,13 +160,13 @@ With the ever-increasing power capacity and increasing range of EVs, more and mo
 In the case of grid batteries, similar steps could be taken.
 This process is called vehicle-to-grid, and it is an important step towards zero-energy buildings \cite{EV2018} and \cite{EV2020}.
 
-One other way to use user load profiles is to optimally distribute the load by studying users usage patterns as \cite{Chuan2014} and \cite{shift2015} proposed in their papers. 
+One other way to use user load profiles is to optimally distribute the load by studying user's usage patterns as \cite{Chuan2014} and \cite{shift2015} proposed in their papers. 
 This could be further extended to neighborhoods connected into peer 2 peer energy distribution networks.
 As mentioned earlier, the way to save energy consumption is to distribute it as locally as possible. 
-Knowing usage patterns of all peers, the system could optimally distribute the energy using DERs across all homes without dwellers even noticing.
+Knowing the usage patterns of all peers, the system could optimally distribute the energy using DERs across all homes without dwellers even noticing.
 
 Another use-case could be using a heat pump and heat storage,
-where besides users usage patterns system would also obtain weather forecasts from the internet.
+where besides the user's usage patterns system would also obtain weather forecasts from the internet.
 Heat pumps that extract heat from the air are more efficient when temperature differences are smaller. 
 The heat pump could store energy when warm and release the energy when cold.
 Based on the user usage profile, energy could be optimally distributed.
@@ -174,7 +174,7 @@ Based on the user usage profile, energy could be optimally distributed.
 Many papers have been published, where authors explored ways to reduce the energy consumption of users by studying user consumption patterns,
 such as \cite{energy_saving3}, \cite{energy_saving1}, \cite{energy_saving4} and \cite{energy_saving3}.
 Energy saving is done through instant feedback, reduction goals, rewards, and by comparing their user profile to the average user as the authors did in \cite{Csoknyai2019}.
-Source \cite{eu2006} states that as much as 20 \% of energy could be saved by managing the consumption.
+Source \cite{eu2006} states that as much as 20 \% of energy could be saved by managing consumption.
 
 \subsubsection{Demand response}
 
@@ -205,7 +205,7 @@ This would lead to free or even negative prices of electricity since distributio
 For them to stabilize the frequency, they sometimes have to resort to load shedding.
 Load shedding is a process where a load is disconnected from the grid to keep the grid in sync \cite{loadShedding2006}.
 Commonly whole neighborhoods are being disconnected, affecting their daily lives.
-Using user load profiles, distribution companies could disconnect the load in a way that would minimally affect the end-user. 
+Using user load profiles, distribution companies could disconnect the load in a way that would minimally affect the end user. 
 When they would need to load the grid due to low demand, they could charge EVs free of charge or even pay to do so. 
 This benefits the company as well since they do not need to lower energy production, which can be expensive. 
 
@@ -214,7 +214,7 @@ This benefits the company as well since they do not need to lower energy product
 One use-case of anomaly detection was already mentioned in the Elderly care chapter.
 One more thing that could be detected, using load profiling, would be the altered operation of appliances.
 In the case of a fridge, the system would detect that duty cycles are too long.
-The increased duty cycle can be caused by cooling liquid leakage, fridge being open or compressor motor malfunction.
+The increased duty cycle can be caused by cooling liquid leakage, the fridge being open or compressor motor malfunction.
 Heat pumps work on the same basis as fridges, meaning the same anomalies could be detected. 
 The malfunction could also be detected in heating element appliances such as toasters or boilers. 
 Since mentioned appliances are one of the largest consumers in a household,
@@ -222,7 +222,7 @@ early enough detection could lead to large energy-saving benefits \cite{NILMAD20
 
 \subsubsection{Elderly care}
 
-Demographic changes i.e. aging population is an increasing socioeconomic issue.
+The aging population is an increasing socioeconomic issue.
 The elderly are facing many issues when staying at home alone for extended periods.
 Accidents such as falls or the inability to do choirs due to health-related issues or even dementia-induced issues 
 such as leaving appliances on for long periods could all be detected, using sub-meter data such as authors \cite{elder1} and \cite{elder2}
@@ -247,7 +247,7 @@ This would enable the manufacturers to improve their products according to
 user's needs, without unnecessary features.
 
 \cite{energyStealing2018} uses anomaly detection algorithms and load profiling to detect energy lost due to non-technical losses.
-This occurs after the smart-meter is exposed to cyber or mechanical attacks and its measurements are off. 
+This occurs after the smart meter is exposed to cyber or mechanical attacks and its measurements are off. 
 
 One other use-case could be occupancy detection of buildings such as the authors explore in \cite{occupancy2013}. Information about 
 occupancy could be used as part of elderly care monitoring or in the case of building
@@ -261,7 +261,7 @@ It can be portrayed in various shapes and forms,
 using all kinds of attributes and features to do so. 
 First, main load profiling features will be defined.
 Second, using these features a general load profile Table will be constructed.
-Third, references from related work and use-cases will be mapped to the table.
+Third, references from related work and use cases will be mapped to the table.
 Using this information main features will be selected.
 Fourth, using a reduced feature set a more detailed Table will be formed.
 Again, the Table will be populated using the same references as before.
@@ -271,7 +271,7 @@ Finally, using this information a research direction will be formed.
 
 If we want to find the base features, we have to look at how consumption measurements are 
 done in most buildings. 
-Knowing the following three features, we are able to know the amount of energy consumed by the user.
+Knowing the following three features, we can know the amount of energy consumed by the user.
 
 \begin{figure}[H]
   \Tree[.base\ features [.power ]
@@ -283,7 +283,7 @@ Knowing the following three features, we are able to know the amount of energy c
 If we translate these features to the time domain and observe them over 
 a specified amount of time new features emerge. 
 The most notable example is the observation of electrical power over one hour.
-The result is energy (Wh) and it is one of the most common ways used to bill a customer for his power consumption.
+The result is energy $E$ and it is one of the most common ways used to bill a customer for his power consumption.
 
 % Time domain
 \begin{figure}[H]
@@ -294,19 +294,19 @@ The result is energy (Wh) and it is one of the most common ways used to bill a c
 \end{figure}
 
 
-We can also extract features such as a number of activations or time of operation for each activation.
+We can also extract features such as the number of activations or time of operation for each activation.
 This can be done using sensors to detect activity or even deduct this from power consumption data.
 In cases where we are observing individual appliances, this can be done using simple signal processing
 techniques. In cases where we are observing buildings, this could be achieved using more complex disaggregation algorithms also known as NILM algorithms.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Simple signal processing of power consumption for a single appliance"}
+	\caption{Simple signal processing of power consumption for a single appliance}
 	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/singal_processing.png}
 	\label{fig:sig_proc_fig}
 \end{figure}
 
-As we can see in Figure \ref{fig:sig_proc_fig} all three time domain features can be extracted from the graph. 
+As we can see in Figure \ref{fig:sig_proc_fig} all three-time domain features can be extracted from the graph. 
 Energy $E$ is equal to the area under the graph or in other words integral of power over time. 
 $N_{act}$ can be measured based on the number of times the power value exceeded some pre-defined threshold. 
 The $t_{oper}$ is the time between on and off events, where we use the same threshold as with $N_{act}$.
@@ -323,7 +323,7 @@ detecting the number of operation modes based on the number of peaks, using sign
 
 \begin{figure}[H]
 	\centering
-	\caption{"Frequency of Power values for the toaster (actual data from REFIT dataset)"}
+	\caption{Frequency of Power values for the toaster. Actual data from the REFIT dataset.}
 	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/freq.png}
 	\label{fig:freq}
 \end{figure}
@@ -370,7 +370,7 @@ To understand the Table more clearly, let's imagine that each feature is used as
 Table \ref{tab:general_map} shows a combination of base features of power and time with 21 publications. 
 One example of such profile can be seen on Figure \ref{fig:sig_proc_fig} or \ref{fig:daily_power_profile} and is also known as standard load profile (SLP).
 
-As we have seen in the previous section, the two other features, operation time and a number of activations are a derivation of the base features.
+As we have seen in the previous section, the two other features, operation time and the number of activations are a derivation of the base features.
 A combination of the two has been used in three other papers.
 It shows how many times the appliance was activated for a certain amount of time. 
 This load profile is commonly used for anomaly detection.
@@ -432,7 +432,7 @@ The profiles and Figure graphics used in the Table \ref{fig:map_fig} were source
 
 \begin{figure}[H]
 	\centering
-	\caption{"Table of combinations"}
+	\caption{Table of combinations}
 	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/Slide14.png}
 	\label{fig:map_fig}
 \end{figure}
@@ -459,9 +459,9 @@ Here, the second-time dimension can be anything from a week to a year.
 In the case of the per-building, the subgroup includes appliances instead of time. 
 Example for this is Figure \ref{fig:heatmap_all_appl}.
 
-The last row presents the usage unit, that is power (P) or a number of activations (A).
+The last row presents the usage unit, that is power (P) or the number of activations (A).
 
-In cases where feature combination does not make sense it is marked with an X.
+In cases where the feature combination does not make sense, it is marked with an X.
 
 \subsection{Mapping references to the Table of profiles}
 
@@ -660,7 +660,7 @@ In Table \ref{tab:groups_proposed} empty spaces are filled
 with possible use-cases for given load profiles. 
 
 \begin{table}[H]
-    \caption{"Proposed use-cases for profiles"}
+    \caption{Proposed use-cases for profiles}
     \label{tab:groups_proposed}
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth} 
     \begin{tabular}{|l|cccc|cccc|cccc|}
@@ -737,12 +737,12 @@ with possible use-cases for given load profiles.
 Some combinations are indeed illogical and again others are less useful in a practical sense.
 The next Table will try to rate the scientific potential of the profiles based on two characteristics. 
 First is how well data is presented to the user,
-meaning that the load profile is clear at what it is presenting.
+meaning that the load profile is clear about what it is presenting.
 The second is the effectiveness when being used in an algorithm, or in other words, how well data is presented to a machine. 
 These characteristics can not be easily measured,
 but it is possible to extract them based on the pattern of publications.
 To do that, we have to make two assumptions.
-The first one would be, that the larger the number of publications, the larger is the effectiveness of presenting the data to a human.
+The first one would be, that the larger the number of publications, the larger the effect of presenting the data to a human.
 The second would be, that the larger the number of use cases, the better the effectiveness of presenting the data to a machine.
 Using these two assumptions, we propose the following table. 
 The Table has four possible classes. 
@@ -827,7 +827,7 @@ The Table has four possible classes.
 
 \subsection{Table of possible future research directions}
 
-The Table \ref{tab:classified_profiles} shows which profiles were researched and which were not.
+Table \ref{tab:classified_profiles} shows which profiles were researched and which were not.
 To find future research directions we must look into profiles that were least researched.
 These profiles are marked with the number 3 on Table \ref{tab:classified_profiles}.
 Some profiles were not researched because they may not present data as well,
@@ -847,12 +847,12 @@ The process of evaluation was a bit complicated, but it can be summed down to th
 
 If the load profile was used as a power profile, can it be used as an activation profile?
 Here, we must use common sense.
-For an example. If we follow this rule for per-building power load profiles, it 
-turns out that activation load profiles are not as useful since they are based on per-appliance load profile.
+For example. If we follow this rule for per-building power load profiles, it 
+turns out that activation load profiles are not as useful since they are based on per-appliance load profiles.
 In other words, to build per-building activation load profiles we need per-appliance (sub-meter) data anyway.
 That is why we have assigned them to the second class.
 
-The second rule was applicable for 3D profiles.
+The second rule was applied to 3D profiles.
 In the case where one dimension was commonly used, it is probably worth investigating it with a combination of additional dimensions. 
 
 Following these rules, the Table  \ref{tab:future_rd} was constructed.
@@ -940,7 +940,7 @@ When the aforementioned parameters are applied,
 the result is Table \ref{tab:our_rd}
 
 \begin{table}[H]
-    \caption{Load profiles to be pursued }
+    \caption{Load profiles to be pursued}
     \label{tab:our_rd}
     \begin{tabular}{|l|cccc|cccc|cccc|}
     \hline
@@ -1013,9 +1013,9 @@ the result is Table \ref{tab:our_rd}
     \end{table}
 
 
-Based on the Table \ref{tab:our_rd} we will use the following profiles in the following chapters.
+Based on Table \ref{tab:our_rd} we will use the following profiles in the following chapters.
 
-In chapter \ref{Chapter5} we will use 
+In chapter \ref{chapter5} we will use 
 \begin{itemize}
   \item Per-building daily-weekly load profile
   \item Per-appliance daily-weekly load profile
@@ -1023,7 +1023,7 @@ In chapter \ref{Chapter5} we will use
 
 with a t-SNE neighboring algorithm to find how they are related in high dimensional space.
 
-In chapter \ref{Chapter6} we will use
+In chapter \ref{chapter6} we will use
 \begin{itemize}
   \item Per-building Per-appliance daily load profiles with appliances side by side
 \end{itemize}

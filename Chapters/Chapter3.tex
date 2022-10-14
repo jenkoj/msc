@@ -1,13 +1,12 @@
 % Chapter Template
 
 \chapter{Methodology} % Main chapter title
-
-\label{Chapter3} 
+\label{chapter3} 
 
 The following chapter includes methodological procedures that are common for all chapters.
 More detailed methodological procedures will be described in each chapter separately. 
 
-\subsection{Data}
+\section{Data}
 
 We used UK-DALE \cite{UKDALE}, REFIT \cite{REFIT}, ECO \cite{ECO}, REDD \cite{REDD}, and iAWE \cite{iAWE}.
 All datasets measured electrical energy consumption for residential buildings. 
@@ -16,7 +15,7 @@ For easier handling datasets will be sliced into 1-hour intervals.
 
 \begin{figure}[H]
 	\centering
-	\caption{"Universal normalized daily usage profile for weekend and weekday for a microwave. Superposition of data from 25 homes."}
+	\caption{Universal normalized daily usage profile for weekend and weekday for a microwave. Superposition of data from 25 homes.}
 	\includegraphics[width=0.9\textwidth]{../Figures/microwave_norm_n25.png}
 	\label{fig:UniNormMicrowave}
 \end{figure}
@@ -26,7 +25,7 @@ One such example can be seen in Figure \ref{fig:UniNormMicrowave}. The histogram
 activation for microwaves. It consists of data from 25 homes from 4 different
 datasets. 
 
-\subsection{Tools used}
+\section{Tools used}
 
 To process the data and to obtain the results the environment and virtual machines from Google Colab (\cite{colab}) were used.
 They offer access to Google GPU-accelerated compute machines with 12 GB of RAM. 
