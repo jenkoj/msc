@@ -66,11 +66,12 @@ headsepline, % Uncomment to get a line under the header
 
 %\usepackage[sort, numbers]{natbib}
 \usepackage{float}
-\addbibresource{Refrences/example.bib} % The filename of the bibliography
+% \addbibresource{Refrences/example.bib} % The filename of the bibliography
+\addbibresource{Refrences/related_work.bib} % The filename of the bibliography
 \addbibresource{Refrences/datasets.bib} % The filename of the bibliography
 \addbibresource{Refrences/sne.bib} % The filename of the bibliography
 \addbibresource{Refrences/tools.bib} % The filename of the bibliography
-
+ 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
 \usepackage{amssymb}
@@ -83,6 +84,10 @@ headsepline, % Uncomment to get a line under the header
 
 % for arrays 
 \usepackage{tikz}
+
+% for graph trees
+\usepackage{qtree}
+
 \usetikzlibrary{calc}
 
 \DeclareCiteCommand*{\citetitle}%your new citecommand \citetitle*
@@ -129,7 +134,7 @@ headsepline, % Uncomment to get a line under the header
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Load profiling of Home Appliances} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\thesistitle{Development and analysis of new activation based load profiles} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
 \supervisor{Dr. Carolina \textsc{Fortuna} and Dr. Marko \textsc{Meža} and } % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
 \examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
 \degree{Masters of electrical engineering} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
@@ -247,10 +252,10 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-An increasing amount of energy data is useless if we do not find an efficient way to extract the information that it contains.
+An increasing amount of energy data holds enormous amounts of untapped potential. 
 The efficient presentation of energy data to humans and machines through load profiles is the constant narrative throughout the thesis. 
 
-Besides the amount of data, the consumption of the electricity itself is increasing. 
+Besides the amount of data, the consumption of electricity itself is increasing. 
 A third of electrical energy in the EU is consumed in residential areas.
 This means that optimizing the consumption using the data, would leave a significant impact on reducing the human footprint.
 
@@ -258,17 +263,17 @@ Another problem that the EU is facing is an aging population. Using the energy d
 that will detect accidents such as falls, strokes or dementia-induced altered behavior.
 
 Solving big issues using big data, is a good starting point that led us to perform a comprehensive review of existing publications and use-cases.
-It was found that some publications have already tried to solve the issues mentioned above using energy data.
-Using the related work publications, we have made a table of possible ways to present the data.
-This left us with a lot of gaps. These gaps present load profiles that were not yet researched or used. 
+It was found that some publications have already tried to solve the mentioned issues.
+Using the related work publications, we have made a table of possible ways to present the data, which left us with a lot of gaps. 
+These gaps present load profiles that were not yet researched or used. 
 The question we tried to answer next was, are these profiles really useful?
 It could be, that they are impractical, which could be the reason they were not used before.
 
 During the thesis, we utilized these previously unused load profiles and proved that they can be efficiently implemented.
 This was done first by looking at how data and load profiles are related in high dimensional space using t-SNE.
 Newly obtained knowledge aided us when designing and constructing the elderly care system.
-The successful implementation of newly proposed load profiles proved that the profiles are useful.
-While we have filed a few gaps in the table of profiles, there are still many left. 
+The successful implementation of newly proposed load profiles proved that the new profiles can be efficiently utilized.
+This left us with many gaps that were left to be researched.
 
 \end{abstract}
 
@@ -279,8 +284,8 @@ While we have filed a few gaps in the table of profiles, there are still many le
 \begin{acknowledgements}
 \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
 I would like to thank the following people without which this thesis would not be possible.
-Dr. Carolina Fortuna and Dr. Marko Meža who helped me with the research, by providing continuous feedback and support.
-The scientific and open-source community that provided the data and the tools used throughout the thesis.
+Dr. Carolina Fortuna and Dr. Marko Meža helped me with the research, by providing continuous feedback and support.
+The scientific and open-source community provided the data and the tools used throughout the thesis.
 Friends and colleagues, who through discussion helped induce the ideas that were put forward through the thesis. 
 My family, who inspired, supported and encouraged me to pursue my studies in the first place.
 And my partner Nika, who supported me through all my years of studying in all aspects possible.
@@ -304,6 +309,9 @@ And my partner Nika, who supported me through all my years of studying in all as
 \begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
 
 \textbf{LP} & \textbf{L}oad \textbf{P}rofile \\
+\textbf{ALP} & \textbf{A}activation \textbf{L}oad \textbf{P}rofile \\
+\textbf{SLP} & \textbf{S}tandad \textbf{L}oad \textbf{P}rofile \\
+\textbf{TP} & \textbf{T}able of load \textbf{P}rofiles \\
 \textbf{P} & \textbf{P}ower (profile) \\
 \textbf{A} & \textbf{A}ctivation (profile) \\
 \textbf{ZEB} & \textbf{Z}ero \textbf{E}nergy \textbf{B}uilding \\
@@ -368,19 +376,16 @@ And my partner Nika, who supported me through all my years of studying in all as
 % % Include the chapters of the thesis as separate files from the Chapters folder
 % % Uncomment the lines as you write the chapters
 
-\include{Chapters/Chapter1}
-\include{Chapters/Chapter2}
-\include{Chapters/Chapter3}
+% \include{Chapters/Chapter1}
+% \include{Chapters/Chapter2}
+% \include{Chapters/Chapter10}
+% \include{Chapters/Chapter3}
+
 \include{Chapters/Chapter4}
-\include{Chapters/Chapter5}
-\include{Chapters/Chapter10}
-\include{Chapters/Chapter6}
-\include{Chapters/Chapter8}
-\include{Chapters/Chapter7}
-\include{Chapters/Chapter9}
+%\include{Chapters/Chapter5}
+% \include{Chapters/Chapter6}
 
-% \include{Chapters/ChapterMap}
-
+% \include{Chapters/Chapter7}
 
 % %----------------------------------------------------------------------------------------
 % %	THESIS CONTENT - APPENDICES
@@ -391,8 +396,8 @@ And my partner Nika, who supported me through all my years of studying in all as
 % % Include the appendices of the thesis as separate files from the Appendices folder
 % % Uncomment the lines as you write the Appendices
 
-\include{Appendices/AppendixA}
-% %\include{Appendices/AppendixB}
+% \include{Appendices/AppendixA}
+% \include{Appendices/AppendixB}
 % %\include{Appendices/AppendixC}
 
 %----------------------------------------------------------------------------------------

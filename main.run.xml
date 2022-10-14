@@ -80,7 +80,7 @@
       <file>main.bcf</file>
     </requires>
     <requires type="editable">
-      <file>Refrences/example.bib</file>
+      <file>Refrences/related_work.bib</file>
       <file>Refrences/datasets.bib</file>
       <file>Refrences/sne.bib</file>
       <file>Refrences/tools.bib</file>

@@ -1,0 +1,66 @@
+% Appendix A
+
+\chapter{Expanded General Table} % Main appendix title
+
+\label{AppendixB} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\begin{table}[H]
+    \caption{Expanded general table of load profiles}
+    \label{tab:extended_general_map}
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+        &
+        frequency &
+        appliances &
+        \begin{tabular}[c]{@{}l@{}}number of\\ activations\end{tabular} &
+        \begin{tabular}[c]{@{}l@{}}power\\ (avg)\end{tabular} &
+        \begin{tabular}[c]{@{}l@{}}operating\\ time\end{tabular} \\ \hline
+    appliances                                                      &   & X & X & X  & X    \\ \hline
+    \begin{tabular}[c]{@{}c@{}}number of\\ activations\end{tabular} & X & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{per_appliance_per_building} \\ \citeyear*{UKDALE} \end{tabular}} & X & X  & X    \\ \hline
+    \begin{tabular}[c]{@{}c@{}}power \\ (avg)\end{tabular}          & X & \citeyear*{appliance_avgpower} &   & X  & X    \\ \hline
+    \begin{tabular}[c]{@{}c@{}}power \\ (array)\end{tabular}        & \citeyear*{UKDALE} & X & X & X  & X    \\ \hline
+    \begin{tabular}[c]{@{}c@{}}power \\ (histogram)\end{tabular}    &   &   & X & X  & X    \\ \hline
+    \begin{tabular}[c]{@{}c@{}}operating\\ time\end{tabular}        & X & \citeyear*{operating_time} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{NILMAD2019} \\ \citeyear*{NILMAD22019} \\ \citeyear*{NILMAD2021} \end{tabular}} &  \citeyear*{NILMAD2021} & X    \\ \hline
+    time array                                                      & X & X & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{per_appliance_per_building} \\ \citeyear*{UKDALE} \end{tabular}} &  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Chuan2014} \\ \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \\ \citeyear*{WALKER1985} \\ 	\citeyear*{GERBEC2005} \\ 	\citeyear*{Gao2018} \\ 	\citeyear*{Jeong2021}\\  	\citeyear*{Joana2012} \\ 	\citeyear*{DER_heatmap_profile}\\ 	\citeyear*{NILMAD2019}\\	\citeyear*{NILMAD22019} \\	\citeyear*{Issi2018} \\	\citeyear*{NILMAD2021}\\	\citeyear*{Castangia2021} \\	\citeyear*{occupancy2013} \\	\citeyear*{Chuan2014} \\ 	\citeyear*{CAPASSO1994} \\ 	\citeyear*{Park2019} \\	\citeyear*{UKDALE} \\	\citeyear*{Gao2018} \end{tabular}}    & \citeyear*{OperatingTime_timeofday} \\ \hline
+    \end{tabular}
+\end{table}
+
+% The first profile is the one in the first row and the first column.
+% It is a combination of frequency and appliances. 
+% This would mean that we would have appliances on the x-axis and the number of occurrences o the y-axis.
+% The only useful application for this profile is when presenting how many appliances of one type are in one dataset. 
+% Other than that it has no use-cases and that is probably the reason why it is rarely used.
+
+% The next possible combination is between a number of activations and appliances. 
+% Here the explanation is relatively straightforward. The combination shows us how many times each appliance activities.
+
+% The second presentation of data is a combination of power and number of activations. 
+% In this case, we would construct a histogram of power values. 
+% On the x-axis we would have power values on the y-Axis we would have a number of times this power value occurred, where we would have buckets of a certain size.
+% Here we should not mix it up with the previous combination, since here we include the whole consumption and not only when turned on. 
+
+% The combination in the second column and second row is between average power, an integer, and appliances. Again explanation is simple. We present the average consumption for each appliance in a household.
+
+% The combination in the third column and second row, between average power and numbers of activations, is again less straightforward.
+% It presents how many times it activated with a certain power.
+
+% Here one feature is an output of the previous combination, a histogram of power. 
+% It is possible to have a histogram of the histogram, but it is not practical. 
+% This means we are looking at looking how many times did the occurrence occur. 
+% Not all combinations, even though they are possible, are useful. 
+
+% The combination in the second column and fifth row is again straightforward. 
+% Plotting histograms for each appliance and then plotting them side by side.
+% In this case, we present histograms in color, since we are working with 3 dimensions.
+
+% In the case of combining the second column and sixth row, between appliances and operating time, we present how long each appliance operates.
+% Here it could be either a number or even a time range presentation.
+% When doing a combination between operating time and the number of activations we are plotting how many times did an appliance turn on for a certain amount of time
+
+% In the case of a combination between operating time and power, we show how long did appliance operate with a certain power.
+
+% Next case, in the third row and last column, a combination between time array and several activations we present when did appliance turn on certain amount of times. 
+
+% We are coming to an end, and here we have the most commonly used case where we use time array and average power to present the data.
+
+% In the final case, the combination shows us at which time do appliance operate for a certain amount of time 
