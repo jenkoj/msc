@@ -3,8 +3,8 @@
 
 In the first part of the chapter, we will review the existing work done and show possible use-cases for the load profiles.  
 In the second part of the chapter most commonly used LP features will be presented. 
-Using them, a Table of profiles will be built. 
-The Table will be populated using the publications from the first part of the chapter.
+Using them, a table of profiles will be built. 
+The table will be populated using the publications from the first part of the chapter.
 This will enable us an overview of existing work, and expose possible missing gaps in scientific research.
 
 \section{Related work}
@@ -49,10 +49,10 @@ To achieve that, they used probabilistic neural networks as a way of classificat
 
 \cite{Gao2018} makes use of the bottom-up method to build a forecasting framework for household
 load profiling, which takes into account the consumption patterns of residents. 
-A model falls into the demand-side management subgroup.
+A model falls into the demand response use case.
 They have developed a "single-day extraction model", designed to select the same days by comparing environmental and household factors, which influence energy consumption.
 By using this approach, they have improved the accuracy of predicting the behavioral patterns of dwellers. 
-This method falls into the probabilistic method subgroup. Results show that their method successfully modeled daily usage.
+Results show that their method successfully modeled daily usage.
 
 \cite{Chuan2014} uses load profiling to optimize energy consumption distribution during the day.
 This reduces peak usage and alleviates load off the grid. The author used the bottom-up method, that is, using sub-meter data.
@@ -84,8 +84,8 @@ They used PCA and k-means resulting in 5 clusters. Similar to other load profili
 Whereas most of the above-mentioned papers focused on aggregated consumption of building to build a load profile,
 authors \cite{Issi2018} focused on appliance-level load profiling.
 Their main contribution was to create a realistic per-appliance load profile.
-They developed a wireless measurement system with smart plugs that enabled them to obtain 
-power signatures for each appliance. They evaluated the data and based on observations they determined working cycles for each appliance.
+They developed a wireless measurement system with smart plugs that enabled them to obtain power signatures for each appliance. 
+They evaluated the data and based on observations they determined working cycles for each appliance.
 Furthermore, they concluded that 15 \% of consumed power can be shifted, where they took tariffs into account. 
 
 \subsection{Anomaly detection in building energy consumption data}
@@ -256,9 +256,10 @@ automation, to run certain tasks when a user enters or leaves the room or a buil
 \section{Table of profiles}
 
 While in related work we examined load profiling in general,
-this section focuses on how data in load profiles is presented.  
+this section focuses on how data is presented with load profiles.  
 It can be portrayed in various shapes and forms,
 using all kinds of attributes and features to do so. 
+
 First, main load profiling features will be defined.
 Second, using these features a general load profile Table will be constructed.
 Third, references from related work and use cases will be mapped to the table.
@@ -271,8 +272,7 @@ Finally, using this information a research direction will be formed.
 
 If we want to find the base features, we have to look at how consumption measurements are 
 done in most buildings. 
-Knowing the following three features, we can know the amount of energy consumed by the user.
-
+The following three features enable us to know the amount of energy being consumed by the user.
 \begin{figure}[H]
   \Tree[.base\ features [.power ]
           [.timestamp ]
@@ -280,10 +280,15 @@ Knowing the following three features, we can know the amount of energy consumed 
                 ]
 \end{figure}
 
-If we translate these features to the time domain and observe them over 
-a specified amount of time new features emerge. 
+If we translate these features to the time domain and observe them over a specified amount of time, new features emerge. 
 The most notable example is the observation of electrical power over one hour.
 The result is energy $E$ and it is one of the most common ways used to bill a customer for his power consumption.
+
+
+We can also extract features such as the number of activations or time of operation for each activation.
+This can be done using sensors to detect activity or even deduct this from power consumption data.
+In cases where we are observing individual appliances, this can be done using simple signal processing
+techniques. In cases where we are observing buildings, this could be achieved using more complex disaggregation algorithms also known as NILM algorithms.
 
 % Time domain
 \begin{figure}[H]
@@ -292,12 +297,6 @@ The result is energy $E$ and it is one of the most common ways used to bill a cu
           [.operating\ time $t_{oper}$  ]
                 ]
 \end{figure}
-
-
-We can also extract features such as the number of activations or time of operation for each activation.
-This can be done using sensors to detect activity or even deduct this from power consumption data.
-In cases where we are observing individual appliances, this can be done using simple signal processing
-techniques. In cases where we are observing buildings, this could be achieved using more complex disaggregation algorithms also known as NILM algorithms.
 
 \begin{figure}[H]
 	\centering
@@ -351,7 +350,7 @@ meaning this could be a use-case for this kind of load profile.
 \subsection{General table}
 Using these features we can form a Table with all possible combinations.
 Table \ref{tab:general_map} is then populated with references from previous chapters.
-To understand the Table more clearly, let's imagine that each feature is used as an axis label when plotting. 
+To understand the table more clearly, let's imagine that each feature is used as an axis label when plotting. 
 
 \begin{table}[H]
     \centering
@@ -391,10 +390,10 @@ There are many more ways to present the data. An extended Table can be found in 
 
 \subsection{Detailed table}
 
-This section will focus on exploring possible load profiles using activation-based histogram representation,
-while using the power feature as a baseload. 
+This section will focus on exploring possible activation-based load profiles,
+while using the power load profiles as a baseline. 
 Features from \ref{tab:general_map} will be explored in higher detail. 
-They will be split and arranged in a way that all 21 publications using power-based presentations and 3 using activation-based presentations will be divided into as many groups as possible. 
+They will be split and arranged in a way that all 21 publications using power-based presentations will be divided into as many groups as possible. 
 This should expose possible activation-based profiles as well as unpublished power-based profiles.
 
 \subsubsection{Sub-features} \label{sec:subfeatures}
@@ -428,7 +427,7 @@ Bellow, a map with combinations of the above-mentioned profiles is presented.
 The purpose of Table \ref{fig:map_fig} to generate and show possible combinations.
 Some combinations that had similar output were grouped, and some that could not be sketched were discarded. 
 
-The profiles and Figure graphics used in the Table \ref{fig:map_fig} were sourced from the Chapter \ref{chapter1} Section \ref{sec:LP_types}.
+The profiles and figure graphics used in the Table \ref{fig:map_fig} were sourced from section \ref{sec:LP_types}.
 
 \begin{figure}[H]
 	\centering
@@ -437,16 +436,16 @@ The profiles and Figure graphics used in the Table \ref{fig:map_fig} were source
 	\label{fig:map_fig}
 \end{figure}
 
-Figure above \ref{fig:map_fig}, uses features from previous subsection \ref{sec:subfeatures}. 
-In general, the Table is formatted in a way that features from columns (time range) are
+Table \ref{fig:map_fig}, uses features from previous subsection \ref{sec:subfeatures}. 
+In general, the Table \ref{fig:map_fig} is formatted in a way that features from columns (time range) are
 used in the x-axis of a plot, and rows (consumption data) are used in the y or z-axis of a plot. 
 
-The column of the Table presents the time domain. "Daily" means that the load profile presents
-average usage for one day, weekly means it presents usage for a week.
-To be clear, for one to construct a decent daily profile, one needs a few
-weeks of data. The same goes for yearly profiles, in that case, one needs many years' worth of data. 
+The column of the Table \ref{fig:map_fig} presents the time domain.
+"Daily" means that the load profile presents average usage for one day and "Weekly" means it presents usage for a week.
+To be clear, for one to construct a decent daily profile, one needs a few weeks of data. 
+The same goes for yearly profiles, in that case, one needs many years' worth of data. 
 
-The top row of the Table is composed of 3 main groups. 
+The top row of the table is composed of 3 main groups. 
 The first group focuses on per-building energy consumption.
 The second group examines the energy consumption of each appliance in a house separately.
 Third group analyses all appliances in a building.
@@ -463,9 +462,9 @@ The last row presents the usage unit, that is power (P) or the number of activat
 
 In cases where the feature combination does not make sense, it is marked with an X.
 
-\subsection{Mapping references to the Table of profiles}
+\subsection{Mapping references to the table of profiles}
 
-To find useful load profiles, references from related work ( section \ref{sec:related_work}) must be mapped.
+To find useful load profiles, references from the related work section \ref{sec:related_work} must be mapped.
 
 \begin{table}[H]
 	\caption{Table presents previously mentioned load profiles}
@@ -483,9 +482,8 @@ To find useful load profiles, references from related work ( section \ref{sec:re
 
 As can be seen from Table \ref{tab:contributions}, most of the work (14 publications) has been done with standard daily load profiles with
 per-building power usage such as Figure \ref{fig:daily_power_profile}. 
-Quite a lot of work (6 publications) has been done with per-appliance daily power profiles.
-A few publications were based on weekly and yearly load profiles,
-and a few used two-dimensional time and power presentations.
+Quite a lot of work (6 publications), has been done with per-appliance daily power profiles.
+A few publications were based on weekly and yearly load profiles and a few used two-dimensional time and power presentations.
 Only one publication found used activation and time-based histogram such as 
 shown in Figure \ref{fig:daily_act_profile}. During the research we focused on publications
 from minority classes, meaning not all existing publications for standard load profiles are included. 
@@ -493,9 +491,9 @@ The purpose of Table \ref{tab:contributions} is to present missing scientific co
 
 \newcommand{\tabVar}{+ daily time \\ dimension  }
 
-\subsection{Mapping use-cases to the Table of combinations}
+\subsection{Mapping use-cases to the table of profiles}
 
-Table \ref{tab:use_cases} includes arranged publications from the use-cases Section \ref{sec:use-cases}. 
+Table \ref{tab:use_cases} includes arranged publications from the use-cases section \ref{sec:use-cases}. 
 Similar pattern emerged as in Table \ref{tab:contributions}. 
 
 \begin{table}[H]
@@ -575,7 +573,7 @@ Similar pattern emerged as in Table \ref{tab:contributions}.
 
 The Table \ref{tab:groups} presents same publications as Table \ref{tab:use_cases},
 but only group names are shown.
-The Table indicates how groups are arranged.
+The Table \ref{tab:groups} indicates how groups are arranged.
 Where anomaly detection and elderly care are dominating in the per-appliance part of the table,
 zero energy buildings and demand response are dominating in a per-building part of the table. 
 
@@ -735,10 +733,11 @@ with possible use-cases for given load profiles.
 \subsection{Table of load profile potentials} \label{subsec:potential}
 
 Some combinations are indeed illogical and again others are less useful in a practical sense.
-The next Table will try to rate the scientific potential of the profiles based on two characteristics. 
+The next Table \ref{tab:classified_profiles} will try to rate the utilization potential of the profiles based on two characteristics. 
 First is how well data is presented to the user,
 meaning that the load profile is clear about what it is presenting.
 The second is the effectiveness when being used in an algorithm, or in other words, how well data is presented to a machine. 
+
 These characteristics can not be easily measured,
 but it is possible to extract them based on the pattern of publications.
 To do that, we have to make two assumptions.
@@ -827,14 +826,11 @@ The Table has four possible classes.
 
 \subsection{Table of possible future research directions}
 
-Table \ref{tab:classified_profiles} shows which profiles were researched and which were not.
-To find future research directions we must look into profiles that were least researched.
-These profiles are marked with the number 3 on Table \ref{tab:classified_profiles}.
-Some profiles were not researched because they may not present data as well,
-and some were simply overlooked. 
-
+To find future research directions we must look into profiles that were least researched,
+such profiles are marked with the number 3 on Table \ref{tab:classified_profiles}.
+Some profiles were not researched because they may not present data as well and some were simply overlooked. 
 This is why we have built the following Table \ref{tab:future_rd}.
-The Table was marked as follows:
+The Table was populated as follows:
 
 \begin{outline} 
 \1 (1) - The load profile has high potential. 
@@ -935,9 +931,9 @@ Table \ref{tab:future_rd} presents the possible future research directions.
 While some LPs have mid-research potential according to our rules, they are still worth investigating. 
 In science, it often happens that use-cases change over time and research that seemed inapplicable suddenly finds its place.
 
-We will focus on profiles with high research potential and use the number of activation as a unit of measure.
+We will focus on profiles with high research potential and use the number of activations as a unit of measure.
 When the aforementioned parameters are applied, 
-the result is Table \ref{tab:our_rd}
+the result is Table \ref{tab:our_rd}.
 
 \begin{table}[H]
     \caption{Load profiles to be pursued}
@@ -1012,17 +1008,15 @@ the result is Table \ref{tab:our_rd}
     \end{tabular}
     \end{table}
 
-
-Based on Table \ref{tab:our_rd} we will use the following profiles in the following chapters.
-
+The profiles shown in Table \ref{tab:our_rd} are our direction of research.
+In the next part of the thesis, we will try to utilize and present these load profiles.
+This will be done as follows.
 In chapter \ref{chapter5} we will use 
 \begin{itemize}
   \item Per-building daily-weekly load profile
   \item Per-appliance daily-weekly load profile
 \end{itemize}
-
 with a t-SNE neighboring algorithm to find how they are related in high dimensional space.
-
 In chapter \ref{chapter6} we will use
 \begin{itemize}
   \item Per-building Per-appliance daily load profiles with appliances side by side
