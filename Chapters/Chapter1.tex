@@ -1,7 +1,7 @@
 \chapter{Introduction}
 \label{chapter1}
 
-Climate change calls for a shift to renewable energy and restructuring of the electricity sector.
+Climate change calls for a shift to renewable energy and restructuring of the electric power industry.
 Sources \cite{eurostat2020} show as of the time of reading this paper, 44 \% of produced electricity in Europe was from combustible sources such as gas, fuel, and coal. Even 
 though that is a significant decrease of 10 \% in the last 10 years, it is a significant Co2 emitter.
 The same source \cite{eurostat2020} also states that a third of energy is consumed by the residential sector. It is estimated, 
@@ -26,6 +26,7 @@ In recent years LPs have changed due to renewable energy accelerated development
 power plants, home wind energy, and using EVs with home batteries. Socioeconomic changes such as work-from-home, also drastically reshaped the LP curve. 
 
 The thesis aims to propose and develop new, previously unused LPs, that will contribute to mitigating the raised issues. 
+Before we disclose our contributions, let us first have an overview of what load profiles are and in which other use cases they can be utilized, besides the energy saving that we just mentioned.
 
 % finishing words here 
 
@@ -38,12 +39,11 @@ Author \cite{Review2021} defines terms as following:
 	\item Profile: a graph representing the significant features of the electricity load over time.
 \end{itemize}
 
-While the most commonly used feature is power, there are other derivatives such as the number of activations of an appliance or operating time.
-Commonly, LP is a term used to describe the power consumption of a building.
-That is not always the case, since the LP can be used to describe appliance-level consumption as well. 
 
-The most common way LPs are presented is a daily power consumption profile such as shown in Figure \ref{fig:daily_power_profile}. 
-While the graph is a sketch, it still presents a standard LP with morning and evening peaks.
+While the most commonly used feature is power, there are other derivatives such as the number of activations of an appliance or operating time.
+Usually, the LPs are presented as a daily power consumption profile such as shown in Figure \ref{fig:daily_power_profile}. 
+This profile is also known as the standard daily load profile. 
+While the LP is a sketch, it still presents consumption trends in morning and evening peaks.
 
 \begin{figure}[H]
 	\centering
@@ -63,25 +63,30 @@ due to data processing, it could potentially reveal more relevant consumption pa
 	\label{fig:daily_act_profile}
 \end{figure}
 
-All LPs can present whole-house usage or per-device usage. Each presentation has its advantages and disadvantages. 
-To present more information sub-meter data can be used to represent whole-house usage with per-appliance contributions.
-Such as on Figure \ref{fig:daily_act_m_profile} and \ref{fig:daily_power_m_profile}.
+LPs can present whole-house usage as well as per-appliance usage, where each presentation has its advantages and disadvantages. 
+To present more information, sub-meter data can be used to present whole-house usage with per-appliance contributions.
+Two of such examples can be seen on Figure \ref{fig:daily_act_m_profile} and \ref{fig:daily_power_m_profile}.
 
 \begin{figure}[H]
-	\centering
-	\caption{Histogram of daily activations profile for appliance A and B}
-	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/Slide8.png}
-	\label{fig:daily_act_m_profile}
-\end{figure}
-\begin{figure}[H]
-	\centering
-	\caption{Average weekday power consumption for appliances A, B and C}
-	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/Slide2.png}
-	\label{fig:daily_power_m_profile}
+	\begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{Histogram of daily activations profile for appliance A and B}
+		\includegraphics[width=1.1\textwidth]{Figures/profile_sketches/Slide8.png}
+		\label{fig:daily_act_m_profile}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.5\textwidth}
+		% \centering
+		\caption{Average weekday power consumption for appliances A, B and C}
+		\includegraphics[width=1.1\textwidth]{Figures/profile_sketches/Slide2.png}
+		\label{fig:daily_power_m_profile}
+	\end{subfigure}%
+	\label{fig:daily_m_profile}
+	\caption{LPs with multiple appliances}
 \end{figure}
 
-To present as much information as possible all the above-mentioned attributes 
-can be presented in a multidimensional way such as shown in Figure \ref{fig:heatmap_2dtime} and \ref{fig:heatmap_all_appl}.
+To present as much information as possible,
+all the above-mentioned attributes can be presented in a multidimensional way such as shown in Figure \ref{fig:heatmap_2dtime} and \ref{fig:heatmap_all_appl}.
 
 \begin{figure}[H]
 	\centering
@@ -90,24 +95,23 @@ can be presented in a multidimensional way such as shown in Figure \ref{fig:heat
 	\label{fig:heatmap_2dtime}
 \end{figure}
 
-Figure \ref{fig:heatmap_2dtime} presents a sketch and the heatmap does not present the real-world data. 
-Even though, it is still possible to see that the plot presents one month of data, where we can see the consumption throughout each day.
+Figure \ref{fig:heatmap_2dtime} is a sketch, and it does not present real-world data.
+Even though, it is still possible to see the consumption throughout each day that the plot presents one month of data, where we can see the consumption throughout each day.
 The brightness presents the activity of the household or an appliance. 
 The brighter the plot, the more activity for that hour of that day of the month.
-
 One other thing to keep in mind when reading a such profile is that the origin is placed in the upper left corner.
 This originates from image processing standards.
 
+Alternatively, we can use the heatmap to present the activity of all appliances in a household over a period of time.
+Such example is Figure \ref{fig:heatmap_all_appl}.
+In this case, we plot the consumption throughout the day, and it enables us to compare which appliances are being activated together throughout the day.
+
 \begin{figure}[H]
 	\centering
-	\caption{Number of activations/power consumption for each appliance in one-month period}
+	\caption{Consumption for each appliance in a day}
 	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/Slide12.png}
 	\label{fig:heatmap_all_appl}
 \end{figure}
-
-Instead of having two-time axes, we could use one axis for different appliances in a household. 
-Such example is Figure \ref{fig:heatmap_all_appl}.
-In this case, we plot the consumption throughout the day on an x-axis, and a y-axis is used to display this for each appliance.
 
 \section{LP use-cases}
 \label{sec:use_cases_tree}

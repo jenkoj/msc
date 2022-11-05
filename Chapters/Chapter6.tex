@@ -5,9 +5,6 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-The chapter will first address the issue being solved,
-then the methodology will be presented, and finally,
-the results will be disclosed.
 
 \section{Introduction}
 
@@ -15,7 +12,7 @@ the results will be disclosed.
 Elderly care has been addressed by many EU-funded research projects since the aging population is one of the main issues the EU is facing. 
 There are many solutions to this problem.
 One approach is invasive such as wearables, sound sensors, IR occupancy detectors, etc. 
-This approach has been addressed by thousands of publications, such as reviews \cite{elderReview1}, \cite{elderReview2} and \cite{elderReview3} show and address.
+This approach has been addressed by thousands of publications, such as reviews \cite{elderReview1}, \cite{elderReview2} and \cite{elderReview3} show and present.
 
 Authors \cite{elderNILM} and \cite{elderNILMDementia} tried to solve this issue using a non-invasive approach with NILM algorithms. 
 In the case of a non-invasive approach, no additional meters need to be installed, since per-appliance usage can be disaggregated.
@@ -26,11 +23,13 @@ It is possible to use sub-meters for each appliance and indirectly observe the u
 The advantage of this approach is that the elder does not need to wear the device.
 The disadvantage is, that new meters need to be installed for the most commonly used appliances.
 
+Our approach will use the latter.
+
 \section{Goal}
 
 The chapter will focus on building an elderly care system that will use users' periodic usage patterns to detect an anomaly.
 The anomaly could be anything from a fall, stroke or altered usage pattern due to dementia. 
-The algorithm will be designed based on the load profile \ref{fig:PHPA} from the previous chapter \ref{chapter6}.
+The algorithm will be designed based on the load profile \ref{fig:PHPA}, which we discussed in chapter \ref{chapter4}.
 Figure shows, that the first thing in the morning used are a kettle and toaster, and with a delay of one hour, microwave and TV. 
 If none of these appliances are used within that hour, then that hour is considered anomalous.
 This means that the algorithm will be able to detect the anomaly within 1 hour of the accident.
@@ -41,14 +40,14 @@ This means that the algorithm will be able to detect the anomaly within 1 hour o
 
 Since the elderly care system is based on anomaly detection, we have to define it first.
 In our case, the anomaly occurs when something that should operate, does not. 
-Based on this definition we will build an anomaly detection. 
+Based on this definition we will develop an anomaly detection algorithm. 
 
 \subsection{Building anomaly detection algorithm}
 
 The next section will present the steps taken while designing this algorithm.
 
 \subsubsection{Step one}
-To detect the anomalies one first needs to build a daily activation profile for each appliance, such as the one previously mentioned \ref{fig:PHPA}.
+To detect the anomalies one first needs to build a daily activation profile for each appliance, such as the one previously shown in Figure \ref{fig:PHPA}.
 In this specific case, we will be using 2h buckets, yielding a total of 12 buckets. 
 
 \subsubsection{Step two}
@@ -56,9 +55,8 @@ The second step is to ignore appliances that are always on by calculating the st
 The activations are normalized between 0 and 1. 
 This step is important so that appliances that are always on, such as fridges or freezers get ignored. 
 These appliances are detected based on the width of their activation normal distribution. 
-Where periodic (hourly basis) appliances should have narrow distributions, the more dynamic should have wider distributions.
+Periodic (on an hourly basis) appliances should have narrow distributions and the more dynamic should have wider distributions.
 This can be seen in examples from building 2.
-
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -178,28 +176,38 @@ which can be easily processed by computer algorithms due to binary encoding.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-        \coordinate (s) at (0,6);
+        \coordinate (s) at (0,8);
         \foreach \num in {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}{
         \node[minimum size=6mm, draw, rectangle] at (s) {\num};
         \coordinate (s) at ($(s) + (1,0)$);
         }
-        \coordinate (s) at (0,5);
+        \coordinate (s) at (0,7);
         \foreach \num in {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1}{
         \node[minimum size=6mm, draw, rectangle] at (s) {\num};
         \coordinate (s) at ($(s) + (1,0)$);
         }
-        \coordinate (s) at (0,4);
+        \coordinate (s) at (0,6);
         \foreach \num in {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0}{
         \node[minimum size=6mm, draw, rectangle] at (s) {\num};
         \coordinate (s) at ($(s) + (1,0)$);
         }
-        \coordinate (s) at (0,3);
+        \coordinate (s) at (0,5);
+        \foreach \num in {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+        \coordinate (s) at (0,4);
         \foreach \num in {0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0}{
         \node[minimum size=6mm, draw, rectangle] at (s) {\num};
         \coordinate (s) at ($(s) + (1,0)$);
         }
-        \coordinate (s) at (0,2);
+        \coordinate (s) at (0,3);
         \foreach \num in {0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0}{
+        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
+        \coordinate (s) at ($(s) + (1,0)$);
+        }
+        \coordinate (s) at (0,2);
+        \foreach \num in {0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0}{
         \node[minimum size=6mm, draw, rectangle] at (s) {\num};
         \coordinate (s) at ($(s) + (1,0)$);
         }
@@ -241,38 +249,53 @@ The Figure below shows how the load profile is transformed.
 
 \subsubsection{Step four}
 
-Using the matrix \ref{arr:act_mat} we can compile an algorithm that will use current activations 
-and compare it to the matrix. For example, if we have the test sample for the fifth bucket, that is 
-data from 8 to 10 o clock. 
-What needs to be done is to use the fifth column and multiply the current activations.
-Then anomaly is detected based on a rule: at least two appliances must be activated, for the bucket to be labeled as normal,
-or else the bucket is labeled as anomalous. In this case, we sum the elements of an array and check if it is larger or equal to 2. 
+Previously, we have defined that an anomaly occurs when something that should activate does not.
+Using the matrix \ref{arr:act_mat} we can compile an algorithm that will detect the anomaly using current activations being tested 
+and comparing it to the adjacent column in matrix \ref{arr:act_mat}.
+Let us use the fifth bucket as an example. That is data from 8 to 10 o'clock.
+
+The tested sample is considered normal if at least two appliances that are normally being used are activated.
+Otherwise, the tested sample is considered anomalous.
+Our implementation multiplies the adjacent matrix column to the tested sample.
+We sum the elements of the resulting array and check if it is larger or equal to 2.
+If cases where this rule is false, samples are considered anomalous.
 
 \begin{figure}[H]
-    \centering
     \begin{tikzpicture}
-        \coordinate (s) at (0,5);
-        \foreach \num in {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0}{
-        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
-        \coordinate (s) at ($(s) + (1,0)$);
-        }
-        
-        \node at (5.5,4) {X};
-        \coordinate (s) at (0,3);
-        \foreach \num in {1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0}{
-        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
-        \coordinate (s) at ($(s) + (1,0)$);
-        }
-        \node at (5.5,2){=};
-        \coordinate (s) at (0,1);
-        \foreach \num in {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0}{
-        \node[minimum size=6mm, draw, rectangle] at (s) {\num};
-        \coordinate (s) at ($(s) + (1,0)$);
-        }
-        \node at (5.5,0){if SUM >= 2 = not an anomaly };
+      \matrix [row sep=3mm, column sep=1cm,nodes={minimum size=6mm, draw, rectangle}]
+      {
+      \node[text width=3cm,white] {margin};\\ 
+      \node[text width=3cm] {audio system}; &  \node (t1){0}; & \node  (t2){1}; & \node (s1){0};\\
+      \node[text width=3cm] {dish washer}; &   \node     {0}; & \node     {0}; & \node     {0};\\
+      \node[text width=3cm] {fan}; &           \node     {0}; & \node     {0}; & \node     {0};\\
+      \node[text width=3cm] {fridge freezer}; &\node     {0}; & \node     {0}; & \node     {0};\\
+      \node[text width=3cm] {kettle}; &        \node (a) {1}; & \node (b) {1}; & \node (c) {1};\\
+      \node[text width=3cm] {microwave}; &     \node     {1}; & \node     {0}; & \node     {0};\\
+      \node[text width=3cm] {television}; &    \node     {1}; & \node     {0}; & \node     {0};\\
+      \node[text width=3cm] {toaster}; &       \node     {1}; & \node     {1}; & \node     {1};\\
+      \node[text width=3cm] {washing machine}; &\node    {0}; & \node     {0}; & \node (s2){0};\\
+      };
+      \draw [<->,white] (a.east) -- (b.west) node[black] [midway] {X};
+      \draw [<->,white] (b.east) -- (c.west) node[black] [midway] {=};
+    
+      \begin{scope}[transform canvas={yshift=0.8em}]
+      \draw [-] (t1.west) -- (t1.east)node[black] [above,midway] {profile};
+      \end{scope}
+    
+      \begin{scope}[transform canvas={yshift=0.8em}]
+      \draw [-] (t2.west) -- (t2.east)node[black] [above,midway] {sample};
+      \end{scope}
+    
+      \begin{scope}[transform canvas={yshift=0.8em}]
+      \draw [-] (s1.west) -- (s1.east)node[black] [above,midway] {result};
+      \end{scope}
+    
+      \begin{scope}[transform canvas={xshift=1.7em}]
+       \draw [<->,red,thick] (s1.north) -- (s2.south) node [right,midway] {IF SUM >= 2 not an anomaly};
+      \end{scope}
     \end{tikzpicture}
-    \caption{The evaluation of new bucket compared to matrix. An example is for a fifth bucket or fifth row from the matrix.}
-    %\label{arr:microwave_acts_vec}
+    \caption{The evaluation of the test sample compared to the adjacent column from the matrix. An example is for a fifth bucket or fifth row from the matrix.}
+    
 \end{figure}
 
 % \begin{figure}[H]
@@ -285,7 +308,7 @@ or else the bucket is labeled as anomalous. In this case, we sum the elements of
 % \end{figure}
 
 This process is done for all samples, where we count normal and anomalous samples for each bucket
-The important thing to note here is that we are evaluating the samples from which the profile was built.
+The important thing to note here is that we are evaluating the samples from train data, from which the profile was built.
 
 \begin{figure}[H]
     \centering
@@ -309,9 +332,11 @@ The important thing to note here is that we are evaluating the samples from whic
         \coordinate (s) at ($(s) + (1,0)$);
         }
     \end{tikzpicture}
-    \caption{Agregated normal samples for each bucket}
+    \caption{Aggregated normal samples for each bucket}
     \label{arr:agg_norm}
 \end{figure}
+
+\subsubsection{Step five}
 
 The next step is to combine these two arrays so that we calculate the percentage of anomalous samples 
 for each bucket with an equation. 
@@ -356,18 +381,16 @@ Since routine is detected based on the usage of appliances it cannot be picked u
 
 It is possible to see that the routine is quite high during the morning and evening hours.
 The anomaly detection algorithm will work best when the metric above is high.
-A good trait of the elderly is that their routine is quite high even during the day,
-which means that anomaly detection will function even throughout the day.
+A good trait of the elderly is that their routine is quite high even during the day.
 
-One more thing to do is to ignore the parts of the day when the user has no routine, by using
-the array \ref{arr:anom_ratio} and setting a threshold of 0.7. 
+One more thing to do is to ignore the parts of the day when the user has no routine.
+This is done by using the array \ref{arr:anom_ratio} and setting a threshold of 0.7. 
 
-A threshold of 0.5 would mean that every other day could be a false positive anomaly. Setting the rate at 0.7 reduces that 
-to every third day.
-Here, compromises must be made, the lower the threshold the more accurate
-the algorithm will be. This also means that it will be less sensitive. 
-In our case, there is not much harm in false positives detections, since the caregiver can call
-the elder to check if it is okay.  
+A threshold of 0.5 would mean that we could detect false positive anomalies every other day.
+Setting the rate to 0.7 reduces this to every third day.
+Here, compromises must be made, the lower the threshold the more accurate the algorithm will be. 
+This also means that it will be less sensitive. 
+In our case, there is not much harm in false positive detections, since the caregiver can call the elder to check if it is okay.  
 
 \begin{figure}[H]
     \centering
@@ -383,11 +406,11 @@ the elder to check if it is okay.
     \label{arr:anom_ratio_mask}
 \end{figure}
 
-\subsubsection{Step five}
+\subsubsection{Step six}
 
-The last step is to repeat steps 4 and 5 with test data, which was not included in the training of the profile.
-
-
+The last step is to repeat steps 4 and 5 with test data.
+When using test data, we skip the buckets with low routine rates by using the mask on Figure \ref{arr:anom_ratio_mask}.
+Since the profile has never seen the data being used, this should give us a good presentation of actual performance in a real-world scenario.
 \subsection{Datasets and evaluation} \label{ssec:ds_eval}
 
 The data was split into train and test sets, where 80 \% of the data was used for training and 20 \% percent of the data for testing.
@@ -421,7 +444,7 @@ The rest of the buildings seem healthy.
 \end{figure}
 
 \subsubsection{ECO}
-ECO \cite{ECO} dataset has a length of data, similar to UK-DALE. 
+ECO \cite{ECO} dataset has a length of data similar to UK-DALE. 
 The only issue is building 1, where there is a lot of missing data.
 This is a good example of how data is split, it is split based on several samples,
 meaning that there is 80 \% in the train bar, due to missing data the second bar is longer. 
@@ -443,10 +466,10 @@ One metric that we can use to determine how well the algorithm functions is the 
 The reason behind that is, that if the routine rate is high it means that it will be easier to detect the actual anomaly.
 
 \begin{itemize}
-	\item routine rate of 0 would mean that for that bucket household has no routine at all.
-    \item routine rate of 0.5 would mean that the routine is being "practiced" every second day
-    \item routine rate of 0.8 would mean that routine is broken on average every 5 day
-    \item routine rate of 1 would mean that this household has a routine that is never broken. 
+	\item Routine rate of 0 would mean that for that bucket household has no routine at all.
+    \item Routine rate of 0.5 would mean that the routine is broken every second day.
+    \item Routine rate of 0.8 would mean that routine is broken on average every fifth day.
+    \item Routine rate of 1 would mean that this household has a routine that is never broken. 
 \end{itemize}
 
 An example of when a user routine rate is close to 1. When a true anomaly occurs such as a fall, the dweller, though he had the same strong routine for the past year, would not be able to practice it, and the algorithm will be quite sure that this is an actual anomaly.
@@ -487,7 +510,7 @@ The only exception is Figure \ref{fig:ec_b5week}, which shows that the observati
 		% \centering
 		\caption{Building 19}
 		\includegraphics[width=1\linewidth]{../Figures/EC/b19week.png}
-		\label{fig:ec_b5week}
+		\label{fig:ec_b19week}
 	\end{subfigure}%
     \bigskip
 
@@ -536,7 +559,7 @@ There is a high chance most of them are vacations or other events where one or m
 		% \centering
 		\caption{Building 19}
 		\includegraphics[width=1\linewidth]{../Figures/EC/b19year.png}
-		\label{fig:ec_b5year}
+		\label{fig:ec_b19year}
 	\end{subfigure}%
     \bigskip
 
@@ -563,7 +586,7 @@ There is a high chance most of them are vacations or other events where one or m
 The following subsection will show how the effectiveness of anomaly detection changes throughout the day.
 
 One thing to keep in mind is that this algorithm can detect anomalies only when
-the routine is high, and more than two appliances are used in given buckets.
+the routine is high, and when more than two appliances are used in given buckets.
 
 Figure \ref{fig:ignored_buckets_22} shows which buckets are most commonly used for the detection of an anomaly.
 The graph includes averaged values from all buildings and datasets. 
@@ -573,7 +596,7 @@ This means that the higher the routine, the higher the chance that this bucket w
 During the night, it is possible to see that the average routine rate is quite high.
 This can be seen in Figure \ref{fig:ignored_buckets_22}
 this is because most users are routinely sleeping during that period.
-But as we can see in Figure \ref{fig:ignored_buckets_22},
+As we can see in Figure \ref{fig:ignored_buckets_22},
 the high routine rate does not necessarily mean the buckets are useful.
 
 \begin{figure}[H]
@@ -597,9 +620,7 @@ After applying this rule the following Figure emerges \ref{fig:ignored_buckets_a
 Figure \ref{fig:ignored_buckets_act} shows that there are two peaks.
 One in the morning and the other, a wider one, in the evening.
 
-This means that on an average home the algorithm would perform best in the morning and evening.
-This is because the average person is at school or work during noon. 
-This can be confirmed in Figure \ref{fig:ignored_buckets_act}.
+This means that on an average home the algorithm would perform best in the morning and evening because the average person is at school or work during noon. 
 The elderly, are usually at home at noon, which could extend the effective detection window.
 
 
@@ -669,9 +690,9 @@ The results in Figure \ref{fig:refit_res_nw_1"} show that result improved to 77.
 \end{figure}
 
 By ignoring the minimal and maximal outliers the results increase to 78.21 \%.
-By repeating the process one more time the result increases to 80.20 \%, since all outliers were removed, the result converges toward this value. 
+Repeating the process one more time the result increases to 80.20 \%, since all outliers were removed, the result converges toward this value. 
 
-By removing the weekend data, the results improved by 1.2 \%. 
+If we remove the weekend data, the results improved by 1.2 \%. 
 
 \begin{figure}[H]
 	\centering
@@ -735,7 +756,7 @@ The most relevant results can be seen in the last row.
     \hline
     N = 25 &
       \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Including \\ weekend data\end{tabular}} &
-      \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Excluting \\ weekend data\end{tabular}} \\ \hline
+      \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Excluding \\ weekend data\end{tabular}} \\ \hline
     \begin{tabular}[c]{@{}l@{}}Removed \\ min/max\\ outliers\end{tabular} &
       \multicolumn{1}{l|}{train } &
       test &
@@ -767,7 +788,7 @@ it is hard to make any other conclusions other than the algorithm works well on 
 
 We know that the reason for installing such a system is that the user is left alone.
 We can assume that on average there is more than one dweller living in the buildings we tested on.
-Since this system would usually be in use by a single dweller,
+Since this system would usually be used by a single dweller,
 this would be in favor of our algorithm since it would be 
 easier to extract the routine.
 

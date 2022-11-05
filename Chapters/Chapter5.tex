@@ -11,7 +11,7 @@ This could be usage patterns within a household, where we are looking for applia
 or when observing multiple buildings and how their consumption differs. 
 To measure the similarity of activation profiles, the t-SNE dimensionality reduction algorithm will be used.
 
-The clustering of load profiles was researched many times before, as it was described in related work Chapter \ref{Chapter3}.
+The clustering of load profiles was researched many times before, as it was described in related work Chapter \ref{chapter2}.
 We will be working with dimensionality reduction, where clusters are usually formed as a side product.
 The following clustering publications are worth mentioning.
 We have seen that authors \cite{GERBEC2005}, \cite{Jeong2021} and \cite{Joana2012} have clustered regular one-dimensional load profiles, as well as with 2D image-based load profiling in publications published by \cite{Park2019}. 
@@ -24,7 +24,7 @@ This publication was of the closest resemblance to our goals, that we were able 
 In all cases, work has been done with the power load profile, whereas in this case, we will try to find similarities between activation profiles using a t-SNE algorithm.
 Most of the publications used single-time dimensions, whereas we will use two-time dimensions.
 
-Although the use-cases were presented in-depth in chapter \ref{chapter2}, it is worth mentioning one specific use case.
+Although the use-cases were presented in-depth in Chapter \ref{chapter2}, it is worth mentioning one specific use case.
 The increasing price of energy resources, could lead to over-saving and living in cool homes.
 By using similarity metrics between profiles across different buildings, it would be possible to detect outliers when it comes to heating. 
 With this approach, it would be possible to detect users, that are living in below-average cool homes and offer them cheaper plans. 
@@ -94,7 +94,7 @@ By slicing this data into 1-month-long intervals and converting them to load pro
 
 To present the results REFIT (\cite{REFIT}), UK-DALE  (\cite{UKDALE}), ECO  (\cite{ECO}), REDD  (\cite{REDD}) and iAWE  (\cite{iAWE}) datasets will be used.
 Combined datasets include data for over 25 homes, where some have up to 5 years of data. 
-The structure of datasets will be analyzed in larger depth in the next chapter \ref{Chapter7}. 
+The structure of datasets will be analyzed in larger depth in the next chapter \ref{chapter6}. 
 
 \subsection{t-SNE algorithm}
 
@@ -152,10 +152,10 @@ again in others we would like to find a more complex usage pattern.
 	\label{fig:tsne_scatter_non_norm_all}
 \end{figure}
 
-The Figure \ref{fig:tsne_pb_img_scatter_allall} presents the actual load profile behind each sample. 
+The Figure \ref{fig:tsne_pb_img_scatter_allall} below presents the actual load profile for each sample. 
 It is possible to see that on the left there are mostly samples with very little activity,
-and on the left, we see samples with more activity.
-Since the two plotted components are of a higher dimension, it is hard to guess what they present.
+and on the right, we see samples with more activity.
+Since the two plotted components are of a higher dimension, it is hard to determine what they present.
 As said t-SNE gives us the intuition of how load profiles are connected in higher-dimensional space.
 
 The following figures are best viewed in color and a digital format. 
@@ -174,7 +174,7 @@ Readers reading a paper version can still explore the high-resolution figures on
 To solve the issue mentioned in subsection \ref{ssec:res_pb_lp} have to normalize the data between 0 and 1.
 The Figure \ref{fig:tsne_pb_scatter_all_all} shows how normalizing samples affect the algorithm.
 
-When comparing figures \ref{fig:tsne_scatter_non_norm_all} and \ref{fig:tsne_pb_img_scatter_allall},
+When comparing figures \ref{fig:tsne_scatter_non_norm_all} and \ref{fig:tsne_pb_scatter_all_all},
 it is possible to see that the samples on the latter are much closer to each other,
 while it is still possible to see the individual clusters.
 This could imply that the normalized usage pattern of users is more similar to the activation pattern of users.
@@ -202,12 +202,11 @@ If the reader wants to see the samples in the cluster, the very same cluster can
 \end{figure}
 
 On Figure \ref{fig:tsne_pb_img_norm_scatter_allall} it is possible to find various usage patterns. 
-But the general pattern is that there is less activation during the night, then there is one peak during the morning and again once in the evening.
-Some buildings are more active during the week and again others more during the weekend.
+But the general pattern is that there is less activity during the night with one peak in the morning and evening hours.
+Some buildings are more active during the week and again some more during the weekend.
 A lot of the data is from UK-DALE building 1 (pink box). 
-It is possible to see that the building has one big cluster where activations are generally similar, then there are some outliers,
-where the pattern completely changed. 
-Albeit less obvious, the same happens in all buildings.
+It is possible to see that the building has one big cluster where activations are generally similar, with few outliers, where the pattern completely changed. 
+Albeit less obvious, this pattern is the same for all buildings.
 This happens due to events such as vacations, holidays or weather-induced behavioral changes.
 
 \subsection{Per-appliance}
@@ -241,8 +240,7 @@ where apart from REFIT building 1 and 11, there are no clusters.
 
 Figure \ref{fig:tsne_pa_img_scatter_all_fridge} Shows mostly bright images, apart from few outliers.
 Load profiles scattered in a circle are generally less dynamic than the ones at the bottom.
-The Figure \ref{fig:tsne_pa_img_scatter_all_fridge} is a good example how even little to none human
-interaction, load profiles can look a lot different. 
+Figure \ref{fig:tsne_pa_img_scatter_all_fridge} is a good example of how load profiles with little to no human interaction, can look a lot different. 
 This could be due to different makes of the appliances, malfunctions of the appliance or the meter measuring it.
 
 \begin{figure}[H]
@@ -304,7 +302,7 @@ a "dark" current. One other difference between the two is that microwave has mor
 Figure \ref{fig:tsne_pa_img_scatter_all_microwave} shows the faulty samples could be the ones in the upper left part of the plot since they are too bright.
 They do present a pattern, but it is questionable what it presents since it seems like it's turned on during the nighttime. 
 Images at the other end show less lot less activity, which could indicate that
-the household does not use microwaves as much. The most interesting load profiles are in the middle of the 
+the household does not use microwave as much. The most interesting load profiles are in the middle of the 
 plot, where it is possible to observe clear activation patterns. 
 
 \begin{figure}[H]
@@ -317,7 +315,7 @@ plot, where it is possible to observe clear activation patterns.
 The last per-appliance example is television presented on Figure \ref{fig:tsne_pa_scatter_all_tv}. 
 Television was chosen since it is the most commonly occurring appliance.
 Interestingly enough, televisions form nice clusters with a few outliers.
-Clusters are separated but close together, this could mean that usage patterns are unique
+Clusters are separated but close together, this could mean that usage patterns across buildings are unique
 but not that different from one another. 
 The load profiles in some clusters are also close to each other, which could also indicate 
 a higher routine.
@@ -333,13 +331,14 @@ The images on the Figure \ref{fig:tsne_pa_img_scatter_all_tv} prove the fact tha
 Again the bright images could be the results of faulty appliances, faulty meters or simply odd behavior.
 The Figure \ref{fig:tsne_pa_img_scatter_all_tv} also enables us to see that TVs are primarily used 
 in the evening hours. Outliers from the main cluster show slightly different behavior. One such 
-example is the cyan-blue cluster where appliances are mostly used in the morning hours. 
-One other interesting observation can be made when looking at the purple cluster (the far low cluster).
-Here TV is being consistently used in the early morning every day and this is portrayed as a straight line.
+example is the blue cluster (building REFIT 4), where appliances are mostly used in the morning hours. 
+One other interesting observation can be made when looking at the purple cluster. This is the far low cluster for building REFIT 8.
+Here, the TV is being consistently used every day in the early morning hours.
+This is portrayed as a straight line.
 There could be two possible explanations for this.
-First is simply a high routine of a user, who turns on the TV every morning to listen to the news or something similar.
+First is simply a high routine of a user, who turns on the TV every morning to listen to the news.
 The other is that the TV updates itself every morning. This is probably not the case since updates do not occur on regular basis.
-What is also interesting, is that the very same pattern can be observed on the sample from the other building (blue sample).
+What is also interesting, is that the very same pattern can be observed in a few other buildings, one example being building REFIT 19.
 
 \begin{figure}[H]
 	\centering
@@ -584,5 +583,4 @@ We could go into greater detail and use other dimensionality-reduction algorithm
 The goal was to show and present the patterns in the data and other features such as routine strength.
 While doing so, we also proved that the load profiles that we proposed, can be efficiently used to do that.
 
-Knowing this, we can conclude the chapter by stating, that we have successfully utilized previously unused load profiles.
 

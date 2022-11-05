@@ -37,7 +37,7 @@ Possible use cases for per-building load profiles are grid management and energy
 
 When it comes to activation load profiles there is one issue compared to power load profiles.
 To build per-building power load profiles it is possible to use the main power meter, whereas, at activation load profiles, sub-meter data is needed.
-This can be solved using NILM algorithms, but they are not in a phase of practical use yet.
+This can be solved using NILM algorithms, but they are not in a state of practical use yet.
 
 The daily per-building load profile is also known as the standard load profile. 
 According to Table \ref{tab:contributions} this is the most commonly used power profile.
@@ -79,7 +79,7 @@ It is hard to correlate the activity with the seasonal effect since it seems lik
 The exact reason behind this pattern is unknown.
 
 \subsection{Per-building two-dimensional time}
-
+\label{ssec:per_building_two_time_dim}
 Alternatively, it is possible to combine Figures \ref{fig:SLPdaily2} and \ref{fig:SLPyearly2} and present activations as a heat map.
 The result is a Figure \ref{fig:SLPHMyearly2} showing more complex activation patterns.
 
@@ -96,7 +96,8 @@ For example, the black lines are the ones that probably present the vacation or 
 When analyzing Figure \ref{fig:SLPyearly2} it seems like dips in activity are for a similar reason, but Figure \ref{fig:SLPHMyearly2} shows these two dips from a different perspective.
 The peak activity in Figure \ref{fig:SLPHMyearly2} shows a routine or a pattern similar to what was seen in \ref{fig:SLPdaily2}, one peak in the morning and one in the evening. 
 The same pattern can be observed in winter dip, even though the pattern is less clear it is present.
-The same cannot be said for the summer dip in the middle of the plot, Here, while the morning peak is visible, the evening one can barely be detected.
+The same cannot be said for the summer dip in the middle of the plot. 
+Here, while the morning peak is visible, the evening one can barely be detected.
 
 One more thing to mention is that the increased activity at the start of the fall increased activity throughout the night and day.
 This could point to that some new appliance was installed, which increased the number of activations.
@@ -111,7 +112,6 @@ Combining that with power data, it could disconnect the buildings with the least
 Per appliance load profiles offer a look into the consumption of each appliance. 
 In the case of activation load profiles, this is an elemental load profile, since all other activation profiles are built on top of it. 
 This also means that it is one of the most universal profiles since it can be used in all previously defined use cases.
-Additionally, it is possible to analyze the usage of a single appliance in great detail.
 
 \begin{figure}[H]
 	\centering
@@ -120,13 +120,14 @@ Additionally, it is possible to analyze the usage of a single appliance in great
 	\label{fig:WM_daily}
 \end{figure}
 
-Looking at Figure \ref{fig:WM_daily}, we can detect a similar pattern as in per-building Section \ref{sec:per_building}. 
+Looking at Figure \ref{fig:WM_daily}, we can detect a similar pattern as in per-building Figure \ref{fig:SLPdaily2}. 
 While the peaks are closer together, the pattern remains.
-One thing to notice here is that the washing machine is used only throughout the day, this means that the household does not use the cheaper tariffs during the nighttime.
+One thing to notice here is, that the washing machine is used only throughout the day.
+This means that this household does not use the cheaper nighttime tariffs.
 
 Another parameter that was not explicitly mentioned before, is the resolution of load profiles. 
 Histograms can be presented using various resolutions or numbers of buckets.
-An optimal number of buckets is a number that presents the usage pattern clearly. 
+An optimal number of buckets is a number that clearly presents the usage pattern. 
 3-hour bucket size in Figure \ref{fig:4hours} does a good job at presenting the appliance usage at the main parts of the day.
 This offers a better contextual presentation that is easier to process using algorithms.
 As we can see in Figure \ref{fig:4hours}, by increasing the extent of buckets, the two peaks join together into one larger peak.
@@ -208,7 +209,7 @@ it is possible to generate Figure \ref{fig:wm_hm_weekly}.
 	\label{fig:wm_hm_weekly}
 \end{figure}
 
-In this case, a similar use-case could be fitted as in the first example.
+In this case, a similar use-case could be fitted as in the first example in subsection \ref{ssec:per_building_two_time_dim}.
 The first example used load shedding when the demand is too high.
 On the contrary, it can also occur if the grid demand is too low.
 There are two solutions to this issue.
@@ -220,7 +221,7 @@ By combining weekly wind forecasts, weekly cloud coverage, and user consumption 
 
 
 By analyzing Figure \ref{fig:wm_hm_weekly} it is possible to see that the user uses a washing machine,
-on Wednesdays from  15 to 16 o clock quite commonly. 
+on Wednesdays from  15 to 16 o'clock quite commonly. 
 Should weather reports indicate high production peaks, the electrical provider could offer low-cost energy for that time of day for all users with similar usage patterns. 
 This could all be automated for appliances such as home grid batteries, water heaters, EVs, or even fridges with a control system.
 This would mean that the grid operator could regulate the demand instantly.
@@ -248,7 +249,7 @@ the TV was at it's low. And when the usage of computers decreased, the usage of 
 Due to the lack of metadata, it is hard to know the exact reason behind it. 
 
 The good thing about this change is, that it takes a few weeks before it changes. 
-This will be important later in Chapter \ref{Chapter7}, when we will be designing an elderly care system, that will be based on periodical user behavior.
+This will be important later in Chapter \ref{chapter6}, when we will be designing an elderly care system, that will be based on periodical user behavior.
 This slow change gives the system time to adapt. 
 
 One observation of quick behavior change can be made in weeks 8-11 and weeks 38-37, where we can see a black row on all three sub-Figures in Figure \ref{fig:var_2d_lpss}.

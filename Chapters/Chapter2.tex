@@ -242,7 +242,7 @@ As soon as the issue would be detected it would notify the caregiver to check on
 \subsection{Other}
 
 Load profiling could also be used as feedback for the engineers and designers,
-of how a certain device is being used and if it is being used as designed. 
+of how a device is being used and if it is being used as designed. 
 This would enable the manufacturers to improve their products according to 
 user's needs, without unnecessary features.
 
@@ -261,11 +261,10 @@ It can be portrayed in various shapes and forms,
 using all kinds of attributes and features to do so. 
 
 First, main load profiling features will be defined.
-Second, using these features a general load profile Table will be constructed.
-Third, references from related work and use cases will be mapped to the table.
-Using this information main features will be selected.
-Fourth, using a reduced feature set a more detailed Table will be formed.
-Again, the Table will be populated using the same references as before.
+Second, using these features a general load profile table will be constructed.
+Third, references from related work and use cases will be mapped to the table, from which main features will be selected.
+Fourth, using a reduced feature set a more detailed table will be formed.
+Again, the table will be populated using the same references as before.
 Finally, using this information a research direction will be formed.
 
 \subsection{Feature set} \label{sec:feature_set}
@@ -273,6 +272,7 @@ Finally, using this information a research direction will be formed.
 If we want to find the base features, we have to look at how consumption measurements are 
 done in most buildings. 
 The following three features enable us to know the amount of energy being consumed by the user.
+
 \begin{figure}[H]
   \Tree[.base\ features [.power ]
           [.timestamp ]
@@ -301,13 +301,13 @@ techniques. In cases where we are observing buildings, this could be achieved us
 \begin{figure}[H]
 	\centering
 	\caption{Simple signal processing of power consumption for a single appliance}
-	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/singal_processing.png}
+	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/singal_processing_thr.png}
 	\label{fig:sig_proc_fig}
 \end{figure}
 
 As we can see in Figure \ref{fig:sig_proc_fig} all three-time domain features can be extracted from the graph. 
 Energy $E$ is equal to the area under the graph or in other words integral of power over time. 
-$N_{act}$ can be measured based on the number of times the power value exceeded some pre-defined threshold. 
+$N_{act}$ can be measured based on the number of times the power value exceeded some pre-defined threshold $P_{thr}$. 
 The $t_{oper}$ is the time between on and off events, where we use the same threshold as with $N_{act}$.
 While there are other features, such as time between activations, or total operational time that could be
 extracted, these were not commonly used in related work.
@@ -322,7 +322,7 @@ detecting the number of operation modes based on the number of peaks, using sign
 
 \begin{figure}[H]
 	\centering
-	\caption{Frequency of Power values for the toaster. Actual data from the REFIT dataset.}
+	\caption{Frequency of power values for the toaster. Actual data from the REFIT dataset.}
 	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/freq.png}
 	\label{fig:freq}
 \end{figure}
