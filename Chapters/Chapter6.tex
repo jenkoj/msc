@@ -36,21 +36,21 @@ This means that the algorithm will be able to detect the anomaly within 1 hour o
 
 \section{Methodology}
 
-\subsection{Defining an anomaly}
+\subsection{Defining an Anomaly}
 
 Since the elderly care system is based on anomaly detection, we have to define it first.
 In our case, the anomaly occurs when something that should operate, does not. 
 Based on this definition we will develop an anomaly detection algorithm. 
 
-\subsection{Building anomaly detection algorithm}
+\subsection{Building Anomaly Detection Algorithm}
 
 The next section will present the steps taken while designing this algorithm.
 
-\subsubsection{Step one}
+\subsubsection{Step One}
 To detect the anomalies one first needs to build a daily activation profile for each appliance, such as the one previously shown in Figure \ref{fig:PHPA}.
 In this specific case, we will be using 2h buckets, yielding a total of 12 buckets. 
 
-\subsubsection{Step two}
+\subsubsection{Step Two}
 The second step is to ignore appliances that are always on by calculating the standard deviation of activations for each bucket. 
 The activations are normalized between 0 and 1. 
 This step is important so that appliances that are always on, such as fridges or freezers get ignored. 
@@ -100,7 +100,7 @@ Based on results from all appliances a threshold of $\sigma$ = 0.1 was set.
 This method will also get rid of appliances that are always on due to their specific nature such as server computers 
 or fridges. 
 
-\subsubsection{Third step}
+\subsubsection{Step Three}
 
 Next, appliances that trigger together must be grouped. 
 This means we must find part of the day that they are operating together.
@@ -169,7 +169,7 @@ The threshold of 0.5 was selected, which yields the following vectors:
 The vectors show us that the microwave has two usage peaks, where the audio system can be used anytime throughout the day.
 It is possible to do this for all appliances, which results in a 2D matrix. 
 Using this matrix we can build rules for which appliances are being used together.
-The Figure \ref{arr:act_mat} uses rows for appliances and columns for buckets.  
+Figure \ref{arr:act_mat} uses rows for appliances and columns for buckets.  
 If we use terminology from image processing the matrix \ref{arr:act_mat} is essentially a highly saturated load profile \ref{fig:PHPA},
 which can be easily processed by computer algorithms due to binary encoding. 
 
@@ -247,7 +247,7 @@ The Figure below shows how the load profile is transformed.
 	\caption{Transformation of source load profile to black and white}
 \end{figure}
 
-\subsubsection{Step four}
+\subsubsection{Step Four}
 
 Previously, we have defined that an anomaly occurs when something that should activate does not.
 Using the matrix \ref{arr:act_mat} we can compile an algorithm that will detect the anomaly using current activations being tested 
@@ -336,7 +336,7 @@ The important thing to note here is that we are evaluating the samples from trai
     \label{arr:agg_norm}
 \end{figure}
 
-\subsubsection{Step five}
+\subsubsection{Step Five}
 
 The next step is to combine these two arrays so that we calculate the percentage of anomalous samples 
 for each bucket with an equation. 
@@ -406,7 +406,7 @@ In our case, there is not much harm in false positive detections, since the care
     \label{arr:anom_ratio_mask}
 \end{figure}
 
-\subsubsection{Step six}
+\subsubsection{Step Six}
 
 The last step is to repeat steps 4 and 5 with test data.
 When using test data, we skip the buckets with low routine rates by using the mask on Figure \ref{arr:anom_ratio_mask}.
@@ -483,7 +483,7 @@ Results were obtained for 3 datasets.
 REDD and iAWE datasets were not used, since they were too small. 
 They contained less than a month of data. 
 
-\subsection{The routine rate over a period of time}
+\subsection{The Routine Rate Over a Period of Time}
 
 In the following sections, we will present how the metric changes over given periods of time.
 This will enable us to see that there are patterns that this metric helps reveal. 
@@ -491,7 +491,7 @@ Since we have more than a year of training data, this will enable us to see how 
 This enables us to see how routine changes over the year. 
 We cannot use testing data in this case, since there is not enough of it.
 
-\subsubsection{The routine rate through the week} \label{sssec:ratio_week}
+\subsubsection{The Routine Rate Through the Week} \label{sssec:ratio_week}
 
 As the behavior of the dweller changes, so does the accuracy of the algorithm. 
 One observation that was made, was that the routine was higher during the week than during the weekends,
@@ -537,7 +537,7 @@ Usually, assisted living systems are put in place since elders are alone in the 
 Taking all of this into account, we could assume that the routine of the elderly is the same trough the week and simply ignore the weekends. 
 This should yield more relevant results. 
 
-\subsubsection{Routine rate through a year}
+\subsubsection{Routine Rate Through a Year}
 
 The rate at which the routine is being practiced also changes over a year. 
 While on average the routine rate is higher during the winter, spring and fall, it is lower during the summer, due to vacation. 
@@ -581,7 +581,7 @@ There is a high chance most of them are vacations or other events where one or m
     \label{fig:ec_year}
 \end{figure}
 
-\subsubsection{Effectiveness of anomaly detection through the day}
+\subsubsection{Effectiveness of Anomaly Detection Through the Day}
 
 The following subsection will show how the effectiveness of anomaly detection changes throughout the day.
 
@@ -624,7 +624,7 @@ This means that on an average home the algorithm would perform best in the morni
 The elderly, are usually at home at noon, which could extend the effective detection window.
 
 
-\subsubsection{The anomaly detection during the night}
+\subsubsection{The Anomaly Detection During the Night}
 
 We have seen that anomalies can be detected throughout the day,
 but are hard to detect through the night, since appliances are off.
@@ -648,7 +648,7 @@ The examples shown were trained and evaluated on the same data.
 To show true performance, we will use test data to determine the actual performance. 
 
 
-\subsection{Per-building results}
+\subsection{Per-Building Results}
 \subsubsection{REFIT}
 
 Results show, that the method is on average 76.4 \% efficient for REFIT.  
@@ -680,7 +680,7 @@ Since all outliers are removed, the result converges towards 79 \%, which is the
 
 As mentioned in the sub-sub section \ref{sssec:ratio_week}, the average routine is different during the week and on weekends.
 The assumption was that the routine of elderly people does not change significantly over the week, therefore results should be more relevant if we ignore the weekends.
-The results in Figure \ref{fig:refit_res_nw_1"} show that result improved to 77.08 \%.
+The results in Figure \ref{fig:refit_res_nw_1"} show that the result improved to 77.08 \%.
 
 \begin{figure}[H]
 	\centering
@@ -745,7 +745,7 @@ The same as before we can omit weekend data, which can be seen in Figure \ref{fi
 	\label{fig:eco_res_nw}
 \end{figure}
 
-\subsection{Combined results}
+\subsection{Combined Results}
 
 After combining results from all 25 buildings, Table \ref{tab:ec_res} can be populated.
 The most relevant results can be seen in the last row.
@@ -813,7 +813,7 @@ a test study should be performed.
 This would also prove our assumption that this algorithm works 
 better on the elderly.
 
-\section{Iterative learning system}
+\section{Iterative Learning System}
 
 In the case of practical use of this algorithm, it is 
 important the system is put online as fast as possible and that it improves over time. 
@@ -828,7 +828,7 @@ This can then be repeated indefinitely.
 The tools, metric and other methodology is the same as in a normal learning system.
 The only change was made on the data preparation side.
 
-\subsubsection{Data preparation}
+\subsubsection{Data Preparation}
 For this evaluation, only REFIT (\cite{REFIT}) data was used. 
 As it can be seen in Figure \ref{fig:refit_timeline},
 Refit buildings have long and relatively similar timelines,

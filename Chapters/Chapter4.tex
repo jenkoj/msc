@@ -8,7 +8,7 @@ Here, we will focus on exposing the main features, issues, and use cases.
 Data for profiles in this chapter was used from building 2 from the REFIT dataset.
 Data was collected from 2013-09-18 to 2015-05-28.
 
-\section{Time ranges}
+\section{Time Ranges}
 \label{sec:time_range}
 One important thing to mention is the use cases for different time ranges of load profiles.
 Based on Table \ref{tab:contributions} it is possible to see that most publications and \ref{tab:use_cases} use daily time range.
@@ -29,7 +29,7 @@ Alternatively, it could be presented as a week in a month, but there is no signi
 The yearly profile on the other hand presents the seasonal effects on usage such as increased daylight and temperature. 
 
 
-\section{Per-building}
+\section{Per-Building LPs}
 \label{sec:per_building}
 The section will be focused on per-building profiles, meaning whole building usage is presented as a single load profile.
 This kind of presentation is useful for observing general activation trends in a building.
@@ -39,7 +39,7 @@ When it comes to activation load profiles there is one issue compared to power l
 To build per-building power load profiles it is possible to use the main power meter, whereas, at activation load profiles, sub-meter data is needed.
 This can be solved using NILM algorithms, but they are not in a state of practical use yet.
 
-The daily per-building load profile is also known as the standard load profile. 
+The daily per-building LP is also known as the standard load profile. 
 According to Table \ref{tab:contributions} this is the most commonly used power profile.
 Figures \ref{fig:SLPdaily2} and \ref{fig:SLPyearly2} present usage patterns on different time ranges. 
 The two profiles, therefore present different contextual cases.
@@ -78,7 +78,7 @@ One in the spring and the other one in autumn.
 It is hard to correlate the activity with the seasonal effect since it seems like the activity is about the same in mid-winter as in mid-summer. 
 The exact reason behind this pattern is unknown.
 
-\subsection{Per-building two-dimensional time}
+\subsection{Per-Building Two-Dimensional Time LPs}
 \label{ssec:per_building_two_time_dim}
 Alternatively, it is possible to combine Figures \ref{fig:SLPdaily2} and \ref{fig:SLPyearly2} and present activations as a heat map.
 The result is a Figure \ref{fig:SLPHMyearly2} showing more complex activation patterns.
@@ -151,7 +151,7 @@ It is possible to present them both at once such as in Figure \ref{fig:WM_ww_dai
 This is essentially a variation of the weekly load profile that maintains high resolution.
 Since there are more weekdays than weekend days, activations had to be normalized accordingly.
 
-The Figure \ref{fig:WM_ww_daily} again shows the same pattern as on Figure \ref{fig:WM_daily}.
+Figure \ref{fig:WM_ww_daily} again shows the same pattern as on Figure \ref{fig:WM_daily}.
 What can we observe here is how these two patterns are the same but are shifted in time. 
 On weekdays the first peak occurs at around 10 AM and the second at around 3 PM.
 On weekends the first peak does not occur until 12 AM and the second at around 6 PM.
@@ -197,7 +197,7 @@ only when taking a closer look it is possible to see that differences do exists.
 We can make a similar conclusion here, as we did for Figure \ref{fig:SLPyearly2}.
 It is hard to do any deeper analysis without the metadata.
 
-\subsection{Two-dimensional time per-appliance load profiles}
+\subsection{Two-Dimensional Time Per-Appliance Load Profiles}
 
 Using a combination of Figures \ref{fig:WM_daily} and \ref{fig:WM_weekly},
 it is possible to generate Figure \ref{fig:wm_hm_weekly}.
@@ -230,7 +230,7 @@ While renewable energy is cheap to produce, it is expensive to store.
 Increased adoption of such resources will require a large amount of energy to be stored and released, this process is at best 80 \% efficient.
 If that energy is optimally distributed, less energy would be lost due to conversion.
 
-\subsubsection{Other two-dimensional presentations}
+\subsubsection{Other Two-Dimensional Presentations}
 
 Figures \ref{fig:var_2d_lpss} show how some appliances have a constant usage pattern over a year, whereas again others change it. 
 Examples below are randomly picked appliances from UK-DALE and REFIT. 
@@ -312,9 +312,9 @@ Appliance on Figure \ref{fig:light} on the other hand works quite the opposite.
 We usually turn on the light when the solar radiation falls below a certain threshold, and turn it off when we sleep.
 The Figure is one of the best examples, where we can observe the combined effect of user behavior, in this case sleeping, and the seasonal effect of changing solar radiation on users' behavior. 
 
-Combining the Figures \ref{fig:solar_thermal_pumping_station} and \ref{fig:light} enables us to differentiate between the two. 
+Combining Figures \ref{fig:solar_thermal_pumping_station} and \ref{fig:light} enables us to differentiate between the two. 
 
-\section{Per-building per-appliance}
+\section{Per-Building Per-Appliance}
 
 The last group of profiles is a combination of per-building and per-appliance load profiles.
 Observing the usage pattern of many appliances offers a better look into users' usage patterns.

@@ -1,4 +1,4 @@
-\chapter{Related work and table of profiles}
+\chapter{Related Work and Table of Profiles}
 \label{chapter2}
 
 In the first part of the chapter, we will review the existing work done and show possible use-cases for the load profiles.  
@@ -7,14 +7,14 @@ Using them, a table of profiles will be built.
 The table will be populated using the publications from the first part of the chapter.
 This will enable us an overview of existing work, and expose possible missing gaps in scientific research.
 
-\section{Related work}
+\section{Related Work}
 \label{sec:related_work}
 Work related to load profiling can be found in two research verticals. 
 The first one is load profiling and load profile models, in most cases study the load profile curve of a building or appliance.
 The second vertical is anomaly detection in energy consumption data. There are quite a few connections between the two. 
 For example, if one wants to do anomaly detection, one must first build some kind of "normal consumption profile", in other words, a load profile.
 
-\subsection{Load profiling}
+\subsection{Load Profiling}
 
 One of the first publications on load profiling was published by \cite{TRAIN19851103}.
 They used a bottom-up approach using sub-meter data and other socioeconomic and demographic characteristics 
@@ -88,7 +88,7 @@ They developed a wireless measurement system with smart plugs that enabled them 
 They evaluated the data and based on observations they determined working cycles for each appliance.
 Furthermore, they concluded that 15 \% of consumed power can be shifted, where they took tariffs into account. 
 
-\subsection{Anomaly detection in building energy consumption data}
+\subsection{Anomaly Detection in Building Energy Consumption Data}
 
 A review on anomaly detection in building energy consumption data was written by \cite{HIMEUR2021116601}.
 Here, the authors took a deep dive into detecting anomalies in energy consumption in buildings. 
@@ -125,9 +125,9 @@ The general classification of use-cases was done in section \ref{sec:use_cases_t
 Here, we will focus on presenting these use-cases in great detail.
 This will be achieved by analyzing the use-case publications and in some cases providing additional solutions.
 
-\subsection{Grid management}
+\subsection{Grid Management}
 
-\subsubsection{Zero energy buildings and energy saving}
+\subsubsection{Zero Energy Buildings and Energy Saving}
 
 As mentioned before many applications for load profiling could be used to reduce energy use and increase energy efficiency. 
 With the emerging EV-market and ever-increasing installation of heat pumps, more and more energy is being used in form of electricity. 
@@ -176,7 +176,7 @@ such as \cite{energy_saving3}, \cite{energy_saving1}, \cite{energy_saving4} and 
 Energy saving is done through instant feedback, reduction goals, rewards, and by comparing their user profile to the average user as the authors did in \cite{Csoknyai2019}.
 Source \cite{eu2006} states that as much as 20 \% of energy could be saved by managing consumption.
 
-\subsubsection{Demand response}
+\subsubsection{Demand Response}
 
 An increasing percentage of renewable resources is troubling energy distributors, due to the nature of renewable resources.
 In the prior chapter, it was mentioned how energy-saving measures would benefit users and their peers.
@@ -209,7 +209,7 @@ Using user load profiles, distribution companies could disconnect the load in a 
 When they would need to load the grid due to low demand, they could charge EVs free of charge or even pay to do so. 
 This benefits the company as well since they do not need to lower energy production, which can be expensive. 
 
-\subsection{Anomaly detection}
+\subsection{Anomaly Detection}
 
 One use-case of anomaly detection was already mentioned in the Elderly care chapter.
 One more thing that could be detected, using load profiling, would be the altered operation of appliances.
@@ -220,7 +220,7 @@ The malfunction could also be detected in heating element appliances such as toa
 Since mentioned appliances are one of the largest consumers in a household,
 early enough detection could lead to large energy-saving benefits \cite{NILMAD2019}.
 
-\subsubsection{Elderly care}
+\subsubsection{Elderly Care}
 
 The aging population is an increasing socioeconomic issue.
 The elderly are facing many issues when staying at home alone for extended periods.
@@ -253,7 +253,7 @@ One other use-case could be occupancy detection of buildings such as the authors
 occupancy could be used as part of elderly care monitoring or in the case of building
 automation, to run certain tasks when a user enters or leaves the room or a building.
 
-\section{Table of profiles}
+\section{Table of Profiles}
 
 While in related work we examined load profiling in general,
 this section focuses on how data is presented with load profiles.  
@@ -267,7 +267,7 @@ Fourth, using a reduced feature set a more detailed table will be formed.
 Again, the table will be populated using the same references as before.
 Finally, using this information a research direction will be formed.
 
-\subsection{Feature set} \label{sec:feature_set}
+\subsection{Feature Set} \label{sec:feature_set}
 
 If we want to find the base features, we have to look at how consumption measurements are 
 done in most buildings. 
@@ -347,14 +347,14 @@ meaning this could be a use-case for this kind of load profile.
 %     \1 number of activations (How many times appliance or appliances were turned on)
 % \end{outline}
 
-\subsection{General table}
+\subsection{General Table}
 Using these features we can form a Table with all possible combinations.
 Table \ref{tab:general_map} is then populated with references from previous chapters.
 To understand the table more clearly, let's imagine that each feature is used as an axis label when plotting. 
 
 \begin{table}[H]
     \centering
-    \caption{General Table of load profiles}
+    \caption{General table of load profiles}
     \label{tab:general_map}
     \begin{tabular}{|c|c|c|c|c|c|}
     \hline
@@ -388,7 +388,7 @@ Based on Table \ref{tab:general_map} it is possible to see that not much attenti
 
 There are many more ways to present the data. An extended Table can be found in Appendix \ref{AppendixB}.
 
-\subsection{Detailed table}
+\subsection{Detailed Table}
 
 This section will focus on exploring possible activation-based load profiles,
 while using the power load profiles as a baseline. 
@@ -420,7 +420,7 @@ These are reshaped and grouped as follows:
 \end{outline}
 
 
-\subsection{Table of combinations or detailed table}
+\subsection{Table of Combinations or Detailed Table}
 
 The above-shown profiles can be combined, yielding a new way of displaying the data.
 Bellow, a map with combinations of the above-mentioned profiles is presented. 
@@ -462,7 +462,7 @@ The last row presents the usage unit, that is power (P) or the number of activat
 
 In cases where the feature combination does not make sense, it is marked with an X.
 
-\subsection{Mapping references to the table of profiles}
+\subsection{Mapping References to the Table of Profiles}
 
 To find useful load profiles, references from the related work section \ref{sec:related_work} must be mapped.
 
@@ -491,7 +491,7 @@ The purpose of Table \ref{tab:contributions} is to present missing scientific co
 
 \newcommand{\tabVar}{+ daily time \\ dimension  }
 
-\subsection{Mapping use-cases to the table of profiles}
+\subsection{Mapping Use-Cases to the Table of Profiles}
 
 Table \ref{tab:use_cases} includes arranged publications from the use-cases section \ref{sec:use-cases}. 
 Similar pattern emerged as in Table \ref{tab:contributions}. 
@@ -569,7 +569,7 @@ Similar pattern emerged as in Table \ref{tab:contributions}.
 	\end{tabular}
 \end{table}
 
-\subsection{Table of use-case groups}
+\subsection{Table of Use-Case Groups}
 
 The Table \ref{tab:groups} presents same publications as Table \ref{tab:use_cases},
 but only group names are shown.
@@ -730,7 +730,7 @@ with possible use-cases for given load profiles.
     \end{adjustbox}
 \end{table}
 
-\subsection{Table of load profile potentials} \label{subsec:potential}
+\subsection{Table of Load Profile Potentials} \label{subsec:potential}
 
 Some combinations are indeed illogical and again others are less useful in a practical sense.
 The next Table \ref{tab:classified_profiles} will try to rate the utilization potential of the profiles based on two characteristics. 
@@ -824,7 +824,7 @@ The Table has four possible classes.
     \end{tabular}
 \end{table}
 
-\subsection{Table of possible future research directions}
+\subsection{Table of Possible Future Research Directions}
 
 To find future research directions we must look into profiles that were least researched,
 such profiles are marked with the number 3 on Table \ref{tab:classified_profiles}.
@@ -851,7 +851,7 @@ That is why we have assigned them to the second class.
 The second rule was applied to 3D profiles.
 In the case where one dimension was commonly used, it is probably worth investigating it with a combination of additional dimensions. 
 
-Following these rules, the Table  \ref{tab:future_rd} was constructed.
+Following these rules, Table  \ref{tab:future_rd} was constructed.
 
 
 \begin{table}[H]
@@ -1011,7 +1011,7 @@ the result is Table \ref{tab:our_rd}.
 The profiles shown in Table \ref{tab:our_rd} are our direction of research.
 In the next part of the thesis, we will try to utilize and present these load profiles.
 This will be done as follows.
-In chapter \ref{chapter5} we will use 
+In chapter \ref{chapter5} we will use
 \begin{itemize}
   \item Per-building daily-weekly load profile
   \item Per-appliance daily-weekly load profile
