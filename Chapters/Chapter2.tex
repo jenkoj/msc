@@ -267,74 +267,7 @@ Fourth, using a reduced feature set a more detailed table will be formed.
 Again, the table will be populated using the same references as before.
 Finally, using this information a research direction will be formed.
 
-\subsection{Feature Set} \label{sec:feature_set}
 
-If we want to find the base features, we have to look at how consumption measurements are 
-done in most buildings. 
-The following three features enable us to know the amount of energy being consumed by the user.
-
-\begin{figure}[H]
-  \Tree[.base\ features [.power ]
-          [.timestamp ]
-          [.name ]
-                ]
-\end{figure}
-
-If we translate these features to the time domain and observe them over a specified amount of time, new features emerge. 
-The most notable example is the observation of electrical power over one hour.
-The result is energy $E$ and it is one of the most common ways used to bill a customer for his power consumption.
-
-
-We can also extract features such as the number of activations or time of operation for each activation.
-This can be done using sensors to detect activity or even deduct this from power consumption data.
-In cases where we are observing individual appliances, this can be done using simple signal processing
-techniques. In cases where we are observing buildings, this could be achieved using more complex disaggregation algorithms also known as NILM algorithms.
-
-% Time domain
-\begin{figure}[H]
-  \Tree[.time\ domain\ features [.energy $E$ ]
-          [.number\ of\ activations $N_{act}$  ]
-          [.operating\ time $t_{oper}$  ]
-                ]
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\caption{Simple signal processing of power consumption for a single appliance}
-	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/singal_processing_thr.png}
-	\label{fig:sig_proc_fig}
-\end{figure}
-
-As we can see in Figure \ref{fig:sig_proc_fig} all three-time domain features can be extracted from the graph. 
-Energy $E$ is equal to the area under the graph or in other words integral of power over time. 
-$N_{act}$ can be measured based on the number of times the power value exceeded some pre-defined threshold $P_{thr}$. 
-The $t_{oper}$ is the time between on and off events, where we use the same threshold as with $N_{act}$.
-While there are other features, such as time between activations, or total operational time that could be
-extracted, these were not commonly used in related work.
-
-\begin{figure}[H]
-\Tree[.frequency\ domain\ features [.Operation\ Modes ]]
-\end{figure}
-The same as we can present power in the time domain, the same can be done in the frequency domain. 
-One actual example can be seen in Figure \ref{fig:freq}.
-Here, it is hard to extract more features, but one possibility could be
-detecting the number of operation modes based on the number of peaks, using signal processing algorithms.
-
-\begin{figure}[H]
-	\centering
-	\caption{Frequency of power values for the toaster. Actual data from the REFIT dataset.}
-	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/freq.png}
-	\label{fig:freq}
-\end{figure}
-
-In the case of Figure \ref{fig:freq} we are observing a toaster over one year.
-Toasters are usually simple appliances using a heating element and a thermostat, meaning that the power consumption should be constant and set by the resistance of the heating element.
-The Figure shows \ref{fig:freq} a nice normal distribution of power values around 3 kW, 
-which we can assume is the heating element.
-We can notice two other peaks one at roughly 1 kW and the other at 0.7 kW.
-Since toasters usually do not have operation modes, we could assume that there 
-are other appliances plugged into the metering device, 
-meaning this could be a use-case for this kind of load profile.
 
 % Combining these features with  related work from section \ref{sec:related_work} and use-case references from section \ref{sec:use-cases},
 % we can extract the most commonly used features to portray the load profiles.
