@@ -255,6 +255,21 @@ The last class is other, where occupancy detection, development feedback and ene
 
 A more detailed description of each use-case with publications will be addressed in the next chapter in section \ref{sec:use-cases}
 
+\section{Data}
+
+To construct the LPs we used 5 different datasets.
+These are UK-DALE \cite{UKDALE}, REFIT \cite{REFIT}, ECO \cite{ECO}, REDD \cite{REDD}, and iAWE \cite{iAWE}.
+All datasets measured electrical energy consumption in residential buildings.
+They include main smart meter data, as well as sub-meter data for each appliance in a dwelling. 
+While some datasets offered versions with high frequency with sampling rates up to 40 kHz,
+we focused on the low-frequency variations with sampling rates at around 1 Hz.
+
+The datasets used, had frequencies ranging from 1 Hz for the ECO dataset, down to 1/8 Hz for the REFIT dataset.
+For datasets to be compatible, we resampled all datasets to 1/6 Hz.
+The missing samples were forward filled with a limit of 5, meaning if up 30 s of data was missing, its value was set to the last known value, otherwise, it was left missing.
+For easier handling datasets will be sliced into 1-hour intervals.
+The exact methodology will be presented in the methodology Chapter \ref{chapter3}. 
+
 \section{Contributions}
 \label{sec:contributions} 
 
@@ -287,7 +302,7 @@ The third contribution refers to exploratory data analysis (EDA) through visuali
 Here we leverage proposed and analyzed LPs and t-SNE dimensionality reduction algorithm to understand how data is related.
 
 \begin{enumerate}
-	\item[4.] Propose a new anomaly detection method for elderly care (\ref{chapter6})
+	\item[4.] Propose a new anomaly detection method for elderly care (Chapter \ref{chapter6})
 \end{enumerate}
 
 This newly obtained knowledge should help us provide the last contribution.
