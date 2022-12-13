@@ -1,19 +1,25 @@
 \chapter{Presenting Proposed LPs}
 \label{chapter4}
 
-Previously defined profiles will be presented in-depth. 
+The Chapter will provide an analysis and in-depth presentation of LPs from Section \ref{ssec:table_of_combinations}.
 In general, each profile has its use-case already assigned in Table \ref{tab:use_cases}.
-Here, we will focus on exposing the main features, issues, and use cases. 
+Here, we will focus on exposing the main features, issues, and use cases of the aforementioned LPs. 
 
-Data for profiles in this chapter was used from building 2 from the REFIT dataset.
-Data was collected from 2013-09-18 to 2015-05-28.
+Using the same pattern as in Table \ref{fig:map_fig}, we will first present per-building LPs with different time ranges.
+We will start with simple LPs and then move to more advanced LPs with two-time dimensions.
+Secondly, using the same pattern, we will present per-appliance profiles.
+Finally, we will present per-building per-appliance LPs.
+
+Data for profiles in this chapter was used from building 2 from the REFIT dataset discussed in Section \ref{ssec:data}.
 
 \section{Time Ranges}
 \label{sec:time_range}
-One important thing to mention is the use cases for different time ranges of load profiles.
-Based on Table \ref{tab:contributions} it is possible to see that most publications and \ref{tab:use_cases} use daily time range.
 
-Generally, daily profiles are easier to build since they do not need as much data as others do.
+Time ranges are an important part of the load profile since each reveals a different usage pattern.
+Throughout the thesis, we used four different time ranges: daily, weekly, monthly and yearly.
+
+The daily profiles are the most commonly used LPs, as can be seen in Table \ref{tab:contributions}
+Generally, they are the easiest to build since they do not need as much data as others do.
 To build a decent profile one needs enough data. 
 A sufficient amount of data is the amount that covers major events.
 For a daily profile, a few weeks of data is enough, weekly load profiles need a few months of data, monthly few months, and yearly few years.
@@ -28,15 +34,15 @@ The monthly profile has none of the above. It is not repetitive since each day o
 Alternatively, it could be presented as a week in a month, but there is no significant usage pattern to be revealed.
 The yearly profile on the other hand presents the seasonal effects on usage such as increased daylight and temperature. 
 
-
 \section{Per-Building LPs}
 \label{sec:per_building}
-The section will be focused on per-building profiles, meaning whole building usage is presented as a single load profile.
+The section will be focused on per-building profiles.
+Per-building profiles refer to representations where whole building usage is presented as a single load profile.
 This kind of presentation is useful for observing general activation trends in a building.
 Possible use cases for per-building load profiles are grid management and energy saving.
 
 When it comes to activation load profiles there is one issue compared to power load profiles.
-To build per-building power load profiles it is possible to use the main power meter, whereas, at activation load profiles, sub-meter data is needed.
+To build per-building power load profiles it is possible to use the main power meter, whereas, at activation load profiles, sub-meter or disaggregated data is needed.
 This can be solved using NILM algorithms, but they are not in a state of practical use yet.
 
 The daily per-building LP is also known as the standard load profile. 
@@ -102,16 +108,16 @@ Here, while the morning peak is visible, the evening one can barely be detected.
 One more thing to mention is that the increased activity at the start of the fall increased activity throughout the night and day.
 This could point to that some new appliance was installed, which increased the number of activations.
 
-Previously it was mentioned that these kinds of profiles are the most applicable in grid management. 
+Previously, in Section \ref{sec:grid_managment}, it was mentioned that these kinds of profiles are the most applicable in grid management. 
 One such example could be load shedding.
 Using the Load profile above, electrical energy providers could find buildings with the least activity at that time of day.
 Combining that with power data, it could disconnect the buildings with the least activity and most power consumption.
 
 \section{Per-appliance}
 
-Per appliance load profiles offer a look into the consumption of each appliance. 
-In the case of activation load profiles, this is an elemental load profile, since all other activation profiles are built on top of it. 
-This also means that it is one of the most universal profiles since it can be used in all previously defined use cases.
+Per-appliance LPs offer a look into the consumption of each appliance. 
+In the case of activation LP, this is an elemental load profile, since all other activation LPs are built on top of it. 
+This also means that it is one of the most universal profiles since it can be used in use-cases defined in Section \ref{sec:use-cases}
 
 \begin{figure}[H]
 	\centering
@@ -151,7 +157,7 @@ It is possible to present them both at once such as in Figure \ref{fig:WM_ww_dai
 This is essentially a variation of the weekly load profile that maintains high resolution.
 Since there are more weekdays than weekend days, activations had to be normalized accordingly.
 
-Figure \ref{fig:WM_ww_daily} again shows the same pattern as on Figure \ref{fig:WM_daily}.
+Figure \ref{fig:WM_ww_daily} again shows the same pattern as in Figure \ref{fig:WM_daily}.
 What can we observe here is how these two patterns are the same but are shifted in time. 
 On weekdays the first peak occurs at around 10 AM and the second at around 3 PM.
 On weekends the first peak does not occur until 12 AM and the second at around 6 PM.
@@ -245,11 +251,11 @@ Since the pattern seems to bounce back, it could be seasonally correlated.
 The second example is Sub-figure \ref{fig:HM_Ywh_tv}. It shows how TV usage changes over the year.
 Compared to the computer, it is possible to see that the pattern looks a lot more persistent with slight changes.
 Interestingly enough, when a close-up observation is made, it is possible to see that at the time when the computer was at its peak
-the TV was at it's low. And when the usage of computers decreased, the usage of TV increased. 
+the TV was at its low. And when the usage of computers decreased, the usage of TV increased. 
 Due to the lack of metadata, it is hard to know the exact reason behind it. 
 
 The good thing about this change is, that it takes a few weeks before it changes. 
-This will be important later in Chapter \ref{chapter6}, when we will be designing an elderly care system, that will be based on periodical user behavior.
+This will be important later in Chapter \ref{chapter6} when we will be designing an elderly care system, that will be based on periodical user behavior.
 This slow change gives the system time to adapt. 
 
 One observation of quick behavior change can be made in weeks 8-11 and weeks 38-37, where we can see a black row on all three sub-Figures in Figure \ref{fig:var_2d_lpss}.
