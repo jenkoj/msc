@@ -294,13 +294,13 @@ To understand the table more clearly, let's imagine that each feature is used as
         &
         \begin{tabular}[c]{@{}l@{}}power \end{tabular} &
         \begin{tabular}[c]{@{}l@{}}number of\\ activations \end{tabular} \\ \hline
-        \begin{tabular}[c]{@{}c@{}}time\end{tabular}        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Chuan2014} \\ \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \\ \citeyear*{WALKER1985} \\ 	\citeyear*{GERBEC2005} \\ 	\citeyear*{Gao2018} \\ 	\citeyear*{Jeong2021}\\  	\citeyear*{Joana2012} \\ 	\citeyear*{DER_heatmap_profile}\\ 	\citeyear*{NILMAD2019}\\	\citeyear*{NILMAD22019} \\	\citeyear*{Issi2018} \\	\citeyear*{NILMAD2021}\\	\citeyear*{Castangia2021} \\	\citeyear*{occupancy2013} \\	\citeyear*{Chuan2014} \\ 	\citeyear*{CAPASSO1994} \\ 	\citeyear*{Park2019} \\	\citeyear*{UKDALE} \\	\citeyear*{Gao2018}    \end{tabular}} &  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{per_appliance_per_building} \\ \citeyear*{UKDALE} \end{tabular}}  \\ \hline
+        \begin{tabular}[c]{@{}c@{}}time\end{tabular}        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Chuan2014}  \citeyear*{Csoknyai2019}  \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184}  \citeyear*{WALKER1985}  	\citeyear*{GERBEC2005} \\ 	\citeyear*{Gao2018}  	\citeyear*{Jeong2021}  \citeyear*{Joana2012} \\ 	\citeyear*{DER_heatmap_profile}  	\citeyear*{NILMAD2019} \citeyear*{NILMAD22019} \\	\citeyear*{Issi2018} 	\citeyear*{NILMAD2021}	\citeyear*{Castangia2021} \\	\citeyear*{occupancy2013} 	\citeyear*{Chuan2014}  	\citeyear*{CAPASSO1994} \\ 	\citeyear*{Park2019} 	\citeyear*{UKDALE} \citeyear*{Gao2018}    \end{tabular}} &  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{per_appliance_per_building} \\ \citeyear*{UKDALE} \end{tabular}}  \\ \hline
         \begin{tabular}[c]{@{}c@{}}operation\\ time \end{tabular}                                          & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}  \citeyear*{NILMAD2021}  \end{tabular}} &  \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{NILMAD2019} \\ \citeyear*{NILMAD22019} \\ \citeyear*{NILMAD2021} \end{tabular}}  \\ \hline
     \end{tabular}
 \end{table}
 
 Table \ref{tab:general_map} shows a combination of base features of power and time with 21 publications. 
-One example of such profile can be seen on Figure \ref{fig:sig_proc_fig} or \ref{fig:daily_power_profile} and is also known as standard load profile (SLP).
+One example of such a profile can be seen in Figure \ref{fig:sig_proc_fig} or \ref{fig:daily_power_profile} and is also known as standard load profile (SLP).
 
 As we have seen in the previous section, the two other features, operation time and the number of activations are a derivation of the base features.
 A combination of the two has been used in three other papers.
@@ -357,23 +357,23 @@ These are reshaped and grouped as follows:
 
 The above-shown profiles can be combined, yielding a new way of displaying the data.
 Bellow, a map with combinations of the above-mentioned profiles is presented. 
-The purpose of Table \ref{fig:map_fig} to generate and show possible combinations.
+The purpose of Table \ref{fig:map_fig} is to show possible LP combinations.
 Some combinations that had similar output were grouped, and some that could not be sketched were discarded. 
 
 The profiles and figure graphics used in the Table \ref{fig:map_fig} were sourced from section \ref{sec:LP_types}.
 
-\begin{figure}[H]
+\begin{sidewaysfigure}
 	\centering
-	\caption{Table of combinations}
 	\includegraphics[width=0.9\textwidth]{Figures/profile_sketches/Slide14.png}
-	\label{fig:map_fig}
-\end{figure}
+  \caption{Table of combinations}
+  \label{fig:map_fig}
+\end{sidewaysfigure}
 
-Table \ref{fig:map_fig}, uses features from previous subsection \ref{sec:subfeatures}. 
-In general, the Table \ref{fig:map_fig} is formatted in a way that features from columns (time range) are
+Table \ref{fig:map_fig}, uses features from the previous subsection \ref{sec:subfeatures}. 
+In general, Table \ref{fig:map_fig} is formatted in a way that features from columns (time range) are
 used in the x-axis of a plot, and rows (consumption data) are used in the y or z-axis of a plot. 
 
-The column of the Table \ref{fig:map_fig} presents the time domain.
+The column of Table \ref{fig:map_fig} presents the time domain.
 "Daily" means that the load profile presents average usage for one day and "Weekly" means it presents usage for a week.
 To be clear, for one to construct a decent daily profile, one needs a few weeks of data. 
 The same goes for yearly profiles, in that case, one needs many years' worth of data. 
@@ -389,7 +389,7 @@ Next is an LP with an additional time axis.
 In this case, we present the given usage unit on the z-axis and then time on the x and y-axis.
 Here, the second-time dimension can be anything from a week to a year.
 In the case of the per-building, the subgroup includes appliances instead of time. 
-Example for this is Figure \ref{fig:heatmap_all_appl}.
+An example of this is Figure \ref{fig:heatmap_all_appl}.
 
 The last row presents the usage unit, that is power (P) or the number of activations (A).
 
@@ -427,7 +427,7 @@ The purpose of Table \ref{tab:contributions} is to present missing scientific co
 \subsection{Mapping Use-Cases to the Table of Profiles}
 
 Table \ref{tab:use_cases} includes arranged publications from the use-cases section \ref{sec:use-cases}. 
-Similar pattern emerged as in Table \ref{tab:contributions}. 
+A similar pattern emerged as in Table \ref{tab:contributions}. 
 
 \begin{table}[H]
 	\caption{Table presents references mentioned in use-cases chapter}
