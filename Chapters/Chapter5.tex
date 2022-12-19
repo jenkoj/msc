@@ -1,4 +1,4 @@
-\chapter{Visual analysis of LP's using t-SNE} 
+\chapter{Exploratory data analysis and t-SNE visualization of LPs} 
 
 \label{chapter5} 
 
@@ -105,7 +105,7 @@ One of the well-known dimensionality reduction algorithms is PCA.
 The key difference between the two is that one is linear, and the other is non-linear.
 PCA, linear, projects data in new space and finds the one with the least variance between data points.
 SNE \cite{sne1}, non-linear, is composed of two main parts. The first one is 
-converting the high-dimensional Euclidean distances between data points into conditional probabilities that represent similarities. %\cite{sne1}
+converting the high-dimensional Euclidean distances between data points into conditional probabilities that represent similarities \cite{sne1}.
 The pairs with high similarity have a high probability, and pairs with lower a low probability.
 Second, it uses Kullback-Leibler divergence to minimize it with respect to a location on a map.
 To achieve this it uses gradient descent to minimize the cost function.
@@ -286,31 +286,31 @@ in Chapter \ref{chapter6} to build an elderly care anomaly system.
 	\label{fig:tsne_pa_img_scatter_all_kettle}
 \end{figure}
 
-Figure \ref{fig:tsne_pa_scatter_all_microwave} shows that microwaves are again a bit different from the kettle.
-They are more clustered than the fridges, and less than the kettles, even though they are used similarly.
-This could be due to additional electronics such as a clock that are built into
-the appliance. This could lead to some samples being registered as turned on due to 
-a "dark" current. One other difference between the two is that microwave has more than one mode of operation.
+% Figure \ref{fig:tsne_pa_scatter_all_microwave} shows that microwaves are again a bit different from the kettle.
+% They are more clustered than the fridges, and less than the kettles, even though they are used similarly.
+% This could be due to additional electronics such as a clock that are built into
+% the appliance. This could lead to some samples being registered as turned on due to 
+% a "dark" current. One other difference between the two is that microwave has more than one mode of operation.
 
-\begin{figure}[H]
-	\centering
-	\caption{Projection of microwave load profiles for various buildings}
-	\includegraphics[width=1.2\textwidth]{Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png}
-	\label{fig:tsne_pa_scatter_all_microwave}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\caption{Projection of microwave load profiles for various buildings}
+% 	\includegraphics[width=1.2\textwidth]{Figures/TSNE/TSNE_per_appliance/all/scatter_all_microwave.png}
+% 	\label{fig:tsne_pa_scatter_all_microwave}
+% \end{figure}
 
-Figure \ref{fig:tsne_pa_img_scatter_all_microwave} shows the faulty samples could be the ones in the upper left part of the plot since they are too bright.
-They do present a pattern, but it is questionable what it presents since it seems like it's turned on during the nighttime. 
-Images at the other end show less lot less activity, which could indicate that
-the household does not use microwaves as much. The most interesting load profiles are in the middle of the 
-plot, where it is possible to observe clear activation patterns. 
+% Figure \ref{fig:tsne_pa_img_scatter_all_microwave} shows the faulty samples could be the ones in the upper left part of the plot since they are too bright.
+% They do present a pattern, but it is questionable what it presents since it seems like it's turned on during the nighttime. 
+% Images at the other end show less lot less activity, which could indicate that
+% the household does not use microwaves as much. The most interesting load profiles are in the middle of the 
+% plot, where it is possible to observe clear activation patterns. 
 
-\begin{figure}[H]
-	\centering
-	\caption{Projection of microwave load profiles for various buildings with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png}
-	\label{fig:tsne_pa_img_scatter_all_microwave}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\caption{Projection of microwave load profiles for various buildings with actual samples}
+% 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_appliance/all/img_scatter_allmicrowave.png}
+% 	\label{fig:tsne_pa_img_scatter_all_microwave}
+% \end{figure}
 
 The last per-appliance example is television presented in Figure \ref{fig:tsne_pa_scatter_all_tv}. 
 Television was chosen since it is the most commonly occurring appliance.
@@ -349,27 +349,27 @@ What is also interesting, is that the very same pattern can be observed in a few
 
 \subsubsection{Per-Appliance Load Profiles - Comparing Appliances}
 
-Figure \ref{fig:tsne_papb_scatter_all} presents the general picture of where each appliance lays in comparison to the other.
-One obvious issue here is that there are too many appliances, and it is impossible to comprehend the plot.
+% Figure \ref{fig:tsne_papb_scatter_all} presents the general picture of where each appliance lays in comparison to the other.
+% One obvious issue here is that there are too many appliances, and it is impossible to comprehend the plot.
 
-\begin{figure}[H]
-	\centering
-	\caption{Projection of per-appliance load profiles}
-	\includegraphics[width=1.2\textwidth]{Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png}
-	\label{fig:tsne_papb_scatter_all}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\caption{Projection of per-appliance load profiles}
+% 	\includegraphics[width=1.2\textwidth]{Figures/TSNE/TSNE_results/all/scatter_all_all_lgimgs.png}
+% 	\label{fig:tsne_papb_scatter_all}
+% \end{figure}
 
-The same goes for image presentation in Figure \ref{fig:tsne_papb_img_scatter_all}. 
-We can see, that most active appliances are the ones in the bottom left,
-by moving to the upper right part of the corner, we can see less activity.
-Less activity does not necessarily mean that load profiles contain less information about user behavior.
+% The same goes for image presentation in Figure \ref{fig:tsne_papb_img_scatter_all}. 
+% We can see, that most active appliances are the ones in the bottom left,
+% by moving to the upper right part of the corner, we can see less activity.
+% Less activity does not necessarily mean that load profiles contain less information about user behavior.
 
-\begin{figure}[H]
-	\centering
-	\caption{Projection of per-appliance load profiles with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png}
-	\label{fig:tsne_papb_img_scatter_all}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\caption{Projection of per-appliance load profiles with actual samples}
+% 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_results/all/img_scatter_allall_lgimgs.png}
+% 	\label{fig:tsne_papb_img_scatter_all}
+% \end{figure}
 
 To get a general idea of where each appliance group lies,
 let's filter out all appliances that have less than 150 samples.
@@ -399,16 +399,16 @@ They are located in the lower part of the plot.
 The final group of appliances is televisions and computers. They lie 
 on a bridge between the fridges and other groups. 
 
-\begin{figure}[H]
-	\centering
-	\caption{Projection of filtered per-appliance load profiles with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png}
-	\label{fig:tsne_papb_img_scatter_all_reduced}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\caption{Projection of filtered per-appliance load profiles with actual samples}
+% 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_results/all/img_scatter_allall_reduced_max.png}
+% 	\label{fig:tsne_papb_img_scatter_all_reduced}
+% \end{figure}
 
-Even though the set of load profiles is different due to filtering,
-the Figure \ref{fig:tsne_papb_img_scatter_all_reduced},
-retains a similar structure to the previous Figure \ref{fig:tsne_papb_scatter_all_reduced}. 
+% Even though the set of load profiles is different due to filtering,
+% the Figure \ref{fig:tsne_papb_img_scatter_all_reduced},
+% retains a similar structure to the previous Figure \ref{fig:tsne_papb_scatter_all_reduced}. 
 
 Knowing that a pattern exists, we can use the newly found group to define new appliance groups.
 The following 8 groups will be defined
@@ -454,66 +454,66 @@ Figure \ref{fig:t-sne_zoomed} shows the four main types of profiles for readers 
 	\label{fig:t-sne_zoomed}
 \end{figure}
 
-One issue that causes the t-SNE algorithm an issue is low entropy data or 
-in other words, images that are almost completely dark or white, due to various faults in appliances or measurements.
+% One issue that causes the t-SNE algorithm an issue is low entropy data or 
+% in other words, images that are almost completely dark or white, due to various faults in appliances or measurements.
 
-If we calculate the entropy for each image and set a threshold, it is possible to filter out these samples. 
-By setting an entropy threshold of 0.5, we filter out around 5 \% of all samples. 
+% If we calculate the entropy for each image and set a threshold, it is possible to filter out these samples. 
+% By setting an entropy threshold of 0.5, we filter out around 5 \% of all samples. 
 
-\begin{figure}[H]
-	\centering
-	\caption{Projection of entropy filtered per-appliance load profiles}
-	\includegraphics[width=.8\textwidth]{Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png}
-	\label{fig:tsne_papb_scatter_ent_all_groups}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\caption{Projection of entropy filtered per-appliance load profiles}
+% 	\includegraphics[width=.8\textwidth]{Figures/TSNE/TSNE_results_entropy/all/scatter_all_all.png}
+% 	\label{fig:tsne_papb_scatter_ent_all_groups}
+% \end{figure}
 
-Again, we can apply appliance grouping and get nicely formed clusters, such as can be seen in Figure \ref{fig:tsne_papb_img_scatter_ent_all_groups}.
+% Again, we can apply appliance grouping and get nicely formed clusters, such as can be seen in Figure \ref{fig:tsne_papb_img_scatter_ent_all_groups}.
 
-\begin{figure}[H]
-	\centering
-	\caption{Projection of entropy filtered per-appliance load profiles with actual samples}
-	\includegraphics[width=.8\textwidth]{Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png}
-	\label{fig:tsne_papb_img_scatter_ent_all_groups}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\caption{Projection of entropy filtered per-appliance load profiles with actual samples}
+% 	\includegraphics[width=.8\textwidth]{Figures/TSNE/TSNE_results_entropy/all/scatter_all_all_groups.png}
+% 	\label{fig:tsne_papb_img_scatter_ent_all_groups}
+% \end{figure}
 
 
-\subsubsection{Comparing Appliances in a Building}
+% \subsubsection{Comparing Appliances in a Building}
 
-It is also possible to use per-appliance data to study
-individual buildings, and how each appliance is used.
-In this case, we have used building 8 from REFIT as an example.
+% It is also possible to use per-appliance data to study
+% individual buildings, and how each appliance is used.
+% In this case, we have used building 8 from REFIT as an example.
 
-\begin{figure}[H]
-	\centering
-	\caption{Projection of per-appliance load profiles in a single building}
-	\includegraphics[width=.8\textwidth]{Figures/TSNE/TSNE_results/refit/scatter_refit_8.png}
-	\label{fig:tsne_papb_scatter_ent_refit8}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\caption{Projection of per-appliance load profiles in a single building}
+% 	\includegraphics[width=.8\textwidth]{Figures/TSNE/TSNE_results/refit/scatter_refit_8.png}
+% 	\label{fig:tsne_papb_scatter_ent_refit8}
+% \end{figure}
 
-In general, the scattering is similar to before.
-Fridges and freezers are located opposite of white goods and kitchen appliances. 
-The television lies somewhere in between. 
+% In general, the scattering is similar to before.
+% Fridges and freezers are located opposite of white goods and kitchen appliances. 
+% The television lies somewhere in between. 
 
-\begin{figure}[H]
-	\centering
-	\caption{Projection of per-appliance load profiles in a single building with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png}
-	\label{fig:tsne_papb_img_scatter_ent_refit8}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\caption{Projection of per-appliance load profiles in a single building with actual samples}
+% 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_results/refit/img_scatter_refit8.png}
+% 	\label{fig:tsne_papb_img_scatter_ent_refit8}
+% \end{figure}
 
-Similar to before Figure \ref{fig:tsne_papb_img_scatter_ent_refit8} shows the fridge cluster as the most active,
-with the least interesting information. In the middle, we can again observe the TV that is mostly being used
-in the evening hours. The samples also point to the possibility of a high-user routine in the early morning hours.
-The high routine is portrayed as a straight line on the figures. 
+% Similar to before Figure \ref{fig:tsne_papb_img_scatter_ent_refit8} shows the fridge cluster as the most active,
+% with the least interesting information. In the middle, we can again observe the TV that is mostly being used
+% in the evening hours. The samples also point to the possibility of a high-user routine in the early morning hours.
+% The high routine is portrayed as a straight line on the figures. 
 
-In this case, when observing white goods in pink and purple boxes, it is possible to see that this user primarily uses them during the night hours.
-This could point out that the user is making use of cheaper tariffs.
+% In this case, when observing white goods in pink and purple boxes, it is possible to see that this user primarily uses them during the night hours.
+% This could point out that the user is making use of cheaper tariffs.
 
-One other interesting observation that can be made here is comparing kettles, microwaves and toasters.
-Usually, these appliances are used similarly and in similar parts of the day. 
-Here the toaster and microwave are being used periodically, but the kettle is being used throughout the day with no general pattern.
-It is self-obvious that some users have higher routines than others, but this observation
-would add that some users can have a higher routine for some appliances and lower for others, of the same type. 
+% One other interesting observation that can be made here is comparing kettles, microwaves and toasters.
+% Usually, these appliances are used similarly and in similar parts of the day. 
+% Here the toaster and microwave are being used periodically, but the kettle is being used throughout the day with no general pattern.
+% It is self-obvious that some users have higher routines than others, but this observation
+% would add that some users can have a higher routine for some appliances and lower for others, of the same type. 
 
 \subsection{Per-Appliance Per-Building}
 
