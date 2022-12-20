@@ -144,7 +144,7 @@ The threshold of 0.5 was selected, which yields the following vectors:
     \centering
     \begin{tikzpicture}
         \coordinate (s) at (0,0);
-        \foreach \num in {0, 0, 0, 0, 0 , 1, 1, 1, 1, 1 , 1, 1}{
+        \foreach \num in {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}{
         \node[minimum size=6mm, draw, rectangle] at (s) {\num};
         \coordinate (s) at ($(s) + (1,0)$);
         }
@@ -411,51 +411,6 @@ In our case, there is not much harm in false positive detections, since the care
 The last step is to repeat steps 4 and 5 with test data.
 When using test data, we skip the buckets with low routine rates by using the mask on Figure \ref{arr:anom_ratio_mask}.
 Since the profile has never seen the data being used, this should give us a good presentation of actual performance in a real-world scenario.
-\subsection{Datasets and evaluation} \label{ssec:ds_eval}
-
-The data was split into train and test sets, where 80 \% of the data was used for training and 20 \% percent of the data for testing.
-The data was split based on the number of samples, so in some cases where there is a lot of missing data, the time window of test data might be longer, although it contains only 20 \% of the samples.
-
-\subsubsection{REFIT}
-The REFIT \cite{REFIT} dataset included data for more than 15 buildings, as can be seen in the Figure below.
-The dataset in general is of the highest quality since it is the longest with the least missing data.
-This means this dataset should give the most relevant results.
-\begin{figure}[H]
-	\centering
-	\caption{Timeline for REFIT}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_timeline.png}
-	\label{fig:refit_timeline}
-\end{figure}
-
-\subsubsection{UK-DALE} 
-
-Through the UK-DALE \cite{UKDALE} dataset is of similar size, most of the data is from building 1.
-In general, it includes 5 years of data, but only for some appliances, where many appliances are rarely used.
-When taking all of this into account, there were too many issues with building 1, and it was simply ignored.
-Another issue that can be seen in Figure \ref{fig:ukdale_timeline} is that there is not enough data for 
-building 3. The test includes only a week of data, which is not enough for representative results, therefore it was ignored.
-The rest of the buildings seem healthy.
-
-\begin{figure}[H]
-	\centering
-	\caption{Timeline for UK-DALE}
-	\includegraphics[width=1\textwidth]{Figures/EC/ukdale_timeline.png}
-	\label{fig:ukdale_timeline}
-\end{figure}
-
-\subsubsection{ECO}
-ECO \cite{ECO} dataset has a length of data similar to UK-DALE. 
-The only issue is building 1, where there is a lot of missing data.
-This is a good example of how data is split, it is split based on several samples,
-meaning that there is 80 \% in the train bar, due to missing data the second bar is longer. 
-
-\begin{figure}[H]
-	\centering
-	\caption{Timeline for ECO}
-	\includegraphics[width=1\textwidth]{Figures/EC/eco_timeline.png}
-	\label{fig:eco_timeline}
-\end{figure}
-
 
 \subsection{The metric - routine rate}
 
@@ -599,23 +554,24 @@ this is because most users are routinely sleeping during that period.
 As we can see in Figure \ref{fig:ignored_buckets_22},
 the high routine rate does not necessarily mean the buckets are useful.
 
+
 \begin{figure}[H]
-	\centering
-	\caption{Effectivity of anomaly detection through the day}
-	\includegraphics[width=.8\textwidth]{Figures/EC/ignored_buckets_dist.png}
-	\label{fig:ignored_buckets_22}
+	\begin{subfigure}{.5\textwidth}
+        \caption{Effectivity of anomaly detection through the day}
+        \includegraphics[width=.8\textwidth]{Figures/EC/ignored_buckets_dist.png}
+        \label{fig:ignored_buckets_22}
+    \end{subfigure}
+    ~
+    \begin{subfigure}{.5\textwidth}
+        \caption{Actual effectiveness of anomaly detection through the day}
+        \includegraphics[width=.8\textwidth]{Figures/EC/all_ignored_buckets_dist_incl_act.png}
+        \label{fig:ignored_buckets_act}
+    \end{subfigure}
 \end{figure}
 
 To find the usable buckets, an additional filter must be applied.
 The rule is that at least two appliances must be commonly used in that bucket. 
 After applying this rule the following Figure emerges \ref{fig:ignored_buckets_act}
-
-\begin{figure}[H]
-	\centering
-	\caption{Actual effectiveness of anomaly detection through the day}
-	\includegraphics[width=.8\textwidth]{Figures/EC/all_ignored_buckets_dist_incl_act.png}
-	\label{fig:ignored_buckets_act}
-\end{figure}
 
 Figure \ref{fig:ignored_buckets_act} shows that there are two peaks.
 One in the morning and the other, a wider one, in the evening.
@@ -658,11 +614,19 @@ On the contrary, buildings 11 and 13 performed much worse than the others with r
 It is hard to know the exact reasons why the buildings performed in such a way.
 This could be due to various dataset errors that occurred during sampling.
 
+
 \begin{figure}[H]
-	\centering
-	\caption{Results for REFIT}
-	\includegraphics[width=.8\textwidth]{Figures/EC/refit_res.png}
-	\label{fig:refit_res}
+	\begin{subfigure}{.5\textwidth}
+        \caption{Results for REFIT}
+        \includegraphics[width=1\textwidth]{Figures/EC/refit_res.png}
+        \label{fig:refit_res}
+    \end{subfigure}
+    ~
+    \begin{subfigure}{.5\textwidth}
+        \caption{Results for REFIT with removed outliers}
+        \includegraphics[width=1\textwidth]{Figures/EC/refit_res2.png}
+        \label{fig:refit_res2}
+    \end{subfigure}
 \end{figure}
 
 For more relevant results we can ignore the outliers by removing one maximum and minimum value, such as can be seen in Figure \ref{fig:refit_res2}
@@ -670,36 +634,29 @@ This yields a result of 77.08 \%.
 If we were to repeat this process the result would be 79.77 \%.
 Since all outliers are removed, the result converges towards 79 \%, which is the relevant value. 
 
-\begin{figure}[H]
-	\centering
-	\caption{Results for REFIT with removed outliers}
-	\includegraphics[width=.8\textwidth]{Figures/EC/refit_res2.png}
-	\label{fig:refit_res2}
-\end{figure}
-
 
 As mentioned in the sub-sub section \ref{sssec:ratio_week}, the average routine is different during the week and on weekends.
 The assumption was that the routine of elderly people does not change significantly over the week, therefore results should be more relevant if we ignore the weekends.
-The results in Figure \ref{fig:refit_res_nw_1"} show that the result improved to 77.08 \%.
+The results in Figure \ref{fig:refit_res_nw_1} show that the result improved to 77.08 \%.
 
 \begin{figure}[H]
-	\centering
+	\begin{subfigure}{.5\textwidth}
 	\caption{Results for REFIT weekday only}
-	\includegraphics[width=.8\textwidth]{Figures/EC/refit_res_nw_1.png}
-	\label{fig:refit_res_nw_1"}
+	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_1.png}
+	\label{fig:refit_res_nw_1}
+    \end{subfigure}
+    ~
+    \begin{subfigure}{.5\textwidth}
+	\caption{Results for REFIT weekday only and removed outliers}
+	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_2.png}
+	\label{fig:refit_res_nw_2}
+    \end{subfigure}
 \end{figure}
 
 By ignoring the minimal and maximal outliers the results increase to 78.21 \%.
 Repeating the process one more time the result increases to 80.20 \%, since all outliers were removed, the result converges toward this value. 
 
 If we remove the weekend data, the results improved by 1.2 \%. 
-
-\begin{figure}[H]
-	\centering
-	\caption{Results for REFIT weekday only and removed outliers}
-	\includegraphics[width=.8\textwidth]{Figures/EC/refit_res_nw_2.png}
-	\label{fig:refit_res_nw_2"}
-\end{figure}
 
 \subsubsection{UK-DALE}
 
@@ -708,42 +665,43 @@ The results in Figure \ref{fig:ukdale_res}, show that the average result is 74.4
 Due to the low number of buildings, it is not possible to detect and ignore outliers.
 
 \begin{figure}[H]
-	\centering
-	\caption{Results for UK-DALE}
-	\includegraphics[width=.7\textwidth]{Figures/EC/ukdale_res.png}
-	\label{fig:ukdale_res}
+	\begin{subfigure}{.5\textwidth}
+        \caption{Results for UK-DALE}
+        \includegraphics[width=1\textwidth]{Figures/EC/ukdale_res.png}
+        \label{fig:ukdale_res}
+    \end{subfigure}
+    ~
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \caption{Results for UK-DALE omitting weekends}
+        \includegraphics[width=1\textwidth]{Figures/EC/ukdale_nw_res.png}
+        \label{fig:ukdale_res_nw}
+    \end{subfigure}
 \end{figure}
+
 
 The same as for REFIT, the weekend data can be ignored,
 In this case, this does not improve the result. 
-
-\begin{figure}[H]
-	\centering
-	\caption{Results for UK-DALE omitting weekends}
-	\includegraphics[width=.7\textwidth]{Figures/EC/ukdale_nw_res.png}
-	\label{fig:ukdale_res_nw}
-\end{figure}
-
 \subsubsection{ECO}
 
 ECO is of a similar quality as UK-DALE when taking into account the number of buildings and the length of data, as can be seen in subsection \ref{ssec:ds_eval}.
 The results in Figure \ref{fig:eco_res}, show that this dataset performed the best, with results of 84.09 \%.
 
 \begin{figure}[H]
-	\centering
-	\caption{Results for ECO}
-	\includegraphics[width=.7\textwidth]{Figures/EC/eco_res_nw_1.png}
-	\label{fig:eco_res}
+	\begin{subfigure}{.5\textwidth}
+        \caption{Results for ECO}
+        \includegraphics[width=1\textwidth]{Figures/EC/eco_res_nw_1.png}
+        \label{fig:eco_res}
+    \end{subfigure}
+    ~ 
+    \begin{subfigure}{.5\textwidth}
+        \caption{Results for ECO omitting weekends}
+        \includegraphics[width=1\textwidth]{Figures/EC/eco_res.png}
+        \label{fig:eco_res_nw}
+    \end{subfigure}
 \end{figure}
 
 The same as before we can omit weekend data, which can be seen in Figure \ref{fig:eco_res_nw}. This brings the result down to 83.80 \%. 
-
-\begin{figure}[H]
-	\centering
-	\caption{Results for ECO omitting weekends}
-	\includegraphics[width=.7\textwidth]{Figures/EC/eco_res.png}
-	\label{fig:eco_res_nw}
-\end{figure}
 
 \subsection{Combined Results}
 
@@ -848,21 +806,21 @@ We can also plot how the amount of data changes for all buildings.
 This can be seen in Figure \ref{fig:data_used_for_training}.
 
 \begin{figure}[H]
-	\centering
-	\caption{Data used for training}
-	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/data_used_for_training_all.png}
-	\label{fig:data_used_for_training}
+	\begin{subfigure}{.5\textwidth}
+        \caption{Data used for training}
+        \includegraphics[width=1\textwidth]{Figures/EC/DYN/data_used_for_training_all.png}
+        \label{fig:data_used_for_training}
+    \end{subfigure}
+    ~
+    \begin{subfigure}{.5\textwidth}
+        \caption{Data used for training, with removed buildings}
+        \includegraphics[width=1\textwidth]{Figures/EC/DYN/data_used_for_training_removed_short.png}
+        \label{fig:data_used_for_training_removed}
+    \end{subfigure}
 \end{figure}
 
 To analyze the results, at least 1 year of usable data should be available. 
 Figure \ref{fig:data_used_for_training_removed} shows only buildings containing at least one year of data.
-\begin{figure}[H]
-	\centering
-	\caption{Data used for training, with removed buildings}
-	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/data_used_for_training_removed_short.png}
-	\label{fig:data_used_for_training_removed}
-\end{figure}
-
 Similarly, we can check how test data changes over the months. 
 In this case, data is not being aggregated, but only one month of it is used at a time.
 Figure \ref{fig:data_used_for_testing} shows, that after one year
