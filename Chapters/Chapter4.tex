@@ -15,14 +15,14 @@ Data for profiles in this chapter was used from building 2 from the REFIT datase
 \section{Time Ranges}
 \label{sec:time_range}
 
-Time ranges are an important part of the load profile since each reveals a different usage pattern.
+Time ranges are an important part of the LP since each reveals a different usage pattern.
 Throughout the thesis, we used four different time ranges: daily, weekly, monthly and yearly.
 
 The daily profiles are the most commonly used LPs, as can be seen in Table \ref{tab:contributions}
 Generally, they are the easiest to build since they do not need as much data as others do.
 To build a decent profile one needs enough data. 
 A sufficient amount of data is the amount that covers major events.
-For a daily profile, a few weeks of data is enough, weekly load profiles need a few months of data, monthly few months, and yearly few years.
+For a daily profile, a few weeks of data is enough, weekly LPs need a few months of data, monthly few months, and yearly few years.
 And this is the main issue, there is rarely enough data to build such profiles.
 Even then, usage patterns could change over a long period such as a decade.
 Combining that with a smaller number of use cases for such profiles, reveals why such profiles were not looked into as much in Table \ref{tab:contributions}.
@@ -37,15 +37,15 @@ The yearly profile on the other hand presents the seasonal effects on usage such
 \section{Per-Building LPs}
 \label{sec:per_building}
 The section will be focused on per-building profiles.
-Per-building profiles refer to representations where whole building usage is presented as a single load profile.
+Per-building profiles refer to representations where whole building usage is presented as a single LP.
 This kind of presentation is useful for observing general activation trends in a building.
-Possible use cases for per-building load profiles are grid management and energy saving.
+Possible use cases for per-building LPs are grid management and energy saving.
 
-When it comes to activation load profiles there is one issue compared to power load profiles.
-To build per-building power load profiles it is possible to use the main power meter, whereas, at activation load profiles, sub-meter or disaggregated data is needed.
+When it comes to activation LPs there is one issue compared to power LPs.
+To build per-building power LPs it is possible to use the main power meter, whereas, at activation LPs, sub-meter or disaggregated data is needed.
 This can be solved using NILM algorithms, but they are not in a state of practical use yet.
 
-The daily per-building LP is also known as the standard load profile. 
+The daily per-building LP is also known as the standard LP. 
 According to Table \ref{tab:contributions} this is the most commonly used power profile.
 Figures \ref{fig:SLPdaily2} and \ref{fig:SLPyearly2} present usage patterns on different time ranges. 
 The two profiles, therefore present different contextual cases.
@@ -65,7 +65,7 @@ The two profiles, therefore present different contextual cases.
 		\label{fig:SLPyearly2}
 	\end{subfigure}%
 	\label{fig:SLP}
-	\caption{Per-building load profiles}
+	\caption{Per-building LPs}
 \end{figure}
 
 The first Figure \ref{fig:SLPdaily2} shows how activations change throughout the day.
@@ -91,7 +91,7 @@ The result is a Figure \ref{fig:SLPHMyearly2} showing more complex activation pa
 
 \begin{figure}[H]
 	\centering
-	\caption{Two-time-dimensional per-building load profile}
+	\caption{Two-time-dimensional per-building LP}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/SLPHMyearly2.png}
 	\label{fig:SLPHMyearly2}
 \end{figure}
@@ -110,18 +110,18 @@ This could point to that some new appliance was installed, which increased the n
 
 Previously, in Section \ref{sec:grid_managment}, it was mentioned that these kinds of profiles are the most applicable in grid management. 
 One such example could be load shedding.
-Using the Load profile above, electrical energy providers could find buildings with the least activity at that time of day.
+Using the LP above, electrical energy providers could find buildings with the least activity at that time of day.
 Combining that with power data, it could disconnect the buildings with the least activity and most power consumption.
 
 \section{Per-appliance}
 
 Per-appliance LPs offer a look into the consumption of each appliance. 
-In the case of activation LP, this is an elemental load profile, since all other activation LPs are built on top of it. 
+In the case of activation LP, this is an elemental LP, since all other activation LPs are built on top of it. 
 This also means that it is one of the most universal profiles since it can be used in use-cases defined in Section \ref{sec:use-cases}
 
 \begin{figure}[H]
 	\centering
-	\caption{Daily per-appliance load profile}
+	\caption{Daily per-appliance LP}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/WM_daily.png}
 	\label{fig:WM_daily}
 \end{figure}
@@ -131,7 +131,7 @@ While the peaks are closer together, the pattern remains.
 One thing to notice here is, that the washing machine is used only throughout the day.
 This means that this household does not use the cheaper nighttime tariffs.
 
-Another parameter that was not explicitly mentioned before, is the resolution of load profiles. 
+Another parameter that was not explicitly mentioned before, is the resolution of LPs. 
 Histograms can be presented using various resolutions or numbers of buckets.
 An optimal number of buckets is a number that clearly presents the usage pattern. 
 3-hour bucket size in Figure \ref{fig:4hours} does a good job at presenting the appliance usage at the main parts of the day.
@@ -141,7 +141,7 @@ This coincides with the point of the presentation, where we want to present a mo
 
 \begin{figure}[H]
 	\centering
-	\caption{Daily per-appliance load profile with larger buckets sizes}
+	\caption{Daily per-appliance LP with larger buckets sizes}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/3_hours.png}
 	\label{fig:4hours}
 \end{figure}
@@ -154,7 +154,7 @@ While this is sufficient for demonstrating the capabilities, real implementation
 
 In the case where dwellers have different usage patterns during the weekends, two profiles would have to be developed.
 It is possible to present them both at once such as in Figure \ref{fig:WM_ww_daily}. 
-This is essentially a variation of the weekly load profile that maintains high resolution.
+This is essentially a variation of the weekly LP that maintains high resolution.
 Since there are more weekdays than weekend days, activations had to be normalized accordingly.
 
 Figure \ref{fig:WM_ww_daily} again shows the same pattern as in Figure \ref{fig:WM_daily}.
@@ -166,7 +166,7 @@ drastic one, at least in this case.
 
 \begin{figure}[H]
 	\centering
-	\caption{Normalized daily per-appliance with weekday and weekend load profiles.}
+	\caption{Normalized daily per-appliance with weekday and weekend LPs.}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/WM_ww_daily.png}
 	\label{fig:WM_ww_daily}
 \end{figure}
@@ -181,7 +181,7 @@ This kind of presentation could also be used to detect daily anomalies.
 
 \begin{figure}[H]
 	\centering
-	\caption{Weekly per-appliance load profile}
+	\caption{Weekly per-appliance LP}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/WM_weekly.png}
 	\label{fig:WM_weekly}
 \end{figure}
@@ -192,7 +192,7 @@ This is useful for grid management and energy saving, where one could detect sea
 
 \begin{figure}[H]
 	\centering
-	\caption{Yearly per-appliance load profile}
+	\caption{Yearly per-appliance LP}
 	\includegraphics[width=0.8\textwidth]{../Figures/LPS/WM_yearly.png}
 	\label{fig:WM_yearly}
 \end{figure}
@@ -203,14 +203,14 @@ only when taking a closer look it is possible to see that differences do exists.
 We can make a similar conclusion here, as we did for Figure \ref{fig:SLPyearly2}.
 It is hard to do any deeper analysis without the metadata.
 
-\subsection{Two-Dimensional Time Per-Appliance Load Profiles}
+\subsection{Two-Dimensional Time Per-Appliance LPs}
 
 Using a combination of Figures \ref{fig:WM_daily} and \ref{fig:WM_weekly},
 it is possible to generate Figure \ref{fig:wm_hm_weekly}.
 
 \begin{figure}[H]
 	\centering
-	\caption{Two-dimensional time per-appliance load profile}
+	\caption{Two-dimensional time per-appliance LP}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/wm_hm_weekly.png}
 	\label{fig:wm_hm_weekly}
 \end{figure}
@@ -225,13 +225,12 @@ One of the ways is to turn on appliances using a direct load control system or n
 Due to the increasing percentage of renewable energy sources, more and more energy peaks will be weather dependent.
 By combining weekly wind forecasts, weekly cloud coverage, and user consumption profiles energy providers could notify users to turn on their appliances at peak usage times.
 
-
 By analyzing Figure \ref{fig:wm_hm_weekly} it is possible to see that the user uses a washing machine,
-on Wednesdays from  15 to 16 o'clock quite commonly. 
+on Wednesdays from 15 to 16 o'clock quite commonly. 
 Should weather reports indicate high production peaks, the electrical provider could offer low-cost energy for that time of day for all users with similar usage patterns. 
 This could all be automated for appliances such as home grid batteries, water heaters, EVs, or even fridges with a control system.
 This would mean that the grid operator could regulate the demand instantly.
-By using load profiles it could prioritize appliances that would be used anyway, which would leave minimal impact on users' routines. 
+By using LPs it could prioritize appliances that would be used anyway, which would leave minimal impact on users' routines. 
 While renewable energy is cheap to produce, it is expensive to store.
 Increased adoption of such resources will require a large amount of energy to be stored and released, this process is at best 80 \% efficient.
 If that energy is optimally distributed, less energy would be lost due to conversion.
@@ -242,7 +241,7 @@ Figures \ref{fig:var_2d_lpss} show how some appliances have a constant usage pat
 Examples below are randomly picked appliances from UK-DALE and REFIT. 
 
 The Sub-figure \ref{fig:HM_Ywh_comp} shows how computer usage changes over the year.
-In the first quarter, the computer was used from 10:00 a.m to 8:00 p.m.
+In the first quarter, the computer was used from 10:00 a.m. to 8:00 p.m.
 In week 18 it is possible to observe that the computer is less and less used throughout the day. 
 Starting week 40 it is again possible to see that the computer is getting more and more use in the morning hours. 
 This is a good example of how can a usage pattern slowly change through the year. 
@@ -261,7 +260,7 @@ This slow change gives the system time to adapt.
 One observation of quick behavior change can be made in weeks 8-11 and weeks 38-37, where we can see a black row on all three sub-Figures in Figure \ref{fig:var_2d_lpss}.
 The instant decrease in activity is probably a vacation.
 
-The last Figure is \ref{fig:HM_Ywh_wm} where the load profile portrays the yearly use of the washing machine.
+The last Figure is \ref{fig:HM_Ywh_wm} where the LP portrays the yearly use of the washing machine.
 In this case, the seasonal pattern is much clearer. 
 It seems like the appliance was used in the early morning hours of the winter and early spring.
 This practice suddenly stops at week 13, until it appeared back in week 36.
@@ -286,7 +285,7 @@ This practice suddenly stops at week 13, until it appeared back in week 36.
 		\label{fig:HM_Ywh_wm}
 	\end{subfigure}%
 	
-	\caption{Various yearly two-dimensional load profiles for building 4 from REFIT.}
+	\caption{Various yearly two-dimensional LPs for building 4 from REFIT.}
 	\label{fig:var_2d_lpss}
 \end{figure}
 
@@ -306,7 +305,7 @@ Roughly 5 years of data mean that it is possible to build a decent profile.
 		\includegraphics[width=0.9\textwidth]{../Figures/LPS/light.png}
 		\label{fig:light}
 	\end{subfigure}%
-	\caption{Effect of seasonal changes on load profiles}
+	\caption{Effect of seasonal changes on LPs}
 	\label{fig:effect_of_season}
 
 \end{figure}
@@ -322,7 +321,7 @@ Combining Figures \ref{fig:solar_thermal_pumping_station} and \ref{fig:light} en
 
 \section{Per-Building Per-Appliance}
 
-The last group of profiles is a combination of per-building and per-appliance load profiles.
+The last group of profiles is a combination of per-building and per-appliance LPs.
 Observing the usage pattern of many appliances offers a better look into users' usage patterns.
 
 In the case of elderly care, the goal is to observe a group of appliances.
@@ -340,7 +339,7 @@ In case any of these anomalies are detected, the caregiver would be notified to 
 
 \begin{figure}[H]
 	\centering
-	\caption{Daily per-appliance per-building building load profile}
+	\caption{Daily per-appliance per-building building LP}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/PHPA.png}
 	\label{fig:PHPA}
 \end{figure}
@@ -351,13 +350,13 @@ the contribution of each appliance.
 
 \begin{figure}[H]
 	\centering
-	\caption{Stacked daily per-appliance per-building building load profile}
+	\caption{Stacked daily per-appliance per-building building LP}
 	\includegraphics[width=0.7\textwidth]{../Figures/LPS/stack.png}
 	\label{fig:stack}
 \end{figure}
 
-These load profiles are useful when it comes to analyzing the usage pattern in one building.
-To be able to process the load profiles across many buildings a new profile, seen in Figure \ref{fig:BOA}, must be introduced.
+These LPs are useful when it comes to analyzing the usage pattern in one building.
+To be able to process the LPs across many buildings a new profile, seen in Figure \ref{fig:BOA}, must be introduced.
 The idea is derived from the bag-of-words method used in text processing, where a list of the most commonly used words is formed, and then used to process the text. 
 Here, It is possible to use the activation data from all five datasets.
 A list of appliances is sorted by the number of activations and then only the top 30 appliances are selected.
@@ -366,7 +365,7 @@ Using this list it is possible to present the usage of each building universally
 
 \begin{figure}[H]
 	\centering
-	\caption{Universal presentation of per-building per-appliance load profile}
+	\caption{Universal presentation of per-building per-appliance LP}
 	\includegraphics[width=1\textwidth]{../Figures/LPS/BOA.png}
 	\label{fig:BOA}
 \end{figure}
@@ -377,9 +376,9 @@ For the graph to be balanced, we have normalized the activations.
 If we had not done this, we could observe only the fridge freezer, due to its activation dominance. 
 
 Other, more dynamic appliances have a much clearer presentation of their activity. 
-One other thing that we can notice is that there are a lot of empty load profiles for certain appliances.
+One other thing that we can notice is that there are a lot of empty LPs for certain appliances.
 This is because we have no data for these appliances for this household.
-Probably, this is one of the biggest weak points of this load profile.
+Probably, this is one of the biggest weak points of this LP.
 
 The Bag of appliances was not shown on the Table of profiles \ref{tab:our_rd},
 since it is a special case of the per-building per-appliance profile shown in Figure \ref{fig:PHPA}.
@@ -388,7 +387,7 @@ since it is a special case of the per-building per-appliance profile shown in Fi
 
 This chapter showed how some activation profiles from Table \ref{tab:contributions} present real-world data, analyzed the presentations and further elaborated on their use-cases.
 
-It was possible to see how each load profile presents its unique user activation pattern. 
+It was possible to see how each LP presents its unique user activation pattern. 
 Figure \ref{fig:SLPdaily2} offered us a unique look into how users behave on daily basis and Figure \ref{fig:SLPyearly2} how this behavior changes over a year.
 Next, with Figure \ref{fig:SLPHMyearly2}, we presented how combining these figures presents new features, that were otherwise hidden.
 Further on it was shown how the very same presentations can be used on appliance data.

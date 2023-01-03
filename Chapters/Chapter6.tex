@@ -29,7 +29,7 @@ Our approach will use the latter.
 
 The chapter will focus on building an elderly care system that will use users' periodic usage patterns to detect an anomaly.
 The anomaly could be anything from a fall, stroke or altered usage pattern due to dementia. 
-The algorithm will be designed based on the load profile \ref{fig:PHPA}, which we discussed in chapter \ref{chapter4}.
+The algorithm will be designed based on the LP \ref{fig:PHPA}, which we discussed in chapter \ref{chapter4}.
 Figure shows, that the first thing in the morning used are a kettle and toaster, and with a delay of one hour, microwave and TV. 
 If none of these appliances are used within that hour, then that hour is considered anomalous.
 This means that the algorithm will be able to detect the anomaly within 1 hour of the accident.
@@ -170,7 +170,7 @@ The vectors show us that the microwave has two usage peaks, where the audio syst
 It is possible to do this for all appliances, which results in a 2D matrix. 
 Using this matrix we can build rules for which appliances are being used together.
 Figure \ref{arr:act_mat} uses rows for appliances and columns for buckets.  
-If we use terminology from image processing the matrix \ref{arr:act_mat} is essentially a highly saturated load profile \ref{fig:PHPA},
+If we use terminology from image processing the matrix \ref{arr:act_mat} is essentially a highly saturated LP \ref{fig:PHPA},
 which can be easily processed by computer algorithms due to binary encoding. 
 
 \begin{figure}[H]
@@ -227,7 +227,7 @@ which can be easily processed by computer algorithms due to binary encoding.
 \end{figure}
 
 It is possible to display the matrix \ref{arr:act_mat} as an image.
-The Figure below shows how the load profile is transformed.
+The Figure below shows how the LP is transformed.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -244,7 +244,7 @@ The Figure below shows how the load profile is transformed.
 		\label{fig:ec_PHPA_bw}
 	\end{subfigure}%
 
-	\caption{Transformation of source load profile to black and white}
+	\caption{Transformation of source LP to black and white}
 \end{figure}
 
 \subsubsection{Step Four}
@@ -777,9 +777,9 @@ In the case of practical use of this algorithm, it is
 important the system is put online as fast as possible and that it improves over time. 
 
 This can be achieved with the implementation of iterative learning.
-The system will build a load profile based on the first month of data.
-Using this load profile, the system can be put online.
-At the end of the month, it can use this data to improve the load profile.
+The system will build an LP based on the first month of data.
+Using this LP, the system can be put online.
+At the end of the month, it can use this data to improve the LP.
 This can then be repeated indefinitely. 
 
 \subsection{Methodology}

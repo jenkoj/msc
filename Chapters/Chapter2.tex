@@ -1,7 +1,7 @@
 \chapter{Related Work and Table of Profiles}
 \label{chapter2}
 
-In the first part of the chapter, we will review the existing work done and show possible use-cases for the load profiles.  
+In the first part of the chapter, we will review the existing work done and show possible use-cases for the LPs.  
 In the second part of the chapter most commonly used LP features will be presented. 
 Using them, a table of profiles will be built. 
 The table will be populated using the publications from the first part of the chapter.
@@ -10,15 +10,15 @@ This will enable us an overview of existing work, and expose possible missing ga
 \section{Related Work}
 \label{sec:related_work}
 Work related to load profiling can be found in two research verticals. 
-The first one is load profiling and load profile models, in most cases study the load profile curve of a building or appliance.
+The first one is load profiling and LP models, in most cases study the LP curve of a building or appliance.
 The second vertical is anomaly detection in energy consumption data. There are quite a few connections between the two. 
-For example, if one wants to do anomaly detection, one must first build some kind of "normal consumption profile", in other words, a load profile.
+For example, if one wants to do anomaly detection, one must first build some kind of "normal consumption profile", in other words, an LP.
 
 \subsection{Load Profiling}
 
 One of the first publications on load profiling was published by \cite{TRAIN19851103}.
 They used a bottom-up approach using sub-meter data and other socioeconomic and demographic characteristics 
-to create a load profile or statistically adjusted engineering (SAE) as they call it.
+to create an LP or statistically adjusted engineering (SAE) as they call it.
 They can adjust the curve based on weather, dwelling size, and income. 
 In the same year, \cite{WALKER1985} published a paper where they used a bottom-up approach with psychological factors to create probability models of when will an individual use an appliance.
 Since then there were two more in 1995. Research picked up the pace in 2005 with 7 publications in 2013 as Figure \ref{fig:Distribution} shows.
@@ -37,14 +37,14 @@ In other more general words, Bottom-up uses sub-meter data, Top-down uses aggreg
 In our case, we take a deeper dive into the bottom-up approach.
 
 \cite{Review2021} did a comprehensive review on load profiling. The author defined various load-profile application
-subgroups such as demand-side management, planning and control design of energy systems, and residential load profiles. The author also 
+subgroups such as demand-side management, planning and control design of energy systems, and residential LPs. The author also 
 grouped modeling techniques as probabilistic models, Markov chains, and Monte Carlo. The author first disclosed the current state of load profiling and issues with past work.
 They made a review of existing load profiling models
 and asses the-state-of-the art. 
 Next, they pointed out future research directions
 and applications of load profiling models. Finally, the author exposes issues that researchers face and addresses possible solutions with conclusions.
 
-\cite{GERBEC2005} tried to assign typical load profiles to a particular group of consumers based on their activity. 
+\cite{GERBEC2005} tried to assign typical LPs to a particular group of consumers based on their activity. 
 To achieve that, they used probabilistic neural networks as a way of classification. Their methodology was tested in real-use scenarios. 
 
 \cite{Gao2018} makes use of the bottom-up method to build a forecasting framework for household
@@ -78,12 +78,12 @@ where red means more activity and blue less. Using digital image filters they tr
 used a threshold to obtain type-3. Using that information they clustered data based on images similarly. They used three different 
 clustering methods: k-means, FCM, and EM algorithm. Using the Davies-Bouldin index, they were able to prove that image-based clustering performs better than non-image.
 
-\cite{Joana2012} clustered different load profiles using electricity consumption data and surveys using data from residential homes.
+\cite{Joana2012} clustered different LPs using electricity consumption data and surveys using data from residential homes.
 They used PCA and k-means resulting in 5 clusters. Similar to other load profiling papers. 
 
-Whereas most of the above-mentioned papers focused on aggregated consumption of building to build a load profile,
+Whereas most of the above-mentioned papers focused on aggregated consumption of building to build an LP,
 authors \cite{Issi2018} focused on appliance-level load profiling.
-Their main contribution was to create a realistic per-appliance load profile.
+Their main contribution was to create a realistic per-appliance LP.
 They developed a wireless measurement system with smart plugs that enabled them to obtain power signatures for each appliance. 
 They evaluated the data and based on observations they determined working cycles for each appliance.
 Furthermore, they concluded that 15 \% of consumed power can be shifted, where they took tariffs into account. 
@@ -155,12 +155,12 @@ Additional information would be obtained from the user's calendar.
 On a normal workday, the system would use PV energy to heat the water and store it, based on the user profile.
 On work-from-home days, the system would start charging the car with the morning sun, using only the PV energy. 
 In the evening hours, when consumption rises and production falls, EVs could inject the power back into the house. 
-Again using appliance load profiles to mitigate net energy flow as close to zero as possible (zero-energy building).
+Again using appliance LPs to mitigate net energy flow as close to zero as possible (zero-energy building).
 With the ever-increasing power capacity and increasing range of EVs, more and more battery capacity could be used for mitigation. 
 In the case of grid batteries, similar steps could be taken.
 This process is called vehicle-to-grid, and it is an important step towards zero-energy buildings \cite{EV2018} and \cite{EV2020}.
 
-One other way to use user load profiles is to optimally distribute the load by studying user's usage patterns as \cite{Chuan2014} and \cite{shift2015} proposed in their papers. 
+One other way to use user LPs is to optimally distribute the load by studying user's usage patterns as \cite{Chuan2014} and \cite{shift2015} proposed in their papers. 
 This could be further extended to neighborhoods connected into peer 2 peer energy distribution networks.
 As mentioned earlier, the way to save energy consumption is to distribute it as locally as possible. 
 Knowing the usage patterns of all peers, the system could optimally distribute the energy using DERs across all homes without dwellers even noticing.
@@ -194,18 +194,18 @@ when requested by PJM during periods of high power prices, or when the reliabili
 
 The benefit to the user would be the lower cost of charging EVs and heating the building.
 This is already done through so-called small and high tariffs.
-More detailed user load profiles would enable the electricity provider to introduce real-time tariffs.
+More detailed user LPs would enable the electricity provider to introduce real-time tariffs.
 
 The user would have three options. The first one would be that users can use the appliances as freely as they desire, this would result in a normal tariff.
 The second option would be to use the appliances as regularly as possible, this would lead to lower tariffs.
 The third option would be to leave the management of main appliances to the electricity provider via direct load control.
-The provider would combine the user appliance load profile and the real-time market price of energy to optimize the cost \cite{optimiseCostShift2015}.
+The provider would combine the user appliance LP and the real-time market price of energy to optimize the cost \cite{optimiseCostShift2015}.
 This would lead to free or even negative prices of electricity since distribution companies have to keep the frequency of the grid as stable as possible.
 
 For them to stabilize the frequency, they sometimes have to resort to load shedding.
 Load shedding is a process where a load is disconnected from the grid to keep the grid in sync \cite{loadShedding2006}.
 Commonly whole neighborhoods are being disconnected, affecting their daily lives.
-Using user load profiles, distribution companies could disconnect the load in a way that would minimally affect the end user. 
+Using user LPs, distribution companies could disconnect the load in a way that would minimally affect the end user. 
 When they would need to load the grid due to low demand, they could charge EVs free of charge or even pay to do so. 
 This benefits the company as well since they do not need to lower energy production, which can be expensive. 
 
@@ -256,12 +256,12 @@ automation, to run certain tasks when a user enters or leaves the room or a buil
 \section{Table of Profiles}
 
 While in related work we examined load profiling in general,
-this section focuses on how data is presented with load profiles.  
+this section focuses on how data is presented with LPs.  
 It can be portrayed in various shapes and forms,
 using all kinds of attributes and features to do so. 
 
 First, main load profiling features will be defined.
-Second, using these features a general load profile table will be constructed.
+Second, using these features a general LP table will be constructed.
 Third, references from related work and use cases will be mapped to the table, from which main features will be selected.
 Fourth, using a reduced feature set a more detailed table will be formed.
 Again, the table will be populated using the same references as before.
@@ -270,7 +270,7 @@ Finally, using this information a research direction will be formed.
 
 
 % Combining these features with  related work from section \ref{sec:related_work} and use-case references from section \ref{sec:use-cases},
-% we can extract the most commonly used features to portray the load profiles.
+% we can extract the most commonly used features to portray the LPs.
 
 % \begin{outline}
 %     \1 power
@@ -287,7 +287,7 @@ To understand the table more clearly, let's imagine that each feature is used as
 
 \begin{table}[H]
     \centering
-    \caption{General table of load profiles}
+    \caption{General table of LPs}
     \label{tab:general_map}
     \begin{tabular}{|c|c|c|c|c|c|}
     \hline
@@ -300,12 +300,12 @@ To understand the table more clearly, let's imagine that each feature is used as
 \end{table}
 
 Table \ref{tab:general_map} shows a combination of base features of power and time with 21 publications. 
-One example of such a profile can be seen in Figure \ref{fig:sig_proc_fig} or \ref{fig:daily_power_profile} and is also known as standard load profile (SLP).
+One example of such a profile can be seen in Figure \ref{fig:sig_proc_fig} or \ref{fig:daily_power_profile} and is also known as standard LP (SLP).
 
 As we have seen in the previous section, the two other features, operation time and the number of activations are a derivation of the base features.
 A combination of the two has been used in three other papers.
 It shows how many times the appliance was activated for a certain amount of time. 
-This load profile is commonly used for anomaly detection.
+This LP is commonly used for anomaly detection.
 
 Derived features can be used in a combination with the base features.
 The combination between power and operation time LP shows us how long did an appliance operate for a certain amount of time.
@@ -323,8 +323,8 @@ There are many more ways to present the data. An extended Table can be found in 
 
 \subsection{Detailed Table}
 
-This section will focus on exploring possible activation-based load profiles,
-while using the power load profiles as a baseline. 
+This section will focus on exploring possible activation-based LPs,
+while using the power LPs as a baseline. 
 Features from \ref{tab:general_map} will be explored in higher detail. 
 They will be split and arranged in a way that all 21 publications using power-based presentations will be divided into as many groups as possible. 
 This should expose possible activation-based profiles as well as unpublished power-based profiles.
@@ -374,7 +374,7 @@ In general, Table \ref{fig:map_fig} is formatted in a way that features from col
 used in the x-axis of a plot, and rows (consumption data) are used in the y or z-axis of a plot. 
 
 The column of Table \ref{fig:map_fig} presents the time domain.
-"Daily" means that the load profile presents average usage for one day and "Weekly" means it presents usage for a week.
+"Daily" means that the LP presents average usage for one day and "Weekly" means it presents usage for a week.
 To be clear, for one to construct a decent daily profile, one needs a few weeks of data. 
 The same goes for yearly profiles, in that case, one needs many years' worth of data. 
 
@@ -397,10 +397,10 @@ In cases where the feature combination does not make sense, it is marked with an
 
 \subsection{Mapping References to the Table of Profiles}
 
-To find useful load profiles, references from the related work section \ref{sec:related_work} must be mapped.
+To find useful LPs, references from the related work section \ref{sec:related_work} must be mapped.
 
 \begin{table}[H]
-	\caption{Table presents previously mentioned load profiles}
+	\caption{Table presents previously mentioned LPs}
 	\label{tab:contributions}
 	\begin{tabular}{|l|cccc|cccc|cccc|}
 	\hline
@@ -413,13 +413,13 @@ To find useful load profiles, references from the related work section \ref{sec:
 	\end{tabular}
 \end{table}
 
-As can be seen from Table \ref{tab:contributions}, most of the work (14 publications) has been done with standard daily load profiles with
+As can be seen from Table \ref{tab:contributions}, most of the work (14 publications) has been done with standard daily LPs with
 per-building power usage such as Figure \ref{fig:daily_power_profile}. 
 Quite a lot of work (6 publications), has been done with per-appliance daily power profiles.
-A few publications were based on weekly and yearly load profiles and a few used two-dimensional time and power presentations.
+A few publications were based on weekly and yearly LPs and a few used two-dimensional time and power presentations.
 Only one publication found used activation and time-based histogram such as 
 shown in Figure \ref{fig:daily_act_profile}. During the research we focused on publications
-from minority classes, meaning not all existing publications for standard load profiles are included. 
+from minority classes, meaning not all existing publications for standard LPs are included. 
 The purpose of Table \ref{tab:contributions} is to present missing scientific contributions and patterns of publications.  
 
 \newcommand{\tabVar}{+ daily time \\ dimension  }
@@ -588,7 +588,7 @@ zero energy buildings and demand response are dominating in a per-building part 
 The figures listed above clearly depict the void not filled by publications. 
 Although they may not be published, they still have a possible use case. 
 In Table \ref{tab:groups_proposed} empty spaces are filled 
-with possible use-cases for given load profiles. 
+with possible use-cases for given LPs. 
 
 \begin{table}[H]
     \caption{Proposed use-cases for profiles}
@@ -663,12 +663,12 @@ with possible use-cases for given load profiles.
     \end{adjustbox}
 \end{table}
 
-\subsection{Table of Load Profile Potentials} \label{subsec:potential}
+\subsection{Table of LP Potentials} \label{subsec:potential}
 
 Some combinations are indeed illogical and again others are less useful in a practical sense.
 The next Table \ref{tab:classified_profiles} will try to rate the utilization potential of the profiles based on two characteristics. 
 First is how well data is presented to the user,
-meaning that the load profile is clear about what it is presenting.
+meaning that the LP is clear about what it is presenting.
 The second is the effectiveness when being used in an algorithm, or in other words, how well data is presented to a machine. 
 
 These characteristics can not be easily measured,
@@ -680,10 +680,10 @@ Using these two assumptions, we propose the following table.
 The Table has four possible classes. 
 
 \begin{outline} 
-\1 1 - The load profile satisfies both assumptions and has a high utility rate and was already researched (very useful, but with low research potential). 
-\1 2 - The load profile satisfies only one of the above-mentioned assumptions (has mid-research potential).
-\1 3 - The load profile does not suffice any of the above-mentioned assumptions and was not yet researched or practically used (high research potential, could be hard to utilize).
-\1 X - The load profile is inexplicable (does not make any sense).
+\1 1 - The LP satisfies both assumptions and has a high utility rate and was already researched (very useful, but with low research potential). 
+\1 2 - The LP satisfies only one of the above-mentioned assumptions (has mid-research potential).
+\1 3 - The LP does not suffice any of the above-mentioned assumptions and was not yet researched or practically used (high research potential, could be hard to utilize).
+\1 X - The LP is inexplicable (does not make any sense).
 \end{outline}
 
 \begin{table}[H]
@@ -766,19 +766,19 @@ This is why we have built the following Table \ref{tab:future_rd}.
 The Table was populated as follows:
 
 \begin{outline} 
-\1 (1) - The load profile has high potential. 
-\1 (2) - The load profile has mid-potential.
-\1 Empty - The load profile has low potential or was already researched.
-\1 X - load profile is inexplicable
+\1 (1) - The LP has high potential. 
+\1 (2) - The LP has mid-potential.
+\1 Empty - The LP has low potential or was already researched.
+\1 X - LP is inexplicable
 \end{outline}
 
 The process of evaluation was a bit complicated, but it can be summed down to the following rules.
 
-If the load profile was used as a power profile, can it be used as an activation profile?
+If the LP was used as a power profile, can it be used as an activation profile?
 Here, we must use common sense.
-For example. If we follow this rule for per-building power load profiles, it 
-turns out that activation load profiles are not as useful since they are based on per-appliance load profiles.
-In other words, to build per-building activation load profiles we need per-appliance (sub-meter) data anyway.
+For example. If we follow this rule for per-building power LPs, it 
+turns out that activation LPs are not as useful since they are based on per-appliance LPs.
+In other words, to build per-building activation LPs we need per-appliance (sub-meter) data anyway.
 That is why we have assigned them to the second class.
 
 The second rule was applied to 3D profiles.
@@ -869,7 +869,7 @@ When the aforementioned parameters are applied,
 the result is Table \ref{tab:our_rd}.
 
 \begin{table}[H]
-    \caption{Load profiles to be pursued}
+    \caption{LPs to be pursued}
     \label{tab:our_rd}
     \begin{tabular}{|l|cccc|cccc|cccc|}
     \hline
@@ -942,17 +942,17 @@ the result is Table \ref{tab:our_rd}.
     \end{table}
 
 The profiles shown in Table \ref{tab:our_rd} are our direction of research.
-In the next part of the thesis, we will try to utilize and present these load profiles.
+In the next part of the thesis, we will try to utilize and present these LPs.
 This will be done as follows.
 In chapter \ref{chapter5} we will use
 \begin{itemize}
-  \item Per-building daily-weekly load profile
-  \item Per-appliance daily-weekly load profile
+  \item Per-building daily-weekly LP
+  \item Per-appliance daily-weekly LP
 \end{itemize}
 with a t-SNE neighboring algorithm to find how they are related in high dimensional space.
 In chapter \ref{chapter6} we will use
 \begin{itemize}
-  \item Per-building Per-appliance daily load profiles with appliances side by side
+  \item Per-building Per-appliance daily LPs with appliances side by side
 \end{itemize}
 To build assisted living system for the elderly.
 
