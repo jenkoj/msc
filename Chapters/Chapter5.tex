@@ -1,4 +1,4 @@
-\chapter{Exploratory data analysis and t-SNE visualization of LPs} 
+\chapter{Exploratory data analysis of LPs using t-SNE} 
 
 \label{chapter5} 
 
@@ -14,9 +14,9 @@ To measure the similarity of activation profiles, the t-SNE dimensionality reduc
 The clustering of LPs was researched many times before, as it was described in related work Chapter \ref{chapter2}.
 We will be working with dimensionality reduction, where clusters are usually formed as a side product.
 The following clustering publications are worth mentioning.
-We have seen that authors \cite{GERBEC2005}, \cite{Jeong2021} and \cite{Joana2012} have clustered regular one-dimensional LPs, as well as with 2D image-based load profiling in publications published by \cite{Park2019}. 
+We have seen that authors \cite{GERBEC2005}, \cite{Jeong2021} and \cite{Joana2012} have clustered regular one-dimensional LPs, as well as with 2D image-based load profiling in publications published by authors \cite{Park2019}. 
 
-The publication by \cite{sne_energ} compared various dimensionality reduction techniques for clustering and visualization of LPs.
+The publication by authors \cite{sne_energ} compared various dimensionality reduction techniques for clustering and visualization of LPs.
 Their goal was to compare Principal Component Analysis, Isometric Feature Mapping, Sammon Mapping, Locally Linear Embedding and Stochastic Neighbor Embedding.
 They used power daily LPs from residential and industrial areas.
 This publication was of the closest resemblance to our goals, that we were able to find. 
@@ -33,7 +33,7 @@ With this approach, it would be possible to detect users, that are living in bel
 \section{Goals}
 
 The chapter will demonstrate the application of previously unused LPs,
-and show the practical use case using a t-SNE neighboring algorithm.
+trough EDA and t-SNE dimensionality reduction algorithm
 
 Using this algorithm we will show how user data is related in high dimensional space.
 For this, we will use per-building, per-appliance LPs with many combinations, where
@@ -152,7 +152,7 @@ again in others we would like to find a more complex usage pattern.
 	\label{fig:tsne_scatter_non_norm_all}
 \end{figure}
 
-The Figure \ref{fig:tsne_pb_img_scatter_allall} below presents the actual LP for each sample. 
+Figure \ref{fig:tsne_pb_img_scatter_allall} below presents the actual LP for each sample. 
 It is possible to see that on the left there are mostly samples with very little activity,
 and on the right, we see samples with more activity.
 Since the two plotted components are of a higher dimension, it is hard to determine what they present.
@@ -172,7 +172,7 @@ Readers reading a paper version can still explore the high-resolution figures on
 \subsubsection{Normalized LPs}
 
 To solve the issue mentioned in subsection \ref{ssec:res_pb_lp} have to normalize the data between 0 and 1.
-The Figure \ref{fig:tsne_pb_scatter_all_all} shows how normalizing samples affect the algorithm.
+Figure \ref{fig:tsne_pb_scatter_all_all} shows how normalizing samples affect the algorithm.
 
 When comparing figures \ref{fig:tsne_scatter_non_norm_all} and \ref{fig:tsne_pb_scatter_all_all},
 it is possible to see that the samples on the latter are much closer to each other,
@@ -190,7 +190,7 @@ Based on that, we can conclude the time when the appliance is used is more consi
 	\label{fig:tsne_pb_scatter_all_all}
 \end{figure}
 
-The Figure \ref{fig:tsne_pb_img_norm_scatter_allall} presents only the main cluster of samples.
+Figure \ref{fig:tsne_pb_img_norm_scatter_allall} presents only the main cluster of samples.
 Since the smaller cluster presents mostly low entropy data, it was cut out. 
 If the reader wants to see the samples in the cluster, the very same cluster can be found on the far left in Figure \ref{fig:tsne_pb_img_scatter_allall}.
 
@@ -201,7 +201,7 @@ If the reader wants to see the samples in the cluster, the very same cluster can
 	\label{fig:tsne_pb_img_norm_scatter_allall}
 \end{figure}
 
-On Figure \ref{fig:tsne_pb_img_norm_scatter_allall} it is possible to find various usage patterns. 
+In Figure \ref{fig:tsne_pb_img_norm_scatter_allall} it is possible to find various usage patterns. 
 But the general pattern is that there is less activity during the night with one peak in the morning and evening hours.
 Some buildings are more active during the week and again some more during the weekend.
 A lot of the data is from UK-DALE building 1 (pink box). 
@@ -227,8 +227,8 @@ Fridges are generally a bad indicator when it comes to user behavior since the u
 The only case when the user interacts with it is when opening the door and turning on the light inside. 
 Usually, this event is dwarfed by the activations of a compressor. 
 This also means that the usage pattern should be the same across all buildings. 
-This can be seen on Figure \ref{fig:tsne_pa_scatter_all_fridge}, 
-where apart from REFIT building 1 and 11, there are no clusters.
+This can be seen in Figure \ref{fig:tsne_pa_scatter_all_fridge}, 
+where apart from REFIT buildings 1 and 11, there are no clusters.
 
 
 \begin{figure}[H]
@@ -238,7 +238,7 @@ where apart from REFIT building 1 and 11, there are no clusters.
 	\label{fig:tsne_pa_scatter_all_fridge}
 \end{figure}
 
-Figure \ref{fig:tsne_pa_img_scatter_all_fridge} Shows mostly bright images, apart from few outliers.
+Figure \ref{fig:tsne_pa_img_scatter_all_fridge} Shows mostly bright images, apart from a few outliers.
 LPs scattered in a circle are generally less dynamic than the ones at the bottom.
 Figure \ref{fig:tsne_pa_img_scatter_all_fridge} is a good example of how LPs with little to no human interaction, can look a lot different. 
 This could be due to different makes of the appliances, malfunctions of the appliance or the meter measuring it.
@@ -273,7 +273,7 @@ This could be calculated by measuring the scattering of samples (variance) for e
 If we find samples that always activate in the same morning buckets, we would see that they form a straight line on the y-axis.
 This is the daily routine. One such example can be seen in Figure \ref{fig:tsne_pa_scatter_all_kettle} in cluster refit 5 and refit 9, where we can see the lines and the pattern throughout the day. 
 Since the routine is present, the samples look more similar and are therefore closer together. 
-This does not necessarily mean that closer the samples higher the routine.
+This does not necessarily mean that the closer the samples higher the routine.
 They could also be together in case of "ordered chaos" such as can be seen in Figure \ref{fig:tsne_pa_scatter_all_kettle} for building refit 16 and refit 8 where there is no pattern through the day.
 So the scattering is not a precise metric when it comes to the routine, but it gives us a rough idea of its presence.
 The strength of a routine is an important feature that will be used
