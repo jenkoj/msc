@@ -736,19 +736,12 @@ Therefore, we can claim that the performance of this algorithm is adequate to be
 
 \section{Discussion}
 
-When analyzing these results one important to keep in mind is,
-that we do not have metadata available to know what kind of
-socio-economic status dwellers have.
-Socio-economic status and other features encompass attributes such as age, income, number of children, geolocation, etc.
-They may also encompass the age of the building, type of insulation, number of dwellers in the buildings, etc.
-Since datasets do provide them,
-it is hard to make any other conclusions other than the algorithm works well on an average building.
+There are several factors to consider when interpreting the results of the study,
+including the socio-economic status and other features of the dwellers, such as age, income, number of children, geolocation, and the age and characteristics of the building.
+Without metadata on these factors, it is difficult to draw conclusions on the performance of the algorithm beyond the fact that it appears to work well on an average building.
 
-We know that the reason for installing such a system is that the user is left alone.
-We can assume that on average there is more than one dweller living in the buildings we tested on.
-Since this system would usually be used by a single dweller,
-this would be in favor of our algorithm since it would be 
-easier to extract the routine.
+However, the algorithm may be particularly well-suited for use by single dwellers,
+as the system will be typically used by the elderly who are left alone.
 
 One other thing that would be in our favor is that the average person spends less time at home than an elderly person. 
 If we take a look at the results, it is possible to see that,
@@ -758,18 +751,10 @@ This can be seen in Figure \ref{fig:ignored_buckets_22}.
 Since the elderly are usually home at that time, this would 
 increase the time windows where we can detect the accident.
 
-We could also assume that the older the dweller, the higher the routine. 
-The nature of the elderly is that they are more conservative when it comes to changes, and prefer to stick to their routine.
-Since the algorithm, works better when usage is periodic, this would also be in our favor. 
-
-Taking all of these assumptions into account, 
-there is a possibility that this algorithm would work 
-better on the elderly due to their nature.
-
-Since the results on the average building are promising
-a test study should be performed. 
-This would also prove our assumption that this algorithm works 
-better on the elderly.
+Given these considerations and the promising results of the study on average buildings,
+it may be worthwhile to conduct a test study to further investigate the performance of the algorithm and to assess whether it works better for elderly dwellers as hypothesized.
+This could help to confirm the utility of the algorithm.
+Further research could also explore the influence of other factors on the performance of the algorithm and examine the potential benefits and limitations of using the method for detecting anomalies in dwellings
 
 \section{Iterative Learning System}
 
@@ -836,8 +821,8 @@ To get more accurate results we will only observe the performance using one year
 
 \subsection{Results}
 
-To show the effect of training data on the metric, the Figure \ref{fig:efect_of_data_on_metric} is presented.
-The Figure \ref{fig:efect_of_data_on_metric} contains 12 months of 
+To show the effect of training data on the metric, Figure \ref{fig:efect_of_data_on_metric} is presented.
+Figure \ref{fig:efect_of_data_on_metric} contains 12 months of 
 data for each house.
 
 \begin{figure}[H]
@@ -883,13 +868,21 @@ the algorithm needs a month or two to stabilize.
 An important thing to keep in mind is that the routine of the users does not increase with more data,
 our perceived one does. 
 
+The results of the study suggest that the method for detecting anomalies is effective, but it is difficult to compare the results to those of a normal learning model because the train and test sets were different. While the results do indicate that the true performance of the method is around the expected 80% mark, it is challenging to determine how the results would have differed if the train and test sets had been the same.
+
+One potential explanation for these findings is that the algorithm becomes more stable with more data. This is supported by the observation that in some cases, where users' behavior does not change significantly, the algorithm was able to perform well from the first month of data, while in other cases where behavior was more dynamic, it took a month or two for the algorithm to stabilize.
+
+It's also worth considering that the routine of users does not necessarily increase with more data, but rather our perception of the routine may improve as we have more data to analyze. This highlights the importance of considering the limitations of the study and any potential sources of bias or error in the data or analysis when interpreting the results.
+
+Future research could explore these limitations and expand on the findings of the current study. For example, additional studies could investigate the performance of the algorithm under different conditions or compare it to other methods of anomaly detection. Additionally, further research could examine the potential applications and implications of the method, such as how it could be used to improve the safety or efficiency of dwelling systems.
+
 \subsection{Conclusion}
 
-The question that we tried to answer was:
-is this method good enough to be able to efficiently detect anomalies? 
-The question that should be asked is,
-is the behavior of the users periodic enough, to 
-be able to efficiently detect the anomaly?
-The answer is: yes, it is.
+Results show that the method for detecting anomalies is effective and can improve over time.
+The routine rate metric suggests that the algorithm's performance is tied to the periodic behavior of dwellers,
+and the study also demonstrated that users' behavior is sufficiently periodic to be used for anomaly detection.
+These findings suggest that the method may be a valuable tool for identifying anomalies in the behavior of dwellers.
+It is important to note, however, that the validity of the conclusions depends on the accuracy and completeness of the data and analysis.
+
 
 
