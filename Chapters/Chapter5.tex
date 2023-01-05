@@ -53,7 +53,7 @@ This means that a pixel in the upper-left corner presents the first hour of a we
 this would be a Monday from midnight to one o'clock. 
 The lower-right corner presents the last hour of the week.
 Since there are roughly 4 weeks in each month, each pixel will present 4 samples. 
-One such example of profiles that we will use, was already presented in chapter \ref{chapter4} with Figure \ref{fig:wm_hm_weekly}.
+One such example of profiles that we will use, was already presented in Chapter \ref{chapter4} with Figure \ref{fig:wm_hm_weekly}.
 For practical reasons, we are presenting it again here with Figure \ref{fig:wm_hm_weekly_2}.
 
 \begin{figure}[H]
@@ -66,7 +66,7 @@ For practical reasons, we are presenting it again here with Figure \ref{fig:wm_h
 \subsubsection{Bag of Appliances LP}
 
 Another LP that will be used at the end of this Chapter will be the bag-of-appliances LP.
-The profile was presented and analyzed in depth in chapter \ref{chapter4} and was presented in Figure \ref{fig:BOA}.
+The profile was presented and analyzed in depth in Chapter \ref{chapter4} and was presented in Figure \ref{fig:BOA}.
 But again, for ease-of-use purposes, we will summarize the profile here.
 
 \begin{figure}[H]
@@ -84,17 +84,13 @@ These appliances present themselves as a black line.
 A lot of missing appliances may cause the image to be primarily black,
 which could cause trouble for the algorithm processing this as an image.
 
-\subsubsection{Data}
+\subsection{Data}
 
 We have on average roughly one year of data per building. 
 In some cases few weeks and in others up to 5 years for some appliances.
 By slicing this data into 1-month-long intervals and converting them to LPs we were able to obtain 5218 samples.
 
-\subsection{Datasets}
-
-To present the results REFIT (\cite{REFIT}), UK-DALE  (\cite{UKDALE}), ECO  (\cite{ECO}), REDD  (\cite{REDD}) and iAWE  (\cite{iAWE}) datasets will be used.
-Combined datasets include data for over 25 homes, where some have up to 5 years of data. 
-The structure of datasets will be analyzed in larger depth in the next chapter \ref{chapter6}. 
+More detailed methodological approaches were discussed in Chapter \ref{chapter3} Subsection \ref{ssec:data}.
 
 \subsection{T-SNE Algorithm}
 
@@ -133,6 +129,7 @@ The results will be presented in three subsections
 Most of the focus will be done on the per-appliance LP since it is the most universal.
 
 \subsection{Results for Per-Building LPs}
+%TODO
 \label{ssec:res_pb_lp}
 This LP is useful when it comes to comparing how 
 activation patterns change over buildings and datasets.
@@ -171,7 +168,7 @@ Readers reading a paper version can still explore the high-resolution figures on
 
 \subsubsection{Normalized LPs}
 
-To solve the issue mentioned in subsection \ref{ssec:res_pb_lp} have to normalize the data between 0 and 1.
+To solve the issue mentioned in Subsection \ref{ssec:res_pb_lp} have to normalize the data between 0 and 1.
 Figure \ref{fig:tsne_pb_scatter_all_all} shows how normalizing samples affect the algorithm.
 
 When comparing figures \ref{fig:tsne_scatter_non_norm_all} and \ref{fig:tsne_pb_scatter_all_all},

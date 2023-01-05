@@ -8,7 +8,7 @@ More detailed methodological procedures will be described in each chapter separa
 
 \section{Data}
 \label{ssec:data}
-We already briefly presented the datasets in the first chapter in section \ref{sec:data}.
+We already briefly presented the datasets in the first chapter in Section \ref{sec:data}.
 Here, we will do an in-depth presentation of the datasets and present how we processed and cleaned the data. 
 
 \subsection{Dataset Selection}
@@ -18,7 +18,7 @@ NILMTK is a tool developed by authors in paper \cite{nilmtk}.
 It intends to make the development of NILM algorithms easier by standardizing a format in which building energy consumption datasets are stored. 
 They also developed converters to convert existing datasets into a universal format.
 This enables engineers to simply load and process multiple datasets.
-NILMTK includes a dataset converter from most of the datasets from table \ref{tab:other_datasets}.
+NILMTK includes a dataset converter from most of the datasets from Table \ref{tab:other_datasets}.
 \begin{table}[H]
     \centering
     \caption{Pruned version of the Table published by authors on NILMTK\protect{\cite{nilmtk}} wiki page. Full table available here \protect{\url{https://web.archive.org/web/20190607094329/http://wiki.nilm.eu/datasets.html}}.}
@@ -84,7 +84,7 @@ Secondly, we sliced the time series data into hourly slices.
 One sample every 6 seconds means, there were roughly 60 samples in every slice.
 Thirdly, we removed slices with missing data.
 This was done for all slices where there was more than 20 \% of data missing.
-In cases where less than 20 \% of data was missing, we forward-filled it with the last known value.
+In cases where less than 20 \% of data were missing, we forward-filled it with the last known value.
 In the worst case, we forward filled 12 samples. 
 Finally, resampled and cleaned data was stored in the .hdf file.
 % \begin{verbatim}
@@ -96,7 +96,7 @@ Finally, resampled and cleaned data was stored in the .hdf file.
 
 \subsection{Splitting and Evaluation} \label{ssec:ds_eval}
 
-In some cases, datasets had to be split, so that the algorithm we developed in chapter \ref{chapter6}, may be empirically evaluated. 
+In some cases, datasets had to be split, so that the algorithm we developed in Chapter \ref{chapter6}, may be empirically evaluated. 
 The data was split into train and test sets, where 80 \% of the data was used for training and 20 \% percent of the data for testing.
 The data was split based on the number of samples, so in some cases where there is a lot of missing data, the time window of test data might be longer, although it contains only 20 \% of the samples.
 
@@ -243,7 +243,7 @@ This number was reduced by a factor of 6 after resampling was done.
 
 \section{Activation Detection}
 
-How appliance activations are extracted was already mentioned in subsection \ref{ssec:feature_set}.
+How appliance activations are extracted was already mentioned in Subsection \ref{ssec:feature_set}.
 There we said, the activation occurs when consumption exceeds $P_{thr}$.
 This is portrayed in Figure \ref{fig:sig_proc_fig} in the same subsection.
 
