@@ -99,15 +99,23 @@ The pairs with high similarity have a high probability, and pairs with lower a l
 Second, it uses Kullback-Leibler divergence to minimize it with respect to a location on a map.
 To achieve this it uses gradient descent to minimize the cost function.
 Over many iterations, similar data points should be close together and far away from dissimilar objects.
-Similar data points usually form clusters.
+Similar data points usually form clusters. 
 
 t-SNE uses SNE as a basis, except that it uses t-student distribution instead of normal to calculate the similarity.
 
 In our case, two dimensions will be used. Since this is a non-linear dimensionality reduction,
 the axis usually presents dimensions that are hard to comprehend by the brain. 
+It is important to keep in mind that the resulting low-dimensional representation is not necessarily interpretable in the same way as the original high-dimensional data.
+This also means that the axes on the graphical presentations are meaningless.
+In our case, we labeled the two axes as comp-1 and comp-2.
+
 Since the algorithm uses similarity at the base of the algorithm, it is possible to 
 see which samples are more similar to each other.
+This is also the main idea behind the algorithm. 
 
+The t-SNE algorithm is useful for visualizing patterns and relationships in the data, 
+such as clusters of similar data points and relationships between different data points.
+By observing these patterns, it is possible to gain insights into the data for further analysis.
 
 \section{Results}
 
