@@ -254,17 +254,24 @@ automation, to run certain tasks when a user enters or leaves the room or a buil
 
 \section{Table of Profiles}
 
-While in related work we examined load profiling in general,
-this section focuses on how data is presented with LPs.  
-It can be portrayed in various shapes and forms,
-using all kinds of attributes and features to do so. 
+% While in related work we examined load profiling in general,
+% this section focuses on how data is presented with LPs.  
+% It can be portrayed in various shapes and forms,
+% using all kinds of attributes and features to do so. 
 
-First, main load profiling features will be defined.
-Second, using these features a general LP table will be constructed.
-Third, references from related work and use cases will be mapped to the table, from which main features will be selected.
-Fourth, using a reduced feature set a more detailed table will be formed.
-Again, the table will be populated using the same references as before.
-Finally, using this information a research direction will be formed.
+% First, main load profiling features will be defined.
+% Second, using these features a general LP table will be constructed.
+% Third, references from related work and use cases will be mapped to the table, from which main features will be selected.
+% Fourth, using a reduced feature set a more detailed table will be formed.
+% Again, the table will be populated using the same references as before.
+% Finally, using this information a research direction will be formed.
+
+In the first part of this Chapter, we focused on the general concept of load profiling and reviewed the existing literature on the topic.
+In this second part, we will delve into the various ways in which load profiling data can be presented using LPs. 
+We will begin by constructing a general LP table from previously defined features in Section \ref{ssec:feature_set}
+Next, we will map the references and use cases from the related work reviewed in previous chapters to this table and select the main features to use.
+Using this reduced set of features, we will create a more detailed LP table and populate it with information from the same references.
+Finally, we will use this information to identify potential directions for future research in this field.
 
 % Combining these features with  related work from Section \ref{sec:related_work} and use-case references from Section \ref{sec:use-cases},
 % we can extract the most commonly used features to portray the LPs.
@@ -278,7 +285,7 @@ Finally, using this information a research direction will be formed.
 % \end{outline}
 
 \subsection{General Table}
-Using these features we can form a Table with all possible combinations.
+Using these features defined in Section \ref{ssec:feature_set} we can form a Table with all possible combinations.
 Table \ref{tab:general_map} is then populated with references from previous chapters.
 To understand the table more clearly, let's imagine that each feature is used as an axis label when plotting. 
 
@@ -328,7 +335,7 @@ This should expose possible activation-based profiles as well as unpublished pow
 
 \subsubsection{Sub-features} \label{sec:subfeatures}
 
-General features were already described in Section \ref{sec:feature_set}.
+General features were already described in Section \ref{ssec:feature_set}.
 It is possible to further divide them into smaller so-called sub-features.
 These are reshaped and grouped as follows:
 \begin{outline}
@@ -353,11 +360,11 @@ These are reshaped and grouped as follows:
 \subsection{Table of Combinations or Detailed Table}
 \label{ssec:table_of_combinations}
 The above-shown profiles can be combined, yielding a new way of displaying the data.
-Bellow, a map with combinations of the above-mentioned profiles is presented. 
+Bellow, a Table \ref{fig:map_fig} with combinations of the above-mentioned profiles is presented. 
 The purpose of Table \ref{fig:map_fig} is to show possible LP combinations.
 Some combinations that had similar output were grouped, and some that could not be sketched were discarded. 
 
-The profiles and figure graphics used in Table \ref{fig:map_fig} were sourced from Section \ref{sec:LP_types}.
+The LPs and figure graphics used in Table \ref{fig:map_fig} were sourced from Section \ref{sec:LP_types}.
 
 \begin{sidewaysfigure}
 	\centering
@@ -375,12 +382,12 @@ The column of Table \ref{fig:map_fig} presents the time domain.
 To be clear, for one to construct a decent daily profile, one needs a few weeks of data. 
 The same goes for yearly profiles, in that case, one needs many years' worth of data. 
 
-The top row of the table is composed of 3 main groups. 
+The top row of Table \ref{fig:map_fig} is composed of 3 main groups. 
 The first group focuses on per-building energy consumption.
 The second group examines the energy consumption of each appliance in a house separately.
 The third group analyses all appliances in a building.
 
-The next row of the Table is further divided into two groups. 
+The next row of Table \ref{fig:map_fig} is further divided into two groups. 
 First is the LP group which presents the given usage unit on the y-axis and time on the x-axis. 
 Next is an LP with an additional time axis. 
 In this case, we present the given usage unit on the z-axis and then time on the x and y-axis.
