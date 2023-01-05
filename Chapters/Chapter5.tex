@@ -4,21 +4,24 @@
 
 \section{Introduction}
 
-The LPs can present big data in a way, that can enable users or algorithms to extract activation patterns.
-The one thing they do not offer is a comparison between activation patterns.
-One such example would be when checking how similar are certain usage patterns.
-This could be usage patterns within a household, where we are looking for appliances that are used similarly,
-or when observing multiple buildings and how their consumption differs. 
-To measure the similarity of activation profiles, the t-SNE dimensionality reduction algorithm will be used.
+In this chapter, we will explore the use of t-SNE for Exploratory Data Analysis (EDA) on LPs.
+LPs are a valuable tool for understanding and analyzing the consumption patterns of appliances or buildings.
+However, they do not inherently allow for the comparison of activation patterns between different households or buildings.
+By using t-SNE, we can visualize the similarity of activation patterns and better understand the differences and similarities in consumption behavior. 
+We will delve into the details of how t-SNE can be applied to LPs and the insights it can provide.
 
-The clustering of LPs was researched many times before, as it was described in related work Chapter \ref{chapter2}.
+To achieve this goal, we will first provide a brief overview of t-SNE and its application to LPs.
+We will then describe our methodology for using t-SNE to analyze LPs and compare activation patterns.
+Finally, we will present the results of our analysis and discuss their implications for understanding energy consumption patterns.
+
+The clustering of similar LPs was researched many times before, as it was described in related work Chapter \ref{chapter2}.
 We will be working with dimensionality reduction, where clusters are usually formed as a side product.
 The following clustering publications are worth mentioning.
 We have seen that authors \cite{GERBEC2005}, \cite{Jeong2021} and \cite{Joana2012} have clustered regular one-dimensional LPs, as well as with 2D image-based load profiling in publications published by authors \cite{Park2019}. 
 
 The publication by authors \cite{sne_energ} compared various dimensionality reduction techniques for clustering and visualization of LPs.
 Their goal was to compare Principal Component Analysis, Isometric Feature Mapping, Sammon Mapping, Locally Linear Embedding and Stochastic Neighbor Embedding.
-They used power daily LPs from residential and industrial areas.
+They used daily power LPs from residential and industrial areas.
 This publication was of the closest resemblance to our goals, that we were able to find. 
 
 In all cases, work has been done with the power LP, whereas in this case, we will try to find similarities between activation profiles using a t-SNE algorithm.
@@ -28,16 +31,6 @@ Although the use-cases were presented in-depth in Chapter \ref{chapter2}, it is 
 The increasing price of energy resources, could lead to over-saving and living in cool homes.
 By using similarity metrics between profiles across different buildings, it would be possible to detect outliers when it comes to heating. 
 With this approach, it would be possible to detect users, that are living in below-average cool homes and offer them cheaper plans. 
-
-
-\section{Goals}
-
-The chapter will demonstrate the application of previously unused LPs,
-trough EDA and t-SNE dimensionality reduction algorithm
-
-Using this algorithm we will show how user data is related in high dimensional space.
-For this, we will use per-building, per-appliance LPs with many combinations, where
-each one enables us a different view of LPs. 
 
 \section{Methodology}
 
@@ -518,6 +511,7 @@ To study the usage by comparing all appliances between buildings,
 we have to use one of the proposed LPs and in this case, this is a Bag of appliances.
 
 \subsubsection{Bag of Appliances}
+
 This LP is a combination of the LPs above,
 except it offers a larger detail when observing groups of appliances.
 Since we are using one dimension for appliances, we will use only the daily dimension.
@@ -557,27 +551,27 @@ with more activity than the top ones.
 
 \section{Discussion}
 
-The main goal of the chapter was to show how data is related in high-dimensional space.
-For this to be achieved, three different types of LPs were utilized. 
+In this chapter, we used t-SNE dimensionality reduction to compare and analyze load profiles (LPs) in order to understand how data is related in high-dimensional space.
+We used three different types of LPs: per-building, per-building per-appliance, a bag of appliances, and per-appliance.
+Through our analysis, we were able to identify patterns in energy consumption across different buildings and datasets,
+as well as compare the usage patterns of different appliances within and across buildings.
 
-Per-building LPs offered a look into how activations patterns differ across different buildings and datasets.
-Per-building per-appliance bag of appliance LPs offered the same thing, but in greater detail.
-Per-appliance LPs were the most versatile and were utilized in the most various ways.
-First, we have shown how the same type of appliance is being used across various buildings.
-Next, we compared appliances with each other. 
-Since the plot was hard to comprehend, we have defined appliance groups.
-These new groups formed clusters, which cleared up the plot and revealed the connection between types of profiles. 
-Finally, we compared how appliance LPs are connected in a single building. 
+One of the key findings of this chapter was the formation of appliance groups.
+These groups allowed us to more clearly understand the connections between samples and revealed the existence of routine and persistent usage patterns.
+This information can be particularly valuable for identifying patterns of energy usage in assisted living settings that may be related to health or well-being.
+This will be further explored in the next chapter. 
+
+In addition, our analysis showed the versatility of per-appliance LPs in understanding energy consumption patterns. 
+These LPs allowed us to compare appliance usage across buildings, compare different appliances with each other, and understand the connections between appliance usage patterns within a single building.
+This highlights the importance of considering the usage patterns of individual appliances in efforts to optimize energy consumption.
+
+Overall, our analysis using t-SNE has provided valuable insights into the relationships between LPs and the patterns of energy consumption.
+We believe that this work has the potential to contribute new tools and techniques for studying and optimizing energy consumption patterns, and we hope that it will inspire further research in this field.
 
 \section{Conclusion}
 
-We have seen how samples are connected and related in higher dimensions, this should enable us to be more efficient when using these LPs in the next chapter. 
-The comprehensive analysis of the plots pointed out that we can roughly estimate the strength of a routine based on the scattering of LPs.
-This information will be useful in the next chapter where we will utilize it to build the elderly care system.
-
-While there are no empirical results to present, seeing the actual samples placed on a map contributes to the understanding of the data we are working with.
-We could go into greater detail and use other dimensionality-reduction algorithms for comparison, but that was not the goal.
-The goal was to show and present the patterns in the data and other features such as routine strength.
-While doing so, we also proved that the LPs that we proposed, can be efficiently used to do that.
-
+In conclusion, this chapter demonstrated the usefulness of t-SNE in visualizing and comparing load profiling data in high-dimensional space.
+We were able to identify patterns and connections between different types of LPs, and we were able to group appliances into categories based on their usage patterns.
+These findings will be valuable in the next chapter as we continue to explore the potential applications of load profiling in assisted living settings.
+By analyzing and understanding the data in this way, we hope to contribute new insights and techniques for studying energy consumption patterns and identifying opportunities for optimization.
 
