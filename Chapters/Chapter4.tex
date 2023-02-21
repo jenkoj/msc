@@ -11,7 +11,7 @@ Secondly, using the same pattern, we will present per-appliance profiles.
 Finally, we will present per-building per-appliance LPs.
 
 Data for profiles in this chapter was used from building 2 from the REFIT dataset discussed in Section \ref{ssec:data}.
-
+ 
 \section{Time Ranges}
 \label{sec:time_range}
 
@@ -54,14 +54,14 @@ The two profiles, therefore present different contextual cases.
 	\begin{subfigure}{.5\textwidth}
 		% \centering
 		\caption{Daily}
-		\includegraphics[width=1\linewidth]{../Figures/LPS/SLPdaily2.png}
+		\includegraphics[width=1\linewidth]{../Figures/LPS/SLPdaily2.pdf}
 		\label{fig:SLPdaily2}
 	\end{subfigure}%
 	~ 
 	\begin{subfigure}{.5\textwidth}
 		% \centering
 		\caption{Yearly}
-		\includegraphics[width=1\linewidth]{../Figures/LPS/SLPyearly2.png}
+		\includegraphics[width=1\linewidth]{../Figures/LPS/SLPyearly2.pdf}
 		\label{fig:SLPyearly2}
 	\end{subfigure}%
 	\label{fig:SLP}
@@ -92,9 +92,10 @@ The result is a Figure \ref{fig:SLPHMyearly2} showing more complex activation pa
 \begin{figure}[H]
 	\centering
 	\caption{Two-time-dimensional per-building LP}
-	\includegraphics[width=0.7\textwidth]{../Figures/LPS/SLPHMyearly2.png}
+	\includegraphics[width=0.7\textwidth]{../Figures/LPS/SLPHMyearly2.pdf}
 	\label{fig:SLPHMyearly2}
 \end{figure}
+
 
 By combining the Figures and presenting them with a heat map, additional features are revealed.
 For example, the black lines are the ones that probably present the vacation or other events where dwellers are away from home.
@@ -122,7 +123,7 @@ This also means that it is one of the most universal profiles since it can be us
 \begin{figure}[H]
 	\centering
 	\caption{Daily per-appliance LP}
-	\includegraphics[width=0.7\textwidth]{../Figures/LPS/WM_daily.png}
+	\includegraphics[]{../Figures/LPS/WM_daily.pdf}
 	\label{fig:WM_daily}
 \end{figure}
 
@@ -142,14 +143,14 @@ This coincides with the point of the presentation, where we want to present a mo
 \begin{figure}[H]
 	\centering
 	\caption{Daily per-appliance LP with larger buckets sizes}
-	\includegraphics[width=0.7\textwidth]{../Figures/LPS/3_hours.png}
+	\includegraphics[]{../Figures/LPS/3_hours.pdf}
 	\label{fig:4hours}
 \end{figure}
 
 While the low resolution is useful for contextual presentation,
 high resolution is needed for time-sensitive applications such as elderly care,
 where we have to detect an accident as soon as possible.
-The hourly resolution would mean that in case of an accident system would need at least an hour to detect it.
+The hourly resolution would mean that in case of an accident, system would need at least an hour to detect it.
 While this is sufficient for demonstrating the capabilities, real implementation would need to use lower-resolution data.
 
 In the case where dwellers have different usage patterns during the weekends, two profiles would have to be developed.
@@ -182,7 +183,7 @@ This kind of presentation could also be used to detect daily anomalies.
 \begin{figure}[H]
 	\centering
 	\caption{Weekly per-appliance LP}
-	\includegraphics[width=0.7\textwidth]{../Figures/LPS/WM_weekly.png}
+	\includegraphics[]{../Figures/LPS/WM_weekly.pdf}
 	\label{fig:WM_weekly}
 \end{figure}
 
@@ -193,7 +194,7 @@ This is useful for grid management and energy saving, where one could detect sea
 \begin{figure}[H]
 	\centering
 	\caption{Yearly per-appliance LP}
-	\includegraphics[width=0.8\textwidth]{../Figures/LPS/WM_yearly.png}
+	\includegraphics[]{../Figures/LPS/WM_yearly.pdf}
 	\label{fig:WM_yearly}
 \end{figure}
 
@@ -211,10 +212,10 @@ it is possible to generate Figure \ref{fig:wm_hm_weekly}.
 \begin{figure}[H]
 	\centering
 	\caption{Two-dimensional time per-appliance LP}
-	\includegraphics[width=0.7\textwidth]{../Figures/LPS/wm_hm_weekly.png}
+	\includegraphics[]{../Figures/LPS/wm_hm_weekly.pdf}
 	\label{fig:wm_hm_weekly}
 \end{figure}
-
+ 
 In this case, a similar use-case could be fitted as in the first example in Subsection \ref{ssec:per_building_two_time_dim}.
 The first example used load shedding when the demand is too high.
 On the contrary, it can also occur if the grid demand is too low.
@@ -264,24 +265,24 @@ The last Figure is \ref{fig:HM_Ywh_wm} where the LP portrays the yearly use of t
 In this case, the seasonal pattern is much clearer. 
 It seems like the appliance was used in the early morning hours of the winter and early spring.
 This practice suddenly stops at week 13, until it appeared back in week 36.
-
+ 
 \begin{figure}[H]
 	\begin{subfigure}{.32\textwidth}
 		\centering
 		\caption{Computer}
-		\includegraphics[width=0.9\textwidth]{../Figures/LPS/HM_Ywh_comp.png}
+		\includegraphics[width=1\textwidth]{../Figures/LPS/HM_Ywh_comp.pdf}
 		\label{fig:HM_Ywh_comp}
 	\end{subfigure}%
 	\begin{subfigure}{.32\textwidth}
 		\centering
 		\caption{TV}
-		\includegraphics[width=0.9\textwidth]{../Figures/LPS/HM_Ywh_tv.png}
+		\includegraphics[width=1\textwidth]{../Figures/LPS/HM_Ywh_tv.pdf}
 		\label{fig:HM_Ywh_tv}
 	\end{subfigure}%
 	\begin{subfigure}{.32\textwidth}
 		\centering
 		\caption{Washing machine}
-		\includegraphics[width=0.9\textwidth]{../Figures/LPS/HM_Ywh_wm.png}
+		\includegraphics[width=1\textwidth]{../Figures/LPS/HM_Ywh_wm.pdf}
 		\label{fig:HM_Ywh_wm}
 	\end{subfigure}%
 	
@@ -296,19 +297,19 @@ Roughly 5 years of data mean that it is possible to build a decent profile.
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\caption{Solar thermal pumping station}
-		\includegraphics[width=0.9\textwidth]{../Figures/LPS/solar_thermal_pumping_station.png}
+		\includegraphics[width=0.9\textwidth]{../Figures/LPS/solar_thermal_pumping_station.pdf}
 		\label{fig:solar_thermal_pumping_station}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\caption{Light}
-		\includegraphics[width=0.9\textwidth]{../Figures/LPS/light.png}
+		\includegraphics[width=0.9\textwidth]{../Figures/LPS/light.pdf}
 		\label{fig:light}
 	\end{subfigure}%
 	\caption{Effect of seasonal changes on LPs}
 	\label{fig:effect_of_season}
 
-\end{figure}
+\end{figure} 
 
 Appliance on Figure \ref{fig:solar_thermal_pumping_station} activates when water in solar collectors heats up to a certain threshold.
 Since water heats up based on the strength of solar radiation, we can observe the change in solar radiation throughout the year for the UK. 
@@ -340,7 +341,7 @@ In case any of these anomalies are detected, the caregiver would be notified to 
 \begin{figure}[H]
 	\centering
 	\caption{Daily per-appliance per-building building LP}
-	\includegraphics[width=0.7\textwidth]{../Figures/LPS/PHPA.png}
+	\includegraphics[]{../Figures/LPS/PHPA_profile_for_building.pdf}
 	\label{fig:PHPA}
 \end{figure}
 
@@ -351,10 +352,10 @@ the contribution of each appliance.
 \begin{figure}[H]
 	\centering
 	\caption{Stacked daily per-appliance per-building building LP}
-	\includegraphics[width=0.7\textwidth]{../Figures/LPS/stack.png}
+	\includegraphics[width=.8\textwidth]{../Figures/LPS/stacked_LP.pdf}
 	\label{fig:stack}
-\end{figure}
-
+\end{figure}  
+ 
 These LPs are useful when it comes to analyzing the usage pattern in one building.
 To be able to process the LPs across many buildings a new profile, seen in Figure \ref{fig:BOA}, must be introduced.
 The idea is derived from the bag-of-words method used in text processing, where a list of the most commonly used words is formed, and then used to process the text. 
@@ -362,11 +363,10 @@ Here, It is possible to use the activation data from all five datasets.
 A list of appliances is sorted by the number of activations and then only the top 30 appliances are selected.
 Using this list it is possible to present the usage of each building universally. This solves the issue of different appliances in different buildings.
 
-
 \begin{figure}[H]
 	\centering
 	\caption{Universal presentation of per-building per-appliance LP}
-	\includegraphics[width=1\textwidth]{../Figures/LPS/BOA.png}
+	\includegraphics[width=1\textwidth]{../Figures/LPS/BOA.pdf}
 	\label{fig:BOA}
 \end{figure}
 
