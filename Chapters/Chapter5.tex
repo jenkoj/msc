@@ -52,7 +52,7 @@ For practical reasons, we are presenting it again here with Figure \ref{fig:wm_h
 \begin{figure}[H]
 	\centering
 	\caption{Weekly per-appliance LP}
-	\includegraphics[width=0.7\textwidth]{../Figures/LPS/wm_hm_weekly.png}
+	\includegraphics[width=0.7\textwidth]{../Figures/LPS/wm_hm_weekly.pdf}
 	\label{fig:wm_hm_weekly_2}
 \end{figure}
 
@@ -65,7 +65,7 @@ But again, for ease-of-use purposes, we will summarize the profile here.
 \begin{figure}[H]
 	\centering
 	\caption{Universal presentation of per-building per-appliance LP}
-	\includegraphics[width=1\textwidth]{../Figures/LPS/BOA.png}
+	\includegraphics[width=1\textwidth]{../Figures/LPS/BOA.pdf}
 	\label{fig:BOA2}
 \end{figure}
 
@@ -135,7 +135,7 @@ Most of the focus will be done on the per-appliance LP since it is the most univ
 This LP is useful when it comes to comparing how 
 activation patterns change over buildings and datasets.
 Per-building data uses combined activations of all appliances to present 
-the aggregated usage pattern. 
+the aggregated usage pattern.  
 
 Figure \ref{fig:tsne_scatter_non_norm_all} is using non-normalized data, meaning
 the number of appliances in a building will affect the end LP.
@@ -146,7 +146,7 @@ again in others we would like to find a more complex usage pattern.
 \begin{figure}[H]
 	\centering
 	\caption{Projection of per-building LPs}
-	\includegraphics[width=1.2\textwidth]{Figures/TSNE/TSNE_per_building/non_norm/scatter_non_norm_all.png}
+	\includegraphics[]{Figures/TSNE/TSNE_per_building/scatter_per_building.pdf}
 	\label{fig:tsne_scatter_non_norm_all}
 \end{figure}
 
@@ -163,7 +163,7 @@ Readers reading a paper version can still explore the high-resolution figures on
 \begin{figure}[H]
 	\centering
 	\caption{Projection of per-building LPs with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_building/non_norm/img_scatter_allall.png}
+	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_building/img_scatter_per_building.png}
 	\label{fig:tsne_pb_img_scatter_allall}
 \end{figure}
 
@@ -184,7 +184,7 @@ Based on that, we can conclude the time when the appliance is used is more consi
 \begin{figure}[H]
 	\centering
 	\caption{Projection of normalised per-building LPs}
-	\includegraphics[width=1.2\textwidth]{Figures/TSNE/TSNE_per_building/all/scatter_all_all.png}
+	\includegraphics[]{Figures/TSNE/TSNE_per_building/scatter_per_building_norm.pdf}
 	\label{fig:tsne_pb_scatter_all_all}
 \end{figure}
 
@@ -195,7 +195,7 @@ If the reader wants to see the samples in the cluster, the very same cluster can
 \begin{figure}[H]
 	\centering
 	\caption{Projection of normalised per-building LPs with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_building/all/img_scatter_allall.png}
+	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_building/img_scatter_per_building_norm.png}
 	\label{fig:tsne_pb_img_norm_scatter_allall}
 \end{figure}
 
@@ -232,7 +232,7 @@ where apart from REFIT buildings 1 and 11, there are no clusters.
 \begin{figure}[H]
 	\centering
 	\caption{Projection of fridge LPs for various buildings}
-	\includegraphics[width=1.2\textwidth]{Figures/TSNE/TSNE_per_appliance/all/scatter_all_fridge_freeezer_fridge freezer.png}
+	\includegraphics[]{Figures/TSNE/TSNE_per_appliance/scatter_refit_fridge_freeezer_fridge_freezer.pdf}
 	\label{fig:tsne_pa_scatter_all_fridge}
 \end{figure}
 
@@ -244,7 +244,7 @@ This could be due to different makes of the appliances, malfunctions of the appl
 \begin{figure}[H]
 	\centering
 	\caption{Projection of fridge LPs for various buildings with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_appliance/all/img_scatter_allfridge_freeezer_fridge freezer.png}
+	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_appliance/img_scatter_refit_fridge_freeezer_fridge_freezer.png}
 	\label{fig:tsne_pa_img_scatter_all_fridge}
 \end{figure}
 
@@ -257,7 +257,7 @@ The closer together the clusters, the higher the routine since samples are more 
 \begin{figure}[H]
 	\centering
 	\caption{Projection of kettle LPs for various buildings}
-	\includegraphics[width=1.2\textwidth]{Figures/TSNE/TSNE_per_appliance/all/scatter_all_kettle.png}
+	\includegraphics[]{Figures/TSNE/TSNE_per_appliance/scatter_refit_kettle.pdf}
 	\label{fig:tsne_pa_scatter_all_kettle}
 \end{figure}
 
@@ -280,7 +280,7 @@ in Chapter \ref{chapter6} to build an elderly care anomaly system.
 \begin{figure}[H]
 	\centering
 	\caption{Projection of kettle LPs for various buildings with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_appliance/all/img_scatter_allkettle.png}
+	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_appliance/img_scatter_refit_kettle.png}
 	\label{fig:tsne_pa_img_scatter_all_kettle}
 \end{figure}
 
@@ -321,7 +321,7 @@ a higher routine.
 \begin{figure}[H]
 	\centering
 	\caption{Projection of TV LPs for various buildings}
-	\includegraphics[width=1.2\textwidth]{Figures/TSNE/TSNE_per_appliance/all/scatter_all_television.png}
+	\includegraphics[]{Figures/TSNE/TSNE_per_appliance/scatter_refit_television.pdf}
 	\label{fig:tsne_pa_scatter_all_tv}
 \end{figure}
 
@@ -341,7 +341,7 @@ What is also interesting, is that the very same pattern can be observed in a few
 \begin{figure}[H]
 	\centering
 	\caption{Projection of TV LPs for various buildings with actual samples.}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_appliance/all/img_scatter_alltelevision.png}
+	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_appliance/img_scatter_refit_television.png}
 	\label{fig:tsne_pa_img_scatter_all_tv}
 \end{figure}
 
@@ -376,7 +376,7 @@ Applying this filter yields Figure \ref{fig:tsne_papb_scatter_all_reduced}.
 \begin{figure}[H]
 	\centering
 	\caption{Projection of filtered per-appliance LPs}
-	\includegraphics[width=1.1\textwidth]{Figures/TSNE/TSNE_results/all/scatter_all_all_reduced_max.png}
+	\includegraphics[]{Figures/TSNE/TSNE_PHPA/phpa_reduced_15.pdf}
 	\label{fig:tsne_papb_scatter_all_reduced}
 \end{figure}
 
@@ -429,26 +429,26 @@ they can be grouped in a high-dimensional space.
 \begin{figure}[H]
 	\centering
 	\caption{Projection of grouped per-appliance LPs}
-	\includegraphics[width=1.1\textwidth]{Figures/TSNE/TSNE_results/all/scatter_all_all_groups.png}
+	\includegraphics[]{Figures/TSNE/TSNE_PHPA/phpa_grouped_15.pdf}
 	\label{fig:tsne_papb_scatter_all_groups}
-\end{figure}
+\end{figure} 
 
 The Figure \ref{fig:tsne_papb_img_scatter_all_groups} below is the same as the first Figure \ref{fig:tsne_papb_img_scatter_all} in the subsection,
 except it is easier to use color to see the appliance they present
 
-\begin{figure}[H]
+\begin{figure}[H]  
 	\centering
 	\caption{Projection of grouped per-appliance LPs with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_results/all/img_scatter_all_all_groups.png}
+	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_PHPA/img_scatter_all_all_groups.png}
 	\label{fig:tsne_papb_img_scatter_all_groups}
 \end{figure}
 
 Figure \ref{fig:t-sne_zoomed} shows the four main types of profiles for readers that cannot zoom in.
 
-\begin{figure}[H]
+\begin{figure}[H] 
 	\centering
 	\caption{Projection of grouped per-appliance LPs with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_results/all/t-sne_zoomed.png}
+	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_PHPA/t-sne_zoomed.png}
 	\label{fig:t-sne_zoomed}
 \end{figure}
 
@@ -534,14 +534,14 @@ Since that is not the case, missing appliances are portrayed as always off.
 
 This is the main reason why we can see in Figure \ref{fig:tsne_boa_scatter_refit8} the clusters are separated quite a bit.
 We can still see that some clusters are closer than others,
-meaning they are more similar.
+meaning they are more similar.  
 
 \begin{figure}[H]
 	\centering
 	\caption{Projection of a bag of appliances LPs for various buildings}
-	\includegraphics[width=.8\textwidth]{Figures/TSNE/TSNE_BOA/refit/scatter_refit_all.png}
+	\includegraphics[]{Figures/TSNE/TSNE_BOA/scatter_refit_boa.pdf}
 	\label{fig:tsne_boa_scatter_refit8}
-\end{figure}
+\end{figure} 
 
 Figure \ref{fig:tsne_boa_img_scatter_refit8} shows that LPs are split 
 between two poles. 
@@ -553,7 +553,7 @@ with more activity than the top ones.
 \begin{figure}[H]
 	\centering
 	\caption{Projection of a bag of appliances LPs for various buildings with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_BOA/refit/img_scatter_refitall.png}
+	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_BOA/img_scatter_boa.png}
 	\label{fig:tsne_boa_img_scatter_refit8}
 \end{figure}
 
