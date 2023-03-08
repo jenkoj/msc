@@ -233,7 +233,7 @@ The Figure below shows how the LP is transformed.
 	\begin{subfigure}{.5\textwidth}
 		% \centering
 		\caption{Input data}
-		\includegraphics[width=1\linewidth]{../Figures/LPS/PHPA.png}
+		\includegraphics[width=1\linewidth]{../Figures/LPS/PHPA_profile_for_building.pdf}
 		\label{fig:ec_PHPA}
 	\end{subfigure}%
 	~ 
@@ -280,7 +280,7 @@ If cases where this rule is false, samples are considered anomalous.
     
       \begin{scope}[transform canvas={yshift=0.8em}]
       \draw [-] (t1.west) -- (t1.east)node[black] [above,midway] {profile};
-      \end{scope}
+      \end{scope}  
     
       \begin{scope}[transform canvas={yshift=0.8em}]
       \draw [-] (t2.west) -- (t2.east)node[black] [above,midway] {sample};
@@ -457,14 +457,14 @@ The only exception is Figure \ref{fig:ec_b5week}, which shows that the observati
 	\begin{subfigure}{.5\textwidth}
 		% \centering
 		\caption{Building 2}
-		\includegraphics[width=1\linewidth]{../Figures/EC/b2week.png}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b2week.pdf}
 		\label{fig:ec_b2week}
 	\end{subfigure}%
 	~ 
 	\begin{subfigure}{.5\textwidth}
 		% \centering
 		\caption{Building 19}
-		\includegraphics[width=1\linewidth]{../Figures/EC/b19week.png}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b19week.pdf}
 		\label{fig:ec_b19week}
 	\end{subfigure}%
     \bigskip
@@ -472,14 +472,14 @@ The only exception is Figure \ref{fig:ec_b5week}, which shows that the observati
     \begin{subfigure}{.5\textwidth}
 		% \centering
 		\caption{Building 18}
-		\includegraphics[width=1\linewidth]{../Figures/EC/b18week.png}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b18week.pdf}
 		\label{fig:ec_b18week}
 	\end{subfigure}%
     ~ 
     \begin{subfigure}{.5\textwidth}
 		% \centering
 		\caption{Building 5}
-		\includegraphics[width=1\linewidth]{../Figures/EC/b5weekd.png}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b5week.pdf}
 		\label{fig:ec_b5week}
 	\end{subfigure}%
 	\caption{Routine rate through the week (train data)}
@@ -506,14 +506,14 @@ There is a high chance most of them are vacations or other events where one or m
 	\begin{subfigure}{.5\textwidth}
 		% \centering
 		\caption{Building 2}
-		\includegraphics[width=1\linewidth]{../Figures/EC/b2year.png}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b2year.pdf}
 		\label{fig:ec_b2year}
 	\end{subfigure}%
 	~ 
 	\begin{subfigure}{.5\textwidth}
 		% \centering
 		\caption{Building 19}
-		\includegraphics[width=1\linewidth]{../Figures/EC/b19year.png}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b19year.pdf}
 		\label{fig:ec_b19year}
 	\end{subfigure}%
     \bigskip
@@ -521,14 +521,14 @@ There is a high chance most of them are vacations or other events where one or m
     \begin{subfigure}{.5\textwidth}
 		% \centering
 		\caption{Building 18}
-		\includegraphics[width=1\linewidth]{../Figures/EC/b18year.png}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b18year.pdf}
 		\label{fig:ec_b18year}
 	\end{subfigure}%
     ~ 
     \begin{subfigure}{.5\textwidth}
 		% \centering
 		\caption{Building 5}
-		\includegraphics[width=1\linewidth]{../Figures/EC/b5year.png}
+		\includegraphics[width=1\linewidth]{../Figures/EC/b5year.pdf}
 		\label{fig:ec_b5year}
 	\end{subfigure}%
 	
@@ -544,8 +544,8 @@ One thing to keep in mind is that this algorithm can detect anomalies only when
 the routine is high, and when more than two appliances are used in given buckets.
 
 Figure \ref{fig:ignored_buckets_22} shows which buckets are most commonly used for the detection of an anomaly.
-The graph includes averaged values from all buildings and datasets. 
-In other words, the graph presents how strong is average routine throughout the day.
+The Figure includes averaged values from all buildings and datasets. 
+In other words, the Figure presents how strong is average routine throughout the day.
 
 This means that the higher the routine, the higher the chance that this bucket will be used for anomaly detection.
 During the night, it is possible to see that the average routine rate is quite high.
@@ -558,13 +558,13 @@ the high routine rate does not necessarily mean the buckets are useful.
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
         \caption{Effectivity of anomaly detection through the day}
-        \includegraphics[width=.8\textwidth]{Figures/EC/ignored_buckets_dist.png}
+        \includegraphics[width=1\textwidth]{Figures/EC/ignored_buckets_dist.pdf}
         \label{fig:ignored_buckets_22}
     \end{subfigure}
     ~
     \begin{subfigure}{.5\textwidth}
         \caption{Actual effectiveness of anomaly detection through the day}
-        \includegraphics[width=.8\textwidth]{Figures/EC/all_ignored_buckets_dist_incl_act.png}
+        \includegraphics[width=1\textwidth]{Figures/EC/all_ignored_buckets_dist_incl_act.pdf}
         \label{fig:ignored_buckets_act}
     \end{subfigure}
 \end{figure}
@@ -617,14 +617,14 @@ This could be due to various dataset errors that occurred during sampling.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
-        \caption{Results for REFIT}
-        \includegraphics[width=1\textwidth]{Figures/EC/refit_res.png}
+        \caption{All buildings}
+        \includegraphics[width=1\textwidth]{Figures/EC/refit_res.pdf}
         \label{fig:refit_res}
     \end{subfigure}
     ~
     \begin{subfigure}{.5\textwidth}
-        \caption{Results for REFIT with removed outliers}
-        \includegraphics[width=1\textwidth]{Figures/EC/refit_res2.png}
+        \caption{Removed best and worst performing building}
+        \includegraphics[width=1\textwidth]{Figures/EC/refit_res2.pdf}
         \label{fig:refit_res2}
     \end{subfigure}
 \end{figure}
@@ -642,13 +642,13 @@ The results in Figure \ref{fig:refit_res_nw_1} show that the result improved to 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 	\caption{Results for REFIT weekday only}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_1.png}
+	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_1.pdf}
 	\label{fig:refit_res_nw_1}
     \end{subfigure}
     ~
     \begin{subfigure}{.5\textwidth}
 	\caption{Results for REFIT weekday only and removed outliers}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_2.png}
+	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_2.pdf}
 	\label{fig:refit_res_nw_2}
     \end{subfigure}
 \end{figure}
@@ -667,14 +667,14 @@ Due to the low number of buildings, it is not possible to detect and ignore outl
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
         \caption{Results for UK-DALE}
-        \includegraphics[width=1\textwidth]{Figures/EC/ukdale_res.png}
+        \includegraphics[width=1\textwidth]{Figures/EC/ukdale_res.pdf}
         \label{fig:ukdale_res}
     \end{subfigure}
     ~
     \begin{subfigure}{.5\textwidth}
         \centering
         \caption{Results for UK-DALE omitting weekends}
-        \includegraphics[width=1\textwidth]{Figures/EC/ukdale_nw_res.png}
+        \includegraphics[width=1\textwidth]{Figures/EC/ukdale_nw_res.pdf}
         \label{fig:ukdale_res_nw}
     \end{subfigure}
 \end{figure}
@@ -690,13 +690,13 @@ The results in Figure \ref{fig:eco_res}, show that this dataset performed the be
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
         \caption{Results for ECO}
-        \includegraphics[width=1\textwidth]{Figures/EC/eco_res_nw_1.png}
+        \includegraphics[width=1\textwidth]{Figures/EC/eco_res_nw_1.pdf}
         \label{fig:eco_res}
     \end{subfigure}
     ~ 
     \begin{subfigure}{.5\textwidth}
         \caption{Results for ECO omitting weekends}
-        \includegraphics[width=1\textwidth]{Figures/EC/eco_res.png}
+        \includegraphics[width=1\textwidth]{Figures/EC/eco_res.pdf}
         \label{fig:eco_res_nw}
     \end{subfigure}
 \end{figure}
@@ -731,13 +731,18 @@ Results show that the algorithm is 78 \% efficient at detecting true anomalies.
 On average, the algorithm would label 22 \% of samples as false positives, 
 in other words, every fifth sample could be a false positive. 
 
-The nature of this system is that there is more harm done if we do not detect an anomaly than if we detect a few false positives. 
-Therefore, we can claim that the performance of this algorithm is adequate to be used in the real world. 
-
 \section{Discussion}
 
-There are several factors to consider when interpreting the results of the study,
-including the socio-economic status and other features of the dwellers, such as age, income, number of children, geolocation, and the age and characteristics of the building.
+The main goal of the anomaly detection system is to identify deviations from the normal routine of the elderly.
+In such a context, it is more important to accurately detect anomalies that may indicate a health-related issue or emergency,
+rather than to minimize the number of false positives.
+While it is certainly important to minimize false positives as much as possible,
+the potential consequences of missing an actual anomaly make it acceptable to have a certain level of false positives.
+In other words, the benefits of detecting real anomalies outweigh the negative impact of a few false positives.
+As such, the performance of the algorithm can be considered sufficient for use in real-world applications.
+
+Additionally, there are several factors to consider when interpreting the results of the study.
+This includes the socio-economic status and other features of the dwellers, such as age, income, number of children, geolocation, and the age and characteristics of the building.
 Without metadata on these factors, it is difficult to draw conclusions on the performance of the algorithm beyond the fact that it appears to work well on an average building.
 
 However, the algorithm may be particularly well-suited for use by single dwellers,
@@ -766,7 +771,7 @@ The system will build an LP based on the first month of data.
 Using this LP, the system can be put online.
 At the end of the month, it can use this data to improve the LP.
 This can then be repeated indefinitely. 
-
+ 
 \subsection{Methodology}
 The tools, metric and other methodology is the same as in a normal learning system.
 The only change was made on the data preparation side.
@@ -783,7 +788,7 @@ how the amount of training and testing data changes over 16 months.
 \begin{figure}[H]
 	\centering
 	\caption{Data for building 1 over 16 months}
-	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/tst_tr_b1.png}
+	\includegraphics[]{Figures/EC/DYN/tst_tr_b1.pdf}
 	\label{fig:dyn_data_1}
 \end{figure}
 
@@ -793,13 +798,13 @@ This can be seen in Figure \ref{fig:data_used_for_training}.
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
         \caption{Data used for training}
-        \includegraphics[width=1\textwidth]{Figures/EC/DYN/data_used_for_training_all.png}
+        \includegraphics[width=1\textwidth]{Figures/EC/DYN/data_used_for_training_all.pdf}
         \label{fig:data_used_for_training}
     \end{subfigure}
     ~
     \begin{subfigure}{.5\textwidth}
         \caption{Data used for training, with removed buildings}
-        \includegraphics[width=1\textwidth]{Figures/EC/DYN/data_used_for_training_removed_short.png}
+        \includegraphics[width=1\textwidth]{Figures/EC/DYN/data_used_for_training_removed_short.pdf}
         \label{fig:data_used_for_training_removed}
     \end{subfigure}
 \end{figure}
@@ -815,7 +820,7 @@ To get more accurate results we will only observe the performance using one year
 \begin{figure}[H]
 	\centering
 	\caption{Data used for training, with removed buildings}
-	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/data_used_for_testing.png}
+	\includegraphics[]{Figures/EC/DYN/data_used_for_testing.pdf}
 	\label{fig:data_used_for_testing}
 \end{figure}
 
@@ -828,7 +833,7 @@ data for each house.
 \begin{figure}[H]
 	\centering
 	\caption{Effect of new data on metric}
-	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/efect_of_data_on_metric.png}
+	\includegraphics[]{Figures/EC/DYN/efect_of_data_on_metric.pdf}
 	\label{fig:efect_of_data_on_metric}
 \end{figure}
 
@@ -840,7 +845,7 @@ If the behavior in the household radically changes, it can still lead to a dip.
 \begin{figure}[H]
 	\centering
 	\caption{Metric over 12 months}
-	\includegraphics[width=.7\textwidth]{Figures/EC/DYN/1_year_of_iterative_learning_avg.png}
+	\includegraphics[]{Figures/EC/DYN/1_year_of_iterative_learning_avg.pdf}
 	\label{fig:1_year_of_iterative_learning_avg}
 \end{figure}
 
@@ -854,7 +859,7 @@ The average value seems to be on average at around 80 - 85 \%,
 It is hard to compare these results from iterative learning to the ones from non-iterative learning.
 Even though the same data was used, different sections of it were used.
 
-Let's take the last point on the graph where the average is at the 85 \% mark for an example.
+Let's take the last point in the Figure where the average is at the 85 \% mark for an example.
 Here, the amount of training data is different, since we limited it to one year. 
 The train set is also different since only last month was used, and not 20 \%. 
 There are many differences between train and test sets, therefore we can not compare them.
