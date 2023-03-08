@@ -35,8 +35,8 @@ They also developed converters to convert existing datasets into a universal for
 This enables engineers to simply load and process multiple datasets.
 NILMTK includes a dataset converter from most of the datasets from Table \ref{tab:other_datasets}.
 \begin{table}[H]
+    \caption{List of NILM datasets.}
     \centering
-    \caption{Pruned version of the Table published by authors on NILMTK\protect{\cite{nilmtk}} wiki page. Full table available here \protect{\url{https://web.archive.org/web/20190607094329/http://wiki.nilm.eu/datasets.html}}.}
     \resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
     \hline
         \textbf{Dataset} & \textbf{Sampling rate} & \textbf{Duration } & \textbf{ Buildings } & \textbf{Subject} & \textbf{Country} & \textbf{Availability} \\ \hline
@@ -61,8 +61,12 @@ NILMTK includes a dataset converter from most of the datasets from Table \ref{ta
         SMART & 1 Hz & 60 days & 3 & ~ & USA & ~ \\ \hline
         LIT-Dataset & 15 kHz & 30 seconds & 26 & Residential & Brazil & Public \\ \hline
     \end{tabular}}
+    \par 
+    \par\footnotesize{Pruned version of the Table published by authors on NILMTK\protect{\cite{nilmtk}} wiki page. Full table available here \protect{\url{https://web.archive.org/web/20190607094329/http://wiki.nilm.eu/datasets.html}}.}
     \label{tab:other_datasets}
 \end{table}
+
+
 
 The reason why more datasets were not selected from the Table \ref{tab:other_datasets},
 was because we followed the criteria:
@@ -126,19 +130,37 @@ Here we present the actual number of samples,
 that is number that was obtained after resampling.
 We also divided the number of samples by $10^6$, to make the column comprehensible.
 
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{|l|r|r|r|}
+%     \hline
+%     \textbf{Dataset} & \multicolumn{1}{l|}{\textbf{Samples}} & \multicolumn{1}{l|}{\textbf{Resampled*10\textasciicircum{}-6}} & \multicolumn{1}{l|}{\textbf{Buildings}} \\ \hline
+%     REFIT            & 144341850                             & 192.46                                                         & 20                                      \\ \hline
+%     UK-DALE          & 54997820                              & 55                                                             & 5                                       \\ \hline
+%     ECO              & 130187888                             & 21.7                                                           & 6                                       \\ \hline
+%     iAWE             & 6425055                               & 6.43                                                           & 1                                       \\ \hline
+%     REDD             & 5890953                               & 5.89                                                           & 6                                       \\ \hline
+%     \end{tabular}
+%     \caption{Appliances sorted by number of samples for REFIT}
+%     \label{tab:dataset_analysis}
+% \end{table}
+
 \begin{table}[H]
+    \caption{Summary of datasets and their characteristics}
     \centering
-    \begin{tabular}{|l|r|r|r|}
-    \hline
-    \textbf{Dataset} & \multicolumn{1}{l|}{\textbf{Samples}} & \multicolumn{1}{l|}{\textbf{Resampled*10\textasciicircum{}-6}} & \multicolumn{1}{l|}{\textbf{Buildings}} \\ \hline
-    REFIT            & 144341850                             & 192.46                                                         & 20                                      \\ \hline
-    UK-DALE          & 54997820                              & 55                                                             & 5                                       \\ \hline
-    ECO              & 130187888                             & 21.7                                                           & 6                                       \\ \hline
-    iAWE             & 6425055                               & 6.43                                                           & 1                                       \\ \hline
-    REDD             & 5890953                               & 5.89                                                           & 6                                       \\ \hline
+    \begin{tabular}{lrrr}
+        \toprule
+        \textbf{Dataset} & \textbf{Samples (M)} & \textbf{Buildings} \\
+        \midrule
+        REFIT   &   192.46 & 20 \\
+        UK-DALE &   55     &  5 \\
+        ECO     &   21.7   &  6 \\
+        iAWE    &   6.43   &  1 \\
+        REDD    &   5.89   &  6 \\
+        \bottomrule
     \end{tabular}
-    \caption{Appliances sorted by number of samples for REFIT}
     \label{tab:dataset_analysis}
+    \par\footnotesize{Note: Samples are abbreviated as M for millions.}
 \end{table}
 
 The figures below show where time splits between train and test data were done.
@@ -160,25 +182,50 @@ This means this dataset should give the most relevant results.
 Figure \ref{tab:refit_table} presents appliances sorted by a number of samples, where the top 10 were selected.
 Together, REFIT contains data for 23 different appliances from 20 homes.
 
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{|l|r|r|r|}
+%     \hline
+%     \textbf{Appliances} & \multicolumn{1}{l|}{\textbf{Instances}} & \multicolumn{1}{l|}{\textbf{Samples}} & \multicolumn{1}{l|}{\textbf{Resampled*10\textasciicircum{}-6}} \\ \hline
+%     fridge freezer      & 15                                      & 35392570                              & 47.19                                                        \\ \hline
+%     television          & 20                                      & 30104492                              & 40.14                                                         \\ \hline
+%     freezer             & 13                                      & 28430845                              & 37.91                                                        \\ \hline
+%     computer            & 12                                      & 13529700                              & 18.04                                                        \\ \hline
+%     fridge              & 7                                       & 9132793                               & 12.18                                                        \\ \hline
+%     dishwasher          & 15                                      & 4275136                               & 5.7                                                         \\ \hline
+%     washing machine     & 20                                      & 4189799                               & 5.59                                                         \\ \hline
+%     microwave           & 17                                      & 4119921                               & 5.49                                                         \\ \hline
+%     pond pump           & 1                                       & 3284418                               & 4.38                                                         \\ \hline
+%     broadband router    & 2                                       & 2134626                               & 2.85                                                         \\ \hline
+%     \end{tabular}
+%     \caption{Appliances sorted by number of samples for REFIT}
+%     \label{tab:refit_table}
+% \end{table}
+
 \begin{table}[H]
     \centering
-    \begin{tabular}{|l|r|r|r|}
-    \hline
-    \textbf{Appliances} & \multicolumn{1}{l|}{\textbf{Instances}} & \multicolumn{1}{l|}{\textbf{Samples}} & \multicolumn{1}{l|}{\textbf{Resampled*10\textasciicircum{}-6}} \\ \hline
-    fridge freezer      & 15                                      & 35392570                              & 47.19                                                        \\ \hline
-    television          & 20                                      & 30104492                              & 40.14                                                         \\ \hline
-    freezer             & 13                                      & 28430845                              & 37.91                                                        \\ \hline
-    computer            & 12                                      & 13529700                              & 18.04                                                        \\ \hline
-    fridge              & 7                                       & 9132793                               & 12.18                                                        \\ \hline
-    dishwasher          & 15                                      & 4275136                               & 5.7                                                         \\ \hline
-    washing machine     & 20                                      & 4189799                               & 5.59                                                         \\ \hline
-    microwave           & 17                                      & 4119921                               & 5.49                                                         \\ \hline
-    pond pump           & 1                                       & 3284418                               & 4.38                                                         \\ \hline
-    broadband router    & 2                                       & 2134626                               & 2.85                                                         \\ \hline
-    \end{tabular}
     \caption{Appliances sorted by number of samples for REFIT}
     \label{tab:refit_table}
+    \begin{tabular}{@{}lrrr@{}}
+        \toprule
+        \textbf{Appliances} & \textbf{Instances}  & \textbf{Samples (M)} \\
+        \midrule
+        fridge freezer      & 15           & 47.19                \\
+        television          & 20           & 40.14                \\
+        freezer             & 13           & 37.91                \\
+        computer            & 12           & 18.04                \\
+        fridge              & 7            & 12.18                \\
+        dishwasher          & 15           & 5.70                 \\
+        washing machine     & 20           & 5.59                 \\
+        microwave           & 17           & 5.49                 \\
+        pond pump           & 1            & 4.38                 \\
+        broadband router    & 2            & 2.85                 \\
+        \bottomrule
+    \end{tabular}
+    \par\smallskip
+    \footnotesize{Note: Samples are abbreviated in millions as M.}
 \end{table}
+
 
 \subsubsection{UK-DALE} 
 
@@ -199,24 +246,47 @@ The rest of the buildings seem healthy.
 Figure \ref{tab:ukdale_table} presents appliances sorted by a number of samples, where top 10 were selected.
 Together, UKDALE contains data for 53 different appliances.
 
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{|l|r|r|r|}
+%     \hline
+%     \textbf{Appliances}           & \multicolumn{1}{l|}{\textbf{Instances}} & \multicolumn{1}{l|}{\textbf{Samples}} & \multicolumn{1}{l|}{\textbf{Resampled*10\textasciicircum{}-6}} \\ \hline
+%     light                         & 15                                      & 9861973                               & 9.86                                                         \\ \hline
+%     fridge freezer                & 2                                       & 8830004                               & 8.83                                                         \\ \hline
+%     HTPC                          & 1                                       & 4867154                               & 4.87                                                         \\ \hline
+%     solar thermal pumping station & 1                                       & 4254460                               & 4.25                                                         \\ \hline
+%     audio amplifier               & 2                                       & 3996912                               & 4                                                            \\ \hline
+%     boiler                        & 2                                       & 3753032                               & 3.75                                                         \\ \hline
+%     computer monitor              & 4                                       & 3203552                               & 3.2                                                          \\ \hline
+%     television                    & 3                                       & 2590025                               & 2.59                                                         \\ \hline
+%     desktop computer              & 3                                       & 2551053                               & 2.55                                                         \\ \hline
+%     laptop computer               & 4                                       & 2099697                               & 2.1                                                          \\ \hline
+%     microwave                     & 3                                       & 1804223                               & 1.8                                                          \\ \hline
+%     \end{tabular}
+%     \caption{Appliances sorted by number of samples for UK-DALE}
+%     \label{tab:ukdale_table}
+% \end{table}
+
 \begin{table}[H]
+    \caption{Summary of datasets and their characteristics}
     \centering
-    \begin{tabular}{|l|r|r|r|}
-    \hline
-    \textbf{Appliances}           & \multicolumn{1}{l|}{\textbf{Instances}} & \multicolumn{1}{l|}{\textbf{Samples}} & \multicolumn{1}{l|}{\textbf{Resampled*10\textasciicircum{}-6}} \\ \hline
-    light                         & 15                                      & 9861973                               & 9.86                                                         \\ \hline
-    fridge freezer                & 2                                       & 8830004                               & 8.83                                                         \\ \hline
-    HTPC                          & 1                                       & 4867154                               & 4.87                                                         \\ \hline
-    solar thermal pumping station & 1                                       & 4254460                               & 4.25                                                         \\ \hline
-    audio amplifier               & 2                                       & 3996912                               & 4                                                            \\ \hline
-    boiler                        & 2                                       & 3753032                               & 3.75                                                         \\ \hline
-    computer monitor              & 4                                       & 3203552                               & 3.2                                                          \\ \hline
-    television                    & 3                                       & 2590025                               & 2.59                                                         \\ \hline
-    desktop computer              & 3                                       & 2551053                               & 2.55                                                         \\ \hline
-    laptop computer               & 4                                       & 2099697                               & 2.1                                                          \\ \hline
-    microwave                     & 3                                       & 1804223                               & 1.8                                                          \\ \hline
+    \begin{tabular}{lrr}
+        \toprule
+        \textbf{Appliances}           & \textbf{Instances} & \textbf{Samples (M)} \\
+        \midrule
+        light                         & 15                 & 9.86                                  \\
+        fridge freezer                & 2                  & 8.83                                  \\
+        HTPC                          & 1                  & 4.87                                  \\
+        solar thermal pumping station & 1                  & 4.25                                  \\
+        audio amplifier               & 2                  & 4                                     \\
+        boiler                        & 2                  & 3.75                                  \\
+        computer monitor              & 4                  & 3.2                                   \\
+        television                    & 3                  & 2.59                                  \\
+        desktop computer              & 3                  & 2.55                                  \\
+        laptop computer               & 4                  & 2.1                                   \\
+        microwave                     & 3                  & 1.8                                   \\
+        \bottomrule
     \end{tabular}
-    \caption{Appliances sorted by number of samples for UK-DALE}
     \label{tab:ukdale_table}
 \end{table}
 
@@ -237,23 +307,45 @@ meaning that there is 80 \% in the train bar, due to missing data the second bar
 Table \ref{tab:eco_table} shows that there were a lot of samples for the ECO dataset.
 This number was reduced by a factor of 6 after resampling was done.
 
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{|l|r|r|r|}
+%     \hline
+%     \textbf{Appliances} & \multicolumn{1}{l|}{\textbf{Instances}} & \multicolumn{1}{l|}{\textbf{Samples}} & \multicolumn{1}{l|}{\textbf{Resampled*10\textasciicircum{}-6}} \\ \hline
+%     freezer             & 4                                       & 33464965                              & 5.58                                                        \\ \hline
+%     fridge              & 6                                       & 25532449                              & 4.26                                                        \\ \hline
+%     computer            & 3                                       & 16122644                              & 2.69                                                        \\ \hline
+%     HTPC                & 5                                       & 15647899                              & 2.61                                                        \\ \hline
+%     audio system        & 1                                       & 5891389                               & 0.98                                                         \\ \hline
+%     laptop computer     & 5                                       & 5073161                               & 0.85                                                         \\ \hline
+%     television          & 1                                       & 4182306                               & 0.7                                                         \\ \hline
+%     lamp                & 3                                       & 3361625                               & 0.56                                                         \\ \hline
+%     broadband router    & 1                                       & 1778507                               & 0.16                                                         \\ \hline
+%     washing machine     & 1                                       & 972600                                & 0.12                                                         \\ \hline
+%     \end{tabular}
+%     \caption{Appliances sorted by number of samples for ECO}
+%     \label{tab:eco_table}
+% \end{table}
+
 \begin{table}[H]
     \centering
-    \begin{tabular}{|l|r|r|r|}
-    \hline
-    \textbf{Appliances} & \multicolumn{1}{l|}{\textbf{Instances}} & \multicolumn{1}{l|}{\textbf{Samples}} & \multicolumn{1}{l|}{\textbf{Resampled*10\textasciicircum{}-6}} \\ \hline
-    freezer             & 4                                       & 33464965                              & 5.58                                                        \\ \hline
-    fridge              & 6                                       & 25532449                              & 4.26                                                        \\ \hline
-    computer            & 3                                       & 16122644                              & 2.69                                                        \\ \hline
-    HTPC                & 5                                       & 15647899                              & 2.61                                                        \\ \hline
-    audio system        & 1                                       & 5891389                               & 0.98                                                         \\ \hline
-    laptop computer     & 5                                       & 5073161                               & 0.85                                                         \\ \hline
-    television          & 1                                       & 4182306                               & 0.7                                                         \\ \hline
-    lamp                & 3                                       & 3361625                               & 0.56                                                         \\ \hline
-    broadband router    & 1                                       & 1778507                               & 0.16                                                         \\ \hline
-    washing machine     & 1                                       & 972600                                & 0.12                                                         \\ \hline
+    \begin{tabular}{lrrr}
+        \toprule
+        \textbf{Appliances} & \textbf{Instances} & \textbf{Samples (M)}  \\
+        \midrule
+        freezer             & 4                   & 5.58                 \\
+        fridge              & 6                   & 4.26                 \\
+        computer            & 3                   & 2.69                 \\
+        HTPC                & 5                   & 2.61                 \\
+        audio system        & 1                   & 0.98                 \\
+        laptop computer     & 5                   & 0.85                 \\
+        television          & 1                   & 0.70                 \\
+        lamp                & 3                   & 0.56                 \\
+        broadband router    & 1                   & 0.16                 \\
+        washing machine     & 1                   & 0.12                 \\
+        \bottomrule
     \end{tabular}
-    \caption{Appliances sorted by number of samples for ECO}
+    \caption{Summary of appliances in the ECO dataset}
     \label{tab:eco_table}
 \end{table}
 
