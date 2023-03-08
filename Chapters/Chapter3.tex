@@ -18,10 +18,6 @@ We employed a range of data analysis and visualization tools, including dimensio
 In addition to our work on activation LPs, we also proposed a new anomaly detection method for elderly care that utilizes the routine of energy usage as a central component of the algorithm. 
 We tested this method in real-world residential buildings and implemented an iterative learning system to continuously improve the performance of the algorithm over time.
 
-Overall, our methodology allowed us to propose and develop new load profiling methods that have the potential to make a significant impact on improving energy efficiency in buildings and supporting the health and well-being of elderly or disabled individuals.
-We believe that our research will contribute new tools and techniques for studying energy consumption patterns and identifying opportunities for optimization, and we hope that it will inspire further research in this field.
-
-
 The following chapter includes methodological procedures that are common for all chapters.
 More detailed methodological procedures will be described in each chapter separately. 
 
@@ -88,6 +84,8 @@ After applying these criteria we were left with the following datasets:
     \item iAWE \cite{iAWE}.
 \end{itemize}
 
+While the Dataport dataset seems to be the best fit and of the best quality, it did sadly not meet our criteria as it is a closed dataset available only via license.
+
 \subsection{Processing}
 
 After datasets were obtained and converted they were ready to be processed.
@@ -143,7 +141,7 @@ We also divided the number of samples by $10^6$, to make the column comprehensib
     \label{tab:dataset_analysis}
 \end{table}
 
-The figures below show where in time splits between train and test data were done.
+The figures below show where time splits between train and test data were done.
 At the same time, we can also observe the health of each dataset.
 By healthy dataset, we presume a dataset that has a long uninterrupted timeline with many buildings.
 
@@ -155,11 +153,11 @@ This means this dataset should give the most relevant results.
 \begin{figure}[H]
 	\centering
 	\caption{Timeline for REFIT}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_timeline.png}
+	\includegraphics[]{Figures/EC/refit_timeline.pdf}
 	\label{fig:refit_timeline}
 \end{figure}
 
-Figure \ref{tab:refit_table} presents appliances sorted by a number of samples, where top 10 were selected.
+Figure \ref{tab:refit_table} presents appliances sorted by a number of samples, where the top 10 were selected.
 Together, REFIT contains data for 23 different appliances from 20 homes.
 
 \begin{table}[H]
@@ -194,7 +192,7 @@ The rest of the buildings seem healthy.
 \begin{figure}[H]
 	\centering
 	\caption{Timeline for UK-DALE}
-	\includegraphics[width=1\textwidth]{Figures/EC/ukdale_timeline.png}
+	\includegraphics[]{Figures/EC/ukdale_timeline.pdf}
 	\label{fig:ukdale_timeline}
 \end{figure}
 
@@ -232,11 +230,11 @@ meaning that there is 80 \% in the train bar, due to missing data the second bar
 \begin{figure}[H]
 	\centering
 	\caption{Timeline for ECO}
-	\includegraphics[width=1\textwidth]{Figures/EC/eco_timeline.png}
+	\includegraphics[]{Figures/EC/eco_timeline.pdf}
 	\label{fig:eco_timeline}
 \end{figure}
 
-Table \ref{tab:eco_table} shows that there were a lot of samples for ECO dataset.
+Table \ref{tab:eco_table} shows that there were a lot of samples for the ECO dataset.
 This number was reduced by a factor of 6 after resampling was done.
 
 \begin{table}[H]
@@ -278,7 +276,7 @@ In order to check that this was not an issue we came up with a test.
 We created a histogram of power values, with a resolution of 10 W, where one such example can be seen in Figure \ref{fig:freq_pthr}.
 For appliances that are mostly off, the first bucket should be the most populated.
 This was true for the majority of appliances and with that, they passed the test.
-For the ones that this was not true, we manually checked and were either discarded or given a new threshold.
+For the ones that this was not true, we manually checked them and were either discarded or given a new threshold.
 The new threshold was manually set between the first and the second frequency peak. 
 
 \begin{figure}[H]
