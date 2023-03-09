@@ -707,26 +707,44 @@ The same as before we can omit weekend data, which can be seen in Figure \ref{fi
 
 After combining results from all 25 buildings, Table \ref{tab:ec_res} can be populated.
 The most relevant results can be seen in the last row.
-\begin{table}[H]
+% \begin{table}[H]
+%     \centering
+%     \caption{Combined percentage of anomalous samples [\%]}
+%     \begin{tabular}{|l|ll|ll|}
+%     \hline
+%     N = 25 &
+%       \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Including \\ weekend data\end{tabular}} &
+%       \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Excluding \\ weekend data\end{tabular}} \\ \hline
+%     \begin{tabular}[c]{@{}l@{}}Removed \\ min/max\\ outliers\end{tabular} &
+%       \multicolumn{1}{l|}{train } &
+%       test &
+%       \multicolumn{1}{l|}{train} &
+%       test \\ \hline
+%     0 & \multicolumn{1}{l|}{84.73} & 77.35 & \multicolumn{1}{l|}{86.20} & 78.07 \\ \hline
+%     1 & \multicolumn{1}{l|}{84.63} & 77.91 & \multicolumn{1}{l|}{86.16} & 78.75 \\ \hline
+%     2 & \multicolumn{1}{l|}{86.53} & 78.53 & \multicolumn{1}{l|}{86.13} & 79.23 \\ \hline
+%     \end{tabular}
+%     \label{tab:ec_res}
+% \end{table}
+
+\begin{table}[htbp]
     \centering
-    \caption{Combined percentage of anomalous samples [\%]}
-    \begin{tabular}{|l|ll|ll|}
-    \hline
-    N = 25 &
-      \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Including \\ weekend data\end{tabular}} &
-      \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Excluding \\ weekend data\end{tabular}} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Removed \\ min/max\\ outliers\end{tabular} &
-      \multicolumn{1}{l|}{train } &
-      test &
-      \multicolumn{1}{l|}{train} &
-      test \\ \hline
-    0 & \multicolumn{1}{l|}{84.73} & 77.35 & \multicolumn{1}{l|}{86.20} & 78.07 \\ \hline
-    1 & \multicolumn{1}{l|}{84.63} & 77.91 & \multicolumn{1}{l|}{86.16} & 78.75 \\ \hline
-    2 & \multicolumn{1}{l|}{86.53} & 78.53 & \multicolumn{1}{l|}{86.13} & 79.23 \\ \hline
-    \end{tabular}
+    \caption{Combined percentage [\%] of anomalous samples for 25 buildings}
     \label{tab:ec_res}
+    \begin{tabular}{lccccc}
+        \hline
+         & \multicolumn{2}{c}{Including weekend data} && \multicolumn{2}{c}{Excluding weekend data} \\
+        \cline{2-3} \cline{5-6}
+        Removed min/max outliers & Train & Test && Train & Test \\
+        \hline
+        0 & 84.73 & 77.35 && 86.20 & 78.07 \\
+        1 & 84.63 & 77.91 && 86.16 & 78.75 \\
+        2 & 86.53 & 78.53 && 86.13 & 79.23 \\
+        \hline
+    \end{tabular}
 \end{table}
 
+This code will produce the same optimized table as the one I presented earlier.
 Results show that the algorithm is 78 \% efficient at detecting true anomalies. 
 On average, the algorithm would label 22 \% of samples as false positives, 
 in other words, every fifth sample could be a false positive. 
