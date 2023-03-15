@@ -100,14 +100,96 @@ Second, it uses Kullback-Leibler divergence to minimize it with respect to a loc
 To achieve this it uses gradient descent to minimize the cost function.
 Over many iterations, similar data points should be close together and far away from dissimilar objects.
 Similar data points usually form clusters. 
-
 t-SNE uses SNE as a basis, except that it uses t-student distribution instead of normal to calculate the similarity.
+
+So in order to calculate the t-SNE for a set of data points, we first need to calculate the conditional probability.
+This is calculated based on the Equation \ref{eq:pij} below.
+The author Van der Mateen in his publication \cite{tsne2} states:
+“The similarity of datapoint $x_j$ to datapoint $x_i$ is the conditional probability, $p_{j|i}$, that $x_i$ would pick $x_j$ as its neighbor if neighbors were picked in proportion to their probability density under a Gaussian centered at $x_i$.” 
+
+\begin{equation}
+\label{eq:pij}
+p_{i|j} = \frac{\exp(-\lVert x_i - x_j \rVert^2/2\sigma_i^2)}{\sum_{k \neq l} \exp(-\lVert x_k - x_l \rVert^2/2\sigma_i^2)} \
+\end{equation}
+
+Where $x_i$ and $x_j$ are two data points. And $|x_i - x_j|$ is the Euclidean distance between the two.
+In simple terms, euclidean distance is a difference in values.
+
+The nominator in \ref{eq:pij} is equal to the similarity between two points normalized by the $2\sigma_i^2$.
+The whole expression is run through $exp()$ function to keep the value within boundaries.
+
+The denominator in \ref{eq:pij} does the very same thing, but it sums every for every pairwise similarity.
+It guarantees that the similarity sum to 1 in the case of the same points. 
+
+The output of the algorithm is a map of every data point $y_i$.
+These points are low dimensional counterparts of $x_i$.
+Usually, these data points contain comprehendible number of dimensions such as $\in \mathbb{R}^2$ or $\mathbb{R}^3$. 
+Similarly as in equation \ref{eq:pij} we can now use low dimensional data points $y_i$ and $y_j$ to calculate probability $q_{i|j}$ 
+
+\begin{equation}
+\label{eq:gij}
+q_{i|j} = \frac{(1+\lVert y_i - y_j \rVert^2)^{-1}}{\sum_{k \neq l} (1+\lVert y_k - y_l \rVert^2)^{-1}}
+\end{equation}
+
+$q_{ij}$ is again a conditional probability of low finding $y_i$ and $y_j$ near each other but for fewer dimensions.
+
+Setting up a cost function, which tries to minimize the difference between $q_{ij}$ and $p_{ij}$ shout results in a low dimensional map where similar points should be near eachother.
+The cost function is also known as Kullback-Leibler divergence seen in Equation \ref{eq:Klle}. 
+The equation is the sum of all pairwise similarities between low and high-dimensional data points.
+The smaller the $C$ the closer together similar low dimensional data points to high dimensional pairs.
+
+\begin{equation}
+\label{eq:Klle}
+ C = \sum_{i \neq j}^n p_{ij} \log \frac{p_{ij}}{q_{ij}}
+\end{equation}
+
+The similarity is achieved over many iterations where we use gradient descent to minimize the kullback-leibler divergence. 
+
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        % Draw the input figure
+        \node (input) at (0,0) {\includegraphics[width=4cm]{Figures/TSNE/DEMO/input_clean.pdf}};
+        
+        % Draw the output figure
+        \node (output) at (6,0) {\includegraphics[width=4cm]{Figures/TSNE/DEMO/iteration_4.pdf}};
+        
+        % Add arrows between the figures
+        \draw[->, thick] (input.east) -- (output.west) node[midway, above] {t-SNE};
+    \end{tikzpicture}
+    \caption{2D input figure transformed into 1D output figure using t-SNE}
+    \label{fig:tsne_diagram}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        % Draw the first subfigure
+        \node (tsne1) at (0,0) {\includegraphics[width=0.25\textwidth]{Figures/TSNE/DEMO/iteration_1.pdf}};
+        
+        % Draw the second subfigure
+        \node (tsne2) at (0.35\textwidth,0) {\includegraphics[width=0.25\textwidth]{Figures/TSNE/DEMO/iteration_2.pdf}};
+        
+        % Draw the third subfigure
+        \node (tsne3) at (0.7\textwidth,0) {\includegraphics[width=0.25\textwidth]{Figures/TSNE/DEMO/iteration_4.pdf}};
+        
+        % Add arrows between the subfigures
+        \draw[->, thick] (tsne1.east) -- (tsne2.west) node[midway, above] {100 iters};
+        \draw[->, thick] (tsne2.east) -- (tsne3.west) node[midway, above] {200 iters};
+    \end{tikzpicture}
+    \caption{Iterations of t-SNE with arrows between subfigures}
+    \label{fig:tsne_iterations_arrows}
+\end{figure}
+
+
 
 In our case, two dimensions will be used. Since this is a non-linear dimensionality reduction,
 the axis usually presents dimensions that are hard to comprehend by the brain. 
 It is important to keep in mind that the resulting low-dimensional representation is not necessarily interpretable in the same way as the original high-dimensional data.
-This also means that the axes on the graphical presentations are meaningless.
-In our case, we labeled the two axes as comp-1 and comp-2.
+This also means that the axes labels on the graphical presentations are meaningless.
+In our case, we labeled the two axes as $dimension-1$ and $dimension-2$.
 
 Since the algorithm uses similarity at the base of the algorithm, it is possible to 
 see which samples are more similar to each other.
