@@ -651,5 +651,28 @@ with more activity than the top ones.
 	\label{fig:tsne_boa_img_scatter_refit8}
 \end{figure}
 
+\section{Discussion}
 
+We used t-SNE to show how LPs are related in high-dimensional space, by mapping them into two-dimensional space.
+We used three different types of LPs: per-building, per-building per-appliance, a bag of appliances, and per-appliance.
+Per-building load profiles offered a look into how activations patterns differ across different buildings and datasets.
+Per-building per-appliance bag of appliance load profiles offered the same thing, but in greater detail.
+Per-appliance load profiles were the most versatile and were utilized in the most various ways:
+First, we have shown how the same type of appliance is being used across various buildings.
+Next, we compared appliances with each other. 
+Since the plot was hard to comprehend, we have defined appliance groups.
+These new groups formed clusters, which furthermore revealed the relation between LPs. 
+Finally, we compared how appliance load profiles are connected in a single building. 
+
+One of the main findings of this chapter was the formation of appliance groups.
+Such groups enable us to look into the similarity of their activation profiles and enable us to understand which groups have similar usage patterns.
+Such groups contain another important information and in the case of data from one build the strength of the user's routine for this appliance.
+The closer the samples, the more similar their activation is, which means the user has a higher routine.
+Such a routine will be useful in the next chapter, where we will try to evaluate if it is strong enough to detect anomalies.
+
+\section{Conclusion}
+
+The analysis provided a look into the relationships between LPs and their consumption patterns.
+We were able to group appliances into categories and found a presence of routine in the LPs
+These findings will be valuable in the next chapter where we continue to explore the potential applications of LPs.
 
