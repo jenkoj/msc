@@ -22,7 +22,6 @@ There is a middle way between invasive and non-invasive approaches, such as the 
 It is possible to use sub-meters for each appliance and indirectly observe the usage pattern. 
 The advantage of this approach is that the elder does not need to wear the device.
 The disadvantage is, that new meters need to be installed for the most commonly used appliances.
-
 Our approach will use the latter.
 
 \section{Goal}
@@ -751,20 +750,24 @@ in other words, every fifth sample could be a false positive.
 
 \section{Discussion}
 
-The main goal of the anomaly detection system is to identify deviations from the normal routine of the elderly.
-In such a context, it is more important to accurately detect anomalies that may indicate a health-related issue or emergency,
-rather than to minimize the number of false positives.
-While it is certainly important to minimize false positives as much as possible,
-the potential consequences of missing an actual anomaly make it acceptable to have a certain level of false positives.
-In other words, the benefits of detecting real anomalies outweigh the negative impact of a few false positives.
-As such, the performance of the algorithm can be considered sufficient for use in real-world applications.
+The main goal of our system is to detect anomalies when they occur. 
+The nature of this system is that there is more harm done if we do not detect an anomaly than if we detect a few false positives. 
+On the other hand, too many false positives could lead to caregivers ignoring detections altogether.
+In this regard, we must find a balance between the two.
+A false positive once a week is a good balance, especially since the care-giver is only a phone call away from checking the status of the patient.
+Since the validation is so simple, we can claim that the performance of the system is adequate enough to be used in a real world setting.
 
-Additionally, there are several factors to consider when interpreting the results of the study.
-This includes the socio-economic status and other features of the dwellers, such as age, income, number of children, geolocation, and the age and characteristics of the building.
-Without metadata on these factors, it is difficult to draw conclusions on the performance of the algorithm beyond the fact that it appears to work well on an average building.
+When analyzing these results one important to keep in mind is,
+that we do not have metadata available to know what kind of socio-economic status dwellers have.
+Socio-economic status encompasses attributes such as age, income, number of children, geolocation, etc.
+They may also encompass the age of the building, type of insulation, number of dwellers in the buildings, etc.
+Since datasets do not provide them, it is hard to make any other conclusions other than the algorithm works well on an average building.
 
-However, the algorithm may be particularly well-suited for use by single dwellers,
-as the system will be typically used by the elderly who are left alone.
+We know that the reason for installing such a system is that the user is left alone.
+We can assume that on average there is more than one dweller living in the buildings we tested on.
+Since this system would usually be used by a single dweller,
+this would be in favor of our algorithm since it would be 
+easier to extract the routine.
 
 One other thing that would be in our favor is that the average person spends less time at home than an elderly person. 
 If we take a look at the results, it is possible to see that,
@@ -774,10 +777,16 @@ This can be seen in Figure \ref{fig:ignored_buckets_22}.
 Since the elderly are usually home at that time, this would 
 increase the time windows where we can detect the accident.
 
-Given these considerations and the promising results of the study on average buildings,
-it may be worthwhile to conduct a test study to further investigate the performance of the algorithm and to assess whether it works better for elderly dwellers as hypothesized.
-This could help to confirm the utility of the algorithm.
-Further research could also explore the influence of other factors on the performance of the algorithm and examine the potential benefits and limitations of using the method for detecting anomalies in dwellings
+We could also assume that the older the dweller, the higher the routine. 
+The nature of the elderly is that they are more conservative when it comes to changes, and prefer to stick to their routine.
+Since the algorithm works better when usage is periodic, this would also be in our favor. 
+Taking all of these assumptions into account, 
+there is a possibility that this algorithm would work 
+better on the elderly due to their nature.
+Since the results on the average building are promising
+a test study should be performed. 
+This would also prove our assumption that this algorithm works 
+better on the elderly.
 
 \section{Iterative Learning System}
 
@@ -888,9 +897,10 @@ In some cases, where users' behavior does not change, the algorithm could work
 from the first month forward. In other cases, where behavior is more dynamic, 
 the algorithm needs a month or two to stabilize. 
 
-It's also worth considering that the routine of users does not necessarily increase with more data,
-but rather our perception of the routine may improve as we have more data to analyze.
-This highlights the importance of considering the limitations of the study and any potential sources of bias or error in the data when interpreting the results.
+It is important to note that the longer the observation, the higher chance there is
+that the routine of the user will change.
+When such changes do occur, it is important that the algorithms has methods in place, that enable them to adjust to the new routine.
+The simplest approach would be to use weights, to put more attention to more recent data and less attention to older data.
 
 Future research could explore these limitations and expand on the findings of the current study.
 For example, additional studies could investigate the performance of the algorithm under different conditions or compare it to other methods of anomaly detection. 
