@@ -4,14 +4,19 @@
 
 \section{Introduction}
 
-In this chapter, we will explore the use of t-SNE for Exploratory Data Analysis (EDA) on LPs.
-LPs are a valuable tool for understanding and analyzing the consumption patterns of appliances or buildings.
-However, they do not inherently allow for the comparison of activation patterns between different households or buildings.
-By using t-SNE, we can visualize the similarity of activation patterns and better understand the differences and similarities in consumption behavior. 
-We will delve into the details of how t-SNE can be applied to LPs and the insights it can provide.
+LPs can be used to understand the consumption patterns of appliances or buildings.
+The one thing they do not offer is a comparison between activation patterns.
+To achieve this we can utilize various dimensionality reduction algorithms. 
+In the process of dimensionality reduction, these algorithms map similar LPs closer together compared to dissimilar LPs.
+This enables us to have an insight into similar activation patterns across various entities.
+It enables us to visualize and compare LPs of buildings and appliances, to find the differences and similarities in their activation patterns.
+
+In this chapter, we will explore the use of t-distributed stochastic neighbor embedding (t-SNE) for Exploratory Data Analysis (EDA) on LPs.
+The t-SNE is a non-linear dimensionality reduction algorithm, used to visualize high dimensional data in usually two or three dimensions.
+We will delve into the details of what t-SNE is and how can it be applied to the LPs.
 
 To achieve this goal, we will first provide a brief overview of t-SNE and its application to LPs.
-We will then describe our methodology for using t-SNE to analyze LPs and compare activation patterns.
+Next, we will describe our methodology for using t-SNE to analyze LPs and compare activation patterns.
 Finally, we will present the results of our analysis and discuss their implications for understanding energy consumption patterns.
 
 The clustering of similar LPs was researched many times before, as it was described in related work Chapter \ref{chapter2}.
@@ -102,55 +107,14 @@ Over many iterations, similar data points should be close together and far away 
 Similar data points usually form clusters. 
 t-SNE uses SNE as a basis, except that it uses t-student distribution instead of normal to calculate the similarity.
 
-So in order to calculate the t-SNE for a set of data points, we first need to calculate the conditional probability.
-This is calculated based on the Equation \ref{eq:pij} below.
-The author Van der Mateen in his publication \cite{tsne2} states:
-“The similarity of datapoint $x_j$ to datapoint $x_i$ is the conditional probability, $p_{j|i}$, that $x_i$ would pick $x_j$ as its neighbor if neighbors were picked in proportion to their probability density under a Gaussian centered at $x_i$.” 
-
-\begin{equation}
-\label{eq:pij}
-p_{i|j} = \frac{\exp(-\lVert x_i - x_j \rVert^2/2\sigma_i^2)}{\sum_{k \neq l} \exp(-\lVert x_k - x_l \rVert^2/2\sigma_i^2)} \
-\end{equation}
-
-Where $x_i$ and $x_j$ are two data points. And $|x_i - x_j|$ is the Euclidean distance between the two.
-In simple terms, euclidean distance is a difference in values.
-
-The nominator in \ref{eq:pij} is equal to the similarity between two points normalized by the $2\sigma_i^2$.
-The whole expression is run through $exp()$ function to keep the value within boundaries.
-
-The denominator in \ref{eq:pij} does the very same thing, but it sums every for every pairwise similarity.
-It guarantees that the similarity sum to 1 in the case of the same points. 
-
-The output of the algorithm is a map of every data point $y_i$.
-These points are low dimensional counterparts of $x_i$.
-Usually, these data points contain comprehendible number of dimensions such as $\in \mathbb{R}^2$ or $\mathbb{R}^3$. 
-Similarly as in equation \ref{eq:pij} we can now use low dimensional data points $y_i$ and $y_j$ to calculate probability $q_{i|j}$ 
-
-\begin{equation}
-\label{eq:gij}
-q_{i|j} = \frac{(1+\lVert y_i - y_j \rVert^2)^{-1}}{\sum_{k \neq l} (1+\lVert y_k - y_l \rVert^2)^{-1}}
-\end{equation}
-
-$q_{ij}$ is again a conditional probability of low finding $y_i$ and $y_j$ near each other but for fewer dimensions.
-
-Setting up a cost function, which tries to minimize the difference between $q_{ij}$ and $p_{ij}$ shout results in a low dimensional map where similar points should be near eachother.
-The cost function is also known as Kullback-Leibler divergence seen in Equation \ref{eq:Klle}. 
-The equation is the sum of all pairwise similarities between low and high-dimensional data points.
-The smaller the $C$ the closer together similar low dimensional data points to high dimensional pairs.
-
-\begin{equation}
-\label{eq:Klle}
- C = \sum_{i \neq j}^n p_{ij} \log \frac{p_{ij}}{q_{ij}}
-\end{equation}
-
-The similarity is achieved over many iterations where we use gradient descent to minimize the kullback-leibler divergence. 
-
-
-\begin{figure}
+A good example that showcases the non-linearity of t-SNE can be seen in Figure \ref{fig:tsne_diagram}.
+In this simple task, projecting all data points to the y-axis would leave us with a different solution than
+one we can see in Figure \ref{fig:tsne_diagram}.
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}
         % Draw the input figure
-        \node (input) at (0,0) {\includegraphics[width=4cm]{Figures/TSNE/DEMO/input_clean.pdf}};
+        \node (input) at (0,0) {\includegraphics[width=4cm]{Figures/TSNE/DEMO/input.pdf}};
         
         % Draw the output figure
         \node (output) at (6,0) {\includegraphics[width=4cm]{Figures/TSNE/DEMO/iteration_4.pdf}};
@@ -158,31 +122,87 @@ The similarity is achieved over many iterations where we use gradient descent to
         % Add arrows between the figures
         \draw[->, thick] (input.east) -- (output.west) node[midway, above] {t-SNE};
     \end{tikzpicture}
-    \caption{2D input figure transformed into 1D output figure using t-SNE}
+    \caption{2D data point transformed into 1D data point using t-SNE}
     \label{fig:tsne_diagram}
 \end{figure}
 
+In order to calculate the t-SNE for a set of data points, we first need to calculate the conditional probability.
+This is calculated based on the Equation \ref{eq:pij} below.
+The author of t-SNE Van der Mateen \cite{tsne2} states:
+“The similarity of datapoint $x_j$ to datapoint $x_i$ is the conditional probability, $p_{ij}$, that $x_i$ would pick $x_j$ as its neighbor if neighbors were picked in proportion to their probability density under a Gaussian centered at $x_i$.” 
 
-\begin{figure}
+\begin{equation}
+\label{eq:pij}
+p_{ij} = \frac{\exp(-\lVert x_i - x_j \rVert^2/2\sigma_i^2)}{\sum_{k \neq l} \exp(-\lVert x_k - x_l \rVert^2/2\sigma_i^2)} \
+\end{equation}
+
+In Equation \ref{eq:pij} $x_i$ and $x_j$ are two data points and $|x_i - x_j|$ is the Euclidean distance between the two.
+The nominator in Equation \ref{eq:pij} is equal to the similarity between two points normalized by the variance $2\sigma_i^2$.
+The whole expression is run through $exp()$ function to ensure the value stays positive and within boundaries.
+The denominator in Equation \ref{eq:pij} serves as a normalisation factor, to ensure that the sum of probabilities for data point $x_i$ will sum to 1.
+
+The $\sigma_i$ is also known as Gaussian bandwidth, Gaussian kernel or just variance is picked for each data point based on the number of neighbors in its vicinity.
+In areas where data points are more crowded, $\sigma_i$ is usually smaller than in less crowded areas.
+It is pre-calculated for every point using binary search. 
+A search is complete when $\sigma_i$ outputs probability distribution $P_i$ that matches user-defined perplexity $Perp(P_i)$.
+
+$$Perp(P_i) = 2^{H(P_i)}$$
+
+Here, $H(P_i)$ is the entropy of the conditional probability distribution $P_i$.
+The entropy of conditional probability distribution is a measure of perplexity.
+Perplexity is one of the parameters defined by the user, and it's used as a measure of the number of effective neighbors, between which we will compute similarities.
+High perplexity means that the distribution of the Gaussian kernel will be wide and contain more data points between which similarity will be computed.
+Low perplexity means that the kernel will be narrow, so fewer data points will fit into it and therefore fewer data points will be compared.
+
+The output of the algorithm is a map of every data point $y_i$.
+These points are low dimensional counterparts of $x_i$.
+Usually, these data points contain a comprehensible number of dimensions where $y_i \in \mathbb{R}^2$ or $\mathbb{R}^3$. 
+Similarly, as in equation \ref{eq:pij} we can now use low dimensional data points $y_i$ and $y_j$ to calculate probability $q_{ij}$ in equation \ref{eq:gij}.
+Here, t-student distribution with one degree of freedom is utilized to calculate the similarities.
+
+\begin{equation}
+\label{eq:gij}
+q_{ij} = \frac{(1+\lVert y_i - y_j \rVert^2)^{-1}}{\sum_{k \neq l} (1+\lVert y_k - y_l \rVert^2)^{-1}} 
+\end{equation}
+
+$q_{ij}$ is again a conditional probability of finding $y_i$ and $y_j$ near each other but for fewer dimensions.
+
+Setting up a cost function, which tries to minimize the difference between $q_{ij}$ and $p_{ij}$ should result in a low dimensional map where similar points should be near eachother.
+The cost function is also known as Kullback-Leibler divergence seen in Equation \ref{eq:Klle}. 
+The equation is the sum of all pairwise similarities between low and high-dimensional data points.
+The smaller the $C$ the closer the similar data points are in low dimensional space.
+
+\begin{equation}
+\label{eq:Klle}
+ C = \sum_{i \neq j}^n p_{ij} \log \frac{p_{ij}}{q_{ij}}
+\end{equation}
+
+The similarity is achieved over many iterations where we use gradient descent to minimize the kullback-leibler divergence \ref{eq:Klle}. 
+The process can be seen in Figure \ref{fig:tsne_iterations_arrows}.
+
+\begin{figure}[H]
     \centering
-    \begin{tikzpicture}
+    \begin{tikzpicture} 
         % Draw the first subfigure
         \node (tsne1) at (0,0) {\includegraphics[width=0.25\textwidth]{Figures/TSNE/DEMO/iteration_1.pdf}};
+        \node[above] at (tsne1.north) {0 iters};
         
         % Draw the second subfigure
         \node (tsne2) at (0.35\textwidth,0) {\includegraphics[width=0.25\textwidth]{Figures/TSNE/DEMO/iteration_2.pdf}};
+        \node[above] at (tsne2.north) {150 iters};
         
         % Draw the third subfigure
         \node (tsne3) at (0.7\textwidth,0) {\includegraphics[width=0.25\textwidth]{Figures/TSNE/DEMO/iteration_4.pdf}};
+        \node[above] at (tsne3.north) {400 iters};
         
         % Add arrows between the subfigures
-        \draw[->, thick] (tsne1.east) -- (tsne2.west) node[midway, above] {100 iters};
-        \draw[->, thick] (tsne2.east) -- (tsne3.west) node[midway, above] {200 iters};
+        \draw[->, thick] (tsne1.east) -- (tsne2.west);
+        \draw[->, thick] (tsne2.east) -- (tsne3.west);
     \end{tikzpicture}
-    \caption{Iterations of t-SNE with arrows between subfigures}
-    \label{fig:tsne_iterations_arrows}
+    \caption{Iterations of t-SNE}
+    \footnotesize{The input data can be seen in \ref{fig:tsne_diagram} }
+	\label{fig:tsne_iterations_arrows}
 \end{figure}
-
 
 
 In our case, two dimensions will be used. Since this is a non-linear dimensionality reduction,
@@ -190,14 +210,6 @@ the axis usually presents dimensions that are hard to comprehend by the brain.
 It is important to keep in mind that the resulting low-dimensional representation is not necessarily interpretable in the same way as the original high-dimensional data.
 This also means that the axes labels on the graphical presentations are meaningless.
 In our case, we labeled the two axes as $dimension-1$ and $dimension-2$.
-
-Since the algorithm uses similarity at the base of the algorithm, it is possible to 
-see which samples are more similar to each other.
-This is also the main idea behind the algorithm. 
-
-The t-SNE algorithm is useful for visualizing patterns and relationships in the data, 
-such as clusters of similar data points and relationships between different data points.
-By observing these patterns, it is possible to gain insights into the data for further analysis.
 
 \section{Results}
 
@@ -639,29 +651,5 @@ with more activity than the top ones.
 	\label{fig:tsne_boa_img_scatter_refit8}
 \end{figure}
 
-\section{Discussion}
 
-In this chapter, we used t-SNE dimensionality reduction to compare and analyze load profiles (LPs) in order to understand how data is related in high-dimensional space.
-We used three different types of LPs: per-building, per-building per-appliance, a bag of appliances, and per-appliance.
-Through our analysis, we were able to identify patterns in energy consumption across different buildings and datasets,
-as well as compare the usage patterns of different appliances within and across buildings.
-
-One of the key findings of this chapter was the formation of appliance groups.
-These groups allowed us to more clearly understand the connections between samples and revealed the existence of routine and persistent usage patterns.
-This information can be particularly valuable for identifying patterns of energy usage in assisted living settings that may be related to health or well-being.
-This will be further explored in the next chapter. 
-
-In addition, our analysis showed the versatility of per-appliance LPs in understanding energy consumption patterns. 
-These LPs allowed us to compare appliance usage across buildings, compare different appliances with each other, and understand the connections between appliance usage patterns within a single building.
-This highlights the importance of considering the usage patterns of individual appliances in efforts to optimize energy consumption.
-
-Overall, our analysis using t-SNE has provided valuable insights into the relationships between LPs and the patterns of energy consumption.
-We believe that this work has the potential to contribute new tools and techniques for studying and optimizing energy consumption patterns, and we hope that it will inspire further research in this field.
-
-\section{Conclusion}
-
-In conclusion, this chapter demonstrated the usefulness of t-SNE in visualizing and comparing load profiling data in high-dimensional space.
-We were able to identify patterns and connections between different types of LPs, and we were able to group appliances into categories based on their usage patterns.
-These findings will be valuable in the next chapter as we continue to explore the potential applications of load profiling in assisted living settings.
-By analyzing and understanding the data in this way, we hope to contribute new insights and techniques for studying energy consumption patterns and identifying opportunities for optimization.
 
