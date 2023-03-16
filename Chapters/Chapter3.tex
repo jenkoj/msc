@@ -3,21 +3,6 @@
 \chapter{Methodology} % Main chapter title
 \label{chapter3} 
 
-As mentioned in Chapter \ref{sec:contributions}, the goal of this thesis was to propose and develop new LP methods that could be used to improve the energy efficiency of residential buildings and support the health and well-being of elderly or disabled individuals. 
-To achieve this goal, we employed a multi-faceted research approach that combined a review of the existing literature on LPs with original data analysis and experimentation.
-
-To begin, we conducted a comprehensive review of the existing literature on load profiling and energy optimization in the residential sector.
-This included a survey of the various LPs that have been proposed and used in previous research,
-as well as an analysis of the methods and techniques that have been applied to study energy consumption patterns and identify opportunities for optimization.
-We used this review to identify gaps in the existing knowledge and understand the current state of the field.
-
-Based on our review of the literature, we developed a set of multidimensional activation LPs that allowed us to examine the relationships between energy consumption patterns and the use of different appliances.
-We used these profiles to study the energy usage patterns of residential buildings and used visual analysis techniques to identify patterns and relationships.
-We employed a range of data analysis and visualization tools, including dimensionality reduction techniques such as t-SNE, to help us understand and interpret the patterns and relationships that we observed in the data.
-
-In addition to our work on activation LPs, we also proposed a new anomaly detection method for elderly care that utilizes the routine of energy usage as a central component of the algorithm. 
-We tested this method in real-world residential buildings and implemented an iterative learning system to continuously improve the performance of the algorithm over time.
-
 The following chapter includes methodological procedures that are common for all chapters.
 More detailed methodological procedures will be described in each chapter separately. 
 
@@ -26,12 +11,27 @@ More detailed methodological procedures will be described in each chapter separa
 We already briefly presented the datasets in the first chapter in Section \ref{sec:data}.
 Here, we will do an in-depth presentation of the datasets and present how we processed and cleaned the data. 
 
+\subsection{Non-Intrusive Load Monitoring (NILM)}
+
+While the NILM method was described in Chapter \ref{chapter2}, we will reintroduce it as part of the methodology.
+NILM is a method that enables us to disaggregate consumption patterns of the whole building from a single meter.
+The conventional method would be to meter installed for each consumer.
+An alternative would be NILM. With this method, one meter can be used to find out which appliances consume the most energy.
+
+The data used here was collected for means of research we did on Non-Intrusive load Monitoring (NILM) in publication \cite{Jenko2022}.
+Where we used this data to perform a classification of appliances using deep learning.
+Using Gramian angular fields (GAF) we transform time series into images.
+We used multiple images in series to form a stack, a video.
+Using deep learning architecture utilizing LSTM that used a stack of images as input, we were able to classify appliances with an F1 score of 80 \%.
+Such techniques could be used to recognize appliances in unlabeled datasets, or help find possible mislabeling in existing datasets.
+
 \subsection{Dataset Selection}
 
 The Table \ref{tab:other_datasets} was published on the NILMTK \cite{nilmtk} wiki page. 
 NILMTK is a tool developed by authors in paper \cite{nilmtk}.
 It intends to make the development of NILM algorithms easier by standardizing a format in which building energy consumption datasets are stored. 
 They also developed converters to convert existing datasets into a universal format.
+
 This enables engineers to simply load and process multiple datasets.
 NILMTK includes a dataset converter from most of the datasets from Table \ref{tab:other_datasets}.
 \begin{table}[H]
@@ -385,7 +385,7 @@ In this case, we can see that this Toaster has three operating modes, where each
 One at 3 kW, the second at 1 kW and the third at 0.7 kW.
 Setting thresholds around these peaks could enable us to build 3 different LPs, where each one would present a different usage pattern.
 
-\section{Tools Used}
+\section{Infrastructure and Software Used}
 
 To process the data and to obtain the results the environment and virtual machines from Google Colab \cite{colab} were used.
 They offer access to Google GPU-accelerated compute machines with 12 GB of RAM. 
