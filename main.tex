@@ -38,9 +38,14 @@ headsepline, % Uncomment to get a line under the header
 %consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
+% \usepackage{graphicx}
+% \usepackage{subcaption}
+
+
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage{rotating}
+\usepackage{chemformula}
 
 \usepackage{mathpazo} % Use the Palatino font by default
 \usepackage{outlines}
@@ -170,7 +175,7 @@ headsepline, % Uncomment to get a line under the header
 
 \vspace*{.06\textheight}
 {\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
-\textsc{\Large Masters Thesis}\\[0.5cm] % Thesis type
+\textsc{\Large Master’s Thesis}\\[0.5cm] % Thesis type
 
 \HRule \\[0.4cm] % Horizontal line
 {\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
@@ -274,7 +279,7 @@ During the thesis, we utilized these previously unused load profiles.
 This was done first by looking at how data and load profiles are related in high dimensional space using t-SNE.
 Newly obtained knowledge aided us when designing and constructing the elderly care system.
 The successful implementation of newly proposed load profiles proved that the new profiles can be efficiently utilized.
-While we filled in few gaps, many are left to be researched.
+While we filled in a few gaps, many are left to be researched.
 
 \end{abstract}
 
@@ -284,7 +289,7 @@ While we filled in few gaps, many are left to be researched.
 
 \begin{acknowledgements}
 \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
-I would like to thank the following people without which this thesis would not be possible.
+I would like to thank the following people without whom this thesis would not be possible.
 Dr. Carolina Fortuna and Dr. Marko Meža helped me with the research, by providing continuous feedback and support.
 The scientific and open-source community provided the data and the tools used throughout the thesis.
 Friends and colleagues, who through discussion helped induce the ideas that were put forward through the thesis. 
@@ -380,10 +385,10 @@ And my partner Nika, who supported me through all my years of studies in all asp
 \include{Chapters/Chapter3}
 
 \include{Chapters/Chapter4}
-% \include{Chapters/Chapter5}
-% \include{Chapters/Chapter6}
+\include{Chapters/Chapter5}
+\include{Chapters/Chapter6}
 
-% \include{Chapters/Chapter7}
+\include{Chapters/Chapter7}
 
 % %----------------------------------------------------------------------------------------
 % %	THESIS CONTENT - APPENDICES
