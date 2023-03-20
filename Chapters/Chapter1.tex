@@ -38,7 +38,7 @@ Before we fully disclose our contributions, let us first have an overview of wha
 
 \section{Definition and Types of LPs}
 \label{sec:LP_types}
-Author \cite{Review2021} defines terms as following:
+Author Proedrou \cite{Review2021} defines terms as following:
 
 % definiton
 % usage
@@ -70,15 +70,16 @@ There are three main features that allow us to determine the amount of energy be
                 ]
 \end{figure}
 
-If we translate these features to the time domain and observe them over a specified amount of time, new ones emerge. 
+If we translate these features to the time domain and observe them over a specified amount of time, new features emerge. 
 The most notable example is the observation of electrical power over one hour.
 The result is energy $E$, and it is one of the most common ways used to bill a customer for his power consumption.
 
 We can also extract features such as the number of activations or time of operation for each activation.
 This can be done using sensors to detect activity or even extract this from power consumption data.
-In cases where we are observing individual appliances, this can be done using simple signal processing
-techniques. In cases where we are observing buildings, this could be achieved using more complex disaggregation algorithms also known as NILM algorithms.
-This additional processing and equipment is a downside that we have to keep in mind when we are comparing it to power data.
+In cases where we are observing individual appliances, this can be done using simple signal processing techniques.
+In cases where we are observing buildings, this could be achieved using more complex disaggregation algorithms also known as NILM (non-intrusive load monitoring) algorithms.
+NILM algorithms enable us to detect consumption patterns of multiple appliances from a single power meter.
+
 % Time domain
 \begin{figure}[H]
   \Tree[.time\ domain\ features [.energy $E$ ]
