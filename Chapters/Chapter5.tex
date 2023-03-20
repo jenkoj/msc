@@ -200,7 +200,8 @@ The process can be seen in Figure \ref{fig:tsne_iterations_arrows}.
         \draw[->, thick] (tsne2.east) -- (tsne3.west);
     \end{tikzpicture}
     \caption{Iterations of t-SNE}
-    \footnotesize{The input data can be seen in \ref{fig:tsne_diagram} }
+	\par
+    \par\footnotesize{The input data can be seen in \ref{fig:tsne_diagram} }
 	\label{fig:tsne_iterations_arrows}
 \end{figure}
 
@@ -242,6 +243,8 @@ again in others we would like to find a more complex usage pattern.
 	\caption{Projection of per-building LPs}
 	\includegraphics[]{Figures/TSNE/TSNE_per_building/scatter_per_building.pdf}
 	\label{fig:tsne_scatter_non_norm_all}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_building/scatter_per_building.pdf}}
 \end{figure}
 
 Figure \ref{fig:tsne_pb_img_scatter_allall} below presents the actual LP for each sample. 
@@ -259,6 +262,8 @@ Readers reading a paper version can still explore the high-resolution figures on
 	\caption{Projection of per-building LPs with actual samples}
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_building/img_scatter_per_building.png}
 	\label{fig:tsne_pb_img_scatter_allall}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_building/img_scatter_per_building.png}}
 \end{figure}
 
 \subsubsection{Normalized LPs}
@@ -280,6 +285,8 @@ Based on that, we can conclude the time when the appliance is used is more consi
 	\caption{Projection of normalised per-building LPs}
 	\includegraphics[]{Figures/TSNE/TSNE_per_building/scatter_per_building_norm.pdf}
 	\label{fig:tsne_pb_scatter_all_all}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_building/scatter_per_building_norm.pdf}}
 \end{figure}
 
 Figure \ref{fig:tsne_pb_img_norm_scatter_allall} presents only the main cluster of samples.
@@ -291,6 +298,8 @@ If the reader wants to see the samples in the cluster, the very same cluster can
 	\caption{Projection of normalised per-building LPs with actual samples}
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_building/img_scatter_per_building_norm.png}
 	\label{fig:tsne_pb_img_norm_scatter_allall}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_building/img_scatter_per_building_norm.png}}
 \end{figure}
 
 In Figure \ref{fig:tsne_pb_img_norm_scatter_allall} it is possible to find various usage patterns. 
@@ -304,8 +313,7 @@ This happens due to events such as vacations, holidays or weather-induced behavi
 \subsection{Per-Appliance}
 
 We can use per-appliance LPs to examine how different appliances 
-are used in a single building, how a single appliance is being used across other buildings
-or how many appliances are being used in many buildings.
+are used in a single building, how a single appliance is being used across other buildings or how many appliances are being used in many buildings.
 
 Per appliance LPs are built using sub-meter data,
 meaning each LP should present each appliance.
@@ -328,6 +336,8 @@ where apart from REFIT buildings 1 and 11, there are no clusters.
 	\caption{Projection of fridge LPs for various buildings}
 	\includegraphics[]{Figures/TSNE/TSNE_per_appliance/scatter_refit_fridge_freeezer_fridge_freezer.pdf}
 	\label{fig:tsne_pa_scatter_all_fridge}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_appliance/scatter_refit_fridge_freeezer_fridge_freezer.pdf}}
 \end{figure}
 
 Figure \ref{fig:tsne_pa_img_scatter_all_fridge} Shows mostly bright images, apart from a few outliers.
@@ -340,6 +350,8 @@ This could be due to different makes of the appliances, malfunctions of the appl
 	\caption{Projection of fridge LPs for various buildings with actual samples}
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_appliance/img_scatter_refit_fridge_freeezer_fridge_freezer.png}
 	\label{fig:tsne_pa_img_scatter_all_fridge}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_appliance/img_scatter_refit_fridge_freeezer_fridge_freezer.png}}
 \end{figure}
 
 Figure \ref{fig:tsne_pa_scatter_all_kettle} shows how,
@@ -353,6 +365,8 @@ The closer together the clusters, the higher the routine since samples are more 
 	\caption{Projection of kettle LPs for various buildings}
 	\includegraphics[]{Figures/TSNE/TSNE_per_appliance/scatter_refit_kettle.pdf}
 	\label{fig:tsne_pa_scatter_all_kettle}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_appliance/scatter_refit_kettle.pdf}}
 \end{figure}
 
 Figure \ref{fig:tsne_pa_img_scatter_all_kettle} shows us that images on the lower part 
@@ -376,6 +390,8 @@ in Chapter \ref{chapter6} to build an elderly care anomaly system.
 	\caption{Projection of kettle LPs for various buildings with actual samples}
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_appliance/img_scatter_refit_kettle.png}
 	\label{fig:tsne_pa_img_scatter_all_kettle}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_appliance/img_scatter_refit_kettle.png}}
 \end{figure}
 
 % Figure \ref{fig:tsne_pa_scatter_all_microwave} shows that microwaves are again a bit different from the kettle.
@@ -417,6 +433,8 @@ a higher routine.
 	\caption{Projection of TV LPs for various buildings}
 	\includegraphics[]{Figures/TSNE/TSNE_per_appliance/scatter_refit_television.pdf}
 	\label{fig:tsne_pa_scatter_all_tv}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_appliance/scatter_refit_television.pdf}}
 \end{figure}
 
 The images in Figure \ref{fig:tsne_pa_img_scatter_all_tv} prove the fact that outliers' consumption is a lot different.
@@ -437,6 +455,8 @@ What is also interesting, is that the very same pattern can be observed in a few
 	\caption{Projection of TV LPs for various buildings with actual samples.}
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_appliance/img_scatter_refit_television.png}
 	\label{fig:tsne_pa_img_scatter_all_tv}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_appliance/img_scatter_refit_television.png}}
 \end{figure}
 
 \subsubsection{Per-Appliance LPs - Comparing Appliances}
@@ -472,6 +492,8 @@ Applying this filter yields Figure \ref{fig:tsne_papb_scatter_all_reduced}.
 	\caption{Projection of filtered per-appliance LPs}
 	\includegraphics[]{Figures/TSNE/TSNE_PHPA/phpa_reduced_15.pdf}
 	\label{fig:tsne_papb_scatter_all_reduced}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_PHPA/phpa_reduced_15.pdf}}
 \end{figure}
 
 Figure \ref{fig:tsne_papb_scatter_all_reduced} shows how these 10 appliances are connected in high dimensional space.
@@ -525,6 +547,8 @@ they can be grouped in a high-dimensional space.
 	\caption{Projection of grouped per-appliance LPs}
 	\includegraphics[]{Figures/TSNE/TSNE_PHPA/phpa_grouped_15.pdf}
 	\label{fig:tsne_papb_scatter_all_groups}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_PHPA/phpa_grouped_15.pdf}}
 \end{figure} 
 
 The Figure \ref{fig:tsne_papb_img_scatter_all_groups} below is the same as the first Figure \ref{fig:tsne_papb_img_scatter_all} in the subsection,
@@ -535,6 +559,8 @@ except it is easier to use color to see the appliance they present
 	\caption{Projection of grouped per-appliance LPs with actual samples}
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_PHPA/img_scatter_all_all_groups.png}
 	\label{fig:tsne_papb_img_scatter_all_groups}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_PHPA/img_scatter_all_all_groups.png}}
 \end{figure}
 
 Figure \ref{fig:t-sne_zoomed} shows the four main types of profiles for readers that cannot zoom in.
@@ -544,6 +570,8 @@ Figure \ref{fig:t-sne_zoomed} shows the four main types of profiles for readers 
 	\caption{Projection of grouped per-appliance LPs with actual samples}
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_PHPA/t-sne_zoomed.png}
 	\label{fig:t-sne_zoomed}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_PHPA/t-sne_zoomed.png}}
 \end{figure}
 
 % One issue that causes the t-SNE algorithm an issue is low entropy data or 
@@ -635,6 +663,8 @@ meaning they are more similar.
 	\caption{Projection of a bag of appliances LPs for various buildings}
 	\includegraphics[]{Figures/TSNE/TSNE_BOA/scatter_refit_boa.pdf}
 	\label{fig:tsne_boa_scatter_refit8}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_BOA/scatter_refit_boa.pdf}}
 \end{figure} 
 
 Figure \ref{fig:tsne_boa_img_scatter_refit8} shows that LPs are split 
@@ -649,6 +679,8 @@ with more activity than the top ones.
 	\caption{Projection of a bag of appliances LPs for various buildings with actual samples}
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_BOA/img_scatter_boa.png}
 	\label{fig:tsne_boa_img_scatter_refit8}
+	\par
+	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_BOA/img_scatter_boa.png}}
 \end{figure}
 
 \section{Discussion}
