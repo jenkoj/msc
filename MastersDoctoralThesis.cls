@@ -433,6 +433,33 @@ KOMA-script documentation for details.}]{fancyhdr}
 	}
 }
 
+%----------------------------------------------------------------------------------------
+%	SIMPLE SLOVENIAN ABSTRACT PAGE DESIGN
+%----------------------------------------------------------------------------------------
+
+\usepackage{xcolor}
+\colorlet{mdtRed}{red!50!black}
+\newcommand{\sloabstractname}{Povzetek}
+\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\sloabstractname}{Povzetek} % Acknowledgement text for English countries
+
+\ifbool{consistentlayout}{
+	\DeclareDocumentEnvironment{sloabstract}{}{%
+		\tttypeout{\sloabstractname}
+		\addchap*{\sloabstractname}
+	}
+}
+{
+	\DeclareDocumentEnvironment{sloabstract}{}{%
+		\checktoopen
+		\tttypeout{\sloabstractname}
+		\thispagestyle{plain}
+		\begin{center}{\huge\textit{\sloabstractname}\par}\end{center}
+	}
+	{
+		\vfil\vfil\null
+	}
+}
+
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS PAGE DESIGN
