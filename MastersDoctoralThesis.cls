@@ -337,72 +337,102 @@ KOMA-script documentation for details.}]{fancyhdr}
 %	ABSTRACT PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\DeclareDocumentCommand{\abstractauthorfont}{}{}
-\DeclareDocumentCommand{\abstracttitlefont}{}{}
-\newcommand{\byname}{by}
+% \DeclareDocumentCommand{\abstractauthorfont}{}{}
+% \DeclareDocumentCommand{\abstracttitlefont}{}{}
+% \newcommand{\byname}{by}
+% \newcommand{\abstractname}{Abstract}
+% \providecaptionname{german,ngerman,austrian,naustrian}{\byname}{von}
+% \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\byname}{by}
+% \ifbool{consistentlayout}{
+% 	\DeclareDocumentEnvironment{abstract}{ O{} }{%
+% 		\addchap*{\abstractname}%
+% 		{\chapteralign\normalsize\abstractauthorfont \authorname \par}% Author name
+% 		\vspace{\baselineskip}
+% 		{\chapteralign\parbox{.7\linewidth}{\chapteralign\normalsize\itshape\abstracttitlefont\@title}\par}% Thesis title
+% 		\bigskip\noindent\ignorespaces
+% 	}%
+% 	{}%end alt-abstract
+% }{%
+% 	\DeclareDocumentEnvironment{abstract}{ O{\null\vfill} }{
+% 		\checktoopen
+% 		\tttypeout{\abstractname}
+% 		#1%added to be able to have abstract more than one page long
+% 		\thispagestyle{plain}
+% 		\begin{center}
+% 			{\normalsize \MakeUppercase{\univname} \par}% University name in capitals
+% 			\bigskip
+% 			{\huge\textit{\abstractname} \par}
+% 			\bigskip
+% 			{\normalsize \facname \par}% Faculty name
+% 			{\normalsize \deptname \par}% Department name
+% 			\bigskip
+% 			{\normalsize \degreename\par}% Degree name
+% 			\bigskip
+% 			{\normalsize\bfseries \@title \par}% Thesis title
+% 			\medskip
+% 			{\normalsize \byname{} \authorname \par}% Author name
+% 			\bigskip
+% 		\end{center}
+% 	}
+% 	{
+% 		\vfill\null
+% 	}
+% }
+
+% \DeclareDocumentEnvironment{extraAbstract}{ O{\null\vfill} }{
+% 	\checktoopen
+% 	\tttypeout{\abstractname}
+% 	#1%added to be able to have abstract more than one page long
+% 	\thispagestyle{empty}
+% 	\begin{center}
+% 		{\normalsize \MakeUppercase{\univname} \par}% University name in capitals
+% 		\bigskip
+% 		{\huge\textit{\abstractname} \par}
+% 		\bigskip
+% 		{\normalsize \facname \par}% Faculty name
+% 		{\normalsize \deptname \par}% Department name
+% 		\bigskip
+% 		{\normalsize \degreename\par}% Degree name
+% 		\bigskip
+% 		{\normalsize\bfseries \@title \par}% Thesis title
+% 		\medskip
+% 		{\normalsize \byname{} \authorname \par}% Author name
+% 		\bigskip
+% 	\end{center}
+% }
+% {
+% 	\vfill\null
+% }
+
+
+%----------------------------------------------------------------------------------------
+%	SIMPLE ABSTRACT PAGE DESIGN
+%----------------------------------------------------------------------------------------
+
+\usepackage{xcolor}
+\colorlet{mdtRed}{red!50!black}
 \newcommand{\abstractname}{Abstract}
-\providecaptionname{german,ngerman,austrian,naustrian}{\byname}{von}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\byname}{by}
+\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\abstractname}{Abstract} % Acknowledgement text for English countries
+\providecaptionname{german,ngerman,austrian,naustrian}{\abstractname}{Danksagung} % Acknowledgement text for Germanic countries
+
 \ifbool{consistentlayout}{
-	\DeclareDocumentEnvironment{abstract}{ O{} }{%
-		\addchap*{\abstractname}%
-		{\chapteralign\normalsize\abstractauthorfont \authorname \par}% Author name
-		\vspace{\baselineskip}
-		{\chapteralign\parbox{.7\linewidth}{\chapteralign\normalsize\itshape\abstracttitlefont\@title}\par}% Thesis title
-		\bigskip\noindent\ignorespaces
-	}%
-	{}%end alt-abstract
-}{%
-	\DeclareDocumentEnvironment{abstract}{ O{\null\vfill} }{
+	\DeclareDocumentEnvironment{abstract}{}{%
+		\tttypeout{\abstractname}
+		\addchap*{\abstractname}
+	}
+}
+{
+	\DeclareDocumentEnvironment{abstract}{}{%
 		\checktoopen
 		\tttypeout{\abstractname}
-		#1%added to be able to have abstract more than one page long
 		\thispagestyle{plain}
-		\begin{center}
-			{\normalsize \MakeUppercase{\univname} \par}% University name in capitals
-			\bigskip
-			{\huge\textit{\abstractname} \par}
-			\bigskip
-			{\normalsize \facname \par}% Faculty name
-			{\normalsize \deptname \par}% Department name
-			\bigskip
-			{\normalsize \degreename\par}% Degree name
-			\bigskip
-			{\normalsize\bfseries \@title \par}% Thesis title
-			\medskip
-			{\normalsize \byname{} \authorname \par}% Author name
-			\bigskip
-		\end{center}
+		\begin{center}{\huge\textit{\abstractname}\par}\end{center}
 	}
 	{
-		\vfill\null
+		\vfil\vfil\null
 	}
 }
 
-\DeclareDocumentEnvironment{extraAbstract}{ O{\null\vfill} }{
-	\checktoopen
-	\tttypeout{\abstractname}
-	#1%added to be able to have abstract more than one page long
-	\thispagestyle{empty}
-	\begin{center}
-		{\normalsize \MakeUppercase{\univname} \par}% University name in capitals
-		\bigskip
-		{\huge\textit{\abstractname} \par}
-		\bigskip
-		{\normalsize \facname \par}% Faculty name
-		{\normalsize \deptname \par}% Department name
-		\bigskip
-		{\normalsize \degreename\par}% Degree name
-		\bigskip
-		{\normalsize\bfseries \@title \par}% Thesis title
-		\medskip
-		{\normalsize \byname{} \authorname \par}% Author name
-		\bigskip
-	\end{center}
-}
-{
-	\vfill\null
-}
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS PAGE DESIGN
