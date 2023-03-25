@@ -148,7 +148,9 @@ headsepline, % Uncomment to get a line under the header
 \addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
 
 \subject{Data science} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
-\keywords{usage profiling, building profiles, energy consumption, residential use, load modeling, end-use load profiles, energy saving} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\keywords{load profiling, energy data, energy saving, dimensionality reduction, elderly care, anomaly detection} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\slokeywords{profiliranje porabe, energetski podatki, učinkovita poraba, zmanjšanje dimenzionalnosti, oskrba starejših, zaznavanje anomalij} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \slokeywordnames
+
 \university{\href{https://www.uni-lj.si}{University of Ljubljana}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
 \department{\href{http://department.university.com}{}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
 \group{\href{http://researchgroup.university.com}{}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
@@ -158,6 +160,7 @@ headsepline, % Uncomment to get a line under the header
 \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
 \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
 \hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+\hypersetup{pdfkeywords=\slokeywordnames} % Set the PDF's keywords to your keywords
 }
 
 \begin{document}
@@ -273,7 +276,37 @@ Next, we analyzed the load profiles and using t-SNE presented how profiles are r
 With the successful implementation of the elderly care system, we confirmed that unused load profiles are applicable.
 The findings of this thesis showcase the untapped potential of energy data where the table of profiles provides a foundation for further research in this area.
 
+\par
+\par\textbf{Keywords}: \keywordnames 
+
 \end{abstract}
+
+% %----------------------------------------------------------------------------------------
+% %	SLO ABSTRACT PAGE
+% %----------------------------------------------------------------------------------------
+
+\begin{sloabstract}
+  \addchaptertocentry{\sloabstractname} % Add the abstract to the table of contents
+  This work explores the potential of electrical energy data
+  and how load profiles can be used to address issues such as the optimization of electrical energy consumption patterns and the aging population.
+  The efficient presentation of energy data through load profiles is a constant narrative throughout the thesis.
+  Optimizing consumption has the potential to significantly reduce the human footprint
+  since a third of electrical energy in the EU is consumed in the residential sector.
+  Furthermore, we utilize load profiles to address issues such as the aging population. 
+  We compiled an elderly care assisted living system to detect anomalies in the usage patterns of the elderly.
+  The system identifies accidents such as falls, strokes, or dementia-induced altered behavior.
+  
+  We performed a comprehensive review of existing publications and use-cases.
+  These publications were mapped into a table, which revealed gaps in the load profiles that were not yet researched or used.
+  Next, we analyzed the load profiles and using t-SNE presented how profiles are related in high dimensional space. 
+  
+  With the successful implementation of the elderly care system, we confirmed that unused load profiles are applicable.
+  The findings of this thesis showcase the untapped potential of energy data where the table of profiles provides a foundation for further research in this area.
+  
+  \par
+  \par\textbf{Ključne besede}: \slokeywordnames 
+
+  \end{sloabstract}
 
 % %----------------------------------------------------------------------------------------
 % %	ACKNOWLEDGEMENTS
