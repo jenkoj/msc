@@ -404,13 +404,15 @@ In cases where the feature combination does not make sense, it is marked with an
 To find useful LPs, references from the related work Section \ref{sec:related_work} must be mapped.
 
 \begin{table}[H]
+  \centering
 	\caption{Table presents previously mentioned LPs}
 	\label{tab:contributions}
+  \centering
 	\begin{tabular}{|l|cccc|cccc|cccc|}
 	\hline
-	Description                                                   & \multicolumn{4}{c|}{Per-building}                                                                                               & \multicolumn{4}{c|}{Per-appliance}                                                                                           & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}}                                                         \\ \hline
-																 & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} + daily time \\ dimension \end{tabular}} & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} + daily time \\ dimension \end{tabular}} & \multicolumn{2}{c|}{LP}                               & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P}    & \multicolumn{1}{c|}{A}    & \multicolumn{1}{c|}{P}                               & A                               \\ \hline
+	                                                    & \multicolumn{4}{c|}{Per-building}                                                                                               & \multicolumn{4}{c|}{Per-appliance}                                                                                           & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}}                                                         \\ \hline
+																 & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} + daily\\dim.\end{tabular}} & \multicolumn{2}{c|}{LP}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} + daily\\dim. \end{tabular}} & \multicolumn{2}{c|}{LP}                               & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appl.\\ by side\end{tabular}} \\ \hline
+	\begin{tabular}[c]{@{}l@{}} Interval \end{tabular} & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{P}                         & A                         & \multicolumn{1}{c|}{P}    & \multicolumn{1}{c|}{A}    & \multicolumn{1}{c|}{P}                               & A                               \\ \hline
 	Daily                                                        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{UKDALE} \\ \citeyear*{Chuan2014} \\ \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{WALKER1985} \\ \citeyear*{GERBEC2005} \\ \citeyear*{Gao2018} \\ \citeyear*{Jeong2021} \\ \citeyear*{Joana2012} \\ \citeyear*{DER_heatmap_profile} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{X}  &  X  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{NILMAD2019} \\ \citeyear*{NILMAD22019} \\ \citeyear*{Issi2018} \\ \citeyear*{NILMAD2021} \\ \citeyear*{Castangia2021} \\ \citeyear*{occupancy2013}	\end{tabular}}  & \multicolumn{1}{c|}{\citeyear*{UKDALE}}  & \multicolumn{1}{c|}{X}   &  \multicolumn{1}{c|}{X}   & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{Chuan2014} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{Gao2018} 	\end{tabular}}   & \multicolumn{1}{c|}{\citeyear*{UKDALE}}     & \multicolumn{1}{c|}{}      &    \\ \hline
 	\begin{tabular}[c]{@{}l@{}}Weekly/\\ Monthly\end{tabular}    & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{2D_year_day_LP} \\ \citeyear*{Park2019} \\ \citeyear*{DER_heatmap_profile} \end{tabular}}                            &                           & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{\citeyear*{per_appliance_per_building}}  & \multicolumn{1}{c|}{}                          &                           & \multicolumn{1}{c|}{\citeyear*{weekly_per_appliance_LP}}    & \multicolumn{1}{c|}{\citeyear*{per_appliance_per_building}}     & \multicolumn{1}{c|}{}                                &                                 \\ \hline
 	Yearly                                                       & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}                          &                           & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}                          &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}                                &                                 \\ \hline
@@ -426,7 +428,7 @@ shown in Figure \ref{fig:daily_act_profile}. During the research we focused on p
 from minority classes, meaning not all existing publications for standard LPs are included. 
 The purpose of Table \ref{tab:contributions} is to present missing scientific contributions and patterns of publications.  
 
-\newcommand{\tabVar}{+ daily time \\ dimension  }
+\newcommand{\tabVar}{+ daily \\ dim  }
 
 \subsection{Mapping Use-Cases to the Table of Profiles}
 
@@ -434,6 +436,7 @@ Table \ref{tab:use_cases} includes arranged publications from the use-cases Sect
 A similar pattern emerged as in Table \ref{tab:contributions}. 
 
 \begin{table}[H]
+  \centering
 	\caption{Table presents references mentioned in use-cases Chapter}
 	\label{tab:use_cases}
 	\begin{tabular}{|l|cccc|cccc|cccc|}
@@ -448,8 +451,8 @@ A similar pattern emerged as in Table \ref{tab:contributions}.
 	  \multicolumn{2}{c|}{LP} &
 	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
 	  \multicolumn{2}{c|}{LP} &
-	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+	  \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appl\\ by side\end{tabular}} \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Interval\end{tabular} &
 	  \multicolumn{1}{c|}{P} &
 	  \multicolumn{1}{c|}{A} &
 	  \multicolumn{1}{c|}{P} &
@@ -514,24 +517,34 @@ The Table \ref{tab:groups} indicates how groups are arranged.
 Where anomaly detection and elderly care are dominating in the per-appliance part of the table,
 zero energy buildings and demand response are dominating in a per-building part of the table. 
 
+\begin{itemize}
+  \item ZEB - zero energy buildings
+  \item DR - demand response
+  \item AD - anomaly detection
+  \item EC - elderly care
+  \item X - unfeasible
+\end{itemize}
+
+
 \begin{table}[H]
-    \caption{Table presents references mentioned in use-cases Chapter}
+  \centering
+  \caption{Table presents references mentioned in use-cases Chapter}
 	\label{tab:groups}
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth} 
         \begin{tabular}{|l|cccc|cccc|cccc|}
             \hline
-            \begin{tabular}[c]{@{}l@{}}ZEB - \\ zero energy buildings \\ DR - \\ demand response \\ AD - \\ anomaly  detection \\ EC - \\ elderly care \\ X - \\ unfeasible\end{tabular} &
+            \begin{tabular}[c]{@{}l@{}} \end{tabular} &
               \multicolumn{4}{c|}{Per-building} &
               \multicolumn{4}{c|}{Per-appliance} &
               \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
              &
               \multicolumn{2}{c|}{LP} &
-              \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
+              \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily \\ dim\end{tabular}} &
               \multicolumn{2}{c|}{LP} &
               \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
               \multicolumn{2}{c|}{LP} &
-              \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
-            \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+              \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appl\\ by side\end{tabular}} \\ \hline
+            \begin{tabular}[c]{@{}l@{}}Interval\end{tabular} &
               \multicolumn{1}{c|}{P} &
               \multicolumn{1}{c|}{A} &
               \multicolumn{1}{c|}{P} &
@@ -596,23 +609,24 @@ In Table \ref{tab:groups_proposed} empty spaces are filled
 with possible use-cases for given LPs. 
 
 \begin{table}[H]
+    \centering
     \caption{Proposed use-cases for profiles}
     \label{tab:groups_proposed}
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth} 
     \begin{tabular}{|l|cccc|cccc|cccc|}
     \hline
-    \begin{tabular}[c]{@{}l@{}}ZEB - \\ zero energy buildings \\ DR - \\ demand response \\ AD - \\ anomaly detection\\ EC - \\ elderly care\\ X - \\ unfeasible\end{tabular} &
+    \begin{tabular}[c]{@{}l@{}}\end{tabular} &
       \multicolumn{4}{c|}{Per-building} &
       \multicolumn{4}{c|}{Per-appliance} &
       \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
      &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily \\ dim\end{tabular}} &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appl\\ by side\end{tabular}} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Interval\end{tabular} &
       \multicolumn{1}{c|}{P} &
       \multicolumn{1}{c|}{A} &
       \multicolumn{1}{c|}{P} &
@@ -692,6 +706,7 @@ The Table has four possible classes.
 \end{outline}
 
 \begin{table}[H]
+    \centering
     \caption{Proposed classification of profiles}
     \label{tab:classified_profiles}
     \begin{tabular}{|l|cccc|cccc|cccc|}
@@ -702,12 +717,12 @@ The Table has four possible classes.
       \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
      &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily \\ dim\end{tabular}} &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appl\\ by side\end{tabular}} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Interval\end{tabular} &
       \multicolumn{1}{c|}{P} &
       \multicolumn{1}{c|}{A} &
       \multicolumn{1}{c|}{P} &
@@ -793,6 +808,7 @@ Following these rules, Table  \ref{tab:future_rd} was constructed.
 
 
 \begin{table}[H]
+    \centering
     \caption{Possible future research contributions}
     \label{tab:future_rd}
     \begin{tabular}{|l|cccc|cccc|cccc|}
@@ -803,12 +819,12 @@ Following these rules, Table  \ref{tab:future_rd} was constructed.
       \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
      &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily \\ dim\end{tabular}} &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appl\\ by side\end{tabular}} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Interval\end{tabular} &
       \multicolumn{1}{c|}{P} &
       \multicolumn{1}{c|}{A} &
       \multicolumn{1}{c|}{P} &
@@ -874,6 +890,7 @@ When the aforementioned parameters are applied,
 the result is Table \ref{tab:our_rd}.
 
 \begin{table}[H]
+    \centering
     \caption{LPs to be pursued}
     \label{tab:our_rd}
     \begin{tabular}{|l|cccc|cccc|cccc|}
@@ -884,12 +901,12 @@ the result is Table \ref{tab:our_rd}.
       \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}Per-building\\ per-appliance\end{tabular}} \\ \cline{2-13} 
      &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily time \\ dimension\end{tabular}} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}+ daily \\ dim\end{tabular}} &
       \multicolumn{2}{c|}{LP} &
       \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \tabVar \end{tabular}} &
       \multicolumn{2}{c|}{LP} &
-      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appliances\\ side by side\end{tabular}} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Range of time\\ axis\end{tabular} &
+      \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appl\\ by side\end{tabular}} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Interval\end{tabular} &
       \multicolumn{1}{c|}{P} &
       \multicolumn{1}{c|}{A} &
       \multicolumn{1}{c|}{P} &
