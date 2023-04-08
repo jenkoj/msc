@@ -267,11 +267,11 @@ A more detailed description of each use-case with publications will be addressed
 \section{Data}
 \label{sec:data}
 
-To construct the LP one needs time-series data that contains information about the consumption of the energent.
-While LPs are generally used to depict usage of electical energy they could be used in many areas.
-First, we do not have to limit to the electical energy, for an example we could use the LPs to analyse consumpton of gas, oil or even tap-water. 
-Secondly, while in this thesis we focused on analysing the consumption of electical energy, LPs can be used to analyse the production as well.
-Thirdly, while we focused on optimising residential energy consumption patterns same appoach can be used in industrial and office settings.
+To construct the LP, we need time-series data that contains information about energy consumption.
+While LPs are generally used to analyze the usage of electrical energy they could be applied in many areas.
+For example, we could use the LPs to analyze any other utilities such as gas, oil or even tap water. 
+Furthermore, while this thesis focuses on analyzing the consumption of electrical energy, LPs can be used to analyze production as well.
+Finally, while we focused on optimizing residential energy consumption patterns, the same approach can be applied in industrial or office settings.
 
 In the thesis we used the following five datasets:
  UK-DALE \cite{UKDALE}, REFIT \cite{REFIT}, ECO \cite{ECO}, REDD \cite{REDD}, and iAWE \cite{iAWE}.
@@ -280,7 +280,7 @@ They include main smart meter data, as well as sub-meter data for each appliance
 While some datasets offered versions with high frequency with sampling rates up to 40 kHz,
 we focused on the low-frequency variations with sampling rates at around 1 Hz.
 
-The datasets used, had frequencies ranging from 1 Hz for the ECO dataset, down to 1/8 Hz for the REFIT dataset.
+The datasets used had frequencies ranging from 1 Hz for the ECO dataset, down to 1/8 Hz for the REFIT dataset.
 For datasets to be compatible, we resampled all datasets to 1/6 Hz.
 The missing samples were forward filled with a limit of 5, meaning if up 30 s of data was missing, its value was set to the last known value, otherwise, it was left missing.
 For easier handling datasets will be sliced into 1-hour intervals.
