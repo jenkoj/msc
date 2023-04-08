@@ -224,6 +224,11 @@ The results will be presented in three subsections
 
 Most of the focus will be done on the per-appliance LP since it is the most universal.
 
+The following figures are best viewed in color and a digital format. 
+In the analysis, the reader can use the first figures to identify buildings and the second to identify the patterns and actual LPs.
+Readers reading the digital version should have the ability to zoom into each cluster and see the actual samples. 
+Readers reading a paper version can still explore the high-resolution figures online via the provided link below every figure.
+
 \subsection{Results for Per-Building LPs}
 %TODO
 \label{ssec:res_pb_lp}
@@ -234,9 +239,9 @@ the aggregated usage pattern.
 
 Figure \ref{fig:tsne_scatter_non_norm_all} is using non-normalized data, meaning
 the number of appliances in a building will affect the end LP.
-The algorithm could pick up on how many appliances are being used.
-In some cases, such as energy poverty detection, this information is useful, 
-again in othersm, where would like to find more complex usage patterns, we are better off using normalized profiles.
+The algorithm could pick up on how many and how much appliances are being used.
+In some cases, such as energy poverty detection, this information is useful.
+again in others, where it would like to find more complex usage patterns, we are better off using normalized profiles.
 
 \begin{figure}[H]
 	\centering
@@ -247,16 +252,6 @@ again in othersm, where would like to find more complex usage patterns, we are b
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_building/scatter_per_building.pdf}}
 \end{figure}
 
-Figure \ref{fig:tsne_pb_img_scatter_allall} below presents the actual LP for each sample. 
-It is possible to see that on the left there are mostly samples with very little activity,
-and on the right, we see samples with more activity.
-Since the two plotted components are of a higher dimension, it is hard to determine what they present.
-As said t-SNE gives us the intuition of how LPs are connected in higher-dimensional space.
-
-The following figures are best viewed in color and a digital format. 
-Readers reading the digital version should have the ability to zoom into each cluster, and see the actual samples. 
-Readers reading a paper version can still explore the high-resolution figures online via the provided link below every figure.
-
 \begin{figure}[H]
 	\centering
 	\caption{Projection of per-building LPs with actual samples}
@@ -265,6 +260,34 @@ Readers reading a paper version can still explore the high-resolution figures on
 	\par
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_building/img_scatter_per_building.png}}
 \end{figure}
+
+
+Figure \ref{fig:tsne_pb_img_scatter_allall} below presents the actual LP for each sample.
+Since the two plotted components are of a higher dimension, it is hard to determine what they present.
+As said t-SNE gives us the intuition of how LPs are connected in higher-dimensional space.
+Nonetheless, through analysis, we can find clusters with similar usage patterns.
+
+It is possible to see that on the left there are mostly samples with very little activity, and on the right, we see samples with more activity.
+We can observe a clear cluster of LPS from \textit{ukdale1} and \textit{ukdale2}.
+Besides the cluster being clear, it contains a lot of samples as well.
+From Section \ref{ssec:ds_eval} we know that \textit{ukdale1} and \textit{ukdale2} contain plenty of appliances which could point to the fact that these are LPs contain a lot of activators.
+When observing the figure more precisely we can see that in the central part of the plot, LPs form smaller clusters of various patterns.
+Few less obvious clusters were formed in the bottom section of the plot for buildings (looking from the left) \textit{refit2}, \textit{refit9}, \textit{refit5}, \textit{refit6}, \textit{refit4}, \textit{refit8}.
+An important observation that can be made here is how close together the LPs are.
+The closer together the samples are the more similar the consumption throughout every month is.
+In other words, by measuring the distance between LPs of the same building, we could measure the strength of the routine that each household has.
+This is an important observation that will be used in the next Chapter \ref{chapter6}.
+
+Patterns in the central part of the plot have no real pattern that we can recognize.
+The reason behind this could be that appliances such as fridges have contributed the majority of activations.
+Since such appliances are not affected by the dweller, such LPs present random activations. 
+That is why there are no clusters in the central part of the plot as can be observed in Figure \ref{fig:tsne_scatter_non_norm_all} above.
+
+The same goes for the profiles in the far left part of the plot, where there are no clusters to be observed.
+In this case, the reason is that these profiles do not contain enough information, which could be used to distinguish them.
+
+
+Even though the LPs contained a non-normalized amount of activations, we were still able to identify interesting patterns through the t-SNE plot
 
 \subsubsection{Normalized LPs}
 
@@ -557,7 +580,7 @@ except it is easier to use color to see the appliance they present
 \begin{figure}[H]  
 	\centering
 	\caption{Projection of grouped per-appliance LPs with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_PHPA/img_scatter_all_all_groups.png}
+	\includegraphics[width=1.1\textwidth]{Figures/TSNE/TSNE_PHPA/img_scatter_all_all_groups.png}
 	\label{fig:tsne_papb_img_scatter_all_groups}
 	\par
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_PHPA/img_scatter_all_all_groups.png}}
@@ -567,7 +590,7 @@ To better emphasize the details from Figure \ref{fig:tsne_papb_img_scatter_all_g
 \begin{figure}[H] 
 	\centering
 	\caption{Projection of grouped per-appliance LPs with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_PHPA/t-sne_zoomed.png}
+	\includegraphics[width=1\textwidth]{Figures/TSNE/TSNE_PHPA/t-sne_zoomed.png}
 	\label{fig:t-sne_zoomed}
 	\par
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_PHPA/t-sne_zoomed.png}}
