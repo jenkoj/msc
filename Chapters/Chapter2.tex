@@ -411,7 +411,7 @@ To find useful LPs, references from the related work Section \ref{sec:related_wo
 	\begin{tabular}{|c|cccc|cccc|cccc|}
 	\hline
 	\begin{tabular}[c]{@{}l@{}} P - power \\A - activation\end{tabular}                                                   & \multicolumn{4}{c|}{\textbf{Per-building}}                                                                                               & \multicolumn{4}{c|}{\textbf{Per-appliance}}                                                                                           & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Per-building}\\ \textbf{per-appliance}\end{tabular}}                                                         \\ \cline{2-13}
-																 & \multicolumn{2}{c|}{\textbf{LP}}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \textbf{+ daily}\\dim.\end{tabular}} & \multicolumn{2}{c|}{\textbf{LP}}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \textbf{+ daily}\\dim. \end{tabular}} & \multicolumn{2}{c|}{\textbf{LP}}                               & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Appl.\\ \textbf{by side}\end{tabular}} \\ \hline
+																 & \multicolumn{2}{c|}{\textbf{LP}}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \textbf{+ daily}\\\textbf{dim.}\end{tabular}} & \multicolumn{2}{c|}{\textbf{LP}}                         & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}} \textbf{+ daily}\\\textbf{dim.} \end{tabular}} & \multicolumn{2}{c|}{\textbf{LP}}                               & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Appl.}\\ \textbf{by side}\end{tabular}} \\ \hline
 	\begin{tabular}[c]{@{}l@{}} \textbf{Interval} \end{tabular} & \multicolumn{1}{c|}{\textbf{P}} & \multicolumn{1}{c|}{\textbf{A}} & \multicolumn{1}{c|}{\textbf{P}}                         & {\textbf{A}}                         & \multicolumn{1}{c|}{\textbf{P}} & \multicolumn{1}{c|}{\textbf{A}} & \multicolumn{1}{c|}{\textbf{P}}                         & {\textbf{A}}                         & \multicolumn{1}{c|}{\textbf{P}}    & \multicolumn{1}{c|}{\textbf{A}}    & \multicolumn{1}{c|}{\textbf{P}}                               & {\textbf{A}}                               \\ \hline
 	\textbf{Daily}                                                        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{UKDALE} \\ \citeyear*{Chuan2014} \\ \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{WALKER1985} \\ \citeyear*{GERBEC2005} \\ \citeyear*{Gao2018} \\ \citeyear*{Jeong2021} \\ \citeyear*{Joana2012} \\ \citeyear*{DER_heatmap_profile} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{X}  &  X  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{NILMAD2019} \\ \citeyear*{NILMAD22019} \\ \citeyear*{Issi2018} \\ \citeyear*{NILMAD2021} \\ \citeyear*{Castangia2021} \\ \citeyear*{occupancy2013}	\end{tabular}}  & \multicolumn{1}{c|}{\citeyear*{UKDALE}}  & \multicolumn{1}{c|}{X}   &  \multicolumn{1}{c|}{X}   & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{Chuan2014} \\ \citeyear*{CAPASSO1994} \\ \citeyear*{Gao2018} 	\end{tabular}}   & \multicolumn{1}{c|}{\citeyear*{UKDALE}}     & \multicolumn{1}{c|}{}      &    \\ \hline
 	\begin{tabular}[c]{@{}l@{}}\textbf{Weekly/} \\ \textbf{Monthly/} \end{tabular}    & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \citeyear*{Csoknyai2019} \\ \citeyear*{H0} \\ \citeyear*{KAVOUSIAN2013184} \end{tabular}}  & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}l@{}} \citeyear*{2D_year_day_LP} \\ \citeyear*{Park2019} \\ \citeyear*{DER_heatmap_profile} \end{tabular}}                            &                           & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{\citeyear*{per_appliance_per_building}}  & \multicolumn{1}{c|}{}                          &                           & \multicolumn{1}{c|}{\citeyear*{weekly_per_appliance_LP}}    & \multicolumn{1}{c|}{\citeyear*{per_appliance_per_building}}     & \multicolumn{1}{c|}{}                                &                                 \\ \hline
@@ -512,10 +512,9 @@ A similar pattern emerged as in Table \ref{tab:contributions}.
 \subsection{Table of Use-Case Groups}
 
 The Table \ref{tab:groups} presents same publications as Table \ref{tab:use_cases},
-but only group names are shown.
-The Table \ref{tab:groups} indicates how groups are arranged.
-Where anomaly detection and elderly care are dominating in the per-appliance part of the table,
-zero energy buildings and demand response are dominating in a per-building part of the table. 
+but only group names are shown. 
+The groups are the main use cases from Section \ref{sec:use-cases} and use-case tree in Chapter \ref{sec:use_cases_tree}.
+
 
 \begin{itemize}
   \item ZEB - zero energy buildings
@@ -525,6 +524,9 @@ zero energy buildings and demand response are dominating in a per-building part 
   \item X - unfeasible
 \end{itemize}
 
+The Table \ref{tab:groups} indicates how groups are arranged.
+Where anomaly detection and elderly care are dominating in the per-appliance part of the table,
+zero energy buildings and demand response are dominating in a per-building part of the table. 
 
 \begin{table}[H]
   \centering
