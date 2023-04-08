@@ -2,14 +2,14 @@
 \label{chapter4}
 
 The Chapter will provide an analysis and in-depth presentation of LPs from Section \ref{ssec:table_of_combinations}.
-In general, each LP has its use-case already assigned in Table \ref{tab:use_cases}.
+In general, each profile has its use-case already assigned in Table \ref{tab:use_cases}.
 Here, we will focus on exposing the main features, issues, and use cases of the aforementioned LPs. 
 
 Using the same pattern as in Table \ref{fig:map_fig}, we will first present per-building LPs with different time ranges.
 We will start with simple LPs and then move to more advanced LPs with two-time dimensions.
-Secondly, using the same pattern, we will present per-appliance LPs.
+Secondly, using the same pattern, we will present per-appliance profiles.
 Finally, we will present per-building per-appliance LPs.
-Data for LPs in this chapter was used from building 2 from the REFIT dataset discussed in Section \ref{ssec:data}.
+Data for profiles in this chapter was used from building 2 from the REFIT dataset discussed in Section \ref{ssec:data}.
  
 \section{Time Ranges}
 \label{sec:time_range}
@@ -17,26 +17,26 @@ Data for LPs in this chapter was used from building 2 from the REFIT dataset dis
 Time ranges are an important part of the LP since each reveals a different usage pattern.
 Throughout the thesis, we used four different time ranges: daily, weekly, monthly and yearly.
 
-The daily LPs are the most commonly used LPs, as can be seen in Table \ref{tab:contributions}
+The daily profiles are the most commonly used LPs, as can be seen in Table \ref{tab:contributions}
 Generally, they are the easiest to build since they do not need as much data as others do.
-To build a decent LP one needs enough data. 
+To build a decent profile one needs enough data. 
 A sufficient amount of data is the amount that covers major events.
-For a daily LP, a few weeks of data is enough, weekly LPs need a few months of data, monthly few months, and yearly few years.
-And this is the main issue, there is rarely enough data to build such LPs.
+For a daily profile, a few weeks of data is enough, weekly LPs need a few months of data, monthly few months, and yearly few years.
+And this is the main issue, there is rarely enough data to build such profiles.
 Even then, usage patterns could change over a long period such as a decade.
-Combining that with a smaller number of use cases for such LPs, reveals why such LPs were not looked into as much in Table \ref{tab:contributions}.
+Combining that with a smaller number of use cases for such profiles, reveals why such profiles were not looked into as much in Table \ref{tab:contributions}.
 
 One more thing about time ranges that need to be mentioned are patterns that they present.
-Daily LPs present daily usage and enable us to extract contextual events such as waking up, cooking, leisure time, etc.
+Daily profiles present daily usage and enable us to extract contextual events such as waking up, cooking, leisure time, etc.
 The weekly pattern is also repetitive, and it enables us to see how appliance usage changes over the weekdays and weekends.
-The monthly LP has none of the above. It is not repetitive since each day of the month can be a different day of the week, and the period is too short to capture seasonal patterns.
+The monthly profile has none of the above. It is not repetitive since each day of the month can be a different day of the week, and the period is too short to capture seasonal patterns.
 Alternatively, it could be presented as a week in a month, but there is no significant usage pattern to be revealed.
-The yearly LP on the other hand presents the seasonal effects on usage such as increased daylight and temperature. 
+The yearly profile on the other hand presents the seasonal effects on usage such as increased daylight and temperature. 
 
 \section{Per-Building LPs}
 \label{sec:per_building}
-The section will be focused on per-building LPs.
-Per-building LPs refer to representations where whole building usage is presented as a single LP.
+The section will be focused on per-building profiles.
+Per-building profiles refer to representations where whole building usage is presented as a single LP.
 This kind of presentation is useful for observing general activation trends in a building.
 Possible use cases for per-building LPs are grid management and energy saving.
 
@@ -45,9 +45,9 @@ To build per-building power LPs it is possible to use the main power meter, wher
 This can be solved using NILM algorithms, but they are not in a state of practical use yet.
 
 The daily per-building LP is also known as the standard LP. 
-According to Table \ref{tab:contributions} this is the most commonly used power LP.
+According to Table \ref{tab:contributions} this is the most commonly used power profile.
 Figures \ref{fig:SLPdaily2} and \ref{fig:SLPyearly2} present usage patterns on different time ranges. 
-The two LPs, therefore present different contextual cases.
+The two profiles, therefore present different contextual cases.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -108,7 +108,7 @@ Here, while the morning peak is visible, the evening one can barely be detected.
 One more thing to mention is that the increased activity at the start of the fall increased activity throughout the night and day.
 This could point to that some new appliance was installed, which increased the number of activations.
 
-Previously, in Section \ref{sec:grid_managment}, it was mentioned that these kinds of LPs are the most applicable in grid management. 
+Previously, in Section \ref{sec:grid_managment}, it was mentioned that these kinds of profiles are the most applicable in grid management. 
 One such example could be load shedding.
 Using the LP above, electrical energy providers could find buildings with the least activity at that time of day.
 Combining that with power data, it could disconnect the buildings with the least activity and most power consumption.
@@ -117,7 +117,7 @@ Combining that with power data, it could disconnect the buildings with the least
 
 Per-appliance LPs offer a look into the consumption of each appliance. 
 In the case of activation LP, this is an elemental LP, since all other activation LPs are built on top of it. 
-This also means that it is one of the most universal LPs since it can be used in use-cases defined in Section \ref{sec:use-cases}
+This also means that it is one of the most universal profiles since it can be used in use-cases defined in Section \ref{sec:use-cases}
 
 \begin{figure}[H]
 	\centering
@@ -152,7 +152,7 @@ where we have to detect an accident as soon as possible.
 The hourly resolution would mean that in case of an accident, system would need at least an hour to detect it.
 While this is sufficient for demonstrating the capabilities, real implementation would need to use lower-resolution data.
 
-In the case where dwellers have different usage patterns during the weekends, two LPs would have to be developed.
+In the case where dwellers have different usage patterns during the weekends, two profiles would have to be developed.
 It is possible to present them both at once such as in Figure \ref{fig:WM_ww_daily}. 
 This is essentially a variation of the weekly LP that maintains high resolution.
 Since there are more weekdays than weekend days, activations had to be normalized accordingly.
@@ -223,7 +223,7 @@ The first one is to decrease production, which can be slow and expensive.
 The second option is to load the grid, which can be done in many ways.
 One of the ways is to turn on appliances using a direct load control system or notify users to turn on appliances that they have commonly used at that time in the past. 
 Due to the increasing percentage of renewable energy sources, more and more energy peaks will be weather dependent.
-By combining weekly wind forecasts, weekly cloud coverage, and user consumption LPs energy providers could notify users to turn on their appliances at peak usage times.
+By combining weekly wind forecasts, weekly cloud coverage, and user consumption profiles energy providers could notify users to turn on their appliances at peak usage times.
 
 By analyzing Figure \ref{fig:wm_hm_weekly} it is possible to see that the user uses a washing machine,
 on Wednesdays from 15 to 16 o'clock quite commonly. 
@@ -290,7 +290,7 @@ This practice suddenly stops at week 13, until it appeared back in week 36.
 \end{figure}
 
 Another example worth mentioning is Figure \ref{fig:effect_of_season} from UK-DALE building 1, where data was collected from 2012-11-09 to 2017-04-26.
-Roughly 5 years of data mean that it is possible to build a decent LP. 
+Roughly 5 years of data mean that it is possible to build a decent profile. 
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -321,7 +321,7 @@ Combining Figures \ref{fig:solar_thermal_pumping_station} and \ref{fig:light} en
 
 \section{Per-Building Per-Appliance}
 
-The last group of LPs is a combination of per-building and per-appliance LPs.
+The last group of profiles is a combination of per-building and per-appliance LPs.
 Observing the usage pattern of many appliances offers a better look into users' usage patterns.
 
 In the case of elderly care, the goal is to observe a group of appliances.
@@ -330,7 +330,7 @@ If a stove and kettle are commonly used together each morning this use could tra
 To achieve this, one needs to observe all appliances at once such as shown in Figure \ref{fig:PHPA}.
 
 Figure \ref{fig:PHPA} is also a good example of the elderly care system, that would detect an anomaly such as a fall, or a person unable to get up from the bed in the morning.
-This LP shows that the first thing in the morning used are a kettle and toaster, and with a delay of one hour, microwave and TV. 
+This profile shows that the first thing in the morning used are a kettle and toaster, and with a delay of one hour, microwave and TV. 
 This enables us to construct time thresholds in which appliances should be used.
 If none of these appliances are activated between set thresholds, morning would be considered anomalous.
 Although less likely, issues could also occur during the use of appliances. 
@@ -340,7 +340,7 @@ In case any of these anomalies are detected, the caregiver would be notified to 
 \begin{figure}[H]
 	\centering
 	\caption{Daily per-appliance per-building building LP}
-	\includegraphics[]{../Figures/LPS/PHPA_LP_for_building.pdf}
+	\includegraphics[]{../Figures/LPS/PHPA_profile_for_building.pdf}
 	\label{fig:PHPA}
 \end{figure}
 
@@ -356,7 +356,7 @@ the contribution of each appliance.
 \end{figure}  
  
 These LPs are useful when it comes to analyzing the usage pattern in one building.
-To be able to process the LPs across many buildings a new LP, seen in Figure \ref{fig:BOA}, must be introduced.
+To be able to process the LPs across many buildings a new profile, seen in Figure \ref{fig:BOA}, must be introduced.
 The idea is derived from the bag-of-words method used in text processing, where a list of the most commonly used words is formed, and then used to process the text. 
 Here, It is possible to use the activation data from all five datasets.
 A list of appliances is sorted by the number of activations and then only the top 30 appliances are selected.
@@ -379,16 +379,16 @@ One other thing that we can notice is that there are a lot of empty LPs for cert
 This is because we have no data for these appliances for this household.
 Probably, this is one of the biggest weak points of this LP.
 
-The Bag of appliances was not shown on the Table of LPs \ref{tab:our_rd},
-since it is a special case of the per-building per-appliance LP shown in Figure \ref{fig:PHPA}.
+The Bag of appliances was not shown on the Table of profiles \ref{tab:our_rd},
+since it is a special case of the per-building per-appliance profile shown in Figure \ref{fig:PHPA}.
 
-\section{Conclusion}
+\section{Summary}
 
-This chapter showed how some activation LPs from Table \ref{tab:contributions} present real-world data, analyzed the presentations and further elaborated on their use-cases.
+This chapter showed how some activation profiles from Table \ref{tab:contributions} present real-world data, analyzed the presentations and further elaborated on their use-cases.
 
 It was possible to see how each LP presents its unique user activation pattern. 
 Figure \ref{fig:SLPdaily2} offered us a unique look into how users behave on daily basis and Figure \ref{fig:SLPyearly2} how this behavior changes over a year.
 Next, with Figure \ref{fig:SLPHMyearly2}, we presented how combining these figures presents new features, that were otherwise hidden.
 Further on it was shown how the very same presentations can be used on appliance data.
 For example, Figure \ref{fig:effect_of_season} showed how this yearly change could be affected by the seasons.
-Finally, we have shown how more detailed LPs \ref{fig:PHPA} could be used for practical applications such as elderly care. 
+Finally, we have shown how more detailed profiles \ref{fig:PHPA} could be used for practical applications such as elderly care. 
