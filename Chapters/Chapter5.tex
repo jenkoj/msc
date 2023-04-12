@@ -262,32 +262,20 @@ again in others, where it would like to find more complex usage patterns, we are
 \end{figure}
 
 
-Figure \ref{fig:tsne_pb_img_scatter_allall} below presents the actual LP for each sample.
-Since the two plotted components are of a higher dimension, it is hard to determine what they present.
-As said t-SNE gives us the intuition of how LPs are connected in higher-dimensional space.
-Nonetheless, through analysis, we can find clusters with similar usage patterns.
+Figure \ref{fig:tsne_pb_img_scatter_allall} displays the LP for each sample, but since the two plotted components are of a higher dimension, it's challenging to determine what they represent. 
+T-SNE provides an intuition of how LPs are connected in higher-dimensional space, and through analysis, we can find clusters with similar usage patterns.
+Figure \ref{fig:tsne_pb_img_scatter_allall} shows that the left side has mostly samples with little activity, and the right side has more activity.
+When looking at Figure \ref{fig:tsne_scatter_non_norm_all}, we can observe a clear pink colored cluster of LPs from UKDALE 1 and UKDALE 2, which contain plenty of appliances and may explain why they have many activators.
+Some less obvious clusters formed in the bottom section for REFIT buildings 2, 3, 5, 6, 4 and 8. 
 
-It is possible to see that on the left there are mostly samples with very little activity, and on the right, we see samples with more activity.
-We can observe a clear cluster of LPS from \textit{ukdale1} and \textit{ukdale2}.
-Besides the cluster being clear, it contains a lot of samples as well.
-From Section \ref{ssec:ds_eval} we know that \textit{ukdale1} and \textit{ukdale2} contain plenty of appliances which could point to the fact that these are LPs contain a lot of activators.
-When observing the figure more precisely we can see that in the central part of the plot, LPs form smaller clusters of various patterns.
-Few less obvious clusters were formed in the bottom section of the plot for buildings (looking from the left) \textit{refit2}, \textit{refit9}, \textit{refit5}, \textit{refit6}, \textit{refit4}, \textit{refit8}.
-An important observation that can be made here is how close together the LPs are.
-The closer together the samples are the more similar the consumption throughout every month is.
-In other words, by measuring the distance between LPs of the same building, we could measure the strength of the routine that each household has.
-This is an important observation that will be used in the next Chapter \ref{chapter6}.
+A significant observation is that LPs closer together have more similar consumption throughout every month.
+By measuring the distance between LPs of the same building we can estimate the strength of the household's routine. 
+There are no recognizable patterns in the central part of the plot. 
+Since there are no patterns, such LPs do not form clusters. 
 
-Patterns in the central part of the plot have no real pattern that we can recognize.
-The reason behind this could be that appliances such as fridges have contributed the majority of activations.
-Since such appliances are not affected by the dweller, such LPs present random activations. 
-That is why there are no clusters in the central part of the plot as can be observed in Figure \ref{fig:tsne_scatter_non_norm_all} above.
-
-The same goes for the profiles in the far left part of the plot, where there are no clusters to be observed.
-In this case, the reason is that these profiles do not contain enough information, which could be used to distinguish them.
-
-
-Even though the LPs contained a non-normalized amount of activations, we were still able to identify interesting patterns through the t-SNE plot
+The reason behind non-recognizable patterns is possibly because appliances like fridges contributed the majority of activations, which are not affected by the dweller, leading to random activations.
+Similarly, there are no clusters in the far-left part of the plot because those profiles lack enough information to distinguish them. 
+Even though the activations of LPs contained non-normalized activations, interesting patterns were still perceivable through the t-SNE plot.
 
 \subsubsection{Normalized LPs}
 
@@ -297,7 +285,7 @@ Figure \ref{fig:tsne_pb_scatter_all_all} shows how normalizing samples affect th
 When comparing figures \ref{fig:tsne_scatter_non_norm_all} and \ref{fig:tsne_pb_scatter_all_all},
 it is possible to see that the samples on the latter are much closer to each other,
 while it is still possible to see the individual clusters.
-This could imply that the normalized usage pattern of users is more similar to the activation pattern of users.
+This outcome is expected, as non-normalized LPs contain varying numbers of appliances, rendering patterns more distinct.
 A normalized activation pattern tells us at what part of the day the appliances will most likely be used,
 and the activation pattern tells us how much will the appliance be used in each part of the day.
 Based on that, we can conclude the time when the appliance is used is more consistent than how much it will be used. 
@@ -328,7 +316,7 @@ If the reader wants to see the samples in the cluster, the very same cluster can
 In Figure \ref{fig:tsne_pb_img_norm_scatter_allall} it is possible to find various usage patterns. 
 But the general pattern is that there is less activity during the night with one peak in the morning and evening hours.
 Some buildings are more active during the week and again some more during the weekend.
-A lot of the data is from UK-DALE building 1 (pink box). 
+A lot of the data is from UK-DALE 1 . 
 It is possible to see that the building has one big cluster where activations are generally similar, with few outliers, where the pattern completely changed. 
 Albeit less obvious, this pattern is the same for all buildings.
 This happens due to events such as vacations, holidays or weather-induced behavioral changes.
@@ -405,8 +393,8 @@ Since the routine is present, the samples look more similar and are therefore cl
 This does not necessarily mean that the closer the samples higher the routine.
 They could also be together in case of "ordered chaos" such as can be seen in Figure \ref{fig:tsne_pa_scatter_all_kettle} for building refit 16 and refit 8 where there is no pattern through the day.
 So the scattering is not a precise metric when it comes to the routine, but it gives us a rough idea of its presence.
-The strength of a routine is an important feature that will be used
-in Chapter \ref{chapter6} to build an elderly care anomaly system.
+As mentioned earlier in this chapter the strength of a routine is an important feature that will be used
+in Chapter \ref{chapter6}, where we will build an elderly care anomaly detection system.
 
 \begin{figure}[H]
 	\centering
