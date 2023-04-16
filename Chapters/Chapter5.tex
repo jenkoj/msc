@@ -260,7 +260,7 @@ Knowing the two could be useful in scenarios where we are analyzing the magnitud
 Figure \ref{fig:tsne_scatter_non_norm_all} is using non-normalized data, meaning
 the number of appliances in a building will affect the end LP.
 The algorithm could pick up on how many and how much appliances are being used.
-In some cases, such as energy poverty detection, this information is useful.
+In some cases, such as energy poverty detection, this information is useful, as we are searching for buildings that exhibit reduced activation patterns.
 
 \begin{figure}[H]
 	\centering
@@ -281,29 +281,32 @@ In some cases, such as energy poverty detection, this information is useful.
 \end{figure}
 
 
-Figure \ref{fig:tsne_pb_img_scatter_allall} displays the LP for each sample, but since the two plotted components are of a higher dimension, it's challenging to determine what they represent. 
+Figure \ref{fig:tsne_pb_img_scatter_allall} displays the LP for each sample. 
 T-SNE provides an intuition of how LPs are connected in higher-dimensional space, and through analysis, we can find clusters with similar usage patterns.
 Figure \ref{fig:tsne_pb_img_scatter_allall} shows that the left side has mostly samples with little activity, and the right side has more activity.
 When looking at Figure \ref{fig:tsne_scatter_non_norm_all}, we can observe a clear pink colored cluster of LPs from UKDALE 1 and UKDALE 2, which contain plenty of appliances and may explain why they have many activators.
 Some less obvious clusters formed in the bottom section for REFIT buildings 2, 3, 5, 6, 4 and 8. 
-
 A significant observation is that LPs closer together have more similar consumption throughout every month.
 By measuring the distance between LPs of the same building we can estimate the strength of the household's routine. 
+
 There are no recognizable patterns in the central part of the plot. 
 Since there are no patterns, such LPs do not form clusters. 
-
 The reason behind non-recognizable patterns is possibly because appliances like fridges contributed the majority of activations, which are not affected by the dweller, leading to random activations.
 Similarly, there are no clusters in the far-left part of the plot because those profiles lack enough information to distinguish them. 
 
-Even though the activations of LPs contained non-normalized activations, some clusters are quite close to each other.
-This implies that these buildings have similar usage intensities.
-We can confirm this, by looking at Figure \ref{fig:tsne_pb_img_scatter_allall},
-where it is hard to find what similarities between buildings and clusters that are close together.
-Although these samples are similar, we cannot observe their similarities because the current heatmap presentation does not focus on the activation intensity.
+Even though the activations of LPs contained non-normalized activations, some clusters of buildings are quite close to each other.
+Here we have to keep in mind the fact that through current presentations we can only observe usage patterns and not usage intensity, which was used as an input to t-SNE
+This implies that these buildings have similar usage intensities but not necessarily usage patterns.
+We can confirm this, by looking at Figure \ref{fig:tsne_pb_img_scatter_allall}, where it is hard to find what similarities between buildings and clusters that are close together.
+
 
 % TODO you can write about activation intensify scaler. Max abs is note useful, since most of them would be dark
 % We would need some kind of lgaritmic scaling, otherwirse buildings with little appliances would be completley dark and buildings with many appliances completly brihht.
 % Either way, presenting these LPs is a hard task
+
+%Efficiently presenting activation intensity is a hard task.
+%if we would simply scale all LPs using max-abs scaler, we would be left with some LPs being completely dark and onthers completely white.
+%To fix this issue we would have to introduce some kind of logarithmic scaling 
 
 \subsubsection{Normalized LPs}
 
