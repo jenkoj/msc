@@ -318,12 +318,6 @@ By comparing Figures \ref{fig:tsne_scatter_non_norm_all} and \ref{fig:tsne_pb_sc
 This outcome is expected because normalization removes information regarding the number of appliances in the building.
 With a reduced amount of information, LPs become more similar, and therefore clusters are closer together.
 
-The key difference between normalized and non-normalized LPs is that the latter enables t-SNE to identify similarities in the number of appliances and their usage intensity.
-In contrast, when normalizing LPs we force t-SNE to focus on similarities in the actual usage pattern. 
-Normalized LPs provide information about when appliances are likely to be used throughout the day, while activation patterns provide insight into the quantity of appliance usage during each time period.
-
-Based on the above observations, we can conclude that usage patterns are more similar than the number of activations across buildings.
-
 \begin{figure}[H]
 	\centering
 	\caption{Projection of normalized per-building LPs}
@@ -334,9 +328,10 @@ Based on the above observations, we can conclude that usage patterns are more si
 \end{figure}
 
 When observing the LPs in Figure \ref{fig:tsne_pb_img_norm_scatter_allall}, we can confirm that similar clusters are closer together.
-On closer look, we can see a gradual and smooth change in patterns as we move across the plot.
-If we recall from before that was not the case in Figure \ref{fig:tsne_pb_img_scatter_allall} where we used non-normalised LPs.
 In this case, the input of the algorithm was the same as our perception of the LPs.
+Upon closer look, we can see a gradual and smooth change in patterns as we move across the plot.
+If we recall from before that was not the case in Figure \ref{fig:tsne_pb_img_scatter_allall} where we were analyzing non-normalized LPs.
+This observation is important, as it is visual proof, that normalization did help the t-SNE to focus on the usage patterns.
 % Figure \ref{fig:tsne_pb_img_norm_scatter_allall} presents only the main cluster of samples.
 % Since the smaller cluster presents mostly low entropy data, it was cut out. 
 % If the reader wants to see the samples in the cluster, the very same cluster can be found on the far left in Figure \ref{fig:tsne_pb_img_scatter_allall}.
@@ -356,6 +351,12 @@ A lot of the data is from UK-DALE 1 colored pink.
 It is possible to see that the building has one big cluster where activations are generally similar, with few outliers, where the pattern completely changed. 
 This happens due to events such as vacations, holidays or weather-induced behavioral changes.
 
+The key difference between non-normalized and normalized LPs is that,
+non-normalized LPs enable t-SNE to identify similarities in the number of appliances and their usage intensity,
+while normalized LPs force t-SNE to focus on similarities in the actual usage pattern.
+Normalized LPs provide information about when appliances are likely to be used throughout the day, while non-normalized LPs provide insight into the magnitude of appliance usage.
+
+Based on the above observations, we could say that usage patterns are more similar than the number of activations across buildings.
 %% TODO finish with a conclusion
 \subsection{Per-Appliance}
 
