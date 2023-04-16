@@ -61,6 +61,7 @@ For practical reasons, we are presenting it again here with Figure \ref{fig:wm_h
 	\label{fig:wm_hm_weekly_2}
 \end{figure}
 
+
 \subsubsection{Bag of Appliances LP}
 
 Another LP that will be used at the end of this Chapter will be the bag-of-appliances LP.
@@ -70,7 +71,7 @@ But again, for ease-of-use purposes, we will summarize the profile here.
 \begin{figure}[H]
 	\centering
 	\caption{Universal presentation of per-building per-appliance LP}
-	\includegraphics[]{../Figures/LPS/BOA.pdf}
+	\includegraphics[width=1\textwidth]{../Figures/LPS/BOA.pdf}
 	\label{fig:BOA2}
 \end{figure}
 
@@ -82,13 +83,26 @@ These appliances present themselves as a black line.
 A lot of missing appliances may cause the image to be primarily black,
 which could cause trouble for the algorithm processing this as an image.
 
+\subsection{Normalisation}
+\label{ssec:norm}
+Activations portrayed in a heatmap must always be normalised in order for color (heat) to be propely mapped.
+We need to ensure that the LPs fed into t-SNE match our perception in order to achieve meaningful results we can interpret.
+To achieve this we will use min-max scaling seen in Equation \ref{eq:minmax} below.
+
+\begin{equation}
+	\label{eq:minmax}
+	x_{norm} = \frac{x - x_{min}}{x_{max} - x_{min}}
+\end{equation}
+	
+ Where $x$ is the value being scaled, $x_{min}$ is the minimum number of activations in the LP, $x_{max}$ is the maximum number of activations in the LP, and $x_{norm}$ is the output normalised value.
+	
 \subsection{Data}
 
 We have on average roughly one year of data per building. 
 In some cases few weeks and in others up to 5 years for some appliances.
 By slicing this data into 1-month-long intervals and converting them to LPs we were able to obtain 5218 samples.
 
-More detailed methodological approaches were discussed in Chapter \ref{chapter3} Subsection \ref{ssec:data}.
+More detailed methodological approaches were discussed in Section \ref{ssec:data}.
 
 \subsection{T-SNE Algorithm}
 
@@ -108,8 +122,8 @@ Similar data points usually form clusters.
 t-SNE uses SNE as a basis, except that it uses t-student distribution instead of normal to calculate the similarity.
 
 A good example that showcases the non-linearity of t-SNE can be seen in Figure \ref{fig:tsne_diagram}.
-In this simple task, projecting all data points to the y-axis would leave us with a different solution than
-one we can see in Figure \ref{fig:tsne_diagram}.
+In this simple task, projecting all data points to the y-axis would leave us with a different solution than the one we can see on the right.
+%TODO add simple projection
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -177,7 +191,7 @@ The smaller the $C$ the closer the similar data points are in low dimensional sp
  C = \sum_{i \neq j}^n p_{ij} \log \frac{p_{ij}}{q_{ij}}
 \end{equation}
 
-The similarity is achieved over many iterations where we use gradient descent to minimize the kullback-leibler divergence \ref{eq:Klle}. 
+The similarity is achieved over many iterations where we use gradient descent to minimize the Kullback-Leibler divergence seen in Equation \ref{eq:Klle}. 
 The process can be seen in Figure \ref{fig:tsne_iterations_arrows}.
 
 \begin{figure}[H]
@@ -222,7 +236,12 @@ The results will be presented in three subsections
 	\item Per-building per-appliance LP
 \end{itemize}
 
-Most of the focus will be done on the per-appliance LP since it is the most universal.
+%Most of the focus will be done on the per-appliance LP since it is the most universal.
+
+The following figures are best viewed in color and a digital format. 
+In the analysis, the reader can use the first figures to identify buildings and the second to identify the patterns and actual LPs.
+Readers reading the digital version should have the ability to zoom into each cluster and see the actual samples. 
+Readers reading a paper version can still explore the high-resolution figures online via the provided link below every figure.
 
 \subsection{Results for Per-Building LPs}
 %TODO
@@ -232,11 +251,16 @@ activation patterns change over buildings and datasets.
 Per-building data uses combined activations of all appliances to present 
 the aggregated usage pattern.  
 
+This section will first address non-normalized LPs and later move on to normalized LPs.
+We have already addressed the methodology on normalization in Section \ref{ssec:norm}.
+By normalizing the data we are essentially removing information from the LP.
+This information contains knowledge of the number of the appliances in building and their usage intensity.
+Knowing the two could be useful in scenarios where we are analyzing the magnitude of usage and not the patterns themselves.
+
 Figure \ref{fig:tsne_scatter_non_norm_all} is using non-normalized data, meaning
 the number of appliances in a building will affect the end LP.
-The algorithm could pick up on how many appliances are being used.
-In some cases, such as energy poverty detection, this information is useful, 
-again in others we would like to find a more complex usage pattern.
+The algorithm could pick up on how many and how much appliances are being used.
+In some cases, such as energy poverty detection, this information is useful, as we are searching for buildings that exhibit reduced activation patterns.
 
 \begin{figure}[H]
 	\centering
@@ -247,16 +271,6 @@ again in others we would like to find a more complex usage pattern.
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_building/scatter_per_building.pdf}}
 \end{figure}
 
-Figure \ref{fig:tsne_pb_img_scatter_allall} below presents the actual LP for each sample. 
-It is possible to see that on the left there are mostly samples with very little activity,
-and on the right, we see samples with more activity.
-Since the two plotted components are of a higher dimension, it is hard to determine what they present.
-As said t-SNE gives us the intuition of how LPs are connected in higher-dimensional space.
-
-The following figures are best viewed in color and a digital format. 
-Readers reading the digital version should have the ability to zoom into each cluster, and see the actual samples. 
-Readers reading a paper version can still explore the high-resolution figures online via the provided link at the end of the document.
-
 \begin{figure}[H]
 	\centering
 	\caption{Projection of per-building LPs with actual samples}
@@ -266,57 +280,89 @@ Readers reading a paper version can still explore the high-resolution figures on
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_building/img_scatter_per_building.png}}
 \end{figure}
 
+
+Figure \ref{fig:tsne_pb_img_scatter_allall} displays the LP for each sample. 
+T-SNE provides an intuition of how LPs are connected in higher-dimensional space, and through analysis, we can find clusters with similar usage patterns.
+Figure \ref{fig:tsne_pb_img_scatter_allall} shows that the left side has mostly samples with little activity, and the right side has more activity.
+When looking at Figure \ref{fig:tsne_scatter_non_norm_all}, we can observe a clear pink colored cluster of LPs from UKDALE 1 and UKDALE 2, which contain plenty of appliances and may explain why they have many activators.
+Some less obvious clusters formed in the bottom section for REFIT buildings 2, 3, 5, 6, 4 and 8. 
+A significant observation is that LPs closer together have more similar consumption throughout every month.
+By measuring the distance between LPs of the same building we can estimate the strength of the household's routine. 
+
+There are no recognizable patterns in the central part of the plot. 
+Since there are no patterns, such LPs do not form clusters. 
+The reason behind non-recognizable patterns is possibly because appliances like fridges contributed the majority of activations, which are not affected by the dweller, leading to random activations.
+Similarly, there are no clusters in the far-left part of the plot because those profiles lack enough information to distinguish them. 
+
+Even though the activations of LPs contained non-normalized activations, some clusters of buildings are quite close to each other.
+Here we have to keep in mind the fact that through current presentations we can only observe usage patterns and not usage intensity, which was used as an input to t-SNE
+This implies that these buildings have similar usage intensities but not necessarily usage patterns.
+We can confirm this, by looking at Figure \ref{fig:tsne_pb_img_scatter_allall}, where it is hard to find what similarities between buildings and clusters that are close together.
+
+
+% TODO you can write about activation intensify scaler. Max abs is note useful, since most of them would be dark
+% We would need some kind of lgaritmic scaling, otherwirse buildings with little appliances would be completley dark and buildings with many appliances completly brihht.
+% Either way, presenting these LPs is a hard task
+
+%Efficiently presenting activation intensity is a hard task.
+%if we would simply scale all LPs using max-abs scaler, we would be left with some LPs being completely dark and onthers completely white.
+%To fix this issue we would have to introduce some kind of logarithmic scaling 
+
 \subsubsection{Normalized LPs}
 
-To solve the issue mentioned in Subsection \ref{ssec:res_pb_lp} have to normalize the data between 0 and 1.
-Figure \ref{fig:tsne_pb_scatter_all_all} shows how normalizing samples affect the algorithm.
+The issue mentioned in the previous Subsection \ref{ssec:res_pb_lp} can be addressed by normalizing the data between 0 and 1 as mentioned in methodology Section \ref{ssec:norm}.
+The normalization should enable t-SNE to focus on finding similarities between the usage patterns.
 
-When comparing figures \ref{fig:tsne_scatter_non_norm_all} and \ref{fig:tsne_pb_scatter_all_all},
-it is possible to see that the samples on the latter are much closer to each other,
-while it is still possible to see the individual clusters.
-This could imply that the normalized usage pattern of users is more similar to the activation pattern of users.
-A normalized activation pattern tells us at what part of the day the appliances will most likely be used,
-and the activation pattern tells us how much will the appliance be used in each part of the day.
-Based on that, we can conclude the time when the appliance is used is more consistent than how much it will be used. 
-
+Figure \ref{fig:tsne_pb_scatter_all_all} illustrates how normalization affects the algorithm.
+By comparing Figures \ref{fig:tsne_scatter_non_norm_all} and \ref{fig:tsne_pb_scatter_all_all}, we can observe that the samples in the latter are much closer to each other, while still retaining the individual clusters.
+This outcome is expected because normalization removes information regarding the number of appliances in the building.
+With a reduced amount of information, LPs become more similar, and therefore clusters are closer together.
 
 \begin{figure}[H]
 	\centering
-	\caption{Projection of normalised per-building LPs}
+	\caption{Projection of normalized per-building LPs}
 	\includegraphics[]{Figures/TSNE/TSNE_per_building/scatter_per_building_norm.pdf}
 	\label{fig:tsne_pb_scatter_all_all}
 	\par
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_building/scatter_per_building_norm.pdf}}
 \end{figure}
 
-Figure \ref{fig:tsne_pb_img_norm_scatter_allall} presents only the main cluster of samples.
-Since the smaller cluster presents mostly low entropy data, it was cut out. 
-If the reader wants to see the samples in the cluster, the very same cluster can be found on the far left in Figure \ref{fig:tsne_pb_img_scatter_allall}.
+When observing the LPs in Figure \ref{fig:tsne_pb_img_norm_scatter_allall}, we can confirm that similar clusters are closer together.
+In this case, the input of the algorithm was the same as our perception of the LPs.
+Upon closer look, we can see a gradual and smooth change in patterns as we move across the plot.
+If we recall from before that was not the case in Figure \ref{fig:tsne_pb_img_scatter_allall} where we were analyzing non-normalized LPs.
+This observation is important, as it is visual proof, that normalization did help the t-SNE to focus on the usage patterns.
+% Figure \ref{fig:tsne_pb_img_norm_scatter_allall} presents only the main cluster of samples.
+% Since the smaller cluster presents mostly low entropy data, it was cut out. 
+% If the reader wants to see the samples in the cluster, the very same cluster can be found on the far left in Figure \ref{fig:tsne_pb_img_scatter_allall}.
 
 \begin{figure}[H]
 	\centering
-	\caption{Projection of normalised per-building LPs with actual samples}
+	\caption{Projection of normalized per-building LPs with actual samples}
 	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_per_building/img_scatter_per_building_norm.png}
 	\label{fig:tsne_pb_img_norm_scatter_allall}
 	\par
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_building/img_scatter_per_building_norm.png}}
 \end{figure}
 
-In Figure \ref{fig:tsne_pb_img_norm_scatter_allall} it is possible to find various usage patterns. 
-But the general pattern is that there is less activity during the night with one peak in the morning and evening hours.
+Upon closer inspection of Figure \ref{fig:tsne_pb_img_norm_scatter_allall} we can see that the general pattern is that there is less activity during the night with one peak in the morning and evening hours.
 Some buildings are more active during the week and again some more during the weekend.
-A lot of the data is from UK-DALE building 1 (pink box). 
+A lot of the data is from UK-DALE 1 colored pink. 
 It is possible to see that the building has one big cluster where activations are generally similar, with few outliers, where the pattern completely changed. 
-Albeit less obvious, this pattern is the same for all buildings.
 This happens due to events such as vacations, holidays or weather-induced behavioral changes.
 
+The key difference between non-normalized and normalized LPs is that,
+non-normalized LPs enable t-SNE to identify similarities in the number of appliances and their usage intensity,
+while normalized LPs force t-SNE to focus on similarities in the actual usage pattern.
+Normalized LPs provide information about when appliances are likely to be used throughout the day, while non-normalized LPs provide insight into the magnitude of appliance usage.
+
+Based on the above observations, we could say that usage patterns are more similar than the number of activations across buildings.
+%% TODO finish with a conclusion
 \subsection{Per-Appliance}
 
 We can use per-appliance LPs to examine how different appliances 
 are used in a single building, how a single appliance is being used across other buildings or how many appliances are being used in many buildings.
-
-Per appliance LPs are built using sub-meter data,
-meaning each LP should present each appliance.
+Per appliance LPs are built using sub-meter data, meaning each LP should present each appliance.
 
 \subsubsection{Single Appliance Over Many Buildings}
 
@@ -382,8 +428,8 @@ Since the routine is present, the samples look more similar and are therefore cl
 This does not necessarily mean that the closer the samples higher the routine.
 They could also be together in case of "ordered chaos" such as can be seen in Figure \ref{fig:tsne_pa_scatter_all_kettle} for building refit 16 and refit 8 where there is no pattern through the day.
 So the scattering is not a precise metric when it comes to the routine, but it gives us a rough idea of its presence.
-The strength of a routine is an important feature that will be used
-in Chapter \ref{chapter6} to build an elderly care anomaly system.
+As mentioned earlier in this chapter the strength of a routine is an important feature that will be used
+in Chapter \ref{chapter6}, where we will build an elderly care anomaly detection system.
 
 \begin{figure}[H]
 	\centering
@@ -557,18 +603,17 @@ except it is easier to use color to see the appliance they present
 \begin{figure}[H]  
 	\centering
 	\caption{Projection of grouped per-appliance LPs with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_PHPA/img_scatter_all_all_groups.png}
+	\includegraphics[width=1.1\textwidth]{Figures/TSNE/TSNE_PHPA/img_scatter_all_all_groups.png}
 	\label{fig:tsne_papb_img_scatter_all_groups}
 	\par
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_PHPA/img_scatter_all_all_groups.png}}
 \end{figure}
 
-Figure \ref{fig:t-sne_zoomed} shows the four main types of profiles for readers that cannot zoom in.
-
+To better emphasize the details from Figure \ref{fig:tsne_papb_img_scatter_all_groups} and \ref{fig:tsne_papb_scatter_all_groups} we present zoomed-in areas of key locations with Figure \ref{fig:t-sne_zoomed}.
 \begin{figure}[H] 
 	\centering
 	\caption{Projection of grouped per-appliance LPs with actual samples}
-	\includegraphics[width=.9\textwidth]{Figures/TSNE/TSNE_PHPA/t-sne_zoomed.png}
+	\includegraphics[width=1\textwidth]{Figures/TSNE/TSNE_PHPA/t-sne_zoomed.png}
 	\label{fig:t-sne_zoomed}
 	\par
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_PHPA/t-sne_zoomed.png}}
@@ -702,7 +747,7 @@ Another important piece of information these groups contain is the strength of t
 The closer the samples, the more similar their activation is, which means the user has a higher routine.
 Such a routine will be useful in the next chapter, where we will try to evaluate if it is strong enough to detect anomalies.
 
-\section{Conclusion}
+\section{Summary}
 
 The analysis provided a look into the relationships between LPs and their consumption patterns.
 We were able to group appliances into categories and found a presence of routine in the LPs
