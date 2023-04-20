@@ -405,10 +405,11 @@ Based on the above observations, we could say that usage patterns are more simil
 
 \subsubsection{Euclidian distance of samples for every building}
 \label{ssec:tsne_euclidian_distance}
+
 A significant observation is that LPs closer together have more similar consumption throughout every month.
 By measuring the distance between LPs of the same building we can estimate the strength of the household's routine. 
 Figure \ref{fig:tsne_euclidian} presents the Euclidean distance between samples for a given building.
-The larger the value, the longer the distance and the less similar the consumption trough every month.
+The larger the value, the longer the distance and the less similar the consumption trough every month is.
 
 \begin{figure}[H]
 	\centering
@@ -416,6 +417,15 @@ The larger the value, the longer the distance and the less similar the consumpti
 	\includegraphics[]{Figures/EC/CORR_TSNE/tnse_euclidian.pdf}
 	\label{fig:tsne_euclidian}
 \end{figure}
+
+The methodology and the equation for calculating Euclidian distance were thoroughly discussed in section \ref{ssec:lp_similarity}.
+Since t-SNE uses Euclidean distance at its base, so we essentially measured the values of the last t-SNE iteration.
+
+As we will use the Euclidean distance plot in the next Chapter \ref{chapter6} as a comparison, we have used only samples from the REFIT dataset.
+A more detailed analysis will follow in this chapter as well.
+As for now, we can see that the buildings with the most similar consumption pattern are 5 and 13. 
+They both lay on the right side of the plot and have a similar activation pattern, with very few activations throughout the weekday.
+This could point toward the fact that people with steady jobs have very steady consumption patterns.
 
 \subsection{Per-Appliance}
 
