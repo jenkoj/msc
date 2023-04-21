@@ -748,6 +748,51 @@ Results show that the algorithm is 78 \% efficient at detecting true anomalies.
 On average, the algorithm would label 22 \% of samples as false positives, 
 in other words, every fifth sample could be a false positive. 
 
+\subsection{Correlation of t-SNE Euclidean Distance and Routine Rate}
+
+In Section \ref{ssec:tsne_euclidian_distance}, we first observed the presence of periodic behavior in formed t-SNE clusters.
+We speculated, that the scattering of LP clusters could be correlated to a routine so that the smaller the scattering the better the routine.
+We calculated the scattering using Euclidean distance, the same metric used as a cost function in t-SNE
+
+Figure \ref{fig:tsne_euclidian2} was already presented in Section \ref{ssec:tsne_euclidian_distance},
+but it makes sense to reuse it here in this context. 
+As mentioned this Figure shows Euclidean distance for every building.
+
+\begin{figure}[H]
+	\centering
+	\caption{Euclidean distance of samples for every building on normalized LPs}
+	\includegraphics[]{Figures/EC/CORR_TSNE/tnse_euclidian.pdf}
+	\label{fig:tsne_euclidian2}
+\end{figure}
+
+To reveal the connection between the two, we plotted both on the same Figure \ref{fig:tsne_comparison}.
+The routine rate in this figure is reused from figure \ref{fig:refit_res}.
+
+\begin{figure}[H]
+	\centering
+	\caption{Plot of results from REFIT and t-SNE Euclidean distance }
+	\includegraphics[]{Figures/EC/CORR_TSNE/TSNE_EC_comparison.pdf}
+	\label{fig:tsne_comparison}
+\end{figure}
+
+Figure \ref{fig:tsne_norm} shows the same data as the Figure above, but it's normalized using a min-max scaler.
+Additionally, we have inverted the values of Euclidean distance, since values seem to be inversely correlated.
+Looking at the Figure it is clear that there is some similarity between the two columns,
+especially for the best and worst-performing buildings.
+\begin{figure}[H]
+	\centering
+	\caption{Normalised values}
+	\includegraphics[]{Figures/EC/CORR_TSNE/TSNE_EC_norm.pdf}
+	\label{fig:tsne_norm}
+\end{figure}
+
+To furthermore prove the similarity, we have used the methodological approaches for calculating similarity that we explained in Section \ref{ssec:lp_similarity}.
+First, we calculated cosine similarity using Equation \ref{eq:cosine_similarity}, which yielded a cosine similarity of \textbf{0.94}  for the data seen in the second Figure \ref{fig:tsne_comparison} and \textbf{0.86} for data seen in the third Figure \ref{fig:tsne_norm}.
+Second, we calculated Pearson's correlation coefficient using Equation \ref{eq:pearson_correlation}, which yielded a result of \textbf{-0.76} for the data seen in the second Figure \ref{fig:tsne_comparison} and \textbf{0.76} for data seen in the third Figure \ref{fig:tsne_norm}.
+These values clearly present that there is a connection between the two.
+This connection is an important proof, which confirms our statements from Chapter \ref{chapter5} that the dispersion of samples in t-SNE plot is related to routine.
+This also means that we can rely on t-SNE to evaluate the routine of a household.
+
 \section{Discussion}
 
 The main goal of our system is to detect anomalies when they occur. 
