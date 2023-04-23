@@ -218,7 +218,7 @@ Low perplexity means that the kernel will be narrow, so fewer data points will f
 The output of the algorithm is a map of every data point $y_i$.
 These points are low dimensional counterparts of $x_i$.
 Usually, these data points contain a comprehensible number of dimensions where $y_i \in \mathbb{R}^2$ or $\mathbb{R}^3$. 
-Similarly, as in equation \ref{eq:pij} we can now use low dimensional data points $y_i$ and $y_j$ to calculate probability $q_{ij}$ in equation \ref{eq:gij}.
+Similarly, as in Equation \ref{eq:pij} we can now use low dimensional data points $y_i$ and $y_j$ to calculate probability $q_{ij}$ in Equation \ref{eq:gij}.
 Here, t-student distribution with one degree of freedom is utilized to calculate the similarities.
 
 \begin{equation}
@@ -355,7 +355,7 @@ We can confirm this, by looking at Figure \ref{fig:tsne_pb_img_scatter_allall}, 
 
 \subsubsection{Normalized LPs}
 
-The issue mentioned in the previous Subsection \ref{ssec:res_pb_lp} can be addressed by normalizing the data between 0 and 1 as mentioned in methodology Section \ref{ssec:norm}.
+The issue mentioned in the previous Section \ref{ssec:res_pb_lp} can be addressed by normalizing the data between 0 and 1 as mentioned in methodology Section \ref{ssec:norm}.
 The normalization should enable t-SNE to focus on finding similarities between the usage patterns.
 
 Figure \ref{fig:tsne_pb_scatter_all_all} illustrates how normalization affects the algorithm.

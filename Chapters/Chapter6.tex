@@ -348,9 +348,9 @@ for each bucket with an equation.
 Where $N_{anom}$ is a number of anomalous samples and $N_{norm}$ is a number of normal samples.
 
 
-We can alter the equation \ref{eq:ratio} so that it will measure
+We can alter the Equation \ref{eq:ratio} so that it will measure
 a number of normal samples out of all. 
-The result is the equation \ref{eq:routine}
+The result is the Equation \ref{eq:routine}
 In other words, we are measuring the strength of a routine that 
 user has in each bucket.
 
@@ -359,7 +359,7 @@ user has in each bucket.
     \label{eq:routine}
 \end{equation}
 
-Using the equation \ref{eq:routine} we can populate the array \ref{arr:anom_ratio}.
+Using the Equation \ref{eq:routine} we can populate the array in Figure \ref{arr:anom_ratio}.
 
 \begin{figure}[H]
     \centering
@@ -374,7 +374,7 @@ Using the equation \ref{eq:routine} we can populate the array \ref{arr:anom_rati
     \label{arr:anom_ratio}
 \end{figure}
 
-In other words, the array \ref{arr:anom_ratio} tells us how persistent is the user's routine in each bucket or part of the day. 
+In other words, the array in Figure \ref{arr:anom_ratio} tells us how persistent is the user's routine in each bucket or part of the day. 
 The higher the metric the higher the routine. 
 Since routine is detected based on the usage of appliances it cannot be picked up during the night.
 
@@ -383,7 +383,7 @@ The anomaly detection algorithm will work best when the metric above is high.
 A good trait of the elderly is that their routine is quite high even during the day.
 
 One more thing to do is to ignore the parts of the day when the user has no routine.
-This is done by using the array \ref{arr:anom_ratio} and setting a threshold of 0.7. 
+This is done by using the array in Figure \ref{arr:anom_ratio} and setting a threshold of 0.7. 
 
 A threshold of 0.5 would mean that we could detect false positive anomalies every other day.
 Setting the rate to 0.7 reduces this to every third day.
@@ -659,7 +659,7 @@ If we remove the weekend data, the results improved by 1.2 \%.
 
 \subsubsection{UK-DALE}
 
-As mentioned in Subsection \ref{ssec:ds_eval}, the UK-DALE is not as big and clean of errors as the previous dataset, so the results could be less relevant.
+As mentioned in Section \ref{ssec:ds_eval}, the UK-DALE is not as big and clean of errors as the previous dataset, so the results could be less relevant.
 The results in Figure \ref{fig:ukdale_res}, show that the average result is 74.48 \%. 
 Due to the low number of buildings, it is not possible to detect and ignore outliers.
 
@@ -683,7 +683,7 @@ The same as for REFIT, the weekend data can be ignored,
 In this case, this does not improve the result. 
 \subsubsection{ECO}
 
-ECO is of a similar quality as UK-DALE when taking into account the number of buildings and the length of data, as can be seen in Subsection \ref{ssec:ds_eval}.
+ECO is of a similar quality as UK-DALE when taking into account the number of buildings and the length of data, as can be seen in Section \ref{ssec:ds_eval}.
 The results in Figure \ref{fig:eco_res}, show that this dataset performed the best, with results of 84.09 \%.
 
 \begin{figure}[H]
