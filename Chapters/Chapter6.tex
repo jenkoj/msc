@@ -947,12 +947,25 @@ especially for the best and worst-performing buildings.
 \end{figure}
 
 To furthermore prove the similarity, we have used the methodological approaches for calculating similarity that we explained in Section \ref{ssec:lp_similarity}.
+The results can be observed in Table \ref{tab:similarity_results}.
 First, we calculated cosine similarity using Equation \ref{eq:cosine_similarity}, which yielded a cosine similarity of \textbf{0.94}  for the data seen in the second Figure \ref{fig:tsne_comparison} and \textbf{0.86} for data seen in the third Figure \ref{fig:tsne_norm}.
 Second, we calculated Pearson's correlation coefficient using Equation \ref{eq:pearson_correlation}, which yielded a result of \textbf{-0.76} for the data seen in the second Figure \ref{fig:tsne_comparison} and \textbf{0.76} for data seen in the third Figure \ref{fig:tsne_norm}.
 These values present that there is a connection between the t-SNE plot and the routine of the households.
 
+\begin{table}[ht]
+    \centering
+    \caption{Similarity and correlation results}
+    \label{tab:similarity_results}
+    \begin{tabular}{@{}lcc@{}}
+    \toprule
+    \textbf{Method} & \textbf{Figure \ref{fig:tsne_comparison}} & \textbf{Figure \ref{fig:tsne_norm}} \\ \midrule
+    Cosine similarity & 0.94 & 0.86 \\
+    Pearson's correlation coefficient & -0.76 & 0.76 \\ \bottomrule
+    \end{tabular}
+\end{table}
+
 When analyzing these results we must keep in mind that the methodological approaches were very different for the two experiments.
-In the case of t-SNE, we have used normalised per-building LPs with very little preprocessing, whereas in elderly care algorithm, we have used per-building per-appliance LPs with extensive pre-processing to extract applicnes that could help us detect the routine.
+In the case of t-SNE, we have used normalized per-building LPs with very little preprocessing, whereas in elderly care algorithm, we have used per-building per-appliance LPs with extensive pre-processing to extract applicnes that could help us detect the routine.
 
 \subsection{Discussion}
 This connection is an important proof that confirms our statements from Chapter \ref{chapter5} that the dispersion of samples in the t-SNE plot is related to routine.
