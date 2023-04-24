@@ -907,7 +907,7 @@ Future research could explore these limitations and expand on the findings of th
 For example, additional studies could investigate the performance of the algorithm under different conditions or compare it to other methods of anomaly detection. 
 Additionally, further research could examine the potential applications and implications of the method, such as how it could be used to improve the safety or efficiency of dwelling systems.
 
-\section{Correlation of t-SNE Euclidean Distance and Routine Rate}
+\section{Correlation Between t-SNE Plot Euclidean Distance and Routine Rate}
 
 In Section \ref{ssec:tsne_euclidian_distance}, we first observed the presence of periodic behavior in formed t-SNE clusters.
 We speculated, that the scattering of LP clusters could be correlated to a routine so that the smaller the scattering the better the routine.
@@ -965,16 +965,19 @@ These values present that there is a connection between the t-SNE plot and the r
 \end{table}
 
 When analyzing these results we must keep in mind that the methodological approaches were very different for the two experiments.
-In the case of t-SNE, we have used normalized per-building LPs with very little preprocessing, whereas in elderly care algorithm, we have used per-building per-appliance LPs with extensive pre-processing to extract applicnes that could help us detect the routine.
+In the case of t-SNE, we have used normalized per-building LPs with very little preprocessing, whereas in the elderly care algorithm, we have used per-building per-appliance LPs with extensive pre-processing to extract appliances that could help us detect the routine.
+Another thing we must keep in mind is that elderly care enables us to detect anomalies on hourly intervals, whereas our t-SNE approach needs a minimum of a week of data to construct the LPs.
+In this regard, t-SNE could be used to evaluate the routine rate of a household.
 
 \subsection{Discussion}
-This connection is an important proof that confirms our statements from Chapter \ref{chapter5} that the dispersion of samples in the t-SNE plot is related to routine.
+This connection is an important demonstration that confirms our statements from Chapter \ref{chapter5} that the dispersion of samples in the t-SNE plot is related to routine.
 This also means that we can rely on t-SNE to evaluate the routine of a household.
-While it may not be as precise as an elderly care algorithm, it is simple to use. 
+While it may not be as precise and fast as an elderly care algorithm, it is simple to use. 
 Apart from implementation being easily available, it uses per-building LPs which can be built off most existing residential power meters.
 
 This leads us to privacy issues, as almost all households use power meters for utility billing tracking. Before processing this data to build per-building LPs, the user should be informed and agree to the use of their data.
-It should also be made clear that their data will be handled according to GDPR regulations.
+It should also be made clear that their data will be handled according to GDPR.
+
 \subsection{Summary}
 
 The results show that our approach can detect changes in routine and can improve over time.
@@ -983,4 +986,6 @@ but rather evaluate if the behavior of residents is sufficiently periodic.
 Even the best algorithm would not be able to detect anomalies in a stochastic system.
 With that, we also proved that such a system is sufficiently deterministic for such applications.
 
+Furthermore, we have demonstrated the existence of a connection between the t-SNE plot and the routine obtained from the elderly care anomaly detection algorithm.
+While t-SNE cannot be directly used in the setting of elderly care, as it's too slow, it could be used to determine if the routine of the household is strong enough before a more complex system is put in place.
 
