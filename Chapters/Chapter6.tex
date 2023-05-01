@@ -704,50 +704,54 @@ The same as before we can omit weekend data, which can be seen in Figure \ref{fi
 
 \subsection{Combined Results}
 
-After combining results from all 25 buildings, Table \ref{tab:ec_res} can be populated.
-The most relevant results can be seen in the last row.
-% \begin{table}[H]
-%     \centering
-%     \caption{Combined percentage of anomalous samples [\%]}
-%     \begin{tabular}{|l|ll|ll|}
-%     \hline
-%     N = 25 &
-%       \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Including \\ weekend data\end{tabular}} &
-%       \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Excluding \\ weekend data\end{tabular}} \\ \hline
-%     \begin{tabular}[c]{@{}l@{}}Removed \\ min/max\\ outliers\end{tabular} &
-%       \multicolumn{1}{l|}{train } &
-%       test &
-%       \multicolumn{1}{l|}{train} &
-%       test \\ \hline
-%     0 & \multicolumn{1}{l|}{84.73} & 77.35 & \multicolumn{1}{l|}{86.20} & 78.07 \\ \hline
-%     1 & \multicolumn{1}{l|}{84.63} & 77.91 & \multicolumn{1}{l|}{86.16} & 78.75 \\ \hline
-%     2 & \multicolumn{1}{l|}{86.53} & 78.53 & \multicolumn{1}{l|}{86.13} & 79.23 \\ \hline
-%     \end{tabular}
-%     \label{tab:ec_res}
-% \end{table}
+After combining results from all 26 buildings, Table \ref{tab:ec_res} can be populated.
+First Table \ref{tab:ec_res_weekend} shows that the algorithm is 79.43 \% efficient at detecting true anomalies. 
+On average, the algorithm would label 20.5 \% of samples as false positives, 
+in other words, every fifth sample could be a false positive. 
 
 \begin{table}[htbp]
     \centering
-    \caption{Combined percentage [\%] of anomalous samples for 25 buildings}
-    \label{tab:ec_res}
-    \begin{tabular}{lccccc}
+    \caption{Combined percentage [\%] of routine rate for 26 buildings}
+    \label{tab:ec_res_weekend}
+    \begin{tabular}{lcc}
         \hline
-         & \multicolumn{2}{c}{Including weekend data} && \multicolumn{2}{c}{Excluding weekend data} \\
-        \cline{2-3} \cline{5-6}
-        Removed min/max outliers & Train & Test && Train & Test \\
+        \textbf{including weekend data} & \textbf{test} & \textbf{train} \\
         \hline
-        0 & 84.73 & 77.35 && 86.20 & 78.07 \\
-        1 & 84.63 & 77.91 && 86.16 & 78.75 \\
-        2 & 86.53 & 78.53 && 86.13 & 79.23 \\
+        \textbf{mean} & 79.43 & 84.55 \\
+        \textbf{std} & 14.62 & 9.05 \\
+        \textbf{uncertainty} & 2.81 & 1.74 \\
         \hline
-    \end{tabular}
+        \end{tabular}
 \end{table}
 
-This code will produce the same optimized table as the one I presented earlier.
-Results show that the algorithm is 78 \% efficient at detecting true anomalies. 
-On average, the algorithm would label 22 \% of samples as false positives, 
-in other words, every fifth sample could be a false positive. 
+If we assume that average building in our dataset has altered routine trough weekend as can be seen in \ref{fig:ec_week},
+and assume that average elder has roughly the same routine throughout the week we can remove the weekend data 
+to obtain more relevant results.
+Table \ref{tab:ec_res_no_weekend}, shows results after removing weekend data.
+We can observe that the mean test routine is 80.42 \%, which is slightly higher compared to results from previous Table \ref{tab:ec_res_weekend}.
 
+\begin{table}[htbp]
+    \centering
+    \caption{Combined percentage [\%] of routine rate for 26 buildings not including weekend data}
+    \label{tab:ec_res_no_weekend}
+    \begin{tabular}{lcc}
+        \hline
+        \textbf{not-including weekend data} & \textbf{test} & \textbf{train} \\
+        \hline
+        \textbf{mean} & 80.42 & 85.88 \\
+        \textbf{std} & 15.58 & 8.25 \\
+        \textbf{uncertainty} & 2.99 & 1.58 \\
+        \hline
+        \end{tabular}
+\end{table}
+
+The last rows in Tables \ref{tab:ec_res_no_weekend} and \ref{tab:ec_res_weekend} show uncertainty of our measurements,
+which is 2.81 \% for weekend data and 2.99 \% for not including weekend data.
+
+When comparing differences between train and test data it can be clearly observed that train data performed better.
+The difference in performance can be attributed to changed user behavior after model was trained.
+It would be beneficial if we managed to update the model over time, to include the small changes in users routine.
+This will be addressed in the next Section \ref{sec:iter_learning_system}.
 
 \section{Discussion}
 
@@ -790,15 +794,13 @@ This would also prove our assumption that this algorithm works
 better on the elderly.
 
 \section{Iterative Learning System}
-
+\label{sec:iter_learning_system}
 In the case of practical use of this algorithm, it is 
 important the system is put online as fast as possible and that it improves over time. 
-
 This can be achieved with the implementation of iterative learning.
-The system will build an LP based on the first month of data.
-Using this LP, the system can be put online.
-At the end of the month, it can use this data to improve the LP.
-This can then be repeated indefinitely. 
+The algorithm will build an LP based on the first month of data.
+Using this LP, the system can be immediately put online.
+At the end of the month, it can use this data to improve the model, which can then be repeated indefinitely. 
  
 \subsection{Methodology}
 The tools, metric and other methodology is the same as in a normal learning system.
@@ -978,7 +980,7 @@ Apart from implementation being easily available, it uses per-building LPs which
 This leads us to privacy issues, as almost all households use power meters for utility billing tracking. Before processing this data to build per-building LPs, the user should be informed and agree to the use of their data.
 It should also be made clear that their data will be handled according to GDPR.
 
-\subsection{Summary}
+\section{Summary}
 
 The results show that our approach can detect changes in routine and can improve over time.
 Due to a lack of gourd truth data, we were not able to measure the exact accuracy of the system,
