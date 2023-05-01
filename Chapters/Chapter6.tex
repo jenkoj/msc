@@ -606,12 +606,10 @@ To show true performance, we will use test data to determine the actual performa
 \subsection{Per-Building Results}
 \subsubsection{REFIT}
 
-Results show, that the method is on average 76.4 \% efficient for REFIT.  
-In Figure \ref{fig:refit_res} it is possible to see that building 8 yields much better results than the rest.
-Results show that the building reached a routine rate of almost 100 \%, which is highly unlikely in the real world. 
-On the contrary, buildings 11 and 13 performed much worse than the others with routine rates of around 40 \%.
-It is hard to know the exact reasons why the buildings performed in such a way.
-This could be due to various dataset errors that occurred during sampling.
+Results show, that the method is on average \textbf{79.3} \% efficient for REFIT.  
+In Figure \ref{fig:refit_res} it is possible to see that building 10 and 20 yields much worse results than the rest.
+The whole routine pattern is very similar to the Figure \ref{fig:tsne_euclidian} from t-SNE chapter where we calulcated the final euclidian distance between samples of the t-SNE plot.
+We will make a deeper analysis of this connection in the last Section \ref{sec:tsne_ec_corr} of this Chapter.
 
 
 \begin{figure}[H]
@@ -622,46 +620,21 @@ This could be due to various dataset errors that occurred during sampling.
     \end{subfigure}
     ~
     \begin{subfigure}{.5\textwidth}
-        \caption{Removed best and worst performing building}
-        \includegraphics[width=1\textwidth]{Figures/EC/refit_res2.pdf}
-        \label{fig:refit_res2}
+        \caption{Results for REFIT weekday only}
+        \includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_1.pdf}
+        \label{fig:refit_res_nw_1}
     \end{subfigure}
 \end{figure}
-
-For more relevant results we can ignore the outliers by removing one maximum and minimum value, such as can be seen in Figure \ref{fig:refit_res2}
-This yields a result of 77.08 \%.
-If we were to repeat this process the result would be 79.77 \%.
-Since all outliers are removed, the result converges towards 79 \%, which is the relevant value. 
-
 
 As mentioned in the sub-sub Section \ref{sssec:ratio_week}, the average routine is different during the week and on weekends.
 The assumption was that the routine of elderly people does not change significantly over the week, therefore results should be more relevant if we ignore the weekends.
-The results in Figure \ref{fig:refit_res_nw_1} show that the result improved to 77.08 \%.
-
-\begin{figure}[H]
-	\begin{subfigure}{.5\textwidth}
-	\caption{Results for REFIT weekday only}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_1.pdf}
-	\label{fig:refit_res_nw_1}
-    \end{subfigure}
-    ~
-    \begin{subfigure}{.5\textwidth}
-	\caption{Results for REFIT weekday only and removed outliers}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_2.pdf}
-	\label{fig:refit_res_nw_2}
-    \end{subfigure}
-\end{figure}
-
-By ignoring the minimal and maximal outliers the results increase to 78.21 \%.
-Repeating the process one more time the result increases to 80.20 \%, since all outliers were removed, the result converges toward this value. 
-
-If we remove the weekend data, the results improved by 1.2 \%. 
+The results in Figure \ref{fig:refit_res_nw_1} show that the result improved to \textbf{77.08} \%.
+If we remove the weekend data, the results improved by \textbf{1} \%. 
 
 \subsubsection{UK-DALE}
 
 As mentioned in Section \ref{ssec:ds_eval}, the UK-DALE is not as big and clean of errors as the previous dataset, so the results could be less relevant.
 The results in Figure \ref{fig:ukdale_res}, show that the average result is 74.48 \%. 
-Due to the low number of buildings, it is not possible to detect and ignore outliers.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -679,10 +652,11 @@ Due to the low number of buildings, it is not possible to detect and ignore outl
 \end{figure}
 
 
-The same as for REFIT, the weekend data can be ignored,
-In this case, this does not improve the result. 
-\subsubsection{ECO}
+In this case, when we omit the weekend data, we improve the routine just slightly to \textbf{74.51} \%.
+There are many reasons behind such small improvement, one of them being that the existing routine of these buildings does not change throughout the weekend. 
 
+\subsubsection{ECO}
+%todo RERU_N with all buildings!
 ECO is of a similar quality as UK-DALE when taking into account the number of buildings and the length of data, as can be seen in Section \ref{ssec:ds_eval}.
 The results in Figure \ref{fig:eco_res}, show that this dataset performed the best, with results of 84.09 \%.
 
@@ -704,8 +678,8 @@ The same as before we can omit weekend data, which can be seen in Figure \ref{fi
 
 \subsection{Combined Results}
 
-After combining results from all 26 buildings, Table \ref{tab:ec_res} can be populated.
-First Table \ref{tab:ec_res_weekend} shows that the algorithm is 79.43 \% efficient at detecting true anomalies. 
+After combining results from all 26 buildings, Table \ref{tab:ec_res_weekend} can be populated.
+It shows that the algorithm is 79.43 \% efficient at detecting true anomalies. 
 On average, the algorithm would label 20.5 \% of samples as false positives, 
 in other words, every fifth sample could be a false positive. 
 
@@ -910,7 +884,7 @@ For example, additional studies could investigate the performance of the algorit
 Additionally, further research could examine the potential applications and implications of the method, such as how it could be used to improve the safety or efficiency of dwelling systems.
 
 \section{Correlation Between t-SNE Plot Euclidean Distance and Routine Rate}
-
+\label{sec:tsne_ec_corr}
 In Section \ref{ssec:tsne_euclidian_distance}, we first observed the presence of periodic behavior in formed t-SNE clusters.
 We speculated, that the scattering of LP clusters could be correlated to a routine so that the smaller the scattering the better the routine.
 We calculated the scattering using Euclidean distance, the same metric used as a cost function in t-SNE
