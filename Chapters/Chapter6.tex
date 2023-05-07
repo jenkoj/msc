@@ -656,25 +656,25 @@ In this case, when we omit the weekend data, we improve the routine just slightl
 There are many reasons behind such small improvement, one of them being that the existing routine of these buildings does not change throughout the weekend. 
 
 \subsubsection{ECO}
-%todo RERU_N with all buildings!
+
 ECO is of a similar quality as UK-DALE when taking into account the number of buildings and the length of data, as can be seen in Section \ref{ssec:ds_eval}.
-The results in Figure \ref{fig:eco_res}, show that this dataset performed the best, with results of 84.09 \%.
+The results in Figure \ref{fig:eco_res}, show that this dataset performed the best, with results of 83.80 \%.
+The same as before we can omit weekend data, which can be seen in Figure \ref{fig:eco_res_nw}. This brings the result up to 84.09 \%. 
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
         \caption{Results for ECO}
-        \includegraphics[width=1\textwidth]{Figures/EC/eco_res_nw_1.pdf}
+        \includegraphics[width=1\textwidth]{Figures/EC/eco_res.pdf}
         \label{fig:eco_res}
     \end{subfigure}
     ~ 
     \begin{subfigure}{.5\textwidth}
         \caption{Results for ECO omitting weekends}
-        \includegraphics[width=1\textwidth]{Figures/EC/eco_res.pdf}
+        \includegraphics[width=1\textwidth]{Figures/EC/eco_res_nw_1.pdf}
         \label{fig:eco_res_nw}
     \end{subfigure}
 \end{figure}
 
-The same as before we can omit weekend data, which can be seen in Figure \ref{fig:eco_res_nw}. This brings the result down to 83.80 \%. 
 
 \subsection{Combined Results}
 
