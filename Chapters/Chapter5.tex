@@ -95,7 +95,54 @@ To achieve this we will use min-max scaling seen in Equation \ref{eq:minmax} be
 \end{equation}
 	
  Where $x$ is the value being scaled, $x_{min}$ is the minimum number of activations in the LP, $x_{max}$ is the maximum number of activations in the LP, and $x_{norm}$ is the output normalised value.
-	
+
+\subsection{Measuring LP Similarly}
+\label{ssec:lp_similarity}
+The similarity of the LPs will play an important role in the analysis, as it will be used as a base of the t-SNE cost function.
+The activations in LPs can be also thought of as $n-dimensional$ vectors, where each bucket is nth dimension activation magnitude is their length.
+Once LPs are presented as a vector, we can use tools from linear algebra to calculate their similarity.
+
+One way to calculate the similarity between two points is by calculating Euclidean distance, where 
+we calculate the square root of the sum of squared differences.
+
+
+\begin{equation}
+	\label{eq:euclidian_distance}
+	d(x, y) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2}
+\end{equation}
+
+Where $x$ and $y$ are $n$-dimensional vectors. 
+The result of Euclidian distance is not limited and can be anywhere from 0 to infinity. 
+Alternatively, we can use the cosine similarity Equation \ref{eq:cosine_similarity}, where the results are limited between -1 and 1.
+1 would mean that both vectors point in the same direction, 0 that they are orthogonal and -1 they point in opposite directions.
+
+\begin{equation}
+	\label{eq:cosine_similarity}
+	cosSimilarity(X,Y) = \cos(\theta) =  \frac{X \cdot Y}{\|X\| \|Y\|} = \frac{\sum_{i=1}^{n} X_i Y_i}{\sqrt{\sum_{i=1}^{n} X_i^2} \sqrt{\sum_{i=1}^{n} Y_i^2}}
+\end{equation}
+
+In the above equation, $X$ and $Y$ are $n$-dimensional vectors.
+The dot product of $X$ and $Y$ is divided by the product of their magnitudes to obtain the cosine similarity.
+The magnitude is also known as $L2$ Euclidian normalization.
+An important feature of cosine similarity is, that it's not affected by the magnitude of the vectors.
+To include the magnitude we can use Pearson's correlation coefficient seen in Equation \ref{eq:pearson_correlation}
+
+\begin{equation}
+	\label{eq:pearson_correlation}
+	corr(X,Y) =  \frac{\sum_{i=1}^{n} (X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum_{i=1}^{n} (X_i - \bar{X})^2} \sqrt{\sum_{i=1}^{n} (Y_i - \bar{Y})^2}}
+\end{equation}
+
+Where $X$ and $Y$ are $n$-dimensional vectors.
+The correlation is calculated with the summation of the product of the centered vectors, obtained by subtraction of the mean of the vectors $X$ and $Y$. This is divided by the product of their standard deviations to obtain the Pearson correlation coefficient.
+As mentioned, an important feature of correlation is that it measures the strength as well as the direction of two vectors.
+Correlation values range between -1 and 1, where the interpretation follows the same logic as cosine similarity.
+
+What is most interesting here is that equations \ref{eq:cosine_similarity} and \ref{eq:pearson_correlation} look very similar.
+The main difference is that \ref{eq:cosine_similarity} takes into account individual vectors, whereas \ref{eq:pearson_correlation} first centers the vector using the mean value of all vectors and then computes the similarity.
+Another difference is the naming of elements in the denominator. 
+In cosine similarity, we used $L2$ Euclidian normalization whereas, in the correlation equation, we used standard deviation.
+While these two are not the same, they play the same role of normalizing the numerators.
+
 \subsection{Data}
 
 We have on average roughly one year of data per building. 
@@ -171,7 +218,7 @@ Low perplexity means that the kernel will be narrow, so fewer data points will f
 The output of the algorithm is a map of every data point $y_i$.
 These points are low dimensional counterparts of $x_i$.
 Usually, these data points contain a comprehensible number of dimensions where $y_i \in \mathbb{R}^2$ or $\mathbb{R}^3$. 
-Similarly, as in equation \ref{eq:pij} we can now use low dimensional data points $y_i$ and $y_j$ to calculate probability $q_{ij}$ in equation \ref{eq:gij}.
+Similarly, as in Equation \ref{eq:pij} we can now use low dimensional data points $y_i$ and $y_j$ to calculate probability $q_{ij}$ in Equation \ref{eq:gij}.
 Here, t-student distribution with one degree of freedom is utilized to calculate the similarities.
 
 \begin{equation}
@@ -286,8 +333,6 @@ T-SNE provides an intuition of how LPs are connected in higher-dimensional space
 Figure \ref{fig:tsne_pb_img_scatter_allall} shows that the left side has mostly samples with little activity, and the right side has more activity.
 When looking at Figure \ref{fig:tsne_scatter_non_norm_all}, we can observe a clear pink colored cluster of LPs from UKDALE 1 and UKDALE 2, which contain plenty of appliances and may explain why they have many activators.
 Some less obvious clusters formed in the bottom section for REFIT buildings 2, 3, 5, 6, 4 and 8. 
-A significant observation is that LPs closer together have more similar consumption throughout every month.
-By measuring the distance between LPs of the same building we can estimate the strength of the household's routine. 
 
 There are no recognizable patterns in the central part of the plot. 
 Since there are no patterns, such LPs do not form clusters. 
@@ -310,7 +355,7 @@ We can confirm this, by looking at Figure \ref{fig:tsne_pb_img_scatter_allall}, 
 
 \subsubsection{Normalized LPs}
 
-The issue mentioned in the previous Subsection \ref{ssec:res_pb_lp} can be addressed by normalizing the data between 0 and 1 as mentioned in methodology Section \ref{ssec:norm}.
+The issue mentioned in the previous Section \ref{ssec:res_pb_lp} can be addressed by normalizing the data between 0 and 1 as mentioned in methodology Section \ref{ssec:norm}.
 The normalization should enable t-SNE to focus on finding similarities between the usage patterns.
 
 Figure \ref{fig:tsne_pb_scatter_all_all} illustrates how normalization affects the algorithm.
@@ -357,7 +402,31 @@ while normalized LPs force t-SNE to focus on similarities in the actual usage pa
 Normalized LPs provide information about when appliances are likely to be used throughout the day, while non-normalized LPs provide insight into the magnitude of appliance usage.
 
 Based on the above observations, we could say that usage patterns are more similar than the number of activations across buildings.
-%% TODO finish with a conclusion
+
+\subsubsection{Euclidian distance of samples for every building}
+\label{ssec:tsne_euclidian_distance}
+
+A significant observation is that LPs closer together have more similar consumption throughout every month.
+By measuring the distance between LPs of the same building we can estimate the strength of the household's routine. 
+Figure \ref{fig:tsne_euclidian} presents the Euclidean distance between samples for a given building.
+The larger the value, the longer the distance and the less similar the consumption trough every month is.
+
+\begin{figure}[H]
+	\centering
+	\caption{Euclidean distance of samples for every building on normalized LPs}
+	\includegraphics[]{Figures/EC/CORR_TSNE/tnse_euclidian.pdf}
+	\label{fig:tsne_euclidian}
+\end{figure}
+
+The methodology and the equation for calculating Euclidian distance were thoroughly discussed in section \ref{ssec:lp_similarity}.
+Since t-SNE uses Euclidean distance at its base, we essentially measured the values of the last t-SNE iteration.
+
+As we will use the Euclidean distance plot in the next Chapter \ref{chapter6} as a comparison, we have used only samples from the REFIT dataset.
+A more detailed analysis will follow in this chapter as well.
+As for now, we can see that the buildings with the most similar consumption pattern are 5 and 13. 
+They both lay on the right side of the plot and have a similar activation pattern, with very few activations throughout the weekday.
+This could point toward the fact that people with steady jobs have very steady consumption patterns.
+
 \subsection{Per-Appliance}
 
 We can use per-appliance LPs to examine how different appliances 

@@ -348,9 +348,9 @@ for each bucket with an equation.
 Where $N_{anom}$ is a number of anomalous samples and $N_{norm}$ is a number of normal samples.
 
 
-We can alter the equation \ref{eq:ratio} so that it will measure
+We can alter the Equation \ref{eq:ratio} so that it will measure
 a number of normal samples out of all. 
-The result is the equation \ref{eq:routine}
+The result is the Equation \ref{eq:routine}
 In other words, we are measuring the strength of a routine that 
 user has in each bucket.
 
@@ -359,7 +359,7 @@ user has in each bucket.
     \label{eq:routine}
 \end{equation}
 
-Using the equation \ref{eq:routine} we can populate the array \ref{arr:anom_ratio}.
+Using the Equation \ref{eq:routine} we can populate the array in Figure \ref{arr:anom_ratio}.
 
 \begin{figure}[H]
     \centering
@@ -374,7 +374,7 @@ Using the equation \ref{eq:routine} we can populate the array \ref{arr:anom_rati
     \label{arr:anom_ratio}
 \end{figure}
 
-In other words, the array \ref{arr:anom_ratio} tells us how persistent is the user's routine in each bucket or part of the day. 
+In other words, the array in Figure \ref{arr:anom_ratio} tells us how persistent is the user's routine in each bucket or part of the day. 
 The higher the metric the higher the routine. 
 Since routine is detected based on the usage of appliances it cannot be picked up during the night.
 
@@ -383,7 +383,7 @@ The anomaly detection algorithm will work best when the metric above is high.
 A good trait of the elderly is that their routine is quite high even during the day.
 
 One more thing to do is to ignore the parts of the day when the user has no routine.
-This is done by using the array \ref{arr:anom_ratio} and setting a threshold of 0.7. 
+This is done by using the array in Figure \ref{arr:anom_ratio} and setting a threshold of 0.7. 
 
 A threshold of 0.5 would mean that we could detect false positive anomalies every other day.
 Setting the rate to 0.7 reduces this to every third day.
@@ -606,12 +606,10 @@ To show true performance, we will use test data to determine the actual performa
 \subsection{Per-Building Results}
 \subsubsection{REFIT}
 
-Results show, that the method is on average 76.4 \% efficient for REFIT.  
-In Figure \ref{fig:refit_res} it is possible to see that building 8 yields much better results than the rest.
-Results show that the building reached a routine rate of almost 100 \%, which is highly unlikely in the real world. 
-On the contrary, buildings 11 and 13 performed much worse than the others with routine rates of around 40 \%.
-It is hard to know the exact reasons why the buildings performed in such a way.
-This could be due to various dataset errors that occurred during sampling.
+Results show, that the method is on average \textbf{79.3} \% efficient for REFIT.  
+In Figure \ref{fig:refit_res} it is possible to see that building 10 and 20 yields much worse results than the rest.
+The whole routine pattern is very similar to the Figure \ref{fig:tsne_euclidian} from t-SNE chapter where we calulcated the final euclidian distance between samples of the t-SNE plot.
+We will make a deeper analysis of this connection in the last Section \ref{sec:tsne_ec_corr} of this Chapter.
 
 
 \begin{figure}[H]
@@ -622,46 +620,21 @@ This could be due to various dataset errors that occurred during sampling.
     \end{subfigure}
     ~
     \begin{subfigure}{.5\textwidth}
-        \caption{Removed best and worst performing building}
-        \includegraphics[width=1\textwidth]{Figures/EC/refit_res2.pdf}
-        \label{fig:refit_res2}
+        \caption{Results for REFIT weekday only}
+        \includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_1.pdf}
+        \label{fig:refit_res_nw_1}
     \end{subfigure}
 \end{figure}
-
-For more relevant results we can ignore the outliers by removing one maximum and minimum value, such as can be seen in Figure \ref{fig:refit_res2}
-This yields a result of 77.08 \%.
-If we were to repeat this process the result would be 79.77 \%.
-Since all outliers are removed, the result converges towards 79 \%, which is the relevant value. 
-
 
 As mentioned in the sub-sub Section \ref{sssec:ratio_week}, the average routine is different during the week and on weekends.
 The assumption was that the routine of elderly people does not change significantly over the week, therefore results should be more relevant if we ignore the weekends.
-The results in Figure \ref{fig:refit_res_nw_1} show that the result improved to 77.08 \%.
-
-\begin{figure}[H]
-	\begin{subfigure}{.5\textwidth}
-	\caption{Results for REFIT weekday only}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_1.pdf}
-	\label{fig:refit_res_nw_1}
-    \end{subfigure}
-    ~
-    \begin{subfigure}{.5\textwidth}
-	\caption{Results for REFIT weekday only and removed outliers}
-	\includegraphics[width=1\textwidth]{Figures/EC/refit_res_nw_2.pdf}
-	\label{fig:refit_res_nw_2}
-    \end{subfigure}
-\end{figure}
-
-By ignoring the minimal and maximal outliers the results increase to 78.21 \%.
-Repeating the process one more time the result increases to 80.20 \%, since all outliers were removed, the result converges toward this value. 
-
-If we remove the weekend data, the results improved by 1.2 \%. 
+The results in Figure \ref{fig:refit_res_nw_1} show that the result improved to \textbf{77.08} \%.
+If we remove the weekend data, the results improved by \textbf{1} \%. 
 
 \subsubsection{UK-DALE}
 
-As mentioned in Subsection \ref{ssec:ds_eval}, the UK-DALE is not as big and clean of errors as the previous dataset, so the results could be less relevant.
+As mentioned in Section \ref{ssec:ds_eval}, the UK-DALE is not as big and clean of errors as the previous dataset, so the results could be less relevant.
 The results in Figure \ref{fig:ukdale_res}, show that the average result is 74.48 \%. 
-Due to the low number of buildings, it is not possible to detect and ignore outliers.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -679,74 +652,80 @@ Due to the low number of buildings, it is not possible to detect and ignore outl
 \end{figure}
 
 
-The same as for REFIT, the weekend data can be ignored,
-In this case, this does not improve the result. 
+In this case, when we omit the weekend data, we improve the routine just slightly to \textbf{74.51} \%.
+There are many reasons behind such small improvement, one of them being that the existing routine of these buildings does not change throughout the weekend. 
+
 \subsubsection{ECO}
 
-ECO is of a similar quality as UK-DALE when taking into account the number of buildings and the length of data, as can be seen in Subsection \ref{ssec:ds_eval}.
-The results in Figure \ref{fig:eco_res}, show that this dataset performed the best, with results of 84.09 \%.
+ECO is of a similar quality as UK-DALE when taking into account the number of buildings and the length of data, as can be seen in Section \ref{ssec:ds_eval}.
+The results in Figure \ref{fig:eco_res}, show that this dataset performed the best, with results of 83.80 \%.
+The same as before we can omit weekend data, which can be seen in Figure \ref{fig:eco_res_nw}. This brings the result up to 84.09 \%. 
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
         \caption{Results for ECO}
-        \includegraphics[width=1\textwidth]{Figures/EC/eco_res_nw_1.pdf}
+        \includegraphics[width=1\textwidth]{Figures/EC/eco_res.pdf}
         \label{fig:eco_res}
     \end{subfigure}
     ~ 
     \begin{subfigure}{.5\textwidth}
         \caption{Results for ECO omitting weekends}
-        \includegraphics[width=1\textwidth]{Figures/EC/eco_res.pdf}
+        \includegraphics[width=1\textwidth]{Figures/EC/eco_res_nw_1.pdf}
         \label{fig:eco_res_nw}
     \end{subfigure}
 \end{figure}
 
-The same as before we can omit weekend data, which can be seen in Figure \ref{fig:eco_res_nw}. This brings the result down to 83.80 \%. 
 
 \subsection{Combined Results}
 
-After combining results from all 25 buildings, Table \ref{tab:ec_res} can be populated.
-The most relevant results can be seen in the last row.
-% \begin{table}[H]
-%     \centering
-%     \caption{Combined percentage of anomalous samples [\%]}
-%     \begin{tabular}{|l|ll|ll|}
-%     \hline
-%     N = 25 &
-%       \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Including \\ weekend data\end{tabular}} &
-%       \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Excluding \\ weekend data\end{tabular}} \\ \hline
-%     \begin{tabular}[c]{@{}l@{}}Removed \\ min/max\\ outliers\end{tabular} &
-%       \multicolumn{1}{l|}{train } &
-%       test &
-%       \multicolumn{1}{l|}{train} &
-%       test \\ \hline
-%     0 & \multicolumn{1}{l|}{84.73} & 77.35 & \multicolumn{1}{l|}{86.20} & 78.07 \\ \hline
-%     1 & \multicolumn{1}{l|}{84.63} & 77.91 & \multicolumn{1}{l|}{86.16} & 78.75 \\ \hline
-%     2 & \multicolumn{1}{l|}{86.53} & 78.53 & \multicolumn{1}{l|}{86.13} & 79.23 \\ \hline
-%     \end{tabular}
-%     \label{tab:ec_res}
-% \end{table}
+After combining results from all 26 buildings, Table \ref{tab:ec_res_weekend} can be populated.
+It shows that the algorithm is 79.43 \% efficient at detecting true anomalies. 
+On average, the algorithm would label 20.5 \% of samples as false positives, 
+in other words, every fifth sample could be a false positive. 
 
 \begin{table}[htbp]
     \centering
-    \caption{Combined percentage [\%] of anomalous samples for 25 buildings}
-    \label{tab:ec_res}
-    \begin{tabular}{lccccc}
+    \caption{Combined percentage [\%] of routine rate for 26 buildings}
+    \label{tab:ec_res_weekend}
+    \begin{tabular}{lcc}
         \hline
-         & \multicolumn{2}{c}{Including weekend data} && \multicolumn{2}{c}{Excluding weekend data} \\
-        \cline{2-3} \cline{5-6}
-        Removed min/max outliers & Train & Test && Train & Test \\
+        \textbf{including weekend data} & \textbf{test} & \textbf{train} \\
         \hline
-        0 & 84.73 & 77.35 && 86.20 & 78.07 \\
-        1 & 84.63 & 77.91 && 86.16 & 78.75 \\
-        2 & 86.53 & 78.53 && 86.13 & 79.23 \\
+        \textbf{mean} & 79.43 & 84.55 \\
+        \textbf{std} & 14.62 & 9.05 \\
+        \textbf{uncertainty} & 2.81 & 1.74 \\
         \hline
-    \end{tabular}
+        \end{tabular}
 \end{table}
 
-This code will produce the same optimized table as the one I presented earlier.
-Results show that the algorithm is 78 \% efficient at detecting true anomalies. 
-On average, the algorithm would label 22 \% of samples as false positives, 
-in other words, every fifth sample could be a false positive. 
+If we assume that average building in our dataset has altered routine trough weekend as can be seen in \ref{fig:ec_week},
+and assume that average elder has roughly the same routine throughout the week we can remove the weekend data 
+to obtain more relevant results.
+Table \ref{tab:ec_res_no_weekend}, shows results after removing weekend data.
+We can observe that the mean test routine is 80.42 \%, which is slightly higher compared to results from previous Table \ref{tab:ec_res_weekend}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Combined percentage [\%] of routine rate for 26 buildings not including weekend data}
+    \label{tab:ec_res_no_weekend}
+    \begin{tabular}{lcc}
+        \hline
+        \textbf{not-including weekend data} & \textbf{test} & \textbf{train} \\
+        \hline
+        \textbf{mean} & 80.42 & 85.88 \\
+        \textbf{std} & 15.58 & 8.25 \\
+        \textbf{uncertainty} & 2.99 & 1.58 \\
+        \hline
+        \end{tabular}
+\end{table}
+
+The last rows in Tables \ref{tab:ec_res_no_weekend} and \ref{tab:ec_res_weekend} show uncertainty of our measurements,
+which is 2.81 \% for weekend data and 2.99 \% for not including weekend data.
+
+When comparing differences between train and test data it can be clearly observed that train data performed better.
+The difference in performance can be attributed to changed user behavior after model was trained.
+It would be beneficial if we managed to update the model over time, to include the small changes in users routine.
+This will be addressed in the next Section \ref{sec:iter_learning_system}.
 
 \section{Discussion}
 
@@ -789,15 +768,13 @@ This would also prove our assumption that this algorithm works
 better on the elderly.
 
 \section{Iterative Learning System}
-
+\label{sec:iter_learning_system}
 In the case of practical use of this algorithm, it is 
 important the system is put online as fast as possible and that it improves over time. 
-
 This can be achieved with the implementation of iterative learning.
-The system will build an LP based on the first month of data.
-Using this LP, the system can be put online.
-At the end of the month, it can use this data to improve the LP.
-This can then be repeated indefinitely. 
+The algorithm will build an LP based on the first month of data.
+Using this LP, the system can be immediately put online.
+At the end of the month, it can use this data to improve the model, which can then be repeated indefinitely. 
  
 \subsection{Methodology}
 The tools, metric and other methodology is the same as in a normal learning system.
@@ -906,7 +883,78 @@ Future research could explore these limitations and expand on the findings of th
 For example, additional studies could investigate the performance of the algorithm under different conditions or compare it to other methods of anomaly detection. 
 Additionally, further research could examine the potential applications and implications of the method, such as how it could be used to improve the safety or efficiency of dwelling systems.
 
-\subsection{Summary}
+\section{Correlation Between t-SNE Plot Euclidean Distance and Routine Rate}
+\label{sec:tsne_ec_corr}
+In Section \ref{ssec:tsne_euclidian_distance}, we first observed the presence of periodic behavior in formed t-SNE clusters.
+We speculated, that the scattering of LP clusters could be correlated to a routine so that the smaller the scattering the better the routine.
+We calculated the scattering using Euclidean distance, the same metric used as a cost function in t-SNE
+
+Figure \ref{fig:tsne_euclidian2} was already presented in Section \ref{ssec:tsne_euclidian_distance},
+but it makes sense to reuse it here in this context. 
+As mentioned this Figure shows the Euclidean distance between samples for per-building LPs for every building.
+
+\begin{figure}[H]
+	\centering
+	\caption{Euclidean distance of samples for every building using normalized LPs}
+	\includegraphics[]{Figures/EC/CORR_TSNE/tnse_euclidian.pdf}
+	\label{fig:tsne_euclidian2}
+\end{figure}
+
+To reveal the connection between the two, we plotted both on the same Figure \ref{fig:tsne_comparison}.
+The routine rate in this Figure is reused from Figure \ref{fig:refit_res}.
+
+\begin{figure}[H]
+	\centering
+	\caption{Plot of results from REFIT and t-SNE Euclidean distance }
+	\includegraphics[]{Figures/EC/CORR_TSNE/TSNE_EC_comparison.pdf}
+	\label{fig:tsne_comparison}
+\end{figure}
+
+Figure \ref{fig:tsne_norm} shows the same data as the Figure above, but it's normalized using a min-max scaler.
+Additionally, we have inverted the values of Euclidean distance, since values seem to be inversely correlated.
+Looking at the Figure it is clear that there is some similarity between the two columns,
+especially for the best and worst-performing buildings.
+
+\begin{figure}[H]
+	\centering
+	\caption{Normalized values}
+	\includegraphics[]{Figures/EC/CORR_TSNE/TSNE_EC_norm.pdf}
+	\label{fig:tsne_norm}
+\end{figure}
+
+To furthermore prove the similarity, we have used the methodological approaches for calculating similarity that we explained in Section \ref{ssec:lp_similarity}.
+The results can be observed in Table \ref{tab:similarity_results}.
+First, we calculated cosine similarity using Equation \ref{eq:cosine_similarity}, which yielded a cosine similarity of \textbf{0.94}  for the data seen in the second Figure \ref{fig:tsne_comparison} and \textbf{0.86} for data seen in the third Figure \ref{fig:tsne_norm}.
+Second, we calculated Pearson's correlation coefficient using Equation \ref{eq:pearson_correlation}, which yielded a result of \textbf{-0.76} for the data seen in the second Figure \ref{fig:tsne_comparison} and \textbf{0.76} for data seen in the third Figure \ref{fig:tsne_norm}.
+These values present that there is a connection between the t-SNE plot and the routine of the households.
+
+\begin{table}[ht]
+    \centering
+    \caption{Similarity and correlation results}
+    \label{tab:similarity_results}
+    \begin{tabular}{@{}lcc@{}}
+    \toprule
+    \textbf{Method} & \textbf{Figure \ref{fig:tsne_comparison}} & \textbf{Figure \ref{fig:tsne_norm}} \\ \midrule
+    Cosine similarity & 0.94 & 0.86 \\
+    Pearson's correlation coefficient & -0.76 & 0.76 \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+When analyzing these results we must keep in mind that the methodological approaches were very different for the two experiments.
+In the case of t-SNE, we have used normalized per-building LPs with very little preprocessing, whereas in the elderly care algorithm, we have used per-building per-appliance LPs with extensive pre-processing to extract appliances that could help us detect the routine.
+Another thing we must keep in mind is that elderly care enables us to detect anomalies on hourly intervals, whereas our t-SNE approach needs a minimum of a week of data to construct the LPs.
+In this regard, t-SNE could be used to evaluate the routine rate of a household.
+
+\subsection{Discussion}
+This connection is an important demonstration that confirms our statements from Chapter \ref{chapter5} that the dispersion of samples in the t-SNE plot is related to routine.
+This also means that we can rely on t-SNE to evaluate the routine of a household.
+While it may not be as precise and fast as an elderly care algorithm, it is simple to use. 
+Apart from implementation being easily available, it uses per-building LPs which can be built off most existing residential power meters.
+
+This leads us to privacy issues, as almost all households use power meters for utility billing tracking. Before processing this data to build per-building LPs, the user should be informed and agree to the use of their data.
+It should also be made clear that their data will be handled according to GDPR.
+
+\section{Summary}
 
 The results show that our approach can detect changes in routine and can improve over time.
 Due to a lack of gourd truth data, we were not able to measure the exact accuracy of the system,
@@ -914,4 +962,6 @@ but rather evaluate if the behavior of residents is sufficiently periodic.
 Even the best algorithm would not be able to detect anomalies in a stochastic system.
 With that, we also proved that such a system is sufficiently deterministic for such applications.
 
+Furthermore, we have demonstrated the existence of a connection between the t-SNE plot and the routine obtained from the elderly care anomaly detection algorithm.
+While t-SNE cannot be directly used in the setting of elderly care, as it's too slow, it could be used to determine if the routine of the household is strong enough before a more complex system is put in place.
 
