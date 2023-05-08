@@ -60,7 +60,7 @@ Throughout this thesis, we will primarily focus on the use of load profiles to r
 \subsection{Feature Set} 
 \label{ssec:feature_set}
 
-To identify the fundamental features of energy consumption in buildings, we need to examine the way that consumption is typically measured
+To identify the fundamental features of energy consumption in buildings, we need to examine the way that consumption is typically measured.
 There are three main features that allow us to determine the amount of energy being used by a user:
 
 \begin{figure}[H]
@@ -150,8 +150,8 @@ While the LP in Figure \ref{fig:daily_power_profile} is a sketch, it still prese
 Alternatively, we can use a histogram-based presentation to present a number of activations feature such as can be seen in Figure \ref{fig:daily_act_profile}.
 Here, we split the given timescale into discrete intervals also known as buckets. 
 These buckets are then filled with activations that had taken place in a given interval. 
-In the case of Figure, \ref{fig:daily_act_profile} timescale is a day and it was split into 12 intervals.
-While this is not real-world data we can again observe consumption patterns throughout the day, with morning and evening peaks. 
+In the case of Figure, \ref{fig:daily_act_profile} timescale is a day, and it was split into 12 intervals.
+While this is not real-world data we can again observe consumption patterns throughout the day with morning and evening peaks. 
 Activation LP is usually used to portray per-appliance data. 
 In order to portray per-building data, we would need to install a power meter for every appliance in the building.
 This LP has the very same use-cases as the power type and can be used in the same fields, but as mentioned, it is less practical for per-building LPs.
@@ -174,7 +174,7 @@ In the case of activation LP, we concatenate activations of each appliance and l
 This enables us to see the contribution of each appliance to the total number of activations in each bucket.
 The per-building per-appliance LPs have the potential to be used in the same fields as the first two types, but practically they are only used in demand response.
 Additional information enables us to understand the data and potentially discover patterns that we otherwise would not be able to.
-The reason behind slow adoption could be that this additional information is not needed.
+%The reason behind slow adoption could be that this additional information is not needed.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -196,9 +196,7 @@ The reason behind slow adoption could be that this additional information is not
 
 \subsubsection{Heatmap LPs}
 
-The last type is a heatmap LP. 
-Heatmap LPs can be further divided into two subtypes.
-
+The last type is a heatmap LP, they can be further divided into two subtypes.
 The first type is LPs which consist of two-time dimensions and use color to display consumption.
 This LP can be used to portray activation as well as power consumption features and could be used to present per-building consumption as well as per-appliance data.
 All this makes them very versatile.
@@ -207,7 +205,6 @@ It is possible to see the consumption pattern throughout each day in a month.
 The brightness presents the activity of the household or an appliance. 
 The brighter the plot, the more activity for that hour of that day of the month.
 One other thing to keep in mind when reading such a profile is that the origin is placed in the upper left corner.
-This originates from image processing standards.
 
 \begin{figure}[H]
 	\centering
@@ -230,7 +227,7 @@ One such sketched example can be seen in Figure \ref{fig:heatmap_all_appl}.
 
 While there are many features and many more types of LPs out there, we have selected the ones that are most commonly used.
 There are also many versions of the LPs above with different timescales, where each has a different use case.
-A more detailed presentation of use cases will also follow in the coming chapters, with a classification in the next section.
+A more detailed presentation of use cases will also follow in the Chapter \ref{chapter4} and detailed classification in Section \ref{sec:table_of_profiles}.
 
 \section{LP Use-cases}
 \label{sec:use_cases_tree}
