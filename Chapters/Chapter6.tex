@@ -692,8 +692,7 @@ in other words, every fifth sample could be a false positive.
         \textbf{including weekend data} & \textbf{test} & \textbf{train} \\
         \hline
         \textbf{mean} & 79.43 & 84.55 \\
-        \textbf{std} & 14.62 & 9.05 \\
-        \textbf{uncertainty} & 2.81 & 1.74 \\
+        \textbf{standard deviation} & 14.62 & 9.05 \\
         \hline
         \end{tabular}
 \end{table}
@@ -713,14 +712,14 @@ We can observe that the mean test routine is 80.42 \%, which is slightly higher 
         \textbf{not-including weekend data} & \textbf{test} & \textbf{train} \\
         \hline
         \textbf{mean} & 80.42 & 85.88 \\
-        \textbf{std} & 15.58 & 8.25 \\
-        \textbf{uncertainty} & 2.99 & 1.58 \\
+        \textbf{standad deviation} & 15.58 & 8.25 \\
         \hline
         \end{tabular}
 \end{table}
 
-The last rows in Tables \ref{tab:ec_res_no_weekend} and \ref{tab:ec_res_weekend} show uncertainty of our measurements,
-which is 2.81 \% for weekend data and 2.99 \% for not including weekend data.
+The last rows in Tables \ref{tab:ec_res_no_weekend} and \ref{tab:ec_res_weekend} show standard deviation of our measurements,
+which is 14.62 \% for weekend data and 15.58 \% for not including weekend data.
+Even through the standard deviation is lower when not including weekend data for train data, it's higher for test data, which was not expected.
 
 When comparing differences between train and test data it can be clearly observed that train data performed better.
 The difference in performance can be attributed to changed user behavior after model was trained.
@@ -879,9 +878,13 @@ that the routine of the user will change.
 When such changes do occur, the algorithms must have methods in place, that enable them to adjust to the new routine.
 The simplest approach would be to use weights, which put more attention on more recent data and less attention on older data.
 
-Future research could explore these limitations and expand on the findings of the current study.
-For example, additional studies could investigate the performance of the algorithm under different conditions or compare it to other methods of anomaly detection. 
-Additionally, further research could examine the potential applications and implications of the method, such as how it could be used to improve the safety or efficiency of dwelling systems.
+Future research in this area offers many open opportunities to improve the current approach. 
+For more accurate results, a method could be used where several synthetic anomalies are modelled and incorporated into existing data. 
+Additionally, the system could be set up in a real world setting where elderly people live on their own. 
+Real anomalies would allow us to Full evaluate the system.
+As mentioned, similar approaches already exist, so it would be essential to compare the accuracy of our method with other publications. 
+Additionally, we could compare our method to more invasive method where the user wears a sensor such as a smart bracelet.
+
 
 \section{Correlation Between t-SNE Plot Euclidean Distance and Routine Rate}
 \label{sec:tsne_ec_corr}
