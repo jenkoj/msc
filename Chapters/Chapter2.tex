@@ -2,26 +2,28 @@
 \label{chapter2}
 
 In the first part of the chapter, we will review the existing work done and show possible use-cases for the load profiles.  
-In the second part of the chapter most commonly used LP features will be presented. 
-Using them, a table of profiles will be built. 
+In the second part, we will present the most commonly used LP features.
+Utilizing these, a table of profiles will be constructed.
 The table will be populated using the publications from the first part of the chapter.
-This will enable us an overview of existing work, and expose possible missing gaps in scientific research.
+This will provide us with an overview of existing work and expose possible gaps in scientific research.
 
 \section{Related Work}
 \label{sec:related_work}
-Work that is related to load profiling can be found in two research verticals. 
-The first one is load profiling and LP models, in most cases study the LP curve of a building or appliance.
-The second vertical is anomaly detection in energy consumption data. There are quite a few connections between the two. 
-For example, if one wants to do anomaly detection, one must first build some kind of "normal consumption profile", in other words, an LP.
+Research related to load profiling can be divided into two verticals.
+The first involves load profiling and LP models, which in most cases study the LP curve of a building or appliance.
+The second vertical focuses on anomaly detection in energy consumption data
+There are quite a few connections between the two. 
+For example, in order to detect anomalies, one must first build some form of "normal consumption profile", or in other words, an LP.
 
 \subsection{Load Profiling}
 
-One of the first publications on load profiling was published by Train et al.\cite{TRAIN19851103}.
+One of the earliest publications on load profiling was published by Train et al.\cite{TRAIN19851103}.
 They used a bottom-up approach using sub-meter data and other socioeconomic and demographic characteristics 
 to create an LP or statistically adjusted engineering (SAE) as they call it.
-They can adjust the curve based on weather, dwelling size, and income. 
+They adjusted the curve based on weather, dwelling size, and income. 
 In the same year, Walker et al.\cite{WALKER1985} published a paper where they used a bottom-up approach with psychological factors to create probability models of when will an individual use an appliance.
-Since then there were two more in 1995. Research picked up the pace in 2005 with 7 publications in 2013 as Figure \ref{fig:Distribution} shows.
+Since then, there were two more related publications in 1995.
+Research picked up the pace in 2005 with 7 publications in 2013 as shown in Figure \ref{fig:Distribution}.
 
 \begin{figure}[H]
 	\centering
@@ -31,62 +33,62 @@ Since then there were two more in 1995. Research picked up the pace in 2005 with
 \end{figure}
 
 Load profiling can be performed in two ways: bottom-up and top-down. 
-A bottom-up approach as authors in \cite{SWAN20091819} state "calculates the individual dwelling energy or electricity consumption and extrapolates these results over a target area or region"
-Whereas with top-down approach as authors in \cite{SWAN20091819} state "uses the total energy or electricity consumption estimates to assign them to the characteristics of the building stock"
-In other more general words, bottom-up uses sub-meter data, Top-down uses aggregated data. 
-In our case, we take a deeper dive into the bottom-up approach.
+A bottom-up approach as authors in \cite{SWAN20091819} describe "calculates the individual dwelling energy or electricity consumption and extrapolates these results over a target area or region"
+Whereas with top-down approach as authors in \cite{SWAN20091819} describe "uses the total energy or electricity consumption estimates to assign them to the characteristics of the building stock"
+In other words, bottom-up uses sub-meter data, Top-down uses aggregated data. 
+In this study, we delve further into the bottom-up approach.
 
-The author in \cite{Review2021} did a comprehensive review on load profiling. The author defined various load-profile application
-subgroups such as demand-side management, planning and control design of energy systems, and residential LPs. The author also 
-grouped modeling techniques as probabilistic models, Markov chains, and Monte Carlo. The author first disclosed the current state of load profiling and issues with past work.
-They made a review of existing load profiling models
-and asses the-state-of-the art. 
-Next, they pointed out future research directions
-and applications of load profiling models. Finally, the author exposes issues that researchers face and addresses possible solutions with conclusions.
+The author in \cite{Review2021} conducted a comprehensive review on load profiling. 
+The author defined various load-profile application subgroups such as demand-side management, planning and control design of energy systems, and residential LPs. 
+They also grouped modeling techniques as probabilistic models, Markov chains, and Monte Carlo. 
+The author first disclosed the current state of load profiling and identified issues with past work.
+They made a review of existing load profiling models and asses the-state-of-the art. 
+Next, they pointed out future research directions and applications of load profiling models. 
+Finally, the author exposed issues that researchers face and addresses possible solutions with conclusions.
 
 Gerbec et al.\cite{GERBEC2005} tried to assign typical LPs to a particular group of consumers based on their activity. 
-To achieve that, they used probabilistic neural networks as a way of classification. Their methodology was tested in real-use scenarios. 
+To achieve that, they used probabilistic neural networks as a classification method.
+Their methodology was tested in real-use scenarios. 
 
-Gao et al.\cite{Gao2018} makes use of the bottom-up method to build a forecasting framework for household
-load profiling, which takes into account the consumption patterns of residents. 
-A model falls into the demand response use case.
+Gao et al.\cite{Gao2018} employed a bottom-up method to build a forecasting framework for household load profiling, which takes into account the consumption patterns of residents. 
+This model falls into the demand response use cas.
 They have developed a "single-day extraction model", designed to select the same days by comparing environmental and household factors, which influence energy consumption.
 By using this approach, they have improved the accuracy of predicting the behavioral patterns of dwellers. 
-Results show that their method successfully modeled daily usage.
+Their results demonstrated that their method successfully modeled daily usage.
 
-Chuan et al.\cite{Chuan2014} uses load profiling to optimize energy consumption distribution during the day.
-This reduces peak usage and alleviates load off the grid. The author used the bottom-up method, that is, using sub-meter data.
-Using this data, they made daily usage analyses on a one-hour basis. Using this information they optimized the daily activation of appliances
-so that peak usage was not as high. Results show that peak shedding was successful. 
+Chuan et al.\cite{Chuan2014} used load profiling to optimize energy consumption distribution during the day.
+This reduces peak usage and alleviates load off the grid. The author employed the bottom-up method, using sub-meter data.
+By analyzing this data on an hourly basis, they optimized the daily activation of appliances to lower peak usage. 
+Their results showed successful peak shedding.
 
-Csoknyai et al.\cite{Csoknyai2019} analyzes energy consumption patterns and intervention strategies in residential buildings.
+Csoknyai et al.\cite{Csoknyai2019} analyzed energy consumption patterns and intervention strategies in residential buildings.
 Authors achieve this using a "serious game approach" with a combination of direct user feedback using smart meters. 
 The application also provides advice, comparisons, savings, reduction goals, and monitoring.
-The approach takes into account almost all dimensions of residential energy usage. Their results show that their serious game was not
-able to induce energy-saving behavior.
+The approach takes into account almost all dimensions of residential energy usage. 
+Their results show that their serious game was not able to induce energy-saving behavior.
 
 Jeong et al.\cite{Jeong2021} used extreme points in the appliance usage curve to cluster usage profiles.
 Usually, the first usage peak is in the morning, and the second one is in the evening. 
 Additionally, they used demographic characteristics that are: region, area, age, salary, etc. to improve the results.
-Using collected data, they clustered profiles. They discovered 6 different usage profiles, 
+Using collected data, they clustered profiles and discovered 6 different usage profiles, 
 where every cluster had a physical meaning such as energy-saving, morning heavy, evening heavy, etc.
 
-Another clustering methodology was proposed by Park et al.\cite{Park2019}, using load image profiles and image processing.
-They represented time series data as an image. The image is a grid of squares where the y-axis contains monthly data with a resolution of one day,
+Another clustering methodology was proposed by Park et al.\cite{Park2019}, using load image profiles and image processing, they represented time series data as an image. 
+The image is a grid of squares where the y-axis contains monthly data with a resolution of one day,
 x-axis contains daily data with a resolution of one hour. Grid is color filled with an algorithm that authors developed,
 where red means more activity and blue less. Using digital image filters they transformed the type-1 image to type-2 and from there
 used a threshold to obtain type-3. Using that information they clustered data based on images similarly. They used three different 
 clustering methods: k-means, FCM, and EM algorithm. Using the Davies-Bouldin index, they were able to prove that image-based clustering performs better than non-image.
 
 Abreu et al.\cite{Joana2012} clustered different LPs using electricity consumption data and surveys using data from residential homes.
-They used PCA and k-means resulting in 5 clusters. Similar to other load profiling papers. 
+They used PCA and k-means resulting in 5 clusters, a result similar to other load profiling papers. 
 
-Whereas most of the above-mentioned papers focused on aggregated consumption of building to build an LP,
+Whereas most of the above-mentioned papers focused on aggregated consumption of a building to construct an LP,
 authors \cite{Issi2018} focused on appliance-level load profiling.
 Their main contribution was to create a realistic per-appliance LP.
 They developed a wireless measurement system with smart plugs that enabled them to obtain power signatures for each appliance. 
-They evaluated the data and based on observations they determined working cycles for each appliance.
-Furthermore, they concluded that 15 \% of consumed power can be shifted, where they took tariffs into account. 
+After evaluating the data and observing appliance usage, they determined the working cycles for each appliance.
+Furthermore, they concluded that 15 \% of the consumed power could be shifted, taking tariffs into account.
 
 \subsection{Anomaly Detection in Building Energy Consumption Data}
 
