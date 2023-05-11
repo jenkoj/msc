@@ -692,16 +692,32 @@ in other words, every fifth sample could be a false positive.
         \textbf{including weekend data} & \textbf{test} & \textbf{train} \\
         \hline
         \textbf{mean} & 79.43 & 84.55 \\
+        \textbf{median} & 82.58 & 84.40 \\
         \textbf{standard deviation} & 14.62 & 9.05 \\
         \hline
         \end{tabular}
 \end{table}
 
-If we assume that average building in our dataset has altered routine trough weekend as can be seen in \ref{fig:ec_week},
-and assume that average elder has roughly the same routine throughout the week we can remove the weekend data 
+To understand the results a bit better, Figure \ref{ec:ec_histogram} presents the distribution of the samples.
+It is possible to observe that the distribution is not normal as there is no bell-shaped pattern.
+Such distribution makes it hard to statistically analyze the results and makes it hard to draw meaningful conclusions.
+However, this issue can be addressed by visually analyzing and interpreting the data.
+In this case, is possible to see that a large portion (74 \%) of the samples fall in the interval above the mean, more specifically above the 80 \% routine rate.
+This observation is important, as it adds another dimension to our understanding of the results.
+
+
+\begin{figure}[H]
+    \centering
+    \caption{Histogram of results overlayed with a probability density function}
+    \includegraphics[width=0.8\textwidth]{Figures/EC/ec_histogram.pdf}
+    \label{fig:ec_histogram}
+\end{figure}
+
+If we assume that the average building in our dataset has altered routine through the weekend as can be seen in \ref{fig:ec_week},
+and assume that the average elder has roughly the same routine throughout the week we can remove the weekend data 
 to obtain more relevant results.
 Table \ref{tab:ec_res_no_weekend}, shows results after removing weekend data.
-We can observe that the mean test routine is 80.42 \%, which is slightly higher compared to results from previous Table \ref{tab:ec_res_weekend}.
+We can observe that the mean test routine is 80.42 \%, which is slightly higher compared to results from the previous Table \ref{tab:ec_res_weekend}.
 
 \begin{table}[htbp]
     \centering
@@ -712,18 +728,34 @@ We can observe that the mean test routine is 80.42 \%, which is slightly higher 
         \textbf{not-including weekend data} & \textbf{test} & \textbf{train} \\
         \hline
         \textbf{mean} & 80.42 & 85.88 \\
+        \textbf{median} & 84.15 & 86.35 \\
         \textbf{standad deviation} & 15.58 & 8.25 \\
         \hline
         \end{tabular}
 \end{table}
 
+
 The last rows in Tables \ref{tab:ec_res_no_weekend} and \ref{tab:ec_res_weekend} show standard deviation of our measurements,
 which is 14.62 \% for weekend data and 15.58 \% for not including weekend data.
-Even through the standard deviation is lower when not including weekend data for train data, it's higher for test data, which was not expected.
+Even though the standard deviation is lower when not including weekend data for train data, it's higher for test data, which was not expected.
+
+The reason can be seen in Figures \ref{fig:ec_histogram} and \ref{fig:ec_histogram_week_only},
+where we have already observed the non-normal distribution, and mentioned that statistical methods should be analyzed with caution.
+
+Visual analysis of Figure \ref{fig:ec_histogram_week_only} reveals that the general distribution did not change as compared to Figure \ref{fig:ec_histogram}.
+However, there are fewer samples above the 80 \% line and fewer samples with very low routine.
+This could mean, that not including weekend data may improve the overall score by aiding the worst performers, but it may also lower the score of the best performers.
+
+\begin{figure}[H]
+    \centering
+    \caption{Histogram of results not including weekend data overlayed with a probability density function}
+    \includegraphics[width=0.8\textwidth]{Figures/EC/ec_histogram_week_only.pdf}
+    \label{fig:ec_histogram_week_only}
+\end{figure}
 
 When comparing differences between train and test data it can be clearly observed that train data performed better.
-The difference in performance can be attributed to changed user behavior after model was trained.
-It would be beneficial if we managed to update the model over time, to include the small changes in users routine.
+The difference in performance can be attributed to changed user behavior after the model was trained.
+It would be beneficial if we managed to update the model over time, to include the small changes in users' routines.
 This will be addressed in the next Section \ref{sec:iter_learning_system}.
 
 \section{Discussion}
