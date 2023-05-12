@@ -3,33 +3,33 @@
 \chapter{Methodology} % Main chapter title
 \label{chapter3} 
 
-The following chapter includes methodological procedures that are common for all chapters.
+The following chapter includes the methodological procedures that are common for all chapters.
 More detailed methodological procedures will be described in each chapter separately. 
 
 \section{Data}
 \label{ssec:data}
 We already briefly presented the datasets in the first chapter in Section \ref{sec:data}.
-Here, we will do an in-depth presentation of the datasets and present how we processed and cleaned the data. 
+Here, we will provide an in-depth presentation of the datasets, describing we processed and cleaned the data. 
 
 \subsection{Non-Intrusive Load Monitoring (NILM)}
 
 While the NILM method was described in Chapter \ref{chapter2}, we will reintroduce it as part of the methodology.
 NILM is a method that enables us to disaggregate consumption patterns of the whole building from a single meter.
-The conventional method would be to meter installed for each consumer.
-An alternative would be NILM. With this method, one meter can be used to find out which appliances consume the most energy.
+The conventional method would be to install a meter for each consumer.
+An alternative would be NILM. 
+With this method, one meter can be used to find out which appliances consume the most energy.
 
-The data used here was collected for means of research we did on Non-Intrusive load Monitoring (NILM) in publication \cite{Blaz2022}.
-Where we used this data to perform a classification of appliances using deep learning.
-Using Gramian angular fields (GAF) we transform time series into images.
-We used multiple images in series to form a stack, a video.
-Using deep learning architecture utilizing LSTM that used a stack of images as input, we were able to classify appliances with an F1 score of 80 \%.
-Such techniques could be used to recognize appliances in unlabeled datasets, or help find possible mislabeling in existing datasets.
+The data used here was collected for the purpose we did on Non-Intrusive load Monitoring (NILM) in publication \cite{Blaz2022}.
+We utilized this data to perform a classification of appliances using deep learning.
+By transforming time series data into images using Gramian Angular Fields (GAF),
+we created a stack of multiple images forming a video.
+Using deep learning architecture, specifically LSTM that used a stack of images as input, we were able to classify appliances with an F1 score of 80 \%.
+Such techniques can be applied to identify appliances in unlabeled datasets or to detect potential mislabeling in existing datasets.
 
 \subsection{Dataset Selection}
 
 The Table \ref{tab:other_datasets} was published on the NILMTK \cite{nilmtk} wiki page. 
-NILMTK is a tool developed by authors in paper \cite{nilmtk}.
-It intends to make the development of NILM algorithms easier by standardizing a format in which building energy consumption datasets are stored. 
+NILMTK is a tool developed by authors in paper \cite{nilmtk}, aiming to make the development of NILM algorithms easier by standardizing a format in which building energy consumption datasets are stored. 
 They also developed converters to convert existing datasets into a universal format.
 
 This enables engineers to simply load and process multiple datasets.
@@ -95,18 +95,21 @@ While the Dataport dataset seems to be the best fit and of the best quality, it 
 After datasets were obtained and converted they were ready to be processed.
 We decided to slice the data into hourly slices so that it will be easier to find missing data and build LPs.
 
-Firstly we resampled the time series data  1/6 Hz. 
-This had to be done since datasets were sampled at different frequencies.
+Firstly we resampled the time series data to 1/6 Hz. 
+This had to be done because datasets were sampled at different frequencies.
 A frequency of 1/6 Hz is commonly used since it has a good ratio between resource usage and NILM algorithm performance.
-Resampling was done using Pandas resample. 
+Resampling was done using the Pandas resample function. 
 We used a forward fill parameter with a limit of 5.
 This means that in case of missing data, we will fill in no more than 5 samples with the last known value.
+
 Secondly, we sliced the time series data into hourly slices. 
-One sample every 6 seconds means, there were roughly 60 samples in every slice.
+One sample every 6 seconds means, there were approximately 60 samples in every slice.
+
 Thirdly, we removed slices with missing data.
 This was done for all slices where there was more than 20 \% of data missing.
-In cases where less than 20 \% of data were missing, we forward-filled it with the last known value.
+In cases where less than 20 \% of data was missing, we forward-filled it with the last known value.
 In the worst case, we forward filled 12 samples. 
+
 Finally, resampled and cleaned data was stored in the .hdf file.
 % \begin{verbatim}
 %    /dataset/appliance/building/cleaned_dataset
@@ -117,17 +120,13 @@ Finally, resampled and cleaned data was stored in the .hdf file.
 
 \subsection{Splitting and Evaluation} \label{ssec:ds_eval}
 
-In some cases, datasets had to be split, so that the algorithm we developed in Chapter \ref{chapter6}, may be empirically evaluated. 
+In some cases, datasets had to be split to allow for the empirical evaluation of the algorithm developed in Chapter \ref{chapter6}.
 The data was split into train and test sets, where 80 \% of the data was used for training and 20 \% percent of the data for testing.
 The data was split based on the number of samples, so in some cases where there is a lot of missing data, the time window of test data might be longer, although it contains only 20 \% of the samples.
 
 \subsection{Dataset analysis}
-Table \ref{tab:dataset_analysis} presents all 5 datasets that we have made use of.
-The second column shows the number of samples for each dataset.
-Numbers can be a bit deceptive when it comes to the actual amount since data was resampled.
-To confront this, a third column was created.
-Here we present the actual number of samples,
-that is number that was obtained after resampling.
+Table \ref{tab:dataset_analysis} presents the five datasets we utilized.
+The second column displays the number of samples for each dataset after resampling.
 We also divided the number of samples by $10^6$, to make the column comprehensible.
 
 % \begin{table}[H]
@@ -165,11 +164,10 @@ We also divided the number of samples by $10^6$, to make the column comprehensib
 
 The figures below show where time splits between train and test data were done.
 At the same time, we can also observe the health of each dataset.
-By healthy dataset, we presume a dataset that has a long uninterrupted timeline with many buildings.
-
+By healthy dataset, we consider a dataset that has a long uninterrupted timeline with many buildings.
 
 \subsubsection{REFIT}
-The REFIT \cite{REFIT} dataset included data for more than 15 buildings, as can be seen in the Figure below.
+The REFIT \cite{REFIT} dataset included data for more than 15 buildings, as can be seen in Figure \ref{fig:refit_timeline} below.
 The dataset in general is of the highest quality since it is the longest with the least missing data.
 This means this dataset should give the most relevant results.
 \begin{figure}[H]
@@ -229,11 +227,12 @@ Together, REFIT contains data for 23 different appliances from 20 homes.
 
 \subsubsection{UK-DALE} 
 
-Through the UK-DALE \cite{UKDALE} dataset is of similar size, most of the data is from building 1.
-In general, it includes 5 years of data, but only for some appliances, where many appliances are rarely used.
-When taking all of this into account, there were too many issues with building 1, and it was simply ignored.
-Another issue that can be seen in Figure \ref{fig:ukdale_timeline} is that there is not enough data for 
-building 3. The test includes only a week of data, which is not enough for representative results, therefore it was ignored.
+Although the UK-DALE \cite{UKDALE} dataset is of similar size, most of the data is from building 1.
+In general, it includes 5 years of data, but only for some appliances, many of them are rarely used.
+Considering these factors, there were numerous issues with building 1, leading to its exclusion.
+
+Another issue that can be seen in Figure \ref{fig:ukdale_timeline} is that there is not enough data for building 3. 
+The test includes only a week of data, which is not enough for representative results, therefore it was excluded.
 The rest of the buildings seem healthy.
 
 \begin{figure}[H]
@@ -304,9 +303,8 @@ meaning that there is 80 \% in the train bar, due to missing data the second bar
 	\label{fig:eco_timeline}
 \end{figure}
 
-Table \ref{tab:eco_table} shows that there were a lot of samples for the ECO dataset.
-This number was reduced by a factor of 6 after resampling was done.
-
+ECO was down-sampled by a factor of 6, which drastically reduced the number of samples, as can be seen in Table \ref{tab:eco_table} 
+While the dataset is short, due to resampling, there is significantly less missing data, and in turn, it is of higher quality."
 % \begin{table}[H]
 %     \centering
 %     \begin{tabular}{|l|r|r|r|}
@@ -352,19 +350,19 @@ This number was reduced by a factor of 6 after resampling was done.
 
 \section{Activation Detection}
 
-How appliance activations are extracted was already mentioned in Subsection \ref{ssec:feature_set}.
-There we said, the activation occurs when consumption exceeds $P_{thr}$.
-This is portrayed in Figure \ref{fig:sig_proc_fig} in the same subsection.
+How appliance activations are extracted was already mentioned in Section \ref{ssec:feature_set}.
+There we stated, the activation occurs when consumption exceeds $P_{thr}$.
+This is portrayed in Figure \ref{fig:sig_proc_fig} in the same Section.
 
 This threshold was selected as the standard value of 10 W.
 This value is used as a standard threshold in NILMTK \cite{nilmtk}.
 
-This hard-set value is an issue for appliances that consume small amounts of energy,
-but still, show interesting usage patterns.
+However, this hard-set value is an issue for appliances that consume small amounts of energy,
+yet still exhibit interesting usage patterns.
 One such example would be a mobile phone charger or broadband router.
-Issues could occur even with larger consumers such as smart TVs, that could consume more than 10W even when they are not operating.
+Moreover, issues could occur even with some loads such as smart TVs, which may consume more than 10W even when they are not operating.
 
-In order to check that this was not an issue we came up with a test.
+To verify that this was not an issue we came up with a test.
 We created a histogram of power values, with a resolution of 10 W, where one such example can be seen in Figure \ref{fig:freq_pthr}.
 For appliances that are mostly off, the first bucket should be the most populated.
 This was true for the majority of appliances and with that, they passed the test.
@@ -381,21 +379,22 @@ The new threshold was manually set between the first and the second frequency pe
 When we are observing Figure \ref{fig:freq_pthr}, we have to keep in mind that the frequency scale is logarithmic.
 Another thing to note is, that Figure \ref{fig:freq_pthr} is also an LP, that we mention expanded table of LPs in Appendix \ref{AppendixB}.
 This LP is useful for the detection operation modes.
-In this case, we can see that this Toaster has three operating modes, where each peak is a unique mode.
-One at 3 kW, the second at 1 kW and the third at 0.7 kW.
-Setting thresholds around these peaks could enable us to build 3 different LPs, where each one would present a different usage pattern.
+In this case, we can see that the toaster has three operating modes, where each peak is a unique mode.
+One peak is at 3 kW, the second at 1 kW, and the third at 0.7 kW.
+By setting thresholds around these peaks, we could create three different LPs, each presenting a distinct usage pattern.
 
 \section{Infrastructure and Software Used}
 
-To process the data and to obtain the results the environment and virtual machines from Google Colab \cite{colab} were used.
+To process the data and to obtain the results, we utilized the environment and virtual machines provided by Google Colab \cite{colab}.
 They offer access to Google GPU-accelerated compute machines with 12 GB of RAM. 
-Colab also offers access to Drive cloud storage, where the dataset and results were stored.
-While running the experiments, we made use of Drives 100 TB pooled cloud storage, which is available to students of the University of Ljubljana. 
+Furthermore, Colab provides access to Drive cloud storage, where the dataset and results were stored.
+While running the experiments, we made use of Drives pooled cloud storage, which is available to students of the University of Ljubljana. 
+
 For development and version control, GitHub was used. 
 
-Within the Colab which uses a Jupyter \cite{jupyter} environment at its core, various python libraries were used.
+Within the Colab which employs a Jupyter \cite{jupyter} environment at its core, we made use of various Python libraries.
 To store and read the datasets in hdf5 format we used h5py  \cite{hdf5} and Pickle  \cite{pickle}.
-To load datasets into RAM and then handle them, the pandas  \cite{pandas} library was used.
+The pandas \cite{pandas} library was employed to load datasets into RAM and handle them. 
 For handling the large matrices and calculating we used NumPy  \cite{numpy}.
-To present the data with graphs we have used Matplotlib  \cite{matplotlib} and to present data with heatmap Seaborn  \cite{seaborn}.
+To visualize the results we used Matplotlib \cite{matplotlib} and Seaborn \cite{seaborn}.
 For easier implementation, such as of the t-SNE, a Scikit  \cite{scikit} and SciPy  \cite{scipy} libraries were used.
