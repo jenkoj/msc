@@ -38,30 +38,31 @@ Before we fully disclose our contributions, let us first have an overview of wha
 
 \section{Definition and Types of LPs}
 \label{sec:LP_types}
-Author Proedrou \cite{Review2021} defines terms as following:
+Author Proedrou \cite{Review2021} defines terms as follows:
 
 % definiton
 % usage
 % analysis
 
 \begin{itemize}
-	\item Load: the electricity that all the electricity-powered devices in the household consume in unit time.
+	\item Load: the electricity that all electricity-powered devices in the household consume in unit time.
 	\item Profile: a graph representing the significant features of the electricity load over time.
 \end{itemize}
 
 In other words, LPs are a graphical presentation of the consumption features of a building over time. 
 Here, features could be anything that presents consumption. 
-In most cases that is power.
+In most cases that is electrical power, measured in kilowatts.
 The time range used to present the consumption could be anything from daily, weekly, monthly to yearly.
 
 One thing to mention here is, that although the buildings were mostly consuming energy in the past, nowadays, they also produce it.
-While this may slightly alter the definition of LPs, it also makes them more useful, as they can now be used to depict both energy consumption and production.
-Throughout this thesis, we will primarily focus on the use of load profiles to represent electricity consumption, but it's important to consider their potential for presenting energy production as well.
+While this may slightly alter the definition of LPs, it has also made them more useful, as they can now be used to depict both energy consumption and production.
+Throughout this thesis, we primarily focus on the use of load profiles to represent electricity consumption, but it's important to consider their potential for presenting energy production as well.
+
 \subsection{Feature Set} 
 \label{ssec:feature_set}
 
 To identify the fundamental features of energy consumption in buildings, we need to examine the way that consumption is typically measured.
-There are three main features that allow us to determine the amount of energy being used by a user:
+Three main features allow us to determine the amount of energy being used by a user:
 
 \begin{figure}[H]
   \Tree[.base\ features [.power ]
@@ -72,7 +73,7 @@ There are three main features that allow us to determine the amount of energy be
 
 If we translate these features to the time domain and observe them over a specified amount of time, new features emerge. 
 The most notable example is the observation of electrical power over one hour.
-The result is energy $E$, and it is one of the most common ways used to bill a customer for his power consumption.
+This results in the amount of energy consumed often referred to as energy $E$, which is one of the most common ways used to bill a customer for his power consumption.
 
 We can also extract features such as the number of activations or time of operation for each activation.
 This can be done using sensors to detect activity or even extract this from power consumption data.
@@ -95,12 +96,12 @@ NILM algorithms enable us to detect consumption patterns of multiple appliances 
 	\label{fig:sig_proc_fig}
 \end{figure}
 
-As we can see in Figure \ref{fig:sig_proc_fig} all three-time domain features can be extracted from the graphical presentation. 
-Energy $E$ is equal to the area under the graphical presentation or in other words integral of power over time. 
-$N_{act}$ can be measured based on the number of times the power value exceeded some pre-defined threshold $P_{thr}$. 
-The $t_{oper}$ is the time between on and off events, where we use the same threshold as with $N_{act}$.
+As we can see in Figure \ref{fig:sig_proc_fig} all three time-domain features can be extracted from the graphical presentation.
+The amount of energy consumed, denoted as $E$, is equal to the area under the graphical presentation or in other words integral of power over time. 
+The number of activations, denoted as $N_{act}$, can be measured based on the number of times the power value exceeded some pre-defined threshold $P_{thr}$. 
+The time between on and off events is denoted as $t_{oper}$, where we use the same threshold as with $N_{act}$.
 While there are other features, such as time between activations, or total operational time that could be
-extracted, these were not commonly used in related work.
+extracted, these are not commonly used in related work.
 
 % \begin{figure}[H]
 % \Tree[.frequency\ domain\ features [.Operation\ Modes ]]
@@ -134,9 +135,9 @@ extracted, these were not commonly used in related work.
 Combinations of the features result in many possible types of LPs that enable us to present the data.
 The most commonly used type of LP is average power consumption over some time.
 One such example can be seen in Figure \ref{fig:daily_power_profile}. 
-Here, we used daily timescale, since it is so commonly used it is also known as the standard daily LP. 
-This LP can be used to portray per-building as well as per-appliance data.
-Its use is one of the most versatile, and it is used in fields such as demand response, anomaly detection and zero-energy buildings.
+Here, we used daily timescale, since it is so commonly used, it is also known as the standard daily LP. 
+It can be used to portray per-building as well as per-appliance data.
+It is one of the most versatile LPs, and it is used in fields such as demand response, anomaly detection and zero-energy buildings.
 While the LP in Figure \ref{fig:daily_power_profile} is a sketch, it still presents consumption trends in morning and evening peaks.
 % ad usage and then analysis
 \begin{figure}[H]
@@ -151,7 +152,7 @@ Alternatively, we can use a histogram-based presentation to present a number of 
 Here, we split the given timescale into discrete intervals also known as buckets. 
 These buckets are then filled with activations that had taken place in a given interval. 
 In the case of Figure, \ref{fig:daily_act_profile} timescale is a day, and it was split into 12 intervals.
-While this is not real-world data we can again observe consumption patterns throughout the day with morning and evening peaks. 
+While this is not real-world data, we can still observe consumption patterns throughout the day with morning and evening peaks. 
 Activation LP is usually used to portray per-appliance data. 
 In order to portray per-building data, we would need to install a power meter for every appliance in the building.
 This LP has the very same use-cases as the power type and can be used in the same fields, but as mentioned, it is less practical for per-building LPs.
@@ -167,13 +168,12 @@ The downside is that we have to invest additional time to process power data int
 \end{figure}
 
 \subsubsection{Per-Building Per-Appliance LP}
-The next two types of LP are known as per-building per-appliance LPs.
-They can be used to present whole building usage as well as per-appliance consumption. 
-Two such examples can be seen in Figure \ref{fig:daily_act_m_profile} and \ref{fig:daily_power_m_profile}.
+The next two types of LP, known as per-building per-appliance LPs, can be used to present both whole-building usage and per-appliance consumption.
+Figure \ref{fig:daily_act_m_profile} and \ref{fig:daily_power_m_profile} provide two such examples.
 In the case of activation LP, we concatenate activations of each appliance and label them accordingly.
-This enables us to see the contribution of each appliance to the total number of activations in each bucket.
-The per-building per-appliance LPs have the potential to be used in the same fields as the first two types, but practically they are only used in demand response.
-Additional information enables us to understand the data and potentially discover patterns that we otherwise would not be able to.
+This approach enables us to see the contribution of each appliance to the total number of activations in each bucket.
+The per-building per-appliance LPs hold the potential to be used in the same fields as the first two types, but practically they are primarily used in demand response.
+This additional information enables us to better understand the data and potentially discover patterns that we otherwise would not be able to.
 %The reason behind slow adoption could be that this additional information is not needed.
 
 \begin{figure}[H]
@@ -198,13 +198,13 @@ Additional information enables us to understand the data and potentially discove
 
 The last type is a heatmap LP, they can be further divided into two subtypes.
 The first type is LPs which consist of two-time dimensions and use color to display consumption.
-This LP can be used to portray activation as well as power consumption features and could be used to present per-building consumption as well as per-appliance data.
+Such LP can be used to depict both activation and power consumption features and can present per-building consumption as well as per-appliance data.
 All this makes them very versatile.
-One such example can be seen in Figure \ref{fig:heatmap_2dtime}. 
-It is possible to see the consumption pattern throughout each day in a month.
-The brightness presents the activity of the household or an appliance. 
+Figure \ref{fig:heatmap_2dtime} provides an example of this subtype.
+This format allows us to see the consumption pattern throughout each day in a month.
+The brightness represents the activity of the household or a particular appliance.
 The brighter the plot, the more activity for that hour of that day of the month.
-One other thing to keep in mind when reading such a profile is that the origin is placed in the upper left corner.
+One thing to keep in mind when reading such a profile is that the origin is placed in the upper left corner.
 
 \begin{figure}[H]
 	\centering
@@ -213,10 +213,10 @@ One other thing to keep in mind when reading such a profile is that the origin i
 	\label{fig:heatmap_2dtime}
 \end{figure}
 
-The second subtype is essentially Per-building Per-appliance LP but portrayed differently.
-Instead of plotting consumption data as the sum of contributions of each appliance, we plot their consumption by side.
-These LPs have the same uses as Per-building Per-appliance LPs since they are essentially the same.
-One such sketched example can be seen in Figure \ref{fig:heatmap_all_appl}.
+The second subtype is essentially Per-building Per-appliance LP, just portrayed differently.
+Instead of plotting consumption data as the sum of contributions from each appliance, we present their consumption side by side.
+These LPs share the same uses as Per-building Per-appliance LPs, given their fundamental similarities.
+Figure \ref{fig:heatmap_all_appl} provides a sketched example of this subtype.
 
 \begin{figure}[H]
 	\centering
@@ -227,7 +227,7 @@ One such sketched example can be seen in Figure \ref{fig:heatmap_all_appl}.
 
 While there are many features and many more types of LPs out there, we have selected the ones that are most commonly used.
 There are also many versions of the LPs above with different timescales, where each has a different use case.
-A more detailed presentation of use cases will also follow in the Chapter \ref{chapter4} and detailed classification in Section \ref{sec:table_of_profiles}.
+A more comprehensive presentation of these use cases will follow in Chapter \ref{chapter4}, with a detailed classification provided in Section \ref{sec:table_of_profiles}.
 
 \section{LP Use-cases}
 \label{sec:use_cases_tree}
@@ -245,82 +245,82 @@ A more detailed presentation of use cases will also follow in the Chapter \ref{c
 \end{figure}
 
 The load profiling method has a lot of different use cases across different fields.
-In our case, we will split use cases into three classes.
+In our study, we will categorize these use cases into three classes.
 
-The first class is grid management.
-For example, it can be used to save energy by studying users' usage patterns and returning feedback, with suggestions on how to improve consumption.
-In cases where buildings have grid batteries and PV installed, the same feedback could be used to minimize the amount of energy being pulled from the grid.
+The first class relates to grid management.
+For instance, it can be used to save energy by studying users' usage patterns and returning feedback, with suggestions on how to optimize consumption.
+In scenarios where buildings have grid batteries and PV installed, the same feedback could be used to minimize the amount of energy being drawn from the grid.
 These are so-called zero-energy buildings (ZEB).
-Electrical energy providers could use demand response programs in combination with the LPs to optimize the management of the grid, with minimal impact on users' daily lives.
+Electrical energy providers could leverage demand response programs in combination with the LPs to optimize the management of the grid, with minimal impact on users' daily routines.
 
-The second class is anomaly detection.
+The second class involves anomaly detection.
 The LPs could be used to help the elderly in case of an accident or even help prevent one. 
 They could be used to detect all kinds of early malfunctions in the operation of appliances, which would reduce service costs and save energy.
 
-The last class is other, where occupancy detection, development feedback and energy stealing are all cases where LPs could be used. 
+The final class, labeled 'other', encompasses occupancy detection, development feedback, and energy theft detection as potential use cases where LPs could be applied.
 
-A more detailed description of each use-case with publications will be addressed in the next Chapter in Section \ref{sec:use-cases}
+A more detailed description of each use-case with publications will be addressed in the following chapter, specifically in Section \ref{sec:use-cases}.
 
 \section{Data}
 \label{sec:data}
 
 To construct the LP, we need time-series data that contains information about energy consumption.
 While LPs are generally used to analyze the usage of electrical energy they could be applied in many areas.
-For example, we could use the LPs to analyze any other utilities such as gas, oil or even tap water. 
-Furthermore, while this thesis focuses on analyzing the consumption of electrical energy, LPs can be used to analyze production as well.
-Finally, while we focused on optimizing residential energy consumption patterns, the same approach can be applied in industrial or office settings.
+For example, LPs could be used to analyze any other utilities such as gas, oil or even tap water. 
+Furthermore, while this thesis focuses on analyzing the consumption of electrical energy, LPs can be applied to analyze production.
+Finally, while we focused on optimizing residential energy consumption patterns, the same approach can be applied extended to industrial or office settings.
 
-In the thesis we used the following five datasets:
+In the thesis, we used the following five datasets:
  UK-DALE \cite{UKDALE}, REFIT \cite{REFIT}, ECO \cite{ECO}, REDD \cite{REDD}, and iAWE \cite{iAWE}.
 All datasets measured electrical energy consumption in residential buildings.
 They include main smart meter data, as well as sub-meter data for each appliance in a dwelling. 
 While some datasets offered versions with high frequency with sampling rates up to 40 kHz,
 we focused on the low-frequency variations with sampling rates at around 1 Hz.
 
-The datasets used had frequencies ranging from 1 Hz for the ECO dataset, down to 1/8 Hz for the REFIT dataset.
-For datasets to be compatible, we resampled all datasets to 1/6 Hz.
-The missing samples were forward filled with a limit of 5, meaning if up to 30 s of data was missing, its value was set to the last known value, otherwise, it was left missing.
-For easier handling datasets will be sliced into 1-hour intervals.
-The exact methodology will be presented in the methodology Chapter \ref{chapter3}. 
+The utilized datasets had frequencies ranging from 1 Hz for the ECO dataset, down to 1/8 Hz for the REFIT dataset.
+To ensure compatibility, we resampled all datasets to 1/6 Hz.
+The missing samples were forward-filled with a limit of 5, meaning that if up to 30 s of data was missing, its value was set to the last known value; otherwise, it was left missing.
+For easier management, datasets will be divided into 1-hour intervals.
+The exact methodology will be presented in Chapter \ref{chapter3} of the methodology section.
 
 \section{Contributions}
 \label{sec:contributions} 
 
-The main goal of the master's thesis is to propose suitable LPs for supporting residential building consumption optimization and elderly care management.
+The primary objective of the master's thesis is to propose suitable LPs for supporting residential building consumption optimization and elderly care management.
 To achieve this goal, we propose the following steps, where each step is a contribution to the scientific community.
 
 \begin{enumerate}
 	\item[1.] Surveying the state-of-the-art LPs (Chapter \ref{chapter2})
 \end{enumerate}
 
-The first contribution is provided by taking a look at existing research and use-cases. 
-Using the publications, we constructed a table of LPs.
-We are the first to analyze LPs from this aspect. 
-The analysis provides an overview of related work by mapping it to a table.
-The table reveals LPs that were not yet utilized.
-Using use cases we try to determine in what field each LP could be used.
+The first contribution involves a review of existing research and use cases.
+Drawing from various publications, we construct a comprehensive table of LPs. 
+We are the first to analyze LPs from this perspective, which provides an overview of related work by mapping it onto a table.
+This table reveals LPs that have not yet been utilized.
+We then examine use cases to determine the potential application fields for each LP.
 
 \begin{enumerate}
 	\item[2.] Development of multidimensional activation LPs (Chapter \ref{chapter4})
 \end{enumerate}
-Empty gaps in research motivated us to pursue the next contribution, 
-the development of multidimensional activation LPs. 
-Here we offer an in-depth look into the LPs, by presenting the profiles and showing how they present the consumption patterns.
-Each LP presents a different pattern and therefore has a different use case. 
+
+Empty gaps in research motivated us to pursue our next contribution: the development of multidimensional activation LPs. 
+Here we offer an in-depth look into both existing and newly proposed LPs, showcasing how they represent consumption patterns.
+We also apply these LPs and discuss potential scenarios and use cases for their application. 
+Each LP reveals a different pattern and, therefore, serves a different use case. 
 
 \begin{enumerate}
 	\item[3.] Visual analysis of activation LP's (Chapter \ref{chapter5})
 \end{enumerate}
-The third contribution refers to exploratory data analysis (EDA) through visualizations.
-Here we leverage proposed and analyzed LPs and t-SNE dimensionality reduction algorithm to understand how data is related.
+
+The third contribution involves exploratory data analysis (EDA) through visualizations.
+Here, we leverage the LPs that we have proposed and analyzed, using the t-SNE dimensionality reduction algorithm to understand the relationships within the data.
 
 \begin{enumerate}
 	\item[4.] Propose a new anomaly detection method for elderly care (Chapter \ref{chapter6})
 \end{enumerate}
 
-This newly obtained knowledge should help us provide the last contribution.
-In this Chapter, we utilize LPs that haven't been considered before.
-We design and construct elderly care assisted living system by utilizing one of the proposed LPs.
-The system can detect anomalies in the daily routine of an elder.
-In case the anomaly is detected, the caregiver is notified to check on the caretaker. 
-It is simple, efficient and ready for real-world use.
+This newly obtained knowledge should help us provide the final contribution, where we utilize LPs that have not been previously considered.
+We design and construct an assisted living system for elderly care by utilizing one of the proposed LPs.
+The system can detect anomalies in the daily routine of an elderly individual.
+Should an anomaly is detected, the caregiver is notified to check on the individual. 
+This system is simple, efficient, and ready for real-world application.

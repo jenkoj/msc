@@ -4,38 +4,38 @@
 
 \section{Introduction}
 
-LPs can be used to understand the consumption patterns of appliances or buildings.
+LPs can be used to understand the consumption patterns of appliances or buildings. 
 The one thing they do not offer is a comparison between activation patterns.
-To achieve this we can utilize various dimensionality reduction algorithms. 
-In the process of dimensionality reduction, these algorithms map similar LPs closer together compared to dissimilar LPs.
-This enables us to have an insight into similar activation patterns across various entities.
+To achieve this, we can utilize various dimensionality reduction algorithms. 
+In the process of dimensionality reduction, these algorithms map similar LPs closer together compared to dissimilar LPs. 
+This enables us to have an insight into similar activation patterns across various entities. 
 It enables us to visualize and compare LPs of buildings and appliances, to find the differences and similarities in their activation patterns.
 
 In this chapter, we will explore the use of t-distributed stochastic neighbor embedding (t-SNE) for Exploratory Data Analysis (EDA) on LPs.
 The t-SNE is a non-linear dimensionality reduction algorithm, used to visualize high dimensional data in usually two or three dimensions.
-We will delve into the details of what t-SNE is and how can it be applied to the LPs.
+We will delve into the details of what t-SNE is and how it can be applied to the LPs.
 
-To achieve this goal, we will first provide a brief overview of t-SNE and its application to LPs.
-Next, we will describe our methodology for using t-SNE to analyze LPs and compare activation patterns.
+To achieve this goal, we will first provide a brief overview of t-SNE and its application to LPs. 
+Next, we will describe our methodology for using t-SNE to analyze LPs and compare activation patterns. 
 Finally, we will present the results of our analysis and discuss their implications for understanding energy consumption patterns.
 
-The clustering of similar LPs was researched many times before, as it was described in related work Chapter \ref{chapter2}.
-We will be working with dimensionality reduction, where clusters are usually formed as a side product.
-The following clustering publications are worth mentioning.
-We have seen that authors \cite{GERBEC2005}, \cite{Jeong2021} and \cite{Joana2012} have clustered regular one-dimensional LPs, as well as with 2D image-based load profiling in publications published by authors \cite{Park2019}. 
+The clustering of similar LPs has been researched many times before, as it was described in related work Chapter \ref{chapter2}. 
+We will be working with dimensionality reduction, where clusters are usually formed as a side product. 
+The following clustering publications are worth mentioning. 
+We have seen that authors \cite{GERBEC2005}, \cite{Jeong2021} and \cite{Joana2012} have clustered regular one-dimensional LPs, as well as with 2D image-based load profiling in publications published by authors \cite{Park2019}.
 
 The publication by authors \cite{sne_energ} compared various dimensionality reduction techniques for clustering and visualization of LPs.
 Their goal was to compare Principal Component Analysis, Isometric Feature Mapping, Sammon Mapping, Locally Linear Embedding and Stochastic Neighbor Embedding.
-They used daily power LPs from residential and industrial areas.
-This publication was of the closest resemblance to our goals, that we were able to find. 
+They used daily power LPs from residential and industrial areas. 
+This publication was the closest in resemblance to our goals, that we were able to find.
 
 In all cases, work has been done with the power LP, whereas in this case, we will try to find similarities between activation profiles using a t-SNE algorithm.
 Most of the publications used single-time dimensions, whereas we will use two-time dimensions.
 
 Although the use-cases were presented in-depth in Chapter \ref{chapter2}, it is worth mentioning one specific use case.
-The increasing price of energy resources, could lead to over-saving and living in cool homes.
-By using similarity metrics between profiles across different buildings, it would be possible to detect outliers when it comes to heating. 
-With this approach, it would be possible to detect users, that are living in below-average cool homes and offer them cheaper plans. 
+The increasing price of energy resources could lead to excessive saving and living in cool homes.
+By using similarity metrics between profiles across different buildings, it would be possible to detect outliers when it comes to heating.
+With this approach, it would be possible to detect users who are living in below-average cool homes and offer them cheaper plans.
 
 \section{Methodology}
 
@@ -44,13 +44,12 @@ With this approach, it would be possible to detect users, that are living in bel
 \subsubsection{Weekly-Daily LP}
 
 During testing, a weekly-daily LP constructed from a month of data will be used.
-Y-axis will present the days in a week and X-axis presents the hours in a day.
+Y-axis will present the days in a week and X-axis will present the hours in a day.
 Weekdays are labeled from 0 to 6, and hours from 0 to 23.
-Since we are working with images, the origin is placed in the upper-left corner. 
-This means that a pixel in the upper-left corner presents the first hour of a week,
-this would be a Monday from midnight to one o'clock. 
-The lower-right corner presents the last hour of the week.
-Since there are roughly 4 weeks in each month, each pixel will present 4 samples. 
+Since we are working with images, the origin is placed in the upper-left corner.
+This means that a pixel in the upper-left corner represents the first hour of a week, this would be a Monday from midnight to one o'clock.
+The lower-right corner represents the last hour of the week.
+Since there are roughly 4 weeks in each month, each pixel will represent 4 samples.
 One such example of profiles that we will use, was already presented in Chapter \ref{chapter4} with Figure \ref{fig:wm_hm_weekly}.
 For practical reasons, we are presenting it again here with Figure \ref{fig:wm_hm_weekly_2}.
 
@@ -78,16 +77,17 @@ But again, for ease-of-use purposes, we will summarize the profile here.
 To build the profile seen in Figure \ref{fig:BOA2}, we used the data from all 5 datasets and made a list of the most commonly used appliances.
 Only the top 30 appliances were selected.
 This enables us to have the same LP for all buildings and thus enables us to see how the usage differs across them.
+
 One problem that arises here is the missing appliances.
 These appliances present themselves as a black line.
-A lot of missing appliances may cause the image to be primarily black,
+A lot of missing appliances may cause the image to be primarily black, 
 which could cause trouble for the algorithm processing this as an image.
 
 \subsection{Normalisation}
 \label{ssec:norm}
-Activations portrayed in a heatmap must always be normalised in order for color (heat) to be propely mapped.
+Activations portrayed in a heatmap must always be normalised in order for color (heat) to be properly mapped.
 We need to ensure that the LPs fed into t-SNE match our perception in order to achieve meaningful results we can interpret.
-To achieve this we will use min-max scaling seen in Equation \ref{eq:minmax} below.
+To achieve this, we will use min-max scaling seen in Equation \ref{eq:minmax} below.
 
 \begin{equation}
 	\label{eq:minmax}
@@ -99,22 +99,21 @@ To achieve this we will use min-max scaling seen in Equation \ref{eq:minmax} be
 \subsection{Measuring LP Similarly}
 \label{ssec:lp_similarity}
 The similarity of the LPs will play an important role in the analysis, as it will be used as a base of the t-SNE cost function.
-The activations in LPs can be also thought of as $n-dimensional$ vectors, where each bucket is nth dimension activation magnitude is their length.
+The activations in LPs can also be thought of as $n$-dimensional vectors, where each bucket is the nth dimension and the activation magnitude is their length.
 Once LPs are presented as a vector, we can use tools from linear algebra to calculate their similarity.
 
-One way to calculate the similarity between two points is by calculating Euclidean distance, where 
-we calculate the square root of the sum of squared differences.
-
+One way to calculate the similarity between two points is by calculating the Euclidean distance, 
+where we calculate the square root of the sum of squared differences.
 
 \begin{equation}
 	\label{eq:euclidian_distance}
 	d(x, y) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2}
 \end{equation}
 
-Where $x$ and $y$ are $n$-dimensional vectors. 
-The result of Euclidian distance is not limited and can be anywhere from 0 to infinity. 
+Where $x$ and $y$ are $n$-dimensional vectors.
+The result of the Euclidian distance is not limited and can be anywhere from 0 to infinity.
 Alternatively, we can use the cosine similarity Equation \ref{eq:cosine_similarity}, where the results are limited between -1 and 1.
-1 would mean that both vectors point in the same direction, 0 that they are orthogonal and -1 they point in opposite directions.
+1 would mean that both vectors point in the same direction, 0 that they are orthogonal, and -1 means they point in opposite directions.
 
 \begin{equation}
 	\label{eq:cosine_similarity}
@@ -124,8 +123,8 @@ Alternatively, we can use the cosine similarity Equation \ref{eq:cosine_similari
 In the above equation, $X$ and $Y$ are $n$-dimensional vectors.
 The dot product of $X$ and $Y$ is divided by the product of their magnitudes to obtain the cosine similarity.
 The magnitude is also known as $L2$ Euclidian normalization.
-An important feature of cosine similarity is, that it's not affected by the magnitude of the vectors.
-To include the magnitude we can use Pearson's correlation coefficient seen in Equation \ref{eq:pearson_correlation}
+An important feature of cosine similarity is that it's not affected by the magnitude of the vectors.
+To include the magnitude, we can use Pearson's correlation coefficient seen in Equation \ref{eq:pearson_correlation}.
 
 \begin{equation}
 	\label{eq:pearson_correlation}
@@ -139,38 +138,38 @@ Correlation values range between -1 and 1, where the interpretation follows the 
 
 What is most interesting here is that equations \ref{eq:cosine_similarity} and \ref{eq:pearson_correlation} look very similar.
 The main difference is that \ref{eq:cosine_similarity} takes into account individual vectors, whereas \ref{eq:pearson_correlation} first centers the vector using the mean value of all vectors and then computes the similarity.
-Another difference is the naming of elements in the denominator. 
+Another difference is the naming of elements in the denominator.
 In cosine similarity, we used $L2$ Euclidian normalization whereas, in the correlation equation, we used standard deviation.
 While these two are not the same, they play the same role of normalizing the numerators.
 
 \subsection{Data}
 
 We have on average roughly one year of data per building. 
-In some cases few weeks and in others up to 5 years for some appliances.
+In some cases a few weeks and in others up to 5 years for some appliances.
 By slicing this data into 1-month-long intervals and converting them to LPs we were able to obtain 5218 samples.
 
 More detailed methodological approaches were discussed in Section \ref{ssec:data}.
 
 \subsection{T-SNE Algorithm}
 
-The t-SNE \cite{tsne2} or t-distribution stochastic neighboring embedding is a method for portraying high dimensional 
+The t-SNE \cite{tsne2} or t-distribution stochastic neighboring embedding is a method for portraying high dimensional
 data in low dimensional space. This process is also known as dimensionality reduction.
 
 One of the well-known dimensionality reduction algorithms is PCA.
 The key difference between the two is that one is linear, and the other is non-linear.
 PCA, linear, projects data in new space and finds the one with the least variance between data points.
-SNE \cite{sne1}, non-linear, is composed of two main parts. The first one is 
+SNE \cite{sne1}, non-linear, is composed of two main parts. The first one is
 converting the high-dimensional Euclidean distances between data points into conditional probabilities that represent similarities \cite{sne1}.
-The pairs with high similarity have a high probability, and pairs with lower a low probability.
+The pairs with high similarity have a high probability, and pairs with lower similarity have a low probability.
 Second, it uses Kullback-Leibler divergence to minimize it with respect to a location on a map.
-To achieve this it uses gradient descent to minimize the cost function.
+To achieve this, it uses gradient descent to minimize the cost function.
 Over many iterations, similar data points should be close together and far away from dissimilar objects.
-Similar data points usually form clusters. 
-t-SNE uses SNE as a basis, except that it uses t-student distribution instead of normal to calculate the similarity.
+Similar data points usually form clusters.
+t-SNE uses SNE as a basis, except that it uses a t-student distribution instead of normal to calculate the similarity.
 
 A good example that showcases the non-linearity of t-SNE can be seen in Figure \ref{fig:tsne_diagram}.
 In this simple task, projecting all data points to the y-axis would leave us with a different solution than the one we can see on the right.
-%TODO add simple projection
+
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -189,36 +188,36 @@ In this simple task, projecting all data points to the y-axis would leave us wit
 
 In order to calculate the t-SNE for a set of data points, we first need to calculate the conditional probability.
 This is calculated based on the Equation \ref{eq:pij} below.
-The author of t-SNE Van der Mateen \cite{tsne2} states:
-“The similarity of datapoint $x_j$ to datapoint $x_i$ is the conditional probability, $p_{ij}$, that $x_i$ would pick $x_j$ as its neighbor if neighbors were picked in proportion to their probability density under a Gaussian centered at $x_i$.” 
+The author of t-SNE, Van der Maaten \cite{tsne2}, states:
+“The similarity of datapoint $x_j$ to datapoint $x_i$ is the conditional probability, $p_{ij}$, that $x_i$ would pick $x_j$ as its neighbor if neighbors were picked in proportion to their probability density under a Gaussian centered at $x_i$.”
 
 \begin{equation}
 \label{eq:pij}
 p_{ij} = \frac{\exp(-\lVert x_i - x_j \rVert^2/2\sigma_i^2)}{\sum_{k \neq l} \exp(-\lVert x_k - x_l \rVert^2/2\sigma_i^2)} \
 \end{equation}
 
-In Equation \ref{eq:pij} $x_i$ and $x_j$ are two data points and $|x_i - x_j|$ is the Euclidean distance between the two.
-The nominator in Equation \ref{eq:pij} is equal to the similarity between two points normalized by the variance $2\sigma_i^2$.
-The whole expression is run through $exp()$ function to ensure the value stays positive and within boundaries.
-The denominator in Equation \ref{eq:pij} serves as a normalisation factor, to ensure that the sum of probabilities for data point $x_i$ will sum to 1.
+In Equation \ref{eq:pij}, $x_i$ and $x_j$ are two data points and $|x_i - x_j|$ is the Euclidean distance between the two.
+The numerator in Equation \ref{eq:pij} is equal to the similarity between two points normalized by the variance $2\sigma_i^2$.
+The whole expression is run through the $exp()$ function to ensure the value stays positive and within boundaries.
+The denominator in Equation \ref{eq:pij} serves as a normalization factor, to ensure that the sum of probabilities for data point $x_i$ will sum to 1.
 
-The $\sigma_i$ is also known as Gaussian bandwidth, Gaussian kernel or just variance is picked for each data point based on the number of neighbors in its vicinity.
+The $\sigma_i$, also known as Gaussian bandwidth, Gaussian kernel, or just variance, is picked for each data point based on the number of neighbors in its vicinity.
 In areas where data points are more crowded, $\sigma_i$ is usually smaller than in less crowded areas.
-It is pre-calculated for every point using binary search. 
+It is pre-calculated for every point using binary search.
 A search is complete when $\sigma_i$ outputs probability distribution $P_i$ that matches user-defined perplexity $Perp(P_i)$.
 
 $$Perp(P_i) = 2^{H(P_i)}$$
 
 Here, $H(P_i)$ is the entropy of the conditional probability distribution $P_i$.
-The entropy of conditional probability distribution is a measure of perplexity.
+The entropy of the conditional probability distribution is a measure of perplexity.
 Perplexity is one of the parameters defined by the user, and it's used as a measure of the number of effective neighbors, between which we will compute similarities.
 High perplexity means that the distribution of the Gaussian kernel will be wide and contain more data points between which similarity will be computed.
 Low perplexity means that the kernel will be narrow, so fewer data points will fit into it and therefore fewer data points will be compared.
 
 The output of the algorithm is a map of every data point $y_i$.
-These points are low dimensional counterparts of $x_i$.
-Usually, these data points contain a comprehensible number of dimensions where $y_i \in \mathbb{R}^2$ or $\mathbb{R}^3$. 
-Similarly, as in Equation \ref{eq:pij} we can now use low dimensional data points $y_i$ and $y_j$ to calculate probability $q_{ij}$ in Equation \ref{eq:gij}.
+These points are low-dimensional counterparts of $x_i$.
+Usually, these data points contain a comprehensible number of dimensions where $y_i \in \mathbb{R}^2$ or $\mathbb{R}^3$.
+Similarly, as in Equation \ref{eq:pij}, we can now use low-dimensional data points $y_i$ and $y_j$ to calculate probability $q_{ij}$ in Equation \ref{eq:gij}.
 Here, t-student distribution with one degree of freedom is utilized to calculate the similarities.
 
 \begin{equation}
@@ -228,10 +227,10 @@ q_{ij} = \frac{(1+\lVert y_i - y_j \rVert^2)^{-1}}{\sum_{k \neq l} (1+\lVert y_k
 
 $q_{ij}$ is again a conditional probability of finding $y_i$ and $y_j$ near each other but for fewer dimensions.
 
-Setting up a cost function, which tries to minimize the difference between $q_{ij}$ and $p_{ij}$ should result in a low dimensional map where similar points should be near eachother.
-The cost function is also known as Kullback-Leibler divergence seen in Equation \ref{eq:Klle}. 
+Setting up a cost function, which tries to minimize the difference between $q_{ij}$ and $p_{ij}$, should result in a low-dimensional map where similar points should be near each other.
+The cost function is also known as Kullback-Leibler divergence seen in Equation \ref{eq:Klle}.
 The equation is the sum of all pairwise similarities between low and high-dimensional data points.
-The smaller the $C$ the closer the similar data points are in low dimensional space.
+The smaller the $C$, the closer the similar data points are in the low-dimensional space
 
 \begin{equation}
 \label{eq:Klle}
@@ -266,9 +265,8 @@ The process can be seen in Figure \ref{fig:tsne_iterations_arrows}.
 	\label{fig:tsne_iterations_arrows}
 \end{figure}
 
-
-In our case, two dimensions will be used. Since this is a non-linear dimensionality reduction,
-the axis usually presents dimensions that are hard to comprehend by the brain. 
+In our case, two dimensions will be used. Since this is a non-linear dimensionality reduction, 
+the axes usually represent dimensions that are hard to comprehend by the brain.
 It is important to keep in mind that the resulting low-dimensional representation is not necessarily interpretable in the same way as the original high-dimensional data.
 This also means that the axes labels on the graphical presentations are meaningless.
 In our case, we labeled the two axes as $dimension-1$ and $dimension-2$.
@@ -285,27 +283,25 @@ The results will be presented in three subsections
 
 %Most of the focus will be done on the per-appliance LP since it is the most universal.
 
-The following figures are best viewed in color and a digital format. 
+The following figures are best viewed in color and in a digital format.
 In the analysis, the reader can use the first figures to identify buildings and the second to identify the patterns and actual LPs.
-Readers reading the digital version should have the ability to zoom into each cluster and see the actual samples. 
+Readers reading the digital version should have the ability to zoom into each cluster and see the actual samples.
 Readers reading a paper version can still explore the high-resolution figures online via the provided link below every figure.
 
 \subsection{Results for Per-Building LPs}
 %TODO
 \label{ssec:res_pb_lp}
-This LP is useful when it comes to comparing how 
-activation patterns change over buildings and datasets.
-Per-building data uses combined activations of all appliances to present 
-the aggregated usage pattern.  
+
+This LP is useful when it comes to comparing how activation patterns change over buildings and datasets.
+Per-building data uses combined activations of all appliances to present the aggregated usage pattern.
 
 This section will first address non-normalized LPs and later move on to normalized LPs.
 We have already addressed the methodology on normalization in Section \ref{ssec:norm}.
-By normalizing the data we are essentially removing information from the LP.
-This information contains knowledge of the number of the appliances in building and their usage intensity.
+By normalizing the data, we are essentially removing information from the LP.
+This information contains knowledge of the number of appliances in a building and their usage intensity.
 Knowing the two could be useful in scenarios where we are analyzing the magnitude of usage and not the patterns themselves.
 
-Figure \ref{fig:tsne_scatter_non_norm_all} is using non-normalized data, meaning
-the number of appliances in a building will affect the end LP.
+Figure \ref{fig:tsne_scatter_non_norm_all} uses non-normalized data, meaning the number of appliances in a building will affect the end LP.
 The algorithm could pick up on how many and how much appliances are being used.
 In some cases, such as energy poverty detection, this information is useful, as we are searching for buildings that exhibit reduced activation patterns.
 
@@ -328,19 +324,20 @@ In some cases, such as energy poverty detection, this information is useful, as 
 \end{figure}
 
 
-Figure \ref{fig:tsne_pb_img_scatter_allall} displays the LP for each sample. 
+Figure \ref{fig:tsne_pb_img_scatter_allall} displays the LP for each sample.
 T-SNE provides an intuition of how LPs are connected in higher-dimensional space, and through analysis, we can find clusters with similar usage patterns.
 Figure \ref{fig:tsne_pb_img_scatter_allall} shows that the left side has mostly samples with little activity, and the right side has more activity.
-When looking at Figure \ref{fig:tsne_scatter_non_norm_all}, we can observe a clear pink colored cluster of LPs from UKDALE 1 and UKDALE 2, which contain plenty of appliances and may explain why they have many activators.
-Some less obvious clusters formed in the bottom section for REFIT buildings 2, 3, 5, 6, 4 and 8. 
 
-There are no recognizable patterns in the central part of the plot. 
-Since there are no patterns, such LPs do not form clusters. 
+When looking at Figure \ref{fig:tsne_scatter_non_norm_all}, we can observe a clear pink colored cluster of LPs from UKDALE 1 and UKDALE 2, which contain plenty of appliances and may explain why they have many activators.
+Some less obvious clusters formed in the bottom section for REFIT buildings 2, 3, 5, 6, 4, and 8.
+
+There are no recognizable patterns in the central part of the plot.
+Since there are no patterns, such LPs do not form clusters.
 The reason behind non-recognizable patterns is possibly because appliances like fridges contributed the majority of activations, which are not affected by the dweller, leading to random activations.
-Similarly, there are no clusters in the far-left part of the plot because those profiles lack enough information to distinguish them. 
+Similarly, there are no clusters in the far-left part of the plot because those profiles lack enough information to distinguish them.
 
 Even though the activations of LPs contained non-normalized activations, some clusters of buildings are quite close to each other.
-Here we have to keep in mind the fact that through current presentations we can only observe usage patterns and not usage intensity, which was used as an input to t-SNE
+Here we have to keep in mind the fact that through current presentations we can only observe usage patterns and not usage intensity, which was used as an input to t-SNE.
 This implies that these buildings have similar usage intensities but not necessarily usage patterns.
 We can confirm this, by looking at Figure \ref{fig:tsne_pb_img_scatter_allall}, where it is hard to find what similarities between buildings and clusters that are close together.
 
@@ -375,7 +372,7 @@ With a reduced amount of information, LPs become more similar, and therefore clu
 When observing the LPs in Figure \ref{fig:tsne_pb_img_norm_scatter_allall}, we can confirm that similar clusters are closer together.
 In this case, the input of the algorithm was the same as our perception of the LPs.
 Upon closer look, we can see a gradual and smooth change in patterns as we move across the plot.
-If we recall from before that was not the case in Figure \ref{fig:tsne_pb_img_scatter_allall} where we were analyzing non-normalized LPs.
+If we recall from before, that was not the case in Figure \ref{fig:tsne_pb_img_scatter_allall}, where we were analyzing non-normalized LPs.
 This observation is important, as it is visual proof, that normalization did help the t-SNE to focus on the usage patterns.
 % Figure \ref{fig:tsne_pb_img_norm_scatter_allall} presents only the main cluster of samples.
 % Since the smaller cluster presents mostly low entropy data, it was cut out. 
@@ -390,26 +387,25 @@ This observation is important, as it is visual proof, that normalization did hel
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_building/img_scatter_per_building_norm.png}}
 \end{figure}
 
-Upon closer inspection of Figure \ref{fig:tsne_pb_img_norm_scatter_allall} we can see that the general pattern is that there is less activity during the night with one peak in the morning and evening hours.
-Some buildings are more active during the week and again some more during the weekend.
-A lot of the data is from UK-DALE 1 colored pink. 
-It is possible to see that the building has one big cluster where activations are generally similar, with few outliers, where the pattern completely changed. 
-This happens due to events such as vacations, holidays or weather-induced behavioral changes.
+Upon closer inspection of Figure \ref{fig:tsne_pb_img_norm_scatter_allall}, we can see that the general pattern is that there is less activity during the night, with one peak in the morning and evening hours.
+Some buildings are more active during the week, and again, some are more active during the weekend.
+A significant amount of the data is from UK-DALE 1, colored pink.
+It is possible to see that the building has one large cluster where activations are generally similar, with few outliers where the pattern completely changes.
+This phenomenon occurs due to events such as vacations, holidays, or weather-induced behavioral changes.
 
-The key difference between non-normalized and normalized LPs is that,
-non-normalized LPs enable t-SNE to identify similarities in the number of appliances and their usage intensity,
-while normalized LPs force t-SNE to focus on similarities in the actual usage pattern.
-Normalized LPs provide information about when appliances are likely to be used throughout the day, while non-normalized LPs provide insight into the magnitude of appliance usage.
+The key difference between non-normalized and normalized LPs is that non-normalized LPs enable t-SNE to identify similarities in the number of appliances and their usage intensity.
+In contrast, normalized LPs force t-SNE to focus on similarities in the actual usage pattern.
+Normalized LPs provide information about when appliances are likely to be used throughout the day, while non-normalized LPs offer insight into the magnitude of appliance usage.
 
-Based on the above observations, we could say that usage patterns are more similar than the number of activations across buildings.
+Based on the above observations, we could infer that usage patterns are more similar than the number of activations across buildings.
 
 \subsubsection{Euclidian distance of samples for every building}
 \label{ssec:tsne_euclidian_distance}
 
-A significant observation is that LPs closer together have more similar consumption throughout every month.
-By measuring the distance between LPs of the same building we can estimate the strength of the household's routine. 
+A significant observation is that LPs closer together have more similar consumption throughout each month.
+By measuring the distance between LPs of the same building, we can estimate the strength of the household's routine.
 Figure \ref{fig:tsne_euclidian} presents the Euclidean distance between samples for a given building.
-The larger the value, the longer the distance and the less similar the consumption trough every month is.
+The larger the value, the longer the distance and the less similar the consumption through each month is.
 
 \begin{figure}[H]
 	\centering
@@ -418,33 +414,29 @@ The larger the value, the longer the distance and the less similar the consumpti
 	\label{fig:tsne_euclidian}
 \end{figure}
 
-The methodology and the equation for calculating Euclidian distance were thoroughly discussed in section \ref{ssec:lp_similarity}.
-Since t-SNE uses Euclidean distance at its base, we essentially measured the values of the last t-SNE iteration.
+The methodology and the equation for calculating Euclidean distance were thoroughly discussed in Section \ref{ssec:lp_similarity}.
+Since t-SNE uses Euclidean distance as its basis, we essentially measured the values of the last t-SNE iteration.
 
-As we will use the Euclidean distance plot in the next Chapter \ref{chapter6} as a comparison, we have used only samples from the REFIT dataset.
+As we will use the Euclidean distance plot in the next Chapter, \ref{chapter6}, for comparison, we have used only samples from the REFIT dataset.
 A more detailed analysis will follow in this chapter as well.
-As for now, we can see that the buildings with the most similar consumption pattern are 5 and 13. 
-They both lay on the right side of the plot and have a similar activation pattern, with very few activations throughout the weekday.
-This could point toward the fact that people with steady jobs have very steady consumption patterns.
+For now, we can observe that the buildings with the most similar consumption patterns are 5 and 13.
+They both lie on the right side of the plot and have a similar activation pattern, with very few activations throughout the weekdays.
+This observation could suggest that people with steady jobs have very steady consumption patterns.
 
 \subsection{Per-Appliance}
 
-We can use per-appliance LPs to examine how different appliances 
-are used in a single building, how a single appliance is being used across other buildings or how many appliances are being used in many buildings.
-Per appliance LPs are built using sub-meter data, meaning each LP should present each appliance.
+We can use per-appliance LPs to examine how different appliances are used in a single building, how a single appliance is used across various buildings, or how many appliances are being used in many buildings.
+Per-appliance LPs are built using sub-meter data, meaning each LP should represent each appliance.
 
 \subsubsection{Single Appliance Over Many Buildings}
 
-Using one appliance and the building as a label,
-allows us to examine how the same type of appliance is being used across different buildings.
+Using one appliance and the building as a label allows us to examine how the same type of appliance is being used across different buildings.
 
-Fridges are generally a bad indicator when it comes to user behavior since the user does not affect its operation. 
-The only case when the user interacts with it is when opening the door and turning on the light inside. 
-Usually, this event is dwarfed by the activations of a compressor. 
-This also means that the usage pattern should be the same across all buildings. 
-This can be seen in Figure \ref{fig:tsne_pa_scatter_all_fridge}, 
-where apart from REFIT buildings 1 and 11, there are no clusters.
-
+Fridges are generally a poor indicator when it comes to user behavior since the user does not significantly affect its operation.
+The only case when the user interacts with it is when opening the door and turning on the light inside.
+Usually, this event is dwarfed by the activations of a compressor.
+This also implies that the usage pattern should be the same across all buildings.
+This can be observed in Figure \ref{fig:tsne_pa_scatter_all_fridge}, where, apart from REFIT buildings 1 and 11, there are no distinct clusters.
 
 \begin{figure}[H]
 	\centering
@@ -455,10 +447,11 @@ where apart from REFIT buildings 1 and 11, there are no clusters.
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_appliance/scatter_refit_fridge_freeezer_fridge_freezer.pdf}}
 \end{figure}
 
-Figure \ref{fig:tsne_pa_img_scatter_all_fridge} Shows mostly bright images, apart from a few outliers.
+Figure \ref{fig:tsne_pa_img_scatter_all_fridge} shows mostly bright images, apart from a few outliers.
 LPs scattered in a circle are generally less dynamic than the ones at the bottom.
-Figure \ref{fig:tsne_pa_img_scatter_all_fridge} is a good example of how LPs with little to no human interaction, can look a lot different. 
-This could be due to different makes of the appliances, malfunctions of the appliance or the meter measuring it.
+
+Figure \ref{fig:tsne_pa_img_scatter_all_fridge} is a good example of how LPs, with little to no human interaction, can look a lot different.
+This could be due to the different makes of the appliances, malfunctions of the appliance, or the meter measuring it.
 
 \begin{figure}[H]
 	\centering
@@ -469,11 +462,10 @@ This could be due to different makes of the appliances, malfunctions of the appl
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_appliance/img_scatter_refit_fridge_freeezer_fridge_freezer.png}}
 \end{figure}
 
-Figure \ref{fig:tsne_pa_scatter_all_kettle} shows how,
-compared to fridges, kettles have many clear clusters that are spaced out between each other. 
+Figure \ref{fig:tsne_pa_scatter_all_kettle} shows how, compared to fridges, kettles have many clear clusters that are spaced out from each other.
 This could mean that every household uses a kettle a bit differently.
-These clusters are a good example where we can observe how strong is a routine of a user.
-The closer together the samples in individual clusters are, the higher the routine since samples are more similar to each other.
+These clusters are a good example where we can observe the strength of a user's routine.
+The closer together the samples in individual clusters are, the higher the routine, since samples are more similar to each other.
 
 \begin{figure}[H]
 	\centering
@@ -484,21 +476,19 @@ The closer together the samples in individual clusters are, the higher the routi
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_appliance/scatter_refit_kettle.pdf}}
 \end{figure}
 
-Figure \ref{fig:tsne_pa_img_scatter_all_kettle} shows us that images on the lower part 
-of the plot contain less activity than the others. 
+Figure \ref{fig:tsne_pa_img_scatter_all_kettle} shows us that images on the lower part of the plot contain less activity than the others.
 LPs that are closer together have more similar activation patterns.
 Similar activation patterns are caused by similar behavior, which is essentially a routine.
-This means that this projection could be used to calculate how much a behavior variates in time for each building.
+This means that this projection could be used to calculate how much behavior varies in time for each building.
 This could be calculated by measuring the scattering of samples (variance) for each building.
 
 If we find samples that always activate in the same morning buckets, we would see that they form a straight line on the y-axis.
-This is the daily routine. One such example can be seen in Figure \ref{fig:tsne_pa_scatter_all_kettle} in cluster REFIT 5 and REFIT 9, where we can see the lines and the pattern throughout the day. 
-Since the routine is present, the samples look more similar and are therefore closer together. 
-This does not necessarily mean that the closer the samples higher the routine.
-They could also be together in case of "ordered chaos" such as can be seen in Figure \ref{fig:tsne_pa_scatter_all_kettle} for building refit 16 and refit 8 where there is no pattern through the day.
-So the scattering is not a precise metric when it comes to the routine, but it gives us a rough idea of its presence.
-As mentioned earlier in this chapter the strength of a routine is an important feature that will be used
-in Chapter \ref{chapter6}, where we will build an elderly care anomaly detection system.
+This is the daily routine. One such example can be seen in Figure \ref{fig:tsne_pa_scatter_all_kettle} in cluster REFIT 5 and REFIT 9, where we can see the lines and the pattern throughout the day.
+Since the routine is present, the samples look more similar and are therefore closer together.
+This does not necessarily mean that the closer the samples, the higher the routine.
+They could also be together in the case of "ordered chaos," such as can be seen in Figure \ref{fig:tsne_pa_scatter_all_kettle} for buildings REFIT 16 and REFIT 8, where there is no pattern throughout the day.
+So, scattering is not a precise metric when it comes to routine, but it gives us a rough idea of its presence.
+As mentioned earlier in this chapter, the strength of a routine is an important feature that will be used in Chapter \ref{chapter6}, where we will build an elderly care anomaly detection system.
 
 \begin{figure}[H]
 	\centering
@@ -535,13 +525,11 @@ in Chapter \ref{chapter6}, where we will build an elderly care anomaly detectio
 % 	\label{fig:tsne_pa_img_scatter_all_microwave}
 % \end{figure}
 
-The last per-appliance example is television presented in Figure \ref{fig:tsne_pa_scatter_all_tv}. 
+The last per-appliance example is a television presented in Figure \ref{fig:tsne_pa_scatter_all_tv}.
 Television was chosen since it is the most commonly occurring appliance.
 Interestingly enough, televisions form nice clusters with a few outliers.
-Clusters are separated but close together, this could mean that usage patterns across buildings are unique
-but not that different from one another. 
-The LPs in some clusters are also close to each other, which could also indicate 
-a higher routine.
+Clusters are separated but close together; this could mean that usage patterns across buildings are unique but not that different from one another.
+The LPs in some clusters are also close to each other, which could also indicate a higher routine.
 
 \begin{figure}[H]
 	\centering
@@ -552,18 +540,18 @@ a higher routine.
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_per_appliance/scatter_refit_television.pdf}}
 \end{figure}
 
-The images in Figure \ref{fig:tsne_pa_img_scatter_all_tv} prove the fact that outliers' consumption is a lot different.
-Again the bright images could be the results of faulty appliances, faulty meters or simply odd behavior.
-Figure \ref{fig:tsne_pa_img_scatter_all_tv} also enables us to see that TVs are primarily used 
-in the evening hours. Outliers from the main cluster show slightly different behavior. One such 
-example is the blue cluster (building REFIT 4), where appliances are mostly used in the morning hours. 
-One other interesting observation can be made when looking at the purple cluster. This is the far low cluster for building REFIT 8.
-Here, the TV is being consistently used every day in the early morning hours.
-This is portrayed as a straight line.
-There could be two possible explanations for this.
-First is simply a high routine of a user, who turns on the TV every morning to listen to the news.
-The other is that the TV updates itself every morning. This is probably not the case since updates do not occur on regular basis.
-What is also interesting, is that the very same pattern can be observed in a few other buildings, one example being building REFIT 19.
+The images in Figure \ref{fig:tsne_pa_img_scatter_all_tv} prove the fact that outliers' consumption is significantly different. 
+Again, the bright images could be the results of faulty appliances, faulty meters, or simply unusual behavior. 
+Figure \ref{fig:tsne_pa_img_scatter_all_tv} also enables us to see that TVs are primarily used in the evening hours. 
+Outliers from the main cluster show slightly different behavior. 
+One such example is the blue cluster (building REFIT 4), where appliances are mostly used in the morning hours. 
+Another interesting observation can be made when looking at the purple cluster. 
+This is the far low cluster for building REFIT 8. Here, the TV is being consistently used every day in the early morning hours. 
+This is portrayed as a straight line. There could be two possible explanations for this. 
+The first is a high routine of a user, who turns on the TV every morning to listen to the news. 
+The other is that the TV updates itself every morning. 
+This is probably not the case since updates do not occur on a regular basis. 
+What is also interesting, is that the same pattern can be observed in a few other buildings, one example being building REFIT 19.
 
 \begin{figure}[H]
 	\centering
@@ -611,22 +599,18 @@ Applying this filter yields Figure \ref{fig:tsne_papb_scatter_all_reduced}.
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_PHPA/phpa_reduced_15.pdf}}
 \end{figure}
 
-Figure \ref{fig:tsne_papb_scatter_all_reduced} shows how these 10 appliances are connected in high dimensional space.
-Kettles, microwaves and toasters are quite similar when it comes to usage patterns.
-They are operated for a short amount of time and are usually used in users' routines in the morning or evening.
-These appliances are located in the upper left part of the plot.
-
-The second group of appliances that are quite near each other is white
-goods (without fridges) such as washing machines, dishwashers, dryers etc.
-Let's say that they are white goods with a program. 
-This group of appliances is located in the upper right part of the plot.
-
+Figure \ref{fig:tsne_papb_scatter_all_reduced} shows how these 10 appliances are connected in high-dimensional space.
+Kettles, microwaves, and toasters are quite similar when it comes to usage patterns.
+They are operated for a short amount of time and are typically used in users' routines in the morning or evening.
+These appliances are located in the upper-left part of the plot.
+The second group of appliances that are quite near each other is white goods (excluding fridges) such as washing machines, dishwashers, and dryers.
+We can refer to them as white goods with a program.
+This group of appliances is located in the upper-right part of the plot.
 The third group of appliances is white goods with a compressor.
-They are usually not affected by human interaction and are therefore harder to cluster.
+They are usually not affected by human interaction and are, therefore, harder to cluster.
 They are located in the lower part of the plot.
-
-The final group of appliances is televisions and computers. They lie 
-on a bridge between the fridges and other groups. 
+The final group of appliances is televisions and computers.
+They lie on a bridge between the fridges and other groups.
 
 % \begin{figure}[H]
 % 	\centering
@@ -653,9 +637,9 @@ The following 8 groups will be defined
 \end{itemize}
 
 Applying these groups yields Figure \ref{fig:tsne_papb_scatter_all_groups}.
-The new plot shows how, although appliances could be used by a different
-user, maybe even by users in a different part of the EU or world,
-they can be grouped in a high-dimensional space. 
+The new plot shows that, although appliances might be used by different
+users, or even by users in a different part of the EU or world,
+they can be grouped in high-dimensional space.
 
 \begin{figure}[H]
 	\centering
@@ -666,7 +650,7 @@ they can be grouped in a high-dimensional space.
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_PHPA/phpa_grouped_15.pdf}}
 \end{figure} 
 
-The Figure \ref{fig:tsne_papb_img_scatter_all_groups} below is the same as the first Figure \ref{fig:tsne_papb_img_scatter_all} in the subsection,
+The Figure \ref{fig:tsne_papb_img_scatter_all_groups} below is the same as the Figure \ref{fig:tsne_papb_img_scatter_all},
 except it is easier to use color to see the appliance they present
 
 \begin{figure}[H]  
@@ -751,26 +735,26 @@ To better emphasize the details from Figure \ref{fig:tsne_papb_img_scatter_all_g
 
 \subsection{Per-Appliance Per-Building}
 
-To study the usage by comparing all appliances between buildings,
-we have to use one of the proposed LPs and in this case, this is a Bag of appliances.
+To be able to study the usage by comparing all appliances between buildings,
+we must use one of the proposed LPs; in this case, it is the Bag of Appliances.
 
 \subsubsection{Bag of Appliances}
 
-This LP is a combination of the LPs above,
-except it offers a larger detail when observing groups of appliances.
+This LP is a combination of the LPs mentioned above,
+except it provides a greater detail when observing groups of appliances.
 Since we are using one dimension for appliances, we will use only the daily dimension.
 
-To construct such a profile we need a universal way of constructing it.
+To construct such a profile, we need a universal way of constructing it.
 This is done by measuring how many times each appliance occurs in the datasets,
 then this list is sorted from most common to least common, and finally, the top 30 are selected.
 
-The problem with such a comparison is, that it is best 
+The problem with such a comparison is that it is best
 if all buildings would use the same appliances.
-Since that is not the case, missing appliances are portrayed as always off. 
+Since that is not the case, missing appliances are portrayed as always off.
 
-This is the main reason why we can see in Figure \ref{fig:tsne_boa_scatter_refit8} the clusters are separated quite a bit.
+This is the main reason why we can see in Figure \ref{fig:tsne_boa_scatter_refit8} that the clusters are separated quite a bit.
 We can still see that some clusters are closer than others,
-meaning they are more similar.  
+meaning they are more similar.
 
 \begin{figure}[H]
 	\centering
@@ -781,12 +765,12 @@ meaning they are more similar.
 	\par\footnotesize{Full resolution figure: \url{https://github.com/jenkoj/msc/tree/main/Figures/TSNE/TSNE_BOA/scatter_refit_boa.pdf}}
 \end{figure} 
 
-Figure \ref{fig:tsne_boa_img_scatter_refit8} shows that LPs are split 
-between two poles. 
-By observing the Figure it is possible to see that all the bottom clusters
+Figure \ref{fig:tsne_boa_img_scatter_refit8} shows that LPs are split
+between two poles.
+By observing the Figure, it is possible to see that all the bottom clusters
 have more than one active white good with a compressor (fridges and freezers), while
 the top ones have only one. In general, the bottom buildings have more appliances,
-with more activity than the top ones. 
+with more activity than the top ones.
 
 \begin{figure}[H]
 	\centering
@@ -799,26 +783,34 @@ with more activity than the top ones.
 
 \section{Discussion}
 
-We used t-SNE to show how LPs are related in high-dimensional space, by mapping them into two-dimensional space.
+We used t-SNE to show how LPs are related in high-dimensional space by mapping them into two-dimensional space.
 We used three different types of LPs: per-building, per-building per-appliance, a bag of appliances, and per-appliance.
-Per-building load profiles offered a look into how activations patterns differ across different buildings and datasets.
-Per-building per-appliance bag of appliance load profiles offered the same thing, but in greater detail.
+Per-building load profiles offered a look into how activation patterns differ across different buildings and datasets.
+Per-building per-appliance and bag of appliance load profiles offered the same thing, but in greater detail.
 Per-appliance load profiles were the most versatile and were utilized in the most various ways:
-First, we have shown how the same type of appliance is being used across various buildings.
-Next, we compared appliances with each other. 
-Since the plot was hard to comprehend, we have defined appliance groups.
-These new groups formed clusters, which furthermore revealed the relation between LPs. 
-Finally, we compared how appliance load profiles are connected in a single building. 
+First, we showed how the same type of appliance is being used across various buildings.
+Next, we compared appliances with each other.
+Since the plot was hard to comprehend, we defined appliance groups.
+These new groups formed clusters, which further revealed the relationship between LPs.
+Finally, we compared how appliance load profiles are connected in a single building.
 
 One of the main findings of this chapter was the formation of appliance groups.
-Such groups enable us to look into the similarity of their activation profiles and enable us to understand which groups have similar usage patterns.
-Another important piece of information these groups contain is the strength of the user's routine.
-The closer the samples, the more similar their activation is, which means the user has a higher routine.
-Such a routine will be useful in the next chapter, where we will try to evaluate if it is strong enough to detect anomalies.
+Such groups enable us to look into the similarity of their activation profiles and understand which groups have similar usage patterns.
+Another important piece of information these groups provide is the strength of the user's routine.
+The closer the samples, the more similar their activation is, which means the user has a stronger routine.
+Such a routine will be useful in the next Chapter \ref{chapter6}, where we will try to evaluate if it is strong enough to detect anomalies.
+
+We found that by calculating the Euclidean distance between points on the t-SNE map, we could detect the presence of a routine, which in turn would allow us to detect anomalies.
+As mentioned, this will be explored in greater detail in the next Chapter \ref{chapter6}.
+The advantage of this method is that we used the main meter data, which significantly increases the applicability of this approach.
+The ease of installation of the system is essential for the successful adoption of emerging technologies.
+In this light, the evaluation and development of such a system would be of high importance and one of the possible directions for future research.
+
+In addition to t-SNE, it would be interesting to examine other dimensionality reduction methods such as PCA or the more advanced UMAP method.
+The use of both developed and new profiles with these methods could improve the current approach or even reveal new use-cases.
 
 \section{Summary}
 
 The analysis provided a look into the relationships between LPs and their consumption patterns.
-We were able to group appliances into categories and found a presence of routine in the LPs
+We were able to group appliances into categories and found the presence of routine in the LPs.
 These findings will be valuable in the next chapter where we continue to explore the potential applications of LPs.
-

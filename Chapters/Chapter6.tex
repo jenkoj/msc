@@ -9,52 +9,53 @@
 \section{Introduction}
 
 
-Elderly care has been addressed by many EU-funded research projects since the aging population is one of the main issues the EU is facing. 
+Elderly care has been addressed by many EU-funded research projects since the aging population is one of the main issues facing the EU. 
 There are many solutions to this problem.
-One approach is invasive such as wearables, sound sensors, IR occupancy detectors, etc. 
-This approach has been addressed by thousands of publications, such as reviews \cite{elderReview1}, \cite{elderReview2} and \cite{elderReview3} show and present.
+One approach is invasive, such as the use of wearables, sound sensors, and IR occupancy detectors, among others.
+This approach has been discussed in numerous publications.
+Reviews \cite{elderReview1}, \cite{elderReview2}, and \cite{elderReview3} present and discuss this method.
 
 Authors \cite{elderNILM} and \cite{elderNILMDementia} tried to solve this issue using a non-invasive approach with NILM algorithms. 
-In the case of a non-invasive approach, no additional meters need to be installed, since per-appliance usage can be disaggregated.
+In the case of a non-invasive approach, no additional meters need to be installed, as per-appliance usage can be disaggregated.
 While this is practical from the "no additional equipment needed" side, it is a bit less practical from the efficiency and accuracy side, especially for larger buildings. 
 
-There is a middle way between invasive and non-invasive approaches, such as the authors explored in paper \cite{elder1} and \cite{elder2}. 
+There is a middle ground between invasive and non-invasive approaches, as explored by the authors of papers \cite{elder1} and \cite{elder2}. 
 It is possible to use sub-meters for each appliance and indirectly observe the usage pattern. 
-The advantage of this approach is that the elder does not need to wear the device.
-The disadvantage is, that new meters need to be installed for the most commonly used appliances.
+The advantage of this approach is that the elder does not need to wear a device. 
+The disadvantage is that new meters need to be installed for the most commonly used appliances. 
 Our approach will use the latter.
 
 \section{Goal}
 
-The chapter will focus on building an elderly care system that will use users' periodic usage patterns to detect an anomaly.
-The anomaly could be anything from a fall, stroke or altered usage pattern due to dementia. 
+The chapter will focus on building an elderly care system that will use users' periodic usage patterns to detect anomalies.
+Anomalies could be anything from a fall, stroke, or altered usage pattern due to dementia. 
 The algorithm will be designed based on the LP \ref{fig:PHPA}, which we discussed in Chapter \ref{chapter4}.
-Figure shows, that the first thing in the morning used are a kettle and toaster, and with a delay of one hour, microwave and TV. 
+The figure shows that the first appliances used in the morning are a kettle and toaster, and with a delay of one hour, the microwave and TV. 
 If none of these appliances are used within that hour, then that hour is considered anomalous.
-This means that the algorithm will be able to detect the anomaly within 1 hour of the accident.
+This means that the algorithm will be able to detect an anomaly within 1 hour of its occurrence.
 
 \section{Methodology}
 
 \subsection{Defining an Anomaly}
 
-Since the elderly care system is based on anomaly detection, we have to define it first.
-In our case, the anomaly occurs when something that should operate, does not. 
-Based on this definition we will develop an anomaly detection algorithm. 
+Since the elderly care system is based on anomaly detection, we first have to define it.
+In our case, an anomaly occurs when something that should operate, does not. 
+Based on this definition, we will develop an anomaly detection algorithm. 
 
 \subsection{Building Anomaly Detection Algorithm}
 
-The next section will present the steps taken while designing this algorithm.
+The following section presents the steps taken while designing this algorithm.
 
 \subsubsection{Step One}
-To detect the anomalies one first needs to build a daily activation profile for each appliance, such as the one previously shown in Figure \ref{fig:PHPA}.
+To detect the anomalies, one first needs to build a daily activation profile for each appliance, such as the one previously shown in Figure \ref{fig:PHPA}.
 In this specific case, we will be using 2h buckets, yielding a total of 12 buckets. 
 
 \subsubsection{Step Two}
 The second step is to ignore appliances that are always on by calculating the standard deviation of activations for each bucket. 
 The activations are normalized between 0 and 1. 
-This step is important so that appliances that are always on, such as fridges or freezers get ignored. 
+This step is important so that appliances that are always on, such as fridges or freezers, get ignored. 
 These appliances are detected based on the width of their activation normal distribution. 
-Periodic (on an hourly basis) appliances should have narrow distributions and the more dynamic should have wider distributions.
+Periodic (on an hourly basis) appliances should have narrow distributions, and the more dynamic ones should have wider distributions.
 This can be seen in examples from building 2.
 \begin{figure}[H]
     \centering
@@ -102,11 +103,11 @@ or fridges.
 \subsubsection{Step Three}
 
 Next, appliances that trigger together must be grouped. 
-This means we must find part of the day that they are operating together.
-Due to the filter in the previous step, we are left with appliances whose usage variate throughout the day. 
-Some appliances are on even when the user is not necessarily using them, this can be seen in figure \ref{arr:as_acts}.
-One of many ways to do this is to normalize the activations, this yields a metric that tells us the probability of that appliance being turned on compared to the rest of the day. 
-If we do this for the same appliances as above the result is the following: 
+This means we must find parts of the day when they are operating together.
+Due to the filtering in the previous step, we are left with appliances whose usage varies throughout the day. 
+Some appliances are on even when the user is not necessarily using them, this can be seen in Figure \ref{arr:as_acts}.
+One of many ways to do this grouping is to normalize the activations, which yields a metric that tells us the probability of that appliance being turned on compared to the rest of the day. 
+If we apply this to the microwave and audio system appliances, the result is the following: 
 
 \begin{figure}[H]
     \centering
@@ -248,16 +249,16 @@ The Figure below shows how the LP is transformed.
 
 \subsubsection{Step Four}
 
-Previously, we have defined that an anomaly occurs when something that should activate does not.
-Using the matrix \ref{arr:act_mat} we can compile an algorithm that will detect the anomaly using current activations being tested 
-and comparing it to the adjacent column in matrix \ref{arr:act_mat}.
-Let us use the fifth bucket as an example. That is data from 8 to 10 o'clock.
+Previously, we defined an anomaly as an event where something that should activate does not.
+Using the matrix from Figure \ref{arr:act_mat}, we can compile an algorithm that detects the anomaly by testing current activations
+and comparing them to the adjacent column in the matrix seen in Figure \ref{arr:act_mat}.
+Let's use the fifth bucket as an example, which includes data from 8 to 10 o'clock.
 
-The tested sample is considered normal if at least two appliances that are normally being used are activated.
+The tested sample is considered normal if at least two appliances that are normally used are activated.
 Otherwise, the tested sample is considered anomalous.
-Our implementation multiplies the adjacent matrix column to the tested sample.
-We sum the elements of the resulting array and check if it is larger or equal to 2.
-If cases where this rule is false, samples are considered anomalous.
+Our implementation multiplies the adjacent matrix column by the tested sample.
+We sum the elements of the resulting array and check if the sum is larger or equal to 2.
+In cases where this rule is not met, the samples are considered anomalous.
 
 \begin{figure}[H]
     \begin{tikzpicture}
@@ -306,7 +307,7 @@ If cases where this rule is false, samples are considered anomalous.
     
 % \end{figure}
 
-This process is done for all samples, where we count normal and anomalous samples for each bucket
+This process is done for all samples, where we count normal and anomalous samples for each bucket.
 The important thing to note here is that we are evaluating the samples from train data, from which the profile was built.
 
 \begin{figure}[H]
@@ -348,18 +349,16 @@ for each bucket with an equation.
 Where $N_{anom}$ is a number of anomalous samples and $N_{norm}$ is a number of normal samples.
 
 
-We can alter the Equation \ref{eq:ratio} so that it will measure
-a number of normal samples out of all. 
+We can modify Equation \ref{eq:ratio} so that it measures a number of normal samples out of the total samples. 
 The result is the Equation \ref{eq:routine}
-In other words, we are measuring the strength of a routine that 
-user has in each bucket.
+In other words, we are measuring the strength of a routine that the user maintains in each bucket.
 
 \begin{equation}
     R_{outine}= \frac{N_{norm}}{N_{anom}+N_{norm}}
     \label{eq:routine}
 \end{equation}
 
-Using the Equation \ref{eq:routine} we can populate the array in Figure \ref{arr:anom_ratio}.
+Using Equation \ref{eq:routine}, we can populate the array in Figure \ref{arr:anom_ratio}.
 
 \begin{figure}[H]
     \centering
@@ -374,22 +373,22 @@ Using the Equation \ref{eq:routine} we can populate the array in Figure \ref{arr
     \label{arr:anom_ratio}
 \end{figure}
 
-In other words, the array in Figure \ref{arr:anom_ratio} tells us how persistent is the user's routine in each bucket or part of the day. 
-The higher the metric the higher the routine. 
-Since routine is detected based on the usage of appliances it cannot be picked up during the night.
+In other words, the array in Figure \ref{arr:anom_ratio} indicates the persistence of the user's routine in each bucket or part of the day.
+The higher the metric, the stronger the routine.
+Since routines are detected based on appliance usage, they cannot be detected during the night.
 
 It is possible to see that the routine is quite high during the morning and evening hours.
-The anomaly detection algorithm will work best when the metric above is high.
-A good trait of the elderly is that their routine is quite high even during the day.
+The anomaly detection algorithm will perform best when the metric is high.
+A notable characteristic of the elderly is that their routine is typically high even during the day.
 
-One more thing to do is to ignore the parts of the day when the user has no routine.
-This is done by using the array in Figure \ref{arr:anom_ratio} and setting a threshold of 0.7. 
+Another thing to do is to ignore the parts of the day when the user has no detectable routine.
+This is accomplished by using the array in Figure \ref{arr:anom_ratio} and setting a threshold of 0.7.
 
-A threshold of 0.5 would mean that we could detect false positive anomalies every other day.
-Setting the rate to 0.7 reduces this to every third day.
-Here, compromises must be made, the lower the threshold the more accurate the algorithm will be. 
-This also means that it will be less sensitive. 
-In our case, there is not much harm in false positive detections, since the caregiver can call the elder to check if it is okay.  
+A threshold of 0.5 would imply that we could detect false positive anomalies every other day.
+By setting the rate to 0.7, this is reduced to every third day.
+Compromises must be made here; the lower the threshold, the more accurate the algorithm will be.
+This also implies that it will be less sensitive.
+In our case, there is not much harm in false positive detections, as the caregiver can call the elder to check if everything is okay.
 
 \begin{figure}[H]
     \centering
@@ -407,49 +406,47 @@ In our case, there is not much harm in false positive detections, since the care
 
 \subsubsection{Step Six}
 
-The last step is to repeat steps 4 and 5 with test data.
-When using test data, we skip the buckets with low routine rates by using the mask on Figure \ref{arr:anom_ratio_mask}.
-Since the profile has never seen the data being used, this should give us a good presentation of actual performance in a real-world scenario.
+The last step is to repeat Steps 4 and 5 with the test data.
+When using the test data, we skip the buckets with low routine rates by using the mask from Figure \ref{arr:anom_ratio_mask}.
+Since the profile has never seen the data being used, this should give us a good representation of actual performance in a real-world scenario.
 
 \subsection{The metric - routine rate}
 
-Due to the lack of ground truth data of actual accidents, it is hard to determine the 
-exact accuracy of this algorithm. Every anomaly detected is not necessarily an 
-actual accident, it could be that the user decided to lie in bed a bit longer, or decided to go to bed early in the evening.
+Due to the lack of ground truth data on actual accidents, it is hard to determine the exact accuracy of this algorithm. Every anomaly detected is not necessarily an actual accident, it could be that the user decided to lie in bed a bit longer, or decided to go to bed early in the evening.
 One metric that we can use to determine how well the algorithm functions is the routine rate metric \ref{arr:anom_ratio}.
-The reason behind that is, that if the routine rate is high it means that it will be easier to detect the actual anomaly.
+The reason behind this is that if the routine rate is high, it means that it will be easier to detect the actual anomaly.
 
 \begin{itemize}
-	\item Routine rate of 0 would mean that for that bucket household has no routine at all.
-    \item Routine rate of 0.5 would mean that the routine is broken every second day.
-    \item Routine rate of 0.8 would mean that routine is broken on average every fifth day.
-    \item Routine rate of 1 would mean that this household has a routine that is never broken. 
+	\item A routine rate of 0 would mean that for that bucket, the household has no routine at all.
+    \item A routine rate of 0.5 would mean that the routine is broken every second day.
+    \item A routine rate of 0.8 would mean that the routine is broken on average every fifth day.
+    \item A routine rate of 1 would mean that this household has a routine that is never broken. 
 \end{itemize}
 
-An example of when a user routine rate is close to 1. When a true anomaly occurs such as a fall, the dweller, though he had the same strong routine for the past year, would not be able to practice it, and the algorithm will be quite sure that this is an actual anomaly.
-Therefore, the lower the routine rate the less sure we are that an actual anomaly such as a fall occurred.
-This is a good alternative measurement, that tells us how well this algorithm will perform. 
-Since sometimes it is easier to read when results are presented with percentages, we will sometimes use this way of presenting it.
+An example of when a user's routine rate is close to 1: When a true anomaly occurs such as a fall, the dweller, though he had maintained the same strong routine for the past year, would not be able to continue it, and the algorithm will be quite sure that this is an actual anomaly.
+Therefore, the lower the routine rate, the less sure we are that an actual anomaly such as a fall occurred.
+This is a good alternative measurement, which tells us how well this algorithm will perform. 
+Since sometimes it is easier to read when results are presented as percentages, we will sometimes present them in this way.
  
 \section{Results} 
 
 Results were obtained for 3 datasets. 
-REDD and iAWE datasets were not used, since they were too small. 
+The REDD and iAWE datasets were not used, since they were too small. 
 They contained less than a month of data. 
 
 \subsection{The Routine Rate Over a Period of Time}
 
 In the following sections, we will present how the metric changes over given periods of time.
-This will enable us to see that there are patterns that this metric helps reveal. 
-Since we have more than a year of training data, this will enable us to see how the metric changes over years.
-This enables us to see how routine changes over the year. 
-We cannot use testing data in this case, since there is not enough of it.
+This will enable us to see the patterns that this metric helps reveal. 
+Since we have more than a year of training data, this will allow us to observe how the metric changes over years.
+This allows us to see how the routine changes over the year. 
+We cannot use testing data in this case, as there is not enough of it.
 
 \subsubsection{The Routine Rate Through the Week} \label{sssec:ratio_week}
 
 As the behavior of the dweller changes, so does the accuracy of the algorithm. 
-One observation that was made, was that the routine was higher during the week than during the weekends,
-as can be seen in the Figure \ref{fig:ec_week} below. 
+One observation that was made was that the routine was higher during the week than during the weekends,
+as can be seen in Figure \ref{fig:ec_week} below. 
 The only exception is Figure \ref{fig:ec_b5week}, which shows that the observation does not hold for all houses. 
 
 \begin{figure}[H]
@@ -485,21 +482,20 @@ The only exception is Figure \ref{fig:ec_b5week}, which shows that the observati
     \label{fig:ec_week}
 \end{figure}
 
-
-Since we are dealing with the elderly, they have a higher routine, and it does not change that much during the weekends. 
-Usually, assisted living systems are put in place since elders are alone in the dwelling.
-Taking all of this into account, we could assume that the routine of the elderly is the same trough the week and simply ignore the weekends. 
-This should yield more relevant results. 
+Since we are dealing with the elderly, they have a consistent routine, and it does not vary significantly during the weekends.
+Usually, assisted living systems are put in place because elders are alone in the dwelling.
+Taking all of this into account, we could assume that the routine of the elderly remains the same throughout the week and simply ignore the weekends.
+This should yield more relevant results.
 
 \subsubsection{Routine Rate Through a Year}
 
-The rate at which the routine is being practiced also changes over a year. 
-While on average the routine rate is higher during the winter, spring and fall, it is lower during the summer, due to vacation. 
-This can be seen in Figure \ref{fig:ec_year} below. 
-It is possible to observe dips in routine. 
-In some cases, these dips occur in summer and others in springtime. 
-Without metadata, we cannot know for sure, what was the event behind these dips. 
-There is a high chance most of them are vacations or other events where one or more dwellers are away from home for extended periods of time. 
+The rate at which the routine is practiced also changes over a year.
+While on average the routine rate is higher during the winter, spring, and fall, it is lower during the summer, due to vacations.
+This can be seen in Figure \ref{fig:ec_year} below.
+It is possible to observe dips in the routine.
+In some cases, these dips occur in the summer and others in the springtime.
+Without metadata, we cannot know for sure what was the event behind these dips.
+There is a high chance that most of them are due to vacations or other events where one or more dwellers are away from home for extended periods of time.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -543,16 +539,15 @@ One thing to keep in mind is that this algorithm can detect anomalies only when
 the routine is high, and when more than two appliances are used in given buckets.
 
 Figure \ref{fig:ignored_buckets_22} shows which buckets are most commonly used for the detection of an anomaly.
-The Figure includes averaged values from all buildings and datasets. 
-In other words, the Figure presents how strong is average routine throughout the day.
+The figure includes averaged values from all buildings and datasets.
+In other words, the figure presents the strength of the average routine throughout the day.
 
 This means that the higher the routine, the higher the chance that this bucket will be used for anomaly detection.
 During the night, it is possible to see that the average routine rate is quite high.
-This can be seen in Figure \ref{fig:ignored_buckets_22}
-this is because most users are routinely sleeping during that period.
+This can be seen in Figure \ref{fig:ignored_buckets_22},
+this is because most users are routinely sleeping during this period.
 As we can see in Figure \ref{fig:ignored_buckets_22},
-the high routine rate does not necessarily mean the buckets are useful.
-
+a high routine rate does not necessarily mean the buckets are useful.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -569,48 +564,45 @@ the high routine rate does not necessarily mean the buckets are useful.
 \end{figure}
 
 To find the usable buckets, an additional filter must be applied.
-The rule is that at least two appliances must be commonly used in that bucket. 
-After applying this rule the following Figure emerges \ref{fig:ignored_buckets_act}
+The rule is that at least two appliances must be commonly used in each bucket. 
+After applying this rule, the following Figure emerges \ref{fig:ignored_buckets_act}.
 
-Figure \ref{fig:ignored_buckets_act} shows that there are two peaks.
-One in the morning and the other, a wider one, in the evening.
+Figure \ref{fig:ignored_buckets_act} shows that there are two peaks:
+one in the morning and a wider one in the evening.
 
-This means that on an average home the algorithm would perform best in the morning and evening because the average person is at school or work during noon. 
-The elderly, are usually at home at noon, which could extend the effective detection window.
-
+This means that, on average, the algorithm would perform best in the morning and evening because the average person is at school or work during noon. 
+Elderly individuals, who are usually at home at noon, could extend the effective detection window.
 
 \subsubsection{The Anomaly Detection During the Night}
 
-We have seen that anomalies can be detected throughout the day,
-but are hard to detect through the night, since appliances are off.
+We have observed that anomalies can be detected throughout the day,
+but are hard to detect during the night, since appliances are typically off.
 
-This is because, in our current state, an anomaly occurs when something that should operate, does not.
-When the user is sleeping, an anomaly occurs when something that shouldn't operate, does. 
-To implement this additional rule, we would have to build two models.
-One would be online during the day, and the other when the user is sleeping.
+In our current state, an anomaly occurs when something that should operate does not.
+When the user is sleeping, an anomaly occurs when something that shouldn't operate does. 
+To implement this additional rule, we would have to build two models:
+one that operates during the day, and another that operates when the user is asleep.
 
-To obtain information about the user's sleep schedule, we could either have a schedule obtained from the user or we could extract it based on the usage pattern of appliances.
-It is possible to detect when most of the appliances are inactive and build a sleep profile based on this information.
+To obtain information about the user's sleep schedule, we could either request a schedule from the user or extract it based on the usage pattern of appliances.
+We can detect when most of the appliances are inactive and build a sleep profile based on this information.
 
 Using the sleep schedule, it is possible to switch between the two operating modes. 
-This new implementation would further extend the time windows within which we can detect the anomalies and thus further improve users' safety.
+This new implementation would further extend the time windows within which we can detect anomalies and thus further improve users' safety.
 
-The main issue is not the detection itself but efficiently detecting
-when the user is sleeping. 
+The main issue is not the detection itself but efficiently determining
+when the user is asleep. 
 
-The examples above were a demonstration and a look into data and metrics. 
+The examples above serve as a demonstration and a look into data and metrics. 
 The examples shown were trained and evaluated on the same data. 
-To show true performance, we will use test data to determine the actual performance. 
-
+To show true performance, we will use test data to determine actual performance. 
 
 \subsection{Per-Building Results}
 \subsubsection{REFIT}
 
-Results show, that the method is on average \textbf{79.3} \% efficient for REFIT.  
-In Figure \ref{fig:refit_res} it is possible to see that building 10 and 20 yields much worse results than the rest.
-The whole routine pattern is very similar to the Figure \ref{fig:tsne_euclidian} from t-SNE chapter where we calulcated the final euclidian distance between samples of the t-SNE plot.
-We will make a deeper analysis of this connection in the last Section \ref{sec:tsne_ec_corr} of this Chapter.
-
+Results show that the method is, on average, \textbf{79.3} \% efficient for REFIT.  
+In Figure \ref{fig:refit_res}, we can see that buildings 10 and 20 yield much worse results than the rest.
+The overall routine pattern is very similar to Figure \ref{fig:tsne_euclidian} from the t-SNE chapter where we calculated the final Euclidean distance between samples of the t-SNE plot.
+We will make a deeper analysis of this connection in the final Section \ref{sec:tsne_ec_corr} of this Chapter.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -626,15 +618,15 @@ We will make a deeper analysis of this connection in the last Section \ref{sec:t
     \end{subfigure}
 \end{figure}
 
-As mentioned in the sub-sub Section \ref{sssec:ratio_week}, the average routine is different during the week and on weekends.
-The assumption was that the routine of elderly people does not change significantly over the week, therefore results should be more relevant if we ignore the weekends.
-The results in Figure \ref{fig:refit_res_nw_1} show that the result improved to \textbf{77.08} \%.
-If we remove the weekend data, the results improved by \textbf{1} \%. 
+As mentioned in Section \ref{sssec:ratio_week}, the average routine varies between weekdays and weekends.
+The assumption was that the routine of elderly people does not change significantly throughout the week, therefore, results should be more relevant if we exclude the weekends.
+Figure \ref{fig:refit_res_nw_1} shows that the result improved to \textbf{77.08} \%.
+By removing the weekend data, the results improved by \textbf{1} \%.
 
 \subsubsection{UK-DALE}
 
 As mentioned in Section \ref{ssec:ds_eval}, the UK-DALE is not as big and clean of errors as the previous dataset, so the results could be less relevant.
-The results in Figure \ref{fig:ukdale_res}, show that the average result is 74.48 \%. 
+The results in Figure \ref{fig:ukdale_res}, show that the average result is \textbf{74.48} \%.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -652,14 +644,14 @@ The results in Figure \ref{fig:ukdale_res}, show that the average result is 74.4
 \end{figure}
 
 
-In this case, when we omit the weekend data, we improve the routine just slightly to \textbf{74.51} \%.
-There are many reasons behind such small improvement, one of them being that the existing routine of these buildings does not change throughout the weekend. 
+In this case, omitting the weekend data improves the routine slightly, increasing it to \textbf{74.51} \%.
+There are many reasons behind this small improvement, one of which is, that the existing routine of these buildings does not change over the weekend.
 
 \subsubsection{ECO}
 
-ECO is of a similar quality as UK-DALE when taking into account the number of buildings and the length of data, as can be seen in Section \ref{ssec:ds_eval}.
-The results in Figure \ref{fig:eco_res}, show that this dataset performed the best, with results of 83.80 \%.
-The same as before we can omit weekend data, which can be seen in Figure \ref{fig:eco_res_nw}. This brings the result up to 84.09 \%. 
+ECO is of similar quality as UK-DALE when considering the number of buildings and the length of data, as can be seen in Section \ref{ssec:ds_eval}.
+The results in Figure \ref{fig:eco_res} show that this dataset has the highest average routine rate of \textbf{83.80} \%.
+As before, we can exclude the weekend data, which can be seen in Figure \ref{fig:eco_res_nw}. This brings the result up to \textbf{84.09} \%.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -679,8 +671,8 @@ The same as before we can omit weekend data, which can be seen in Figure \ref{fi
 \subsection{Combined Results}
 
 After combining results from all 26 buildings, Table \ref{tab:ec_res_weekend} can be populated.
-It shows that the algorithm is 79.43 \% efficient at detecting true anomalies. 
-On average, the algorithm would label 20.5 \% of samples as false positives, 
+It shows that the algorithm is \textbf{79.43} \% efficient at detecting true anomalies. 
+On average, the algorithm would label \textbf{20.5} \% of samples as false positives, 
 in other words, every fifth sample could be a false positive. 
 
 \begin{table}[htbp]
@@ -692,17 +684,32 @@ in other words, every fifth sample could be a false positive.
         \textbf{including weekend data} & \textbf{test} & \textbf{train} \\
         \hline
         \textbf{mean} & 79.43 & 84.55 \\
-        \textbf{std} & 14.62 & 9.05 \\
-        \textbf{uncertainty} & 2.81 & 1.74 \\
+        \textbf{median} & 82.58 & 84.40 \\
+        \textbf{standard deviation} & 14.62 & 9.05 \\
         \hline
         \end{tabular}
 \end{table}
 
-If we assume that average building in our dataset has altered routine trough weekend as can be seen in \ref{fig:ec_week},
-and assume that average elder has roughly the same routine throughout the week we can remove the weekend data 
+To understand the results a bit better, Figure \ref{ec:ec_histogram} presents the distribution of the samples.
+It is possible to observe that the distribution is not normal as there is no bell-shaped pattern.
+Such a distribution makes it hard to statistically analyze the results and makes it difficult to draw meaningful conclusions.
+However, this issue can be addressed by visually analyzing and interpreting the data.
+In this case, it is possible to see that a large portion (74 \%) of the samples fall in the interval above the mean, more specifically above the 80 \% routine rate.
+This observation is important, as it adds another dimension to our understanding of the results.
+
+
+\begin{figure}[H]
+    \centering
+    \caption{Histogram of results overlayed with a probability density function}
+    \includegraphics[width=0.8\textwidth]{Figures/EC/ec_histogram.pdf}
+    \label{fig:ec_histogram}
+\end{figure}
+
+If we assume that the average building in our dataset has altered routine during the weekend as can be seen in Figure \ref{fig:ec_week},
+and assume that the average elder has roughly the same routine throughout the week, we can remove the weekend data
 to obtain more relevant results.
-Table \ref{tab:ec_res_no_weekend}, shows results after removing weekend data.
-We can observe that the mean test routine is 80.42 \%, which is slightly higher compared to results from previous Table \ref{tab:ec_res_weekend}.
+Table \ref{tab:ec_res_no_weekend} shows the results after removing the weekend data.
+We can observe that the mean test routine is \textbf{80.42} \%, which is slightly higher compared to the results from the previous Table \ref{tab:ec_res_weekend}.
 
 \begin{table}[htbp]
     \centering
@@ -713,30 +720,46 @@ We can observe that the mean test routine is 80.42 \%, which is slightly higher 
         \textbf{not-including weekend data} & \textbf{test} & \textbf{train} \\
         \hline
         \textbf{mean} & 80.42 & 85.88 \\
-        \textbf{std} & 15.58 & 8.25 \\
-        \textbf{uncertainty} & 2.99 & 1.58 \\
+        \textbf{median} & 84.15 & 86.35 \\
+        \textbf{standad deviation} & 15.58 & 8.25 \\
         \hline
         \end{tabular}
 \end{table}
 
-The last rows in Tables \ref{tab:ec_res_no_weekend} and \ref{tab:ec_res_weekend} show uncertainty of our measurements,
-which is 2.81 \% for weekend data and 2.99 \% for not including weekend data.
+The last rows in Tables \ref{tab:ec_res_no_weekend} and \ref{tab:ec_res_weekend} show the standard deviation of our measurements,
+which is 14.62 \% for weekend data and 15.58 \% for data that does not include weekends.
+Even though the standard deviation is lower when excluding weekend data for the train data, it is higher for the test data, which was unexpected.
 
-When comparing differences between train and test data it can be clearly observed that train data performed better.
-The difference in performance can be attributed to changed user behavior after model was trained.
-It would be beneficial if we managed to update the model over time, to include the small changes in users routine.
-This will be addressed in the next Section \ref{sec:iter_learning_system}.
+The reason can be seen in Figures \ref{fig:ec_histogram} and \ref{fig:ec_histogram_week_only},
+where we have already observed the non-normal distribution, and mentioned that statistical methods should be analyzed with caution.
+
+Visual analysis of Figure \ref{fig:ec_histogram_week_only} reveals that the general distribution did not change compared to Figure \ref{fig:ec_histogram}.
+However, there are fewer samples above the 80 \% line and fewer samples with very low routine.
+This could mean that not including weekend data may improve the overall score by aiding the worst performers, but it may also lower the score of the best performers.
+
+\begin{figure}[H]
+    \centering
+    \caption{Histogram of results not including weekend data overlayed with a probability density function}
+    \includegraphics[width=0.8\textwidth]{Figures/EC/ec_histogram_week_only.pdf}
+    \label{fig:ec_histogram_week_only}
+\end{figure}
+
+
+When comparing the differences between the train and test data, it can be clearly observed that the train data performed better. 
+The difference in performance can be attributed to the changed user behavior after the model was trained. 
+It would be beneficial if we managed to update the model over time to include the small changes in users' routines. 
+This will be addressed in the next section \ref{sec:iter_learning_system}.
 
 \section{Discussion}
 
-The main goal of our system is to detect anomalies when they occur. 
-The nature of this system is that there is more harm done if we do not detect an anomaly than if we detect a few false positives. 
+The main goal of our system is to detect anomalies when they occur.
+The nature of this system is that there is more harm done if we do not detect an anomaly than if we detect a few false positives.
 On the other hand, too many false positives could lead to caregivers ignoring detections altogether.
 In this regard, we must find a balance between the two.
-A false positive once a week is a good balance, especially since the care-giver is only a phone call away from checking the status of the patient.
-Since the validation is so simple, we can claim that the performance of the system is adequate enough to be used in a real world setting.
+A false positive once a week is a good balance, especially since the caregiver is only a phone call away from checking the status of the patient.
+Since the validation is so simple, we can claim that the performance of the system is adequate to be used in a real-world setting.
 
-When analyzing these results one important to keep in mind is,
+When analyzing these results, one important to keep in mind is,
 that we do not have metadata available to know what kind of socio-economic status dwellers have.
 Socio-economic status encompasses attributes such as age, income, number of children, geolocation, etc.
 They may also encompass the age of the building, type of insulation, number of dwellers in the buildings, etc.
@@ -745,48 +768,39 @@ Since datasets do not provide them, it is hard to make any other conclusions oth
 We know that the reason for installing such a system is that the user is left alone.
 We can assume that on average there is more than one dweller living in the buildings we tested on.
 Since this system would usually be used by a single dweller,
-this would be in favor of our algorithm since it would be 
-easier to extract the routine.
+this would be in favor of our algorithm, as it would be easier to extract the routine.
 
-One other thing that would be in our favor is that the average person spends less time at home than an elderly person. 
-If we take a look at the results, it is possible to see that,
-the average home has a low routine during the noon. 
-This is because the average person is not at home during noon.
-This can be seen in Figure \ref{fig:ignored_buckets_22}.
-Since the elderly are usually home at that time, this would 
-increase the time windows where we can detect the accident.
+One other thing that would be in our favor is, that the average person spends less time at home than an elderly person. 
+If we take a look at the results, it is possible to see that, the average home has a low routine during the noon. 
+This is because the average person is not at home during noon, which can be observed in Figure \ref{fig:ignored_buckets_22}.
+Since the elderly are usually home at that time, this would increase the time windows where we can detect the accident.
 
 We could also assume that the older the dweller, the higher the routine. 
 The nature of the elderly is that they are more conservative when it comes to changes, and prefer to stick to their routine.
 Since the algorithm works better when usage is periodic, this would also be in our favor. 
-Taking all of these assumptions into account, 
-there is a possibility that this algorithm would work 
-better on the elderly due to their nature.
-Since the results on the average building are promising
-a test study should be performed. 
-This would also prove our assumption that this algorithm works 
-better on the elderly.
+Taking all of these assumptions into account, there is a possibility that this algorithm would work better on the elderly due to their nature.
+Since the results on the average building are promising a real-world setting test study should be performed. 
+This would also prove our assumption that this algorithm works better on the elderly.
 
 \section{Iterative Learning System}
 \label{sec:iter_learning_system}
-In the case of practical use of this algorithm, it is 
-important the system is put online as fast as possible and that it improves over time. 
+In the case of the practical use of this algorithm, it is important that the system is put online as fast as possible and that it improves over time.
 This can be achieved with the implementation of iterative learning.
 The algorithm will build an LP based on the first month of data.
 Using this LP, the system can be immediately put online.
-At the end of the month, it can use this data to improve the model, which can then be repeated indefinitely. 
- 
+At the end of the month, it can use this data to improve the model, which can then be repeated indefinitely.
+
 \subsection{Methodology}
-The tools, metric and other methodology is the same as in a normal learning system.
-The only change was made on the data preparation side.
+The tools, metrics, and other methodologies are the same as in a normal learning system.
+The only change that was made was on the data preparation side.
 
 \subsubsection{Data Preparation}
-For this evaluation, only REFIT (\cite{REFIT}) data was used. 
+For this evaluation, only REFIT (\cite{REFIT}) data was used.
 As it can be seen in Figure \ref{fig:refit_timeline},
-Refit buildings have long and relatively similar timelines,
+Refit buildings have long and relatively similar timelines
 compared to other datasets.
 
-On Figure \ref{fig:dyn_data_1} it is possible to see,
+In Figure \ref{fig:dyn_data_1}, it is possible to see
 how the amount of training and testing data changes over 16 months.
 
 \begin{figure}[H]
@@ -813,13 +827,13 @@ This can be seen in Figure \ref{fig:data_used_for_training}.
     \end{subfigure}
 \end{figure}
 
-To analyze the results, at least 1 year of usable data should be available. 
+To analyze the results, at least 1 year of usable data should be available.
 Figure \ref{fig:data_used_for_training_removed} shows only buildings containing at least one year of data.
-Similarly, we can check how test data changes over the months. 
+Similarly, we can check how test data changes over the months.
 In this case, data is not being aggregated, but only one month of it is used at a time.
-Figure \ref{fig:data_used_for_testing} shows, that after one year
-the amount of data used for training starts to decline. 
-To get more accurate results we will only observe the performance using one year of data. 
+Figure \ref{fig:data_used_for_testing} shows that after one year,
+the amount of data used for training starts to decline.
+To get more accurate results, we will only observe the performance using one year of data.
 
 \begin{figure}[H]
 	\centering
@@ -831,8 +845,7 @@ To get more accurate results we will only observe the performance using one year
 \subsection{Results}
 
 To show the effect of training data on the metric, Figure \ref{fig:efect_of_data_on_metric} is presented.
-Figure \ref{fig:efect_of_data_on_metric} contains 12 months of 
-data for each house.
+Figure \ref{fig:efect_of_data_on_metric} contains 12 months of data for each building.
 
 \begin{figure}[H]
 	\centering
@@ -841,7 +854,7 @@ data for each house.
 	\label{fig:efect_of_data_on_metric}
 \end{figure}
 
-Figure \ref{fig:efect_of_data_on_metric} shows, that in most cases, results converge towards 80 \%. 
+Figure \ref{fig:efect_of_data_on_metric} shows, that in most cases, results converge towards \textbf{80} \%. 
 In some cases, the results are good from the beginning, but sooner or later the routine rate will dip. 
 With more data, these dips become smaller and less frequent. 
 If the behavior in the household radically changes, it can still lead to a dip.
@@ -856,42 +869,44 @@ If the behavior in the household radically changes, it can still lead to a dip.
 Figure \ref{fig:1_year_of_iterative_learning_avg} shows how the same data can also be presented so that it shows how the metric changes over a year.
 The same as in the previous Figure \ref{fig:efect_of_data_on_metric} we can observe the dips getting less frequent and smaller. 
 Here we can also observe the average line. 
-The average value seems to be on average at around 80 - 85 \%,
+The average value seems to be on average at around \textbf{80 - 85} \%,
 
 \subsection{Discussion}
 
 It is hard to compare these results from iterative learning to the ones from non-iterative learning.
 Even though the same data was used, different sections of it were used.
 
-Let's take the last point in the Figure where the average is at the 85 \% mark for an example.
-Here, the amount of training data is different, since we limited it to one year. 
-The train set is also different since only last month was used, and not 20 \%. 
-There are many differences between train and test sets, therefore we can not compare them.
-The results do prove that the method works and that the true performance is at around the expected 80 \%.
+Let us consider the last point in Figure \ref{fig:1_year_of_iterative_learning_avg}, where the average is at the 85 \% mark, as an example.
+Here, the amount of training data is different since we limited it to one year.
+The training set is also different as only the last month was used, not 20 \%.
+There are many differences between the train and test sets, so we cannot compare them.
+The results do prove that the method works, and the true performance is around the expected 80 \%.
 
 By increasing the amount of data, the algorithm becomes more stable.
-In some cases, where users' behavior does not change, the algorithm could work
-from the first month forward. In other cases, where behavior is more dynamic, 
-the algorithm needs a month or two to stabilize. 
+In some cases, where users' behavior does not change, the algorithm could work from the first month onward.
+In other cases, where behavior is more dynamic, the algorithm needs a month or two to stabilize.
 
-It is important to note that the longer the observation, the higher chance there is
-that the routine of the user will change.
-When such changes do occur, the algorithms must have methods in place, that enable them to adjust to the new routine.
-The simplest approach would be to use weights, which put more attention on more recent data and less attention on older data.
+It is important to note that the longer the observation, the higher the chance there is that the routine of the user will change.
+When such changes do occur, the algorithms must have methods in place that enable them to adjust to the new routine.
+The simplest approach would be to use weights that put more attention on more recent data and less attention on older data.
 
-Future research could explore these limitations and expand on the findings of the current study.
-For example, additional studies could investigate the performance of the algorithm under different conditions or compare it to other methods of anomaly detection. 
-Additionally, further research could examine the potential applications and implications of the method, such as how it could be used to improve the safety or efficiency of dwelling systems.
+Future research in this area offers many open opportunities to improve the current approach.
+For more accurate results, a method could be used where several synthetic anomalies are modeled and incorporated into existing data.
+Additionally, the system could be set up in a real-world setting where elderly people live on their own.
+Real anomalies would allow us to fully evaluate the system.
+As mentioned, similar approaches already exist, so it would be essential to compare the accuracy of our method with other publications.
+Additionally, we could compare our method to a more invasive method where the user wears a sensor such as a smart bracelet.
 
 \section{Correlation Between t-SNE Plot Euclidean Distance and Routine Rate}
 \label{sec:tsne_ec_corr}
-In Section \ref{ssec:tsne_euclidian_distance}, we first observed the presence of periodic behavior in formed t-SNE clusters.
-We speculated, that the scattering of LP clusters could be correlated to a routine so that the smaller the scattering the better the routine.
-We calculated the scattering using Euclidean distance, the same metric used as a cost function in t-SNE
+
+In Section \ref{ssec:tsne_euclidian_distance}, we first observed the presence of periodic behavior in the formed t-SNE clusters.
+We speculated that the scattering of LP clusters could be correlated to a routine; the smaller the scattering, the better the routine.
+We calculated the scattering using Euclidean distance, which is the same metric used as a cost function in t-SNE.
 
 Figure \ref{fig:tsne_euclidian2} was already presented in Section \ref{ssec:tsne_euclidian_distance},
-but it makes sense to reuse it here in this context. 
-As mentioned this Figure shows the Euclidean distance between samples for per-building LPs for every building.
+but it makes sense to reuse it here in this context.
+As mentioned, this Figure shows the Euclidean distance between samples for per-building LPs for every building.
 
 \begin{figure}[H]
 	\centering
@@ -900,8 +915,7 @@ As mentioned this Figure shows the Euclidean distance between samples for per-bu
 	\label{fig:tsne_euclidian2}
 \end{figure}
 
-To reveal the connection between the two, we plotted both on the same Figure \ref{fig:tsne_comparison}.
-The routine rate in this Figure is reused from Figure \ref{fig:refit_res}.
+To reveal the connection between the two, we plotted both on the same Figure \ref{fig:tsne_comparison}, where the routine rate is reused from results Figure \ref{fig:refit_res}.
 
 \begin{figure}[H]
 	\centering
@@ -922,10 +936,10 @@ especially for the best and worst-performing buildings.
 	\label{fig:tsne_norm}
 \end{figure}
 
-To furthermore prove the similarity, we have used the methodological approaches for calculating similarity that we explained in Section \ref{ssec:lp_similarity}.
+To further prove the similarity, we have used the methodological approaches for calculating similarity that we explained in Section \ref{ssec:lp_similarity}.
 The results can be observed in Table \ref{tab:similarity_results}.
-First, we calculated cosine similarity using Equation \ref{eq:cosine_similarity}, which yielded a cosine similarity of \textbf{0.94}  for the data seen in the second Figure \ref{fig:tsne_comparison} and \textbf{0.86} for data seen in the third Figure \ref{fig:tsne_norm}.
-Second, we calculated Pearson's correlation coefficient using Equation \ref{eq:pearson_correlation}, which yielded a result of \textbf{-0.76} for the data seen in the second Figure \ref{fig:tsne_comparison} and \textbf{0.76} for data seen in the third Figure \ref{fig:tsne_norm}.
+First, we calculated cosine similarity using Equation \ref{eq:cosine_similarity}, which yielded a cosine similarity of \textbf{0.94} for the data seen in the second Figure \ref{fig:tsne_comparison} and \textbf{0.86} for the data seen in the third Figure \ref{fig:tsne_norm}.
+Second, we calculated Pearson's correlation coefficient using Equation \ref{eq:pearson_correlation}, which yielded a result of \textbf{-0.76} for the data seen in the second Figure \ref{fig:tsne_comparison} and \textbf{0.76} for the data seen in the third Figure \ref{fig:tsne_norm}.
 These values present that there is a connection between the t-SNE plot and the routine of the households.
 
 \begin{table}[ht]
@@ -940,16 +954,16 @@ These values present that there is a connection between the t-SNE plot and the r
     \end{tabular}
 \end{table}
 
-When analyzing these results we must keep in mind that the methodological approaches were very different for the two experiments.
-In the case of t-SNE, we have used normalized per-building LPs with very little preprocessing, whereas in the elderly care algorithm, we have used per-building per-appliance LPs with extensive pre-processing to extract appliances that could help us detect the routine.
-Another thing we must keep in mind is that elderly care enables us to detect anomalies on hourly intervals, whereas our t-SNE approach needs a minimum of a week of data to construct the LPs.
+When analyzing these results, we must keep in mind that the methodological approaches were very different for the two experiments.
+In the case of t-SNE, we used normalized per-building LPs with very little preprocessing, whereas in the elderly care algorithm, we used per-building per-appliance LPs with extensive preprocessing to extract appliances that could help us detect the routine.
+Another thing we must keep in mind is that elderly care enables us to detect anomalies on hourly intervals, whereas our t-SNE approach requires a minimum of a week of data to construct the LPs.
 In this regard, t-SNE could be used to evaluate the routine rate of a household.
 
 \subsection{Discussion}
 This connection is an important demonstration that confirms our statements from Chapter \ref{chapter5} that the dispersion of samples in the t-SNE plot is related to routine.
 This also means that we can rely on t-SNE to evaluate the routine of a household.
-While it may not be as precise and fast as an elderly care algorithm, it is simple to use. 
-Apart from implementation being easily available, it uses per-building LPs which can be built off most existing residential power meters.
+While it may not be as precise and fast as an elderly care algorithm, it is simple to use.
+Apart from implementation being easily available, it uses per-building LPs, which can be built from most existing residential power meters.
 
 This leads us to privacy issues, as almost all households use power meters for utility billing tracking. Before processing this data to build per-building LPs, the user should be informed and agree to the use of their data.
 It should also be made clear that their data will be handled according to GDPR.
@@ -957,11 +971,10 @@ It should also be made clear that their data will be handled according to GDPR.
 \section{Summary}
 
 The results show that our approach can detect changes in routine and can improve over time.
-Due to a lack of gourd truth data, we were not able to measure the exact accuracy of the system,
+Due to a lack of ground truth data, we were not able to measure the exact accuracy of the system,
 but rather evaluate if the behavior of residents is sufficiently periodic.
 Even the best algorithm would not be able to detect anomalies in a stochastic system.
 With that, we also proved that such a system is sufficiently deterministic for such applications.
 
 Furthermore, we have demonstrated the existence of a connection between the t-SNE plot and the routine obtained from the elderly care anomaly detection algorithm.
 While t-SNE cannot be directly used in the setting of elderly care, as it's too slow, it could be used to determine if the routine of the household is strong enough before a more complex system is put in place.
-
