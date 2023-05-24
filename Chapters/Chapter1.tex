@@ -25,10 +25,10 @@ While it was thought that aggregated LPs of households are relatively predictabl
 In recent years LPs have changed due to renewable energy accelerated development of distributed energy resources such as residential photovoltaic
 power plants, home wind energy, and using EVs with home batteries. Socioeconomic changes such as work-from-home, also drastically reshaped the LP curve. 
 
-The thesis aims to propose and develop new, previously unused LPs, that will contribute to mitigating the raised issues.
-Presenting consumption with the right LPs, will help dwellers be more aware of their consumption and in terms increase their energy efficiency.
+The thesis aims to propose and develop new, previously unused LPs, that will contribute to mitigation of the raised issues.
+Presenting consumption with the right LPs will help dwellers be more aware of their consumption and in turn, increase their energy efficiency.
 Energy efficiency is the basis of our research, throughout the thesis we will explore LPs that were not yet utilized.
-We will perform an EDA to make sense of what they are, and what information they contain.
+We will perform an exploratory data analysis (EDA) to make sense of what they are, and what information they contain.
 This obtained knowledge will be used in a practical use-case to showcase that these profiles can be effectively utilized.
 We will design an elderly care assisted living monitoring system to detect anomalies in consumption patterns to detect strokes and falls.
 
@@ -61,7 +61,7 @@ Throughout this thesis, we primarily focus on the use of load profiles to repres
 \subsection{Feature Set} 
 \label{ssec:feature_set}
 
-To identify the fundamental features of energy consumption in buildings, we need to examine the way that consumption is typically measured.
+To identify the base features of energy consumption in buildings, we need to examine the way that consumption is typically measured.
 Three main features allow us to determine the amount of energy being used by a user:
 
 \begin{figure}[H]
@@ -72,7 +72,7 @@ Three main features allow us to determine the amount of energy being used by a u
 \end{figure}
 
 If we translate these features to the time domain and observe them over a specified amount of time, new features emerge. 
-The most notable example is the observation of electrical power over one hour.
+One such example is the observation of electrical power over one hour.
 This results in the amount of energy consumed often referred to as energy $E$, which is one of the most common ways used to bill a customer for his power consumption.
 
 We can also extract features such as the number of activations or time of operation for each activation.
