@@ -470,7 +470,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 \usepackage{xcolor}
 \colorlet{mdtRed}{red!50!black}
 \newcommand{\acknowledgementname}{Acknowledgements}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\acknowledgementname}{Acknowledgements} % Acknowledgement text for English countries
+\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\acknowledgementname}{Zahvala} % Acknowledgement text for English countries
 \providecaptionname{german,ngerman,austrian,naustrian}{\acknowledgementname}{Danksagung} % Acknowledgement text for Germanic countries
 
 \ifbool{consistentlayout}{
@@ -490,6 +490,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 		\vfil\vfil\null
 	}
 }
+
 
 %----------------------------------------------------------------------------------------
 %	DECLARATION PAGE DESIGN
@@ -581,13 +582,14 @@ KOMA-script documentation for details.}]{fancyhdr}
 bookmarksopen=true,
 bookmarksopenlevel=0,
 hypertexnames=false,
-colorlinks=true,% Set to false to disable coloring links
-citecolor=magenta,% The color of citations
-linkcolor=red,% The color of references to document elements (sections, figures, etc)
-urlcolor=mdtRed,% The color of hyperlinks (URLs)
+colorlinks=false,% Set to false to disable coloring links
+citecolor=black,% The color of citations
+linkcolor=black,% The color of references to document elements (sections, figures, etc)
+urlcolor=black,% The color of hyperlinks (URLs)
 pdfstartview={FitV},
 unicode,
 breaklinks=true,
+hidelinks,
 }
 
 \pdfstringdefDisableCommands{% If there is an explicit linebreak in a section heading (or anything printed to the pdf-bookmarks), it is replaced by a space
